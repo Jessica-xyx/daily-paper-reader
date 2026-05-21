@@ -1113,6 +1113,12 @@
                     style="width:100%; box-sizing:border-box; padding:6px 8px; font-size:13px;"
                   />
                 </div>
+                <button id="secret-setup-reranker-test" type="button" class="secret-gate-btn secondary secret-setup-step2-actions">
+                  测试 Reranker
+                </button>
+                <div id="secret-setup-reranker-test-status" style="min-height:18px; font-size:12px; color:#999; margin-top:6px;">
+                  将发送一次最小 rerank 请求验证 API Key、Base URL 与模型是否可用。
+                </div>
               </div>
               <div id="secret-setup-reranker-status" style="font-size:12px; color:#666; line-height:1.6;"></div>
               <input type="radio" name="secret-setup-provider" value="deepseek" checked style="display:none;" />
@@ -1229,6 +1235,8 @@
       const rerankerRemoteFields = document.getElementById('secret-setup-reranker-remote-fields');
       const rerankerApiKeyInput = document.getElementById('secret-setup-reranker-api-key');
       const rerankerBaseUrlInput = document.getElementById('secret-setup-reranker-base-url');
+      const rerankerTestBtn = document.getElementById('secret-setup-reranker-test');
+      const rerankerTestStatusEl = document.getElementById('secret-setup-reranker-test-status');
       const rerankerStatusEl = document.getElementById('secret-setup-reranker-status');
       const errorEl = document.getElementById('secret-setup-error');
       const backBtn = document.getElementById('secret-setup-back');
@@ -1262,6 +1270,8 @@
         !rerankerRemoteFields ||
         !rerankerApiKeyInput ||
         !rerankerBaseUrlInput ||
+        !rerankerTestBtn ||
+        !rerankerTestStatusEl ||
         !rerankerStatusEl ||
         !errorEl ||
         !backBtn ||
@@ -1354,6 +1364,10 @@
           '将依次用已填写聊天模型发送 <code>hello world</code>，检查接口与模型是否可用。';
         customStatusEl.style.color = '#999';
       };
+      const resetRerankerTestStatus = () => {
+        rerankerTestStatusEl.textContent = '将发送一次最小 rerank 请求验证 API Key、Base URL 与模型是否可用。';
+        rerankerTestStatusEl.style.color = '#999';
+      };
       const customPresetMap = {
         deepseek: {
           baseUrl: 'https://api.deepseek.com',
@@ -1411,6 +1425,13 @@
           apiKey: profile.provider === 'local' ? '' : apiKey,
           baseUrl: profile.provider === 'local' ? '' : baseUrl,
         };
+      };
+      const buildRerankEndpoint = (baseUrl) => {
+        const raw = normalizeBaseUrlForStorage(baseUrl || '');
+        if (!raw) return '';
+        if (/\/rerank$/i.test(raw)) return raw;
+        if (/\/v\d+$/i.test(raw)) return `${raw}/rerank`;
+        return `${raw}/v1/rerank`;
       };
 
       const collectProviderDraft = () => {
@@ -1477,12 +1498,72 @@
         [customApiKeyInput, customBaseUrlInput, customModel1Input, customModel2Input, customModel3Input],
         resetCustomStatus,
       );
+      bindResetOnInput([rerankerApiKeyInput, rerankerBaseUrlInput], resetRerankerTestStatus);
       rerankerProfileSelect.addEventListener('change', syncRerankerFields);
+      rerankerProfileSelect.addEventListener('change', resetRerankerTestStatus);
       deepseekPresetBtn.addEventListener('click', () => applyCustomPreset('deepseek'));
       glmPresetBtn.addEventListener('click', () => applyCustomPreset('glm'));
       minimaxPresetBtn.addEventListener('click', () => applyCustomPreset('minimax'));
       kimiPresetBtn.addEventListener('click', () => applyCustomPreset('kimi'));
       openaiPresetBtn.addEventListener('click', () => applyCustomPreset('openai'));
+      rerankerTestBtn.addEventListener('click', async () => {
+        let draft = null;
+        try {
+          draft = buildRerankerDraft('', '');
+        } catch (e) {
+          rerankerTestStatusEl.textContent = `❌ ${e.message || e}`;
+          rerankerTestStatusEl.style.color = '#c00';
+          return;
+        }
+        if (draft.provider !== 'siliconflow') {
+          rerankerTestStatusEl.textContent = '当前选择为本地 reranker，无需远端测试。';
+          rerankerTestStatusEl.style.color = '#666';
+          return;
+        }
+        const endpoint = buildRerankEndpoint(draft.baseUrl);
+        if (!endpoint) {
+          rerankerTestStatusEl.textContent = '❌ 请填写 Rerank Base URL。';
+          rerankerTestStatusEl.style.color = '#c00';
+          return;
+        }
+        rerankerTestBtn.disabled = true;
+        rerankerTestStatusEl.textContent = '正在测试硅基流动 Reranker...';
+        rerankerTestStatusEl.style.color = '#666';
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${draft.apiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              model: draft.model,
+              query: 'Which paper is about neural machine translation?',
+              documents: [
+                'Attention Is All You Need introduces the Transformer architecture for sequence modeling.',
+                'A recipe for sourdough bread with flour and water.',
+              ],
+              top_n: 1,
+              return_documents: false,
+            }),
+          });
+          if (!res.ok) {
+            const text = await res.text().catch(() => '');
+            throw new Error(`HTTP ${res.status} ${res.statusText}${text ? ` - ${text.slice(0, 180)}` : ''}`);
+          }
+          const data = await res.json().catch(() => null);
+          if (!data || !Array.isArray(data.results)) {
+            throw new Error('响应缺少 results 字段。');
+          }
+          rerankerTestStatusEl.textContent = `✅ Reranker 可用：返回 ${data.results.length} 条结果。`;
+          rerankerTestStatusEl.style.color = '#28a745';
+        } catch (e) {
+          rerankerTestStatusEl.textContent = `❌ 测试失败：${e.message || e}`;
+          rerankerTestStatusEl.style.color = '#c00';
+        } finally {
+          rerankerTestBtn.disabled = false;
+        }
+      });
       providerInputs.forEach((input) => {
         input.addEventListener('change', () => {
           syncProviderSections();
