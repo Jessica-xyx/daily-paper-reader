@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-001.webp",
+      "caption": "Table 1: Quantitative results on three GUI benchmarks. We evaluate history and memory augmentation strategies on four frozen open-source GUI backbones, with closed-source generalist MLLMs included as direct-prompting baselines. Metrics include AMS/Traj. SR for GUI-Odyssey, Step SR for MM-Mind2Web, and VAM/TPS/MCS for MementoGUI-Bench.",
+      "page": 7,
+      "index": 1,
+      "width": 830,
+      "height": 517
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-002.webp",
+      "caption": "Figure 4: Effect of episodic memory bank size on GUI-Odyssey across frozen GUI backbones.",
+      "page": 8,
+      "index": 2,
+      "width": 826,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-003.webp",
+      "caption": "Figure 3: GUI-Odyssey performance by trajectory length on UI-Venus-1.5-8B.",
+      "page": 8,
+      "index": 3,
+      "width": 829,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-004.webp",
+      "caption": "Figure 1: Overview of the MEMENTOGUI data curation pipeline. (A) Raw computer-use videos are parsed into hierarchical frame- and subgoal-level annotations. (B) These annotations are converted into SFT data for four MEMENTOCORE operators: step processing, memory compression, episodic memory writing, and episodic memory selection. (C) Step-processing and memory-compression samples are further corrupted and VLM-filtered to form DPO training pairs.",
+      "page": 4,
+      "index": 4,
+      "width": 758,
+      "height": 483
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-005.webp",
+      "caption": "Table 5: We vary the memory-controller size with fixed memory architecture and frozen GUI backbones, comparing working memory with working-plus-episodic memory. Results report GUI performance and end-to-end trajectory latency on GUI-Odyssey and MEMENTOGUI-BENCH.",
+      "page": 9,
+      "index": 5,
+      "width": 830,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18652v1/fig-006.webp",
+      "caption": "Figure 2: MEMENTOGUI augments a frozen GUI action backbone with multimodal working and episodic memory. It updates, retrieves, and writes memory, then serializes textual summaries and ROI references as multimodal context for GUI action prediction.",
+      "page": 5,
+      "index": 6,
+      "width": 820,
+      "height": 482
+    }
+  ]
+}

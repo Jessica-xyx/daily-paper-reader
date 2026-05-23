@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-001.webp",
+      "caption": "Table 1: Three representative contamination mechanisms. Each row follows the event structure: trigger x, retrieved context r, and a resulting violation. The judge taxonomy includes additional subtypes (Appendix C).",
+      "page": 6,
+      "index": 1,
+      "width": 818,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-002.webp",
+      "caption": "Table 7: Categorization of all 159 judge–human disagreements.",
+      "page": 15,
+      "index": 2,
+      "width": 718,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-003.webp",
+      "caption": "Figure 2: Temporal memory contamination: (a) event decomposition, (b) trigger-probe protocol applied across five deployment streams, and (c) the resulting metric qa(ℓ) across seven memory architectures.",
+      "page": 2,
+      "index": 3,
+      "width": 797,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-004.webp",
+      "caption": "Figure 4: Eight memory architectures positioned along six implementation-derived dimensions. Coordinates are computed from implementation properties alone, independent of safety outcomes. See Appendix F.",
+      "page": 8,
+      "index": 4,
+      "width": 699,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-005.webp",
+      "caption": "Figure 3: Memory-induced violation rate qa(ℓ) across three datasets under sequential prefixes (a–c), blockshuffled prefixes with B=50 (d–f), and full shuffle with B=1 (g–i). Shaded bands show variability across probe triggers.",
+      "page": 8,
+      "index": 5,
+      "width": 729,
+      "height": 637
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-006.webp",
+      "caption": "Figure 7: cumulative violation over time",
+      "page": 17,
+      "index": 6,
+      "width": 582,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-007.webp",
+      "caption": "Figure 5: Retrieval-time violation prediction across Medical and University Registrar. Mean precision, recall, and F1 averaged across all eight memory architectures.",
+      "page": 9,
+      "index": 7,
+      "width": 682,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17830v1/fig-008.webp",
+      "caption": "Figure 6: Memory-induced violation rate on Claw-like agents across four LLM backends and two platforms. Solid lines: OpenClaw. Dashed lines: SecLaw.",
+      "page": 9,
+      "index": 8,
+      "width": 405,
+      "height": 349
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-001.webp",
+      "caption": "Figure 3 Projection of 3D continuous spaces into 2.5D visual priors. Top row: In Navigation, 3D rooms are mapped to 2D floor plans with obstacle-aware heatmaps. Bottom row: In PrimitiveSkill, tabletop workspaces are discretized into 2.5D grids, separating x-y planar guidance from continuous z-axis constraints.",
+      "page": 6,
+      "index": 1,
+      "width": 886,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-002.webp",
+      "caption": "Figure 10 Prompt template of AtlasVA. The three VSM layers (L1/L2/L3) are injected at fixed anchor positions, followed by the current observation in the user turn.",
+      "page": 15,
+      "index": 2,
+      "width": 986,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-003.webp",
+      "caption": "Figure 1 Comparison between text-centric memory paradigms and AtlasVA.",
+      "page": 2,
+      "index": 3,
+      "width": 477,
+      "height": 854
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-004.webp",
+      "caption": "Table 2 Performance comparison across different tasks. Cell shading indicates relative performance within each column, with",
+      "page": 7,
+      "index": 4,
+      "width": 971,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-005.webp",
+      "caption": "Figure 4 Learning efficiency. AtlasVA (Ours) achieves faster convergence and higher task success than the text-only baseline (w/ L3), proving the efficiency of visual feedback.",
+      "page": 8,
+      "index": 5,
+      "width": 459,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-006.webp",
+      "caption": "Figure 5 Component ablation. Removing the visual skill memory (VSM), atlas evolution, or dense reward shaping consistently degrades performance across all spatial benchmarks.",
+      "page": 8,
+      "index": 6,
+      "width": 419,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-007.webp",
+      "caption": "Figure 2 Overview of the AtlasVA architecture. (a) The Visual Skill Memory (VSM) prompts the policy using a three-layer hierarchy: spatial heatmaps, visual exemplars, and symbolic text rules. (b) Through teacher-free environment rollouts, trajectory logs and episode screenshots drive the self-evolution of the VSM via EMA blending and exemplar mining. (c) These evolved spatial priors are formulated into affinity gains and danger penalties, providing dense reward shaping. (d) In the optimization phase, the augmented rewards guide policy updates, while improved trajectories continuously refresh the VSM, forming a closed perception-optimization loop.",
+      "page": 4,
+      "index": 7,
+      "width": 982,
+      "height": 568
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-008.webp",
+      "caption": "Table 5 Comprehensive hyperparameter configurations for PPO optimization and VSM components.",
+      "page": 19,
+      "index": 8,
+      "width": 602,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-009.webp",
+      "caption": "Figure 11 Step-by-step visual reward dynamics in a Sokoban trajectory. The plot expands on the reward composition discussed in Section 3.4 and Figure 9 by demonstrating how AtlasVA converts a single terminal sparse reward into a continuous optimization landscape over time. The Danger Penalty (orange) issues immediate corrective feedback when the agent approaches deadlocks, while the Affinity Gain (green) provides sustained positive signals as the agent navigates along viable sub-goal paths.",
+      "page": 19,
+      "index": 9,
+      "width": 965,
+      "height": 545
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-010.webp",
+      "caption": "Figure 6 Evolution of Spatial Heatmaps (Layer 1). From Step 0 to Step 400, through pure environment interaction, the heatmaps learn to encode structural hazards (Danger, red) and sub-goal paths (Affinity, green).",
+      "page": 9,
+      "index": 10,
+      "width": 787,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.17933v1/fig-011.webp",
+      "caption": "Figure 9 Reward waterfall analysis. The composition of the total reward demonstrates that the Danger Penalty (orange) and Affinity Gain (green) provide continuous step-level signals, effectively supplementing the sparse environment rewards.",
+      "page": 9,
+      "index": 11,
+      "width": 981,
+      "height": 289
+    }
+  ]
+}

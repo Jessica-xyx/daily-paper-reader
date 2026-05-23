@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-001.webp",
+      "caption": "Table 2 | Ablation study. Isolation R&E (✓ = each stage has its own router and experts, × = a single shared group across all stages) and MoE (✓ = multiple experts, × = a single expert).",
+      "page": 10,
+      "index": 1,
+      "width": 975,
+      "height": 409
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-002.webp",
+      "caption": "Figure 4 | t-SNE visualization of latent memories produced by different experts on Math prompts. Different experts occupy distinct regions of the t-SNE space, indicating diverse learned memory representations.",
+      "page": 18,
+      "index": 2,
+      "width": 673,
+      "height": 581
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-003.webp",
+      "caption": "Figure 5 | t-SNE visualization of latent memories produced by the corresponding expert (within-pool index 0) on math, science, and code prompts.",
+      "page": 18,
+      "index": 3,
+      "width": 673,
+      "height": 582
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-004.webp",
+      "caption": "Table 4 | Continual learning results under Order A: Code → Science → Math. All methods share Qwen3-4B-Instruct-2507 as the base model. After each training stage we report per-test accuracy and three CL auxiliary metrics. Auxiliary metrics are undefined at 𝑡 = 1 and shown as “–”. Bold marks the best score within each stage. Subscripts on Average mark the gap relative to the Vanilla baseline (+/−).",
+      "page": 19,
+      "index": 4,
+      "width": 975,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-005.webp",
+      "caption": "Table 5 | Continual learning results under Order B: Science → Code → Math. All methods share Qwen3-4B-Instruct-2507 as the base model. After each training stage we report per-test accuracy and three CL auxiliary metrics. Auxiliary metrics are undefined at 𝑡 = 1 and shown as “–”. Bold marks the best score within each stage. Subscripts on Average mark the gap relative to the Vanilla baseline (+/−).",
+      "page": 19,
+      "index": 5,
+      "width": 983,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-006.webp",
+      "caption": "Table 3 | AE routing statistics across continual-learning stages. At each stage, the prompt-end feature is compared only against the autoencoders trained on already-introduced domains; samples far from every available domain AE are rejected as OOD and fall back to the pretrained model.",
+      "page": 17,
+      "index": 6,
+      "width": 983,
+      "height": 465
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-007.webp",
+      "caption": "Figure 3 | Overall expert usage on the Math, Science, and Code test sets.",
+      "page": 17,
+      "index": 7,
+      "width": 815,
+      "height": 326
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-008.webp",
+      "caption": "Table 1 | Continual learning results under the default order Math → Science → Code. All methods share Qwen3-4B-Instruct-2507 as the base model. After each training stage we report per-test accuracy and three CL auxiliary metrics. Auxiliary metrics are undefined at 𝑡 = 1 and shown as “–”. Bold marks the best score within each stage. Subscripts on Average mark the gap relative to the Vanilla baseline (+/−).",
+      "page": 9,
+      "index": 8,
+      "width": 975,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-009.webp",
+      "caption": "Figure 1 | Overview of MoLEM. Each expert is attached to the frozen base reasoner and produces a candidate latent memory. The router performs key-query matching to compute expert weights and aggregates the candidates into the final latent memory that is injected back into the reasoner. For continual learning, each stage is paired with a lightweight autoencoder (AE); at inference, the AE with the smallest reconstruction error selects the corresponding routing group, while inputs whose reconstruction errors all exceed their thresholds are classified as out-of-distribution and fall back to the pretrained model.",
+      "page": 5,
+      "index": 9,
+      "width": 983,
+      "height": 450
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21951v1/fig-010.webp",
+      "caption": "Figure 2 | t-SNE visualization of frozen-reasoner hidden states at the first latent-memory insertion point for math, science, and code training prompts.",
+      "page": 16,
+      "index": 10,
+      "width": 577,
+      "height": 425
+    }
+  ]
+}
