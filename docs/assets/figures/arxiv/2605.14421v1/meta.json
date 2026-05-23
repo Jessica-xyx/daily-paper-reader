@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.14421v1/fig-001.webp",
+      "caption": "Figure 8: Four-dimensional capability matrix. Crypto integrity for the trust label, lineage attribution across LLM-mediated derivation, cross-session persistence of the label, and coverage of agent-derived entries. ✓ = full coverage; ⃝ = partial; × = absent. Among the published and concurrent systems compared in this figure, MemLineage’s highlighted row is the only one that covers all four capabilities in one system. Peer rows are coded from their published mechanisms rather than local reproductions.",
+      "page": 21,
+      "index": 1,
+      "width": 464,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14421v1/fig-002.webp",
+      "caption": "Figure 3: ASR matrix on the deterministic harness, rendered from paper/data/asr_matrix_v1.csv. Green cells are defended (ASR = 0); red cells are attacker wins (ASR = 1). Cell text gives the value and verdict, the right strip reports blocked attack families per defence, and the blue outline highlights the all-zero MemLineage row. Same numbers as Table 1; the visual is what reviewers see first, the table is what reviewers cite.",
+      "page": 14,
+      "index": 2,
+      "width": 504,
+      "height": 347
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14421v1/fig-003.webp",
+      "caption": "Table 7: Per-operation median latency on a single core, n = 200 samples per op (Merkle proofs at n = 100). Source: paper/data/perf_baseline_v1.csv; numbers are wall-clockdependent and will vary by hardware, so the CSV is regenerated rather than byte-equal CI-verified.",
+      "page": 17,
+      "index": 3,
+      "width": 356,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14421v1/fig-004.webp",
+      "caption": "Figure 6: τ × K ablation across all five attribution configurations (140 cells). Green = propagated = 1 (the External label survives to the chain tip; the gate refuses); red = propagated = 0 (the chain tip lost the External label per the no-strong-parent fallback in §3.5). Gold-outlined cells are the K-discriminating cells: rows where increasing K flips the outcome. Panels (a)–(c) are flat in K; panels (d) and (e) are the K-degrading schedules (d = 0.7) where the interaction the prose discusses becomes observable. Source: paper/data/r_k_ablation_v1.csv, byte-equal CI-verified.",
+      "page": 17,
+      "index": 4,
+      "width": 1040,
+      "height": 324
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14421v1/fig-005.webp",
+      "caption": "Figure 1: MemLineage architecture: six modules around a single memory store M . The write path (top) commits an entry through M1 metadata, M2 per-principal Ed25519 signing, and M3 RFC-6962 Merkle logging; the read + gate path (bottom) retrieves through M5, attaches trust labels via M4 lineage propagation, and refuses sensitive tool calls at M6 whose justifying context carries a DerivedUntrusted ancestor. Adversary-reachable inputs (red) are the only path through which untrusted content reaches M ; the rest of the pipeline is host-trusted (§2).",
+      "page": 5,
+      "index": 5,
+      "width": 492,
+      "height": 438
+    }
+  ]
+}

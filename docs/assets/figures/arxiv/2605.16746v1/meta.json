@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-001.webp",
+      "caption": "Figure 1: Memory laundering in stateful agents. (a) In single-turn chatbots, safety monitoring is typically applied directly to the generated response. In memory-augmented agents, harmful influence can instead be compressed into external agent state, such as summaries or transcripts, that appears safe under standard toxicity checks while still conditioning downstream agents toward unsafe behavior. (b) In our work, we show that memory sanitization before summarization helps mitigate memory laundering. (c) For a representative example, a toxic source message from an agent is compressed into a memory summary that scores below the classifier threshold, yet a downstream agent conditioned on that memory produces a hostile response. The summary removes explicit insults while preserving the confrontational framing of the exchange. Additional examples are shown in §D.",
+      "page": 2,
+      "index": 1,
+      "width": 826,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-002.webp",
+      "caption": "Table 2: Channel comparison between transcript and memory modes on chain topology at τ = 0.5. Mean metrics capture average downstream propagation, while P95tox reports the empirical 95th percentile of downstream message toxicity in the toxic condition. High P95tox values indicate upper-tail toxic generations that are diluted by benign turns; write-gating generated turns before they are added to transcript and summarized into memory substantially reduces both SPG and tail toxicity.",
+      "page": 7,
+      "index": 2,
+      "width": 790,
+      "height": 214
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-003.webp",
+      "caption": "Figure 2: Additional qualitative examples of memory laundering. Each example shows a toxic source message from agent A1, the resulting compressed memory state Mt, and the downstream response conditioned on that memory. In both cases, the memory summary scores below τ = 0.5 despite source toxicity above 0.9, yet the downstream response remains overtly toxic. Example 2 flattens explicit hostility into a neutral description of conflict; Example 3 preserves ideological framing and an us–vs–them dichotomy while removing overt toxic markers.",
+      "page": 18,
+      "index": 3,
+      "width": 776,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-004.webp",
+      "caption": "Figure 3: Sub-threshold propagation gap SPG(τ) as a function of the classifier threshold τ under memory-augmented chain rollouts (n = 200 seeds). SPG remains stable at ≈ 0.14 across τ ∈ {0.03, 0.05, 0.1, 0.2, 0.3, 0.5} and is significantly positive at every threshold (all p < 0.001, paired Wilcoxon signed-rank). Across this entire range, the fraction of memory states classified as clean satisfies Pr[tox(Mt) < τ ] ≥ 0.99, meaning a standard classifier-based monitor would label essentially every memory state in both conditions as safe. The vertical dotted line marks the standard threshold τ = 0.5; the shaded band shows the 95% bootstrap CI.",
+      "page": 18,
+      "index": 4,
+      "width": 510,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-005.webp",
+      "caption": "Table 3: Defense ablation on Llama-3.1-8B-Instruct chain memory rollouts (n = 200 paired seeds). Baselines reduce visible toxicity but leave propagation channels open; single-channel controls suppress only part of the problem. Full system achieves lowest turn-final toxicity, ∆µ, and P95tox, while Transcript+Memory attains lowest SPG. Values are mean ± standard error except P95tox; bolded cells mark column minima. See §I for cross-model comparison with the gpt-4o-mini results.",
+      "page": 8,
+      "index": 5,
+      "width": 748,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-006.webp",
+      "caption": "Table 5: Propagation across rollout conditions. Each row reports a paired toxic-vs.-neutral comparison over 200 seeds, with p-values from Wilcoxon signed-rank tests.",
+      "page": 19,
+      "index": 6,
+      "width": 782,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16746v1/fig-007.webp",
+      "caption": "Table 4: DPO and LoRA hyperparameters for parameter-level intervention.",
+      "page": 16,
+      "index": 7,
+      "width": 536,
+      "height": 380
+    }
+  ]
+}

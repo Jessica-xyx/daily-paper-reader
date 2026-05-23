@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-001.webp",
+      "caption": "Figure 1: Dyadic memory systems are inadequate for group memory, which demands joint modeling of the collective task flow and per-user memory states. The multi-party attributes, such as Theory-ofMind, also make this fundamentally harder than a multi-user extension of dyadic memory.",
+      "page": 2,
+      "index": 1,
+      "width": 829,
+      "height": 401
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-002.webp",
+      "caption": "Table 2: Accuracy (%) of memory systems on GroupMemBench across six query categories. Best per column in bold, second-best underlined.",
+      "page": 7,
+      "index": 2,
+      "width": 830,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-003.webp",
+      "caption": "Table 8: Per-domain accuracy (%) on the Finance subset of GroupMemBench. Best per column in bold, second-best underlined.",
+      "page": 18,
+      "index": 3,
+      "width": 829,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-004.webp",
+      "caption": "Table 9: Per-domain accuracy (%) on the Healthcare subset of GroupMemBench. Best per column in bold, second-best underlined. The Ambiguity and Implicit columns include 0 % / 50 % ties across many baselines, reflecting the small per-cell sample size of those question types in this domain.",
+      "page": 18,
+      "index": 4,
+      "width": 830,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-005.webp",
+      "caption": "Table 4: Edge relations in the synthesis graph G. “Static” edges are created during graph construction; “dynamic” edges are added incrementally as messages are generated.",
+      "page": 13,
+      "index": 5,
+      "width": 764,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-006.webp",
+      "caption": "Table 3: Persona vocabularies. Tone and style values are paired by sampling without replacement so users have distinct (tone, style) combinations.",
+      "page": 13,
+      "index": 6,
+      "width": 664,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-007.webp",
+      "caption": "Figure 4: Performance–efficiency trade-off across the four domains. Each marker is one of six baselines (five agent memory systems plus GRAPHRAG): x-axis is ingestion cost (USD, log scale), y-axis is per-domain QA accuracy (%), and bubble area encodes on-disk storage in GB. Per-(baseline, domain) numerical values are listed in Table 11.",
+      "page": 8,
+      "index": 7,
+      "width": 818,
+      "height": 218
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-008.webp",
+      "caption": "Figure 2: Overview of the GroupMemBench data synthesis pipeline .",
+      "page": 4,
+      "index": 8,
+      "width": 802,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-009.webp",
+      "caption": "Table 11: Per-domain ingestion cost (USD) and on-disk storage (GB) for the six baselines used in the trade-off analysis, corresponding to the bubble plot in Figure 4. Costs aggregate all LLM and embedding calls during ingestion (query-time calls excluded). The Avg. column is the unweighted mean across the four domains.",
+      "page": 19,
+      "index": 9,
+      "width": 830,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-010.webp",
+      "caption": "Table 10: Per-domain accuracy (%) on the Manufacturing subset of GroupMemBench. Best per column in bold, second-best underlined.",
+      "page": 19,
+      "index": 10,
+      "width": 829,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-011.webp",
+      "caption": "Table 7: Per-domain accuracy (%) on the Technology subset of GroupMemBench. Best per column in bold, second-best underlined.",
+      "page": 17,
+      "index": 11,
+      "width": 830,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-012.webp",
+      "caption": "Table 6: Per-domain statistics of the synthesized group conversations.",
+      "page": 17,
+      "index": 12,
+      "width": 586,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-013.webp",
+      "caption": "Figure 5: (Left) Failure-mode decomposition: each baseline’s 185 non-abstention questions per domain split into correct, reasoning failure, and retrieval failure. (Right) Retrieval recall vs. answer accuracy. Markers on the diagonal are retrieval-bottlenecked; below the diagonal indicates reasoning loss (gold surfaced but answered wrong); above indicates the system answered correctly without the gold message, typically by aggregating other ingested context.",
+      "page": 9,
+      "index": 13,
+      "width": 824,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14498v2/fig-014.webp",
+      "caption": "Table 5: Generation hyperparameters.",
+      "page": 16,
+      "index": 14,
+      "width": 832,
+      "height": 813
+    }
+  ]
+}

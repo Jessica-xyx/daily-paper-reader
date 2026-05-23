@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-001.webp",
+      "caption": "Figure 6. SE-GA Performance on Different Task Steps.",
+      "page": 21,
+      "index": 1,
+      "width": 795,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-002.webp",
+      "caption": "Table 1. Performance comparison on ScreenSpot (Cheng et al., 2024). Best result is in bold and second-best result is in underline.",
+      "page": 7,
+      "index": 2,
+      "width": 967,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-003.webp",
+      "caption": "Table 2. Performance comparison on AndroidControl (Li et al., 2024) and GUIOdyssey (Lu et al., 2025a). Best result is in bold and second-best result is in underline.",
+      "page": 7,
+      "index": 3,
+      "width": 975,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-004.webp",
+      "caption": "Figure 3. A successful trajectory example. By using Hindsight Goal-Shifting, the agent successfully discovers and executes a sequence of actions that complete the assigned task. The new task instruction is “Using BBC Sports, find out the next MLB game in the search bar.”",
+      "page": 18,
+      "index": 4,
+      "width": 1017,
+      "height": 992
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-005.webp",
+      "caption": "Figure 1. An overview of SE-GA, which can achieve self-evolution without relying on predefined tasks or human annotations. SE-GA begins with a model-free, interaction-driven traversal in online environments. This process uses TTME and generates a large number of triples consisting of actions and their corresponding pre-interaction and post-interaction screenshots, along with corresponding memories. Subsequently, SE-GA uses MASE to conduct self-evolution by using the collected data.",
+      "page": 4,
+      "index": 5,
+      "width": 1017,
+      "height": 533
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-006.webp",
+      "caption": "Figure 4. A failure trajectory example of UI-TARS. The task instruction is “Plan an evening of sports-themed entertainment by selecting a sports movie using DuckDuckgo and adding some snacks to your Amazon shopping cart. Invite Victor James through Facebook Messenger, and set a reminder on your Clock app so you don’t forget.”",
+      "page": 19,
+      "index": 6,
+      "width": 517,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16883v1/fig-007.webp",
+      "caption": "Figure 2. A failure trajectory example. The task instruction is “Using BBC Sports, find out when the next MLB game is scheduled and then create a reminder in Microsoft To Do.”",
+      "page": 17,
+      "index": 7,
+      "width": 1017,
+      "height": 845
+    }
+  ]
+}

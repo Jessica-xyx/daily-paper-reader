@@ -1,0 +1,214 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-001.webp",
+      "caption": "Table 11: Average Token Usage per Instance (Adaptation Phase, FORGE & Reflexion)",
+      "page": 15,
+      "index": 1,
+      "width": 636,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-002.webp",
+      "caption": "Figure 11: Failure trigger threshold analysis. (Left) Per-step penalty distribution across zero-shot episodes (log scale). The red bar at −1.0 represents legitimate Restore actions; blue bars are real failures. (Right) Triggers captured vs. threshold: 𝜏 = −1.1",
+      "page": 15,
+      "index": 2,
+      "width": 1056,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-003.webp",
+      "caption": "Figure 4: Combined analysis for Gemini-2.5-Flash-Lite. (A) Performance: All representations consistently outperform Baseline.",
+      "page": 7,
+      "index": 3,
+      "width": 1056,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-004.webp",
+      "caption": "Figure 3: Comparison of memory representations (Rules, Examples, and Mixed) across zero-shot, Reflexion, and FORGE",
+      "page": 7,
+      "index": 4,
+      "width": 1056,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-005.webp",
+      "caption": "Table 10: Graduation Stage Distribution",
+      "page": 14,
+      "index": 5,
+      "width": 356,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-006.webp",
+      "caption": "Figure 1: System Overview. (Left) Hierarchical ReAct agent with dynamic memory injection. (Right) Reflexion learning",
+      "page": 3,
+      "index": 6,
+      "width": 1056,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-007.webp",
+      "caption": "Table 21: Raw Evaluation Scores: Gemini Flash-Lite, Reflexion",
+      "page": 18,
+      "index": 7,
+      "width": 922,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-008.webp",
+      "caption": "Table 19: Per-Stage Checkpoint Rewards (FORGE, All Models)",
+      "page": 18,
+      "index": 8,
+      "width": 744,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-009.webp",
+      "caption": "Table 20: Per-Stage Checkpoint Rewards (Reflexion, All Models)",
+      "page": 18,
+      "index": 9,
+      "width": 760,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-010.webp",
+      "caption": "Table 7: Experimental Setup Summary",
+      "page": 13,
+      "index": 10,
+      "width": 521,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-011.webp",
+      "caption": "Table 5: Raw Evaluation Scores: Failure Trigger Threshold Sweep (Gemini Rules, FORGE Protocol)",
+      "page": 13,
+      "index": 11,
+      "width": 618,
+      "height": 494
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-012.webp",
+      "caption": "Table 6: Standard deviations of episode return corresponding to Table 3. Lower SD = more reliable policy. Bold marks the lowest SD per model across all FORGE variants. ↑/ ↓ = reduction/increase relative to the reference.",
+      "page": 13,
+      "index": 12,
+      "width": 636,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-013.webp",
+      "caption": "Figure 5: Protocol comparison. (A) Mean evaluation return across four models under four conditions: FORGE, FORGE without",
+      "page": 8,
+      "index": 13,
+      "width": 844,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-014.webp",
+      "caption": "Figure 6: Graduation dynamics and no-graduation ablation (all models pooled). (A) Active instances and per-instance compute",
+      "page": 8,
+      "index": 14,
+      "width": 948,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-015.webp",
+      "caption": "Figure 2: Protocol Details. (Left) The FORGE protocol involves parallel execution, champion selection, graduation and broadcast",
+      "page": 4,
+      "index": 15,
+      "width": 1056,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-016.webp",
+      "caption": "Table 22: Raw Evaluation Scores: Reflexion (Grok, Llama, Qwen)",
+      "page": 19,
+      "index": 16,
+      "width": 706,
+      "height": 1098
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-017.webp",
+      "caption": "Table 16: Raw Evaluation Scores: FORGE (Grok, Llama, Qwen)",
+      "page": 17,
+      "index": 17,
+      "width": 690,
+      "height": 517
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-018.webp",
+      "caption": "Table 18: Complete Experimental Results: Grok",
+      "page": 17,
+      "index": 18,
+      "width": 444,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-019.webp",
+      "caption": "Table 17: Complete Experimental Results: Gemini Flash-Lite",
+      "page": 17,
+      "index": 19,
+      "width": 444,
+      "height": 594
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-020.webp",
+      "caption": "Figure 8: CAGE-2 Environment Overview. (a) The defender protects a 13-host network segmented into subnets [8]. (b) The",
+      "page": 12,
+      "index": 20,
+      "width": 844,
+      "height": 897
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-021.webp",
+      "caption": "Figure 7: Risk and variance analysis. (A) Cumulative distribution of evaluation scores (all models pooled): zero-shot shows a heavy left tail; Reflexion partially compresses it; FORGE shifts the distribution sharply rightward. (B) Mean return ± SD by",
+      "page": 9,
+      "index": 21,
+      "width": 844,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-022.webp",
+      "caption": "Table 2: Models, FORGE Configuration, and Metrics",
+      "page": 5,
+      "index": 22,
+      "width": 512,
+      "height": 604
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-023.webp",
+      "caption": "Table 13: Complete Experimental Results: Llama",
+      "page": 16,
+      "index": 23,
+      "width": 444,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-024.webp",
+      "caption": "Table 15: Raw Evaluation Scores: Gemini Flash-Lite, FORGE",
+      "page": 16,
+      "index": 24,
+      "width": 539,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-025.webp",
+      "caption": "Table 14: Complete Experimental Results: Qwen3",
+      "page": 16,
+      "index": 25,
+      "width": 444,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16233v1/fig-026.webp",
+      "caption": "Table 12: Raw Evaluation Scores: Zero-Shot (All Models)",
+      "page": 16,
+      "index": 26,
+      "width": 248,
+      "height": 734
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-001.webp",
+      "caption": "Table 9: Sleeper Memory Poisoning Benchmark taxonomy. The 200 agent action goals are derived strictly from the product of the domains and adversarial constraints within each category.",
+      "page": 26,
+      "index": 1,
+      "width": 813,
+      "height": 238
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-002.webp",
+      "caption": "Figure 3: Illustration of our goal optimization procedure. Candidate paraphrases of each adversarial memory goal are ranked by their mean embedding similarity to a set of representative target queries, then filtered by an LLM same-meaning check before being added to the optimized goal bank.",
+      "page": 21,
+      "index": 2,
+      "width": 826,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-003.webp",
+      "caption": "Table 42: Benign memory-save evaluation under prompt-based defenses. Write rate: fraction of 70 samples where the memory tool was invoked. Semantic match: fraction where the saved content matches the user’s request (judged by GPT-5.4-mini; prompt in subsubsection M.5.2).",
+      "page": 62,
+      "index": 3,
+      "width": 498,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-004.webp",
+      "caption": "Figure 1: Illustration of our entire three-stage threat model: (i) attacker interacts with the model via a document to inject memory. (ii) The injected memory is later retrieved in a new conversation. (iii) The retrieved memory impacts the conversation negatively.",
+      "page": 2,
+      "index": 4,
+      "width": 826,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-005.webp",
+      "caption": "Table 53: Per-variant injection rate (IR; equal to tool-call rate since every tool call matched the goal) on 30 samples for each of 20 wording/structure combinations. Bold = highest score within a wording family.",
+      "page": 75,
+      "index": 5,
+      "width": 518,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-006.webp",
+      "caption": "Table 41: Localization performance across memory-type and general-purpose (classic) templates.",
+      "page": 61,
+      "index": 6,
+      "width": 494,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-007.webp",
+      "caption": "Table 13: Distribution of query styles across the LLM Behavior evaluation dataset.",
+      "page": 29,
+      "index": 7,
+      "width": 572,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-008.webp",
+      "caption": "Table 23: Injection Rate (IR, %) by memory condition under the tool-based regime, split by model and subset. For LLM Behavior, denominators equal unique goals ×15; for Agent Action, denominators equal unique goals ×15. Each memory condition aggregates three attacks and five defense settings.",
+      "page": 39,
+      "index": 8,
+      "width": 614,
+      "height": 717
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-009.webp",
+      "caption": "Table 48: Injection Rate (IR) for Kimi-K2.6 and GPT-5.5 position ablations under the Extreme Spotlighting defense. All runs use an adaptive variant of the Actor-Critic Loop attack with injected content markers; IR is semantic match rate.",
+      "page": 71,
+      "index": 9,
+      "width": 640,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-010.webp",
+      "caption": "Table 7: Original document sources represented in the 200-document Agent Action subset.",
+      "page": 22,
+      "index": 10,
+      "width": 682,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-011.webp",
+      "caption": "Table 6: Original document sources represented in the 500-document LLM Behavior subset.",
+      "page": 22,
+      "index": 11,
+      "width": 682,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-012.webp",
+      "caption": "Table 3: Defense effectiveness in the tool-based regime, measured by IR, %. AC is the base actor– critic attack; AC+ is the adaptive variant. No-defense baselines are in Table 1; CI are in Appendix F.1.",
+      "page": 10,
+      "index": 12,
+      "width": 830,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-013.webp",
+      "caption": "Table 19: Defense effectiveness under the tool-based memory regime for the base actor-critic attack (AC). We report Injection Rate (IR, %) under prompting-based defenses. Values are percentages, with uncertainty reported as the half-width of the 95% bootstrap confidence interval.",
+      "page": 35,
+      "index": 13,
+      "width": 830,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-014.webp",
+      "caption": "Table 20: Defense effectiveness under the tool-based memory regime for the adaptive actor-critic attack (AC+). We report Injection Rate (IR, %) under prompting-based defenses. Values are percentages, with uncertainty reported as the half-width of the 95% bootstrap confidence interval.",
+      "page": 35,
+      "index": 14,
+      "width": 830,
+      "height": 259
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-015.webp",
+      "caption": "Table 29: Overall model failure under hidden goal injection. Each row reports N = 200 samples. R1 indicates no use of the injected goal; R2–R4 indicate any usage; R3–R4 isolate stronger cases where the injected goal materially shapes the response.",
+      "page": 46,
+      "index": 15,
+      "width": 732,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-016.webp",
+      "caption": "Figure 5: Cross-model transfer AUROC heatmaps evaluating the generalizability of the poisoned subspace. Top Left: Transfer utilizing orthogonal Procrustes alignment. Top Right: Transfer utilizing Shared PCA. Bottom: Native target-domain performance (upper bound reference). The stark contrast demonstrates that while Shared PCA fails, Procrustes alignment successfully recovers a significant portion of the target-self detection capability across differing architectures.",
+      "page": 65,
+      "index": 16,
+      "width": 795,
+      "height": 674
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-017.webp",
+      "caption": "Table 50: Language distribution in the 200-document non-english Multilingual dataset. Resource tiers follow the XLSum language classification in Table 12 of [Aharoni et al., 2024]; Medium, High, and Very High are grouped here as Mid/high.",
+      "page": 72,
+      "index": 17,
+      "width": 532,
+      "height": 226
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-018.webp",
+      "caption": "Table 36: Single-attack component and end-to-end attack success rates for fixed attack a. All entries are percentages. IR is normalized by the full dataset-subset size. RRsem and RRemm are retrieval rates conditioned on successful injection. URemm is the downstream usage rate conditioned on successful injection and external-memory-manager retrieval. E2Eemm is computed as IR × RRemm × URemm. E2Esem is estimated as IR × RRsem × URemm. E2Ectx is computed as IR × URctx, corresponding to a full-context setting with perfect retrieval. E2E rows are computed from the unrounded component counts and then rounded to one decimal place.",
+      "page": 55,
+      "index": 18,
+      "width": 830,
+      "height": 1020
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-019.webp",
+      "caption": "Table 35: Domain-level agent usage rate (AUR) for domains with at least 20 traces. AUR is the percentage of traces in which the agent performed or attempted the injected malicious goal. The table reports the ten highest-AUR and ten lowest-AUR domains.",
+      "page": 50,
+      "index": 19,
+      "width": 827,
+      "height": 417
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-020.webp",
+      "caption": "Table 1: IR across targeted models, split by LLM Behavior and Agent Action subsets. Each model is evaluated under the tool-based, model-managed memory regime (Tool) and the external-manager memory regime (External). 95% bootstrap confidence intervals are given.",
+      "page": 8,
+      "index": 20,
+      "width": 830,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-021.webp",
+      "caption": "Table 2: Post-injection impact of poisoned memories in new conversation sessions. We report RR (using the external memory manager), and AUR. Results are separated by query proximity: GoalAdjacent and Goal-Distant queries evaluated the LLM Behavior and Agent Action subsets. AUR is conditional on the poisoned memory being retrieved and included in the model context. Appendix I reports fully coupled end-to-end rates. 95% bootstrap confidence intervals are given.",
+      "page": 8,
+      "index": 21,
+      "width": 830,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-022.webp",
+      "caption": "Table 24: Injection Rate (IR, %) by memory condition under the external-manager memory regime, split by model and subset. For LLM Behavior, denominators equal unique goals ×2; for Agent Action, denominators equal unique goals ×2. Each memory condition aggregates two attack variants and no defense settings.",
+      "page": 40,
+      "index": 22,
+      "width": 582,
+      "height": 718
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-023.webp",
+      "caption": "Table 45: IR and failure mode counts per model and injection position.",
+      "page": 67,
+      "index": 23,
+      "width": 586,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-024.webp",
+      "caption": "Table 21: Injection Rate (IR, %) under the tool-based regime by goal category and model. Each row reports successful injections over total evaluations for that category. Denominator equals unique goals ×15 because these runs cover 3 attack variants and with 5 defenses in place.",
+      "page": 36,
+      "index": 24,
+      "width": 782,
+      "height": 1236
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-025.webp",
+      "caption": "Figure 4: Layer-wise AUROC for activation probing across the evaluated models. The plots illustrate that the linear separability of the injected adversarial subspace typically peaks in the middle-to-late decoder layers before plateauing or slightly degrading near the final output heads.",
+      "page": 64,
+      "index": 25,
+      "width": 813,
+      "height": 712
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-026.webp",
+      "caption": "Figure 2: Illustration describes our optimization approach in generating universal attack templates.",
+      "page": 19,
+      "index": 26,
+      "width": 826,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-027.webp",
+      "caption": "Table 46: Mean total attack attention mass (Ā) for successful vs failed injections, scaled by 103. Attack mass is the average normalized attention assigned to the total_attack bucket across all generated tokens, layers, heads, and attack positions.",
+      "page": 68,
+      "index": 27,
+      "width": 614,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-028.webp",
+      "caption": "Table 27: RR using the GPT-OSS-20B Memory Management Agent.",
+      "page": 44,
+      "index": 28,
+      "width": 830,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-029.webp",
+      "caption": "Table 26: Failure-type breakdown among no-write cases under the external-manager memory regime, split by subset and model. Denominators are the number of no-write failures under the literature baseline and actor-critic attack without untrusted markers; these runs use no defense settings.",
+      "page": 41,
+      "index": 29,
+      "width": 814,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-030.webp",
+      "caption": "Table 25: Failure-type breakdown among no-write cases under the tool-based regime, split by subset and model. Denominators are the number of no-write failures under the literature baseline and actor-critic attack without untrusted markers, with no defense. Rows marked TBD correspond to models for which failure-type counts are not yet available.",
+      "page": 41,
+      "index": 30,
+      "width": 814,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-031.webp",
+      "caption": "Table 37: Attack-family component and end-to-end attack success rates. All entries are percentages. IRany is the fraction of dataset-subset samples for which at least one attack variant successfully writes an adversarial memory. The denominator remains the number of samples in the dataset subset, not the number of attack-sample pairs. E2Eemm is computed as IRany × RRemm × URemm. E2Esem is estimated as IRany × RRsem × URemm. E2Ectx is computed as IR × URctx, corresponding to a full-context setting with perfect retrieval. E2E rows are computed from the unrounded component counts and then rounded to one decimal place.",
+      "page": 56,
+      "index": 31,
+      "width": 830,
+      "height": 1010
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-032.webp",
+      "caption": "Table 22: Injection Rate (IR, %) by goal category and model under the externalmanager memory regime. Denominator equals unique goals ×2 because these runs cover two attack variants and no defense settings.",
+      "page": 37,
+      "index": 32,
+      "width": 782,
+      "height": 978
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-033.webp",
+      "caption": "Table 5: Comparison of Original vs. Optimized User Goals",
+      "page": 20,
+      "index": 33,
+      "width": 798,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-034.webp",
+      "caption": "Figure 6: Attack-to-context attention ratio ρl = Al/(Al + Dl) across layers for six models. For models with success cases, the solid red curve (Success) lies above the dashed blue curve (Failure) at most layers. Gemma-4-E4B and GPT-OSS-20B show sawtooth patterns caused by alternating local/global attention; the relevant signal is the vertical separation within the same global-attention peak.",
+      "page": 69,
+      "index": 34,
+      "width": 826,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15338v2/fig-035.webp",
+      "caption": "Table 47: Top-3 most discriminative attention heads per model, ranked by absolute discriminative score.",
+      "page": 69,
+      "index": 35,
+      "width": 490,
+      "height": 390
+    }
+  ]
+}

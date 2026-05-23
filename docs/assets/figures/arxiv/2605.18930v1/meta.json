@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.18930v1/fig-001.webp",
+      "caption": "Table 1: Overall performance of evaluated methods across three diverse domains under three agent frameworks.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 193
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18930v1/fig-002.webp",
+      "caption": "Figure 1: Existing Memory Attacks VS. OEP.",
+      "page": 2,
+      "index": 2,
+      "width": 706,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18930v1/fig-003.webp",
+      "caption": "Figure 4: persistence of OEP: The ASR is evaluated after 10, 20, and 50 subsequent queries.",
+      "page": 8,
+      "index": 3,
+      "width": 647,
+      "height": 209
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18930v1/fig-004.webp",
+      "caption": "Figure 2: Overall framework and pipeline of OEP.",
+      "page": 4,
+      "index": 4,
+      "width": 826,
+      "height": 334
+    }
+  ]
+}

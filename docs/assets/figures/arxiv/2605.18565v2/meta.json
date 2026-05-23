@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-001.webp",
+      "caption": "Figure 6: MemAgent performance on Wiki Revisions and Git Commits across different answering agents. Specialized answering agents such as MemAgent-14B remain competitive on single-target recall, but drop on multi-target aggregation questions (especially Counting), which require stronger aggregation and reasoning capabilities.",
+      "page": 21,
+      "index": 1,
+      "width": 813,
+      "height": 295
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-002.webp",
+      "caption": "Table 4: Results on Qwen3.6-35B-A3B. We compare three categories of methods: Full Context, RAG, and Memory-Augmented Agents. Cells are color-coded by score to highlight performance patterns, transitioning from dark red (lowest) through light red and light green to dark green (highest).",
+      "page": 7,
+      "index": 2,
+      "width": 768,
+      "height": 526
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-003.webp",
+      "caption": "Figure 8: Performance on History questions in bAbI as a function of lookback distance (x-axis), comparing RAG and Full Context methods with and without temporal cues (History vs. +Date/Time). Adding timestamps as explicit markers helps recover the gap caused by interference.",
+      "page": 22,
+      "index": 3,
+      "width": 387,
+      "height": 313
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-004.webp",
+      "caption": "Figure 7: Comparison of performance across different answering agents (Qwen3.6-35B-A3B and Gemini-3.1-Flash-Lite). The performance gap is largest under the Full Context setting. Overall, the gap is larger on Multi-Target Aggregation tasks than on Single-Target Recall task.",
+      "page": 22,
+      "index": 4,
+      "width": 807,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-005.webp",
+      "caption": "Table 1: Comparison of MINTEVAL with prior memory benchmarks. We categorize benchmarks by (1) input context properties: interdependent inputs (Interdep.), dense interference (≥10 depth; Interference), and multi-domain coverage (M-Domain); and (2) question properties: multi-target aggregation (Aggr.) and lookback to earlier context (LookBack).",
+      "page": 3,
+      "index": 5,
+      "width": 800,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-006.webp",
+      "caption": "Figure 9: Rate of tool usage for AtomMem and Mem-α. Mem-α consistently underutilizes the delete operation across all datasets, which may partially explain why memory systems struggle in long-horizon settings with heavy interference: outdated or conflicting information accumulates over time, leading to progressively greater conflict within memory.",
+      "page": 23,
+      "index": 6,
+      "width": 810,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-007.webp",
+      "caption": "Table 5: Example questions for each domain and category.",
+      "page": 19,
+      "index": 7,
+      "width": 755,
+      "height": 1012
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-008.webp",
+      "caption": "Table 6: Dataset statistics across four domains. Depth denotes the number of turns, revisions, or commits in each example. k indicates values reported in thousands.",
+      "page": 20,
+      "index": 8,
+      "width": 838,
+      "height": 355
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-009.webp",
+      "caption": "Table 3: Dataset statistics across four domains. Depth denotes the number of turns, revisions, or commits in each example. k indicates values reported in thousands. Further details in Appendix A.5.",
+      "page": 5,
+      "index": 9,
+      "width": 784,
+      "height": 196
+    },
+    {
+      "url": "assets/figures/arxiv/2605.18565v2/fig-010.webp",
+      "caption": "Table 2: Example from each question type in MINTEVAL.",
+      "page": 5,
+      "index": 10,
+      "width": 700,
+      "height": 194
+    }
+  ]
+}
