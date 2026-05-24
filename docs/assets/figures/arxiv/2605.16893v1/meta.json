@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.16893v1/fig-001.webp",
+      "caption": "Table 1: Main results across five Qwen3 scales (0.6B–14B). LCB = LiveCodeBench v5, MMLU-R = MMLU-Redux, GPQA = GPQA-Diamond, IFEval = IFEval (strict-prompt), and TQA = TruthfulQA (MC2). Each model is evaluated with and without NGM under identical decoding settings. Best result within each model size is bold.",
+      "page": 6,
+      "index": 1,
+      "width": 829,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16893v1/fig-002.webp",
+      "caption": "Table 3: Effect of N -gram sizes on Qwen3-8B. HE = HumanEval, LCB = LiveCodeBench v5, MMLU-R = MMLU-Redux, GPQA = GPQA-Diamond, IFEval = IFEval (strict-prompt), TQA = TruthfulQA (MC2). Default: N = {2, 3}. Other settings: λ = 0.1, ReLU, stack fusion, layers {1, 14} (0-based layer IDs).",
+      "page": 7,
+      "index": 2,
+      "width": 798,
+      "height": 193
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16893v1/fig-003.webp",
+      "caption": "Figure 3: Cross-position locality of NGM interactions in the default Qwen3-8B-NGM model. Heatmaps show the average cross-position cosine matrix cos(hi, gj) at the two default injection layers for representative code, math, and knowledge samples. The diagonal structure dominates, indicating that useful memory interactions are predominantly local.",
+      "page": 8,
+      "index": 3,
+      "width": 532,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2605.16893v1/fig-004.webp",
+      "caption": "Figure 4: Prefill and per-token decode latency for Qwen3-8B vs. Qwen3-8B-NGM on a single RTX 5090 (mean ± std over 20 runs). The gap widens at 2048 tokens because the current implementation recomputes N-gram features over the full prefix.",
+      "page": 9,
+      "index": 4,
+      "width": 615,
+      "height": 294
+    }
+  ]
+}

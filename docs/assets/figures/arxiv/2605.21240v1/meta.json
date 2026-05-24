@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-001.webp",
+      "caption": "Figure 1: Illustration of exploration collapse in a maze experiment (5×5 grid, 20 episodes, 10 steps each). Room visitation heatmaps (color intensity shows visit proportion; reward cells (⋆) indicate bonus locations). Static explores broadly but inconsistently. Reflexion locks into a narrow corridor and achieves a higher average while missing high-value rooms. APEX maintains broad coverage and consistently reaches high-reward cells. APEX avoids collapse by explicitly tracking which strategies have been tried and which remain unexplored, and actively directing the agent toward unexplored directions rather than refining familiar ones.",
+      "page": 2,
+      "index": 1,
+      "width": 817,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-002.webp",
+      "caption": "Table 10: APEX hyperparameters used in main experiments.",
+      "page": 14,
+      "index": 2,
+      "width": 577,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-003.webp",
+      "caption": "Figure 4: Per-episode scores on three representative Jericho games.",
+      "page": 8,
+      "index": 3,
+      "width": 813,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-004.webp",
+      "caption": "Table 5: Fork Discovery ablation (Final-5).",
+      "page": 8,
+      "index": 4,
+      "width": 402,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-005.webp",
+      "caption": "Figure 3: Overview of APEX. Each node in the strategy map displays n (visit count) and r̄ (average reward). Within each episode, Policy Selection is invoked repeatedly to choose the next milestone. When a milestone is achieved or failed, Policy Selection is called again until the episode ends. Every N episodes, a periodic reflection cycle runs Map Refinement to update existing nodes and edges, Return Propagation to update node statistics on the refined map, and Fork Discovery to expand the map with new milestones and dependencies.",
+      "page": 4,
+      "index": 5,
+      "width": 826,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-006.webp",
+      "caption": "Figure 6: Per-episode scores across 50 episodes on all nine Jericho games.",
+      "page": 17,
+      "index": 6,
+      "width": 813,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21240v1/fig-007.webp",
+      "caption": "Table 12: Final-3 mean ± std across all methods and five WebArena domains (5 episodes per task).",
+      "page": 16,
+      "index": 7,
+      "width": 829,
+      "height": 189
+    }
+  ]
+}

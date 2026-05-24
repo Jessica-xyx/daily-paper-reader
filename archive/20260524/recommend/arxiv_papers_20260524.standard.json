@@ -1,0 +1,171 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-24T20:30:10.958937+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2605.16893v1",
+      "source": "arxiv",
+      "title": "NGM: A Plug-and-Play Training-Free Memory Module for LLMs",
+      "abstract": "Recent studies introduce conditional memory modules that decouple knowledge storage from neural computation, enabling more direct knowledge access. Compared to MoE, which relies on dynamic computation paths, explicit lookup provides a more efficient knowledge retrieval mechanism. However, these approaches still depend on learned memory embeddings, requiring additional training and limiting flexibility. To address this, we propose N-gram Memory (NGM), a training-free, plug-and-play module composed of a Causal N-Gram Encoder and a Cosine-Gated Memory Injector. The Causal N-Gram Encoder directly averages the pretrained token embeddings of the backbone model to construct N-gram representations, thereby eliminating the need to train separate N-gram embeddings from scratch. This design requires neither an additional memory table nor a retrieval pipeline. The Cosine-Gated Memory Injector then uses a non-parametric cosine gate with ReLU to modulate the retrieved embeddings into the contextual representations. We evaluate NGM on the Qwen3 series from 0.6B to 14B across eight benchmarks. NGM improves average performance by 0.5 to 1.2 points, with particularly clear gains on code generation and knowledge-intensive tasks (e.g., +3.0 on LiveCodeBench and +3.03 on GPQA for Qwen3-14B). Moreover, NGM also improves performance in multimodal benchmarks (e.g., MMStar +1.53 on Qwen3-VL-2B).",
+      "authors": [
+        "Yuwen Qu",
+        "Wenhui Dong",
+        "Chenyang Si",
+        "Caifeng Shan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-16T09:12:52+00:00",
+      "link": "https://arxiv.org/pdf/2605.16893v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "training-free plug-and-play memory module for LLMs",
+      "llm_evidence_cn": "免训练即插即用的LLM记忆模块",
+      "llm_evidence": "免训练即插即用的LLM记忆模块",
+      "canonical_evidence": "免训练即插即用的LLM记忆模块",
+      "llm_tldr_en": "Proposes N-gram Memory (NGM), a training-free memory module for LLMs that uses pretrained embeddings.",
+      "llm_tldr_cn": "提出N-gram记忆（NGM），一种利用预训练嵌入的免训练LLM记忆模块。",
+      "llm_tldr": "提出N-gram记忆（NGM），一种利用预训练嵌入的免训练LLM记忆模块。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.21240v1",
+      "source": "arxiv",
+      "title": "APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents",
+      "abstract": "LLM agents have shown strong performance across a wide range of complex tasks, including interactive environments that require long-horizon decision making. But these agents cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes rather than requiring model-weight updates. However, these agents often suffer from exploration collapse: as memory grows, behavior concentrates around familiar high-reward routines, reducing the chance of discovering better alternatives. To address this problem, we propose Autonomous Policy EXploration (APEX), which builds and maintains an explicit strategy space through a strategy map-a directed acyclic graph of milestones with prerequisite dependency edges. In APEX, Fork Discovery expands the map with evidence-grounded unexplored directions, while Policy Selection balances exploration and exploitation during planning. Evaluated on nine Jericho text-adventure games and WebArena, a realistic web interaction benchmark, APEX outperforms all baselines. Extensive ablations validate each component's contribution and demonstrate robustness across diverse settings, demonstrating APEX's effectiveness for sustained exploration in self-evolving agents.",
+      "authors": [
+        "Yibo Li",
+        "Jiashuo Yang",
+        "Zhi Zheng",
+        "Zhiyuan Hu",
+        "Yuan Sui",
+        "Shizun Wang",
+        "Yufei He",
+        "Bryan Hooi"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-20T14:29:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.21240v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes APEX for self-evolving LLM agents with strategy map to manage memory and exploration",
+      "llm_evidence_cn": "提出APEX用于自演化LLM智能体，通过策略图管理记忆和探索",
+      "llm_evidence": "提出APEX用于自演化LLM智能体，通过策略图管理记忆和探索",
+      "canonical_evidence": "提出APEX用于自演化LLM智能体，通过策略图管理记忆和探索",
+      "llm_tldr_en": "APEX uses a strategy map to prevent exploration collapse in self-evolving agents.",
+      "llm_tldr_cn": "APEX通过策略图防止自演化智能体探索崩塌。",
+      "llm_tldr": "APEX通过策略图防止自演化智能体探索崩塌。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.21997v1",
+      "source": "arxiv",
+      "title": "The Log is the Agent: Event-Sourced Reactive Graphs for Auditable, Forkable Agentic Systems",
+      "abstract": "Most agent frameworks are built around the language model: a conversation loop comes first, then tools, then rules, and finally a logging layer bolted on for observability, with state persisted as retrievable \"memory.\" We describe ActiveGraph, a runtime that inverts this arrangement. The append-only event log is the source of truth; the working graph is a deterministic projection of that log; and behaviors--ordinary functions, classes, LLM-backed routines, or logic attached to typed edges--react to changes in the graph and emit new events. No component instructs another; coordination happens entirely through the shared graph. This single design decision yields three properties that retrieval-and-summarization memory systems do not provide: deterministic replay of any run from its log, cheap forking that branches a run at any event without re-executing the shared prefix, and end-to-end lineage from a high-level goal down to the individual model call that produced each artifact. We present the architecture, a determinism contract that makes replay sound, and a worked diligence example whose full causal structure is reconstructable from the log alone. We discuss--without claiming to demonstrate--why this substrate is unusually well suited to self-improving agents, and how it extends the BabyAGI lineage and prior graph-memory research.",
+      "authors": [
+        "Yohei Nakajima"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-05-21T04:55:38+00:00",
+      "link": "https://arxiv.org/pdf/2605.21997v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "memory management via event-sourced reactive graph architecture",
+      "llm_evidence_cn": "通过事件溯源响应图架构进行记忆管理",
+      "llm_evidence": "通过事件溯源响应图架构进行记忆管理",
+      "canonical_evidence": "通过事件溯源响应图架构进行记忆管理",
+      "llm_tldr_en": "ActiveGraph inverts agent architecture by using an append-only event log as source of truth, improving memory auditability.",
+      "llm_tldr_cn": "ActiveGraph反转智能体架构，以追加事件日志为真相源，提升记忆可审计性。",
+      "llm_tldr": "ActiveGraph反转智能体架构，以追加事件日志为真相源，提升记忆可审计性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.17790v1",
+      "source": "arxiv",
+      "title": "STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery",
+      "abstract": "LLM-based equation discovery offers a promising route to recovering symbolic laws from data, but many systems still rely on generation-centered loops that propose candidates, fit parameters, score results, and reuse selected examples. Such loops can misjudge useful skeletons under unreliable fitting, discard near-correct equations that require repair, and accumulate redundant memories that provide limited guidance. We propose STRIDE, a self-reflective agent framework that improves reliability by coordinating data-aware generation, mixed-fitting evaluation, critic--executor repair, and diversity-preserving semantic memory. By turning fitted scores and candidate behavior into shared feedback, STRIDE enables equations to be proposed, assessed, refined, and reused within a closed-loop discovery process. Experiments on representative symbolic-regression benchmarks and LSR-Synth suites show that STRIDE improves accuracy, OOD robustness, and structural recovery across multiple LLM backbones, with ablations and analyses confirming the contribution of its core components.",
+      "authors": [
+        "Jiarui Su",
+        "Songjun Tu",
+        "Bei Sun",
+        "Xiaojun Liang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-18T03:14:32+00:00",
+      "link": "https://arxiv.org/pdf/2605.17790v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "semantic memory used for diversity preservation in equation discovery agent",
+      "llm_evidence_cn": "方程发现代理中用于多样性保持的语义记忆",
+      "llm_evidence": "方程发现代理中用于多样性保持的语义记忆",
+      "canonical_evidence": "方程发现代理中用于多样性保持的语义记忆",
+      "llm_tldr_en": "STRIDE uses semantic memory to preserve diverse equation candidates for reliable agent-based discovery.",
+      "llm_tldr_cn": "STRIDE利用语义记忆保留多样的方程候选，提高代理发现可靠性。",
+      "llm_tldr": "STRIDE利用语义记忆保留多样的方程候选，提高代理发现可靠性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
