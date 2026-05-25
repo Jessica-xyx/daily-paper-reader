@@ -6,34 +6,35 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-24
-- 运行时间：2026-05-24 20:31:10 UTC
+- 最新运行日期：2026-05-25
+- 运行时间：2026-05-25 20:27:51 UTC
 - 运行状态：成功
-- 本次总论文数：4
-- 精读区：2
+- 本次总论文数：5
+- 精读区：3
 - 速读区：2
 
 ### 今日简报（AI）
-今日精读两篇8分顶会论文，分别聚焦LLM无训练记忆模块与自进化代理策略，速读涵盖事件溯源代理和自反式方程发现。  
-最值得关注：NGM的无训练即插即用记忆增强机制，以及APEX的自主策略探索框架，均具高实用价值。  
-建议优先关注NGM项目，无需训练即可提升LLM长文本处理能力，适合快速落地实验。
-- 详情：[/202605/24/README](/202605/24/README)
+今日精读3篇论文，重点关注长期记忆系统的冲突评估（9.0分）和LLM智能体的技能程序化方法（8.0分）。最值得看《MemConflict》揭示记忆一致性问题的评估框架，以及《Harnessing LLM Agents with Skill Programs》提出的技能程序化策略。建议优先精读这两篇高分论文，并辅以《What Training Data Teaches RL Memory Agents》了解训练数据对记忆代理的影响。
+- 详情：[/202605/25/README](/202605/25/README)
 
 ### 精读区论文标签
-1. [NGM: A Plug-and-Play Training-Free Memory Module for LLMs](/202605/24/2605.16893v1-ngm-a-plug-and-play-training-free-memory-module-for-llms)  
+1. [MemConflict: Evaluating Long-Term Memory Systems Under Memory Conflicts](/202605/25/2605.20926v1-memconflict-evaluating-long-term-memory-systems-under-memory-conflicts)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：面向冲突场景的LLM智能体长期记忆评估框架
+2. [Harnessing LLM Agents with Skill Programs](/202605/25/2605.17734v1-harnessing-llm-agents-with-skill-programs)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：免训练即插即用的LLM记忆模块
-2. [APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents](/202605/24/2605.21240v1-apex-autonomous-policy-exploration-for-self-evolving-llm-agents)  
+   evidence：将技能升级为可执行程序作为经验记忆
+3. [Parallel Context Compaction for Long-Horizon LLM Agent Serving](/202605/25/2605.23296v1-parallel-context-compaction-for-long-horizon-llm-agent-serving)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出APEX用于自演化LLM智能体，通过策略图管理记忆和探索
+   evidence：并行上下文压缩管理长程代理记忆
 
 ### 速读区论文标签
-1. [The Log is the Agent: Event-Sourced Reactive Graphs for Auditable, Forkable Agentic Systems](/202605/24/2605.21997v1-the-log-is-the-agent-event-sourced-reactive-graphs-for-auditable-forkable-agentic-systems)  
+1. [What Training Data Teaches RL Memory Agents: An Empirical Study of Curriculum Effects in Memory-Augmented QA](/202605/25/2605.23067v1-what-training-data-teaches-rl-memory-agents-an-empirical-study-of-curriculum-effects-in-memory-augmented-qa)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：通过事件溯源响应图架构进行记忆管理
-2. [STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery](/202605/24/2605.17790v1-stride-a-self-reflective-agent-framework-for-reliable-automatic-equation-discovery)  
+   evidence：关于RL记忆智能体训练数据组成的实证研究
+2. [MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection](/202605/25/2605.23723v1-memaudit-post-hoc-auditing-of-poisoned-agent-memory-via-causal-attribution-and-structural-anomaly-detection)  
    标签：评分：6.0/10、query:llm-agent-memory
-   evidence：方程发现代理中用于多样性保持的语义记忆
+   evidence：LLM智能体中毒记忆的事后审计方法
 
 
 <div class="dpr-home-promo-card">

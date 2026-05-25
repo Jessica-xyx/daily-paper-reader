@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.23723v1/fig-001.webp",
+      "caption": "Table 1: Main results on QA and RAP. RD denotes random deletion, RF denotes retrieval-frequencybased deletion, and NNC denotes nearest-neighbor contradiction filtering. All methods remove the same number of memories for fair comparison.",
+      "page": 7,
+      "index": 1,
+      "width": 660,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23723v1/fig-002.webp",
+      "caption": "Table 2: Component ablation on QA and RAP. CMISonly and MCGonly retain only one signal, while MemAudit combines both. Each row reports the resulting ASRafter under each variant.",
+      "page": 7,
+      "index": 2,
+      "width": 636,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23723v1/fig-003.webp",
+      "caption": "Figure 1: Overview of MemAudit. Given a harmful event e = (q∗, y∗, R∗), the framework performs post-hoc auditing over the memory store. It combines two complementary signals: CMIS, which measures the causal contribution of retrieved memories through counterfactual replay, and MCG, which identifies structurally anomalous memories in the global memory graph. The two signals are fused into a detoxification score for ranking suspicious memories. After removing the top-ranked memories, the agent becomes safer while preserving useful memory.",
+      "page": 3,
+      "index": 3,
+      "width": 829,
+      "height": 557
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23723v1/fig-004.webp",
+      "caption": "Table 3: Fusion-weight ablation on QA and RAP. Each row reports the resulting ASRafter under different fusion weights α.",
+      "page": 8,
+      "index": 4,
+      "width": 682,
+      "height": 230
+    }
+  ]
+}

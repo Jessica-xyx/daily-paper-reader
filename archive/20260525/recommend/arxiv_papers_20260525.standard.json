@@ -1,0 +1,219 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-25T20:26:48.051813+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2605.20926v1",
+      "source": "arxiv",
+      "title": "MemConflict: Evaluating Long-Term Memory Systems Under Memory Conflicts",
+      "abstract": "Long-term memory systems enable conversational agents based on large language models (LLMs) to retain, retrieve, and apply user-specific information across multi-session interactions. However, existing evaluations mainly assess outcome-level performance or temporal updating, providing limited insight into how systems retrieve and rank temporally valid, factually correct, and contextually applicable memory evidence under conflicting alternatives. To address this gap, we propose MemConflict, a diagnostic framework that treats memory validity as a query-conditioned fitness-for-use problem. MemConflict formalizes dynamic, static, and conditional conflicts over temporal validity, factual correctness, and contextual applicability. It simulates controlled long-horizon histories from structured user profiles, introduces cross-session conflicts, and injects semantically similar distractors to create competition among memory candidates. The resulting multi-session dialogue benchmark supports black-box evaluation of final answers and white-box analysis of supporting-memory retrieval and ranking. Experiments on six representative long-term memory systems show uneven strengths across conflict types, with answer correctness often diverging from memory retrieval and ranking. Sensitivity analyses reveal that longer histories, distractors, implicit queries, and larger conflict distances degrade performance. Diagnostics show failures from missing supporting memories and ineffective use of retrieved memories. Collectively, MemConflict advances principled long-term memory governance through retrieval-aware, conflict-aware reliability assessment.",
+      "authors": [
+        "Zhen Tao",
+        "Jinxiang Zhao",
+        "Peng Liu",
+        "Dinghao Xi",
+        "Yanfang Chen",
+        "Wei Xu",
+        "Zhiyu Li"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-05-20T09:11:04+00:00",
+      "link": "https://arxiv.org/pdf/2605.20926v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "evaluation framework for long-term memory in LLM agents under conflicts",
+      "llm_evidence_cn": "面向冲突场景的LLM智能体长期记忆评估框架",
+      "llm_evidence": "面向冲突场景的LLM智能体长期记忆评估框架",
+      "canonical_evidence": "面向冲突场景的LLM智能体长期记忆评估框架",
+      "llm_tldr_en": "Diagnostic framework that evaluates memory systems on temporal, factual, and contextual conflicts.",
+      "llm_tldr_cn": "从时间、事实和上下文冲突维度诊断记忆系统的诊断框架。",
+      "llm_tldr": "从时间、事实和上下文冲突维度诊断记忆系统的诊断框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.17734v1",
+      "source": "arxiv",
+      "title": "Harnessing LLM Agents with Skill Programs",
+      "abstract": "Equipping LLM agents with reusable skills derived from past experience has become a popular and successful approach for tackling complex and long-horizon tasks. However, such lessons are often encoded as textual guidance that remains largely advisory, lacking explicit mechanisms for when and how to intervene in the agent loop. To bridge the gap, we introduce HASP(Harnessing LLM Agents with Skill Programs), a new framework that upgrades skills into executable Program Functions (PFs). Rather than offering passive advice, PFs act as executable guardrails that activate on failure-prone states and modify the next action or inject corrective context. HASP is highly modular: it can be applied at inference time for direct agent-loop intervention, during post-training to provide structured supervision, or for self-improvement by evolving validated, teacher-reviewed PFs. Empirically, HASP drives substantial gains compared to both training-free and training-based methods on web-search, math reasoning, and coding tasks. For example, on web-search reasoning, inference-time PFs alone improve the average performance by 25% compared to (multi-loop) ReAct Agent, while post-training and controlled evolution achieve a 30.4% gain over Search-R1. To provide deeper insights into HASP, our mechanism analysis reveals how PFs trigger and intervene, how skills are internalized, and the requirement for stable skill library evolution.",
+      "authors": [
+        "Hongjun Liu",
+        "Yifei Ming",
+        "Shafiq Joty",
+        "Chen Zhao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-18T01:35:11+00:00",
+      "link": "https://arxiv.org/pdf/2605.17734v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "upgrades skills into executable programs as memory of experience",
+      "llm_evidence_cn": "将技能升级为可执行程序作为经验记忆",
+      "llm_evidence": "将技能升级为可执行程序作为经验记忆",
+      "canonical_evidence": "将技能升级为可执行程序作为经验记忆",
+      "llm_tldr_en": "HASP upgrades reusable skills into executable programs that act as memory for LLM agents.",
+      "llm_tldr_cn": "HASP将可重用技能升级为可执行程序，作为LLM代理的记忆。",
+      "llm_tldr": "HASP将可重用技能升级为可执行程序，作为LLM代理的记忆。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.23296v1",
+      "source": "arxiv",
+      "title": "Parallel Context Compaction for Long-Horizon LLM Agent Serving",
+      "abstract": "Long-horizon LLM agents accumulate growing conversation histories that eventually exceed the model's context window. Context compaction via LLM-based summarization keeps the conversation bounded, but summarization is inherently lossy and the blocking call stalls agent inference for tens of seconds. Moreover, the operator has no fine-grained control over summary volume since prompt instructions are largely ignored, and as context grows, both the amount of output tokens the model produces and the information it retains fluctuate substantially from run to run, making the agent's retained knowledge unpredictable across runs. We introduce \\textbf{parallel compaction} for long-horizon agentic flows and characterize it against the sequential synchronous baseline across four backbones spanning 8B to 120B parameters, mixing dense and MoE architectures with reasoning and non-reasoning models, on the HotpotQA multi-hop QA and LoCoMo long-context dialogue benchmarks. Parallel compaction gives the operator fine-grained, predictable control over summary volume and enables more targeted prompt engineering per block. At matched compaction decode volume, it reduces end-to-end wall time and improves compaction throughput over the sequential baseline.",
+      "authors": [
+        "Musa Cim",
+        "Burak Topcu",
+        "Chita Das",
+        "Mahmut Taylan Kandemir"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-22T07:12:38+00:00",
+      "link": "https://arxiv.org/pdf/2605.23296v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "parallel context compaction for managing long-horizon agent memory",
+      "llm_evidence_cn": "并行上下文压缩管理长程代理记忆",
+      "llm_evidence": "并行上下文压缩管理长程代理记忆",
+      "canonical_evidence": "并行上下文压缩管理长程代理记忆",
+      "llm_tldr_en": "Parallel compaction reduces latency and improves control over context volume for LLM agents.",
+      "llm_tldr_cn": "并行压缩降低延迟并改善LLM代理的上下文体积控制。",
+      "llm_tldr": "并行压缩降低延迟并改善LLM代理的上下文体积控制。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.23067v1",
+      "source": "arxiv",
+      "title": "What Training Data Teaches RL Memory Agents: An Empirical Study of Curriculum Effects in Memory-Augmented QA",
+      "abstract": "Reinforcement learning (RL) has emerged as a viable recipe for training LLM agents to reason over external memory banks in multi-session dialogue. Existing work trains exclusively on a single benchmark, leaving open how the composition of training data shapes the skills a memory agent acquires. We present a controlled empirical study that holds architecture, RL algorithm, and all hyperparameters fixed and varies only the training curriculum across three conditions: in-domain (LoCoMo), mixed-benchmark (LoCoMo + LongMemEval), and out-of-domain (LongMemEval only). Across two benchmarks and ten question types, curriculum composition acts as a fine-grained lever on specialization rather than a uniform scaling factor on performance. The mixed curriculum yields the strongest overall F1 on both evaluation sets. Training on a narrow out-of-domain set transfers a targeted skill - temporal reasoning - despite weak aggregate performance. Per-type differences substantially exceed aggregate differences, indicating that single-number benchmark comparisons systematically underreport curriculum effects. We further report two practical lessons from adapting GRPO to a single-GPU regime: cross-benchmark mixing requires filtering format-specific noise from memory banks to preserve training signal, and binary exact-match reward produces no learning signal at the small group sizes (G = 4) required on one GPU, motivating continuous reward functions in this regime.",
+      "authors": [
+        "Xinjie He",
+        "Zhiyuan Lin",
+        "Su Liu",
+        "Jialun Wu",
+        "Qiyang Xie",
+        "Weikai Zhou",
+        "Shuai Xiao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-21T21:58:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.23067v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "empirical study on training data composition for RL memory agents",
+      "llm_evidence_cn": "关于RL记忆智能体训练数据组成的实证研究",
+      "llm_evidence": "关于RL记忆智能体训练数据组成的实证研究",
+      "canonical_evidence": "关于RL记忆智能体训练数据组成的实证研究",
+      "llm_tldr_en": "Shows that curriculum composition fine-tunes specialization of memory agents rather than uniform improvement.",
+      "llm_tldr_cn": "表明课程组成精细调整记忆智能体的专门化而非均匀提升。",
+      "llm_tldr": "表明课程组成精细调整记忆智能体的专门化而非均匀提升。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.23723v1",
+      "source": "arxiv",
+      "title": "MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection",
+      "abstract": "Large language model agents increasingly rely on persistent memory to store past interactions, retrieve relevant demonstrations, and improve long-horizon task execution. However, this memory mechanism also creates a practical security vulnerability: an adversarial user may inject malicious records into the agent's memory through ordinary interaction, and these records can later be retrieved to steer the agent's reasoning and actions. Existing defenses primarily focus on online intervention, such as prompt filtering or output blocking, but they do not address the post-hoc question of which stored memories are responsible after harmful behavior has already been observed. We propose \\textbf{MemAudit}, a post-hoc causal memory auditing framework for memory-augmented LLM agents. The framework combines two complementary signals: (1) a counterfactual memory influence score that measures each memory's causal contribution to harmful outputs, and (2) a memory consistency graph that identifies structurally anomalous memories within the broader memory store. We evaluate MemAudit against MINJA, a query-only memory injection attack in which malicious records are generated and stored through normal agent interactions rather than direct memory-bank modification. Across both QA and reasoning-agent settings, MemAudit substantially reduces attack success rates under realistic post-hoc auditing scenarios. The results show that QA attack success is reduced from $70\\%$ to $0\\%$, while RAP attack success drops from $83.3\\%$ to $0\\%$.",
+      "authors": [
+        "Zhewen Tan",
+        "Yilun Yao",
+        "Huiyan Jin",
+        "Wenhan Yu",
+        "Guoan Wang",
+        "Mengyuan Fan",
+        "liang lu",
+        "Feng Liu",
+        "Xiangzheng Zhang",
+        "Duohe Ma",
+        "Tong Yang",
+        "Lin Sun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-22T15:03:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.23723v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "post-hoc auditing method for detecting poisoned memory in LLM agents",
+      "llm_evidence_cn": "LLM智能体中毒记忆的事后审计方法",
+      "llm_evidence": "LLM智能体中毒记忆的事后审计方法",
+      "canonical_evidence": "LLM智能体中毒记忆的事后审计方法",
+      "llm_tldr_en": "Proposes a causal attribution method to identify which stored memories caused harmful agent behavior.",
+      "llm_tldr_cn": "提出因果归因方法识别导致有害行为的记忆记录。",
+      "llm_tldr": "提出因果归因方法识别导致有害行为的记忆记录。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

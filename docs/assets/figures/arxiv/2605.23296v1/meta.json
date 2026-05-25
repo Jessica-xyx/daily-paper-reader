@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-001.webp",
+      "caption": "TABLE 6: Stability across prompt-length variants at fixed 4 k input.",
+      "page": 6,
+      "index": 1,
+      "width": 510,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-002.webp",
+      "caption": "Figure 3: Output tokens per run across 10 repeated runs at a fixed 4 k input for three prompt-length variants (light to dark = shorter to longer requested summary length).",
+      "page": 6,
+      "index": 2,
+      "width": 446,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-003.webp",
+      "caption": "Figure 4: Accuracy per model and configuration on (a) HotpotQA and (b) LoCoMo.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 770
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-004.webp",
+      "caption": "Figure 1: Sequential versus parallel compaction overview.",
+      "page": 3,
+      "index": 4,
+      "width": 1044,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-005.webp",
+      "caption": "TABLE 8: LoCoMo: Sequential vs Parallel across block sizes. Same protocol as Table 7: fixed threshold τ = 96k, Parallel variants sweeping block size from 16k down to 2k tokens. ∆ columns report the speedup over Sequential for the corresponding metric (green improvement, red regression).",
+      "page": 8,
+      "index": 5,
+      "width": 1054,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-006.webp",
+      "caption": "Figure 2: Output tokens vs. input length for three prompt variants and four backbones under Sequential compaction.",
+      "page": 4,
+      "index": 6,
+      "width": 1046,
+      "height": 818
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-007.webp",
+      "caption": "Figure 5: GPT-OSS-120B output tokens vs. block size across three prompt variants on HotpotQA (left) and LoCoMo (right).",
+      "page": 9,
+      "index": 7,
+      "width": 458,
+      "height": 575
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23296v1/fig-008.webp",
+      "caption": "TABLE 5: Stability across input sizes (4–96 k).",
+      "page": 5,
+      "index": 8,
+      "width": 510,
+      "height": 561
+    }
+  ]
+}
