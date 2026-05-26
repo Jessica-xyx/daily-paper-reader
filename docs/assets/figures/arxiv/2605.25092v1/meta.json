@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-001.webp",
+      "caption": "Figure 10: CSR memory layout for GPU index upload. The offsets array delimits per-term posting list boundaries in the flat doc_ids and tfs arrays. IDF values and document lengths are stored in separate dense arrays indexed by term ID and document ID, respectively.",
+      "page": 21,
+      "index": 1,
+      "width": 506,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-002.webp",
+      "caption": "Figure 1: AgentIR pipeline and two-axis adaptive control surface. Three substrate stages run concurrently: a SIMD-vectorized BM25 posting list (CPU, 0.4ms), a Dense / BGE-small channel (CPU, 52ms), and a time-partitioned temporal index. The cascade trigger (Δ=𝑠1−𝑠2≥𝜏𝑐 , §5.9) inspects the BM25 top-𝑘 margin: confident queries early-exit in 0.9ms; ambiguous queries escalate to Dense+RRF+recency for 53ms. Same trigger, two workloads, two operating points: on LongMemEval it skips 63% (2.67×); on LoCoMo it skips 100% (132×).",
+      "page": 2,
+      "index": 2,
+      "width": 972,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-003.webp",
+      "caption": "Table 1: GPU BEIR per-phase breakdown (A100 40GB). Batch size = all judged queries, chunked when 𝐵 · 𝑁 · 4B > 16GB; 𝑘=100. “CPU 1T” is the sequential cross-check used to validate correctness; “Pyser. 8T” is reproduced from Table 4.",
+      "page": 7,
+      "index": 3,
+      "width": 648,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-004.webp",
+      "caption": "Figure 3: Per-query latency vs. corpus size, log-log (Jetstream2 8-core, 80/20 recency-biased queries, 7-day partitions, 𝐾max=4). Sequential, SIMD, and MaxScore grow linearly in log-log (slope ≈ 1, i.e., linear in 𝑁 ); the temporalpartitioned curve is nearly flat across three orders of magnitude of corpus size—the sub-linear regime predicted by Theorem 4.1. At 𝑁=5M, temporal partition delivers 1769× speedup over sequential and ∼300× over the best 𝑂 (𝑁 ) optimization (SIMD/MaxScore).",
+      "page": 7,
+      "index": 4,
+      "width": 484,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-005.webp",
+      "caption": "Table 11: Cascade router amortized cost on LongMemEval. LLM-Acc for the realistic-classifier row equals the TF-IDF router’s measured value (Table 10) because the cascade and the always-hybrid implementation make identical routing decisions on the same classifier outputs—only execution differs. Latencies decompose per Table 16. The oracle row uses the measured per-type maxima.",
+      "page": 14,
+      "index": 5,
+      "width": 686,
+      "height": 210
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-006.webp",
+      "caption": "Table 18: LongMemEval per-question-type detailed metrics (500 questions across six types). Best in each block bold.",
+      "page": 23,
+      "index": 6,
+      "width": 448,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-007.webp",
+      "caption": "Table 19: SPLADE++ encoding cost on Jetstream2 g3.medium (8 vCPU CPU only, sparse-CSR output). nnz/doc is the average number of non-zero terms per document after log1p(relu(MLM-logits)) max-pool; sparsity is 1−nnz/doc/|𝑉 | for |𝑉 |=30522.",
+      "page": 23,
+      "index": 7,
+      "width": 512,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-008.webp",
+      "caption": "Table 26: Complete hyperparameter cookbook for all reported experiments. No table uses a value not in this list.",
+      "page": 28,
+      "index": 8,
+      "width": 541,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-009.webp",
+      "caption": "Figure 7: BM25 top-𝑘 margin distribution on LongMemEval (n=500). Themass is concentrated at low values (median 0.16, 𝑞75=0.30), so a 𝜏𝑐=0.10 cutoff partitions the workload into a 37% high-confidence skip-zone (mint, left of the dashed line) and a 63% low-confidence escalate-zone. The threshold is read off the input distribution rather than tuned on a downstream metric, which is why the same cascade transfers across LLM judges without retraining (Table 11).",
+      "page": 13,
+      "index": 9,
+      "width": 506,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-010.webp",
+      "caption": "Figure 2: Two-axis adaptive control surface. The reachable design space (shaded teal) spans which fusion (x-axis: BM25, Dense, RRF, or agent-aware RRF) and whether to spend the dense channel budget (y-axis: skip vs. escalate). Three measured cascade operating points sit inside the surface along a Pareto-improving trajectory: single-threshold cascade (𝜏𝑐=0.10, 2.67× over always-hybrid)→ per-qtype cascade (5.76× in 5-fold CV)→ LoCoMo optimum (132×, BM25 alone suffices). Always-hybrid agent_rrf and a soft-routed denseheavy blend—both at 53.2ms—anchor the high-budget edge.",
+      "page": 4,
+      "index": 10,
+      "width": 506,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-011.webp",
+      "caption": "Figure 9: Multi-tenant scaling on 8-core Jetstream2 with 𝑁 concurrent single-threaded AgentIR processes on independent FiQA indices. Left: aggregate QPS vs. ideal linear scaling. Right: per-tenant 𝑝50 stays at ∼0.38ms across all 𝑁 ; 𝑝99 rises under contention but remains far below the 200ms perceptual budget.",
+      "page": 17,
+      "index": 11,
+      "width": 945,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-012.webp",
+      "caption": "Figure 4: BM25 retrieval Pareto frontier: 6 systems × 8 BEIR datasets. Small markers = individual datasets; large outlined markers = geometric-mean center per system.AgentIR-GPU and AgentIR-8T+SIMD occupy the bottom-left (fastest at parity quality); Pyserini-1T occupies the right (slowest). PISA1T, the SOTA CPU baseline, sits roughly with Pyserini-8T in latency but is dominated on latency by all three AgentIR variants at matching nDCG@10.",
+      "page": 9,
+      "index": 12,
+      "width": 487,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25092v1/fig-013.webp",
+      "caption": "Table 4: BEIR head-to-head on 9 datasets (3.6K–8.8M docs): AgentIR vs. Pyserini Lucene 0.22.1 (𝑘1=1.2, 𝑏=0.75). Bold = best in row. CPU: 8-core Jetstream2 g3.medium. GPU: NVIDIA A100-SXM4-40GB on NCSA Delta, all 8 datasets at 𝑘=100. “lat” = avg ms per query.",
+      "page": 9,
+      "index": 13,
+      "width": 744,
+      "height": 269
+    }
+  ]
+}

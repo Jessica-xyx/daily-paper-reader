@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-001.webp",
+      "caption": "Table 1: Main results of attack effectiveness across architectures and benchmarks. Attack effects are marked with ↓, denoting the performance degradation compared to the w/o Attack baseline. The best attack results are in bold.",
+      "page": 6,
+      "index": 1,
+      "width": 912,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-002.webp",
+      "caption": "Figure 7: Prompt for memory-augmented attack.",
+      "page": 15,
+      "index": 2,
+      "width": 948,
+      "height": 958
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-003.webp",
+      "caption": "Figure 1: The overall framework of Evo-Attacker. (a) The attacker constructs a dynamic Attack Memory and utilizes a deliberative reasoning pipeline to inject perturbations into tool returns. (b) The entire reasoning pipeline is optimized via Attack-Flow GRPO, which solves the credit assignment challenge in long-horizon interactions by propagating terminal rewards to intermediate reasoning tokens.",
+      "page": 2,
+      "index": 3,
+      "width": 941,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-004.webp",
+      "caption": "Figure 2: Analysis of influential factors.",
+      "page": 7,
+      "index": 4,
+      "width": 455,
+      "height": 673
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-005.webp",
+      "caption": "Figure 5: Prompt for modification.",
+      "page": 14,
+      "index": 5,
+      "width": 458,
+      "height": 481
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-006.webp",
+      "caption": "Figure 6: Prompt for detection.",
+      "page": 14,
+      "index": 6,
+      "width": 458,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25389v1/fig-007.webp",
+      "caption": "Figure 4: LLM-MAS Architectures and the attack point.",
+      "page": 13,
+      "index": 7,
+      "width": 459,
+      "height": 468
+    }
+  ]
+}

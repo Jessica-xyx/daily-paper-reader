@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-001.webp",
+      "caption": "Table 2: 10×10 cross-scale transfer. AUTO-ROBOTIST vs the Genetic Algorithm (GA) baseline at 10×10. Upsampling columns evaluate the 5×5 elite after upsampling to 10×10 via 2×2 voxel tiling; Full search columns use a 1,000-eval 10×10 budget. w/ ref and w/o ref indicate whether a 5×5 reference design is included in the proposal prompt. ∆ = AUTO-ROBOTIST w/ ref− GA; S and L are computed for AUTO-ROBOTIST w/ ref against the GA.",
+      "page": 7,
+      "index": 1,
+      "width": 945,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-002.webp",
+      "caption": "Figure 3: Design evolution trace of AUTO-ROBOTIST on Carrier. Each point marks the best body after an evidence-guided library update, annotated with the skill or rule that motivated the next design edit. AUTO-ROBOTIST transforms a weak random seed into a load-bearing carrier by completing the active base, adding central webbing, forming a vertical spine, and densifying bridge support. The bottom rollouts show that the final body better preserves payload support over time.",
+      "page": 7,
+      "index": 2,
+      "width": 800,
+      "height": 608
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-003.webp",
+      "caption": "Figure 7: A learned Walker skill library. Evaluations are distilled into L1 archetypes, L2 positive/negative rules, and L3 supporting observations, exposing both reusable structures and grounded failure modes.",
+      "page": 10,
+      "index": 3,
+      "width": 658,
+      "height": 685
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-004.webp",
+      "caption": "Figure 2: Overview of AUTO-ROBOTIST. (A) During design evolution, AUTO-ROBOTIST augments genetic mutation with skill-conditioned LLM proposals. Retrieved skills guide edits to elite parents, valid candidates are evaluated in EVOGYM with PPO-trained controllers, and the resulting fitness updates the elite pool. (B) During skill evolution, evaluation evidence is written back into a persistent library through ADD, DIAGNOSE, and MERGE. This converts search traces into revisable design knowledge while keeping the LLM parameters fixed. (C) During warm-start transfer, learned skills are imported into a new design space. Each skill separates a structural archetype (L1), positive and negative design rules (L2), and supporting observations (L3), enabling a 5×5 portal_frame principle to guide a 10×10 proposal by preserving useful relations, extending support, and avoiding known failures.",
+      "page": 3,
+      "index": 4,
+      "width": 942,
+      "height": 543
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-005.webp",
+      "caption": "Figure 4: Best fitness vs. morphology evaluations. Top: 5×5 cold-start search, where AUTO-ROBOTIST learns from empty memory. Bottom: 5×5→ 10×10 transfer, where the learned library is reused in a larger space. The green curve removes the source-body exemplar, isolating skill transfer from visual imitation.",
+      "page": 8,
+      "index": 5,
+      "width": 939,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-006.webp",
+      "caption": "Figure 5: Representative best 10×10 transfer rollouts. AUTO-ROBOTIST more often preserves support and contact through time, yielding faster movement, higher jumps, or farther object displacement than GA.",
+      "page": 8,
+      "index": 6,
+      "width": 939,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-007.webp",
+      "caption": "Figure 6: Elite robot designs across 5×5 and 10×10. Direct upsampling preserves geometry but often loses function; skill-guided search reconfigures source motifs into viable target-scale morphologies.",
+      "page": 9,
+      "index": 7,
+      "width": 950,
+      "height": 734
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25832v1/fig-008.webp",
+      "caption": "Table 4: Agent, search, and PPO controller hyperparameters. Values are shared across tasks unless otherwise noted.",
+      "page": 16,
+      "index": 8,
+      "width": 461,
+      "height": 611
+    }
+  ]
+}

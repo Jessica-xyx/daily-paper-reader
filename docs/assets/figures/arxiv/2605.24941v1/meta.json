@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-001.webp",
+      "caption": "Table 7: Evaluated models with provider, inference API, reasoning configuration, and release date.",
+      "page": 43,
+      "index": 1,
+      "width": 836,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-002.webp",
+      "caption": "Table 6: Clarification request rate under unconstrained mode across the 105 MEMDRIFT scenarios.",
+      "page": 43,
+      "index": 2,
+      "width": 536,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-003.webp",
+      "caption": "Table 5: Professional domains in MEMDRIFT, ordered by descending stakes. Each domain is selected to vary along stakes level and parameter surface, ensuring that drift can be measured across a wide range of operational consequences.",
+      "page": 15,
+      "index": 3,
+      "width": 830,
+      "height": 752
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-004.webp",
+      "caption": "Figure 1: Overview of Memory-Induced Tool-Drift. Biased user memories from personal life can inappropriately affect tool-calls even when the task belongs to an unrelated professional domain.",
+      "page": 2,
+      "index": 4,
+      "width": 826,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-005.webp",
+      "caption": "Figure 4: Memory-induced activation shift projected onto the explicit steering direction v (d,l) steer . Each column corresponds to one bias dimension. (Top) Mean projection πM across layers for neutral and biased memory conditions; (Bottom) Per-query projections at layer l=75; each dot is one scenario, horizontal lines indicate condition means. Cohen’s d and AUROC are reported per dimension.",
+      "page": 7,
+      "index": 5,
+      "width": 826,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-006.webp",
+      "caption": "Table 4: Detailed specifications of the five personality-driven bias dimensions. The high-level summary appears in Table 1; here we provide full behavioral descriptions and the representative memory keywords used as seed material in scenario generation.",
+      "page": 14,
+      "index": 6,
+      "width": 842,
+      "height": 620
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-007.webp",
+      "caption": "Figure 5: Attention redistribution at the behavior-defining token position. (Top) Attention delta (∆α = αMb −αMn ) by input region, averaged over layers l ∈ [40, 79], all heads, and all MEMDRIFT scenarios. (Bottom) Per-entry memory attention at layer 75 for two representative bias dimensions. Entry #0 contains keywords with high lexical overlap with the target parameter, receiving disproportionately elevated attention under the biased condition.",
+      "page": 8,
+      "index": 7,
+      "width": 826,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-008.webp",
+      "caption": "Figure 2: MEMDRIFT generation pipeline. Each (bias dimension, domain) pair passes through three stages: scenario generation, artifact expansion, and adversarial refinement via a self-improving loop.",
+      "page": 4,
+      "index": 8,
+      "width": 824,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-009.webp",
+      "caption": "Table 8: Full deflection scores by model, memory setting, and bias dimension. s(Mn) denotes the deflection score under neutral memory, s(Mb) denotes the deflection score under biased memory, and ∆s = s(Mb)− s(Mn) denotes the drift gap induced by biased memory.",
+      "page": 44,
+      "index": 9,
+      "width": 822,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-010.webp",
+      "caption": "Figure 7: Biased deflection score sb as a function of the biased-memory fraction in the memory set, for GPT-5.4 and Gemini-3.1-Pro-Preview under direct memory injection. The analysis is computed over the 21 scenarios in the Speed / Impatience bias dimension, with k=5 responses per scenario per configuration.",
+      "page": 44,
+      "index": 10,
+      "width": 757,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24941v1/fig-011.webp",
+      "caption": "Figure 3: Deflection scores across models and evaluation settings. Biased deflection scores (sb) are consistently high across all models under both direct memory injection and memory framework settings, while neutral scores (sn) remain low. All models exhibit substantial drift regardless of the memory delivery mechanism.",
+      "page": 5,
+      "index": 11,
+      "width": 748,
+      "height": 450
+    }
+  ]
+}

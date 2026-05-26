@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.20630v1/fig-001.webp",
+      "caption": "Figure 4: Per-row latency for all 80 evaluation queries. Cache hits collapse to near-zero optimized latency; misses track below the baseline because MCP optimizations apply regardless of cache state.",
+      "page": 7,
+      "index": 1,
+      "width": 514,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20630v1/fig-002.webp",
+      "caption": "Figure 7: Per-query end-to-end speedup across 18 completed IoT queries. Dashed line marks 1.0× break-even.",
+      "page": 13,
+      "index": 2,
+      "width": 774,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20630v1/fig-003.webp",
+      "caption": "Figure 2: Temporal semantic cache workflow. A pre-retrieval temporal classifier routes each query: Volatile bypasses the cache; Static and resolved-Anchored queries enter ANN retrieval followed by a reranker-based judger.",
+      "page": 4,
+      "index": 3,
+      "width": 498,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20630v1/fig-004.webp",
+      "caption": "Figure 6: Cache-only per-row latency. Hits collapse to near-zero cached cost regardless of baseline.",
+      "page": 12,
+      "index": 4,
+      "width": 456,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20630v1/fig-005.webp",
+      "caption": "Figure 3: The optimized MCP Workflow component paths use a discovery cache and dispatch steps in parallel against a persistent pool.",
+      "page": 5,
+      "index": 5,
+      "width": 826,
+      "height": 241
+    }
+  ]
+}

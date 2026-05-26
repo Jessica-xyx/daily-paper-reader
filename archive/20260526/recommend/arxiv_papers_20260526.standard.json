@@ -1,0 +1,534 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-26T21:29:42.527642+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "2605.25535v1",
+      "source": "arxiv",
+      "title": "Personalize-then-Store: Benchmarking and Learning Personalized Memory for Long-horizon Agents",
+      "abstract": "Existing large language model (LLM) based memory systems apply universal, static policies that overlook a fundamental reality: the contexts that are worth storing in memory are different across users. This misalignment wastes limited memory budget on transient interactions while failing to preserve critical context for long horizon tasks. To address this gap, we investigate an underexplored question: can LLM based memory systems learn personalized memory policies? We introduce PerMemBench, the first benchmark for evaluating personalized memory systems, featuring multi year, multi domain interaction histories across diverse user personas. We further present the first empirical study of memory personalization, proposing session level storage gating, a lightweight framework that selectively bypasses memory operations for transient sessions. Our study confirms that personalization yields substantial retention gains under perfect gating, yet reveals that accurate gating remains an open and critical challenge.",
+      "authors": [
+        "Yeonjun In",
+        "Wonjoong Kim",
+        "Sangwu Park",
+        "Kanghoon Yoon",
+        "Chanyoung Park"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-25T07:48:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.25535v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Introduces benchmark for personalized memory systems and learns personalized memory policies, directly relevant to memory methods and evaluation.",
+      "llm_evidence_cn": "提出了个性化记忆系统的基准测试，并学习个性化记忆策略，直接相关于记忆方法和评估。",
+      "llm_evidence": "提出了个性化记忆系统的基准测试，并学习个性化记忆策略，直接相关于记忆方法和评估。",
+      "canonical_evidence": "提出了个性化记忆系统的基准测试，并学习个性化记忆策略，直接相关于记忆方法和评估。",
+      "llm_tldr_en": "Personalize-then-Store benchmarks personalized memory for long-horizon agents and shows learned policies outperform universal ones.",
+      "llm_tldr_cn": "Personalize-then-Store对长周期智能体的个性化记忆进行基准测试，表明学习策略优于通用策略。",
+      "llm_tldr": "Personalize-then-Store对长周期智能体的个性化记忆进行基准测试，表明学习策略优于通用策略。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24468v1",
+      "source": "arxiv",
+      "title": "SAM: State-Adaptive Memory for Long-Horizon Reasoning Agent",
+      "abstract": "Long-horizon agentic reasoning requires large language models to act over long interaction histories containing thoughts, tool calls, observations, and partial conclusions. The challenge is not merely that these histories grow long, but that information needed for the current decision may be scattered across distant steps and only become relevant later. Existing approaches address this difficulty by truncating the interaction history, compressing it into shorter surrogates, or retrieving selected parts of it for reuse, but they do not explicitly model how access to past interaction should adapt to the agent's evolving state. We instead cast long-horizon reasoning as a problem of state-adaptive memory. To this end, we propose State-Adaptive Memory~(SAM), a standalone framework that consolidates ongoing interaction into compact memory cues while preserving raw trajectory pages for intent-driven recall. These cues are not treated as replacements for history; rather, they serve as lightweight handles that allow the agent to reconstruct temporally distant information according to its current needs, without retraining the underlying backbone. We further optimize the memory module through expert-guided supervision and reinforcement learning, aligning it with trajectory-level utility. Across BrowseComp, BrowseComp-ZH, WideSearch, and HLE, SAM consistently outperforms strong baselines over diverse agent backbones. Our results suggest that explicit memory modeling provides a simple and effective foundation for long-horizon agentic reasoning.",
+      "authors": [
+        "Yuyang Hu",
+        "Hongjin Qian",
+        "Shuting Wang",
+        "Jiongnan Liu",
+        "Ziliang Zhao",
+        "Jiejun Tan",
+        "Zheng Liu",
+        "Zhicheng Dou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-23T08:37:16+00:00",
+      "link": "https://arxiv.org/pdf/2605.24468v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "state-adaptive memory for long-horizon reasoning agent",
+      "llm_evidence_cn": "面向长程推理代理的状态自适应记忆",
+      "llm_evidence": "面向长程推理代理的状态自适应记忆",
+      "canonical_evidence": "面向长程推理代理的状态自适应记忆",
+      "llm_tldr_en": "SAM casts long-horizon reasoning as state-adaptive memory, adapting access based on agent state.",
+      "llm_tldr_cn": "SAM将长程推理视为状态自适应记忆，根据代理状态调整访问。",
+      "llm_tldr": "SAM将长程推理视为状态自适应记忆，根据代理状态调整访问。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25869v1",
+      "source": "arxiv",
+      "title": "Mitigating Provenance-Role Collapse in Long-Term Agents via Typed Memory Representation",
+      "abstract": "Long-term memory is essential for persistent LLM agents, yet prevailing architectures store historical interactions as unstructured, flat text. This unconstrained storage induces provenance-role collapse, a critical failure mode where agents suffer from source-monitoring errors. To resolve this cognitive vulnerability at the architectural level, we propose MemIR, a typed Memory Intermediate Representation that operationalizes source monitoring as a structural constraint. MemIR writes long-term memory into grounded atoms that separate raw evidence, retrieval cues, and truth-bearing claims, with factual authorization restricted to supported claim atoms. It then applies multi-route atomic projection and provenance-scoped utilization to transform heterogeneous retrieval hits into claim-centered candidate bundles and a normalized fact interface for answer generation. Experiments on LoCoMo and BEAM-100K demonstrate that MemIR consistently outperforms existing memory baselines, especially on tasks requiring source tracking, temporal grounding, and aggregation of fragmented evidence.",
+      "authors": [
+        "Zhengda Jin",
+        "Bingbing Wang",
+        "Jing Li",
+        "Ruifeng Xu",
+        "Min Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-25T13:56:31+00:00",
+      "link": "https://arxiv.org/pdf/2605.25869v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "typed memory representation for LLM agent long-term memory",
+      "llm_evidence_cn": "针对LLM智能体长期记忆的类型化内存表示方法",
+      "llm_evidence": "针对LLM智能体长期记忆的类型化内存表示方法",
+      "canonical_evidence": "针对LLM智能体长期记忆的类型化内存表示方法",
+      "llm_tldr_en": "Proposes MemIR, a typed memory representation to mitigate provenance-role collapse in LLM agents.",
+      "llm_tldr_cn": "提出MemIR类型化内存表示，缓解LLM智能体中的来源角色崩溃问题。",
+      "llm_tldr": "提出MemIR类型化内存表示，缓解LLM智能体中的来源角色崩溃问题。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24941v1",
+      "source": "arxiv",
+      "title": "Memory-Induced Tool-Drift in LLM Agents",
+      "abstract": "Modern LLM agents combine long-term memory for personalization with tool-calling interfaces for taking actions in the world -- a combination underpinning contemporary production systems. We study a previously unexamined failure of this combination: when personality-driven biases stored in memory (cost-consciousness, impatience, risk tolerance, etc.) silently affect tool calls in contexts where they are not applicable. We call this memory-induced tool-drift and operationalize it through MEMDRIFT, a benchmark of 105 scenarios spanning five bias dimensions and seven professional domains, generated through an automated adversarial pipeline. Across seven frontier models -- including those with extended reasoning -- biased memories raise deflection scores (a judge-scored measure of parameter deviation from unbiased baselines) by up to $+3.6$ points on a 1--5 scale. Tool-drift persists when memory management is handled by three production memory architectures. The phenomenon affects real-world tools: scanning 6{,}062 tools across 288 verified MCP servers, we flag 608 with susceptible parameters and confirm tool-drift on a validated subset. Mechanistically, biased memories act as implicit steering vectors, pushing activations along the same latent directions as explicit behavioral instructions. They also redistribute attention from task-relevant context toward memory entries with surface-level keyword overlap to the target parameter. Standard defenses -- prompt-based relevance instructions and memory filters -- reduce drift but do not eliminate it. As agents take increasingly consequential actions on a user's behalf, memory-induced tool-drift represents a systematic vulnerability that current safeguards do not address, motivating dedicated defenses at the intersection of memory management and tool-call generation.",
+      "authors": [
+        "Mahavir Dabas",
+        "Jihyun Jeong",
+        "Ming Jin",
+        "Ruoxi Jia"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "published": "2026-05-24T08:41:39+00:00",
+      "link": "https://arxiv.org/pdf/2605.24941v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for memory-induced tool-drift in LLM agents",
+      "llm_evidence_cn": "针对LLM智能体中记忆引起的工具漂移的基准",
+      "llm_evidence": "针对LLM智能体中记忆引起的工具漂移的基准",
+      "canonical_evidence": "针对LLM智能体中记忆引起的工具漂移的基准",
+      "llm_tldr_en": "Identifies memory-induced tool-drift and presents MEMDRIFT benchmark for evaluation.",
+      "llm_tldr_cn": "识别出记忆引起的工具漂移，并提出MEMDRIFT基准进行评估。",
+      "llm_tldr": "识别出记忆引起的工具漂移，并提出MEMDRIFT基准进行评估。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24949v1",
+      "source": "arxiv",
+      "title": "APT-Agent: Automated Penetration Testing using Large Language Models",
+      "abstract": "Penetration testing is essential to securing modern web infrastructures, yet traditional manual methods struggle to keep pace with their scale and complexity. Large Language Models (LLMs) offer new opportunities for automating these tasks, but existing approaches face two persistent challenges: hallucination of technical entities and insufficient long-term contextual memory. To address these issues, we present APT-Agent, a fully automated LLM-driven penetration testing framework that systematically orchestrates reconnaissance, exploitation, and exfiltration. APT-Agent introduces a hybrid rectification module to recover hallucinated commands and a command-specific memory architecture to preserve operational context across multi-step attack sequences. We evaluate our APT-Agent on Metasploitable 2 against seven vulnerable services spanning web, database, and network protocols. APT-Agent achieves an 84.29% end-to-end exploitation success rate, compared to 48.57% (Script Kiddie) and 18.57% (PentestGPT) under matched conditions. By reducing cognitive burden and minimizing reliance on human intervention, APT-Agent represents a step toward scalable, reliable, and cognitively efficient automation for penetration testing.",
+      "authors": [
+        "William Guanting Li",
+        "Alsharif Abuadbba",
+        "Kristen Moore",
+        "Dan Dongseong Kim"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-05-24T08:54:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.24949v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "command-specific memory architecture for LLM agent penetration testing",
+      "llm_evidence_cn": "LLM代理渗透测试中的命令特定记忆架构",
+      "llm_evidence": "LLM代理渗透测试中的命令特定记忆架构",
+      "canonical_evidence": "LLM代理渗透测试中的命令特定记忆架构",
+      "llm_tldr_en": "APT-Agent uses command-specific memory to address hallucination and memory issues in LLM-based penetration testing.",
+      "llm_tldr_cn": "APT-Agent提出混合纠正和命令特定记忆解决LLM渗透测试中的幻觉和记忆问题。",
+      "llm_tldr": "APT-Agent提出混合纠正和命令特定记忆解决LLM渗透测试中的幻觉和记忆问题。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25092v1",
+      "source": "arxiv",
+      "title": "AgentIR: A Workload-Adaptive Cascade Retrieval Substrate for Long-Term Conversational Memory",
+      "abstract": "Long-term conversational memory is a retrieval workload classical IR was not built for: the index grows during the query stream, query types shift intra-session, and the latency budget per retrieval is sub-10 ms. Lucene-class engines treat the index as static and the query as stateless, leaving the workload's structure unexploited.   AgentIR treats fusion as a per-query decision along two axes: which fusion to apply (BM25, Dense, RRF, or agent-aware RRF), and whether the ~52 ms dense channel is worth running at all. The second axis is a confidence-triggered cascade router that decides from the BM25 top-k margin alone and re-tunes across workloads without retraining. On LongMemEval (n=500), where the dense channel does add information, the cascade skips 63% of queries at parity LLM-judged accuracy (2.67x faster under two judges, paired bootstrap p>=0.88); per-qtype thresholds extend this to 5.76x under 5-fold cross-validation. On LoCoMo (n=1,982), where BM25 alone is already the strongest single system, the same trigger auto-tunes to a 100% skip rate (132x faster, +0.089 Hit@5). Capacity on a shared 8-core VM rises from ~154 to ~1,400 concurrent agents (9x).   Underneath the cascade, a time-partitioned index does O(log 1/epsilon) work independent of corpus size: 1234x corpus growth costs only 3.6x latency, ending in 1769x over sequential at sub-100 us p50 on 5M records. At parity quality with Lucene on 9 BEIR datasets up to 8.8M docs, the substrate runs 10x geo-mean over Pyserini 8T and 11x over PISA-1T BlockMax-WAND; an A100 reaches 1.8-39x over Pyserini 8T; chunked index build sustains 56.8K docs/sec on MS MARCO. Three subtle BM25/GPU correctness pitfalls that silently regress nDCG@10 by 6-8x are documented and fixed; post-fix CPU and GPU agree within 0.0002 nDCG@10 on all eight datasets that fit a single A100.",
+      "authors": [
+        "Aojie Yuan",
+        "Haiyue Zhang",
+        "Shahin Nazarian"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.DB"
+      ],
+      "published": "2026-05-24T14:14:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.25092v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Proposes AgentIR for adaptive retrieval in long-term conversational memory, evaluated on LongMemEval, directly relevant to memory retrieval and evaluation.",
+      "llm_evidence_cn": "提出AgentIR用于长期对话记忆的自适应检索，在LongMemEval上评估，直接相关于记忆检索和评估。",
+      "llm_evidence": "提出AgentIR用于长期对话记忆的自适应检索，在LongMemEval上评估，直接相关于记忆检索和评估。",
+      "canonical_evidence": "提出AgentIR用于长期对话记忆的自适应检索，在LongMemEval上评估，直接相关于记忆检索和评估。",
+      "llm_tldr_en": "AgentIR adaptively selects retrieval fusion strategies for long-term conversational memory, achieving sub-10 ms latency and high accuracy.",
+      "llm_tldr_cn": "AgentIR自适应选择检索融合策略用于长期对话记忆，实现低于10毫秒的延迟和高准确率。",
+      "llm_tldr": "AgentIR自适应选择检索融合策略用于长期对话记忆，实现低于10毫秒的延迟和高准确率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.25480v1",
+      "source": "arxiv",
+      "title": "Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki",
+      "abstract": "LLM agents require retrieval to behave less like one-shot context fetching and more like reasoning: searching, reading, traversing, and deciding when evidence is sufficient. However, Retrieval-Augmented Generation (RAG) typically organizes external knowledge as flat chunks retrieved by embedding similarity, exposing a retrieval-as-lookup interface that is poorly aligned with tool-using agents. We propose LLM-Wiki, an agent-native retrieval system that operationalizes the Retrieval-as-Reasoning paradigm by treating external knowledge as a compilable, composable, and self-evolving structure rather than a static retrieval index. LLM-Wiki compiles documents into structured Wiki pages with bidirectional links, exposes search, read, and link-following operations through standard tool-calling interfaces, and introduces an Error Book for persistent structural and semantic self-correction. On HotpotQA, MuSiQue, and 2WikiMultiHopQA, LLM-Wiki outperforms seven baselines, including HippoRAG 2, LightRAG, and GraphRAG, with gains of 2.0-8.1 F1 points over the strongest graph-based baseline and larger gains over Dense RAG. On AuthTrace, LLM-Wiki achieves the best overall accuracy, with especially strong gains on multi-document structured queries, showing that compilation-based knowledge organization generalizes beyond chain-style multi-hop reasoning.",
+      "authors": [
+        "Haoliang Ming",
+        "Feifei Li",
+        "Xiaoqing Wu",
+        "Wenhui Que"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-25T06:36:14+00:00",
+      "link": "https://arxiv.org/pdf/2605.25480v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agent-native retrieval system as memory augmentation",
+      "llm_evidence_cn": "作为记忆增强的代理本地检索系统",
+      "llm_evidence": "作为记忆增强的代理本地检索系统",
+      "canonical_evidence": "作为记忆增强的代理本地检索系统",
+      "llm_tldr_en": "LLM-Wiki treats external knowledge as a compilable structure, enabling retrieval-as-reasoning for agents.",
+      "llm_tldr_cn": "LLM-Wiki将外部知识视为可编译结构，实现面向代理的检索即推理。",
+      "llm_tldr": "LLM-Wiki将外部知识视为可编译结构，实现面向代理的检索即推理。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.20630v1",
+      "source": "arxiv",
+      "title": "Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines",
+      "abstract": "Industrial asset operations workflows are latency-sensitive because a single user query may require coordination over sensor data, work orders, failure modes, forecasting tools, and domain-specific agents. We evaluate this problem on AssetOpsBench (AOB), an industrial agent benchmark whose plan-execute pipeline exposes repeated overhead from tool discovery, LLM planning, MCP tool execution, and final summarization. Existing LLM caching techniques such as KV-cache reuse and embedding-based semantic caching were designed for chatbot serving and break down when output validity depends on time, asset, or sensor parameters. We propose two complementary optimization layers for AOB plan-execute pipelines: a temporal semantic cache and a set of MCP workflow optimizations combining disk-backed tool-discovery caching and dependency-aware parallel step execution. MCP workflow optimizations corresponded to a 1.67x speedup and reduced median end-to-end latency by about 40.0% while the temporal-cache benchmark achieved a median of 30.6x speedup on cache hits. Beyond the speedup, our results expose a concrete failure mode of pure semantic caching for parameter-rich industrial queries, providing a critical analysis of how caching choices interact with evaluation correctness in MCP-backed agent benchmarks.",
+      "authors": [
+        "Alimurtaza Mustafa Merchant",
+        "Krish Veera",
+        "Sajal Kumar Goyla",
+        "Shambhawi Bhure",
+        "Dhaval Patel",
+        "Kaoutar El Maghraoui"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-20T02:30:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.20630v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "temporal semantic caching as memory for plan-execute pipelines",
+      "llm_evidence_cn": "时序语义缓存作为计划执行管线的记忆",
+      "llm_evidence": "时序语义缓存作为计划执行管线的记忆",
+      "canonical_evidence": "时序语义缓存作为计划执行管线的记忆",
+      "llm_tldr_en": "Proposes temporal semantic caching to optimize repeated plan-execute overhead in industrial agent workflows.",
+      "llm_tldr_cn": "提出时序语义缓存以优化工业代理工作流中的重复计划执行开销。",
+      "llm_tldr": "提出时序语义缓存以优化工业代理工作流中的重复计划执行开销。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.24168v1",
+      "source": "arxiv",
+      "title": "Inference Time Context Sparsity: Illusion or Opportunity?",
+      "abstract": "Sparsity has long been a central theme in LLM efficiency, but its role in context processing remains unresolved. As LLM workloads shift toward longer contexts and agentic interactions, the compute and memory bottlenecks of attention become increasingly critical, raising the question of whether these constraints are fundamental. Our position is that these constraints are artificial and unnecessary, and that the future of LLM inference lies in extreme but principled sparsity along the context dimension. This position is supported by several strands of empirical and theoretical evidence. First, we find the insistence on dense attention unreasonable, since in a long context a query effectively projects O(N) attention information into a hidden space of dimension d << N, making the process inherently lossy. Second, we perform an extensive study of sparsity in LLMs spanning 20 models across five model families, varying context lengths, and different sparsity levels. We empirically demonstrate a strong trend: current LLMs, despite not being trained for context sparsity, are remarkably robust to inference-time decode sparsity across tasks of varying complexity, including retrieval, multi-hop QA, mathematical reasoning, and agentic coding. Importantly, we also show that current hardware is already sufficient to realize substantial gains from this sparsity. For example, our sparse decode kernels accelerate large-context processing by up to 10x over FlashInfer at 50x sparsity levels on hardware such as the H100. Overall, these results position extreme context sparsity not as a heuristic, but as a principled foundation for LLM inference, training, and architecture design: one that is both feasible and beneficial, and a compelling direction for future systems.",
+      "authors": [
+        "Sahil Joshi",
+        "Prithvi Dixit",
+        "Agniva Chowdhury",
+        "Anshumali Shrivastava",
+        "Joseph E. Gonzalez",
+        "Ion Stoica",
+        "Kumar Krishna Agrawal",
+        "Aditya Desai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-22T19:38:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.24168v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses memory bottlenecks in attention for agentic interactions",
+      "llm_evidence_cn": "针对智能体交互中注意力的内存瓶颈",
+      "llm_evidence": "针对智能体交互中注意力的内存瓶颈",
+      "canonical_evidence": "针对智能体交互中注意力的内存瓶颈",
+      "llm_tldr_en": "Argues for extreme context sparsity to overcome attention memory bottlenecks in LLM agent interactions.",
+      "llm_tldr_cn": "主张极端上下文稀疏性以克服LLM智能体交互中的注意力内存瓶颈。",
+      "llm_tldr": "主张极端上下文稀疏性以克服LLM智能体交互中的注意力内存瓶颈。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.22608v1",
+      "source": "arxiv",
+      "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
+      "abstract": "Agentic systems are becoming more capable: agents define strategies, take actions, and interact with different environments. This autonomy poses serious challenges for overseeing and assessing agent behavior. Most current tools are limited, focusing on observability with basic evaluation capabilities or imposing static, hand-crafted error taxonomies that cannot adapt to new domains. To address this gap, we present Agentic CLEAR, an automatic, dynamic, and easy-to-use evaluation framework. It produces textual insights into the agent behavior on three levels of granularity: system, trace, and node. Agentic CLEAR operates above the observability layer, enabling seamless integration and featuring an intuitive UI that makes agent evaluation highly accessible. In our experiments on four benchmarks, seven agentic settings, and tens of thousands of LLM calls, we show that Agentic CLEAR produces high-quality, data-driven, insightful feedback. Our analysis shows strong alignment with human-annotated errors and the ability to predict task success rate.",
+      "authors": [
+        "Asaf Yehudai",
+        "Lilach Eden",
+        "Michal Shmueli-Scheuer"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-21T15:26:02+00:00",
+      "link": "https://arxiv.org/pdf/2605.22608v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "automated multi-level evaluation of LLM agents including memory aspects",
+      "llm_evidence_cn": "LLM代理的多层次自动评估，包括记忆方面",
+      "llm_evidence": "LLM代理的多层次自动评估，包括记忆方面",
+      "canonical_evidence": "LLM代理的多层次自动评估，包括记忆方面",
+      "llm_tldr_en": "Agentic CLEAR provides automatic, dynamic evaluation of agent behavior across system, trace, and node levels.",
+      "llm_tldr_cn": "Agentic CLEAR提供跨系统、轨迹和节点级别的自动动态代理行为评估。",
+      "llm_tldr": "Agentic CLEAR提供跨系统、轨迹和节点级别的自动动态代理行为评估。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.25002v1",
+      "source": "arxiv",
+      "title": "MemMark: State-Evolution Attribution Watermarking for Agent Long-Term Memory Systems",
+      "abstract": "Memory-backed agents need provenance that can survive leaked or migrated snapshots, where logs, visible outputs, and trusted metadata may be absent. We propose MemMark, a state-evolution attribution watermark that embeds an owner-controlled signal into latent memory-write decisions. At each internal LLM call, MemMark samples among admissible candidates using keyed, distribution-preserving selection, and records cryptographic commitments with signed session anchors and reveal evidence. This makes attribution depend on reproducible backend behavior rather than mutable provenance fields. Across A-Mem and Graphiti on LoCoMo, with three LLM backbones, MemMark preserves memory utility: Overall F1 retains 99.6% of the unwatermarked baseline, while BLEU-1 changes by +0.2%. It also provides usable carrier capacity, with 1.16, 1.14, and 1.26 bits of mean entropy for update-target, link-target, and semantic-realization decisions. In the snapshot-only R3 setting, MemMark recovers the full 40-bit payload from final snapshots, while wrong-key verification remains near chance. Under nine memory-lifecycle attacks, verification distinguishes tampering, evidence deletion, and partial payload recovery. These results show that robust snapshot-only attribution is feasible for long-term agent memory without surviving traces, trusted metadata, or utility-degrading.",
+      "authors": [
+        "Haobo Zhang",
+        "Xutao Mao",
+        "Guangyuan Dong",
+        "Ziwei Li",
+        "Xuanbo Su",
+        "Kaijie Chen",
+        "Jing Yang",
+        "Zheng Lin"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "published": "2026-05-24T11:04:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.25002v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "state-evolution attribution watermarking for agent memory systems",
+      "llm_evidence_cn": "为智能体记忆系统提供状态演化归属水印",
+      "llm_evidence": "为智能体记忆系统提供状态演化归属水印",
+      "canonical_evidence": "为智能体记忆系统提供状态演化归属水印",
+      "llm_tldr_en": "Proposes MemMark, a watermarking technique for agent long-term memory that preserves utility.",
+      "llm_tldr_cn": "提出MemMark，一种为智能体长期记忆添加水印且保持效用性的技术。",
+      "llm_tldr": "提出MemMark，一种为智能体长期记忆添加水印且保持效用性的技术。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.25832v1",
+      "source": "arxiv",
+      "title": "When Search Becomes Memory: Turning Robot Design Trials into Transferable Skills",
+      "abstract": "Large language models (LLMs) are increasingly used as proposal generators for evolutionary robot design, yet most loops remain memoryless: simulator results shape the next population but are not preserved as reusable design knowledge. We present Auto-Robotist, a self-evolving LLM agent that distills morphology-search traces into an explicit natural-language skill library. Each skill stores a structural archetype, evidence-grounded positive and negative rules, and the evaluated designs that support them, making design memory inspectable rather than implicit in a population. During search, the agent retrieves skills to condition LLM edits of elite bodies while retaining a Genetic Algorithm (GA) mutation path for exploration; after evaluation, it updates the library through Add, Diagnose, and Merge. Across seven EvoGym tasks spanning locomotion, traversal, and object interaction, Auto-Robotist improves cold-start 5x5 search and transfers learned skills to 10x10 design spaces, where reference-conditioned transfer outperforms GA on every task. These results suggest that LLM agents can convert expensive physical evaluations into reusable, auditable design principles. Our code will be released upon acceptance.",
+      "authors": [
+        "Yunfei Wang",
+        "Xiaohao Xu",
+        "Yang Li",
+        "Xiaonan Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-05-25T13:29:45+00:00",
+      "link": "https://arxiv.org/pdf/2605.25832v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "distilling search traces into a natural-language skill library as memory",
+      "llm_evidence_cn": "将搜索轨迹蒸馏为自然语言技能库作为记忆",
+      "llm_evidence": "将搜索轨迹蒸馏为自然语言技能库作为记忆",
+      "canonical_evidence": "将搜索轨迹蒸馏为自然语言技能库作为记忆",
+      "llm_tldr_en": "Auto-Robotist turns robot design trials into a transferable skill library for evolutionary search.",
+      "llm_tldr_cn": "自动机器人专家将机器人设计试验转化为可迁移的技能库。",
+      "llm_tldr": "自动机器人专家将机器人设计试验转化为可迁移的技能库。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.25389v1",
+      "source": "arxiv",
+      "title": "Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS",
+      "abstract": "While Large Language Model-based Multi-Agent Systems (LLM-MAS) demonstrate remarkable capabilities in solving complex tasks by orchestrating specialized agents and external tools, the implicit trust in tool outputs creates a critical attack surface. Existing tool attacks are limited by domain specificity or fixed and static templates. To address these challenges, we propose Evo-Attacker, which formulates the tool attack as a self-evolving, memory-augmented reinforcement learning process. Evo-Attacker constructs a dynamic attack memory and employs deliberative reasoning to retrieve adversarial patterns and strategize modifying interventions at critical moments. Furthermore, we introduce Attack-Flow GRPO to optimize intermediate reasoning steps via terminal outcomes, addressing the long-horizon credit assignment challenge. Comprehensive experiments demonstrate that Evo-Attacker consistently outperforms baselines, highlighting its generalization and evolutionary capabilities and the urgent need for defensive tool safeguards.",
+      "authors": [
+        "Bingyu Yan",
+        "Xiaoming Zhang",
+        "Jinyu Hou",
+        "Chaozhuo Li",
+        "Ziyi Zhou",
+        "Yiming Hei",
+        "Litian Zhang"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-05-25T03:33:45+00:00",
+      "link": "https://arxiv.org/pdf/2605.25389v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "uses memory-augmented RL for tool attacks in multi-agent systems",
+      "llm_evidence_cn": "在多代理系统中使用记忆增强的强化学习进行工具攻击",
+      "llm_evidence": "在多代理系统中使用记忆增强的强化学习进行工具攻击",
+      "canonical_evidence": "在多代理系统中使用记忆增强的强化学习进行工具攻击",
+      "llm_tldr_en": "Evo-Attacker leverages dynamic attack memory and deliberative reasoning for tool attacks",
+      "llm_tldr_cn": "Evo-Attacker利用动态攻击记忆和审慎推理进行工具攻击",
+      "llm_tldr": "Evo-Attacker利用动态攻击记忆和审慎推理进行工具攻击",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

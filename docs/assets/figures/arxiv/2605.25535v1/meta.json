@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-001.webp",
+      "caption": "Figure 1: Motivating examples of personalized memory system. (a) Users exhibit distinct agent use patterns. (b) One-size-fits-all memory systems fail to personalize these user-specific needs, leading to the eviction of essential contexts. (c) An ideal personalized memory policy selectively preserves essential contexts tailored to each user’s use pattern.",
+      "page": 2,
+      "index": 1,
+      "width": 777,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-002.webp",
+      "caption": "Figure 2: Overview of the construction pipeline for PerMem-Benchs.",
+      "page": 3,
+      "index": 2,
+      "width": 788,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-003.webp",
+      "caption": "Figure 8: The user interface provided to the annotators for life skeleton and timeline realism annotation.",
+      "page": 19,
+      "index": 3,
+      "width": 829,
+      "height": 783
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-004.webp",
+      "caption": "Figure 7: The user interface provided to the annotators for profile plausibility annotation.",
+      "page": 17,
+      "index": 4,
+      "width": 826,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-005.webp",
+      "caption": "Table 3: The list of defined domain pools.",
+      "page": 12,
+      "index": 5,
+      "width": 392,
+      "height": 504
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-006.webp",
+      "caption": "Figure 6: Sensitivity Analyses of memory budget on Mem0.",
+      "page": 9,
+      "index": 6,
+      "width": 492,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25535v1/fig-007.webp",
+      "caption": "Figure 9: The user interface provided to the annotators for dialogue quality.",
+      "page": 20,
+      "index": 7,
+      "width": 826,
+      "height": 415
+    }
+  ]
+}

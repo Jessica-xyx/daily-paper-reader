@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-001.webp",
+      "caption": "Figure 2: RQ2 — Entropy and payload allocation across memory-evolution carriers. (a) Per-carrier entropy over the six LLM–backend configurations; labels show means. (b) Per-carrier share of embedded payload bits, normalized within each configuration.",
+      "page": 6,
+      "index": 1,
+      "width": 429,
+      "height": 616
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-002.webp",
+      "caption": "Table 2: RQ1 — Utility preservation on LoCoMo. Results are grouped by model and backend. No-WM, S.M.-Only, Ran., and KGMARK denote unwatermarked execution, signed-metadata-only, random replacement, and KGMARK (Graphiti only); MemMark is the full method. Bold and underlined entries mark the best and second-best scores within each backend block. Averaged over the six model–backend settings, MEMMARK changes Overall F1 from 0.2816 to 0.2804, retaining 99.6% of the unwatermarked baseline, and changes BLEU-1 from 0.3069 to 0.3077, improved by 0.2%.",
+      "page": 7,
+      "index": 2,
+      "width": 950,
+      "height": 552
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-003.webp",
+      "caption": "Figure 4: Overall F1 comparison. Overall F1 from Table 2 across three LLMs and two memory backends, comparing MEMMARK with baselines.",
+      "page": 14,
+      "index": 3,
+      "width": 431,
+      "height": 383
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-004.webp",
+      "caption": "Figure 1: End-to-end MEMMARK pipeline. A memory write exposes carrier-specific choices over update targets, link targets, and semantic realizations. MEMMARK enumerates and scores feasible candidates, intercepts the LLM-call boundary, and uses a secret-keyed, distribution-preserving sampler to select c∗ while leaving the native commit path unchanged. Each selected decision is bound to a commitment, per-session Merkle log, and signed anchor; reveal data is stored with the memory record. The same evidence supports R1 full-log, R2 partial-log, and R3 snapshot-only attribution by replaying keyed picks and checking provenance consistency.",
+      "page": 3,
+      "index": 4,
+      "width": 950,
+      "height": 635
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-005.webp",
+      "caption": "Table 5: Metric definitions across the five research questions.",
+      "page": 13,
+      "index": 5,
+      "width": 917,
+      "height": 927
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-006.webp",
+      "caption": "Table 6: Baseline definitions. The controls separate native memory quality, signed provenance metadata, unkeyed candidate randomization, and a graph-specific watermark baseline.",
+      "page": 13,
+      "index": 6,
+      "width": 950,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-007.webp",
+      "caption": "Table 3: RQ4 – Attack-specific recovery and wrong-key separation on A-MEM. Each row reports the attack family, a compact row alias that maps to Table 9 (Content-1–5→ attacks 1–5, Removal-1–2→ attacks 6–7, and Synth-1–2→ attacks 8–9), and the dominant verifier mode (ComF = commitment_fail; Miss = missing_leaves). For each model, Rec is post-attack bit recovery and ∆WK = Rec −WrongKey compares recovery with that model’s wrong-key R3 baseline at attack strengths s ∈ {0.1, 0.3, 0.5}. Positive ∆WK means the attacked snapshot retains more attribution signal than an incorrect key.",
+      "page": 8,
+      "index": 7,
+      "width": 958,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-008.webp",
+      "caption": "Table 10: RQ4 – Attack-specific recovery and wrong-key separation on GRAPHITI. Each row reports the attack family, a compact row alias that maps to Table 9 (Content-1–5→ attacks 1–5, Removal-1–2→ attacks 6–7, and Synth-1–2→ attacks 8–9), and the dominant verifier mode (ComF = commitment_fail; Miss = missing_leaves). For each model, Rec is post-attack bit recovery and ∆WK = Rec −WrongKey compares recovery with that model’s wrong-key R3 baseline at attack strengths s ∈ {0.1, 0.3, 0.5}. Positive ∆WK means the attacked snapshot retains more attribution signal than an incorrect key.",
+      "page": 17,
+      "index": 8,
+      "width": 958,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-009.webp",
+      "caption": "Table 8: Qwen3.6-flash per-conversation breakdown on all 10 LoCoMo samples. F1 wm / nwm = MEMMARK vs no-watermark F1 (set formula). Watermark metrics use the A-MEM backend. Wrong Key reports observed bit-level recovery under an incorrect key; under the default K=4 setting, the chance-level reference is 1/K=0.25. Conversation 0 is from the standalone Qwen markdown summaries; conversations 1–9 are from the full-result JSON files.",
+      "page": 16,
+      "index": 9,
+      "width": 944,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25002v1/fig-010.webp",
+      "caption": "Table 9: The nine memory-lifecycle attacks used in RQ4. They are grouped by lifecycle operation and list the concrete audit-record mutation, the expected low-level verifier signal, and the motivating analogue. Tables 3 and 10 then report Rec, Mode, and ∆WK for these attacks.",
+      "page": 16,
+      "index": 10,
+      "width": 921,
+      "height": 696
+    }
+  ]
+}

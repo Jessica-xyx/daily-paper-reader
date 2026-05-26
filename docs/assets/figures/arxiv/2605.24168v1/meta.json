@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-001.webp",
+      "caption": "Figure 3: vAttention vs OracleTopK retention at 50× sparsity on RULER-HARD-32K. Bars report relative score (sparse / dense); the horizontal line at 1.0 marks dense parity. Values ≥ 1.0 are bold green; values <0.90 are muted red. Panels separate model family ((a) Qwen2.5, (b) Ministral 3). Traditionally, the failure of top-k sparse attention has been attributed to the diffusion of attention scores across the context. However, this does not necessarily imply that attention must remain dense; rather, it suggests the need for a different mechanism for selecting relevant context. We observe that stochastic index-selection (vAttention) closely tracks dense parity at every Qwen2.5 and Ministral checkpoint, while deterministic OracleTopK collapses on smaller standard models (Qwen2.5-1.5B drops to ∼0.63 of dense). This suggests that the primary limitation of conventional top-k sparsification lies not in sparsity itself, but in the determinism and locality of the selection mechanism.",
+      "page": 6,
+      "index": 1,
+      "width": 790,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-002.webp",
+      "caption": "Figure 1: Inference-time 50× context sparsity is bandwidth-friendly by construction (a) and retains near-dense quality across diverse workloads on a single model (b). (a) Three decode regimes share an HBM band but read from it differently. Dense reads the full KV cache every step (O(N ·d) bytes); Sparse routes through a lightweight indexer that selects k rows (O(k·d) bytes, k≪N); Linear (Gated DeltaNet) reads a fixed-size recurrent state S (O(d2) bytes, constant in N). All three are memory-bandwidth bound on H100/B200; the contrast is whether per-step traffic scales with context length. (b) Qwen3.5-27B on four workloads ordered by increasing complexity along (T, D, C) – turns, decoded tokens per turn, input context per turn (§3). Configurations: RULER-HARD-32K (T=1, D<1K, C=32K); LOFT-128K (T=1, D<1K, C=128K); AIME-2025 (T=1, D≈25K, C<1K); SWE-Bench Django (T≈67, D∼1K per turn, C grows to >100K). Sparse within ≤2 points of dense at 50× on retrieval (RULER, LOFT), reasoning (AIME), and agentic coding (SWE-Bench S3 subset, n=58, App. B). Kernel-level speedup on H100/B200 is deferred to §4 and Tab. 1.",
+      "page": 2,
+      "index": 2,
+      "width": 1002,
+      "height": 476
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-003.webp",
+      "caption": "Figure 4: LOFT subspan-EM retention under 5× and 50× inference-time sparsity. Bars report relative score (sparse Subspan-EM / dense Subspan-EM); the horizontal line at 1.0 marks dense parity. Values ≥ 1.0 (sparse meets or exceeds dense) are bold green; values < 0.90 (over a 10% relative drop) are muted red. Layout: rows separate context length (top: 32K, bottom: 128K); columns separate model family (Qwen2.5: 3B–32B, Ministral3: 3B–14B, Qwen3.5: 2B–27B). At 5× sparsity, retention sits within ∼2% of dense across nearly every checkpoint; at 50×, mid-scale standard checkpoints (Qwen2.5-7B, Ministral-3B) suffer the largest drops while the hybrid Qwen3.5 family stays close to parity except at the smallest scales. Qwen3.5-9B at 32K shows a 1.51× ratio — a small-denominator effect on a low-scoring task — consistent with the qualitative picture from RULER-HARD that sparsity does not degrade quality once a model is large enough.",
+      "page": 7,
+      "index": 3,
+      "width": 1010,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-004.webp",
+      "caption": "Table 2: Sparse decode is net-positive with indexer cost included. We use DoubleSparsity as an example here. Speedup over FlashInfer on H100 (FP16, 128K, page size 16) using Double Sparsity [48] (8×16-bit channels, untuned) for index selection, under MHA (Hq=Hkv=32) and GQA (Hq=32, Hkv=8). MHA: break-even at 2× sparsity with 4.17× speedup at 100× sparsity. GQA: break-even at 10×, with 2.81× speed up at 100×. A lighter indexer (HashAttention, PQCache, low-precision Double Sparsity) is expected to widen the margin. The upper limit can be seen from Table 1",
+      "page": 10,
+      "index": 4,
+      "width": 694,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-005.webp",
+      "caption": "Table 4: Per-(outcome × config) exit-status counts. n is the size of that outcome bucket for that configuration. Bold entries are root causes attributable to infrastructure (docker daemon, vLLM server crash, or connection timeout) and are eligible for retry; plain entries are model-side failures (Submitted but tests fail, or LimitsExceeded).",
+      "page": 18,
+      "index": 5,
+      "width": 940,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-006.webp",
+      "caption": "Table 5: Per-task compute cost by outcome. Mean agent turns and mean total tokens per task. n columns report instance counts as (dense / 5× / 50×). empty_patch and error costs are inflated by stalled trajectories that exhaust the step budget before the harness gives up; they are not comparable to the productive outcomes.",
+      "page": 18,
+      "index": 6,
+      "width": 806,
+      "height": 189
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-007.webp",
+      "caption": "Figure 7: Empty-patch root cause changes with attention configuration. Outcome counts split by terminal exit status (visual companion to Tab. 4; numerical counts there). The takeaway is the colour composition of the empty_patch bar: dense’s empty_patch is almost entirely docker-launch failures (blue, CalledProcessError); sparse’s is almost entirely vLLM crashes and timeouts (purple/orange, InternalServerError/Timeout). The only stratum that grows with sparsity is LimitsExceeded (pink, 4→11→11), the model-side residual.",
+      "page": 18,
+      "index": 7,
+      "width": 1010,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-008.webp",
+      "caption": "Figure 5: We use AIME 2025 for evaluating long-form generation. Although we allow generations up to 65K tokens, models generate approximately 25K tokens on average across samples. Since sparse attention introduces approximation errors at each embedding update, an important concern is whether these errors compound across layers and, more critically, across autoregressively generated tokens. The results on AIME are therefore particularly promising: they indicate that models remain robust to sparsity-induced errors even over very long generations, suggesting that aggressive context sparsification does not necessarily destabilize long-horizon reasoning or autoregressive decoding. Additionally, we observe that increasing sparsity leads to only a slight increase in the average number of generated tokens per task. This suggests that the gains observed in decoding speed can translate into meaningful end-to-end task completion speedups in practice.",
+      "page": 8,
+      "index": 8,
+      "width": 1010,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-009.webp",
+      "caption": "Figure 6: SWE-Bench Django head-to-head, Qwen3.5-27B under dense, 5×, and 50× sparsity. Left: resolution rate on two nested subsets (solid: n=58 where all three produced a valid eval verdict; hatched: n=70 that also admits tasks where any config exhausted its 250-turn budget). Sparse matches dense within ∼2 points on the strict subset; the ∼4-point gap on the broader subset is driven by sparse runs occasionally collapsing into degenerate command loops. Middle: mean agent turns per task on the strict n=58 subset (error bars: SEM). Right: mean prompt tokens per LLM call as a function of turn index, averaged across n=58 tasks that reached that turn (shaded band: ±SEM; tail truncated where fewer than six tasks remain); the sparse curves track dense closely with a small (∼6%) per-call offset that grows with context length. Full subgroup table, per-task cost, and outcome composition (including the step-limit failure mode) are in Appendix B.",
+      "page": 8,
+      "index": 9,
+      "width": 960,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-010.webp",
+      "caption": "Figure 8: Per-LLM-call prompt size is unaffected by sparsity on productive outcomes. Mean prompt tokens per LLM call, by outcome and configuration. On resolved the three configurations are within 0.3K tokens/call (17.3/17.6/17.6K); on unresolved they sit within 3K (24.1/21.0/21.5K). Sparsity does not change how much context the agent maintains per call – it changes what attention does with that context. The large empty_patch bars (59.2/33.1/45.6K) come from the stalled-trajectory tail (Fig. 7) where the agent burns through the 250-turn cap on a steadily growing prompt; the elevated tokens reflect the failure mode, not the productive cost.",
+      "page": 19,
+      "index": 10,
+      "width": 910,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24168v1/fig-011.webp",
+      "caption": "Figure 2: RULER-HARD-32K score across families, scales, and sparsity. Scores are absolute (averaged over the six RULER-HARD subtasks). Squares mark dense (1×); filled circles mark sparse (5× and 50× oracle top-k). Each line is one checkpoint; lighter shade within a family means smaller scale. Panels (a) and (b) share the x-axis. (a) Standard families. Qwen2.5 (blue) and Ministral 3 (amber) fan out as sparsity grows: Qwen2.5-1.5B drops from 60 at dense to 38 at 50×, while Qwen2.5-72B holds within 3 points across the full sweep. (b) Hybrid families. Gemma-3 (green, sliding-window) and Qwen3.5 (red, linear-attention) stay essentially flat at every scale; the small-checkpoint penalty visible in (a) is absent. (c) Qwen3.5 saturation under extreme top-K. Retention = scoreK/ scoredense, computed per subtask and then averaged. K retrieved tokens with 64 sinks always retained, K ∈ {1, 4, 16, 64, 128}. Larger Qwen3.5 scales saturate earlier (27B reaches near-parity by K=4); 0.8B is still climbing at K=128 (0.87 at the right edge) — the knee migrates with scale. Three Qwen3.5-27B cells in the parsed CSV were unevaluated and imputed at ceiling continuation of adjacent rates (nm3@5×, nm2@10× → 100; qa2@20× → 63); effect on the 6-subtask average is < 1 point. LLaMA-3 omitted: no per-subtask RULER-HARD data in the current eval set.",
+      "page": 5,
+      "index": 11,
+      "width": 1010,
+      "height": 396
+    }
+  ]
+}
