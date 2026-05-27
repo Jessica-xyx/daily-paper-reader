@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-001.webp",
+      "caption": "Figure 2. Design Overview. DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary.",
+      "page": 6,
+      "index": 1,
+      "width": 1046,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-002.webp",
+      "caption": "Figure 9. Per-event ckpt/restore latency vs. per-event upper-layer dirt, 5 coupled-state backends (controlled microbench; 1 warmup + 3 reps per size; 80MB Python process; 2 GBVM for FC-Diff and CubeSandbox). All five backends capture both filesystem and process state for semantic parity with DeltaBox.",
+      "page": 15,
+      "index": 2,
+      "width": 497,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-003.webp",
+      "caption": "Table 4.DeltaBox component latency breakdown, mean across SWE-bench Astropy/Django/SymPy (per-workload variance ≤4%). Fast path is the common case; slow path runs on template eviction.",
+      "page": 15,
+      "index": 3,
+      "width": 501,
+      "height": 449
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-004.webp",
+      "caption": "Figure 8. RL training fan-out characterisation, 5 substrates on the same GPU cluster. (a) Substrate 1:𝑁 fan-out latency on a single GPU (144MB synthetic-anonymous parent template; 𝐾=10 prefork actions × 5MB mid-state; 5 reps). The parent here is larger than DeltaBox’s realistic ∼15MB agent.pymeasured in Table.3, so this panel stress-tests the substrate primitives rather than DeltaBox’s production parent RSS. (b) 𝑇gen (batched vLLM, 256→512 tokens, 3 reps) for three Qwen models on a single GPU, and 𝑇train for a Qwen2.5-7B LoRA-r16 fwd+bwd (bf16, grad-checkpointing, 5 reps); 𝐵∈{1, 4} on one GPU, 𝐵∈{16, 64} on 4 GPUs (FSDP, see §6.1). (c) Sync GPU util (𝑇gen+𝑇train)/(sandbox+𝑇gen+𝑇train) at 𝑁∈{16, 64} on Qwen2.5-7B, computed inline from (a) and (b).",
+      "page": 14,
+      "index": 4,
+      "width": 1047,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-005.webp",
+      "caption": "Figure 1. Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families.",
+      "page": 3,
+      "index": 5,
+      "width": 497,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-006.webp",
+      "caption": "Figure 5. DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain onmiss; NPD keeps external I/O off the agent path.",
+      "page": 8,
+      "index": 6,
+      "width": 501,
+      "height": 418
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-007.webp",
+      "caption": "Table 1. Comparison of sandbox statemanagement approaches for AI agents.DeltaBox provides coupled checkpoint/restore of both filesystem and process state by only duplicating the changes between consecutive checkpoints for efficiency.",
+      "page": 4,
+      "index": 7,
+      "width": 1047,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-008.webp",
+      "caption": "Figure 12. Per-event checkpoint latency on 1,689 ckpt events from 87 MCTS runs across 9 SWE-bench Verified repositories. Adaptive: pure-read cmds (LW, blue; 𝑛=1047) skip the dump; FS-mutating cmds (std, orange;𝑛=642) take the full incremental dump. Standard (gray dashed): same events forced through the std path; 62.0% of events route to the LW peak.",
+      "page": 16,
+      "index": 8,
+      "width": 497,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22781v1/fig-009.webp",
+      "caption": "Figure 11. Per-edit copy-up bytes (a) and physical I/O bytes (b) vs. edited-file size (log–log); real SWE-bench agent edits across three filesystem configurations, per-bin medians. Shaded band marks the typical agent edit range. ext4 and XFS-withoutreflink coincide on (a): copy-up benefit comes entirely from reflink, not XFS.",
+      "page": 16,
+      "index": 9,
+      "width": 461,
+      "height": 428
+    }
+  ]
+}
