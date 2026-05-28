@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-001.webp",
+      "caption": "Figure 1: The failures of static memory systems.",
+      "page": 1,
+      "index": 1,
+      "width": 458,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-002.webp",
+      "caption": "Table 3: Evaluation results on GAIA benchmark. Color-coded arrows denote improvements relative to the FlashSearcher baseline, with deeper green shades indicating larger score improvements. Bold and underline indicate the best and second-best final results across all methods, respectively.",
+      "page": 6,
+      "index": 2,
+      "width": 945,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-003.webp",
+      "caption": "Table 2: Evaluation results on Mind2Web. † denotes the filtered setting with manual removal of non-golden HTML elements; ‡ denotes the realistic setting without any pre-filtering (see Appendix A.2 for details). Bold and underline denote the best and second-best results.",
+      "page": 6,
+      "index": 3,
+      "width": 917,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-004.webp",
+      "caption": "Figure 3: Detailed analysis of FluxMem components and evolution dynamics: (a) Ablation study of different stages on LoCoMo using GPT-4.1-mini. (b) Ablation study of different stages on LoCoMo using Qwen3-30B-A3B-2507Instrcut. (c) Ablation study of different stages on Mind2Web using GPT-4.1-mini. (d) Performance improvement across sub-tasks relative to the number of refinement rounds in Stage II. (e) Model accuracy trends and convergence of the Procedure Evolution Maturity Score (PEMS) across evolution rounds.",
+      "page": 7,
+      "index": 4,
+      "width": 950,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-005.webp",
+      "caption": "Figure 2: The FluxMem architecture. Stages I and II operate online at a step-wise granularity. Stage III is conducted offline, aiming for immediate performance optimization and long-term memory consolidation, respectively.",
+      "page": 3,
+      "index": 5,
+      "width": 950,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-006.webp",
+      "caption": "Figure 4: Case Study. The key points have been highlighted in red.",
+      "page": 8,
+      "index": 6,
+      "width": 950,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28773v1/fig-007.webp",
+      "caption": "Table 1: Evaluation results on LoCoMo benchmark. Bold and underlined entries indicate the best and second-best results within each group, respectively.",
+      "page": 5,
+      "index": 7,
+      "width": 461,
+      "height": 502
+    }
+  ]
+}

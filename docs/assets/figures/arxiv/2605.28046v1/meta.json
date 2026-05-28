@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-001.webp",
+      "caption": "Table 2: Comparison of MemCog with Memory-as-Tool methods on LongMemEval. The QA and LLM-as-Judge configurations follow (Wu et al., 2025). All experiments in this table use GPT-4o-judged systems. Baseline results are sourced from (Latimer et al., 2025) and (Sen et al., 2026).",
+      "page": 6,
+      "index": 1,
+      "width": 941,
+      "height": 259
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-002.webp",
+      "caption": "Table 3: Comparison of MemCog with Memory-as-Tool methods on ProactiveMemBench. QA and metric configurations are detailed in Appendices B.3–B.5. All experiments in this table use GLM-5.1 as the backbone. All baselines are reproduced using their official implementations.",
+      "page": 7,
+      "index": 2,
+      "width": 941,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-003.webp",
+      "caption": "Figure 2: Example of MemCog: Proactive Reasoning Protocol: Navigable Memory Store and Cross-Dimensional Navigation path examples.",
+      "page": 3,
+      "index": 3,
+      "width": 942,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-004.webp",
+      "caption": "Figure 3: New pages created per session as conversations progress. Left: grouped by every 5 sessions; Right: grouped by 10% conversation progress percentile. Both views exhibit a consistent declining trend with negative slope, indicating sub-linear page growth.",
+      "page": 18,
+      "index": 4,
+      "width": 950,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-005.webp",
+      "caption": "Table 8: Navigation strategies across query complexity levels. Each category illustrates how the agent adapts its navigation depth and tool selection to the task’s demands.",
+      "page": 19,
+      "index": 5,
+      "width": 951,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28046v1/fig-006.webp",
+      "caption": "Table 1: Comparison of MemCog with Memory-as-Tool methods on the LoCoMo benchmark. The QA and LLM-as-Judge configurations follow (Chhikara et al., 2025). † indicates results sourced from (Du et al., 2025) and (Yue et al., 2026); all other baselines are reproduced using their official implementations. Best results in bold,",
+      "page": 5,
+      "index": 6,
+      "width": 715,
+      "height": 569
+    }
+  ]
+}

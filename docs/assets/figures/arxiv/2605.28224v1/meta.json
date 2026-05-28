@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.28224v1/fig-001.webp",
+      "caption": "Table 2: Experiment matrix: memory method × inference method × task type. Bold: best accuracy within each inference-method group. Significance markers: ∗∗ p<0.01, ∗ p<0.05 (McNemar’s exact test vs. the No-Memory baseline in the same row group); raw p-values in Appendix J. Terminal-Bench is non-serializable (—). Raw Sibling requires multi-candidate expansion (Beam/MCTS). †Not evaluated: LiTS-Fact is accuracy-neutral across all other cells (F3); the additional KGQA MCTS run would confirm the same null at high cost.",
+      "page": 6,
+      "index": 1,
+      "width": 825,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28224v1/fig-002.webp",
+      "caption": "Table 3: Settings used for the Reflection cells, compared with Reflexion (best-of-N ) and LATS (tree search).",
+      "page": 13,
+      "index": 2,
+      "width": 917,
+      "height": 215
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28224v1/fig-003.webp",
+      "caption": "Table 11: Per-configuration API cost and token usage. N = evaluated examples. Pol. = policy LLM calls/tokens; Sup. = supervisor (PRM + memory/augmentor) calls/tokens. KGQA Indep runs on 150 examples; Beam/MCTS on 69-subset. †Not evaluated (see Table 2).",
+      "page": 20,
+      "index": 3,
+      "width": 458,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28224v1/fig-004.webp",
+      "caption": "Table 10: Efficiency metrics for best-of-N . Steps: mean trajectory length (lower is better). Skip: fraction of attempts 1–4 that skip the initial discovery call (higher = more efficient). For SQL: skipping list_tables; for KG: not applicable. Cost: policy cost / total cost per 5-attempt run. Total includes augmentor LLM (Sonnet $3/$15). SQL policy: Haiku $0.80/$4.00; KG policy: Sonnet $3/$15.",
+      "page": 20,
+      "index": 4,
+      "width": 439,
+      "height": 301
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28224v1/fig-005.webp",
+      "caption": "Table 4: McNemar’s exact test results for every method-pair comparison the paper claims, grouped by benchmark. N is the number of examples on which both methods ran. Acorr and Bcorr are the per-method accuracy counts on those N examples; res is the count of examples where B is correct and A is wrong (rescues), reg the reverse (regressions).",
+      "page": 16,
+      "index": 5,
+      "width": 779,
+      "height": 563
+    }
+  ]
+}

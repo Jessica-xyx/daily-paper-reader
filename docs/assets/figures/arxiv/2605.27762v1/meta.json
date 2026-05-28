@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-001.webp",
+      "caption": "Table 1: Main results on the held-out long-horizon task suite. Results use 11 tasks and 3 seeds. Success rates include Wilson 95% confidence intervals; ∆ vs B1 reports the paired success-rate difference in percentage points. Latency is median per-call wall-clock time, and tokens are per-task totals.",
+      "page": 6,
+      "index": 1,
+      "width": 965,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-002.webp",
+      "caption": "Figure 3: PV and STC make consolidation selective and self-triggered. (a) Full PV scoring ranks candidate skills differently from the prior success-rate and retrieval-count heuristic; orange markers indicate candidates also selected by the heuristic. (b) STC uses the same statistical trigger across craft-heavy and combat-heavy trajectory slices, producing sparse consolidation events, while a fixed failure-rate threshold requires distribution-specific tuning.",
+      "page": 6,
+      "index": 2,
+      "width": 919,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-003.webp",
+      "caption": "Figure 4: Forgetting under sequential consolidation. We measure retained performance on early craft skills after consolidating craft, gather, and combat skills in sequence. Markers indicate measured checkpoints, and curves are monotone interpolants for visual continuity. PEAM remains at full retention under cross-category consolidation, while shared-parameter baselines degrade as additional categories are consolidated.",
+      "page": 7,
+      "index": 3,
+      "width": 444,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-004.webp",
+      "caption": "Table 2: Ablation summary. Each row replaces one PEAM design choice and reports the effect on the metric targeted by that design.",
+      "page": 8,
+      "index": 4,
+      "width": 948,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-005.webp",
+      "caption": "Figure 2: PEAM architecture. Successful and corrected trajectories produced by the slow tier are staged in episodic memory. PV selects which traces are worth internalizing, STC determines when consolidation should run, and joint BC+DPO updates the corresponding isolated category adapter. At inference, the fast parametric module executes consolidated skills directly and falls back to the slow tier when verification fails.",
+      "page": 4,
+      "index": 5,
+      "width": 929,
+      "height": 546
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-006.webp",
+      "caption": "Table 4: PEAM training and consolidation hyperparameters. Values not otherwise noted are held fixed across all experiments.",
+      "page": 12,
+      "index": 6,
+      "width": 654,
+      "height": 723
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27762v1/fig-007.webp",
+      "caption": "Table 5: Per-task success rates over 3 seeds. Cells show the number of successful seeds out of 3. Bold indicates PEAM strictly improves over B1.",
+      "page": 12,
+      "index": 7,
+      "width": 461,
+      "height": 311
+    }
+  ]
+}

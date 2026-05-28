@@ -1,0 +1,302 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-28T21:42:15.962276+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2605.25002v2",
+      "source": "arxiv",
+      "title": "MemMark: State-Evolution Attribution Watermarking for Agent Long-Term Memory Systems",
+      "abstract": "Memory-backed agents need provenance that can survive leaked or migrated snapshots, where logs, visible outputs, and trusted metadata may be absent. We propose MemMark, a state-evolution attribution watermark that embeds an owner-controlled signal into latent memory-write decisions. At each internal LLM call, MemMark samples among admissible candidates using keyed, distribution-preserving selection, and records cryptographic commitments with signed session anchors and reveal evidence. This makes attribution depend on reproducible backend behavior rather than mutable provenance fields. Across A-Mem and Graphiti on LoCoMo, with three LLM backbones, MemMark preserves memory utility: Overall F1 retains 99.6% of the unwatermarked baseline, while BLEU-1 changes by +0.2%. It also provides usable carrier capacity, with 1.16, 1.14, and 1.26 bits of mean entropy for update-target, link-target, and semantic-realization decisions. In the snapshot-only R3 setting, MemMark recovers the full 40-bit payload from final snapshots, while wrong-key verification remains near chance. Under nine memory-lifecycle attacks, verification distinguishes tampering, evidence deletion, and partial payload recovery. These results show that robust snapshot-only attribution is feasible for long-term agent memory without surviving traces, trusted metadata, or utility-degrading.",
+      "authors": [
+        "Haobo Zhang",
+        "Xutao Mao",
+        "Guangyuan Dong",
+        "Ziwei Li",
+        "Xuanbo Su",
+        "Kaijie Chen",
+        "Jing Yang",
+        "Zheng Lin"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "published": "2026-05-24T11:04:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.25002v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "watermarking method for agent long-term memory systems",
+      "llm_evidence_cn": "代理长期记忆系统的水印方法",
+      "llm_evidence": "代理长期记忆系统的水印方法",
+      "canonical_evidence": "代理长期记忆系统的水印方法",
+      "llm_tldr_en": "MemMark embeds attribution watermarks in agent memory write decisions while preserving utility",
+      "llm_tldr_cn": "MemMark在代理记忆写入中嵌入归属水印并保持效用",
+      "llm_tldr": "MemMark在代理记忆写入中嵌入归属水印并保持效用",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28046v1",
+      "source": "arxiv",
+      "title": "MemCog: From Memory-as-Tool to Memory-as-Cognition in Conversational Agents",
+      "abstract": "Existing agent memory systems universally follow what we term a Memory-as-Tool paradigm where a single query triggers one-shot retrieval of flat passage lists, suffering from passive invocation, reasoning-retrieval decoupling, and structural mismatch between retrieved fragments and the agent's navigational needs. We propose MemCog, a Memory-as-Cognition system that makes memory access an integral part of the reasoning process. MemCog organizes user knowledge as Navigable Memory Store with associative link graphs, exposes Cross-Dimensional Navigation Interface for multi-step reasoning-driven traversal, and employs Proactive Reasoning Protocol that drives agents to spontaneously initiate memory exploration from conversational context. We additionally construct ProactiveMemBench, the first benchmark for evaluating proactive memory triggering. Experiments show that MemCog achieves state-of-the-art on passive QA benchmarks (92.98 on LoCoMo, 95.8 on LongMemEval) while substantially outperforming baselines on ProactiveMemBench, demonstrating the advantage of Memory-as-Cognition.",
+      "authors": [
+        "Zihan Li",
+        "Xingyu Fan",
+        "Feifei Li",
+        "Wenhui Que"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-27T06:48:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.28046v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory-based reasoning in agents: reasoning-driven memory access",
+      "llm_evidence_cn": "基于记忆的推理：推理驱动的记忆访问",
+      "llm_evidence": "基于记忆的推理：推理驱动的记忆访问",
+      "canonical_evidence": "基于记忆的推理：推理驱动的记忆访问",
+      "llm_tldr_en": "Proposes MemCog, a memory-as-cognition system that integrates memory access into reasoning for conversational agents.",
+      "llm_tldr_cn": "提出MemCog，一种将记忆访问融入推理的认知型记忆系统，用于对话智能体。",
+      "llm_tldr": "提出MemCog，一种将记忆访问融入推理的认知型记忆系统，用于对话智能体。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28224v1",
+      "source": "arxiv",
+      "title": "When Does Memory Help Multi-Trajectory Inference for Tool-Use LLM Agents?",
+      "abstract": "Multi-trajectory inference for tool-use LLM agents - generating multiple reasoning attempts and selecting among them - benefits from transferring knowledge across attempts so that later ones avoid the pitfalls of earlier ones. Existing cross-trajectory memory methods (trajectory-level reflection, atomic fact extraction, raw observation injection) are each evaluated under a single inference strategy on a single task, making it unclear whether reported gains reflect properties of the memory abstraction or of the inference method. We propose a unified framework that decomposes memory along two axes -- the scope of transfer (within an expansion vs. across trajectories) and the abstraction of the transferred content -- and evaluate four methods under three inference strategies (best-of-N, beam search, MCTS) on four tool-use benchmarks spanning SQL, knowledge-graph, and CLI environments, in a verifier-free setting that matches the deployment regime of practical agents. The experiment matrix identifies the inference method as a confound: the same memory method produces statistically distinct results under different inference strategies on the same examples. Reflection reaches significance only under MCTS (not under best-of-N); within-expansion injection (conditioning each candidate on prior siblings' outcomes) helps only diversity-starved beam search; and atomic fact extraction is accuracy-neutral but shortens trajectories by 19-26% on tasks with reusable environmental structure.",
+      "authors": [
+        "Xinzhe Li",
+        "Yaguang Tao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-27T09:39:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.28224v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "evaluation of memory methods for tool-use LLM agents",
+      "llm_evidence_cn": "LLM智能体记忆方法评估：多轨迹推理中的记忆效用",
+      "llm_evidence": "LLM智能体记忆方法评估：多轨迹推理中的记忆效用",
+      "canonical_evidence": "LLM智能体记忆方法评估：多轨迹推理中的记忆效用",
+      "llm_tldr_en": "Studies when memory helps multi-trajectory inference for tool-use LLM agents by comparing different memory abstractions.",
+      "llm_tldr_cn": "研究记忆何时帮助工具使用LLM智能体的多轨迹推理，比较不同记忆抽象。",
+      "llm_tldr": "研究记忆何时帮助工具使用LLM智能体的多轨迹推理，比较不同记忆抽象。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28773v1",
+      "source": "arxiv",
+      "title": "Rethinking Memory as Continuously Evolving Connectivity",
+      "abstract": "Existing memory-augmented LLM agents often treat memory as a static repository with pre-defined representations and fixed retrieval pipelines, which is brittle in dynamic agentic environments where feedback, task variation, and heterogeneous signals continuously reshape what should be remembered and how it should be connected. To address this, we propose FluxMem, a connectivity-evolving memory framework that models memory as a heterogeneous graph and progressively refines its topology through three stages: initial connection formation, feedback-driven refinement, and long-term consolidation. During execution, FluxMem repairs missing links, prunes interference, aligns abstraction granularity, and distills recurrent successful trajectories into reusable procedural circuits, guided by one metric for memory generalizability and evolutionary maturity. Across three fundamentally distinct benchmarks including LoCoMo, Mind2Web, and GAIA, FluxMem achieves consistent state-of-the-art performance, demonstrating strong adaptation and generalization in complex agentic environments. The code will be open-sourced in https://github.com/zjunlp/LightMem.",
+      "authors": [
+        "Jizhan Fang",
+        "Buqiang Xu",
+        "Zhixian Wang",
+        "Haoliang Cao",
+        "Xinle Deng",
+        "Baohua Dong",
+        "Hangcheng Zhu",
+        "Ruohui Huang",
+        "Gang Yu",
+        "Ying Wei",
+        "Guozhou Zheng",
+        "Feiyu Xiong",
+        "Haofen Wang",
+        "Huajun Chen",
+        "Ningyu Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA",
+        "cs.MM"
+      ],
+      "published": "2026-05-27T17:35:34+00:00",
+      "link": "https://arxiv.org/pdf/2605.28773v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes FluxMem, a connectivity-evolving memory framework for dynamic environments",
+      "llm_evidence_cn": "提出FluxMem，一种为动态环境设计的连接演进记忆框架",
+      "llm_evidence": "提出FluxMem，一种为动态环境设计的连接演进记忆框架",
+      "canonical_evidence": "提出FluxMem，一种为动态环境设计的连接演进记忆框架",
+      "llm_tldr_en": "FluxMem models memory as a heterogeneous graph and refines topology via feedback.",
+      "llm_tldr_cn": "FluxMem将记忆建模为异构图，并通过反馈精化拓扑。",
+      "llm_tldr": "FluxMem将记忆建模为异构图，并通过反馈精化拓扑。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.22142v1",
+      "source": "arxiv",
+      "title": "Short-Term-to-Long-Term Memory Transfer for Knowledge Graphs under Partial Observability",
+      "abstract": "Reinforcement learning under partial observability requires deciding what information to retain, yet most memory-based approaches do not explicitly model short-term-to-long-term transfer of symbolic observations. We study this transfer process in a temporal knowledge-graph memory setting and cast it as a neuro-symbolic value-based decision problem: for each observed triple, the agent chooses whether to keep or drop it before long-term insertion. To handle variable-sized short-term buffers, we use a per-item Q-learning design with shared parameters and a practical temporal-difference update over matched items across consecutive steps. On the RoomKG benchmark at long-term memory capacity 128, learned transfer decisions outperform symbolic and neural baselines, including symbolic baselines with temporal annotations and history-based LSTM/Transformer baselines. Across transfer-policy ablations, a lightweight local short-term-only variant performs best, and step-level behavior shows that the policy keeps navigation- and query-relevant facts while discarding lower-value candidate facts, supporting explicit and interpretable memory decisions under memory constraints.",
+      "authors": [
+        "Taewoon Kim",
+        "Vincent François-Lavet",
+        "Michael Cochez"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-21T08:14:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.22142v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "short-term to long-term memory transfer in knowledge graphs",
+      "llm_evidence_cn": "知识图谱中的短期到长期记忆转移",
+      "llm_evidence": "知识图谱中的短期到长期记忆转移",
+      "canonical_evidence": "知识图谱中的短期到长期记忆转移",
+      "llm_tldr_en": "Learns to transfer short-term observations to long-term memory for agent decision making",
+      "llm_tldr_cn": "学习将短期观察转移到长期记忆以辅助agent决策",
+      "llm_tldr": "学习将短期观察转移到长期记忆以辅助agent决策",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.22781v1",
+      "source": "arxiv",
+      "title": "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback",
+      "abstract": "LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search and reinforcement learning), relying on rapid checkpoint and rollback (C/R) of the complete sandbox state, including files and process state (e.g., memory, contexts, etc.). Existing mechanisms duplicate the entire state, causing hundreds of milliseconds to seconds of latency per C/R, which severely bottlenecks deep search and large-scale fan-outs.   This paper observes that subsequent checkpoints in AI agents are highly similar. Therefore, instead of full duplication, a sandbox should only duplicate the changes between consecutive checkpoints (Key Insight). However, it is non-trivial to realize the idea, mainly due to the missing OS supports. This paper proposes a new OS-level abstraction, DeltaState, to enable the change-based transactional C/R for AI agents with two co-designed OS mechanisms. First, DeltaFS enables change-based filesystem C/R by organizing the file states into layers and dynamically freezing the writable layer and inserting a new one during checkpoint, reducing file updates to copy-on-write, and making rollback a simple layer switch. Second, DeltaCR enables change-based process state C/R using incremental dumps, and accelerates rollback by bypassing traditional pipelines to directly fork() from a frozen template process. We then present DeltaBox, a novel agent sandbox achieving millisecond level C/R through the two new mechanisms. Evaluations on SWE-bench and RL micro-benchmarks show DeltaBox completes checkpoint and rollback in millisecond-level latency (14ms and 5ms, respectively), empowering agents to explore substantially more nodes under fixed time budgets.",
+      "authors": [
+        "Yunpeng Dong",
+        "Jingkai He",
+        "Yuze Hou",
+        "Dong Du",
+        "Zhonghu Xu",
+        "Si Yu",
+        "Yubin Xia",
+        "Haibo Chen"
+      ],
+      "primary_category": "cs.OS",
+      "categories": [
+        "cs.OS",
+        "cs.AI"
+      ],
+      "published": "2026-05-21T17:36:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.22781v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "checkpoint/rollback for stateful agents enabling memory management",
+      "llm_evidence_cn": "有状态代理的检查点/回滚支持记忆管理",
+      "llm_evidence": "有状态代理的检查点/回滚支持记忆管理",
+      "canonical_evidence": "有状态代理的检查点/回滚支持记忆管理",
+      "llm_tldr_en": "DeltaBox reduces sandbox checkpoint latency by only duplicating changes between consecutive states.",
+      "llm_tldr_cn": "DeltaBox通过仅复制连续状态间的变化来降低沙箱检查点延迟。",
+      "llm_tldr": "DeltaBox通过仅复制连续状态间的变化来降低沙箱检查点延迟。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.27762v1",
+      "source": "arxiv",
+      "title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+      "abstract": "We present PEAM, a Parametric Embodied Agent Memory framework in Minecraft that transforms agent memory from inference-time retrieval into parameter-resident skills internalized through experience. PEAM pairs a slow deliberative LLM for open-ended reasoning with a fast parametric module for reflexive execution of consolidated skills. The fast module is a multimodal Mixture-of-Experts LoRA architecture with per-category physically isolated adapters, enabling parameter-level continual learning without catastrophic forgetting. We treat failure as a first-class training signal: failure--correction trajectory pairs are internalized through a joint behavioral-cloning and contrastive objective, so the agent learns not only what succeeds but also how corrected actions differ from failed ones. To govern consolidation, PEAM introduces a parameterization-worthiness score for deciding which experience should be internalized, and a scale-free self-triggered consolidation mechanism for deciding when to internalize without task-specific hand-tuned thresholds, making the agent self-evolving as the trigger transfers across task distributions without re-tuning. Experiments in Minecraft show that PEAM improves long-horizon task performance, mitigates forgetting on previously consolidated skills, and improves parametric-versus-retrieval efficiency over retrieval-based embodied agents and parametric memory variants.",
+      "authors": [
+        "Yuchen Guo",
+        "Junli Gong",
+        "Hongmin Cai",
+        "Yiu-ming Cheung",
+        "Weifeng Su"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-26T23:20:58+00:00",
+      "link": "https://arxiv.org/pdf/2605.27762v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory augmentation for embodied agents: parametric memory internalization",
+      "llm_evidence_cn": "具身智能体记忆增强：参数化记忆内化",
+      "llm_evidence": "具身智能体记忆增强：参数化记忆内化",
+      "canonical_evidence": "具身智能体记忆增强：参数化记忆内化",
+      "llm_tldr_en": "Proposes PEAM, a parametric memory framework that internalizes experience into parameter-resident skills for Minecraft agents.",
+      "llm_tldr_cn": "提出PEAM，将经验内化为参数驻留技能的参数化记忆框架，用于Minecraft智能体。",
+      "llm_tldr": "提出PEAM，将经验内化为参数驻留技能的参数化记忆框架，用于Minecraft智能体。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
