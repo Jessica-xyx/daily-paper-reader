@@ -1,0 +1,174 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-001.webp",
+      "caption": "Table 1: Main results on AndroidWorld-M. We report task success accuracy under pass@1 and pass@3.",
+      "page": 6,
+      "index": 1,
+      "width": 917,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-002.webp",
+      "caption": "Table 2: Main results on MemGUI-Bench. We report task success accuracy under pass@1 and pass@3.",
+      "page": 6,
+      "index": 2,
+      "width": 917,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-003.webp",
+      "caption": "Table 11: Prompt used by the dynamic testing worker.",
+      "page": 15,
+      "index": 3,
+      "width": 461,
+      "height": 1094
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-004.webp",
+      "caption": "Table 10: Example of a task seed used for virtual task instantiation.",
+      "page": 15,
+      "index": 4,
+      "width": 461,
+      "height": 457
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-005.webp",
+      "caption": "Table 18: Prompt used by the scenario generation agent.",
+      "page": 21,
+      "index": 5,
+      "width": 937,
+      "height": 1329
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-006.webp",
+      "caption": "Table 4: Ablation results. We incrementally add each component in STAMP on training baseline. For AndroidWorldM and MemGUI-Bench, we report the average task accuracy over L1–L3 under pass@1 and pass@3.",
+      "page": 7,
+      "index": 6,
+      "width": 952,
+      "height": 694
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-007.webp",
+      "caption": "Table 3: Main results on Memory-World. We report memory accuracy (M-Acc) and task accuracy (T-Acc) under pass@1 and pass@3.",
+      "page": 7,
+      "index": 7,
+      "width": 761,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-008.webp",
+      "caption": "Table 19: Prompt used by the task generation agent.",
+      "page": 22,
+      "index": 8,
+      "width": 937,
+      "height": 1342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-009.webp",
+      "caption": "Table 9: Example of a platform seed used for virtual environment generation.",
+      "page": 14,
+      "index": 9,
+      "width": 462,
+      "height": 899
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-010.webp",
+      "caption": "Figure 2: The end-to-end framework of STAMP. The proposed pipeline consists of three sequential phases: Phase I (Left): Seed configuration guided automated virtual environment synthesis and dynamic expert trajectory collection. Phase II (Middle): Successful trajectory post-processing, memory data isolation, and step-level CoT target annotation. Phase III (Right): Model training via offline step-balanced supervised fine-tuning and online sandbox reinforcement learning.",
+      "page": 3,
+      "index": 10,
+      "width": 950,
+      "height": 583
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-011.webp",
+      "caption": "Table 14: Task descriptions of MemGUI-Bench under the three-level protocol (Part II, continued from Table 13).",
+      "page": 18,
+      "index": 11,
+      "width": 929,
+      "height": 1343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-012.webp",
+      "caption": "Table 20: Prompt used by the webpage generation agent.",
+      "page": 23,
+      "index": 12,
+      "width": 937,
+      "height": 1346
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-013.webp",
+      "caption": "Table 8: Main optimization hyperparameters used in online RL.",
+      "page": 13,
+      "index": 13,
+      "width": 462,
+      "height": 608
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-014.webp",
+      "caption": "Figure 4: General capability evaluation on the full 116 AndroidWorld evaluation tasks.",
+      "page": 8,
+      "index": 14,
+      "width": 461,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-015.webp",
+      "caption": "Figure 3: Example of Stamp-GUI predict memory content when appropriate and using memory when needed on an L3-level task from AndroidWorld-M.",
+      "page": 8,
+      "index": 15,
+      "width": 950,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-016.webp",
+      "caption": "Table 13: Task descriptions of MemGUI-Bench under the three-level protocol (Part I).",
+      "page": 17,
+      "index": 16,
+      "width": 929,
+      "height": 1252
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-017.webp",
+      "caption": "Table 7: User prompt template used by Stamp-GUI.",
+      "page": 12,
+      "index": 17,
+      "width": 462,
+      "height": 1161
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-018.webp",
+      "caption": "Table 21: Prompt used by the static inspection agent.",
+      "page": 24,
+      "index": 18,
+      "width": 962,
+      "height": 1389
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-019.webp",
+      "caption": "Table 16: Prompt used by the dynamic testing planner.",
+      "page": 20,
+      "index": 19,
+      "width": 937,
+      "height": 783
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-020.webp",
+      "caption": "Table 17: Prompt used for memory-accuracy evaluation.",
+      "page": 20,
+      "index": 20,
+      "width": 937,
+      "height": 474
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29324v1/fig-021.webp",
+      "caption": "Table 12: Task-level details of AndroidWorld-M. Each difficulty level contains the same 13 task types, while L1 and L2 use more explicit task instructions and L1 additionally introduces controlled simplifications.",
+      "page": 16,
+      "index": 21,
+      "width": 922,
+      "height": 1332
+    }
+  ]
+}

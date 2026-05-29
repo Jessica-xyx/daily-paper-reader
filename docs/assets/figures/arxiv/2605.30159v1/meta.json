@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-001.webp",
+      "caption": "Figure 1: Overview of MMPO. (Top) Existing outcome-based memory policies suffer from sparse credit assignment, failing to prevent ambiguous summaries from accumulating belief deviation. (Bottom) MMPO introduces an anchor-question-based Belief Entropy to provide dense, memoryspecific supervision. This fine-grained penalty for epistemic uncertainty preserves clearer summaryinduced beliefs and improves long-context reasoning.",
+      "page": 2,
+      "index": 1,
+      "width": 822,
+      "height": 376
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-002.webp",
+      "caption": "Table 1: Main results on RULER-HotpotQA across context lengths. MMPO follows the same recursive memory workflow as RL-MemAgent and adds Belief Entropy supervision during training.",
+      "page": 7,
+      "index": 2,
+      "width": 818,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-003.webp",
+      "caption": "Figure 2: Belief-state under standard and summary-based POMDPs. (a) In standard POMDPs, the belief b = P (s | h) is updated from the full interaction history. (b) In summary-based POMDPs, the memory policy compresses the history into a summary m, inducing a belief b = P (s | m) from the compressed representation.",
+      "page": 3,
+      "index": 3,
+      "width": 820,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-004.webp",
+      "caption": "Table 2: Comparison with MEM1 on Multi-objective QA. We follow the MEM1 evaluation protocol and report task scores. Following MEM1, EM/F1 are aggregated over objectives.",
+      "page": 8,
+      "index": 4,
+      "width": 826,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-005.webp",
+      "caption": "Figure 3: Empirical validation of Belief Entropy. (a) Successful trajectories show decreasing HBE, while failed ones generally stagnate or increase. (b) Entropy reduction correlates with task accuracy. (c) Test-time Best-of-N selection by HBE improves performance.",
+      "page": 4,
+      "index": 5,
+      "width": 821,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-006.webp",
+      "caption": "Figure 5: Belief Entropy analysis. (a) Belief Entropy trajectories over reasoning turns at 56K context length. Successful trajectories show consistent entropy decrease, while failed trajectories stagnate or increase. (b) Correlation between total entropy reduction ∆HBE and task accuracy across 500 test episodes. MMPO strengthens this correlation compared with MemAgent, supporting Belief Entropy as a proxy for intermediate memory quality.",
+      "page": 9,
+      "index": 6,
+      "width": 821,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30159v1/fig-007.webp",
+      "caption": "Figure 4: Overview of the MMPO training pipeline. Stage 1: The memory policy πθ samples G trajectories per task. Stage 2: Each trajectory is decomposed into sub-trajectories τ≤1, . . . , τ≤T , and Belief Entropy HBE(mk) is computed at every turn to produce dense per-step rewards Rk. Stage 3: Sub-trajectory rewards are normalized via GRPO and aggregated into future-aware turnlevel advantages for policy optimization.",
+      "page": 5,
+      "index": 7,
+      "width": 818,
+      "height": 215
+    }
+  ]
+}

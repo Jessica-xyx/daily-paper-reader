@@ -1,0 +1,345 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-29T21:13:33.282931+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2605.29324v1",
+      "source": "arxiv",
+      "title": "STAMP: Training Explicit Memory for Mobile GUI Agents in Controllable and Scalable Virtual Environments",
+      "abstract": "Mobile GUI agents excel at immediate reactive control but frequently fail in realistic, long-horizon tasks that require memory. This failure stems from a fundamental conflict between limited context windows and token-heavy screenshots. To save the limited context, agents must progressively discard older visual history, permanently losing crucial transient information. Furthermore, existing action-centric datasets fail to teach agents what or when to explicitly memorize, and augmenting static real-world data is prohibitively expensive and lacks interactive verification. To resolve this, we present STAMP, a framework that trains explicit memory in mobile agents through controllable virtual environments, where deterministic memory variables are programmatically injected into synthesized tasks to control what must be memorized, when it should be encoded, and when it must later be retrieved, thereby producing verifiable supervised data at scale and enabling online reinforcement learning through environment-driven reward feedback. Evaluated on our newly introduced Memory-World benchmark, the resulting Stamp-GUI agent achieves state-of-the-art performance among GUI-specialized models and sets a new high watermark on our Memory-World benchmark, demonstrating exceptional memory accuracy and task resilience while maintaining strong general mobile navigation capabilities.",
+      "authors": [
+        "Junyang Wang",
+        "Haiyang Xu",
+        "Xi Zhang",
+        "Zhaoqing Zhu",
+        "Ming Yan",
+        "Jieping Ye",
+        "Jitao Sang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-05-28T04:00:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.29324v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "training explicit memory for mobile GUI agents",
+      "llm_evidence_cn": "为移动GUI代理训练显式记忆",
+      "llm_evidence": "为移动GUI代理训练显式记忆",
+      "canonical_evidence": "为移动GUI代理训练显式记忆",
+      "llm_tldr_en": "Presents STAMP, a framework to train explicit memory for mobile GUI agents in virtual environments.",
+      "llm_tldr_cn": "提出STAMP，在虚拟环境中训练移动GUI代理显式记忆的框架。",
+      "llm_tldr": "提出STAMP，在虚拟环境中训练移动GUI代理显式记忆的框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29630v1",
+      "source": "arxiv",
+      "title": "Entity-Collision: A Stratified Protocol for Attributing Retrieval Lift in Agent Memory",
+      "abstract": "End-to-end agent-memory benchmarks report a single hit@k per retriever, confounding lexical leakage (uncontrolled query/gold/distractor entity overlap) with tag-mixing (preferences, services, tools averaged together). We propose entity-collision, a system-agnostic protocol that pins the BM25 floor by construction -- every distractor shares the answer's entity tokens -- and stratifies queries by discriminator tag, so any lift over BM25 is attributable to the embedder. Applied to an open-source agent-memory testbed across 5 tags x 3 embedders x 5 collision degrees with paired-bootstrap 95% CIs, the protocol reveals a two-axis pattern: a 256-d hash trigram helps only on closed-vocabulary lexical tags at deep collision; MiniLM-384 dominates both axes; and a 2.7x-parameter BGE-large does not uniformly improve on MiniLM -- it wins on intent-style queries but loses on lexical ones. Encoder capacity alone is not the binding constraint. The synthetic intent-tag null replicates on LongMemEval (n=500) as a single-session-preference recall cliff. Adaptive vector-weight routing on LoCoMo is a measured null: 11.7pp of oracle headroom exists, but no signal we tested recovers it. All 26 result tables and 37 reproduce scripts are version-controlled and verified by a public registry; the protocol is exercised on a deterministically governed memory testbed (event-sourced decision log, DAG-state-machine schema lifecycle) so every reported CI is reproducible byte-for-byte from the ingest stream.",
+      "authors": [
+        "Youwang Deng"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-05-28T09:02:48+00:00",
+      "link": "https://arxiv.org/pdf/2605.29630v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "protocol for attributing retrieval lift in agent memory benchmarks",
+      "llm_evidence_cn": "用于归因代理记忆基准中检索提升的协议",
+      "llm_evidence": "用于归因代理记忆基准中检索提升的协议",
+      "canonical_evidence": "用于归因代理记忆基准中检索提升的协议",
+      "llm_tldr_en": "Proposes entity-collision protocol to isolate true embedding lift from lexical leakage in agent-memory evaluation.",
+      "llm_tldr_cn": "提出实体碰撞协议，从词汇泄漏中分离真实嵌入提升，用于代理记忆评估。",
+      "llm_tldr": "提出实体碰撞协议，从词汇泄漏中分离真实嵌入提升，用于代理记忆评估。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30159v1",
+      "source": "arxiv",
+      "title": "Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents",
+      "abstract": "Memory-augmented LLM agents tackle complex long-horizon tasks by recursively summarizing interaction trajectories into compact memory. However, existing approaches typically train these memory policies using outcome-based reinforcement learning, failing to localize where intermediate memory quality degrades. As interactions unfold, ambiguous recursive summaries progressively discard task-relevant information and introduce semantic noise. This exacerbates belief deviation, obscuring the agent's estimate of the latent task state and ultimately derailing long-horizon reasoning. We therefore argue that memory optimization should focus not merely on trajectory-level success, but on the clarity of the belief induced by intermediate summaries. To this end, we introduce Belief Entropy, a self-supervised proxy that probes how uncertain the model remains about the latent task state given its current memory. Based on this proxy, we propose Metacognitive Memory Policy Optimization (MMPO). Instead of relying only on sparse outcome-based signals, MMPO provides fine-grained, memory-specific supervision via explicitly penalizing summaries that induce high epistemic uncertainty. Experiments show that MMPO consistently outperforms existing methods on diverse long-horizon tasks, maintaining 97.1% performance even when scaled to 1.75M-token contexts.",
+      "authors": [
+        "Ziyan Liu",
+        "Zhezheng Hao",
+        "Yeqiu Chen",
+        "Hong Wang",
+        "Jingren Hou",
+        "Ruiyi Ding",
+        "Yongkang Yang",
+        "Wence Ji",
+        "Wei Xia",
+        "Feng Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T16:17:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.30159v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "optimizes memory policy for long-horizon LLM agents via belief clarity rather than outcome",
+      "llm_evidence_cn": "通过信念清晰度而非结果优化长期LLM代理的记忆策略",
+      "llm_evidence": "通过信念清晰度而非结果优化长期LLM代理的记忆策略",
+      "canonical_evidence": "通过信念清晰度而非结果优化长期LLM代理的记忆策略",
+      "llm_tldr_en": "Meta-Cognitive Memory Policy Optimization improves belief clarity in recursive summarization for long-horizon tasks.",
+      "llm_tldr_cn": "元认知记忆策略优化通过递归总结提高长期任务中的信念清晰度。",
+      "llm_tldr": "元认知记忆策略优化通过递归总结提高长期任务中的信念清晰度。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29640v1",
+      "source": "arxiv",
+      "title": "VikingMem: A Memory Base Management System for Stateful LLM-based Applications",
+      "abstract": "Large Language Models have revolutionized interactive applications; however, their finite context windows pose a critical data management challenge for maintaining stateful, long-term interactions. Existing memory approaches often rely on simplistic extraction methods that lead to incomplete memories or use rigid, single-purpose memory extraction prompts tailored to a single use case, such as chatbots. Consequently, they lack generalizability and perform poorly across diverse downstream tasks. To bridge this gap, we introduce the Memory Base, a novel data management paradigm for managing the persistent state of long-term interactions. It is characterized by three core principles: selective extraction of high-value memories from raw information streams; inherent statefulness and evolution, where memory content is progressively summarized, corrected, and temporally weighted to prioritize recent interactions; and a generalizable abstraction paradigm designed for robust transferability across diverse applications, including education, recommendation, and agent memory. Building on this foundation, we present VikingMem, an end-to-end Memory Base Management System implemented on the VikingDB vector engine. VikingMem materializes this paradigm through interconnected event and entity abstractions. It features event-centric memory extraction to selectively handle complex information streams, while entities are dynamically updated by events to achieve stateful evolution. Using temporal compression via a topic-wise timeline and time-weighted recall, the system progressively produces high-level summary memories, prioritizes recent items, and compresses and fades older ones. Extensive evaluations on long-term memory benchmarks demonstrate that VikingMem outperformes baselines by up to 30% in memory retrieval effectiveness while maintaining the low latency essential for interactive applications.",
+      "authors": [
+        "Jiajie Fu",
+        "Junwen Chen",
+        "Mengzhao Wang",
+        "Aoxiang He",
+        "Maojia Sheng",
+        "Xiangyu Ke",
+        "Yifan Zhu",
+        "Yunjun Gao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T09:07:42+00:00",
+      "link": "https://arxiv.org/pdf/2605.29640v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory base management system for stateful LLM applications",
+      "llm_evidence_cn": "用于有状态LLM应用的记忆库管理系统",
+      "llm_evidence": "用于有状态LLM应用的记忆库管理系统",
+      "canonical_evidence": "用于有状态LLM应用的记忆库管理系统",
+      "llm_tldr_en": "Proposes VikingMem, a memory base management system with selective extraction for LLM apps.",
+      "llm_tldr_cn": "提出VikingMem，一种具有选择性提取的记忆库管理系统。",
+      "llm_tldr": "提出VikingMem，一种具有选择性提取的记忆库管理系统。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29960v1",
+      "source": "arxiv",
+      "title": "Hijacking Agent Memory: Stealthy Trojan Attacks Through Conversational Interaction",
+      "abstract": "Large language model (LLM) agents increasingly leverage long term memory to support persistent and autonomous task execution. However, this capability also introduces a new attack surface: memory poisoning, where adversaries can inject malicious information to influence future behavior. Existing memory poisoning attacks often assume that injected content can be stored directly in memory, overlooking the selective extraction and rewriting stages in modern memory pipelines. This makes prior methods ineffective under realistic settings.   In this paper, we propose MemPoison, a novel memory poisoning attack that bypasses selective memory mechanisms in LLM agents, where an attacker can inject triggerable backdoors into the agent's long-term memory through dialogue interactions, thereby misleading its subsequent responses. MemPoison introduces three key components: (i) a semantic relational bridge that binds the trigger and payload into a coherent statement to ensure they are extracted into memory together; (ii) entity masquerading that optimizes triggers to mimic named entities, resisting rewriting; and (iii) joint embedding optimization that shapes trigger-injected texts into a tight cluster in the embedding space while maintaining isolation from benign embeddings for stealth. Evaluations across different agent domains and memory mechanisms show MemPoison achieves attack success rates up to 0.95, outperforming existing baselines. Mechanistic analysis indicates that the attack exploits embedding-space anisotropy and shifts attention patterns, highlighting core vulnerabilities in selective memory systems. We evaluate multiple defense strategies and demonstrate their fundamental limitations in mitigating the attack.",
+      "authors": [
+        "Hongtao Wang",
+        "Se Yang",
+        "Yu Chen",
+        "Puzhuo Liu"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-05-28T14:02:00+00:00",
+      "link": "https://arxiv.org/pdf/2605.29960v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory poisoning attack on LLM agents",
+      "llm_evidence_cn": "针对LLM代理的记忆投毒攻击",
+      "llm_evidence": "针对LLM代理的记忆投毒攻击",
+      "canonical_evidence": "针对LLM代理的记忆投毒攻击",
+      "llm_tldr_en": "Proposes MemPoison, a memory poisoning attack that bypasses selective memory mechanisms in LLM agents.",
+      "llm_tldr_cn": "提出MemPoison，一种绕过LLM代理选择性记忆机制的投毒攻击。",
+      "llm_tldr": "提出MemPoison，一种绕过LLM代理选择性记忆机制的投毒攻击。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.26154v1",
+      "source": "arxiv",
+      "title": "MemMorph: Tool Hijacking in LLM Agents via Memory Poisoning",
+      "abstract": "LLM-driven agents are capable of selecting external tools to complete users' tasks. However, attackers could compromise such process, steering agents toward inappropriate/wrong tools and enabling malicious actions. Most existing attacks primarily manipulate the tool metadata, which is easily detectable by auditing and may lose effectiveness as modern agents increasingly adopt memory modules to refine tool selection policies through accumulated experience. This paper proposes MemMorph, the first attack that bias tool selection by poisoning the agent's long-term memory. Rather than explicitly dictating the tool invocation decision, MemMorph injects a small number of crafted records that are disguised as technical facts, incident reports, and operational policies. These poisoned records reshape the agent's contextual perception and decision-making process, leading it to autonomously infer and select the tool preferred by the attacker. Experiments across 3 benchmarks, 10 agent backbones, and 3 memory-module implementations show that MemMorph achieves up to 85.9% attack success rate with only three injected records, outperforming the strongest baseline by up to 25% while retaining potency under 3 representative defenses. Our findings expose long-term memory as a critical and under-explored attack surface in tool-augmented agents, urging the development of memory-level integrity safeguards.",
+      "authors": [
+        "Xuanye Zhang",
+        "Yongsen Zheng",
+        "Zhuqin Xu",
+        "Kaiyu Zhou",
+        "Bowen Shen",
+        "Haoran Ou",
+        "Tianwei Zhang",
+        "Kwok-Yan Lam"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-05-24T04:26:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.26154v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "attacks agent long-term memory to hijack tool selection",
+      "llm_evidence_cn": "通过投毒长期记忆劫持工具选择",
+      "llm_evidence": "通过投毒长期记忆劫持工具选择",
+      "canonical_evidence": "通过投毒长期记忆劫持工具选择",
+      "llm_tldr_en": "First attack that poisons LLM agent long-term memory to bias tool selection.",
+      "llm_tldr_cn": "首个通过投毒长期记忆来偏置工具选择的攻击。",
+      "llm_tldr": "首个通过投毒长期记忆来偏置工具选择的攻击。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.22106v1",
+      "source": "arxiv",
+      "title": "ArborKV: Structure-Aware KV Cache Management for Scaling Tree-based LLM Reasoning",
+      "abstract": "Recent progress in LLM reasoning has increasingly shifted from single-pass generation to explicit search over intermediate reasoning states. Tree-of-Thoughts (ToT) organizes inference to tree-structured search with branching and backtracking, but it substantially amplifies the Key--Value (KV) cache: retaining KV states for a frontier of partial trajectories quickly becomes a memory bottleneck that limits throughput and constrains search depth and width under fixed hardware budgets. We address this challenge by observing that KV reuse in ToT-style inference is governed by search dynamics: near-term decoding depends primarily on the active branch and its ancestors, whereas inactive subtrees have low short-term reuse probability yet must remain recoverable for backtracking. Motivated by this, we propose ArborKV, a structure-aware eviction framework that couples a lightweight value estimator with a tree-aware allocation policy, and performs purely token-extractive eviction with lazy rehydration to support revisits. Experiments on ToT-style reasoning benchmarks show that ArborKV achieves up to ~4x peak KV-memory reduction while preserving near-full-retention accuracy, enabling larger search configurations under fixed device budgets that would otherwise run out of memory.",
+      "authors": [
+        "Yeqiu Chen",
+        "Ziyan Liu",
+        "Zhenxin Huang",
+        "Runquan Gui",
+        "Hong Wang",
+        "Lei Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-21T07:40:57+00:00",
+      "link": "https://arxiv.org/pdf/2605.22106v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "KV cache management for tree-based LLM reasoning",
+      "llm_evidence_cn": "基于树的LLM推理的KV缓存管理",
+      "llm_evidence": "基于树的LLM推理的KV缓存管理",
+      "canonical_evidence": "基于树的LLM推理的KV缓存管理",
+      "llm_tldr_en": "Structure-aware KV cache management to scale tree-based LLM reasoning.",
+      "llm_tldr_cn": "结构感知的KV缓存管理以扩展基于树的LLM推理。",
+      "llm_tldr": "结构感知的KV缓存管理以扩展基于树的LLM推理。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.29440v1",
+      "source": "arxiv",
+      "title": "SkillBrew: Multi-Objective Curation of Skill Banks for LLM Agents",
+      "abstract": "Retrieval-augmented LLM agents increasingly rely on curated skill banks: collections of reusable textual principles that guide decision making on complex tasks. Existing approaches typically expand these banks in an append-only fashion, continuously adding new skills without removing redundant, outdated, or harmful ones, resulting in inefficient and poorly curated repositories. In this paper, we formulate the skill bank curation as a constrained multi-objective problem: a desirable bank must be useful for the agent, diverse in its content, and provide good coverage of the query distribution. To this end, we introduce SkillBrew, a multi-objective curation framework that formalizes skill bank curation as Pareto-aware optimization under a utility constraint, and solves it via a bi-level propose-then-verify loop. We evaluate our approach on two public benchmarks. Our findings suggest that treating skill banks as objects of principled curation, rather than ever-growing append-only logs, is an important step toward building self-improving LLM agents.",
+      "authors": [
+        "Wentao Hu",
+        "Zhendong Chu",
+        "Yiming Zhang",
+        "Junda Wu",
+        "Ming Jin",
+        "Xiangyu Zhao",
+        "Yilei Shao",
+        "Yanfeng Wang",
+        "Qingsong Wen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-05-28T06:33:52+00:00",
+      "link": "https://arxiv.org/pdf/2605.29440v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "frames skill bank curation as multi-objective optimization for agent memory management",
+      "llm_evidence_cn": "将技能库策展形式化为多目标优化问题，用于代理记忆管理",
+      "llm_evidence": "将技能库策展形式化为多目标优化问题，用于代理记忆管理",
+      "canonical_evidence": "将技能库策展形式化为多目标优化问题，用于代理记忆管理",
+      "llm_tldr_en": "SkillBrew optimizes skill banks for usefulness, diversity, and coverage via Pareto-aware curation.",
+      "llm_tldr_cn": "SkillBrew通过帕累托感知策展优化技能库的有用性、多样性和覆盖度。",
+      "llm_tldr": "SkillBrew通过帕累托感知策展优化技能库的有用性、多样性和覆盖度。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

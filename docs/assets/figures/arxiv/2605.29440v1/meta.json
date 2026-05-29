@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-001.webp",
+      "caption": "Figure 1: Three paradigms of skill bank curation. Prior work either (A) accumulates skills without removal, or (B) edits skills based on per-skill signals. We propose (C) global bank-level optimization, which evaluates the entire bank under multi-objective trade-offs and chooses updates via a Pareto-aware selector.",
+      "page": 1,
+      "index": 1,
+      "width": 431,
+      "height": 570
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-002.webp",
+      "caption": "Table 1: Main results on ALFWorld (Success Rate, %) and WebShop (Score and Success Rate). All methods use Qwen2.5-7B-Instruct as the frozen agent worker. Bold denotes best results per column; Blue marks the ReAct baseline.",
+      "page": 6,
+      "index": 2,
+      "width": 750,
+      "height": 381
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-003.webp",
+      "caption": "Table 2: Cross-worker generalization on ALFWorld (Success Rate, %) and WebShop (Score and Success Rate). SkillBrew is applied on five worker backbones, including open-source and closed-source models.",
+      "page": 6,
+      "index": 3,
+      "width": 854,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-004.webp",
+      "caption": "Figure 9: Prompt of the Skill Diagnoser",
+      "page": 15,
+      "index": 4,
+      "width": 946,
+      "height": 1121
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-005.webp",
+      "caption": "Figure 3: Curation loop dynamics of SkillBrew across five worker backbones on ALFWorld. (a) Bank size across rounds. (b) Success rate on ALFWorld test set across rounds.",
+      "page": 7,
+      "index": 5,
+      "width": 840,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-006.webp",
+      "caption": "Figure 8: Prompt of the Skill Distiller for producing candidate skills.",
+      "page": 14,
+      "index": 6,
+      "width": 946,
+      "height": 766
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-007.webp",
+      "caption": "Figure 7: Prompt of the Skill Distiller for failure analysis.",
+      "page": 14,
+      "index": 7,
+      "width": 946,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-008.webp",
+      "caption": "Figure 4: Example skills from the curated bank on ALFWorld.",
+      "page": 13,
+      "index": 8,
+      "width": 948,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-009.webp",
+      "caption": "Figure 5: Example skills from the curated bank on WebShop.",
+      "page": 13,
+      "index": 9,
+      "width": 948,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-010.webp",
+      "caption": "Figure 6: An example of REWRITE.",
+      "page": 13,
+      "index": 10,
+      "width": 948,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-011.webp",
+      "caption": "Figure 2: Overview of SkillBrew. At each round, an inner loop produces ADD candidates via the Skill Distiller, KEEP, REWRITE, and REMOVE verdicts via the Skill Diagnoser, and the Edit Planner sees current skill bank and proposes K new candidate banks from these edits. An outer loop then verifies these candidate banks on the query set under three objectives Jutil, Jdiv, and Jcov, and selects the next bank with a Pareto-aware selector.",
+      "page": 4,
+      "index": 11,
+      "width": 946,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29440v1/fig-012.webp",
+      "caption": "Figure 10: Prompt of the Edit Planner",
+      "page": 16,
+      "index": 12,
+      "width": 946,
+      "height": 1017
+    }
+  ]
+}

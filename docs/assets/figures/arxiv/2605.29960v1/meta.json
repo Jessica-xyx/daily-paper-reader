@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-001.webp",
+      "caption": "Figure 10: Self-attention heatmaps of (a) the benign text and (b) the trigger-injected text (trigger tokens highlighted in boxes), and (c) normalized attention received by each token.",
+      "page": 11,
+      "index": 1,
+      "width": 1024,
+      "height": 326
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-002.webp",
+      "caption": "Figure 15: Prompt used to construct the semantic relational bridge for binding the trigger and payload.",
+      "page": 15,
+      "index": 2,
+      "width": 494,
+      "height": 782
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-003.webp",
+      "caption": "Figure 1: Overview of memory poisoning attack in selective LLM agent memory systems. An attacker injects a trigger–payload text through user interaction. Before storage, the agent applies a selective memory pipeline (e.g., extraction and rewriting), which may filter or modify inputs; prior work [8, 11, 36] idealizes this step as direct storage. The poisoned memory remains dormant until a later trigger–containing query retrieves it and induces malicious agent responses.",
+      "page": 2,
+      "index": 3,
+      "width": 948,
+      "height": 195
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-004.webp",
+      "caption": "Table 1: Main results across memory mechanisms and attack methods on three target agents. ↑ denotes higher is better. NonAttack has no attack metrics (denoted by −). Bold denotes the best result per column within each memory mechanism.",
+      "page": 7,
+      "index": 4,
+      "width": 994,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-005.webp",
+      "caption": "Figure 13: Prompt used for paraphrasing.",
+      "page": 14,
+      "index": 5,
+      "width": 494,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-006.webp",
+      "caption": "Figure 2: Attack Scenario of the proposed memory poisoning attack in a shared agent platform. The attack consists of two parts: injection (left) and triggering (right). (1) During injection, the attacker poisons the agent memory by injecting malicious information through normal conversational interactions on the shared agent platform. (2) During triggering, the attack can be activated via two pathways: (A) user-triggered activation, where the trigger is embedded in external content (e.g., a webpage) that an innocent user references in their query, causing the agent to retrieve and execute the malicious payload; and (B) attacker-triggered activation, where the attacker directly issues a query containing the trigger to reliably elicit the malicious response. In both cases, the agent produces a harmful response derived from the poisoned memory.",
+      "page": 3,
+      "index": 6,
+      "width": 948,
+      "height": 380
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-007.webp",
+      "caption": "Figure 17: Prompt used for ACC evaluation.",
+      "page": 18,
+      "index": 7,
+      "width": 494,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-008.webp",
+      "caption": "Figure 7: Impact of the number of poisoned records.",
+      "page": 8,
+      "index": 8,
+      "width": 1044,
+      "height": 212
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-009.webp",
+      "caption": "Figure 3: Overview of the MemPoison framework.",
+      "page": 4,
+      "index": 9,
+      "width": 948,
+      "height": 552
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-010.webp",
+      "caption": "Figure 19: Prompt used for the paraphrasing-based defense.",
+      "page": 19,
+      "index": 10,
+      "width": 494,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-011.webp",
+      "caption": "Figure 18: Prompt used for ASR evaluation.",
+      "page": 19,
+      "index": 11,
+      "width": 494,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-012.webp",
+      "caption": "Figure 8: Impact of the retrieval window size 𝑘 (with 𝑁 = 5 injected malicious records).",
+      "page": 9,
+      "index": 12,
+      "width": 935,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29960v1/fig-013.webp",
+      "caption": "Figure 9: Transferability of the trigger across embedding models. The heatmaps show the RSR, ASR, and ACC metrics when transferring triggers optimized on the source embedder (y-axis) to the target embedder (x-axis).",
+      "page": 9,
+      "index": 13,
+      "width": 937,
+      "height": 299
+    }
+  ]
+}
