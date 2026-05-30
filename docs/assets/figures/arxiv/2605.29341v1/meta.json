@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-001.webp",
+      "caption": "Figure 3. Data construction pipeline and benchmark composition. (a) WorldMemArena constructs data around two task regimes, Lifelong Evolution and Agentic Execution, by segmenting sessions, extracting and updating gold memory points, removing redundancy, and constructing midway and final QA checkpoints. (b-1) The benchmark covers both GUI and embodied interaction settings. (b-2) The upper charts summarize gold memory points across the benchmark, including update memory points and interference memory points. The lower chart shows the task distribution across domains in Lifelong Evolution.",
+      "page": 6,
+      "index": 1,
+      "width": 1054,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-002.webp",
+      "caption": "Figure 7. Token efficiency & QA performance tradeoff among different baselines. Circle size indicates average inference time, with larger circles denoting higher time cost.",
+      "page": 11,
+      "index": 2,
+      "width": 465,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-003.webp",
+      "caption": "Table 4. The eleven semantic axes used for per-type QA accuracy. Each axis is a mutually exclusive label assigned to every gold QA.",
+      "page": 21,
+      "index": 3,
+      "width": 1056,
+      "height": 711
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-004.webp",
+      "caption": "Figure 2. Overview of multimodal agent memory evaluation. (a) Recall-only evaluation. (b) Missing lifecycle-level diagnosis. (c) Low-pressure chat-like settings. (d) WorldMemArena evaluates multimodal memory through action-world interaction.",
+      "page": 2,
+      "index": 4,
+      "width": 439,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-005.webp",
+      "caption": "Figure 6. (a) Fine-grained QA performance of different baselines on individual tasks. (b) Recall@K and NDCG@K (Normalized Discounted Cumulative Gain) trends under different retrieval cutoffs.",
+      "page": 10,
+      "index": 5,
+      "width": 535,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-006.webp",
+      "caption": "Figure 8. Mean per-task wall-clock time on a log-scale axis, split into retrieval (light blue) and write/store (dark blue).",
+      "page": 23,
+      "index": 6,
+      "width": 514,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-007.webp",
+      "caption": "Table 2. Performance of baselines on memory quality and question answering (QA) quality. All values are reported in % as the mean across samples. Memory metrics: Recall = Memory Recall, Corr = Memory Correctness, Hallu = Memory Hallucination, Irrel = Memory Irrelevance, Update = Update Handling, and IntRej = Interference Rejection, averaged over samples containing interference items. QA metrics: QA-C = QA Correct, QA-H = QA Hallucination, QA-O = QA Omission, and RC = Retrieval Coverage. In the External Memory Agents, the dashed line separates caption-based text only systems above from multimodal systems using both images and text below. All judgments are conducted with GPT-5.4-mini as the evaluator.",
+      "page": 8,
+      "index": 7,
+      "width": 1056,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-008.webp",
+      "caption": "Figure 4. (a) shows the trend of average QA accuracy across dialogue sessions. (b), (c) summarize memory-point composition in terms of update operations (Append, Revise, Delete, and Merge) and fact salience.",
+      "page": 9,
+      "index": 8,
+      "width": 431,
+      "height": 301
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-009.webp",
+      "caption": "Table 3. QA quality results for all base models and harness agents. QA-C denotes QA Correct, QA-H denotes QA Hallucination, and QA-O denotes QA Omission.",
+      "page": 9,
+      "index": 9,
+      "width": 614,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29341v1/fig-010.webp",
+      "caption": "Table 1. Comparison of WorldMemArena with representative memory benchmarks. ✓ = satisfies, ✓✗ = partial support, ✗ = does not satisfy. MM denotes multimodal support; Dim. denotes evaluation dimensions; #QA the number of QA pairs; Img. the number of images; Session the number of multi-turn sessions; Steps the number of interaction steps; Mode the interaction paradigm. The Lifecycle group covers the Write, Update (Upd.), Retrieve (Ret.), and Use stages of memory.",
+      "page": 5,
+      "index": 10,
+      "width": 1064,
+      "height": 300
+    }
+  ]
+}

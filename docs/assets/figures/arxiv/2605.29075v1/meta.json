@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-001.webp",
+      "caption": "Figure 1: Knowledge offloading (KOFF) decomposes a pretrained LLM into a sparse backbone and separate swappable memory modules.",
+      "page": 1,
+      "index": 1,
+      "width": 365,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-002.webp",
+      "caption": "Table 1: Topic-domain and language-domain results, at global sparsity level 12%. Pruned variants use the same L0 sparsification objective but do not have memory modules. PPLavg is perplexity averaged over 6 considered languages.",
+      "page": 6,
+      "index": 2,
+      "width": 746,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-003.webp",
+      "caption": "Figure 5: Single-factor slices for the upper-layer sweep: retention interval (A), retention batch size (B), and sparsity weight λ (C). MMLU and BBL share the primary axis, sparsity is plotted on a secondary axis, and shaded bands indicate the local noise scale around each series mean. Across all three factors, shifts are modest and support the conclusion that these hyperparameter effects are second-order relative to layer placement.",
+      "page": 14,
+      "index": 3,
+      "width": 735,
+      "height": 313
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-004.webp",
+      "caption": "Table 9: Retention-loop ablation with sparsity aligned to the main results/module-anatomy tables.",
+      "page": 13,
+      "index": 4,
+      "width": 573,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-005.webp",
+      "caption": "Table 10: Distillation results across all settings. Blended training diverges universally. Teacher-only KL preserves/improves MMLU in both language- and topic-domain settings.",
+      "page": 13,
+      "index": 5,
+      "width": 691,
+      "height": 259
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29075v1/fig-006.webp",
+      "caption": "Figure 3: Cross-language memory-module swap on Llama-3.2-3B Each cell reports held-out perplexity on the row’s evaluation language when the column’s memory module is attached to the shared backbone.",
+      "page": 8,
+      "index": 6,
+      "width": 646,
+      "height": 335
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.28009v1/fig-001.webp",
+      "caption": "Figure 1: Heterogeneous memory contamination. Weak functional boundaries cause heterogeneous memories, including semantic constraints, episodic observations, and procedural guidance, to be stored, retrieved, and composed as interchangeable evidence. This contamination propagates across the memory writing and retrieval, leading to persistent hallucinations and degraded reasoning quality.",
+      "page": 2,
+      "index": 1,
+      "width": 842,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28009v1/fig-002.webp",
+      "caption": "Table 1: Hallucination evaluation on HaluMem. Hallucination is evaluated at three stages: memory extraction, update, and answer generation. R/P denote recall/precision; C/H/O denote Correct/Hallucination/Omission rates; and Acc. denotes anti-hallucination accuracy. Higher is better for R, P, Acc., F1, and C; lower is better for H and O. † indicates results taken from the original paper.",
+      "page": 7,
+      "index": 2,
+      "width": 846,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28009v1/fig-003.webp",
+      "caption": "Table 2: Utility evaluation on general long-horizon conversation benchmarks. # Avg. Token refers to the average number of tokens in retrieved memories. Accuracy (%) is measured through LLM-as-a-Judge. †, ∗ indicates results taken from the original paper, while “–” indicates results not reported in the original paper.",
+      "page": 7,
+      "index": 3,
+      "width": 848,
+      "height": 349
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28009v1/fig-004.webp",
+      "caption": "Table 3: Ablations of different components.",
+      "page": 8,
+      "index": 4,
+      "width": 461,
+      "height": 776
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28009v1/fig-005.webp",
+      "caption": "Figure 3: Overview of MEMGUARD. At write time, MEMGUARD reorganizes a conversation into atomic knowledge units, constructs directed relations among them, verifies missing information, and writes each atom to a type-isolated memory store. At retrieval time, the model routes queries adaptively to relevant memory types and selectively composes retrieved atoms via a relational knowledge graph, reducing cross-type interference. By preserving functional boundaries, MEMGUARD prevents heterogeneous memory contamination.",
+      "page": 5,
+      "index": 5,
+      "width": 937,
+      "height": 319
+    }
+  ]
+}

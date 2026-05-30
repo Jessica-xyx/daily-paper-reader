@@ -1,0 +1,182 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-001.webp",
+      "caption": "Table 5: Conceptual trace schema required for amplification scoring.",
+      "page": 15,
+      "index": 1,
+      "width": 827,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-002.webp",
+      "caption": "Figure 4: Comparison of defense methods under four vulnerabilities in terms of security (1-ASR) and benign utility. Each bubble corresponds to a method, with size proportional to latency. The figure highlights the trade-offs between robustness, performance, and efficiency.",
+      "page": 21,
+      "index": 2,
+      "width": 686,
+      "height": 498
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-003.webp",
+      "caption": "Figure 5: Comparison of attack metrics across different vulnerabilities and defense strategies, with each value averaged over three scenarios (S1, S2, and S3) to provide a robust performance estimate.",
+      "page": 21,
+      "index": 3,
+      "width": 829,
+      "height": 462
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-004.webp",
+      "caption": "Figure 1: Overall system architecture of HARP",
+      "page": 7,
+      "index": 4,
+      "width": 829,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-005.webp",
+      "caption": "Figure 6: Tool usage across methods and scenarios for each vulnerability type. Each subplot corresponds to a different vulnerability type (V1–V4). The x-axis denotes the evaluation scenarios (S1–S3), and the bars represent different defense methods. The y-axis shows the number of tool calls. Across vulnerabilities, we observe that methods exhibit distinct tool usage patterns, with some defenses (e.g., React-Sandwich and ToolSafe) consistently invoking more tools, while others (e.g., LlamaFirewall and IntegrityGuard) demonstrate reduced or more variable usage depending on the scenario. This highlights the trade-off between defensive strategy and tool invocation behavior under different vulnerability conditions.",
+      "page": 22,
+      "index": 5,
+      "width": 829,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-006.webp",
+      "caption": "Figure 2: IntegrityGuard performance under different context sizes. Bars report ASR for scenarios S1–S3, and dashed lines report benign utility. Context size 0 = no defense.",
+      "page": 10,
+      "index": 6,
+      "width": 826,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-007.webp",
+      "caption": "Figure 9: IntegrityGuard Prompt",
+      "page": 35,
+      "index": 7,
+      "width": 829,
+      "height": 1119
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-008.webp",
+      "caption": "Figure 3: Heatmaps show the Accuracy, Recall, and F1 scores of three defenses-LlamaFirewall, ToolSafe, and IntegrityGuard-across four dataset types, V1-V4. Darker colors indicate higher performance scores. IntegrityGuard achieves the strongest overall performance, particularly on V2 and V3, while ToolSafe shows consistently lower Recall and F1 scores across most types.",
+      "page": 18,
+      "index": 8,
+      "width": 826,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-009.webp",
+      "caption": "Table 3: Comparison of attack success rates across different vulnerability and defense techniques under multiple scenarios for Vulnerability Type-1 with gpt-4o-mini as the backend model. The results are reported as the average per query. S = Scenario; BU = Benign Utility; L = Latency; NTC = Normalized Token Cost.",
+      "page": 8,
+      "index": 9,
+      "width": 825,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-010.webp",
+      "caption": "Table 2: Scenario definitions used in the evaluation. VT = Vulnerability Type; S = Scenario; SCM = Shared-Context Manipulation; TM = Temporal Manipulation.",
+      "page": 8,
+      "index": 10,
+      "width": 822,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-011.webp",
+      "caption": "Figure 10: ToolSafe Prompt adopted from [19]",
+      "page": 36,
+      "index": 11,
+      "width": 829,
+      "height": 886
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-012.webp",
+      "caption": "Table 8: Specialist roles in the evaluated architecture.",
+      "page": 19,
+      "index": 12,
+      "width": 822,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-013.webp",
+      "caption": "Table 9: Comparison of attack success rates across different vulnerability and defense techniques under multiple scenarios for Vulnerability Type-2 with gpt-4o-mini as the backend model. The results are reported as the average per query.",
+      "page": 19,
+      "index": 13,
+      "width": 826,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-014.webp",
+      "caption": "Table 7: Notation used in the paper",
+      "page": 17,
+      "index": 14,
+      "width": 768,
+      "height": 1033
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-015.webp",
+      "caption": "Figure 8: ReAct-Style Orchestrator (router) with Integrity Guard",
+      "page": 32,
+      "index": 15,
+      "width": 829,
+      "height": 1019
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-016.webp",
+      "caption": "Table 4: Average results over all scenarios and queries for each vulnerability type (VT). BU = Benign Utility; L = Latency; NTC = Normalized Token Cost.",
+      "page": 9,
+      "index": 16,
+      "width": 821,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-017.webp",
+      "caption": "Figure 11: LlamaFirewall Prompt adopted from [19]",
+      "page": 37,
+      "index": 17,
+      "width": 829,
+      "height": 670
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-018.webp",
+      "caption": "Figure 7: ReAct-Style Orchestrator (router) Prompt",
+      "page": 31,
+      "index": 18,
+      "width": 829,
+      "height": 969
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-019.webp",
+      "caption": "Table 11: Comparison of attack success rates across different vulnerability and defense techniques under multiple scenarios for Vulnerability Type-4 with gpt-4o-mini as the backend model. The results are reported as the average per query.",
+      "page": 20,
+      "index": 19,
+      "width": 826,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-020.webp",
+      "caption": "Table 10: Comparison of attack success rates across different vulnerability and defense techniques under multiple scenarios for Vulnerability Type-3 with gpt-4o-mini as the backend model. The results are reported as the average per query.",
+      "page": 20,
+      "index": 20,
+      "width": 826,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-021.webp",
+      "caption": "Table 12: Security-utility frontier summary derived from Table 4. Security is 1 − ASR /100 and utility is BU /100.",
+      "page": 20,
+      "index": 21,
+      "width": 727,
+      "height": 197
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27489v1/fig-022.webp",
+      "caption": "Table 6: Scoring dimensions used for harm computation. The final harm score averages normalized rule and observer harm.",
+      "page": 16,
+      "index": 22,
+      "width": 827,
+      "height": 255
+    }
+  ]
+}

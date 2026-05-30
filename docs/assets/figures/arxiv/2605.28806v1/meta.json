@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-001.webp",
+      "caption": "Figure 8: Prompt template for generating temporally coherent event timelines.",
+      "page": 15,
+      "index": 1,
+      "width": 829,
+      "height": 663
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-002.webp",
+      "caption": "Figure 14: Prompt template for generating hard-negative asset conversations.",
+      "page": 21,
+      "index": 2,
+      "width": 829,
+      "height": 1243
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-003.webp",
+      "caption": "Figure 5: Overview of VISUALMEM. Given a conversation with image turns, VISUALMEM jointly analyzes the image and its surrounding context, extracts personalized visual information, stores it in a structured visual memory, and combines visual retrieval with text-memory retrieval for downstream question answering.",
+      "page": 7,
+      "index": 3,
+      "width": 826,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-004.webp",
+      "caption": "Figure 15: Prompt template for generating target-person benchmark questions.",
+      "page": 22,
+      "index": 4,
+      "width": 829,
+      "height": 1079
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-005.webp",
+      "caption": "Figure 7: Prompt template for generating persistent persona-associated assets.",
+      "page": 14,
+      "index": 5,
+      "width": 829,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-006.webp",
+      "caption": "Figure 11: Prompt template for generating implicit-fact (visual-only) conversations.",
+      "page": 18,
+      "index": 6,
+      "width": 829,
+      "height": 1167
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-007.webp",
+      "caption": "Figure 16: Prompt template for generating target-asset benchmark questions.",
+      "page": 23,
+      "index": 7,
+      "width": 829,
+      "height": 999
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-008.webp",
+      "caption": "Figure 6: Prompt template for generating recurring social connections.",
+      "page": 13,
+      "index": 8,
+      "width": 829,
+      "height": 543
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-009.webp",
+      "caption": "Table 2: Evaluation results on our visual memory benchmark. We report performance for four task categories: Target Person, Target Asset, Implicit Fact (Visual-Only), and Implicit Fact (Multimodal). Each category is evaluated under a multiple-choice setting, and we report accuracy. Tokens denotes the amount of memory content provided to the answering model at inference time.",
+      "page": 8,
+      "index": 9,
+      "width": 764,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-010.webp",
+      "caption": "Figure 2: Conversation construction from persistent user context. A persona-centric context, including user profile, recurring social contacts, user-owned assets, and event summaries, is used to generate three families of multimodal conversations: explicit entity, implicit fact, and distractor.",
+      "page": 4,
+      "index": 10,
+      "width": 821,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-011.webp",
+      "caption": "Figure 12: Prompt template for generating implicit-fact (multimodal) conversations.",
+      "page": 19,
+      "index": 11,
+      "width": 829,
+      "height": 1271
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-012.webp",
+      "caption": "Figure 10: Prompt template for generating target-asset conversations.",
+      "page": 17,
+      "index": 12,
+      "width": 829,
+      "height": 1245
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-013.webp",
+      "caption": "Figure 17: Prompt template for generating implicit-fact benchmark questions.",
+      "page": 24,
+      "index": 13,
+      "width": 829,
+      "height": 1195
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-014.webp",
+      "caption": "Figure 13: Prompt template for generating neutral conversations.",
+      "page": 20,
+      "index": 14,
+      "width": 829,
+      "height": 954
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-015.webp",
+      "caption": "Figure 3: Image generation with global consistency. We first generate reference images for recurring entities, then derive location-level scene references, and finally synthesize conversation images conditioned on both sources, followed by human quality control.",
+      "page": 5,
+      "index": 15,
+      "width": 826,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2605.28806v1/fig-016.webp",
+      "caption": "Figure 9: Prompt template for generating target-person conversations.",
+      "page": 16,
+      "index": 16,
+      "width": 829,
+      "height": 1095
+    }
+  ]
+}

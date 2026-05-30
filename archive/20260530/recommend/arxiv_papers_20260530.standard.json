@@ -1,0 +1,272 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-30T20:05:17.778687+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2605.28009v1",
+      "source": "arxiv",
+      "title": "MemGuard: Preventing Memory Contamination in Long-Term Memory-Augmented Large Language Models",
+      "abstract": "Memory-augmented large language models extend reasoning beyond a fixed context window by maintaining long-term memory across interactions. However, existing memory systems often collapse stable user facts, episodic events, and behavioral rules into a shared space, allowing functionally distinct memories to be retrieved and used as interchangeable evidence. We identify this failure mode as heterogeneous memory contamination, where context-specific events become overgeneralized claims, or semantically relevant but functionally incompatible memories mislead generation. To this end, we introduce MemGuard, a type-aware memory framework that preserves functional memory boundaries during memory construction and retrieval. It assigns each memory an explicit functional role at write time, maintains relations across type-isolated memories, and selectively composes evidence only from necessary memory types, reducing contamination from irrelevant or functionally incompatible evidence. Across hallucination and long-horizon conversation benchmarks, MemGuard improves memory reliability by up to 28.27% while retrieving up to 5.8x fewer memory tokens than prior methods. These results suggest that reliable long-term reasoning depends on principled organization and selective use of heterogeneous memory.",
+      "authors": [
+        "Hyeonjeong Ha",
+        "Jeonghwan Kim",
+        "Cheng Qian",
+        "Jiayu Liu",
+        "William M. Campbell",
+        "Yue Wu",
+        "Yuji Zhang",
+        "Kathleen McKeown",
+        "Dilek Hakkani-Tur",
+        "Heng Ji"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-27T06:04:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.28009v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "type-aware memory framework to prevent memory contamination",
+      "llm_evidence_cn": "类型感知的记忆框架防止内存污染",
+      "llm_evidence": "类型感知的记忆框架防止内存污染",
+      "canonical_evidence": "类型感知的记忆框架防止内存污染",
+      "llm_tldr_en": "MemGuard preserves functional memory boundaries to avoid heterogeneous memory contamination.",
+      "llm_tldr_cn": "MemGuard保留功能性记忆边界避免异质污染。",
+      "llm_tldr": "MemGuard保留功能性记忆边界避免异质污染。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28806v1",
+      "source": "arxiv",
+      "title": "Personal Visual Memory from Explicit and Implicit Evidence",
+      "abstract": "Long-term memory is increasingly important for personalized AI agents, yet existing benchmarks and methods remain largely text-centric. Even when images are included, the user-specific information needed for later questions is typically recoverable from text alone, and most memory systems reduce image turns to generic captions. Yet images often carry personal information that text rarely states -- both explicit evidence, such as recurring user-associated entities, and implicit evidence, such as latent user facts inferred from visual or multimodal cues. We introduce a benchmark for personal visual memory that targets both forms of evidence, and propose VisualMem, a hybrid visual--text architecture that augments a text-memory backend with a structured personal visual memory module. Rather than collapsing images into captions, VisualMem uses conversational context to resolve identity, ownership, and durable user facts. Experiments show that VisualMem substantially outperforms prior memory systems on our benchmark while remaining competitive on standard text-memory benchmarks, indicating that personal visual memory is a distinct and important component of long-term memory for personalized AI agents.",
+      "authors": [
+        "Viet Nguyen",
+        "Thao Nguyen",
+        "Vishal M. Patel",
+        "Yuheng Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-05-27T17:56:11+00:00",
+      "link": "https://arxiv.org/pdf/2605.28806v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "personal visual memory system for agents",
+      "llm_evidence_cn": "智能体的个人视觉记忆系统",
+      "llm_evidence": "智能体的个人视觉记忆系统",
+      "canonical_evidence": "智能体的个人视觉记忆系统",
+      "llm_tldr_en": "VisualMem augments text memory with structured personal visual memory for agents.",
+      "llm_tldr_cn": "VisualMem用结构化个人视觉记忆增强智能体文本记忆。",
+      "llm_tldr": "VisualMem用结构化个人视觉记忆增强智能体文本记忆。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29341v1",
+      "source": "arxiv",
+      "title": "WorldMemArena: Evaluating Multimodal Agent Memory Through Action-World Interaction",
+      "abstract": "Multimodal large language models are increasingly deployed as long-horizon agents, where memory must do more than recall: it must track an evolving world, revise what has gone stale, and surface the right evidence at decision time. Existing benchmarks measure recall over static dialogue, collapse memory into a single end-of-task accuracy, and reduce visual observations to captions, leaving us unable to localize failures to writing, maintenance, retrieval, or use. The rise of agent harnesses that author their own memory sharpens this gap, since we have no principled way to compare hand-designed pipelines with self-managing alternatives. To close these gaps, we formulate multimodal agent memory as an Action-World Interaction Loop with an observable four-stage lifecycle, and instantiate it in WorldMemArena: 400 multi-session multimodal tasks spanning Lifelong Evolution (evolving personal and task states) and Agentic Execution (memory from real observations, actions, and feedback), annotated with gold memory points, updates, distractors, and evidence chains for stage-level diagnosis. This enables the first head-to-head comparison of long-context, manually designed (RAG and external memory systems), and harness-based memory agents. Results show that: (1) better memory writing and storage do not guarantee better performance; (2) multimodal memory still struggles to fully use visual evidence; (3) systems are unstable across domains and degrade on realistic agentic trajectories; and (4) harness memory is more flexible but remains costly and less reliable.",
+      "authors": [
+        "Chengzhi Liu",
+        "Yuzhe Yang",
+        "Sophia Xiao Pu",
+        "Yepeng Liu",
+        "Lin Long",
+        "Yichen Guo",
+        "Nuo Chen",
+        "Zhaotian Weng",
+        "Elena Kochkina",
+        "Simerjot Kaur",
+        "Charese Smiley",
+        "Xiaomo Liu",
+        "James Zou",
+        "Sheng Liu",
+        "Yuheng Bu",
+        "Songyou Peng",
+        "Xin Eric Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-05-28T04:27:20+00:00",
+      "link": "https://arxiv.org/pdf/2605.29341v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "evaluates multimodal agent memory through action-world interaction",
+      "llm_evidence_cn": "通过动作-世界交互评估多模态智能体记忆",
+      "llm_evidence": "通过动作-世界交互评估多模态智能体记忆",
+      "canonical_evidence": "通过动作-世界交互评估多模态智能体记忆",
+      "llm_tldr_en": "Benchmark for evaluating multimodal agent memory, focusing on writing, maintenance, retrieval, and use.",
+      "llm_tldr_cn": "评估多模态智能体记忆的基准，关注写入、维护、检索和使用。",
+      "llm_tldr": "评估多模态智能体记忆的基准，关注写入、维护、检索和使用。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28359v1",
+      "source": "arxiv",
+      "title": "From Knowing to Doing: A Memory-Controlled Benchmark for LLM Trading Agents on Stock Markets",
+      "abstract": "Evaluating whether large language model (LLM) agents can profit in capital markets is increasingly framed as end-to-end trading: place an agent in a historical market, let it trade, and measure portfolio returns. This setup is vulnerable to two evaluation failures. First, long backtests often overlap with the knowledge cutoffs of frontier LLMs, allowing memorized tickers, dates, prices, and market narratives to substitute for investment reasoning. Second, raw returns are a noisy proxy for stock-selection ability, since positive performance may come from market beta, style exposure, or favorable regimes rather than genuine alpha.   We introduce KTD-Fin (Knowing-To-Doing Financial Benchmark), an end-to-end stock-market trading benchmark that addresses both issues. KTD-Fin uses a data-side masking protocol to anonymize key identifiers and calendar information consistently across prompts and tools, separating historical market memory from investment decision-making. It also incorporates a Barra-style performance attribution framework that decomposes portfolio returns into market, style, and stock-selection alpha components.   Across ten frontier LLM agents evaluated on the Chinese CSI300 over a 2024--2026 window, masking substantially changes agent rationales, pushing them towards anonymized factor-based reasoning. Attribution analysis further shows that LLM agents' cumulative returns under leakage-controlled evaluation are largely explained by passive market and style exposure, with limited evidence of persistent stock-selection alpha. These findings suggest that financial LLM benchmarks should evaluate not only whether an agent makes money, but also whether the source of returns reflects transferable investment skill. We release KTD-Fin as a reproducible template for leakage-controlled and attribution-aware evaluation of LLM trading agents.",
+      "authors": [
+        "Taojie Zhu",
+        "Wentao Zhao",
+        "Rui Sun",
+        "Beidi Luan",
+        "Jiacheng Lu",
+        "Sinuo Wang",
+        "Jing Li",
+        "Daxin Jiang",
+        "Yonghong He",
+        "Zuo Bai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "q-fin.TR"
+      ],
+      "published": "2026-05-27T11:57:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.28359v1",
+      "tags": [
+        "keyword:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory-controlled benchmark for LLM trading agents",
+      "llm_evidence_cn": "LLM交易智能体的记忆控制基准",
+      "llm_evidence": "LLM交易智能体的记忆控制基准",
+      "canonical_evidence": "LLM交易智能体的记忆控制基准",
+      "llm_tldr_en": "Introduces KTD-Fin, a memory-controlled benchmark to evaluate LLM trading agents' stock selection ability.",
+      "llm_tldr_cn": "提出KTD-Fin记忆控制基准评估LLM交易智能体的选股能力。",
+      "llm_tldr": "提出KTD-Fin记忆控制基准评估LLM交易智能体的选股能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29075v1",
+      "source": "arxiv",
+      "title": "Knowledge Offloading: Decomposing LLMs into Sparse Backbones and Memory Modules",
+      "abstract": "LLMs encode both general capabilities and domain-specific knowledge in a single set of parameters. We ask whether this capacity can be reorganized: keeping broadly useful computation in a shared backbone, while moving specialized knowledge into external memory modules. We propose \\emph{knowledge offloading} (KOFF), a framework for decomposing a pretrained LLM into a sparse shared backbone and domain-specific memories. Starting from a frozen base model, we jointly learn a structured pruning mask and lightweight recovery modules, implemented as LoRA adapters and learned key-value caches. Across Llama and Qwen models from 3B to 8B, we find that non-trivial capacity can be moved out of the shared backbone without a large loss in model ability. At around 12\\% global sparsity, KOFF preserves much of the unpruned model's performance, while pruning the same frozen model without memories degrades sharply. Ablations show that LoRA and learned KV memories are complementary, and specialization analyses suggest that the learned decomposition is meaningful: language-specific neurons are preferentially removed while language-general neurons largely remain in the backbone. These results suggest that knowledge can be reallocated between a shared core and swappable external memories.",
+      "authors": [
+        "Karim Galliamov",
+        "Rochelle Choenni",
+        "Ivan Titov"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-27T20:29:31+00:00",
+      "link": "https://arxiv.org/pdf/2605.29075v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "knowledge offloading to external memory modules",
+      "llm_evidence_cn": "将知识卸载到外部记忆模块",
+      "llm_evidence": "将知识卸载到外部记忆模块",
+      "canonical_evidence": "将知识卸载到外部记忆模块",
+      "llm_tldr_en": "Proposes KOFF, a framework to decompose LLMs into sparse backbones and domain-specific memory modules.",
+      "llm_tldr_cn": "提出KOFF框架将LLM分解为稀疏骨干和领域特定记忆模块。",
+      "llm_tldr": "提出KOFF框架将LLM分解为稀疏骨干和领域特定记忆模块。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.27489v1",
+      "source": "arxiv",
+      "title": "HARP: Measuring Harm Amplification in Multi-Agent LLM Systems",
+      "abstract": "Multi-agent LLM systems decompose workflows across agents, tools, shared context, memory, and decision gates. This modularity improves interpretability, but creates a propagation risk: a bounded perturbation to one component can be reused by other agents and amplified into system-level harm. We introduce HARP (Harm Amplification through Role Perturbation), a trace-first methodology for studying local-to-global harm amplification in multi-agent LLM systems. HARP compares paired clean and perturbed executions and records specialist outputs, tool calls, memory reads/writes, guard events, oracle logs, latency, token cost, and decisions. We define local harm as deviation from targeted agents or corrupted channels, global harm as deviation over the full trace, and harm amplification as (H_global/H_local). This complements attack success rate with a measure of how strongly orchestration spreads harm beyond the attack point. We instantiate HARP in a finance-oriented seven-agent system with a deterministic decision gate and configurable attack harness for specialist compromise, collusion, shared-context corruption, and temporal or memory-persistent attacks. Across five defenses, prompt-only defenses preserve benign utility but leave high success and stealth; pre-tool and step-level guards reduce some failures with utility or latency costs; and IntegrityGuard, a trace-consistency defense, achieves the lowest attack success and global harm but introduces utility/cost trade-offs. Results show that single-specialist compromise produces the strongest amplification, shared-context corruption yields the highest attack success, and temporal persistence produces the largest malicious impact. HARP argues that secure multi-agent evaluation must measure not only bypass, but propagation.",
+      "authors": [
+        "Md Hafizur Rahman",
+        "Zafaryab Haider",
+        "Tanzim Mahfuz",
+        "Prabuddha Chakraborty"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-26T16:03:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.27489v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multi-agent memory harm amplification measurement",
+      "llm_evidence_cn": "多智能体记忆有害放大测量",
+      "llm_evidence": "多智能体记忆有害放大测量",
+      "canonical_evidence": "多智能体记忆有害放大测量",
+      "llm_tldr_en": "Proposes HARP to measure harm amplification from memory perturbations in multi-agent LLM systems.",
+      "llm_tldr_cn": "提出HARP测量多智能体LLM系统中由记忆扰动引起的有害放大。",
+      "llm_tldr": "提出HARP测量多智能体LLM系统中由记忆扰动引起的有害放大。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
