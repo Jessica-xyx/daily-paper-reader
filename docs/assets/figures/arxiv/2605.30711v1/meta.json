@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-001.webp",
+      "caption": "Table 2: Macro category averages across seven open-weight models.",
+      "page": 6,
+      "index": 1,
+      "width": 796,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-002.webp",
+      "caption": "Table 7: Overall adaptive-vs-fixed threshold ablation for SAGE. Each row uses the paired full-split run scored with llama3.1-8b as the LLM judge. Bold marks the best quality value within the same backbone.",
+      "page": 15,
+      "index": 2,
+      "width": 517,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-003.webp",
+      "caption": "Table 3: Write-side LLM-call budget on full LoCoMo. SAGE makes zero routing calls, invoking the LLM only to merge the πupd routed to UPDATE, whereas Mem0/Mem0g fuse routing and edit into one call per add. Total Drop is SAGE’s reduction of LLM calls vs. the baseline.",
+      "page": 7,
+      "index": 3,
+      "width": 842,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-004.webp",
+      "caption": "Figure 4: Threshold sensitivity to the fixed threshold across both Qwen backbones. Colors denote BLEU1, token-F1, and Judge; solid lines indicate SAGE with varying fixed-thresholds and dashed lines indicate SAGE with adaptive threshold.",
+      "page": 14,
+      "index": 4,
+      "width": 421,
+      "height": 514
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-005.webp",
+      "caption": "Figure 1: Overview of Memory Evolution problem and our proposed approach SAGE.",
+      "page": 3,
+      "index": 5,
+      "width": 850,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-006.webp",
+      "caption": "Figure 2: Adaptive threshold sensitivity on Qwen2.5-3B. Left: quality under fixed thresholds. Right: update-time route LLM calls, where only update-routed candidates invoke the LLM call. Solid lines indicate SAGE with varying fixed-threshold and dashed lines indicate SAGE with adaptive threshold.",
+      "page": 8,
+      "index": 6,
+      "width": 434,
+      "height": 600
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-007.webp",
+      "caption": "Table 1: Detailed per-configuration comparison across SAGE, Mem0, and Mem0g. Metrics are mean token-F1, BLEU-1 (B1), and LLM-as-a-Judge (J).",
+      "page": 5,
+      "index": 7,
+      "width": 946,
+      "height": 632
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30711v1/fig-008.webp",
+      "caption": "Table 8: Complete write-side LLM-call budget on full LoCoMo (the all-backbone version of Table 3), for seven backbone-matched open-weight triads plus a GPT-4o-mini SAGE-vs-Mem0 pair. Decision-stage isolates controller cost: SAGE makes zero routing calls and invokes the LLM only to merge the πupd fraction routed to UPDATE, while Mem0/Mem0g fuse routing and edit into one call per non-empty add (Update marked —). Total write LLM calls adds shared fact-extraction; Total ↓ is SAGE’s reduction vs. that row; πupd is the empirical share of routed candidates that fall in the UPDATE band. †Llama-3.2-1b is excluded from the aggregate (see text).",
+      "page": 16,
+      "index": 8,
+      "width": 846,
+      "height": 579
+    }
+  ]
+}

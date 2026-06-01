@@ -1,0 +1,182 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-001.webp",
+      "caption": "Table 18: MeMP: Workflow Generation Prompt.",
+      "page": 25,
+      "index": 1,
+      "width": 798,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-002.webp",
+      "caption": "Table 19: ElasticMem: QA/Search Skill Extraction Prompt (Correct Answer).",
+      "page": 25,
+      "index": 2,
+      "width": 798,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-003.webp",
+      "caption": "Table 20: ElasticMem: QA/Search Skill Extraction Prompt (Incorrect Answer).",
+      "page": 25,
+      "index": 3,
+      "width": 798,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-004.webp",
+      "caption": "Table 23: PersonaMem: Shared MC Answering Prompt (all baselines).",
+      "page": 26,
+      "index": 4,
+      "width": 798,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-005.webp",
+      "caption": "Table 21: ElasticMem: ALFWorld Skill Extraction Prompt (Successful Trajectory).",
+      "page": 26,
+      "index": 5,
+      "width": 798,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-006.webp",
+      "caption": "Table 22: ElasticMem: ALFWorld Skill Extraction Prompt (Failed Trajectory).",
+      "page": 26,
+      "index": 6,
+      "width": 798,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-007.webp",
+      "caption": "Table 7: Mem0: Memory Update Decision Prompt (Step 2 of memory construction).",
+      "page": 21,
+      "index": 7,
+      "width": 772,
+      "height": 182
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-008.webp",
+      "caption": "Table 2: Main comparison results on PersonaMem-32K, PersonaMem-128K, LoCoMo, LongMemEval, and ALFWorld. For Acc. and SR, higher is better; for #Tok., lower is better. Bold and underline denote the best and second-best results. The Avg. columns are computed as weighted averages using the number of test examples or games in each benchmark.",
+      "page": 7,
+      "index": 8,
+      "width": 822,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-009.webp",
+      "caption": "Table 3: Detailed summary of datasets used in MemorySuite. We categorize datasets by subset, task type, and evaluation metric.",
+      "page": 18,
+      "index": 9,
+      "width": 614,
+      "height": 236
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-010.webp",
+      "caption": "Table 11: MemoryOS: Continuity Check Prompt.",
+      "page": 23,
+      "index": 10,
+      "width": 798,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-011.webp",
+      "caption": "Table 13: MemoryOS: Multi-Summary Prompt (subtopic extraction).",
+      "page": 23,
+      "index": 11,
+      "width": 773,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-012.webp",
+      "caption": "Table 14: A-MEM: Content Analysis Prompt.",
+      "page": 23,
+      "index": 12,
+      "width": 798,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-013.webp",
+      "caption": "Table 12: MemoryOS: Meta-Info Update Prompt.",
+      "page": 23,
+      "index": 13,
+      "width": 798,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-014.webp",
+      "caption": "Figure 2: Ablation studies on Qwen2.5-7B-Instruct. (a) Effect of budget policy: ElasticMem outperforms Random Budget, Uniform Budget, and MLP Budget Policy, showing that the Transformer budget policy better learns how to allocate latent capacity across retrieved memories. (b) Effect of retrieval design: ElasticMem outperforms Semantic Retrieval, Frozen-State Retrieval, and QueryState Retrieval, demonstrating the benefit of using a trainable reasoner-state retrieval mechanism with a sampled retrieval-control token. (c) Effect of per-chunk maximum budget: ElasticMem achieves the best overall performance at Bmax = 20, suggesting that a moderate per-memory capacity limit is more effective than overly small or overly large per-chunk budgets.",
+      "page": 8,
+      "index": 14,
+      "width": 816,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-015.webp",
+      "caption": "Figure 1: Overview of ElasticMem. ElasticMem learns to use long-term memory as an elastic latent resource. (1) Latent memory bank construction. Memory chunks from dialogues, passages, and skill cards are encoded once by a frozen offline LLM encoder. Each chunk is stored as a retrieval key and a latent content cache, forming a read-only memory bank B that is not updated during training. (2) Query-conditioned elastic memory retrieval and allocation. For each query, the LoRA-adapted reasoner generates a retrieval-control token and derives a query state for retrieving topranked memory chunks. A budget policy then assigns each retrieved chunk a variable latent budget bj ∈ {0, . . . , Bmax}, allowing useful chunks to receive more capacity while weak or redundant chunks are compressed or suppressed. (3) Latent memory injection. The selected cached states are projected into soft memory tokens and inserted into the final model input before generation. (4) Reward-based optimization. Task rewards optimize the LoRA-adapted reasoner, budget policy, and latent projector through GRPO, while the latent memory bank remains frozen.",
+      "page": 4,
+      "index": 15,
+      "width": 826,
+      "height": 637
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-016.webp",
+      "caption": "Table 26: ALFWorld: Shared Step Prompt (all baselines).",
+      "page": 27,
+      "index": 16,
+      "width": 798,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-017.webp",
+      "caption": "Table 25: LongMemEval: Shared MC Answering Prompt (all baselines).",
+      "page": 27,
+      "index": 17,
+      "width": 798,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-018.webp",
+      "caption": "Table 24: LoCoMo: Shared MC Answering Prompt (all baselines).",
+      "page": 27,
+      "index": 18,
+      "width": 798,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-019.webp",
+      "caption": "Table 16: LightMem: Fact Extraction Prompt (fires on STM overflow).",
+      "page": 24,
+      "index": 19,
+      "width": 772,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-020.webp",
+      "caption": "Table 15: A-MEM: Memory Evolution Decision Prompt.",
+      "page": 24,
+      "index": 20,
+      "width": 798,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-021.webp",
+      "caption": "Table 17: LightMem: Memory Consolidation Prompt.",
+      "page": 24,
+      "index": 21,
+      "width": 772,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30690v1/fig-022.webp",
+      "caption": "Table 6: Mem0: Fact Extraction Prompt (Step 1 of memory construction).",
+      "page": 20,
+      "index": 22,
+      "width": 798,
+      "height": 558
+    }
+  ]
+}

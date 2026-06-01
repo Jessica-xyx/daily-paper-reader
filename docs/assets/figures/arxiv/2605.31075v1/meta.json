@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-001.webp",
+      "caption": "Table 8 Prompt used for automatic speaker identification.",
+      "page": 25,
+      "index": 1,
+      "width": 986,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-002.webp",
+      "caption": "Table 22 The prompt for redundancy of episodic memory.",
+      "page": 38,
+      "index": 2,
+      "width": 986,
+      "height": 748
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-003.webp",
+      "caption": "Figure 1 Architecture of TaskMem with a running example illustrating its operation. The memorization policy online updates memory generation based on real tasks from the environment, producing task-relevant content.",
+      "page": 2,
+      "index": 3,
+      "width": 885,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-004.webp",
+      "caption": "Table 11 Results for each task in VideoMME.",
+      "page": 29,
+      "index": 4,
+      "width": 931,
+      "height": 625
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-005.webp",
+      "caption": "Table 13 Results for each task in EgoTempo.",
+      "page": 29,
+      "index": 5,
+      "width": 931,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-006.webp",
+      "caption": "Table 12 Results for each task in EgoLife.",
+      "page": 29,
+      "index": 6,
+      "width": 931,
+      "height": 180
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-007.webp",
+      "caption": "Table 23 The prompt for the richness of episodic memory.",
+      "page": 39,
+      "index": 7,
+      "width": 986,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-008.webp",
+      "caption": "Table 24 Prompt for task-relevance comparison of episodic memories.",
+      "page": 39,
+      "index": 8,
+      "width": 986,
+      "height": 672
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-009.webp",
+      "caption": "Table 2 Results on VideoMME, EgoLife, and EgoTempo. Best results are in bold, and second-best results are underlined.",
+      "page": 10,
+      "index": 9,
+      "width": 927,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-010.webp",
+      "caption": "Figure 4 Phase Two training dynamics for the object recognition task on VideoMME, using five questions from the streaming task as environment feedback. (a) training improves task relevance on the validation set; (b) memory quality remains stable; (c) adapter norm increases steadily with training steps; (d) cosine similarity between the current adapter and the final (40-step) adapter.",
+      "page": 8,
+      "index": 10,
+      "width": 885,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-011.webp",
+      "caption": "Table 25 The QA test prompts for VideoMME, EgoLife, and EgoTempo.",
+      "page": 40,
+      "index": 11,
+      "width": 986,
+      "height": 610
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-012.webp",
+      "caption": "Figure 2 Two-phase training in TaskMem: Phase One optimizes the memorization policy for fundamental capabilities; Phase Two optimizes the policy to generate task-relevant content.",
+      "page": 4,
+      "index": 12,
+      "width": 784,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-013.webp",
+      "caption": "Table 19 The prompt for generating episodic memory.",
+      "page": 36,
+      "index": 13,
+      "width": 986,
+      "height": 899
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-014.webp",
+      "caption": "Table 7 Prompt used for automatic speech recognition.",
+      "page": 24,
+      "index": 14,
+      "width": 986,
+      "height": 748
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-015.webp",
+      "caption": "Figure 5 Ablation study on adapter placement across layers on the object recognition task from VideoMME, evaluated by accuracy, non-redundancy rate, and win ratio.",
+      "page": 9,
+      "index": 15,
+      "width": 868,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-016.webp",
+      "caption": "Table 21 The prompt for correctness of episodic memory.",
+      "page": 37,
+      "index": 16,
+      "width": 986,
+      "height": 649
+    },
+    {
+      "url": "assets/figures/arxiv/2605.31075v1/fig-017.webp",
+      "caption": "Table 20 The prompt for generating episodic memory with task prompts.",
+      "page": 37,
+      "index": 17,
+      "width": 986,
+      "height": 439
+    }
+  ]
+}

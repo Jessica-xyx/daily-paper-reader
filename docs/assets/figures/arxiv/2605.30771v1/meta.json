@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-001.webp",
+      "caption": "Figure 2: Eywa read path. The query planner is deterministic (no LLM call). Retrieval and support channels contribute candidates with query-shape rule weights. Answer instructions flow from the planner directly, never mixed with memory context.",
+      "page": 11,
+      "index": 1,
+      "width": 943,
+      "height": 540
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-002.webp",
+      "caption": "Figure 3: Diagnostic funnel used for trace audits. The funnel is a method for localizing errors, not an additional benchmark score.",
+      "page": 21,
+      "index": 2,
+      "width": 898,
+      "height": 562
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-003.webp",
+      "caption": "Table 2: Eywa memory object model. Evidence is immutable; beliefs are derived and can carry lifecycle state.",
+      "page": 10,
+      "index": 3,
+      "width": 833,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-004.webp",
+      "caption": "Figure 1: Overview of the Eywa memory pipeline. The write path captures immutable evidence and typed signals before validated memories are persisted. The read path later retrieves bounded, provenancegrounded context for the answer model.",
+      "page": 8,
+      "index": 4,
+      "width": 943,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-005.webp",
+      "caption": "Table 12: BEAM technical-memory stress result by rubric category under the deep technical retrieval profile; configuration is recorded in the artifacts. Mean score is the average rubric-nugget score; pass@0.5, pass@0.8, and perfect-score counts are shown separately because BEAM allows partial credit.",
+      "page": 19,
+      "index": 5,
+      "width": 594,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-006.webp",
+      "caption": "Table 9: External LoCoMo C1–C4 literature context from recent memory-system result tables. Sources: True Memory Pro from Adler and Zehavi (2026); Hindsight from Latimer et al. (2025); Vectorize (2025); remaining rows from the MemOS evaluation artifact (Li et al., 2025; MemTensor, 2025). Eywa’s measured rows are reported separately in tables 5 and 8. †True Memory reports a 3-run semantic-judge mean and does not provide this table’s category breakdown. ‡Hindsight’s category labels are mapped to the same four LoCoMo categories, but its model and judge protocol differ. External rows are not controlled reproductions and should not be read as a single leaderboard.",
+      "page": 17,
+      "index": 6,
+      "width": 635,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30771v1/fig-007.webp",
+      "caption": "Table 14: Architectural context for agent memory systems. The table summarizes public claims and papers; it is not a controlled implementation audit. Eywa’s row reports the implementation used in this paper’s artifacts.",
+      "page": 20,
+      "index": 7,
+      "width": 944,
+      "height": 378
+    }
+  ]
+}

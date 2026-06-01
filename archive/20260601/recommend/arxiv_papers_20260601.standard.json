@@ -1,0 +1,346 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-01T22:41:58.525002+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2605.29640v2",
+      "source": "arxiv",
+      "title": "VikingMem: A Memory Base Management System for Stateful LLM-based Applications",
+      "abstract": "Large Language Models have revolutionized interactive applications; however, their finite context windows pose a critical data management challenge for maintaining stateful, long-term interactions. Existing memory approaches often rely on simplistic extraction methods that lead to incomplete memories or use rigid, single-purpose memory extraction prompts tailored to a single use case, such as chatbots. Consequently, they lack generalizability and perform poorly across diverse downstream tasks. To bridge this gap, we introduce the Memory Base, a novel data management paradigm for managing the persistent state of long-term interactions. It is characterized by three core principles: selective extraction of high-value memories from raw information streams; inherent statefulness and evolution, where memory content is progressively summarized, corrected, and temporally weighted to prioritize recent interactions; and a generalizable abstraction paradigm designed for robust transferability across diverse applications, including education, recommendation, and agent memory. Building on this foundation, we present VikingMem, an end-to-end Memory Base Management System implemented on the VikingDB vector engine. VikingMem materializes this paradigm through interconnected event and entity abstractions. It features event-centric memory extraction to selectively handle complex information streams, while entities are dynamically updated by events to achieve stateful evolution. Using temporal compression via a topic-wise timeline and time-weighted recall, the system progressively produces high-level summary memories, prioritizes recent items, and compresses and fades older ones. Extensive evaluations on long-term memory benchmarks demonstrate that VikingMem outperformes baselines by up to 30% in memory retrieval effectiveness while maintaining the low latency essential for interactive applications.",
+      "authors": [
+        "Jiajie Fu",
+        "Junwen Chen",
+        "Mengzhao Wang",
+        "Aoxiang He",
+        "Maojia Sheng",
+        "Xiangyu Ke",
+        "Yifan Zhu",
+        "Yunjun Gao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T09:07:42+00:00",
+      "link": "https://arxiv.org/pdf/2605.29640v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory base management system for stateful LLM apps",
+      "llm_evidence_cn": "面向有状态LLM应用的记忆库管理系统",
+      "llm_evidence": "面向有状态LLM应用的记忆库管理系统",
+      "canonical_evidence": "面向有状态LLM应用的记忆库管理系统",
+      "llm_tldr_en": "VikingMem introduces a novel Memory Base paradigm for persistent state management.",
+      "llm_tldr_cn": "VikingMem提出了一种新的记忆库范式来管理持久状态。",
+      "llm_tldr": "VikingMem提出了一种新的记忆库范式来管理持久状态。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30690v1",
+      "source": "arxiv",
+      "title": "ElasticMem: Latent Memory as a Learnable Resource for LLM Agents",
+      "abstract": "Long-term memory is essential for LLM agents to reason coherently across extended interactions, personalize responses, and reuse past experience. However, existing memory-augmented methods typically treat memory as a fixed resource: text-space approaches concatenate retrieved memories into the context window, causing substantial token overhead and sensitivity to noisy evidence, while latent-space approaches reduce textual cost but still rely on rigid retrieval or fixed-capacity memory interfaces. This creates a mismatch between query-dependent memory utility and fixed memory allocation. We propose ElasticMem, a memory-augmented LLM framework that learns to use memory as an elastic latent resource. ElasticMem builds an offline latent memory bank with retrieval keys and content caches, retrieves memories adaptively from the reasoner's hidden state, assigns each retrieved memory a variable latent budget through a learned policy, and injects selected latent states as soft memory tokens for generation. The full memory-use process is optimized with downstream task rewards through group-relative policy optimization. We evaluate ElasticMem on MemorySuite, covering memory-intensive QA and embodied agent control. Across Qwen2.5-3B-Instruct and Qwen2.5-7B-Instruct backbones, ElasticMem improves weighted average QA accuracy by 26.2% and 24.6%, and improves ALFWorld success rate by 66.3% and 27.2%, respectively, over the strongest baselines, while achieving the lowest ALFWorld token cost. Ablations and qualitative analyses further show that adaptive retrieval and elastic budget allocation help ElasticMem prioritize useful evidence and transferable plans beyond rigid cosine similarity. Our code for ElasticMem will be released at https://github.com/ulab-uiuc/ElasticMem.",
+      "authors": [
+        "Tao Feng",
+        "Chongrui Ye",
+        "Tianyang Luo",
+        "Jingjun Xu",
+        "Xueqiang Xu",
+        "Haozhen Zhang",
+        "Ge Liu",
+        "Jiaxuan You"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-29T00:34:40+00:00",
+      "link": "https://arxiv.org/pdf/2605.30690v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "elastic latent memory for LLM agents",
+      "llm_evidence_cn": "面向LLM代理的弹性潜在记忆",
+      "llm_evidence": "面向LLM代理的弹性潜在记忆",
+      "canonical_evidence": "面向LLM代理的弹性潜在记忆",
+      "llm_tldr_en": "ElasticMem learns to use memory as an elastic latent resource, reducing token overhead.",
+      "llm_tldr_cn": "ElasticMem学习将记忆作为弹性潜在资源使用，减少token开销。",
+      "llm_tldr": "ElasticMem学习将记忆作为弹性潜在资源使用，减少token开销。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30711v1",
+      "source": "arxiv",
+      "title": "SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs",
+      "abstract": "Agentic LLMs must continuously decide whether newly extracted facts should be added, merged with existing memories, or ignored, yet prior work has focused more on retrieval and storage than on principled write-side control. We frame memory evolution as a novelty-detection problem and propose SAGE, a Spherical Adaptive Gate for memory Evolution that scores candidate facts with a von Mises-Fisher-based density estimator over memory embeddings and routes them with an adaptive threshold that tracks memory-store geometry. SAGE resolves clearly novel facts as ADD, clearly redundant facts as NOOP, and sends only uncertain cases to an LLM merge step, reducing expensive write-time reasoning. On LoCoMo, SAGE achieves the best average token-F1 against Mem0 on all seven open-weight backbone comparisons, while on GPT-4o-mini it reduces add-phase API cost by 3.4$\\times$ and add-phase latency by 2.5$\\times$ with only a small average judge-score gap. As a drop-in binary gate for A-Mem, SAGE skips roughly 16-18% of LLM calls across five models with minimal quality change on open-weight backbones. These results suggest that novelty-aware write control is a practical lever for improving both memory quality and system efficiency in long-term agentic memory.",
+      "authors": [
+        "Sijia Wang",
+        "Dhanajit Brahma",
+        "Ricardo Henao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-05-29T01:03:39+00:00",
+      "link": "https://arxiv.org/pdf/2605.30711v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "novelty gate for efficient memory evolution in agentic LLMs",
+      "llm_evidence_cn": "用于代理LLM高效记忆演化的新颖性门控",
+      "llm_evidence": "用于代理LLM高效记忆演化的新颖性门控",
+      "canonical_evidence": "用于代理LLM高效记忆演化的新颖性门控",
+      "llm_tldr_en": "SAGE uses spherical adaptive gate for novelty-detection in memory evolution.",
+      "llm_tldr_cn": "SAGE使用球形自适应门控进行记忆演化中的新颖性检测。",
+      "llm_tldr": "SAGE使用球形自适应门控进行记忆演化中的新颖性检测。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30771v1",
+      "source": "arxiv",
+      "title": "Eywa: Provenance-Grounded Long-Term Memory for AI Agents",
+      "abstract": "AI agents that persist across sessions need memory they can retrieve, audit, update, and erase. Existing memory systems often collapse source evidence, extracted facts, retrieved context, and answer policy into one opaque prompt path, making failures difficult to diagnose: a wrong answer may come from missing evidence, unsupported extraction, stale state, retrieval loss, or answer-model behavior. We present Eywa, a provenance-grounded memory architecture built around evidence before belief. Eywa stores immutable source evidence before deriving canonical facts, validates extracted memories against typed signals and source support, and retrieves bounded memory context through a deterministic multi-route read path with zero LLM calls inside retrieval. Retrieved context is returned separately from answer instructions, allowing the same memory substrate to be evaluated across frontier, budget, and local answer models. Under a frozen, artifact-recorded retrieval configuration, Eywa reaches 90.19% judge accuracy on the LoCoMo C1-C4 split with Claude Sonnet 4.6 write and QA roles. On LongMemEval-S, it reaches 88.2% retrieval-sufficiency accuracy. On BEAM, a 700-question technical-memory stress benchmark, it reaches 81.45% mean nugget score and 85.29% pass@score >= 0.5. Full per-question artifacts, including questions, gold answers, model answers, retrieved context, and labels, are published at https://eywa.to/research.",
+      "authors": [
+        "Resham Joshi"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-29T02:56:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.30771v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes provenance-grounded long-term memory architecture for AI agents",
+      "llm_evidence_cn": "提出基于来源的AI代理长期记忆架构",
+      "llm_evidence": "提出基于来源的AI代理长期记忆架构",
+      "canonical_evidence": "提出基于来源的AI代理长期记忆架构",
+      "llm_tldr_en": "Eywa provides provenance-grounded memory with evidence-before-belief architecture.",
+      "llm_tldr_cn": "Eywa提供基于来源的记忆架构，遵循证据优先于信念的原则。",
+      "llm_tldr": "Eywa提供基于来源的记忆架构，遵循证据优先于信念的原则。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.31075v1",
+      "source": "arxiv",
+      "title": "Task-Focused Memorization for Multimodal Agents",
+      "abstract": "Long-term memory is essential for multimodal agents to build coherent experience, accumulate world knowledge, and achieve continual learning. However, constructing effective memory goes beyond memory module design and basic requirements such as accuracy and fidelity; the key challenge lies in determining what to memorize. Multimodal agents, such as embodied agents, continuously perceive, reason, and act in real or virtual environments, receiving an unbounded stream of multimodal observations. From this combinatorial explosion of information, an agent must selectively retain content that is relevant to its role in the environment and valuable for future tasks. To bridge this gap, we frame memory generation as a learnable memorization policy and introduce TaskMem (Task-focused Memorization Policy Learning), a reinforcement-learning-based framework that enables the policy to dynamically adjust its focus to the demands of real tasks encountered in the environment. TaskMem adopts a two-phase training paradigm: Phase One learns how to memorize by optimizing memory quality under fundamental fidelity requirements; Phase Two occurs after deployment, where the agent learns what to memorize by tuning an adapter on its base MLLM, using recent environment tasks to define a reward model that guides the memorization policy toward task-relevant content. To evaluate our approach, we reformulate VideoMME, EgoLife, and EgoTempo into streaming benchmarks that simulate a realistic setting in which an agent processes streaming observations and handles tasks arriving online. To isolate memory assessment, the questions must be answered using only the agent's memory, without access to raw video. Built on Qwen3-VL-30B-A3B, TaskMem improves VQA accuracy by 6.3%, 7.0%, and 5.3% on these benchmarks, respectively.",
+      "authors": [
+        "Tao Zou",
+        "Yichen He",
+        "Tian Qiu",
+        "Yuan Lin",
+        "Hang Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-29T09:43:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.31075v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "task-focused memorization for multimodal agents",
+      "llm_evidence_cn": "多模态代理的任务聚焦记忆",
+      "llm_evidence": "多模态代理的任务聚焦记忆",
+      "canonical_evidence": "多模态代理的任务聚焦记忆",
+      "llm_tldr_en": "TaskMem learns a memorization policy to selectively retain task-relevant multimodal observations.",
+      "llm_tldr_cn": "TaskMem学习记忆策略，选择性保留任务相关的多模态观察。",
+      "llm_tldr": "TaskMem学习记忆策略，选择性保留任务相关的多模态观察。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30712v1",
+      "source": "arxiv",
+      "title": "ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents",
+      "abstract": "Large language model (LLM) agents have shown strong capabilities in reasoning, tool use, and multi-step interaction, but they often solve tasks from scratch and fail to reuse successful strategies or failure lessons from prior experience. Fine-tuning on collected experience can improve reuse, but it is inflexible when stronger or more suitable executors emerge. We propose ExpGraph, a model-agnostic experience learning framework that enables frozen and replaceable LLM executors to improve through external experience reuse without parameter updates. ExpGraph summarizes historical trajectories into reusable skills and failure lessons, organizes them as nodes in a self-evolving experience graph, and retrieves useful experiences through graph diffusion and utility-aware ranking. A lightweight retrieval copilot is trained with reinforcement learning using feedback that compares executor performance with and without retrieved experiences, while the graph is updated online from downstream task outcomes. We evaluate ExpGraph on ExpSuite, covering question answering, mathematical reasoning, code generation, and multi-step agentic environments including ALFWorld and AppWorld. ExpGraph improves over the strongest baseline by 12.2% and 4.7% on static tasks with smaller and larger executors, and by 21.4% and 12.7% in agentic environments, while reducing average interaction steps by 12.7% and 21.6%. Ablations show that graph-structured experience, utility-aware ranking, and adaptive retrieval jointly enable effective experience reuse across diverse tasks and executor models.",
+      "authors": [
+        "Tao Feng",
+        "Chongrui Ye",
+        "Tianyang Luo",
+        "Jingjun Xu",
+        "Xueqiang Xu",
+        "Haozhen Zhang",
+        "Zhigang Hua",
+        "Yan Xie",
+        "Shuang Yang",
+        "Ge Liu",
+        "Jiaxuan You"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-29T01:04:41+00:00",
+      "link": "https://arxiv.org/pdf/2605.30712v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "graph-structured memory for experience reuse in LLM agents",
+      "llm_evidence_cn": "图结构记忆用于LLM代理的经验复用",
+      "llm_evidence": "图结构记忆用于LLM代理的经验复用",
+      "canonical_evidence": "图结构记忆用于LLM代理的经验复用",
+      "llm_tldr_en": "ExpGraph uses graph-structured memory to enable model-agnostic experience learning for LLM agents.",
+      "llm_tldr_cn": "ExpGraph利用图结构记忆实现LLM代理的模型无关经验学习。",
+      "llm_tldr": "ExpGraph利用图结构记忆实现LLM代理的模型无关经验学习。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.30842v1",
+      "source": "arxiv",
+      "title": "CoMem: Context Management with A Decoupled Long-Context Model",
+      "abstract": "Context management enables agentic models to solve long-horizon tasks through iterative summarization of previous interaction histories. However, this process typically incurs substantial decoding overhead for the extra summarization tokens, which significantly affect the end-to-end response latency at deployment. In this paper, we introduce CoMem, a novel framework that decouples memory management from the primary agent workflow, enabling these processes to execute in parallel. We propose a $k$-step-off asynchronous pipeline that overlaps the memory model's summarization with the agent's inference, effectively masking the latency of context processing. To ensure robustness under this asynchronous setting, we introduce a reward-driven training strategy that aligns the memory model to capture sufficient statistics for the agent's decision-making. Theoretical analysis confirms that CoMem offers a superior efficiency-effectiveness trade-off compared to coupled architectures. Our extensive experimental results on SWE-Bench-Verified show that CoMem provides 1.4x latency improvements upon vanilla long-context solutions while preserving most of the performance. Furthermore, we demonstrate that these latency gains scale favorably with increased system throughput, offering a modular path forward for the independent optimization of agent reasoning and memory compression.",
+      "authors": [
+        "Yuwei Zhang",
+        "Chengyu Dong",
+        "Shuowei Jin",
+        "Changlong Yu",
+        "Hejie Cui",
+        "Hongye Jin",
+        "Xinyang Zhang",
+        "Hamed Bonab",
+        "Colin Lockard",
+        "Jianshu Chen",
+        "Zhenyu Shi",
+        "Jingbo Shang",
+        "Xian Li",
+        "Bing Yin"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-29T04:59:32+00:00",
+      "link": "https://arxiv.org/pdf/2605.30842v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "decouples memory management from agent workflow for latency reduction",
+      "llm_evidence_cn": "将记忆管理与代理工作流解耦以减少延迟",
+      "llm_evidence": "将记忆管理与代理工作流解耦以减少延迟",
+      "canonical_evidence": "将记忆管理与代理工作流解耦以减少延迟",
+      "llm_tldr_en": "CoMem decouples memory management from agent inference using asynchronous pipeline.",
+      "llm_tldr_cn": "CoMem通过异步流水线将记忆管理与代理推理解耦。",
+      "llm_tldr": "CoMem通过异步流水线将记忆管理与代理推理解耦。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.30785v1",
+      "source": "arxiv",
+      "title": "Learning Agent-Compatible Context Management for Long-Horizon Tasks",
+      "abstract": "LLM agents increasingly face long-horizon tasks such as web search and deep research in real-world applications, where accumulated context can cause long-context degradation and reasoning failures. Prior work mitigates this through context management with agent-side context control or fixed strategies such as summarization, which require training the agent itself for adaptation - making it impractical for closed-source agents and ignoring that different agents may require different strategies. We introduce Adaptive Context Management (AdaCoM), which trains an external LLM to manage the context of a frozen agent through flexible modification actions and end-to-end reinforcement learning. Across diverse agents on web search and deep research benchmarks, AdaCoM substantially improves performance by preserving task constraints and progress while pruning stale content. The learned strategies reveal a Fidelity-Reliability Trade-off: agents with higher vanilla ReAct performance benefit from higher-fidelity context preservation, whereas lower-performing agents require more aggressive compression to stay within a reliable reasoning regime. Transfer experiments show that AdaCoM generalizes most effectively across agents with similar capability (measured by vanilla ReAct performance), suggesting a practical path toward reusable context managers for agent systems.",
+      "authors": [
+        "Lu Yi",
+        "Runlin Lei",
+        "Liuyi Yao",
+        "Yuexiang Xie",
+        "Yuyang Li",
+        "Wenhao Zhang",
+        "Zhewei Wei",
+        "Yaliang Li",
+        "Jian-Yun Nie"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-29T03:21:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.30785v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "adaptive context management for long-horizon tasks",
+      "llm_evidence_cn": "面向长时任务的自适应上下文管理",
+      "llm_evidence": "面向长时任务的自适应上下文管理",
+      "canonical_evidence": "面向长时任务的自适应上下文管理",
+      "llm_tldr_en": "AdaCoM trains an external LLM to adaptively manage context for frozen agents.",
+      "llm_tldr_cn": "AdaCoM训练外部LLM为冻结代理自适应管理上下文。",
+      "llm_tldr": "AdaCoM训练外部LLM为冻结代理自适应管理上下文。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

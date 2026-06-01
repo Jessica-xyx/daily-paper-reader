@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-001.webp",
+      "caption": "Figure 4. Gantt chart illustrating the k-step-off pipeline. We denote Pπ(·) and Dπ(·) as the prefilling and decoding time of the agent model, and P f (·) and Df (·) for the memory model. Solid blue blocks denote cached prefilling (incremental), hatched blocks denote uncached prefilling (full context re-encoding after a summary update), and green blocks denote decoding. The “prefix” annotations indicate the cached KV prefix carried over from the previous step. When the prefix remains valid, only new tokens require prefilling. For 1-step-off, every step after the first requires uncached prefilling due to the continuously updated summary. For 2-step-off, the uncached prefill occurs only once per cycle, with the intermediate step reusing the cached KV prefix.",
+      "page": 6,
+      "index": 1,
+      "width": 942,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-002.webp",
+      "caption": "Table 1. Main results. For latency, we show the total inference time for 128 issues.",
+      "page": 7,
+      "index": 2,
+      "width": 906,
+      "height": 376
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-003.webp",
+      "caption": "Table 5. Comparison with MemAgent on SWE-bench Verified. All methods use the same asynchronous pipeline and agent backbone. Latency is reported as total inference time for 128 issues (with CPU offload).",
+      "page": 14,
+      "index": 3,
+      "width": 717,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-004.webp",
+      "caption": "Figure 1. COMEM framework: a decoupled agent framework that offloads long-context compression to an asynchronous, lightweight memory model, significantly reducing inference latency without compromising reasoning performance.",
+      "page": 3,
+      "index": 4,
+      "width": 913,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-005.webp",
+      "caption": "Figure 5. Latency and Speedup results for GLM-4.7 over various batch sizes. COMEM’s speedup scales up with throughput.",
+      "page": 8,
+      "index": 5,
+      "width": 452,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-006.webp",
+      "caption": "Figure 2. TPOT for two models on various context lengths and batch sizes. DeepSWE is a dense model with 32B parameters.",
+      "page": 4,
+      "index": 6,
+      "width": 462,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2605.30842v1/fig-007.webp",
+      "caption": "Figure 3. Profiling results for agentic inference scenario. Left is the execution time for Full-Context baseline. Middle is the execution time for COMEM. Right is the time per completion token results.",
+      "page": 5,
+      "index": 7,
+      "width": 998,
+      "height": 236
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.29640v2/fig-001.webp",
+      "caption": "Figure 3: The extract paradigm in VikingMem",
+      "page": 6,
+      "index": 1,
+      "width": 458,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29640v2/fig-002.webp",
+      "caption": "Figure 5: Use case for Agent Memory",
+      "page": 8,
+      "index": 2,
+      "width": 433,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29640v2/fig-003.webp",
+      "caption": "Figure 1: The definition schema of event, entity for memory extraction, and the built-in operators in VikingMem",
+      "page": 4,
+      "index": 3,
+      "width": 474,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29640v2/fig-004.webp",
+      "caption": "Table 1: LLM-as-a-Judge evaluation scores (%, with higher values denoting superior performance) and Search Latency (second) for each question category in the LOCOMO and LongMemEval dataset. Scores for baselines annotated with a superscript † are sourced from published evaluation results, while the search latencies for Memobase in LOCOMO and Zep in LongMemEval were measured from our own experiments. Best results are in bold; second-best results are with underline. In LongMemEval, \"SSU\" stands for \"single-session-user\", \"MS\" denotes \"multi-session\", \"SSP\" represents \"single-session-preference\", \"TR\" indicates \"temporal-reasoning\", \"KU\" refers to \"knowledge-update\", and \"SSA\" means \"single-session-assistant\".",
+      "page": 9,
+      "index": 4,
+      "width": 960,
+      "height": 812
+    },
+    {
+      "url": "assets/figures/arxiv/2605.29640v2/fig-005.webp",
+      "caption": "Figure 2: The pipeline of VikingMem",
+      "page": 5,
+      "index": 5,
+      "width": 911,
+      "height": 475
+    }
+  ]
+}
