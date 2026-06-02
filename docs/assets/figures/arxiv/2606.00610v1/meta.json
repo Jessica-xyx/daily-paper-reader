@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-001.webp",
+      "caption": "Table 1: Generation performance of different GraphRAG methods. The best result is bold, and the second is underline. The column Δ indicates the performance gain of our MemGraphRAG (59.25) compared to each baseline. Background colors in Δ columns represent the magnitude of improvement (Darker green = larger gap).",
+      "page": 6,
+      "index": 1,
+      "width": 992,
+      "height": 609
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-002.webp",
+      "caption": "Figure 6: Multi-dimensional assessment of graph quality.",
+      "page": 11,
+      "index": 2,
+      "width": 406,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-003.webp",
+      "caption": "Figure 1: Comparison between existing GraphRAG andMemGraphRAG. Exiting GraphRAG performs isolated chunklevel extraction without the global view, resulting in a noisy and inconsistent indexing graph. While MemGraphRAG incorporates global memory to ensure global consistency.",
+      "page": 2,
+      "index": 3,
+      "width": 504,
+      "height": 299
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-004.webp",
+      "caption": "Table 2: Retrieval performance of different GraphRAG methods on G-Bench(Medical).",
+      "page": 7,
+      "index": 4,
+      "width": 1040,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-005.webp",
+      "caption": "Table 8: Taxonomy of Knowledge Conflicts in Graph Retrieval-Augmented Systems.",
+      "page": 14,
+      "index": 5,
+      "width": 976,
+      "height": 534
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-006.webp",
+      "caption": "Figure 3: Illustration of three conflict types in extracted graphs: 1) Mutually Exclusive Conflict from logically incompatible facts, 2) Temporal Conflict caused by missing temporal grounding for time-varying states, and 3) Granularity Conflict arising from inconsistent abstraction levels for the same entity or concept. Details are in Table 8 in Appendix C (iii) ontology (O): the ontology O is defined as the collection of all valid schemas, denoted as O = {𝑠1, . . . , 𝑠 | O | }. It includes the theme and logical rules of the whole knowledge graph.",
+      "page": 3,
+      "index": 6,
+      "width": 496,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-007.webp",
+      "caption": "Figure 7: The prompt used for Conflict Detection Agent.",
+      "page": 18,
+      "index": 7,
+      "width": 1060,
+      "height": 742
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-008.webp",
+      "caption": "Figure 5: Ablation study ofMemGraphRAG on three datasets.",
+      "page": 8,
+      "index": 8,
+      "width": 506,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-009.webp",
+      "caption": "Figure 4: Overview of the MemGraphRAG framework with two phases: (i) Memory-Based Indexing Graph Construction, where Global Memory (M) and the Knowledge Graph (G) co-evolve via unified schema filtering, global adjudication, and memoryguided bridging; and (ii) Memory-Guided Online Retrieval, which leverages multi-layer memory filtering, structure-aware node initialization, and Personalized PageRank to identify globally relevant contexts for generation.",
+      "page": 4,
+      "index": 9,
+      "width": 1039,
+      "height": 407
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-010.webp",
+      "caption": "Figure 8: The prompt used for Conflict Resolution Agent.",
+      "page": 19,
+      "index": 10,
+      "width": 1060,
+      "height": 596
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00610v1/fig-011.webp",
+      "caption": "Table 4: Comparison of different methods. The column Δ shows the improvement of MemGraphRAG (58.41) over baselines. Darker green in Δ indicates a larger performance gap.",
+      "page": 12,
+      "index": 11,
+      "width": 1048,
+      "height": 430
+    }
+  ]
+}

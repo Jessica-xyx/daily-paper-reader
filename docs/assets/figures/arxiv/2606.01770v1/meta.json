@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-001.webp",
+      "caption": "Figure 1: Longer frequent evolution can overfit earlier stream evidence. Top: The A-Evolve run with unbounded evolution grows from 12 to 34 skills, while the prompt grows from 2 KB to 68 KB. Bottom: Each curve reports pass-rate increase relative to the no-evolution solver, with different evolution stopping cycles. Early gains fade as later tasks arrive; news_from_future.md helps on a sports task yet misfires on a politics task.",
+      "page": 1,
+      "index": 1,
+      "width": 447,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-002.webp",
+      "caption": "Figure 4: Levo evidence across benchmark-specific bottlenecks. PolyBench stresses confidence calibration, FutureX stresses web-retrieval access, and CTF-Dojo stresses payload handling of different file sizes.",
+      "page": 6,
+      "index": 2,
+      "width": 433,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-003.webp",
+      "caption": "Table 13: Complete human-in-the-loop event log from the FutureX RQ5 run (Design C, 5 batches × 20 tasks). P2 (cred.) is the research-phase credential hook; P3 (board) is the task-board steering hook. Two P2 events fire at cycle 1 to bootstrap the search pipeline; one substantive P3 event fires at cycle 3 to direct the evolver toward Western and Chinese specialty endpoints. The remaining P3 prompts return skip, matching the cheat-sheet protocol. API tokens supplied via Telegram are redacted.",
+      "page": 18,
+      "index": 3,
+      "width": 856,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-004.webp",
+      "caption": "Figure 8: Extracted trajectories of the designed multi-agent evolution, agentic routing, and Human-in-the-Loop.",
+      "page": 8,
+      "index": 4,
+      "width": 940,
+      "height": 616
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-005.webp",
+      "caption": "Figure 3: Overview of the Adaptive Auto-Harness system. Top: the multi-agent evolver constructs and refines a harness tree across cycles via four phases (Analyze → Research → Build → Verify) with a persistent cross-cycle workspace and temporal-reveal feedback. Bottom: at solve time, a router agent reads each branch’s workspace via git show and routes the incoming task xt to the most suitable branch. Two human-in-the-loop hooks (task-board steering and research-phase assistance) trigger only when the evolver’s history lacks relevant signal.",
+      "page": 4,
+      "index": 5,
+      "width": 889,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-006.webp",
+      "caption": "Table 14: Per-task solver turns and wall-clock seconds across systems and benchmarks. A turn is one tool call, including the final submit; a task that submits directly without other tool use therefore counts as 1. turns and sec are arithmetic means; median columns are added because both distributions are right-skewed on CTF-Dojo and FutureX. Wall-clock excludes orchestration overhead.",
+      "page": 19,
+      "index": 6,
+      "width": 950,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-007.webp",
+      "caption": "Table 10: Per-branch routing volume on the RQ4 navigation analysis subsets (§4.5). Each row reports tasks the LLM router actually sent to that branch under the Adapt condition, alongside the resulting Pass@1 (CTF-Dojo, FutureX) or HitRate among traded markets (PolyBench). On these subsets the router never invoked the main fallback that its prompt allows (Appendix J).",
+      "page": 17,
+      "index": 7,
+      "width": 461,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-008.webp",
+      "caption": "Table 3: Adaptive Auto-Harness hyperparameters across the three benchmarks. EGL is the Expected-Gain-fromLearning trigger that gates whether a cycle runs. All runs use T = 0 for both solver and evolver to attribute gains to the algorithm rather than sampling noise.",
+      "page": 12,
+      "index": 8,
+      "width": 458,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-009.webp",
+      "caption": "Table 8: Per-category PolyBench metrics. Categories are inferred by keyword match on the trajectory prompt’s Event description; other catches unmatched markets. Each cell reports Accuracy (%) / Return (%). Bold marks the best system per row on Accuracy.",
+      "page": 16,
+      "index": 9,
+      "width": 950,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2606.01770v1/fig-010.webp",
+      "caption": "Figure 14: FutureX non-stationarity. Language, source accessibility, difficulty, and answer format shift across batches, creating solve-time harness mismatch when one static harness is reused for all tasks.",
+      "page": 16,
+      "index": 10,
+      "width": 745,
+      "height": 462
+    }
+  ]
+}

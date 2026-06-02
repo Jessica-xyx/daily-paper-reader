@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-001.webp",
+      "caption": "Table 1: Results on LongMemEval and LoCoMo. All reported results are LLM-as-a-Judge scores. Bold and underline indicate the best and second-best results per backbone. Avg. denotes the mean across subcategories. MemPro-5/10/15 denote MemPro after 5/10/15 evolution iterations. † indicates that MemPro-5 already surpasses all non-MemPro baselines on the corresponding Avg. score.",
+      "page": 6,
+      "index": 1,
+      "width": 939,
+      "height": 755
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-002.webp",
+      "caption": "Figure 8: Integration prompt for the Research Agent in the MCR pipeline.",
+      "page": 15,
+      "index": 2,
+      "width": 902,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-003.webp",
+      "caption": "Figure 7: Retrieval prompt for the Research Agent in the MCR pipeline.",
+      "page": 15,
+      "index": 3,
+      "width": 902,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-004.webp",
+      "caption": "Figure 1: Evolution dynamics of MemPro on the LoCoMo evaluation set, showing the performance of each evolved version, the best-so-far performance, and the main improvements of performance-enhancing versions.",
+      "page": 2,
+      "index": 4,
+      "width": 888,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-005.webp",
+      "caption": "Table 2: Results on HotpotQA and NarrativeQA. All reported results are F1 scores. For HotpotQA, 56K/224K/448K denote context lengths, and Avg. denotes their mean. MemPro-5/10/15 denote MemPro after 5/10/15 evolution iterations. Bold and underline indicate the best and second-best results per backbone. † indicates that MemPro-5 already surpasses all non-MemPro baselines on the corresponding score.",
+      "page": 7,
+      "index": 5,
+      "width": 891,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-006.webp",
+      "caption": "Figure 6: Memory construction prompt used by the Memory Agent in the MCR pipeline to generate memory updates from structured segments and the previous memory bank.",
+      "page": 14,
+      "index": 6,
+      "width": 902,
+      "height": 1258
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-007.webp",
+      "caption": "Figure 12: Selection-stage prompt used by the Evolving Agent to choose a promising base version from the MCR version tree based on node evaluation logs.",
+      "page": 18,
+      "index": 7,
+      "width": 902,
+      "height": 846
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-008.webp",
+      "caption": "Figure 2: Overview of MemPro. (a) The MCR pipeline. (b) MemPro performs evolution over a version tree: the Evolving Agent selects a node based on logs, expands it into a new version, and generates its evaluation log.",
+      "page": 4,
+      "index": 8,
+      "width": 943,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-009.webp",
+      "caption": "Figure 13: Expansion-stage prompt used by the Evolving Agent to expand the selected MCR version into a new version through edit–debug refinement.",
+      "page": 19,
+      "index": 9,
+      "width": 902,
+      "height": 927
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-010.webp",
+      "caption": "Figure 11: Judge prompt used for LongMemEval evaluation.",
+      "page": 17,
+      "index": 10,
+      "width": 902,
+      "height": 869
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-011.webp",
+      "caption": "Figure 14: Evaluation-stage prompt used by the Evolving Agent to evaluate the newly expanded MCR version and generate its evaluation log.",
+      "page": 20,
+      "index": 11,
+      "width": 902,
+      "height": 996
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-012.webp",
+      "caption": "Figure 9: Reflection prompt for the Research Agent in the MCR pipeline.",
+      "page": 16,
+      "index": 12,
+      "width": 902,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00619v1/fig-013.webp",
+      "caption": "Figure 10: Judge prompt used for LoCoMo evaluation.",
+      "page": 16,
+      "index": 13,
+      "width": 902,
+      "height": 731
+    }
+  ]
+}

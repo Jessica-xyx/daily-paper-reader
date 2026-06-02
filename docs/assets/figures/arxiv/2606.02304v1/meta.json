@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-001.webp",
+      "caption": "Figure 3: Per-cycle success rate on ALFWorld (C0–C4) and WebShop (C0–C10). Solid lines show full UCE, dashed lines show single-type ablations, and the star marks the peak cycle. C0 is the ReAct baseline.",
+      "page": 6,
+      "index": 1,
+      "width": 819,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-002.webp",
+      "caption": "Figure 1: Comparison of the ReAct loop (left) and the UCE architecture (right).",
+      "page": 2,
+      "index": 2,
+      "width": 802,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-003.webp",
+      "caption": "Table 1: Four ECU types in UCE.",
+      "page": 2,
+      "index": 3,
+      "width": 802,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-004.webp",
+      "caption": "Table 5: ALFWorld task type distribution.",
+      "page": 14,
+      "index": 4,
+      "width": 747,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-005.webp",
+      "caption": "Table 3: Single-type ablation. Each row retains only one ECU type in the library.",
+      "page": 8,
+      "index": 5,
+      "width": 772,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-006.webp",
+      "caption": "Figure 2: Overview of the UCE architecture. Five phases per cycle: evaluate, collect, KYS, generate, and cleanup.",
+      "page": 4,
+      "index": 6,
+      "width": 827,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-007.webp",
+      "caption": "Figure 4: A WebShop task that requires multiple ECU types to succeed.",
+      "page": 9,
+      "index": 7,
+      "width": 829,
+      "height": 389
+    },
+    {
+      "url": "assets/figures/arxiv/2606.02304v1/fig-008.webp",
+      "caption": "Table 2: Main results. ALFWorld reports per-task-type and overall success rate (%). WebShop reports average task score (%) and purchase success rate (%).",
+      "page": 5,
+      "index": 8,
+      "width": 844,
+      "height": 442
+    }
+  ]
+}

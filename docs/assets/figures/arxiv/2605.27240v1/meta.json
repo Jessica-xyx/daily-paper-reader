@@ -1,0 +1,150 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-001.webp",
+      "caption": "Figure 1: An example of emotional need-aware proactive memory retrieval, where the agent infers a latent need from social disconnection and retrieves an interpersonal memory to foster connection.",
+      "page": 1,
+      "index": 1,
+      "width": 454,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-002.webp",
+      "caption": "Table 3: Performance comparison of different LLMs on ENPMR-Bench. Responses are evaluated along four core dimensions by both GPT-4o and human annotators. Detailed descriptions of the evaluation prompts and analyses of the agreement between human and GPT are provided in the Appendix B.2",
+      "page": 6,
+      "index": 2,
+      "width": 950,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-003.webp",
+      "caption": "Figure 6: Prompt for generating user profile.",
+      "page": 15,
+      "index": 3,
+      "width": 950,
+      "height": 1137
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-004.webp",
+      "caption": "Figure 12: Prompt for evaluating emotional support dialogue.",
+      "page": 21,
+      "index": 4,
+      "width": 950,
+      "height": 1387
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-005.webp",
+      "caption": "Table 4: Performance of generated responses by different memory methods on ENPMR-Bench, using DeepSeek-V3 as the generation model.",
+      "page": 7,
+      "index": 5,
+      "width": 461,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-006.webp",
+      "caption": "Figure 3: Sankey diagrams illustrating the mapping between human user needs (left) and the most frequently retrieved memory types (Top-1, right) across four LLMs and embedding models. Flow width indicates retrieval frequency, enabling direct comparison of how each model aligns user needs with memory types.",
+      "page": 7,
+      "index": 6,
+      "width": 910,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-007.webp",
+      "caption": "Figure 13: Prompt for generating w/Golden response.",
+      "page": 22,
+      "index": 7,
+      "width": 950,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-008.webp",
+      "caption": "Table 8: Case Study 1",
+      "page": 14,
+      "index": 8,
+      "width": 951,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-009.webp",
+      "caption": "Table 9: Case Study 2",
+      "page": 14,
+      "index": 9,
+      "width": 952,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-010.webp",
+      "caption": "Figure 9: Prompt for generating power.",
+      "page": 18,
+      "index": 10,
+      "width": 950,
+      "height": 767
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-011.webp",
+      "caption": "Figure 14: Prompt for generating WcoT response.",
+      "page": 23,
+      "index": 11,
+      "width": 950,
+      "height": 1421
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-012.webp",
+      "caption": "Figure 2: The data construction process of ENPMR-BENCH involves the construction of a structured, multidimensional user profile organized around central life themes. Memories are chronologically arranged to form a temporal narrative. Subsequently, relevant memories are sampled to design emotional support scenarios, which are then used to generate appropriate dialogues.",
+      "page": 4,
+      "index": 12,
+      "width": 910,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-013.webp",
+      "caption": "Figure 10: Prompt for generating goal.",
+      "page": 19,
+      "index": 13,
+      "width": 950,
+      "height": 677
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-014.webp",
+      "caption": "Figure 8: Prompt for generating relationship.",
+      "page": 17,
+      "index": 14,
+      "width": 950,
+      "height": 850
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-015.webp",
+      "caption": "Figure 4: Prompt for Data Filtering.",
+      "page": 12,
+      "index": 15,
+      "width": 458,
+      "height": 910
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-016.webp",
+      "caption": "Figure 15: Prompt for Base Setting Generating .",
+      "page": 24,
+      "index": 16,
+      "width": 950,
+      "height": 573
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-017.webp",
+      "caption": "Figure 11: Prompt for generating emotional support dialogue.",
+      "page": 20,
+      "index": 17,
+      "width": 950,
+      "height": 996
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27240v1/fig-018.webp",
+      "caption": "Figure 7: Prompt for generating user life themes.",
+      "page": 16,
+      "index": 18,
+      "width": 950,
+      "height": 542
+    }
+  ]
+}

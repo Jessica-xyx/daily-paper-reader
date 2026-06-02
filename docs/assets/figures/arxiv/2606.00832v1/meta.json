@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.00832v1/fig-001.webp",
+      "caption": "Figure 3: Tool call failure rates across five models. Failure rates vary substantially by tool and model, with get_membership_benefits and get_membership_status showing the highest error rates.",
+      "page": 5,
+      "index": 1,
+      "width": 950,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00832v1/fig-002.webp",
+      "caption": "Table 1: Results on MOMENTO with K = 3. A comparison of model performance across Task Success Rate and Pass Rate metrics, with the best-performing results for each category bolded.",
+      "page": 4,
+      "index": 2,
+      "width": 889,
+      "height": 224
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00832v1/fig-003.webp",
+      "caption": "Figure 2: Failure distribution across models, showing that tool-recall errors dominate.",
+      "page": 4,
+      "index": 3,
+      "width": 461,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00832v1/fig-004.webp",
+      "caption": "Table 2: Tool environment provided in MOMENTO for realistic multi-session agentic conversational interaction.",
+      "page": 8,
+      "index": 4,
+      "width": 935,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00832v1/fig-005.webp",
+      "caption": "Figure 1: The MOMENTO framework for persistent multi-session agentic interaction. A user agent and assistant agent interact across temporally separated sessions while accessing a shared memory module containing conversation history and multi-session context. The assistant agent uses external tools for reservation, search, ordering, retrieval, and database querying to support persistent memory retrieval, temporal reasoning, and long-term task completion.",
+      "page": 2,
+      "index": 5,
+      "width": 950,
+      "height": 542
+    }
+  ]
+}

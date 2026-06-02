@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-001.webp",
+      "caption": "Figure 1: Conceptual Overview and Performance Advantages of MERIT. (a) MERIT performs horizon-aware retrieval by decoupling memory into episode-level (global strategy) and turn-level (local hints), using a PRM to provide the dense rewards required for turn-level policy learning. (b) MERIT outperforms static and single-horizon dynamic baselines in success rates while requiring fewer interaction turns.",
+      "page": 2,
+      "index": 1,
+      "width": 950,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-002.webp",
+      "caption": "Table 1: Performance comparison of MERIT against baselines on Success Rates across two phases and Average Number of Turns. Performance is partitioned into queries with WRITE operations and READ-only operations. The backbone of the main agent is GPT-5 and the user simulator is GPT-4o for all methods. Subscripts denote absolute differences relative to the No Memory baseline.",
+      "page": 7,
+      "index": 2,
+      "width": 937,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-003.webp",
+      "caption": "Table 2: Transferability comparison on Spider2-Snow. The backbone of the main agent is GPT-5. TopicK, Memento, MemRL, and MERIT use the trained checkpoints/artifacts/. Subscripts denote absolute differences relative to the No Memory baseline.",
+      "page": 7,
+      "index": 3,
+      "width": 443,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-004.webp",
+      "caption": "Table 3: Ablation studies evaluating the contribution of individual framework components—episode-level strategy, turn-level hints, and RL optimization—on task success rates and interaction efficiency.",
+      "page": 8,
+      "index": 4,
+      "width": 944,
+      "height": 190
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-005.webp",
+      "caption": "Figure 3: Retrieval robustness and retrieval size. MERIT consistently outperforms the non-RL variant across k, while the retrieval-size analysis shows that injecting too many memories can introduce noisy or redundant guidance.",
+      "page": 8,
+      "index": 5,
+      "width": 937,
+      "height": 184
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00547v1/fig-006.webp",
+      "caption": "Figure 2: Overview of the proposed dual-level long-term memory framework for interactive Text-to-SQL. Episodelevel memory is retrieved at episode start for global strategic guidance and updated at episode end, while turn-level memory is retrieved and updated per turn to provide state-conditioned local hints. Both levels employ a twostage pipeline: embedding-based candidate generation followed by an RL-trained selector. A Process Reward Model (PRM), trained offline with SFT and GRPO, provides dense online rewards for turn-level retrieval, while episode-level retrieval is optimized with terminal task reward.",
+      "page": 4,
+      "index": 6,
+      "width": 946,
+      "height": 542
+    }
+  ]
+}

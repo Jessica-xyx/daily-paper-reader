@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-001.webp",
+      "caption": "Figure 3: Forecasting performance across datasets, metrics, and LLM backbones. Each metric is averaged over five runs.",
+      "page": 7,
+      "index": 1,
+      "width": 826,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-002.webp",
+      "caption": "Table 22: Model generation ablation: forecasting metrics. Each metric is averaged over five runs. Best per LLM per dataset is bolded.",
+      "page": 22,
+      "index": 2,
+      "width": 825,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-003.webp",
+      "caption": "Figure 1: Overview of the MOSAIC pipeline.",
+      "page": 3,
+      "index": 3,
+      "width": 824,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-004.webp",
+      "caption": "Table 6: System-level forecasting performance on three datasets. Each metric is averaged over five runs. Best result per LLM per dataset is bolded.",
+      "page": 18,
+      "index": 4,
+      "width": 824,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-005.webp",
+      "caption": "Figure 5: Model generation module comparison. (a)–(c): per-dataset Win Rate (outermost ring) and metric performance broken down by LLM backbone. (d)–(e): ranking profiles averaged across backbones for forecasting and generation respectively.",
+      "page": 8,
+      "index": 5,
+      "width": 813,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-006.webp",
+      "caption": "Figure 6: RL module comparison. (a)–(c): per-dataset metric performance broken down by LLM backbone. (d)–(e): ranking profiles averaged across backbones for forecasting and generation. Steps denotes Steps to Best Incumbent.",
+      "page": 8,
+      "index": 6,
+      "width": 809,
+      "height": 207
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-007.webp",
+      "caption": "Figure 2: Overview of the repositorygrounded model generation pipeline.",
+      "page": 4,
+      "index": 7,
+      "width": 369,
+      "height": 380
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-008.webp",
+      "caption": "Figure 7: Diagram of failure-aware trajectory branching and invalid-action masking",
+      "page": 17,
+      "index": 8,
+      "width": 692,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-009.webp",
+      "caption": "Figure 8: Generated model architecture for hourly cryptocurrency forecasting by GPT-4o.",
+      "page": 24,
+      "index": 9,
+      "width": 743,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-010.webp",
+      "caption": "Figure 9: Generated model architecture for high-frequency LOB generation by Claude Opus 4.",
+      "page": 24,
+      "index": 10,
+      "width": 740,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2606.00708v1/fig-011.webp",
+      "caption": "Table 2: Ablation study of the model generation module. All metrics are averaged across four LLM backbones. Subscripts F and G denote forecasting and generation respectively. Best results per dataset are bolded. – indicates metric not applicable.",
+      "page": 9,
+      "index": 11,
+      "width": 824,
+      "height": 194
+    }
+  ]
+}
