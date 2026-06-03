@@ -1,0 +1,69 @@
+{
+  "label": "2026-06-03",
+  "date": "2026-06-03",
+  "generated_at": "2026-06-03T22:46:31",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202606/03/2606.01138v1-amp-a-vendor-neutral-wire-format-for-agent-memory-operations",
+      "section": "deep",
+      "title_en": "AMP: A Vendor-Neutral Wire Format for Agent Memory Operations",
+      "authors": "Thamilvendhan Munirathinam",
+      "date": "2026-05-31",
+      "pdf": "https://arxiv.org/pdf/2606.01138v1",
+      "score": "9.0",
+      "evidence": "提出代理内存操作的线格式",
+      "tldr": "现有Agent记忆框架各自使用私有SDK、存储布局和操作词汇，导致集成成本高、迁移困难且缺乏人类审核机制。本文提出memorywire，一种基于JSON-Schema 2020-12的线格式，统一五种记忆操作（remember, recall, forget, merge, expire）和四种记忆类型（语义、情景、程序、情感），并包含MemoryStore接口、扇出路由和可选HITL治理通道。开源参考实现支持五种后端（sqlite-vec, mem0, Letta, Cognee, pgvector），在100事实50查询数据集上达到recall@5=1.000，延迟p50约40ms；对抗融合实验显示RRF保持稳定，而最大融合在K≥5时退化；16场景跨适配器合规测试68/80通过，零失败。贡献不是新算法，而是将成熟组件（RRF、FSM、STM/LTM整合、差异审批工作流）打包为中立协议，实证有效，可与Model Context Protocol协作。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Agent-memory frameworks - mem0, Letta/MemGPT, Cognee, Zep/Graphiti, MemoryOS, MemTensor - each ship their own SDK, storage layout, and operational vocabulary. There is no shared wire format: every integration is bespoke, every migration rebuilds memory from scratch, and no framework ships a governance surface that lets a human review writes before they enter long-term storage. We present memorywire, a JSON-Schema 2020-12 wire format for five memory operations (remember, recall, forget, merge, expire) over four memory types (semantic, episodic, procedural, emotional), with a MemoryStore interface, a fan-out router, and an optional HITL governance channel. We describe an open-source reference implementation with five backend adapters (sqlite-vec, mem0, Letta, Cognee, pgvector); a microbenchmark on a 100-fact / 50-query labelled corpus achieving recall@5 = 1.000 on the 42 labelled queries with ingest p50 = 37.8 ms and recall p50 = 40.6 ms; an adversarial-fusion experiment showing Reciprocal Rank Fusion holds recall@5 = 1.000 across a 1-of-N rank-0 injection sweep (K in {0,5,...,50}) where max fusion collapses to 0.500 with 80% leak at K >= 5; and a 16-scenario cross-adapter conformance suite passing 68 of 80 cells with zero failures. The contribution is not a new algorithm; it is a packaging of established components (RRF, FSMs, STM/LTM consolidation, diff-and-approve workflows) into a venue-neutral protocol with an empirically validated reference, positioned to compose with the Model Context Protocol rather than compete with it.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/03/2606.01199v1-can-llm-agents-sustain-long-horizon-organizational-dynamics",
+      "section": "deep",
+      "title_en": "Can LLM Agents Sustain Long-Horizon Organizational Dynamics?",
+      "authors": "Xuancheng Zhu, Yang Yue, Shuaibing Wan, Zihan Dou, Xiaohan Zhang, Yongrui Liu, Guoshun Nan",
+      "date": "2026-05-31",
+      "pdf": "https://arxiv.org/pdf/2606.01199v1",
+      "score": "9.0",
+      "evidence": "提出以记忆为中心的框架TaskWeave，使用依赖感知的轨迹记忆支持LLM代理的长期组织模拟",
+      "tldr": "大语言代理用于社会模拟时，能否在长期结构化组织中维持连贯行为尚不明确。本文提出TaskWeave，一种分层代理框架，通过“规划-划分-诊断-对齐”循环和依赖感知的跟踪记忆管理状态与执行。在持续一年的IT公司模拟中，TaskWeave比基线方法更有效地维持组织连贯性，产出可靠的工件并适应环境变化。研究表明，结构化模拟记忆是构建可靠基于LLM的组织模拟器的关键。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Large language agents are increasingly used for social simulation, yet it remains unclear whether they can sustain coherent behavior in structured organizations, where goals must propagate through hierarchy, tasks depend on prior execution, and artifacts accumulate over long horizons. We formulate long-horizon organizational simulation as a memory-centered coordination problem and introduce TaskWeave, a hierarchical agentic framework that maintains planning states through a Formulate-Partition-Diagnose-Align cycle and grounds execution through dependency-aware trace memory. We evaluate TaskWeave in a year-long IT company simulation and compare it with other multi-agent frameworks on organizational coherence, execution grounding, and downstream enterprise NLP utility. Experiments show that TaskWeave supports coherent and long-horizon organizational dynamics while producing grounded artifacts and adapting to external environments. These findings suggest that structured simulation memory is a key mechanism for building reliable LLM-based organizational simulators.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/03/2606.01435v1-dont-ask-the-llm-to-track-freshness-a-deterministic-recipe-for-memory-conflict-resolution",
+      "section": "deep",
+      "title_en": "Don't Ask the LLM to Track Freshness: A Deterministic Recipe for Memory Conflict Resolution",
+      "authors": "Vikas Reddy, Sumanth Challaram",
+      "date": "2026-05-31",
+      "pdf": "https://arxiv.org/pdf/2606.01435v1",
+      "score": "9.0",
+      "evidence": "提出LLM代理中记忆冲突解决的确定性方法",
+      "tldr": "基于LLM的记忆系统在维护随时间演变的事实时，冲突解决成为主要瓶颈。现有方法依赖LLM判决，在MemoryAgentBench的FactConsolidation任务中表现不佳（最高54%）。本文提出确定性方法：通过候选提取加Python max(serial)替代LLM进行版本感知聚合，在单跳任务上提升+10.8点（gpt-4o-mini），达到78.0%；在多跳上通过Self-Ask的逐跳确定性扩展达到30.2%。实验表明，冲突解决的核心瓶颈在于检索后的组装步骤，而非存储机制。该方法可迁移至时间戳场景，为记忆系统提供了更可靠的原语。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "LLM-based memory systems increasingly maintain facts that evolve over time, where a recurring failure is conflict resolution: when a fact has multiple contradictory values, which should the agent return? MemoryAgentBench (MAB; Hu et al., 2026) makes this explicit in its FactConsolidation task: facts are numbered, the counterfactual has the higher serial, and agents are told newer facts have larger serials. Yet every published system underperforms: HippoRAG-v2 reaches 54% on single-hop (FC-SH), BM25 48%, Mem0 18%, and the temporal KG Zep/Graphiti just 7%. Multi-hop is near-unsolved (at most 7% across 22 systems).   We argue the bottleneck is the assembly step: baselines leave conflict resolution to LLM-mediated retrieval or generation rather than version-aware aggregation. A matched-setup comparison (same backbone, retrieval, chunking, TOP_K) shows that replacing the LLM-judgment answer pipeline with candidate-extraction plus Python max(serial) yields +10.8 points on FC-SH (gpt-4o-mini), widening from +8 at 6K to +21 at 262K. This is a whole-pipeline effect (resolver, prompt, format, and temperature vary jointly); isolating the resolver is future work. The recipe reaches 78.0% on FC-SH (gpt-4o-mini), 94.8% (gpt-4o), and 30.2% on FC-MH (gpt-4o-mini, rising to 51.5% with gpt-4o) via a per-hop deterministic extension of Self-Ask. At matched-262K, it beats HippoRAG-v2 by +28 points and the best published FC-MH result by +20.   The implication is corrective for the subfield: the bottleneck on conflict resolution is assembly (post-retrieval aggregation), not storage. A LongMemEval knowledge-update check shows the mechanism ports from max(serial) to max(timestamp) but only ties LLM judgment (57.8% vs 64.4%, n=45): deterministic aggregation is the right primitive for current-value conflicts and must be composed with question-type-aware handling for broader memory QA.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/03/2606.00825v1-supermemory-vqa-an-egocentric-visual-question-answering-benchmark-for-long-horizon-memory",
+      "section": "quick",
+      "title_en": "SuperMemory-VQA: An Egocentric Visual Question-Answering Benchmark for Long-Horizon Memory",
+      "authors": "Samiul Alam, Shakhrul Iman Siam, Michael J. Proulx, James Fort, Richard Newcombe, Hyo Jin Kim, Mi Zhang",
+      "date": "2026-05-30",
+      "pdf": "https://arxiv.org/pdf/2606.00825v1",
+      "score": "7.0",
+      "evidence": "面向长期记忆的自我中心视觉问答基准",
+      "tldr": "现有自我中心视频理解数据集多关注短时感知，缺乏对长时记忆任务的评估。本文提出SuperMemory-VQA，一个包含52.9小时日常活动多模态记录及4853个问答对的长时记忆VQA基准，涵盖多种记忆类型并设置不可回答选项。基准测试显示现有智能体框架和LLM在真实记忆任务上远不可靠。该工作揭示了构建可靠AI记忆系统需要新架构，并提供了重要评估基准。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "AI glasses present a compelling platform for AI agents to serve as personalized memory assistants. To be genuinely useful, such systems must move beyond short-term video comprehension and address memory gaps that humans experience for practical, personal, or social purposes over longitudinal egocentric video streams. However, existing egocentric datasets predominantly focus on action recognition or generic QAs from short clips, measuring perceptual capabilities rather than realistic human memory needs. We introduce SuperMemory-VQA, an egocentric visual question answering (VQA) dataset for evaluating AI assistants on practical, long-horizon memory tasks. It contains 52.9 hours of everyday activities recorded with AI glasses, including synchronized RGB video, audio transcription, eye gaze, IMU, and SLAM trajectories. Through a human-verified annotation pipeline, we construct grounded 4,853 question-answer pairs that span object and location memory, intent recall, visual scene recall, timeline reconstruction, conversational memory, and in-context retrieval. Each question is posed as multiple-choice with an explicit \"unanswerable\" option to test hallucination robustness. Benchmarking leading agentic frameworks and LLM backbones reveals that existing systems remain far from reliable on real-world memory tasks, highlighting the need for new architectures for grounded AI memory that can answer only when evidence is sufficient. A participant survey further supports that our questions are realistic, useful, and aligned with everyday memory needs.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
