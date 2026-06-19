@@ -1,0 +1,340 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-19T20:30:02.374533+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2606.12945v1",
+      "source": "arxiv",
+      "title": "Learning What to Remember: A Cognitively Grounded Multi-Factor Value Model for Agentic Memory",
+      "abstract": "Long-running LLM agents accumulate interaction histories far larger than any context window, forcing a standing decision: what to encode deeply, what to forget, and what to retrieve under a fixed memory budget. Production systems answer with semantic similarity or recency -- both mis-specified for the forgetting decision, which is made at consolidation time before the future query is known. We propose a multi-factor memory value function V(m)=\\sum_i w_i f_i(m) over seven interpretable factors (emotional intensity, goal relevance, value alignment, self/user relevance, task utility, reliability, and usage history) drawn from cognitive psychology, whose weights are learned from a downstream objective by a gradient-free optimiser, and whose single scalar uniformly controls encoding depth, forget risk, and retrieval rank. We make a methodological point: on LongMemEval, scoring goal relevance against the held-out evaluation question saturates gold-evidence retention at \\approx 0.98 -- this measures retrieval, not forgetting. In the realistic blind regime, a learned multi-factor value retains 0.770 \\pm 0.011 of gold evidence across 479 usable cases, versus 0.657 for uniform weights, 0.518 for the best single factor, and 0.368 for recency; every paired gap's 95% bootstrap CI is above zero, and a neural network over the same factors ties the linear model. The learned weights are interpretable -- reliability, emotional intensity, and self/user relevance dominate, while query-time goal similarity is correctly down-weighted for the forgetting decision. A controlled synthetic task with planted confounds confirms the learner recovers a separating weighting (1.00 retention) where uniform weighting fails (0.62). The substrate is open-source; all experiments run on a single CPU with no API calls.",
+      "authors": [
+        "Zhibao Chen",
+        "Qian Cheng"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-11T06:17:31+00:00",
+      "link": "https://arxiv.org/pdf/2606.12945v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes multi-factor memory value model for agentic memory",
+      "llm_evidence_cn": "提出面向智能体记忆的多因子价值模型",
+      "llm_evidence": "提出面向智能体记忆的多因子价值模型",
+      "canonical_evidence": "提出面向智能体记忆的多因子价值模型",
+      "llm_tldr_en": "Proposes a cognitively grounded multi-factor value model for what to remember in LLM agents, optimizing weight via gradient-free method.",
+      "llm_tldr_cn": "针对长期运行的LLM智能体在有限记忆预算下如何决定记忆内容的问题，本文提出一个基于认知心理学的多因子记忆价值模型，涵盖情感强度、目标相关性等七个可解释因子，并通过无梯度优化器学习权重。实验表明该方法优于基于相似性或时效性的基线，为智能体记忆管理提供了新的理论框架。",
+      "llm_tldr": "针对长期运行的LLM智能体在有限记忆预算下如何决定记忆内容的问题，本文提出一个基于认知心理学的多因子记忆价值模型，涵盖情感强度、目标相关性等七个可解释因子，并通过无梯度优化器学习权重。实验表明该方法优于基于相似性或时效性的基线，为智能体记忆管理提供了新的理论框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17328v1",
+      "source": "arxiv",
+      "title": "MemTrace: Probing What Final Accuracy Misses in Long-Term Memory",
+      "abstract": "LLM agents increasingly maintain long-term memory of user facts across sessions. Yet such memory is usually evaluated by aggregating accuracy over question rows or episodes. Because this approach scores question rows independently, even when several questions probe the same fact, it cannot show how that fact behaves as conditions change. We introduce MemTrace, a benchmark whose unit of measurement is the knowledge point: a single typed fact about the user, rather than an individual question. MemTrace probes each fact along three controlled dimensions: memory age, defined by how many sessions ago the fact appeared in the history; question type, covering current state, earlier state, and trajectory of change; and evidence condition, covering present, missing, and contradicted-by-false-premise settings. Evaluating 13 memory-system configurations across four paradigms, we find that similar pooled accuracy hides different failures: recovering a fact's current and earlier states does not imply tracking how it changed, and safe abstention does not imply correcting a false premise. The dominant bottleneck is evidence use, not retrieval: when systems fail, the evidence was retrievable 10 times more often than it was missing. These results suggest that improving long-term memory requires better use of reachable evidence, not simply more storage or retrieval.",
+      "authors": [
+        "Xianxuan Long",
+        "Zhikai Chen",
+        "Shenglai Zeng",
+        "Shouren Wang",
+        "Kai Guo",
+        "Jiliang Tang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-15T22:21:23+00:00",
+      "link": "https://arxiv.org/pdf/2606.17328v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark for evaluating long-term memory in LLM agents by knowledge points",
+      "llm_evidence_cn": "基于知识点的LLM智能体长期记忆评估基准",
+      "llm_evidence": "基于知识点的LLM智能体长期记忆评估基准",
+      "canonical_evidence": "基于知识点的LLM智能体长期记忆评估基准",
+      "llm_tldr_en": "MemTrace introduces a benchmark that evaluates long-term memory by knowledge points rather than individual questions, probing memory age, question type, and evidence condition.",
+      "llm_tldr_cn": "MemTrace提出以知识点为单位的记忆评估基准，从记忆年龄、问题类型和证据条件三个维度精细探测智能体对每个事实的记忆表现，揭示了传统准确率聚合无法捕捉的记忆退化模式，为LLM智能体长期记忆评估提供了更细粒度的视角。",
+      "llm_tldr": "MemTrace提出以知识点为单位的记忆评估基准，从记忆年龄、问题类型和证据条件三个维度精细探测智能体对每个事实的记忆表现，揭示了传统准确率聚合无法捕捉的记忆退化模式，为LLM智能体长期记忆评估提供了更细粒度的视角。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.19847v1",
+      "source": "arxiv",
+      "title": "AtomMem: Building Simple and Effective Memory System for LLM Agents via Atomic Facts",
+      "abstract": "Large language models (LLMs) demonstrate strong reasoning and generation abilities, but their fixed context windows limit long-term information accumulation and reuse across multi-session interactions. Existing memory-augmented systems often construct memory in a coarse and unstable manner, relying on inefficient memory representations or unstable unconstrained updates. To address these challenges, we propose AtomMem, a long-term memory system designed for value-dense storage and stable memory evolution. AtomMem introduces a Fact Executor, which selectively extracts high value atomic facts from long form interactions to serve as highly efficient memory representations. Subsequently, AtomMem organizes these facts into hierarchical event structures and temporal profiles, capturing coherent episodic contexts and tracking dynamically evolving user attributes over time. During retrieval, the system activates an associative memory graph to connect fragmented memories. Experiments on the LoCoMo benchmark confirm that AtomMem achieves state-of-the-art performance across various reasoning tasks, offering a scalable and economically viable solution for deploying intelligent personalized agents.",
+      "authors": [
+        "Yanyu Yao",
+        "Shangze Li",
+        "Zhi Zheng",
+        "Hui Zheng",
+        "Qi Liu",
+        "Tong Xu",
+        "Enhong Chen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-18T06:56:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.19847v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory system via atomic facts for LLM agents",
+      "llm_evidence_cn": "基于原子事实的LLM智能体记忆系统",
+      "llm_evidence": "基于原子事实的LLM智能体记忆系统",
+      "canonical_evidence": "基于原子事实的LLM智能体记忆系统",
+      "llm_tldr_en": "AtomMem builds a long-term memory system for LLM agents by extracting atomic facts from interactions and organizing them into hierarchical event structures for stable storage and evolution.",
+      "llm_tldr_cn": "现有记忆增强系统存在记忆表示粗糙、更新不稳定等问题。AtomMem提出一种长期记忆系统，通过事实执行器从长段交互中选择性提取高价值原子事实作为高效记忆表示，并将事实组织成层次化事件结构以实现稳定存储和演化。该方法实现了价值密集存储和稳定记忆更新，提升了智能体在多会话交互中的信息积累和重用能力。",
+      "llm_tldr": "现有记忆增强系统存在记忆表示粗糙、更新不稳定等问题。AtomMem提出一种长期记忆系统，通过事实执行器从长段交互中选择性提取高价值原子事实作为高效记忆表示，并将事实组织成层次化事件结构以实现稳定存储和演化。该方法实现了价值密集存储和稳定记忆更新，提升了智能体在多会话交互中的信息积累和重用能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.19911v1",
+      "source": "arxiv",
+      "title": "Multi-Agent Transactive Memory",
+      "abstract": "The decentralized deployment of LLM agents with diverse capabilities across diverse tasks motivates infrastructure for knowledge sharing across heterogeneous agent populations. Just as search engines index human-generated artifacts to support human problem solving, retrieval systems can organize agent-generated artifacts for reuse across agent populations. We extend retrieval-augmented generation - which demonstrates the value of human-authored artifacts to individual agents - to retrieval of agent-generated artifacts supporting a population of agents. In particular, agent trajectories encode reusable procedural knowledge, yet these artifacts are typically discarded after a single use or retained only by the producing agent, forcing newly instantiated agents to repeatedly rediscover existing solutions. We propose Multi-Agent Transactive Memory (MATM), a framework for population-level storage and retrieval of agent-generated trajectories, where producer agents contribute trajectories to a shared repository and consumer agents retrieve them to improve task execution. We focus on interactive environments (ALFWorld and WebArena), where trajectories are long and encode especially rich procedural structure. Our experiments demonstrate that retrieving trajectories from MATM improves downstream task performance and reduces interaction steps without coordination or joint training. These results position MATM as a design pattern for population-level experience sharing in open agent ecosystems.",
+      "authors": [
+        "To Eun Kim",
+        "Xuhong He",
+        "Dishank Jain",
+        "Ambuj Agrawal",
+        "Negar Arabzadeh",
+        "Fernando Diaz"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-06-18T08:04:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.19911v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes multi-agent transactive memory for sharing agent-generated knowledge",
+      "llm_evidence_cn": "提出多智能体交互记忆，用于共享智能体生成的知识",
+      "llm_evidence": "提出多智能体交互记忆，用于共享智能体生成的知识",
+      "canonical_evidence": "提出多智能体交互记忆，用于共享智能体生成的知识",
+      "llm_tldr_en": "Extends RAG to agent-generated artifacts for population-wide knowledge reuse; formulates transactive memory for multi-agent LLM systems.",
+      "llm_tldr_cn": "LLM智能体在异构任务中产生大量轨迹，但通常被丢弃或仅保留在单个智能体内，导致重复发现。本文扩展检索增强生成至智能体生成的人工产物，提出多智能体交互记忆系统，组织并重用智能体轨迹作为程序性知识。实验表明该方法显著降低新智能体的学习成本，提升整体效率。",
+      "llm_tldr": "LLM智能体在异构任务中产生大量轨迹，但通常被丢弃或仅保留在单个智能体内，导致重复发现。本文扩展检索增强生成至智能体生成的人工产物，提出多智能体交互记忆系统，组织并重用智能体轨迹作为程序性知识。实验表明该方法显著降低新智能体的学习成本，提升整体效率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.12780v1",
+      "source": "arxiv",
+      "title": "ProPlay: Procedural World Models for Self-Evolving LLM Agents",
+      "abstract": "Self-evolving agents are expected to improve through interaction without external supervision, but this remains difficult in partially observable environments where agents must explore actively, learn from limited feedback, and decide when to trust prior experience. Existing LLM-agent methods often rely on memory or planning modules, yet they rarely close the loop between them to continually refine an internal understanding of environment dynamics. We introduce ProPlay, a procedural world model that supports procedure-level preplay, where agents can rehearse future procedural paths using the learned world knowledge. Rather than representing experience as isolated rules or low-level action constraints, ProPlay abstracts successful trajectories into procedures and organizes them in a procedure graph that captures causal transitions among task stages. Each transition is associated with a reliability record embedding to estimate its task-specific contribution from past outcomes. Before each episode, ProPlay simulates future procedural trajectories over known graph structures as structured soft guidance; after execution, it refines the graph using environment feedback. Experiments on public benchmarks show that ProPlay consistently improves environment understanding and self-evolution capability over strong baselines. Our code has been released in https://github.com/antman9914/proplay.",
+      "authors": [
+        "Yijun Ma",
+        "Zehong Wang",
+        "Yiyang Li",
+        "Ziming Li",
+        "Xiaoguang Guo",
+        "Weixiang Sun",
+        "Chuxu Zhang",
+        "Yanfang Ye"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-11T00:47:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.12780v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "procedural world model with memory modules for self-evolving agents",
+      "llm_evidence_cn": "用于自我演化智能体的包含记忆模块的过程世界模型",
+      "llm_evidence": "用于自我演化智能体的包含记忆模块的过程世界模型",
+      "canonical_evidence": "用于自我演化智能体的包含记忆模块的过程世界模型",
+      "llm_tldr_en": "ProPlay introduces a procedural world model that integrates memory and planning, enabling agents to rehearse procedures. It closes the loop between memory and planning for self-evolution in partially observable environments.",
+      "llm_tldr_cn": "自我演化智能体需要从交互中不断改进，但现有方法未充分利用记忆与规划的闭环。本文提出ProPlay过程世界模型，将成功轨迹抽象为过程并存入记忆，支持过程级预演。实验表明该模型能有效提升智能体在部分可观测环境中的学习效率，为记忆增强的智能体演化提供了新范式。",
+      "llm_tldr": "自我演化智能体需要从交互中不断改进，但现有方法未充分利用记忆与规划的闭环。本文提出ProPlay过程世界模型，将成功轨迹抽象为过程并存入记忆，支持过程级预演。实验表明该模型能有效提升智能体在部分可观测环境中的学习效率，为记忆增强的智能体演化提供了新范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.13174v1",
+      "source": "arxiv",
+      "title": "Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents",
+      "abstract": "Interactive LLM agents are becoming part of daily work, but they do not reliably become easier to work with over time: a correction remembered in one session may still be violated in the next. We study this gap between preference access and preference compliance. In tasks derived from anonymized real-user friction cases, Mem0 memory still leaves 57.5% of applicable preference checks violated. We introduce Test-time Rule Acquisition and Compiled Enforcement (TRACE), a drop-in skill-layer pipeline for coding-agent runtimes that mines user corrections, rewrites them as atomic rules, and compiles them into runtime checks that must pass before an agent completes future tasks. Unlike runtime checks written ahead of time by developers, TRACE skills come from the user's own chat corrections. We evaluate TRACE with simulated user-in-the-loop experiments on ClawArena coding-agent tasks and MemoryArena-derived memory-intensive tasks. On ClawArena, TRACE reduces held-out preference violation from 100.0% to 37.6% on in-distribution tasks and from 100.0% to 2.0% on out-of-distribution tasks. On MemoryArena-derived tasks, TRACE reduces in-distribution violation from 100.0% to 60.5% while matching or exceeding the strongest memory baseline on task pass. These results suggest that compiling corrections into runtime enforcement can address a repeated-friction failure mode that memory alone does not reliably solve, reducing the need for users to restate the same correction across future sessions. Experiment code is available at https://github.com/YujunZhou/TRACE_exp, and the deployable skill is available at https://github.com/YujunZhou/tellonce.",
+      "authors": [
+        "Yujun Zhou",
+        "Kehan Guo",
+        "Haomin Zhuang",
+        "Xiangqi Wang",
+        "Yue Huang",
+        "Zhenwen Liang",
+        "Pin-Yu Chen",
+        "Tian Gao",
+        "Nuno Moniz",
+        "Nitesh V. Chawla",
+        "Xiangliang Zhang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-11T10:43:40+00:00",
+      "link": "https://arxiv.org/pdf/2606.13174v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Evaluates Mem0 memory in agent preference compliance",
+      "llm_evidence_cn": "评估了Mem0记忆在智能体偏好遵从中的表现",
+      "llm_evidence": "评估了Mem0记忆在智能体偏好遵从中的表现",
+      "canonical_evidence": "评估了Mem0记忆在智能体偏好遵从中的表现",
+      "llm_tldr_en": "Mem0 memory still leaves 57.5% violations; proposes TRACE to compile corrections into runtime checks for better compliance.",
+      "llm_tldr_cn": "LLM智能体在交互中记忆用户偏好但仍频繁违反。该文发现Mem0记忆系统仍有57.5%的偏好检查被违反。提出TRACE方法，将用户纠正编译为运行时检查规则，确保未来任务前必须通过检查。实验表明TRACE显著提升偏好遵从率，优于纯记忆方法。",
+      "llm_tldr": "LLM智能体在交互中记忆用户偏好但仍频繁违反。该文发现Mem0记忆系统仍有57.5%的偏好检查被违反。提出TRACE方法，将用户纠正编译为运行时检查规则，确保未来任务前必须通过检查。实验表明TRACE显著提升偏好遵从率，优于纯记忆方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.20047v1",
+      "source": "arxiv",
+      "title": "PACMS: Submodular Context Selection as a Pluggable Engine for LLM Agents",
+      "abstract": "Conversational and tool-using LLM agents operate over a context window that fills from several directions simultaneously. As a session proceeds, the agent accumulates user and assistant turns, entries drawn from a persistent memory store, and often largest of all, the verbatim outputs of tool calls such as file reads, search results, and API responses. Once the cumulative context exceeds the model's token budget, the framework must decide what to keep.   The prevailing mechanism is recency truncation, sometimes paired with periodic summarization. This is topic-blind: a fact established early in a session is discarded simply because it is old, even when the current user query is about exactly that fact; conversely, verbose but irrelevant recent material is retained. Agents that must recall information across many turns, the defining case for memory, are precisely where recency truncation fails.   Existing alternatives sit outside the agent's assembly step. Retrieval augmented generation fetches external documents into the prompt but does not arbitrate the agent's \\emph{already-present} pooled context. Context-compression methods reduce token count by rewriting or pruning text, but operate query-blind and lossily. Neither treats memory entries, conversation turns, and tool outputs as a single candidate pool to be selected from by relevance at the moment the prompt is assembled.",
+      "authors": [
+        "Manu Ghulyani",
+        "Arunabh Singh",
+        "Karan Bharadwaj",
+        "Ankit Nath",
+        "Suranjan Goswami"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-06-18T10:22:57+00:00",
+      "link": "https://arxiv.org/pdf/2606.20047v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "submodular context selection for LLM agent context management",
+      "llm_evidence_cn": "提出子模上下文选择方法管理LLM智能体上下文",
+      "llm_evidence": "提出子模上下文选择方法管理LLM智能体上下文",
+      "canonical_evidence": "提出子模上下文选择方法管理LLM智能体上下文",
+      "llm_tldr_en": "Proposes PACMS, a submodular context selection engine for LLM agents to manage token budget and improve context relevance.",
+      "llm_tldr_cn": "LLM智能体在长对话或工具调用中容易超出上下文窗口限制，现有截断策略忽略主题相关性。本文提出PACMS，一种基于子模函数的选择引擎，能够动态选择最相关的上下文片段，在保持性能的同时降低令牌成本。实验证明该方法优于随机截断和摘要方法。",
+      "llm_tldr": "LLM智能体在长对话或工具调用中容易超出上下文窗口限制，现有截断策略忽略主题相关性。本文提出PACMS，一种基于子模函数的选择引擎，能够动态选择最相关的上下文片段，在保持性能的同时降低令牌成本。实验证明该方法优于随机截断和摘要方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.17182v1",
+      "source": "arxiv",
+      "title": "Verified Detection and Prevention of Concurrency Anomalies in Multi-Agent Large Language Model Systems",
+      "abstract": "Multi-agent LLM systems share state through memory stores, vector indices, and tool registries. We model such sharing as long-running read-generate-write operations under deterministic-generation semantics -- the regime durable-execution engines enforce by deterministic replay -- and formalize four concurrency anomalies in TLA+: stale-generation, phantom-tool, causal-cascade, and tool-effect reordering, structural analogues of classical isolation anomalies, each with a TLC counter-example. The exclusion lattice over these anomalies is trivial; the contribution is the mechanically verified realizability and strict separation of one maximal chain within it, $L_0 \\subsetneq \\cdots \\subsetneq L_4$, to our knowledge the first machine-checked consistency hierarchy for such runtimes. A development of 274 Verus obligations (zero assume, zero admit; trust base: two structural axioms and a mutex correspondence) proves the detectors sound and complete against the specifications and each runtime its avoidance set. Three deployed Rust runtimes realize L0-L1 (pessimistic locking, serializable snapshot isolation, default-SI), each verified against stale-generation and refined to its state machine; L2-L4 are exec-mode-verified with dependency-free prevention twins (A3, A6, A2: 0/1000 versus 1000/1000), and L2 is run live across three model families (A3 prevented in all 120 retracted sessions). We reproduce a silent lost update in ByteDance's deer-flow, formalizing its fix as a verified $L_0 \\to L_1$ refinement, and exhibit tool-effect reordering in LangGraph's ToolNode on unmodified output, removed by an L3 commit-order sequencer. The verified detector, refinements, and realizability artifacts are the contribution; the phenomena and lattice are classical.",
+      "authors": [
+        "Sajjad Khan"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.LO",
+        "cs.MA",
+        "cs.PL"
+      ],
+      "published": "2026-06-15T18:19:34+00:00",
+      "link": "https://arxiv.org/pdf/2606.17182v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "formalization of concurrency anomalies in shared memory of multi-agent LLM systems",
+      "llm_evidence_cn": "多智能体LLM系统共享记忆中的并发异常形式化",
+      "llm_evidence": "多智能体LLM系统共享记忆中的并发异常形式化",
+      "canonical_evidence": "多智能体LLM系统共享记忆中的并发异常形式化",
+      "llm_tldr_en": "This paper formalizes four concurrency anomalies (stale-generation, phantom-tool, etc.) in multi-agent memory sharing. It provides mechanically verified detection and prevention, addressing memory management in shared-state multi-agent systems.",
+      "llm_tldr_cn": "多智能体LLM系统通过记忆存储、向量索引等共享状态，但并发操作可能导致异常。本文形式化了四种并发异常（如过期生成、幻影工具等），并在TLA+中给出机械验证的检测与预防方法。该工作为共享记忆智能体的内存管理提供了理论基础和验证工具。",
+      "llm_tldr": "多智能体LLM系统通过记忆存储、向量索引等共享状态，但并发操作可能导致异常。本文形式化了四种并发异常（如过期生成、幻影工具等），并在TLA+中给出机械验证的检测与预防方法。该工作为共享记忆智能体的内存管理提供了理论基础和验证工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
