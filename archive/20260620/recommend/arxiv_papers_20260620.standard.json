@@ -1,0 +1,95 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-20T20:17:48.208715+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.15778v1",
+      "source": "arxiv",
+      "title": "DYNA : Dynamic Episodic Memory Networks for Augmenting Large Language Models with Temporal Knowledge Graphs in Continuous Learning",
+      "abstract": "Large Language Models (LLMs) struggle to incorporate new knowledge without forgetting or costly retraining. We propose DYNA, a lightweight framework that augments a frozen LLM with a temporal knowledge graph where events are nodes and temporal relations are directed, timestamped edges. The graph serves as an external, updatable memory. At query time, DYNA retrieves relevant nodes via random walks and centrality measures, then augments the LLM's response. Evaluated on three temporal recall tasks, DYNA reduces catastrophic forgetting by ~7% compared to fine-tuning and improves temporal ordering by ~5% over standard RAG. Higher graph clustering coefficients correlate with better retrieval, showing that graph structure matters. Contributions: (1) episodic memory as temporal KG, (2) retraining-free LLM augmentation, (3) graph properties as predictors of retrieval performance.",
+      "authors": [
+        "Ali Sarabadani",
+        "Mahtab Tajvidiyan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SI"
+      ],
+      "published": "2026-06-14T12:27:26+00:00",
+      "link": "https://arxiv.org/pdf/2606.15778v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "dynamic episodic memory network augmenting LLM with temporal knowledge graphs",
+      "llm_evidence_cn": "用动态 episodic 记忆网络和时序知识图谱增强LLM",
+      "llm_evidence": "用动态 episodic 记忆网络和时序知识图谱增强LLM",
+      "canonical_evidence": "用动态 episodic 记忆网络和时序知识图谱增强LLM",
+      "llm_tldr_en": "DYNA augments frozen LLMs with a temporal knowledge graph as external updatable memory, enabling continuous learning without forgetting.",
+      "llm_tldr_cn": "LLM难以在不遗忘或重新训练的情况下吸收新知识。DYNA提出轻量级框架，将时序知识图谱作为外部可更新记忆，通过随机游走和中心性检索相关节点增强LLM响应。在三个时序回忆任务上，相比微调减少约7%灾难性遗忘，相比标准RAG提升约5%时序排序准确性。",
+      "llm_tldr": "LLM难以在不遗忘或重新训练的情况下吸收新知识。DYNA提出轻量级框架，将时序知识图谱作为外部可更新记忆，通过随机游走和中心性检索相关节点增强LLM响应。在三个时序回忆任务上，相比微调减少约7%灾难性遗忘，相比标准RAG提升约5%时序排序准确性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17628v1",
+      "source": "arxiv",
+      "title": "OPD-Evolver: Cultivating Holistic Agent Evolver via On-Policy Distillation",
+      "abstract": "Memory has become a standard substrate for self-evolving agents, yet retaining experience is not the same as learning how to evolve through it. Existing memory agents can store trajectories, retrieve reflections, or accumulate skills, but often lack the holistic competence to select useful experience, act on it, write reusable knowledge, and maintain a growing repository. We introduce OPD-Evolver, a slow-fast co-evolution framework that cultivates such an agent evolver through on-policy self-distillation. In the fast loop, OPD-Evolver interacts with a four-level memory hierarchy to read, use, write, and maintain experience for rapid test-time evolution. In the slow loop, outcome-calibrated memory attribution and privileged hindsight distill these four abilities into the deployable policy. Across multi-domain benchmarks, OPD-Evolver surpasses memory systems such as ReasoningBank by up to 11.5%, and training-based methods such as Skill0 by ~5.8%. Further analysis shows that OPD-Evolver internalizes high-value experience and memory management, enabling OPD-Evolver-9B to challenge giant counterparts such as Qwen3.5-397B-A17B and Step-3.5-Flash, pointing beyond memory-augmented agents toward genuinely qualified agent evolvers.",
+      "authors": [
+        "Guibin Zhang",
+        "Xun Xu",
+        "Yanwei Yue",
+        "Zikun Su",
+        "Wangchunshu Zhou",
+        "Xiaobin Hu",
+        "Shuicheng Yan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-16T07:33:53+00:00",
+      "link": "https://arxiv.org/pdf/2606.17628v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "four-level memory hierarchy for self-evolving agents",
+      "llm_evidence_cn": "针对自进化智能体的四级记忆层次结构",
+      "llm_evidence": "针对自进化智能体的四级记忆层次结构",
+      "canonical_evidence": "针对自进化智能体的四级记忆层次结构",
+      "llm_tldr_en": "Proposes OPD-Evolver, a slow-fast co-evolution framework with a four-level memory hierarchy for holistic agent evolution through on-policy self-distillation, enabling agents to read, use, write, and maintain experience.",
+      "llm_tldr_cn": "现有记忆智能体能存储轨迹但缺乏全面进化能力。OPD-Evolver提出慢-快共演框架，通过在线策略自蒸馏实现智能体全面进化。快速循环中，智能体与四级记忆层次交互以读取、使用、写入和维护经验；慢速循环通过校准记忆归因和特权事后分析蒸馏优化进化策略。实验表明该方法显著提升了智能体的自进化能力。",
+      "llm_tldr": "现有记忆智能体能存储轨迹但缺乏全面进化能力。OPD-Evolver提出慢-快共演框架，通过在线策略自蒸馏实现智能体全面进化。快速循环中，智能体与四级记忆层次交互以读取、使用、写入和维护经验；慢速循环通过校准记忆归因和特权事后分析蒸馏优化进化策略。实验表明该方法显著提升了智能体的自进化能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
