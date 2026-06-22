@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-22",
+  "date": "2026-06-22",
+  "generated_at": "2026-06-22T22:26:36",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/22/2606.20475v1-marginal-advantage-accumulation-for-memory-driven-agent-self-evolution",
+      "section": "deep",
+      "title_en": "Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution",
+      "authors": "Mingyu Yang, Keye Zheng, Congchao Cheng, Yujie Liu, Xingkang Lu, Fan Jiang, Yefei Zheng",
+      "date": "2026-06-18",
+      "pdf": "https://arxiv.org/pdf/2606.20475v1",
+      "score": "9.0",
+      "evidence": "基于边际优势积累的记忆驱动智能体自我进化",
+      "tldr": "批量式轨迹蒸馏中，同一记忆操作因跨批次反馈不一致而难以评估。现有方法缺乏跨批次操作级证据积累，无法区分稳定有效操作与偶然命中。本文提出边际优势积累（MAA），通过构建差分信号实现跨批次可比，利用指数移动平均累积有符号证据，并借助语义身份合并保证可追溯。作为后处理架构，MAA在4个基准和4个目标模型的16个设置中14个取得最优，一致超越批量级蒸馏基线，大多情况匹配甚至超越在线方法，并减少约75%优化阶段token消耗。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "In batch-style trace distillation, the same memory operation may receive contradictory feedback across different batches. Existing methods lack a cross-batch, operation-level evidence accumulation mechanism, making it impossible to distinguish stably effective operations from accidental hits. This paper formalizes the requirement as two structural conditions, alignability and comparability, and proposes Marginal Advantage Accumulation (MAA). MAA constructs differential signals to make them comparable across batches, accumulates signed evidence per operation via EMA, and ensures cross-batch traceability through semantic identity merging. As a post-processing architecture, MAA achieves the best results in 14 out of 16 settings across 4 benchmarks and 4 target models, consistently outperforming existing batch-level distillation baselines and matching or surpassing online alternatives in most settings, while reducing optimization-phase token consumption by approximately 75%.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/22/2606.20474v1-ultraquant-4-bit-kv-caching-for-context-heavy-agents",
+      "section": "quick",
+      "title_en": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
+      "authors": "Inesh Chakrabarti, David Limpus, Aditi Ghai Rana, Bowen Bao, Spandan Tiwari, Thiago Crepaldi, Ashish Sirasao",
+      "date": "2026-06-18",
+      "pdf": "https://arxiv.org/pdf/2606.20474v1",
+      "score": "7.0",
+      "evidence": "面向上下文重型智能体的KV缓存压缩",
+      "tldr": "上下文密集型智能体工作负载对KV缓存要求极高，长前缀复用且并发大。本文提出UltraQuant，一种4位KV缓存压缩方案，结合TurboQuant风格旋转和码本量化，并针对AMD GPU优化。在多轮长上下文代理任务中，UltraQuant将P50首令牌延迟降低3.47倍（全轮次2.3倍），输出吞吐量提升1.63倍，同时保持任务质量。该工作首次在真实代理场景中验证了4位KV缓存的有效性，为低延迟高吞吐服务提供了可行方案。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Context-heavy agents place unusual pressure on the key-value (KV) cache: long prefixes are reused across many short turns, while concurrency determines whether the serving system can keep GPUs utilized. We study 4-bit KV-cache compression for this setting, using TurboQuant-style rotation and codebook quantization as a quality anchor and vLLM FP8 KV caching as the deployment anchor. We report three contributions. First, we frame 4-bit KV caching around multi-round agent workloads where task quality, cache residency, and serving throughput must be measured jointly. Second, we describe the practical design choices needed to make the 4-bit path robust, including asymmetric K/V treatment, Walsh-Hadamard rotation, QJL removal, and block-scale variants. Third, we present serving optimizations on AMD GPUs, including optimized decode-attention kernels and UltraQuant, an FP4 approximation path that uses FP8 queries, FP4 KV tensors, UE8M0 group scales, and native scaled-MFMA support on CDNA4. On a long-context, multi-turn agentic workload, UltraQuant cuts P50 time-to-first-token by 3.47x in the cache-pressured late rounds (2.3x across all rounds) and raises output throughput by 1.63x over the FP8 KV baseline.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

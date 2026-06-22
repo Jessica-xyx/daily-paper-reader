@@ -6,22 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-21
-- 运行时间：2026-06-21 20:51:47 UTC
+- 最新运行日期：2026-06-22
+- 运行时间：2026-06-22 22:26:29 UTC
 - 运行状态：成功
-- 本次总论文数：0
-- 精读区：0
-- 速读区：0
+- 本次总论文数：2
+- 精读区：1
+- 速读区：1
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202606/21/README](/202606/21/README)
+今日精读记忆驱动自演化智能体（9.0分），速读4比特KV缓存压缩技术（7.0分）。  
+最值得关注：记忆边际优势积累机制可显著提升智能体长程任务决策质量；4位KV缓存适合上下文密集场景。  
+建议深入理解记忆驱动的自演化逻辑，并评估低精度缓存对实际部署的加速效果。
+- 详情：[/202606/22/README](/202606/22/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution](/202606/22/2606.20475v1-marginal-advantage-accumulation-for-memory-driven-agent-self-evolution)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：基于边际优势积累的记忆驱动智能体自我进化
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [UltraQuant: 4-bit KV Caching for Context-Heavy Agents](/202606/22/2606.20474v1-ultraquant-4-bit-kv-caching-for-context-heavy-agents)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：面向上下文重型智能体的KV缓存压缩
 
 
 <div class="dpr-home-promo-card">

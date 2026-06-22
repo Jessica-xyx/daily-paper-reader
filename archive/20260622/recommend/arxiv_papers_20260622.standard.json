@@ -1,0 +1,101 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-22T22:24:08.805807+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.20475v1",
+      "source": "arxiv",
+      "title": "Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution",
+      "abstract": "In batch-style trace distillation, the same memory operation may receive contradictory feedback across different batches. Existing methods lack a cross-batch, operation-level evidence accumulation mechanism, making it impossible to distinguish stably effective operations from accidental hits. This paper formalizes the requirement as two structural conditions, alignability and comparability, and proposes Marginal Advantage Accumulation (MAA). MAA constructs differential signals to make them comparable across batches, accumulates signed evidence per operation via EMA, and ensures cross-batch traceability through semantic identity merging. As a post-processing architecture, MAA achieves the best results in 14 out of 16 settings across 4 benchmarks and 4 target models, consistently outperforming existing batch-level distillation baselines and matching or surpassing online alternatives in most settings, while reducing optimization-phase token consumption by approximately 75%.",
+      "authors": [
+        "Mingyu Yang",
+        "Keye Zheng",
+        "Congchao Cheng",
+        "Yujie Liu",
+        "Xingkang Lu",
+        "Fan Jiang",
+        "Yefei Zheng"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-18T16:54:25+00:00",
+      "link": "https://arxiv.org/pdf/2606.20475v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory-driven agent self-evolution with evidence accumulation",
+      "llm_evidence_cn": "基于边际优势积累的记忆驱动智能体自我进化",
+      "llm_evidence": "基于边际优势积累的记忆驱动智能体自我进化",
+      "canonical_evidence": "基于边际优势积累的记忆驱动智能体自我进化",
+      "llm_tldr_en": "Proposes Marginal Advantage Accumulation (MAA) for memory operations in agent self-evolution, enabling cross-batch evidence accumulation and achieving best results in 14/16 settings.",
+      "llm_tldr_cn": "现有批量痕迹蒸馏方法无法累积跨批次操作级证据，难以区分稳定有效与偶然操作。本文提出边际优势积累（MAA），通过差分信号构造、EMA证据累积和语义身份合并，实现跨批次可追溯的记忆操作评估。在4个基准16个设置中，MAA在14个上取得最佳结果，为记忆驱动的智能体自我进化提供了可靠方法。",
+      "llm_tldr": "现有批量痕迹蒸馏方法无法累积跨批次操作级证据，难以区分稳定有效与偶然操作。本文提出边际优势积累（MAA），通过差分信号构造、EMA证据累积和语义身份合并，实现跨批次可追溯的记忆操作评估。在4个基准16个设置中，MAA在14个上取得最佳结果，为记忆驱动的智能体自我进化提供了可靠方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.20474v1",
+      "source": "arxiv",
+      "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
+      "abstract": "Context-heavy agents place unusual pressure on the key-value (KV) cache: long prefixes are reused across many short turns, while concurrency determines whether the serving system can keep GPUs utilized. We study 4-bit KV-cache compression for this setting, using TurboQuant-style rotation and codebook quantization as a quality anchor and vLLM FP8 KV caching as the deployment anchor. We report three contributions. First, we frame 4-bit KV caching around multi-round agent workloads where task quality, cache residency, and serving throughput must be measured jointly. Second, we describe the practical design choices needed to make the 4-bit path robust, including asymmetric K/V treatment, Walsh-Hadamard rotation, QJL removal, and block-scale variants. Third, we present serving optimizations on AMD GPUs, including optimized decode-attention kernels and UltraQuant, an FP4 approximation path that uses FP8 queries, FP4 KV tensors, UE8M0 group scales, and native scaled-MFMA support on CDNA4. On a long-context, multi-turn agentic workload, UltraQuant cuts P50 time-to-first-token by 3.47x in the cache-pressured late rounds (2.3x across all rounds) and raises output throughput by 1.63x over the FP8 KV baseline.",
+      "authors": [
+        "Inesh Chakrabarti",
+        "David Limpus",
+        "Aditi Ghai Rana",
+        "Bowen Bao",
+        "Spandan Tiwari",
+        "Thiago Crepaldi",
+        "Ashish Sirasao"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ],
+      "published": "2026-06-18T16:54:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.20474v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "KV cache compression for context-heavy agents",
+      "llm_evidence_cn": "面向上下文重型智能体的KV缓存压缩",
+      "llm_evidence": "面向上下文重型智能体的KV缓存压缩",
+      "canonical_evidence": "面向上下文重型智能体的KV缓存压缩",
+      "llm_tldr_en": "UltraQuant studies 4-bit KV-cache compression for context-heavy agents, improving memory efficiency in multi-turn agent workloads through quantization and design choices.",
+      "llm_tldr_cn": "该论文研究4位KV缓存压缩技术用于上下文重型智能体，提出非对称K/V处理、Walsh-Hadamard旋转等设计选择，在保持任务质量的同时降低显存占用。这直接服务于LLM智能体中的记忆管理策略，尤其针对长对话场景。",
+      "llm_tldr": "该论文研究4位KV缓存压缩技术用于上下文重型智能体，提出非对称K/V处理、Walsh-Hadamard旋转等设计选择，在保持任务质量的同时降低显存占用。这直接服务于LLM智能体中的记忆管理策略，尤其针对长对话场景。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
