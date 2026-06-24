@@ -6,57 +6,52 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-23
-- 运行时间：2026-06-23 20:47:08 UTC
+- 最新运行日期：2026-06-24
+- 运行时间：2026-06-24 20:29:36 UTC
 - 运行状态：成功
-- 本次总论文数：11
-- 精读区：7
+- 本次总论文数：10
+- 精读区：6
 - 速读区：4
 
 ### 今日简报（AI）
-1) 今日聚焦长时记忆与智能体安全，精选7篇精读、4篇速读，揭示记忆学习与治理退化的前沿突破。
-
-2) 最值得看精读10分《Learning What Not to Forget》探讨极少量数据下的智能体记忆学习机制，以及速读8分《Governance Decay》揭示上下文压缩如何悄然消除安全约束。
-
-3) 建议关注记忆系统的高效构建与安全性的对立统一，尤其警惕记忆传染带来的评估偏差与治理退化风险。
-- 详情：[/202606/23/README](/202606/23/README)
+今天精读了两篇9分论文（ESAA-Conversational与Metis），聚焦LLM智能体的记忆层设计，速读则涉及记忆安全与推理记忆扩展。  
+最值得关注：事件源记忆层实现多Agent连续性与切换，以及文本-代码桥接支持Agent自进化。  
+建议优先精读这两篇论文，理解结构化的长期记忆如何提升复杂任务中的Agent协同与持续学习能力。
+- 详情：[/202606/24/README](/202606/24/README)
 
 ### 精读区论文标签
-1. [Learning What Not to Forget: Long-Horizon Agent Memory from a Few Kilobytes of Learning](/202606/23/2606.20954v1-learning-what-not-to-forget-long-horizon-agent-memory-from-a-few-kilobytes-of-learning)  
-   标签：评分：10.0/10、query:llm-agent-memory
-   evidence：智能体记忆中的学习式相关性驱逐策略
-2. [MemSlides: A Hierarchical Memory Driven Agent Framework for Personalized Slide Generation with Multi-turn Local Revision](/202606/23/2606.17162v1-memslides-a-hierarchical-memory-driven-agent-framework-for-personalized-slide-generation-with-multi-turn-local-revision)  
+1. [ESAA-Conversational: An Event-Sourced Memory Layer for Continuity, Handoff, and Curation Across Heterogeneous LLM Coding Agents](/202606/24/2606.23752v1-esaa-conversational-an-event-sourced-memory-layer-for-continuity-handoff-and-curation-across-heterogeneous-llm-coding-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：用于LLM智能体的分层记忆框架
-3. [AdaMem: Learning What to Remember for Personalized Long-Horizon LLM Agents](/202606/23/2606.21144v1-adamem-learning-what-to-remember-for-personalized-long-horizon-llm-agents)  
+   evidence：面向异构LLM编码代理的事件源共享会话记忆
+2. [Metis: Bridging Text and Code Memory for Self-Evolving Agents](/202606/24/2606.24151v1-metis-bridging-text-and-code-memory-for-self-evolving-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：针对个性化LLM代理的自适应记忆管理
-4. [RaMem: Contextual Reinstatement for Long-term Agentic Memory](/202606/23/2606.22844v1-ramem-contextual-reinstatement-for-long-term-agentic-memory)  
+   evidence：首次控制实验比较文本记忆和代码记忆两种表示在自演化智能体中的表现
+3. [Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning](/202606/24/2606.24428v1-escaping-the-self-confirmation-trap-an-execute-distill-verify-paradigm-for-agentic-experience-learning)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出RaMem框架，通过上下文恢复解决智能体长期记忆中的上下文崩溃问题
-5. [DynamicMem: A Long-Horizon Memory Benchmark in Real-World Settings](/202606/23/2606.22877v1-dynamicmem-a-long-horizon-memory-benchmark-in-real-world-settings)  
+   evidence：通过执行-蒸馏-验证框架优化智能体记忆内容，避免自确认陷阱
+4. [Governed Shared Memory for Multi-Agent LLM Systems](/202606/24/2606.24535v1-governed-shared-memory-for-multi-agent-llm-systems)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出DynamicMem基准，模拟真实世界中异质画像的长期记忆
-6. [Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation](/202606/23/2606.23127v1-managing-procedural-memory-in-llm-agents-control-adaptation-and-evaluation)  
+   evidence：形式化定义多智能体系统共享记忆问题，识别失效模式并提出可治理原语
+5. [MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery](/202606/24/2606.24595v1-memprobe-probing-long-term-agent-memory-via-hidden-user-state-recovery)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：针对LLM代理程序性记忆迁移的基准和评估
-7. [Towards Root Memories: Benchmarking and Enhancing Implicit Logical Memory Retrieval for Personalized LLMs](/202606/23/2606.23283v1-towards-root-memories-benchmarking-and-enhancing-implicit-logical-memory-retrieval-for-personalized-llms)  
+   evidence：提出MEMPROBE基准，通过隐藏用户状态重建来评估长期记忆
+6. [Are We Ready For An Agent-Native Memory System?](/202606/24/2606.24775v1-are-we-ready-for-an-agent-native-memory-system)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：构建IMLogic基准并提出RootMem框架，用于隐式逻辑记忆检索
+   evidence：从数据管理视角系统实验研究代理记忆，批判现有评估实践
 
 ### 速读区论文标签
-1. [Governance Decay: How Context Compaction Silently Erases Safety Constraints in Long-Horizon LLM Agents](/202606/23/2606.22528v1-governance-decay-how-context-compaction-silently-erases-safety-constraints-in-long-horizon-llm-agents)  
+1. [Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees](/202606/24/2606.24322v1-securing-llm-agent-long-term-memory-against-poisoning-non-malleable-origin-bound-authority-with-machine-checked-guarantees)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：LLM智能体中的上下文压缩与记忆驱逐管理
-2. [HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory](/202606/23/2606.23565v1-holoagent-0-a-unified-embodied-agent-framework-with-3d-spatial-memory)  
+   evidence：研究LLM智能体长期记忆的投毒攻击，提出不可伪造的权限绑定防御机制
+2. [ReM-MoA: Reasoning Memory Sustains Mixture-of-Agents Scaling](/202606/24/2606.24437v1-rem-moa-reasoning-memory-sustains-mixture-of-agents-scaling)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：包含3D空间记忆的统一具身智能体框架
-3. [Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory](/202606/23/2606.23195v1-memory-contagion-cross-temporal-propagation-of-evaluator-bias-via-agent-memory)  
+   evidence：记忆增强的混合代理框架，带有推理记忆路由
+3. [Reasoning as Attractor Dynamics: Latent Memory Retrieval via Gibbs-Weighted Energy Minimization](/202606/24/2606.24543v1-reasoning-as-attractor-dynamics-latent-memory-retrieval-via-gibbs-weighted-energy-minimization)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：将LLM推理建模为基于吸引子动力学的潜在记忆检索，通过能量最小化实现
+4. [SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation](/202606/24/2606.24626v1-safari-scaling-long-horizon-agentic-fault-attribution-via-active-investigation)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：识别出通过智能体记忆传播的评估者偏见，与记忆评估相关
-4. [Trust-Aware Multi-Agent Traceability: Confidence-Calibrated Knowledge Graphs for Consistent Software Artifact Management](/202606/23/2606.17203v1-trust-aware-multi-agent-traceability-confidence-calibrated-knowledge-graphs-for-consistent-software-artifact-management)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：共享知识图谱作为多代理协调的语义记忆
+   evidence：在agent故障诊断中使用持久短期记忆进行跨回合推理
 
 
 <div class="dpr-home-promo-card">
