@@ -1,0 +1,252 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-25T21:22:37.855726+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.22030v1",
+      "source": "arxiv",
+      "title": "Nous: A Predictive World Model for Long-Term Agent Memory",
+      "abstract": "We present Nous, a novel agent memory architecture grounded in the principle that knowledge is prediction, not storage. Rather than persisting facts as database records, vector embeddings, or knowledge-graph triples, Nous maintains a predictive world model: a collection of categorical probability distributions, called dimensions, one per entity-attribute pair observed in conversation. Each incoming observation is scored by its information-theoretic surprise S = -log2 P(obs | D), and the distribution is updated via a closed-form Bayesian posterior. The primary stored artifact is the delta, a record of the shift from prior to posterior belief, rather than the fact itself. Forgetting emerges naturally as entropy decay toward the uniform distribution, and identity resolution is handled through mutual information between entity dimension sets. Evaluated on the LoCoMo long-term conversational memory benchmark across ten conversations (1,540 questions) using GPT-4o-mini as backbone, Nous achieves F1 of 63.50 (single-hop), 55.32 (multi-hop), 58.57 (temporal), and 62.50 (open-domain). Against A-MEM's self-reported GPT-4o-mini numbers, Nous shows substantial gains in three of four categories, though we note that independent citations of A-MEM's results disagree with each other on category assignment, a reproducibility issue we discuss openly rather than resolve unilaterally. We additionally compare against BeliefMem, a concurrently developed system built on the same core premise of belief-based rather than deterministic memory; on the same benchmark and backbone, Nous's self-reported numbers exceed BeliefMem's self-reported numbers on all four categories, though we flag several uncontrolled differences between the two evaluation pipelines that prevent this from being a fully controlled comparison. Nous requires no external vector database or graph engine.",
+      "authors": [
+        "Pranav Singh"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-06-20T13:07:00+00:00",
+      "link": "https://arxiv.org/pdf/2606.22030v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "novel predictive world model as agent memory architecture",
+      "llm_evidence_cn": "新颖的预测世界模型作为智能体记忆架构",
+      "llm_evidence": "新颖的预测世界模型作为智能体记忆架构",
+      "canonical_evidence": "新颖的预测世界模型作为智能体记忆架构",
+      "llm_tldr_en": "Nous introduces a predictive world model for LLM agent memory, storing belief deltas instead of facts, with natural forgetting via entropy decay.",
+      "llm_tldr_cn": "大语言模型智能体的长期记忆通常依赖于事实存储（数据库、向量或知识图谱），但静态存储无法捕捉信念的不确定性。本文提出Nous，一种基于预测世界模型的记忆架构，将知识建模为关于实体属性的概率分布，仅存储信念更新的增量而非事实本身。信息论惊奇度用于更新，熵衰减自然实现遗忘。该方法在长期记忆精度和存储效率上取得优势，为智能体记忆提供了新的范式。",
+      "llm_tldr": "大语言模型智能体的长期记忆通常依赖于事实存储（数据库、向量或知识图谱），但静态存储无法捕捉信念的不确定性。本文提出Nous，一种基于预测世界模型的记忆架构，将知识建模为关于实体属性的概率分布，仅存储信念更新的增量而非事实本身。信息论惊奇度用于更新，熵衰减自然实现遗忘。该方法在长期记忆精度和存储效率上取得优势，为智能体记忆提供了新的范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.23195v2",
+      "source": "arxiv",
+      "title": "Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory",
+      "abstract": "Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term coherence. Recent work shows that agent memories degrade during continuous consolidation. However, existing research assumes memories are derived from unbiased experiences. In this work, we identify and formalize a novel phenomenon: Memory Contagion -- the cross-temporal propagation of evaluator bias through agent memory. We show that when agents are trained or guided by biased evaluators, their experiences become biased; when these trajectories are stored and consolidated into memory, the bias propagates to future agents retrieving from the same memory store, even when consolidation is perfect (oracle). Across two bias types (length preference, authority bias) and four experimental phases, we demonstrate: (1) Memory Contagion occurs for length bias even with perfect consolidation on older models (Gamma_A = 13.18, DeepSeek V4-Chat), while newer models (V4-Pro, Claude) are immune, proving both that biased input is a sufficient cause and that contagion is model-generation-dependent; (2) authority bias fails to propagate in all 15 controlled multi-seed experiments (Gamma_A = 0.00), revealing that not all evaluator biases can cross temporal boundaries through current memory architectures; (3) No observed safe threshold: length bias propagation is detected at contamination rates as low as p=0.2. Our findings expose a critical but contingent vulnerability in current agent memory designs and provide formal tools for measuring cross-temporal bias propagation.",
+      "authors": [
+        "Zewen Liu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-06-22T11:43:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.23195v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "investigates bias propagation through agent memory systems",
+      "llm_evidence_cn": "研究通过智能体记忆系统传播的偏差",
+      "llm_evidence": "研究通过智能体记忆系统传播的偏差",
+      "canonical_evidence": "研究通过智能体记忆系统传播的偏差",
+      "llm_tldr_en": "Memory Contagion formalizes how evaluator bias propagates through LLM agent memory systems, affecting future agents even with perfect consolidation.",
+      "llm_tldr_cn": "大语言模型智能体依赖记忆系统维持长期一致性，但现有工作假设记忆来源于无偏经验。本文发现并形式化了“记忆传染”现象：当智能体的训练或引导受到有偏评估者影响时，偏差会通过记忆跨时间传播，即使记忆合并完美（oracle），后续智能体在检索时仍受到污染。实验在长度偏好和权威性两种偏差类型上验证了该现象。该工作直接针对记忆系统中的评估问题，与需求8（How is memory evaluated）高度相关。",
+      "llm_tldr": "大语言模型智能体依赖记忆系统维持长期一致性，但现有工作假设记忆来源于无偏经验。本文发现并形式化了“记忆传染”现象：当智能体的训练或引导受到有偏评估者影响时，偏差会通过记忆跨时间传播，即使记忆合并完美（oracle），后续智能体在检索时仍受到污染。实验在长度偏好和权威性两种偏差类型上验证了该现象。该工作直接针对记忆系统中的评估问题，与需求8（How is memory evaluated）高度相关。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.25115v1",
+      "source": "arxiv",
+      "title": "Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory",
+      "abstract": "On-device language-model agents improve by accumulating experience in retrieved memory rather than by updating weights. This memory is hard-bounded and exposed: it consumes RAM and energy, reaches peers through a thin uplink, and becomes an attack surface because it is writable by what the agent reads. Existing systems each cover one part of this problem: agentic memories grow without a budget, on-device methods keep entries by success alone, and poisoning is studied mainly as an attack rather than as a memory-governance problem. We propose \\sys{}, a single net-value-per-byte score that governs an agent's experience-memory lifecycle. The main idea is to let the budget act as the curator: each entry is scored as value minus harm, per byte, so one ruler decides what to keep, share, and trust. \\sys{} makes three decisions: (1) \\textbf{KEEP} evicts low-value bytes under the RAM and energy budget; (2) \\textbf{SHARE} sends an insight only when its value exceeds its uplink cost; and (3) \\textbf{TRUST} gates a peer entry by provenance. On language-model-agent task-drift benchmarks and a real heterogeneous Jetson testbed with two robot-arm nodes and a hub, \\sys{} reduces memory by $2.7\\times$ and uplink by $2.4\\times$, drives injection success from 0.75 to zero, and raises accuracy on cases corrupted by poison or stale memory. Curating by net value reduces footprint, energy, uplink, and injection success together without reducing accuracy. In this setting, forgetting by net value improves the agent rather than weakening it.",
+      "authors": [
+        "Beining Wu",
+        "Zihao Ding",
+        "Jun Huang",
+        "Yanxiao Zhao"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.NI"
+      ],
+      "published": "2026-06-23T19:42:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.25115v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes budget-curated memory for on-device LLM agent continual learning, governing memory lifecycle via net-value-per-byte score",
+      "llm_evidence_cn": "提出基于预算策划的设备端LLM智能体持续学习记忆，通过每字节净价值得分管理记忆生命周期",
+      "llm_evidence": "提出基于预算策划的设备端LLM智能体持续学习记忆，通过每字节净价值得分管理记忆生命周期",
+      "canonical_evidence": "提出基于预算策划的设备端LLM智能体持续学习记忆，通过每字节净价值得分管理记忆生命周期",
+      "llm_tldr_en": "Forget to Improve proposes a single net-value-per-byte score that curates an on-device agent's experience memory, balancing utility and harm under a fixed budget.",
+      "llm_tldr_cn": "该论文针对设备端LLM智能体记忆的硬边界和暴露问题，提出了每字节净价值得分来管理记忆生命周期。通过让预算充当策展人，每个记忆项按价值减危害计分，实现了在固定预算下持续学习与安全性的平衡。实验表明该方法在有限的存储和能耗下有效回忆有益经验并抑制有害记忆。",
+      "llm_tldr": "该论文针对设备端LLM智能体记忆的硬边界和暴露问题，提出了每字节净价值得分来管理记忆生命周期。通过让预算充当策展人，每个记忆项按价值减危害计分，实现了在固定预算下持续学习与安全性的平衡。实验表明该方法在有限的存储和能耗下有效回忆有益经验并抑制有害记忆。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.25161v1",
+      "source": "arxiv",
+      "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory",
+      "abstract": "Large language model (LLM) agents rely on long-term memory to support extended interactions and personalized assistance beyond finite context windows. Existing memory agents actively update external memory through generated write, revise, and delete operations, but these updates may omit important information, corrupt existing memory, or introduce unsupported hallucinated content. Once stored, such errors become persistent system-state failures that can affect future reasoning and generation. In this paper, we propose TrustMem, a framework designed to improve the trustworthiness of memory consolidation. TrustMem relies on a Memory Transition Verifier to evaluate the transition process of memory updates in terms of coverage, preservation, and faithfulness. It further constructs preference pairs among candidate updates under the same memory state, enabling preference-guided reinforcement learning to directly optimize memory updating behaviors. Extensive experiments demonstrate that TrustMem improves both memory utility and reliability: it achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-alpha validation set, improves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and hallucination by 40.1\\%, 79.1\\%, and 50.0\\%, respectively, compared with the strongest baseline for each error type.",
+      "authors": [
+        "Tianyu Yang",
+        "Sudipta Paul",
+        "Vijay Srinivasan",
+        "Vivek Kulkarni",
+        "Srinivas Chappidi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-23T20:49:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.25161v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "trustworthy memory consolidation framework for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体的可信记忆整合框架",
+      "llm_evidence": "面向LLM智能体的可信记忆整合框架",
+      "canonical_evidence": "面向LLM智能体的可信记忆整合框架",
+      "llm_tldr_en": "Proposes TrustMem, a framework to improve trustworthiness of memory consolidation for LLM agents, using a Memory Transition Verifier to evaluate updates.",
+      "llm_tldr_cn": "当前LLM智能体长期记忆更新可能遗漏重要信息、损坏已有记忆或引入幻觉。本文提出TrustMem框架，通过记忆转换验证器评估更新在覆盖率、保留性等方面的正确性，从而提高记忆整合的可信度。实验表明该框架能有效减少持久性系统错误，保障未来推理与生成的可靠性。",
+      "llm_tldr": "当前LLM智能体长期记忆更新可能遗漏重要信息、损坏已有记忆或引入幻觉。本文提出TrustMem框架，通过记忆转换验证器评估更新在覆盖率、保留性等方面的正确性，从而提高记忆整合的可信度。实验表明该框架能有效减少持久性系统错误，保障未来推理与生成的可靠性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.25632v1",
+      "source": "arxiv",
+      "title": "Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents",
+      "abstract": "Recent LLM role-playing systems build character agents from novels by extracting characters, scenes, and relations. Yet long-narrative role-playing suffers from two failures: Factual Overreach, where shared retrieval or parametric memory lets a character use facts outside its perspective, and Stylistic Monotony, where profile descriptions flatten a character into a fixed voice. To address these failures, we propose REVERIEMEM, a three-layer memory architecture for book-based character agents. The episodic layer stores first-person scene memories; the semantic layer stores visibility-tagged facts; and the personality layer stores situation-dependent speech and behaviour patterns. For evaluation, we construct KBF-QA, a 4,386-question benchmark over eight novels for testing knowledge boundaries. REVERIEMEM improves Knowledge Boundary Fidelity by 34.6 percentage points over the strongest prior method. On BOOKWORLD's five-dimension pairwise narrative protocol, REVERIEMEM achieves a ~ 79% win rate, suggesting that perspective-bounded memory improves both boundary fidelity and character-grounded narrative generation.",
+      "authors": [
+        "Xushuo Tang",
+        "Junhe Zhang",
+        "Zihan Yang",
+        "Yifu Tang",
+        "Sichao Li",
+        "Longbin Lai",
+        "Zhengyi Yang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-06-24T09:37:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.25632v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "three-layer memory architecture for LLM role-playing agents",
+      "llm_evidence_cn": "用于LLM角色扮演agent的三层记忆架构",
+      "llm_evidence": "用于LLM角色扮演agent的三层记忆架构",
+      "canonical_evidence": "用于LLM角色扮演agent的三层记忆架构",
+      "llm_tldr_en": "REVERIEMEM proposes a three-layer memory architecture (episodic, semantic, personality) for book-based LLM role-playing agents, solving factual overreach and stylistic monotony.",
+      "llm_tldr_cn": "基于小说的LLM角色扮演agent面临事实越界和风格单调问题。本文提出REVERIEMEM三层记忆架构：情景层存储第一人称场景，语义层存储可见性标记的事实，人格层存储情景相关的语言行为模式。并构建KBF-QA基准。实验表明该方法有效保持角色一致性，避免事实幻觉。",
+      "llm_tldr": "基于小说的LLM角色扮演agent面临事实越界和风格单调问题。本文提出REVERIEMEM三层记忆架构：情景层存储第一人称场景，语义层存储可见性标记的事实，人格层存储情景相关的语言行为模式。并构建KBF-QA基准。实验表明该方法有效保持角色一致性，避免事实幻觉。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.25206v1",
+      "source": "arxiv",
+      "title": "RAVEN: Long-Horizon Reasoning & Navigation with a Visuo-Spatio-Temporal Memory",
+      "abstract": "Long-term robot deployment requires a compact and scalable memory that preserves fine-grained visual semantics, grounds observations in space and time, and enables efficient storage and retrieval. In this paper, we propose RAVEN, an agentic memory system for long-horizon robotic question answering and navigation. RAVEN stores visual embeddings with pose and time in a vector database, and grounds retrieval in a spatial map to answer queries and navigate to goals. By operating directly on visual embeddings, RAVEN avoids lossy image-to-text captioning and enables accurate semantic, spatial, and temporal retrieval at scale. Across several simulated and real-world video question-answering benchmarks, RAVEN consistently surpasses caption-based memory systems and matches frontier VLMs on long-horizon tasks at 10$\\times$ lower retrieval cost. Finally, we instantiate RAVEN on a Unitree Go1 robot for the task of long-horizon navigation for natural language goal-reaching, and show successful deployment over several large indoor environments.",
+      "authors": [
+        "Yixun Hu",
+        "Zhicheng Zheng",
+        "Lihan Zha",
+        "Chunwei Xing",
+        "Rajdeep Singh",
+        "Omar Hossain",
+        "Antonio Loquercio",
+        "Dhruv Shah"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-06-23T21:56:41+00:00",
+      "link": "https://arxiv.org/pdf/2606.25206v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "memory-based reasoning in robotic agents",
+      "llm_evidence_cn": "机器人agent中基于记忆的推理",
+      "llm_evidence": "机器人agent中基于记忆的推理",
+      "canonical_evidence": "机器人agent中基于记忆的推理",
+      "llm_tldr_en": "Proposes RAVEN, an agentic memory system using visuo-spatio-temporal embeddings for long-horizon robotic reasoning and navigation, surpassing caption-based memory.",
+      "llm_tldr_cn": "针对机器人长期部署中记忆的紧凑性和可扩展性问题，本文提出RAVEN，一个基于视觉-时空记忆的agent系统。它直接将视觉嵌入与位姿和时间存入向量数据库，并通过空间地图进行检索，避免了图像到文本转换的信息损失。在多个模拟和真实视频问答基准上，RAVEN一致优于基于字幕的记忆方法。该工作展示了agent记忆系统在机器人领域的潜力。",
+      "llm_tldr": "针对机器人长期部署中记忆的紧凑性和可扩展性问题，本文提出RAVEN，一个基于视觉-时空记忆的agent系统。它直接将视觉嵌入与位姿和时间存入向量数据库，并通过空间地图进行检索，避免了图像到文本转换的信息损失。在多个模拟和真实视频问答基准上，RAVEN一致优于基于字幕的记忆方法。该工作展示了agent记忆系统在机器人领域的潜力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
