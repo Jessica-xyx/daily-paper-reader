@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-26",
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T21:51:10",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/26/2606.26511v1-temporal-validity-in-retrieval-memory-eliminating-stale-fact-errors-for-ai-agents-over-evolving-knowledge",
+      "section": "deep",
+      "title_en": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge",
+      "authors": "Neeraj Yadav",
+      "date": "2026-06-25",
+      "pdf": "https://arxiv.org/pdf/2606.26511v1",
+      "score": "9.0",
+      "evidence": "处理AI智能体检索记忆中的过时事实错误",
+      "tldr": "检索增强生成（RAG）在面对知识变更时，旧事实与新事实的嵌入相似度极高，导致RAG无法区分，频频给出过时错误。本文提出MemStrata，一种维护时间有效性的检索记忆，通过确定性（主体，关系，客体）替代规则将旧值退役到双时态账本中，无需阈值或LLM调用。在六个基准上，MemStrata在静态知识上与RAG持平，在演化知识上准确率达0.95-1.00，而RAG仅0.20-0.47；陈腐事实错误率从15-40%降至~0%，且检索延迟仅2.1秒，远优于LLM重排序的16-18秒。核心贡献是识别并解决了RAG无法避免的结构性错误，提供了一套免标记的评估协议。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Retrieval-augmented generation (RAG) gives agents access to accumulated knowledge, but has no model of time. When a fact changes (e.g., a function is renamed or API restructured), RAG retrieves both the stale and current value with near-identical embedding similarity. The agent then either abstains or serves the superseded fact. We show this is a structural problem: on a calibrated dataset, cosine similarity distinguishes a contradicted fact from a duplicated one with AUROC 0.59 (near chance), as contradictions are often more embedding-similar to the original than rephrased duplicates.   We present MemStrata, a retrieval memory maintaining temporal validity. It stores facts like RAG, preserving static recall, but when a fact's value is contradicted, a deterministic (subject, relation, object) supersession rule retires the stale value in a bi-temporal ledger - with no similarity threshold and no LLM call. Across six benchmarks run locally with a 7B model, MemStrata ties RAG on static knowledge and reaches 0.95-1.00 accuracy on evolving knowledge (where RAG reaches 0.20-0.47). The central result is the stale-fact-error rate: when required to answer, RAG serves superseded values 15-40% of the time; MemStrata drives this to ~0%, a failure class RAG cannot avoid. MemStrata achieves this at retrieval latency (~2.1s) versus ~16-18s for LLM-reranking baselines. We release the harness, datasets, and a marker-free evaluation protocol for memory under knowledge evolution.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/26/2606.26806v1-memory-depth-not-memory-access-selective-parametric-consolidation-for-long-running-language-agents",
+      "section": "deep",
+      "title_en": "Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents",
+      "authors": "Haoliang Han",
+      "date": "2026-06-25",
+      "pdf": "https://arxiv.org/pdf/2606.26806v1",
+      "score": "9.0",
+      "evidence": "长运行语言智能体的选择性参数合并",
+      "tldr": "长期运行的语言代理仅靠检索无法决定哪些经验应持续影响行为，需要记忆深度。本文提出loop-drift协议作为压力测试，并设计基于惊讶和效价门控的LoRA巩固机制EVAF。实验表明，EVAF在目标持久性和卸载后恢复上优于检索（准确率0.812-0.904），仅需少量参数写入。选择性参数巩固与检索互补，但需解决陈旧记忆失效问题。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Long-running language agents need more than memory access. Retrieval systems can fetch past facts at query time, but they do not decide which experiences should continue to shape behavior after the working context is unloaded. We study this separate problem as memory depth: durable goal-conditioned tendencies written into a small parametric store. We introduce the loop-drift protocol, a controlled stress test in which the retrieval index remains intact while working context is unloaded and goal-conditioned behavior must persist under long-loop interference. We evaluate EVAF, a surprise- and valence-gated LoRA consolidation mechanism. Across GPT-2 and TinyLlama, retrieval is strongest on shallow factual recall (short-fact accuracy 0.956--0.973), while EVAF is strongest on goal persistence and post-unload recovery (0.812--0.904) with only 2--3 parametric writes per 200 events. Mechanism controls show that selective consolidation factorizes into two controllable dimensions: selection and actuation. Matched random gates isolate selection beyond sparse writing; fixed-inner controls across GPT-2, TinyLlama, and Mistral-7B show that inner-loop write strength is model-dependent; and a Mistral-7B matched-gate inversion reveals asymmetric selection-actuation coupling under miscalibrated actuation. Public Memora event streams serve as an external diagnostic, exposing stale-memory invalidation as an unresolved boundary. Within this probe, selective parametric consolidation supplies memory depth distinct from and complementary to retrieval access.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
