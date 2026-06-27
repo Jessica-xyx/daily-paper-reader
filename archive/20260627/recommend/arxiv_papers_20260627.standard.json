@@ -1,0 +1,91 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-27T20:31:45.862398+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.23961v1",
+      "source": "arxiv",
+      "title": "Forget Without Compromise: Nexus Sampling for Streaming KV-Cache Eviction Under Fixed Budgets",
+      "abstract": "Long-context and agentic LLM workloads push the KV cache past any fixed memory budget, forcing the inference stack to permanently evict tokens at every step of a continuous-inference stream. Existing methods all share the same template, a per-step direct-attention score followed by deterministic top-$K$ selection, which converts a single below-cutoff step into an irreversible verdict and permanently erases any subtly important token that direct attention cannot single out from noise. To address this challenge, we propose Nexus Sampling, a training-free eviction method that pairs Nexus scoring, an iterative walk over direct attention that surfaces bridge tokens, with weighted reservoir sampling, which retains tokens with inclusion probability in place of deterministic top-$K$. Theoretically, we show that Nexus Sampling dominates deterministic top-$K$ in long-run survival of subtly important tokens. Empirically, at 80% KV cache eviction, Nexus Sampling matches dense attention within 1% on LongBench while outperforming top-$K$ baselines on retrieval-heavy tasks, with up to 10x smaller per-sequence cache memory.",
+      "authors": [
+        "Duc Duong",
+        "Hoang Anh Duy Le",
+        "Jianwen Xie",
+        "Anshumali Shrivastava",
+        "Zhaozhuo Xu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-22T21:42:51+00:00",
+      "link": "https://arxiv.org/pdf/2606.23961v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "proposes a training-free KV-cache eviction method for agentic LLM workloads, relevant to memory management",
+      "llm_evidence_cn": "提出一种无需训练的KV缓存驱逐方法，适用于代理型LLM工作负载，与记忆管理相关",
+      "llm_evidence": "提出一种无需训练的KV缓存驱逐方法，适用于代理型LLM工作负载，与记忆管理相关",
+      "canonical_evidence": "提出一种无需训练的KV缓存驱逐方法，适用于代理型LLM工作负载，与记忆管理相关",
+      "llm_tldr_en": "Nexus Sampling introduces a training-free eviction method for streaming KV-cache under fixed budgets, using iterative attention scoring and weighted reservoir sampling to retain bridge tokens, relevant for agentic LLM memory management.",
+      "llm_tldr_cn": "针对长上下文和代理型LLM工作负载中固定内存预算下的KV缓存驱逐问题，本文提出Nexus Sampling方法，无需训练即可通过迭代注意力评分和加权蓄水池采样在每一步保留关键桥接令牌，避免了传统确定性top-K选择可能永久丢失重要信息的问题。实验表明该方法在保持生成质量的同时有效管理缓存内存，为LLM代理的内存管理提供了新型的技术路径。",
+      "llm_tldr": "针对长上下文和代理型LLM工作负载中固定内存预算下的KV缓存驱逐问题，本文提出Nexus Sampling方法，无需训练即可通过迭代注意力评分和加权蓄水池采样在每一步保留关键桥接令牌，避免了传统确定性top-K选择可能永久丢失重要信息的问题。实验表明该方法在保持生成质量的同时有效管理缓存内存，为LLM代理的内存管理提供了新型的技术路径。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.23026v1",
+      "source": "arxiv",
+      "title": "A Stackelberg Framework for Resource-Aware LLM Agents: Learning, Repair, and Conditional Guarantees",
+      "abstract": "Large language model (LLM) agents increasingly operate as multi-turn systems that must allocate context, prompt verbosity, and tool access under finite computational budgets. Static thresholds are simple, but they are brittle under heterogeneous tasks and evolving session states. We formulate resource governance as a contextual Stackelberg game: a controller commits to a quality target and a cost incentive, while an executor responds with resource actions over context, prompting, and tool usage. We learn a conditional response model, optimize a leader policy against that model, and repair the resulting policy using real-API calibration and projection onto an empirically selected action set. For the restricted game, we establish conditional guarantees for equilibrium existence, follower-response stability, safe-set projection, and transfer from a surrogate environment to the real environment under bounded value error. The primary real-API experiment comprises 300 evaluated turns. Relative to a conservative baseline, the selected repaired controller reduces mean token cost by 17.4% (Welch $p=0.022$), while the measured quality difference is not statistically significant ($p=0.44$). The theoretical results are conditional and the experiments do not estimate their regret or transfer constants; consequently, the evidence establishes a promising repaired operating point, not a certified real-system equilibrium.",
+      "authors": [
+        "Baoxun Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-22T08:38:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.23026v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses resource allocation for LLM agents including context/prompt/tool usage, relevant to memory management under budgets",
+      "llm_evidence_cn": "处理LLM代理的资源分配，包括上下文/提示/工具使用，与预算下的记忆管理相关",
+      "llm_evidence": "处理LLM代理的资源分配，包括上下文/提示/工具使用，与预算下的记忆管理相关",
+      "canonical_evidence": "处理LLM代理的资源分配，包括上下文/提示/工具使用，与预算下的记忆管理相关",
+      "llm_tldr_en": "A Stackelberg framework for resource-aware LLM agents that allocates context, prompt verbosity, and tool access under budgets, with learning and repair strategies.",
+      "llm_tldr_cn": "LLM代理在多轮对话中需要在有限计算预算下分配上下文、提示长度和工具使用。本文提出一个上下文Stackelberg博弈框架，其中控制器设定质量目标和成本激励，执行器响应资源使用。通过学习条件响应模型并优化控制器策略，再通过真实API校准修复策略，实现了资源的高效利用和条件保证。实验表明该方法在异构任务和动态会话中优于静态阈值。",
+      "llm_tldr": "LLM代理在多轮对话中需要在有限计算预算下分配上下文、提示长度和工具使用。本文提出一个上下文Stackelberg博弈框架，其中控制器设定质量目标和成本激励，执行器响应资源使用。通过学习条件响应模型并优化控制器策略，再通过真实API校准修复策略，实现了资源的高效利用和条件保证。实验表明该方法在异构任务和动态会话中优于静态阈值。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

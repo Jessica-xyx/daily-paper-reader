@@ -6,27 +6,27 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-26
-- 运行时间：2026-06-26 21:51:02 UTC
+- 最新运行日期：2026-06-27
+- 运行时间：2026-06-27 20:33:04 UTC
 - 运行状态：成功
 - 本次总论文数：2
-- 精读区：2
-- 速读区：0
+- 精读区：0
+- 速读区：2
 
 ### 今日简报（AI）
-今日精读两篇高分论文，聚焦AI智能体在动态知识环境中的记忆管理。最值得关注的方向是消除过时事实错误和优化长期运行智能体的参数化记忆整合。建议普通读者留意时间有效性机制如何提升AI对知识变化的适应性。
-- 详情：[/202606/26/README](/202606/26/README)
+今日阅读2篇论文，聚焦于流式大模型缓存优化与资源感知智能体框架。其中《Forget Without Compromise》提出的Nexus Sampling方法在固定预算下实现高效KV缓存驱逐，值得重点关注。建议进一步了解此类缓存管理方案，以降低大模型推理成本。
+- 详情：[/202606/27/README](/202606/27/README)
 
 ### 精读区论文标签
-1. [Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge](/202606/26/2606.26511v1-temporal-validity-in-retrieval-memory-eliminating-stale-fact-errors-for-ai-agents-over-evolving-knowledge)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：处理AI智能体检索记忆中的过时事实错误
-2. [Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents](/202606/26/2606.26806v1-memory-depth-not-memory-access-selective-parametric-consolidation-for-long-running-language-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：长运行语言智能体的选择性参数合并
+- 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Forget Without Compromise: Nexus Sampling for Streaming KV-Cache Eviction Under Fixed Budgets](/202606/27/2606.23961v1-forget-without-compromise-nexus-sampling-for-streaming-kv-cache-eviction-under-fixed-budgets)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：提出一种无需训练的KV缓存驱逐方法，适用于代理型LLM工作负载，与记忆管理相关
+2. [A Stackelberg Framework for Resource-Aware LLM Agents: Learning, Repair, and Conditional Guarantees](/202606/27/2606.23026v1-a-stackelberg-framework-for-resource-aware-llm-agents-learning-repair-and-conditional-guarantees)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：处理LLM代理的资源分配，包括上下文/提示/工具使用，与预算下的记忆管理相关
 
 
 <div class="dpr-home-promo-card">
