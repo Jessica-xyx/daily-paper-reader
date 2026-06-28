@@ -1,0 +1,172 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-28T20:35:51.437422+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.26793v1",
+      "source": "arxiv",
+      "title": "MIRROR: Novelty-Constrained Memory-Guided MCTS Red-Teaming for Agentic RAG",
+      "abstract": "Multimodal agentic retrieval-augmented generation (RAG) systems expand the attack surface beyond prompt injection to include text poisoning, image injection, direct-query attacks, and orchestrator-level tool manipulation. Existing red-teaming approaches are typically surface-specific and often recycle known attack templates; on text-poisoning benchmarks we measure 73-84% exact duplication. We present MIRROR, a unified cross-surface framework that performs memory-guided Monte Carlo tree search while conditioning candidate generation on retrieved context under an explicit novelty constraint. A deterministic Novelty Gate rejects any candidate matching the retrieval set under normalized comparison, allowing retrieval to inform search priors without enabling prompt copying. Across four attack surfaces on a multimodal agentic RAG target, MIRROR attains 76% ASR on image poisoning compared with 52% for baselines, 97% ASR on orchestrator attacks at half the query cost, and the lowest cross-surface variance (coefficient of variation 0.47). In contrast, specialized baselines collapse across surfaces: suffix optimization reaches 79% ASR on text poisoning but 1% on direct queries. We release ART-SafeBench with 41,815 in-package records and runtime adapters yielding 41,991+ total records across four surfaces.",
+      "authors": [
+        "Inderjeet Singh",
+        "Andrés Murillo",
+        "Motoyoshi Sekiya",
+        "Yuki Unno",
+        "Junichi Suga"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T09:26:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.26793v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "memory-guided MCTS for red-teaming agentic RAG",
+      "llm_evidence_cn": "记忆引导的蒙特卡洛树搜索用于智能体RAG红队测试",
+      "llm_evidence": "记忆引导的蒙特卡洛树搜索用于智能体RAG红队测试",
+      "canonical_evidence": "记忆引导的蒙特卡洛树搜索用于智能体RAG红队测试",
+      "llm_tldr_en": "Uses memory-guided Monte Carlo tree search with novelty constraint for cross-surface red-teaming of agentic RAG systems.",
+      "llm_tldr_cn": "提出MIRROR框架，利用检索记忆指导蒙特卡洛树搜索，并通过新颖性约束生成多样化攻击模板，用于多模态智能体RAG系统的红队测试。该方法在文本毒化上减少了73-84%的模板重复，有效揭示了系统漏洞。",
+      "llm_tldr": "提出MIRROR框架，利用检索记忆指导蒙特卡洛树搜索，并通过新颖性约束生成多样化攻击模板，用于多模态智能体RAG系统的红队测试。该方法在文本毒化上减少了73-84%的模板重复，有效揭示了系统漏洞。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.22338v1",
+      "source": "arxiv",
+      "title": "Benchmarking Robot Memory Under Interference",
+      "abstract": "Robots deployed in realistic settings will accumulate experience across many sessions and tasks over their deployment. The robot's tasks may often require it to remember information from multiple sessions ago, making long-context robot memory important for real-world deployments. However, most robot-memory benchmarks today are based on single episodes or a short context. To measure how current robot memory systems perform on longer sessions with more distractions, we introduce RoboMME-Interference, a cross-session benchmark built on RoboMME. For each query episode, we construct a session history using the query's relevant prior demonstration followed by a controlled number of unrelated sessions, which we provide to the VLA as memory and measure accuracy. Running RoboMME's released memory-augmented $π_{0.5}$ variants unmodified through this benchmark, we find that while perceptual memory variants improve success when given the history without any distractors, they decay strongly and steadily as unrelated sessions accumulate. With this release, we emphasize the importance of long-context memory and robustness to interference and show that current systems largely fail on such capabilities. The project page, videos, code, and data are at https://robotmemorybench.com.",
+      "authors": [
+        "Soumil Rathi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-21T05:06:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.22338v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Cross-session benchmark for robot memory under interference, relevant to evaluation methodology for LLM agent memory",
+      "llm_evidence_cn": "跨会话机器记忆干扰基准，对LLM代理记忆评估方法有借鉴意义",
+      "llm_evidence": "跨会话机器记忆干扰基准，对LLM代理记忆评估方法有借鉴意义",
+      "canonical_evidence": "跨会话机器记忆干扰基准，对LLM代理记忆评估方法有借鉴意义",
+      "llm_tldr_en": "Introduces RoboMME-Interference benchmark for long-context robot memory with distractor sessions, measuring memory accuracy under realistic interference.",
+      "llm_tldr_cn": "该论文提出RoboMME-Interference基准，用于评估机器人面对多会话干扰时的长期记忆性能，对LLM代理系统记忆评测方法具有参考价值。",
+      "llm_tldr": "该论文提出RoboMME-Interference基准，用于评估机器人面对多会话干扰时的长期记忆性能，对LLM代理系统记忆评测方法具有参考价值。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.22610v1",
+      "source": "arxiv",
+      "title": "PaperClaw: Harnessing Agents for Autonomous Research and Human-in-the-Loop Refinement",
+      "abstract": "Large language models have become capable reasoners and tool users that write and run code and search the literature, which makes automating the research process itself a realistic goal. We present PAPERCLAW, a harnessed multi-agent system that carries a project autonomously, from a field of study to a finished paper. PAPERCLAW curates a domain from a field's live literature, datasets, and code; brainstorms it into an idea with a pre-registered main-result contract; and drives a stoppable hypothesis map through an iterative propose, test, reflect loop that grows only from measured verdicts and halts once the evidence supports the idea, at which point it writes a venue-compliant paper. A full-lifecycle memory keeps each stage in a single living record, so a long run can be paused, inspected, and resumed without losing context. At the centre is an in-cycle research assistant with research tools and skills: it can drive the whole pipeline on its own, while the same interface lets a person step in at any stage, turning a first autonomous draft into a stronger paper through human-in-the-loop refinement. Throughout, PAPERCLAW keeps its output grounded and checkable, citing only references validated against open scholarly indexes and reporting results that genuinely ran. An evaluation with an LLM judge finds that PAPERCLAW produces strong papers both fully autonomously and with human-in-the-loop refinement.",
+      "authors": [
+        "Weiwei Ye",
+        "Hangchen Liu",
+        "Dongyuan Li",
+        "Renhe Jiang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-21T17:37:01+00:00",
+      "link": "https://arxiv.org/pdf/2606.22610v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "incorporates full-lifecycle memory for autonomous research agents",
+      "llm_evidence_cn": "为自主研究智能体集成全生命周期记忆",
+      "llm_evidence": "为自主研究智能体集成全生命周期记忆",
+      "canonical_evidence": "为自主研究智能体集成全生命周期记忆",
+      "llm_tldr_en": "PaperClaw uses full-lifecycle memory to track each stage of autonomous research, from literature curation to paper writing, enabling iterative refinement.",
+      "llm_tldr_cn": "提出PAPERCLAW多智能体系统，实现从文献调研到论文撰写的全自动化研究流程。系统维护一个贯穿全生命周期的记忆模块，记录每个阶段的假设、实验和结果，支持迭代式反思和改进。该方法降低了研究自动化中的信息碎片化问题，提升了长期任务的连贯性。",
+      "llm_tldr": "提出PAPERCLAW多智能体系统，实现从文献调研到论文撰写的全自动化研究流程。系统维护一个贯穿全生命周期的记忆模块，记录每个阶段的假设、实验和结果，支持迭代式反思和改进。该方法降低了研究自动化中的信息碎片化问题，提升了长期任务的连贯性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.23961v1",
+      "source": "arxiv",
+      "title": "Forget Without Compromise: Nexus Sampling for Streaming KV-Cache Eviction Under Fixed Budgets",
+      "abstract": "Long-context and agentic LLM workloads push the KV cache past any fixed memory budget, forcing the inference stack to permanently evict tokens at every step of a continuous-inference stream. Existing methods all share the same template, a per-step direct-attention score followed by deterministic top-$K$ selection, which converts a single below-cutoff step into an irreversible verdict and permanently erases any subtly important token that direct attention cannot single out from noise. To address this challenge, we propose Nexus Sampling, a training-free eviction method that pairs Nexus scoring, an iterative walk over direct attention that surfaces bridge tokens, with weighted reservoir sampling, which retains tokens with inclusion probability in place of deterministic top-$K$. Theoretically, we show that Nexus Sampling dominates deterministic top-$K$ in long-run survival of subtly important tokens. Empirically, at 80% KV cache eviction, Nexus Sampling matches dense attention within 1% on LongBench while outperforming top-$K$ baselines on retrieval-heavy tasks, with up to 10x smaller per-sequence cache memory.",
+      "authors": [
+        "Duc Duong",
+        "Hoang Anh Duy Le",
+        "Jianwen Xie",
+        "Anshumali Shrivastava",
+        "Zhaozhuo Xu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-22T21:42:51+00:00",
+      "link": "https://arxiv.org/pdf/2606.23961v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "proposes nexus sampling for KV-cache eviction under memory budgets",
+      "llm_evidence_cn": "提出在内存预算下进行KV缓存驱逐的Nexus采样",
+      "llm_evidence": "提出在内存预算下进行KV缓存驱逐的Nexus采样",
+      "canonical_evidence": "提出在内存预算下进行KV缓存驱逐的Nexus采样",
+      "llm_tldr_en": "Nexus Sampling uses weighted reservoir sampling for KV-cache eviction, improving retention of important tokens under fixed budgets.",
+      "llm_tldr_cn": "LLM长上下文和智能体工作负载下KV缓存超出内存预算。现有确定性驱逐方法可能丢失重要token。本文提出Nexus采样，结合Nexus评分和加权蓄水池采样，保留桥接token，实验显示在保持高精度同时降低内存占用。",
+      "llm_tldr": "LLM长上下文和智能体工作负载下KV缓存超出内存预算。现有确定性驱逐方法可能丢失重要token。本文提出Nexus采样，结合Nexus评分和加权蓄水池采样，保留桥接token，实验显示在保持高精度同时降低内存占用。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

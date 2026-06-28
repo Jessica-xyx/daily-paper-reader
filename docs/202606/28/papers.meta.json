@@ -1,0 +1,69 @@
+{
+  "label": "2026-06-28",
+  "date": "2026-06-28",
+  "generated_at": "2026-06-28T20:37:24",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202606/28/2606.26793v1-mirror-novelty-constrained-memory-guided-mcts-red-teaming-for-agentic-rag",
+      "section": "quick",
+      "title_en": "MIRROR: Novelty-Constrained Memory-Guided MCTS Red-Teaming for Agentic RAG",
+      "authors": "Inderjeet Singh, Andrés Murillo, Motoyoshi Sekiya, Yuki Unno, Junichi Suga",
+      "date": "2026-06-25",
+      "pdf": "https://arxiv.org/pdf/2606.26793v1",
+      "score": "7.0",
+      "evidence": "记忆引导的蒙特卡洛树搜索用于智能体RAG红队测试",
+      "tldr": "多模态agentic RAG系统面临文本投毒、图像注入等多攻击表面，现有红队方法表面单一且重复率高。本文提出MIRROR，结合记忆引导MCTS与新颖性约束，通过新颖性门拒绝重复候选，实现跨表面统一红队测试。在图像投毒上ASR达76%（基线52%），编排器攻击97%且查询减半，跨表面变异系数0.47，并发布ART-SafeBench数据集。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Multimodal agentic retrieval-augmented generation (RAG) systems expand the attack surface beyond prompt injection to include text poisoning, image injection, direct-query attacks, and orchestrator-level tool manipulation. Existing red-teaming approaches are typically surface-specific and often recycle known attack templates; on text-poisoning benchmarks we measure 73-84% exact duplication. We present MIRROR, a unified cross-surface framework that performs memory-guided Monte Carlo tree search while conditioning candidate generation on retrieved context under an explicit novelty constraint. A deterministic Novelty Gate rejects any candidate matching the retrieval set under normalized comparison, allowing retrieval to inform search priors without enabling prompt copying. Across four attack surfaces on a multimodal agentic RAG target, MIRROR attains 76% ASR on image poisoning compared with 52% for baselines, 97% ASR on orchestrator attacks at half the query cost, and the lowest cross-surface variance (coefficient of variation 0.47). In contrast, specialized baselines collapse across surfaces: suffix optimization reaches 79% ASR on text poisoning but 1% on direct queries. We release ART-SafeBench with 41,815 in-package records and runtime adapters yielding 41,991+ total records across four surfaces.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/28/2606.22338v1-benchmarking-robot-memory-under-interference",
+      "section": "quick",
+      "title_en": "Benchmarking Robot Memory Under Interference",
+      "authors": "Soumil Rathi",
+      "date": "2026-06-21",
+      "pdf": "https://arxiv.org/pdf/2606.22338v1",
+      "score": "6.0",
+      "evidence": "跨会话机器记忆干扰基准，对LLM代理记忆评估方法有借鉴意义",
+      "tldr": "机器人真实部署需跨多个会话记忆信息，但现有基准仅测试短上下文。本文提出RoboMME-Interference基准，为每个查询构造包含相关演示和多个无关会话的历史。在π0.5记忆增强变体上测试发现，无干扰时性能提升，但随无关会话增加性能稳定下降。该基准揭示了当前记忆系统在长上下文和干扰下的脆弱性，推动鲁棒记忆研究。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Robots deployed in realistic settings will accumulate experience across many sessions and tasks over their deployment. The robot's tasks may often require it to remember information from multiple sessions ago, making long-context robot memory important for real-world deployments. However, most robot-memory benchmarks today are based on single episodes or a short context. To measure how current robot memory systems perform on longer sessions with more distractions, we introduce RoboMME-Interference, a cross-session benchmark built on RoboMME. For each query episode, we construct a session history using the query's relevant prior demonstration followed by a controlled number of unrelated sessions, which we provide to the VLA as memory and measure accuracy. Running RoboMME's released memory-augmented $π_{0.5}$ variants unmodified through this benchmark, we find that while perceptual memory variants improve success when given the history without any distractors, they decay strongly and steadily as unrelated sessions accumulate. With this release, we emphasize the importance of long-context memory and robustness to interference and show that current systems largely fail on such capabilities. The project page, videos, code, and data are at https://robotmemorybench.com.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/28/2606.22610v1-paperclaw-harnessing-agents-for-autonomous-research-and-human-in-the-loop-refinement",
+      "section": "quick",
+      "title_en": "PaperClaw: Harnessing Agents for Autonomous Research and Human-in-the-Loop Refinement",
+      "authors": "Weiwei Ye, Hangchen Liu, Dongyuan Li, Renhe Jiang",
+      "date": "2026-06-21",
+      "pdf": "https://arxiv.org/pdf/2606.22610v1",
+      "score": "6.0",
+      "evidence": "为自主研究智能体集成全生命周期记忆",
+      "tldr": "大型语言模型已成为推理者和工具使用者，使自动化研究成为可能。本文提出PaperClaw，一个多智能体系统，能够自主从领域策展文献、数据集和代码，通过头脑风暴形成研究想法，并执行迭代的提出-测试-反思循环，直到证据支持结论后撰写符合会议格式的论文。系统内置全生命周期记忆支持暂停和恢复，并允许人在任意环节干预。实验表明，PaperClaw在完全自主和人在环中两种模式下均能生成高质量论文，输出结果可验证、引用可追溯。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Large language models have become capable reasoners and tool users that write and run code and search the literature, which makes automating the research process itself a realistic goal. We present PAPERCLAW, a harnessed multi-agent system that carries a project autonomously, from a field of study to a finished paper. PAPERCLAW curates a domain from a field's live literature, datasets, and code; brainstorms it into an idea with a pre-registered main-result contract; and drives a stoppable hypothesis map through an iterative propose, test, reflect loop that grows only from measured verdicts and halts once the evidence supports the idea, at which point it writes a venue-compliant paper. A full-lifecycle memory keeps each stage in a single living record, so a long run can be paused, inspected, and resumed without losing context. At the centre is an in-cycle research assistant with research tools and skills: it can drive the whole pipeline on its own, while the same interface lets a person step in at any stage, turning a first autonomous draft into a stronger paper through human-in-the-loop refinement. Throughout, PAPERCLAW keeps its output grounded and checkable, citing only references validated against open scholarly indexes and reporting results that genuinely ran. An evaluation with an LLM judge finds that PAPERCLAW produces strong papers both fully autonomously and with human-in-the-loop refinement.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/28/2606.23961v1-forget-without-compromise-nexus-sampling-for-streaming-kv-cache-eviction-under-fixed-budgets",
+      "section": "quick",
+      "title_en": "Forget Without Compromise: Nexus Sampling for Streaming KV-Cache Eviction Under Fixed Budgets",
+      "authors": "Duc Duong, Hoang Anh Duy Le, Jianwen Xie, Anshumali Shrivastava, Zhaozhuo Xu",
+      "date": "2026-06-22",
+      "pdf": "https://arxiv.org/pdf/2606.23961v1",
+      "score": "6.0",
+      "evidence": "提出在内存预算下进行KV缓存驱逐的Nexus采样",
+      "tldr": "长上下文LLM推理中KV缓存超过固定内存，现有逐步骤直接注意力淘汰方法会误删重要token。提出Nexus Sampling，通过Nexus评分迭代发现桥接token，结合加权reservoir采样概率性保留，无需训练。在80%淘汰率下，LongBench性能仅降1%，检索任务优于基线，缓存减少10倍。该方法在固定预算下更智能地淘汰，避免重要信息永久丢失。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Long-context and agentic LLM workloads push the KV cache past any fixed memory budget, forcing the inference stack to permanently evict tokens at every step of a continuous-inference stream. Existing methods all share the same template, a per-step direct-attention score followed by deterministic top-$K$ selection, which converts a single below-cutoff step into an irreversible verdict and permanently erases any subtly important token that direct attention cannot single out from noise. To address this challenge, we propose Nexus Sampling, a training-free eviction method that pairs Nexus scoring, an iterative walk over direct attention that surfaces bridge tokens, with weighted reservoir sampling, which retains tokens with inclusion probability in place of deterministic top-$K$. Theoretically, we show that Nexus Sampling dominates deterministic top-$K$ in long-run survival of subtly important tokens. Empirically, at 80% KV cache eviction, Nexus Sampling matches dense attention within 1% on LongBench while outperforming top-$K$ baselines on retrieval-heavy tasks, with up to 10x smaller per-sequence cache memory.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
