@@ -1,0 +1,215 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-01T21:27:36.714869+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.29914v1",
+      "source": "arxiv",
+      "title": "MemDelta: Controlled Baselines and Hidden Confounds in Agent Memory Evaluation",
+      "abstract": "Agent memory systems are increasingly evaluated against RAG and full-context baselines, but reported gains often mix changes in the memory method with changes in the language model, embedding model, or retrieval pipeline, making it unclear what is actually being measured. We present MemDelta, a controlled evaluation protocol that varies one component at a time on LongMemEval-S (500 questions, 50+ sessions, three model families). Four findings emerge: (1) verbatim RAG matches full-context GPT-4o-mini (47.2% vs. 49.8%, p = 0.34), but the ranking reverses across models: Gemini gains +14pp from full context, while Sonnet gains +31pp from RAG, partly because it refuses 63% of full-context queries; (2) swapping only the embedding model in an identical pipeline shifts accuracy by +6.2pp at n = 500 (p = 0.004), and Mem0 beats MiniLM-RAG by +11pp but loses to cloud-RAG by 1.2pp, so one variable flips the conclusion; (3) agent self-memory (42%) underperforms basic retrieval (47%); (4) on 2 of 6 question types (n = 88), Mem0 matches cloud RAG (72.7% vs. 73.9%, p = 1.0) at 50x the cost, suggesting narrow rather than general gains. We recommend memory evaluations fix embedding models across comparisons, stratify by model family, and report write-path cost before attributing gains to architecture.",
+      "authors": [
+        "Kuan Wang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-29T07:51:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.29914v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "introduces a controlled evaluation protocol for agent memory systems",
+      "llm_evidence_cn": "提出代理记忆系统的受控评估协议",
+      "llm_evidence": "提出代理记忆系统的受控评估协议",
+      "canonical_evidence": "提出代理记忆系统的受控评估协议",
+      "llm_tldr_en": "Presents MemDelta, a controlled evaluation protocol for agent memory that separates improvements in memory method from confounds like model or embedding changes.",
+      "llm_tldr_cn": "本文提出MemDelta，一个代理记忆受控评估协议，通过每次只改变一个组件（如语言模型、嵌入模型）来分离记忆方法的效果与其他混淆因素。在LongMemEval-S上的实验表明，RAG与全上下文性能因模型而异，且记忆方法排名不稳定。该工作为代理记忆评估提供了标准化方法论。",
+      "llm_tldr": "本文提出MemDelta，一个代理记忆受控评估协议，通过每次只改变一个组件（如语言模型、嵌入模型）来分离记忆方法的效果与其他混淆因素。在LongMemEval-S上的实验表明，RAG与全上下文性能因模型而异，且记忆方法排名不稳定。该工作为代理记忆评估提供了标准化方法论。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31612v1",
+      "source": "arxiv",
+      "title": "What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States",
+      "abstract": "Mobile GUI agents increasingly face long-horizon tasks that require reading, updating, and reusing task-relevant data across pages and applications. Existing memory methods treat memory largely as passive storage, where past observations are accumulated and retrieved when needed. Yet retrieving a value does not reveal its current role in the workflow. The agent must still infer from accumulated records whether the value should be used now, has already been used, or must wait for a later dependency. This implicit reconstruction becomes unreliable in long trajectories with similar fields, repeated values, distractors, and outdated states, causing repeated or missed operations. We propose Active Task Driving Memory (ATMem), which shifts GUI-agent memory from passive storage to an actively maintained execution state. ATMem maintains task-relevant information as a continually updated execution state that links each value to its role and current status, enabling action selection based on the current workflow state. We therefore introduce \\textbf{STR-GRPO}, an online reinforcement learning method that learns to use ATMem selectively according to its contribution to task completion. STR-GRPO contrasts memory-on and memory-off rollouts to estimate when memory use improves execution, while memory-cost-aware reward discourages costly memory usage that does not improve execution. To evaluate whether agents can complete all in-scope work while avoiding out-of-scope actions over long-horizon execution, we build a challenging mobile benchmark. From a list of near identical entries, agents must act on every entry that satisfies the instruction and reject entries that violate its constraints.",
+      "authors": [
+        "Chen Liu",
+        "Ling Chen",
+        "Hanzhang Zhou",
+        "Xu Zhang",
+        "Quyu Kong",
+        "Panrong Tong",
+        "Wenhao Wang",
+        "Xin Yu",
+        "Steven Hoi",
+        "Yue Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T13:01:19+00:00",
+      "link": "https://arxiv.org/pdf/2606.31612v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "active task-driving memory for GUI agents",
+      "llm_evidence_cn": "面向GUI智能体的主动任务驱动记忆",
+      "llm_evidence": "面向GUI智能体的主动任务驱动记忆",
+      "canonical_evidence": "面向GUI智能体的主动任务驱动记忆",
+      "llm_tldr_en": "ATMem shifts from passive record storage to active task-driving states, allowing GUI agents to know the current role of each memory item, reducing repeated or missed operations.",
+      "llm_tldr_cn": "现有移动GUI智能体将记忆视为被动存储，导致智能体需要从累积记录中推断值的使用状态，在长轨迹中容易出错。ATMem提出主动任务驱动记忆，明确每个记忆项的当前角色（待用、已用、等待依赖）。在长周期GUI任务中，该方法减少了重复和遗漏操作，提升了任务成功率和效率。",
+      "llm_tldr": "现有移动GUI智能体将记忆视为被动存储，导致智能体需要从累积记录中推断值的使用状态，在长轨迹中容易出错。ATMem提出主动任务驱动记忆，明确每个记忆项的当前角色（待用、已用、等待依赖）。在长周期GUI任务中，该方法减少了重复和遗漏操作，提升了任务成功率和效率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.29030v1",
+      "source": "arxiv",
+      "title": "Memory as an Attack Surface in LLM Agents: A Study on Multiple-Choice Question Answering",
+      "abstract": "AI agents extend conventional large language model (LLM) applications by integrating language understanding with task execution, external tool use, and memory mechanisms. While memory allows agents to retain prior interactions and provide more personalized and context-aware responses, it also introduces a new vulnerability: information stored in memory can influence future outputs even when the current query is clean. In this paper, we investigate memory manipulation in LLM-based agents for multiple-choice question answering. We first design and implement an LLM-based AI agent with an external memory component that stores and retrieves task-relevant information. We then introduce basic memory manipulation scenarios in which misleading or corrupted memories are inserted into the agent before it answers multiple-choice questions. Using a controlled experimental setup, we compare the agent's performance before and after memory manipulation and measure changes in answer accuracy, attack success rate, and selection of manipulated options. Our results show that even simple memory manipulations can noticeably affect the agent's final answers, causing it to select incorrect options despite receiving clean and well-formed questions.",
+      "authors": [
+        "Shahnewaz Karim Sakib",
+        "Anindya Bijoy Das"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.ET"
+      ],
+      "published": "2026-06-27T17:57:25+00:00",
+      "link": "https://arxiv.org/pdf/2606.29030v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "studies memory manipulation in LLM agents, a key memory method concern",
+      "llm_evidence_cn": "研究LLM代理中的记忆操控，涉及记忆方法",
+      "llm_evidence": "研究LLM代理中的记忆操控，涉及记忆方法",
+      "canonical_evidence": "研究LLM代理中的记忆操控，涉及记忆方法",
+      "llm_tldr_en": "Investigates memory as an attack surface in LLM agents for multiple-choice QA; designs agent with external memory and shows manipulation vulnerabilities.",
+      "llm_tldr_cn": "本文研究LLM代理中记忆作为攻击面的问题，针对多项选择问答任务。作者设计并实现了一个带有外部记忆组件的LLM代理，展示误导性信息如何操控记忆并影响输出。结果表明记忆操控是实际威胁，强调了代理记忆安全的重要性。",
+      "llm_tldr": "本文研究LLM代理中记忆作为攻击面的问题，针对多项选择问答任务。作者设计并实现了一个带有外部记忆组件的LLM代理，展示误导性信息如何操控记忆并影响输出。结果表明记忆操控是实际威胁，强调了代理记忆安全的重要性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31121v1",
+      "source": "arxiv",
+      "title": "The Past Is Prologue: A Plug-in Controller for Selective Updates in Sequentially Evolving LLM Memory",
+      "abstract": "Sequentially evolving LLM memory enables agents to reuse past experience, but existing systems usually deploy each locally generated memory update without checking whether it improves future behavior. As a result, updates that help the current task may overwrite useful knowledge, introduce over-specific rules, or bias the final memory toward recent examples. We propose Janus, a plug-in memory controller that decides whether to accept a candidate memory update or retain the previous memory. To make this decision efficient, Janus uses a Memory Momentum Trigger to identify suspicious deviations in the memory-update trajectory, and compares old and new memories on a compact hybrid evaluation set of coverage, boundary, and fresh tasks instead of replaying the full history. Janus is method-agnostic and wraps existing updaters without changing their update rules. Across six datasets, two backbone LLMs, and two memory updaters, Janus improves average accuracy by +2.7 to +4.6 points over the corresponding base updaters.",
+      "authors": [
+        "Zihan Chen",
+        "Songwei Dong",
+        "Chengshuai Shi",
+        "Peng Wang",
+        "Song Wang",
+        "Cong Shen",
+        "Jundong Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-30T04:33:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.31121v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes Janus, a plug-in controller for selective memory updates in LLM agents",
+      "llm_evidence_cn": "提出Janus，用于LLM代理选择性记忆更新的插件控制器",
+      "llm_evidence": "提出Janus，用于LLM代理选择性记忆更新的插件控制器",
+      "canonical_evidence": "提出Janus，用于LLM代理选择性记忆更新的插件控制器",
+      "llm_tldr_en": "Introduces Janus, a plug-in memory controller that decides whether to accept or reject candidate memory updates in sequentially evolving LLM memory.",
+      "llm_tldr_cn": "本文针对顺序演化的LLM代理记忆更新可能引入噪声或覆盖有用知识的问题，提出Janus插件控制器。它使用记忆动量触发器检测异常，并通过混合评估集比较新旧记忆效果。实验表明Janus提高了记忆质量，避免有害更新，同时保持低开销。为代理记忆的精细管理提供工具。",
+      "llm_tldr": "本文针对顺序演化的LLM代理记忆更新可能引入噪声或覆盖有用知识的问题，提出Janus插件控制器。它使用记忆动量触发器检测异常，并通过混合评估集比较新旧记忆效果。实验表明Janus提高了记忆质量，避免有害更新，同时保持低开销。为代理记忆的精细管理提供工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.31564v1",
+      "source": "arxiv",
+      "title": "ACE: Pluggable Adaptive Context Elasticizer across Agents",
+      "abstract": "The increasing complexity of agentic tasks has led to rapidly growing trajectory lengths, which poses significant challenges for large language model (LLM) based agents with fixed context windows. Existing context management techniques, such as truncation and summarization, suffer from inherent inflexibility and irreversibility: once information is discarded or compressed, it cannot be recovered even when it becomes critically relevant in later decision steps. To address these limitations, we propose the Adaptive Context Elasticizer (ACE), a plug-and-play module that elastically orchestrates historical step information into the agent's context at each decision step. ACE maintains a lossless message maintenance layer that stores both raw messages and compressed abstractions for each historical step, while a context orchestration layer adaptively assigns each step an elastic type as raw, abstract, or drop, at every decision step based on the current task state. This reversible design ensures that the main LLM always receives a compact yet information-rich context. We adapt ACE to four diverse agent frameworks, including ReAct, DeepAgent, WebThinker, and MiroFlow, without training or architectural modifications. Experiments show that ACE consistently outperforms truncation and summarization baselines, and brings consistent performance gains across all four agent frameworks.",
+      "authors": [
+        "Ning Liao",
+        "Zihao Long",
+        "Xiaoxing Wang",
+        "Xue Yang",
+        "Yaoming Wang",
+        "Ziyuan Zhuang",
+        "Xunliang Cai",
+        "Rongxiang Weng",
+        "Junchi Yan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-30T12:20:45+00:00",
+      "link": "https://arxiv.org/pdf/2606.31564v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "adaptive context elasticizer for agent trajectories",
+      "llm_evidence_cn": "适应智能体轨迹的上下文弹性化管理",
+      "llm_evidence": "适应智能体轨迹的上下文弹性化管理",
+      "canonical_evidence": "适应智能体轨迹的上下文弹性化管理",
+      "llm_tldr_en": "ACE is a plug-and-play module that elastically orchestrates historical step information into the agent context, maintaining lossless storage and compressed abstracts for flexible context management.",
+      "llm_tldr_cn": "长程智能体任务导致轨迹长度快速增长，现有截断和摘要方法不可逆且僵化。ACE作为即插即用模块，在每个决策步骤弹性编排历史信息，维护无损消息层并生成压缩摘要，解决信息不可恢复的问题。该方法支持自适应上下文管理，避免信息丢失。",
+      "llm_tldr": "长程智能体任务导致轨迹长度快速增长，现有截断和摘要方法不可逆且僵化。ACE作为即插即用模块，在每个决策步骤弹性编排历史信息，维护无损消息层并生成压缩摘要，解决信息不可恢复的问题。该方法支持自适应上下文管理，避免信息丢失。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
