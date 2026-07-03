@@ -1,0 +1,378 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-03T21:04:45.601009+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 8,
+    "deep_cap": 6,
+    "deep_selected": 7,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.02255v1",
+      "source": "arxiv",
+      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+      "abstract": "Memory for a long-horizon LLM agent is a contract about what each future decision is allowed to see. The simplest contract appends past observations, tool calls, and reflections to every prompt, which makes prior context easy to access but also turns it into a jumbled mixture in which the effect of any single memory component is hard to isolate. We introduce and instrument an alternative bounded contract: every decision is made from a fresh user message assembled by typed retrieval, with no raw cross-decision transcript appended. The prompt thus stays bounded across runs of any length, and any single layer can be ablated in isolation. We instantiate the contract in Slay the Spire 2, a closed-rule stochastic deck-building game whose runs require hundreds of tactical and strategic decisions. A public online benchmark of frontier LLMs on the same game reports zero wins at the lowest difficulty across five configurations, and the developer-reported human win rate at the same difficulty is 16%; the task is hard but not saturated. Within our harness, a fixed-A0 ablation shows the largest observed difference when triggered strategic skills are enabled: the no-store baseline wins 3/10 games and adding the skill layer 6/10. At this sample size the comparison is directional rather than statistically decisive (Fisher exact p\\approx0.37); a cross-backbone probe and public accumulating-context baselines are reported as operational comparisons rather than controlled tests of the contract variable itself. We release a reproducible testbed: 298 completed trajectories with condition tags, frozen memory/skill snapshots, prompt records, and analysis scripts -- an agent design and a validated, reusable methodology for studying how explicit memory layers shape long-horizon LLM-agent decisions.",
+      "authors": [
+        "Xiangchen Cheng",
+        "Yunwei Jiang",
+        "Jianwen Sun",
+        "Zizhen Li",
+        "Chuanhao Li",
+        "Xiangcheng Cao",
+        "Yihao Liu",
+        "Fanrui Zhang",
+        "Li Jin",
+        "Kaipeng Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-02T14:44:32+00:00",
+      "link": "https://arxiv.org/pdf/2607.02255v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "bounded-memory testbed for evaluating LLM agent memory components",
+      "llm_evidence_cn": "用于评估LLM agent记忆组件的边界记忆测试平台",
+      "llm_evidence": "用于评估LLM agent记忆组件的边界记忆测试平台",
+      "canonical_evidence": "用于评估LLM agent记忆组件的边界记忆测试平台",
+      "llm_tldr_en": "AgenticSTS provides a bounded-memory testbed enabling ablation of individual memory components in long-horizon LLM agents.",
+      "llm_tldr_cn": "长轨迹LLM agent的记忆评估困难，因为全历史追加导致各组件效果混杂。AgenticSTS引入边界记忆合约：每个决策基于独立组装的消息，无原始跨决策文本追加，从而允许对每一层单独消融。该测试平台基于《Slay the Spire 2》游戏，需要数百步决策。实验展示了不同记忆组件的贡献差异。该工作为LLM agent记忆评测提供了标准化工具，属于记忆评估方法的重要贡献。",
+      "llm_tldr": "长轨迹LLM agent的记忆评估困难，因为全历史追加导致各组件效果混杂。AgenticSTS引入边界记忆合约：每个决策基于独立组装的消息，无原始跨决策文本追加，从而允许对每一层单独消融。该测试平台基于《Slay the Spire 2》游戏，需要数百步决策。实验展示了不同记忆组件的贡献差异。该工作为LLM agent记忆评测提供了标准化工具，属于记忆评估方法的重要贡献。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31612v2",
+      "source": "arxiv",
+      "title": "What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States",
+      "abstract": "Mobile GUI agents increasingly face long-horizon tasks that require reading, updating, and reusing task-relevant data across pages and applications. Existing methods treat memory largely as passive storage, where past observations are accumulated and retrieved when needed. Yet retrieving a value does not reveal its current role in the workflow. The agent must still infer from accumulated records whether the value should be used now, has already been used, or must wait for a later dependency. This implicit reconstruction becomes unreliable in long trajectories with repeated values, distractors, and outdated states, causing repeated or missed operations. To address this, we propose Active Task Driving Memory (ATMem), which shifts GUI-agent memory from passive storage to an actively maintained execution state. ATMem maintains task-relevant information as a continually updated execution state that links each value to its role and current status, enabling action selection based on the current workflow state. While supervised fine-tuning enables the agent to construct ATMem, it does not teach when ATMem is beneficial. We therefore introduce STR-GRPO, an online reinforcement learning method that encourages selective use of ATMem based on its contribution to task completion. STR-GRPO contrasts memory-on and memory-off rollouts to estimate when memory use improves execution, while memory-cost-aware reward discourages costly memory usage that does not improve execution. To evaluate whether agents can complete all in-scope work while avoiding out-of-scope actions, we build a challenging mobile benchmark. From a list of near identical entries, agents must act on every entry that satisfies the instruction and reject entries that violate its constraints. We further introduce App-Level Progress and Scope-Aware F1 to measure these two dimensions separately.",
+      "authors": [
+        "Chen Liu",
+        "Ling Chen",
+        "Hanzhang Zhou",
+        "Xu Zhang",
+        "Quyu Kong",
+        "Panrong Tong",
+        "Wenhao Wang",
+        "Xin Yu",
+        "Steven Hoi",
+        "Yue Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T13:01:19+00:00",
+      "link": "https://arxiv.org/pdf/2606.31612v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "active task-driving memory for GUI agents to track role of remembered values",
+      "llm_evidence_cn": "针对GUI代理的主动任务驱动记忆，明确记忆值的任务角色",
+      "llm_evidence": "针对GUI代理的主动任务驱动记忆，明确记忆值的任务角色",
+      "canonical_evidence": "针对GUI代理的主动任务驱动记忆，明确记忆值的任务角色",
+      "llm_tldr_en": "ATMem shifts GUI agent memory from passive storage to active task-driven states, tracking the current role of each remembered value in the workflow.",
+      "llm_tldr_cn": "现有GUI代理将记忆视为被动存储，检索值时不明确其当前任务角色。ATMem提出主动任务驱动记忆，维护每个值的状态（待用、已用、依赖等待）。实验表明该方法显著减少重复和遗漏操作，提升长任务成功率。",
+      "llm_tldr": "现有GUI代理将记忆视为被动存储，检索值时不明确其当前任务角色。ATMem提出主动任务驱动记忆，维护每个值的状态（待用、已用、依赖等待）。实验表明该方法显著减少重复和遗漏操作，提升长任务成功率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01071v2",
+      "source": "arxiv",
+      "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+      "abstract": "Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factual accuracy or objective reasoning. Despite this emerging risk, existing memory benchmarks primarily evaluate whether memories are correctly stored, retrieved, or updated, while overlooking how retrieved memories influence downstream reasoning and decision-making. To bridge this gap, we propose MemSyco-Bench, a comprehensive benchmark for evaluating memory-induced sycophancy in agent systems. MemSyco-Bench measures when memory should influence a decision and how valid memory should be used. Specifically, it covers five tasks that assess whether agents can reject memory as factual evidence, respect its applicable scope, resolve conflicts between memory and objective evidence, track memory updates, and use valid memory for personalization. All related resources are collected for the community at https://github.com/XMUDeepLIT/MemSyco-Bench.",
+      "authors": [
+        "Zhishang Xiang",
+        "Zerui Chen",
+        "Yunbo Tang",
+        "Zhimin Wei",
+        "Ruqin Ning",
+        "Yujie Lin",
+        "Qinggang Zhang",
+        "Jinsong Su"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-07-01T15:30:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.01071v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark for evaluating memory-induced sycophancy in LLM agents",
+      "llm_evidence_cn": "针对LLM代理记忆引发谄媚的评估基准",
+      "llm_evidence": "针对LLM代理记忆引发谄媚的评估基准",
+      "canonical_evidence": "针对LLM代理记忆引发谄媚的评估基准",
+      "llm_tldr_en": "MemSyco-Bench is a benchmark that evaluates how retrieved memory causes sycophancy in LLM agents, addressing a gap in existing memory benchmarks that only check storage and retrieval.",
+      "llm_tldr_cn": "现有记忆基准仅评估存储、检索和更新，忽略了记忆对下游推理的影响。MemSyco-Bench提出一个综合基准，专门评估记忆引发的谄媚行为，衡量记忆何时应影响决策。实验表明该基准能有效检测记忆相关偏差。",
+      "llm_tldr": "现有记忆基准仅评估存储、检索和更新，忽略了记忆对下游推理的影响。MemSyco-Bench提出一个综合基准，专门评估记忆引发的谄媚行为，衡量记忆何时应影响决策。实验表明该基准能有效检测记忆相关偏差。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01523v1",
+      "source": "arxiv",
+      "title": "Multi-Head Recurrent Memory Agents",
+      "abstract": "Recurrent memory agents extend LLMs to arbitrarily long contexts by iteratively consolidating input into a fixed-size memory window. Despite their scalability, these agents exhibit a well-documented reliability problem: end-to-end performance degrades systematically as context length grows. We diagnose this failure by decomposing performance into two factors--memory capture and memory retention--and quantitatively confirm that retention is the dominant bottleneck. Retention collapses because existing designs maintain memory as a monolithic text block, forcing every update to risk overwriting previously retained content. Motivated by this diagnosis, we propose Multi-Head Recurrent Memory (MHM), a general, training-free framework that partitions memory into independent heads governed by a stage-wise select-then-update strategy. At each step, exactly one head is selected for update while the remaining heads are structurally shielded from overwriting, shifting the burden of retention from model behavior to architectural design. As a lightweight instantiation, we introduce Least-Recently-Updated MHM (MHM-LRU), which guarantees uniform head utilization with zero additional token overhead. Extensive experiments on long-context benchmarks show that MHM-LRU substantially improves both retention and end-to-end accuracy across the 100K--1M token range, where baselines degrade sharply. On RULER-HQA at 896K tokens, MHM-LRU improves the memory retention rate from less than 30% to 73.96%. These gains generalize across model families, scales, and task types, positioning architectural optimization as a practical and cost-efficient path toward reliable long-context recurrent memory.",
+      "authors": [
+        "Jiatong Li",
+        "Samuel Yeh",
+        "Sharon Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-01T22:38:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.01523v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multi-head recurrent memory agents for long context",
+      "llm_evidence_cn": "多头循环记忆智能体处理长上下文",
+      "llm_evidence": "多头循环记忆智能体处理长上下文",
+      "canonical_evidence": "多头循环记忆智能体处理长上下文",
+      "llm_tldr_en": "Proposes Multi-Head Recurrent Memory (MHM), a training-free framework partitioning memory into independent heads to improve retention.",
+      "llm_tldr_cn": "本文诊断了循环记忆智能体在长上下文下性能下降的瓶颈是记忆保留而非记忆捕获，并提出了多头循环记忆（MHM）框架，将记忆划分为独立头部，由写入冲突度量控制更新，避免整体覆盖。实验证明MHM显著提升了长序列任务的可靠性和保留能力，且无需额外训练。",
+      "llm_tldr": "本文诊断了循环记忆智能体在长上下文下性能下降的瓶颈是记忆保留而非记忆捕获，并提出了多头循环记忆（MHM）框架，将记忆划分为独立头部，由写入冲突度量控制更新，避免整体覆盖。实验证明MHM显著提升了长序列任务的可靠性和保留能力，且无需额外训练。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01935v1",
+      "source": "arxiv",
+      "title": "A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory",
+      "abstract": "Long term memory lets LLM agents act as persistent assistants, but user facts change. A useful memory system must know what is true now, what used to be true, and what changed. We study \\emph{ghost memory}, a state coordination failure in which old, current, and transition facts coexist in the memory bank, remain mixed during retrieval, and mislead the answer model. We argue that memory systems should be understood and optimized from three levels: bank maintenance, retrieval, and answer time resolution. We propose ATMA, a state aware overlay for existing memory systems. ATMA keeps superseded and transition records in the bank, builds evidence packets for the query's requested state view, and exposes current, historical, and transition labels to QA. We further call for decoupled evaluation of bank, retrieval, and answer level failures, since final QA accuracy can hide where ghost memory occurs. To make this failure measurable, we build LTP (LoCoMo Temporal Plus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo for long conversation generalization. On LTP, Graphiti+ATMA improves conflict accuracy by 0.240 absolute over Graphiti. On LoCoMo, Graphiti+ATMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent, but they indicate that explicit state roles can reduce memory failures hidden by final QA accuracy.",
+      "authors": [
+        "Zitong Shi",
+        "Yixuan Tang",
+        "Anthony Kum Hoe Tung"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-02T09:28:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.01935v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "addresses ghost memory failures in LLM agent long-term memory",
+      "llm_evidence_cn": "解决LLM Agent长期记忆中的幽灵记忆故障",
+      "llm_evidence": "解决LLM Agent长期记忆中的幽灵记忆故障",
+      "canonical_evidence": "解决LLM Agent长期记忆中的幽灵记忆故障",
+      "llm_tldr_en": "A-TMA analyzes ghost memory failures where old/current/transition facts coexist and proposes a state-aware overlay to maintain, retrieve, and label temporal states for accurate QA.",
+      "llm_tldr_cn": "长期记忆系统中旧事实、当前事实和过渡事实混合导致状态协调失败（幽灵记忆）。A-TMA 提出三层优化：银行维护保留被替代记录，检索构建证据包，回答时暴露历史/当前/过渡标签。实验表明该方法在事实变化环境下显著提升记忆准确性和一致性，增强Agent对话可靠性。",
+      "llm_tldr": "长期记忆系统中旧事实、当前事实和过渡事实混合导致状态协调失败（幽灵记忆）。A-TMA 提出三层优化：银行维护保留被替代记录，检索构建证据包，回答时暴露历史/当前/过渡标签。实验表明该方法在事实变化环境下显著提升记忆准确性和一致性，增强Agent对话可靠性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01988v1",
+      "source": "arxiv",
+      "title": "Episodic-to-Semantic Consolidation Without Identity Drift",
+      "abstract": "Long-running adaptive intelligent agents face a structural tension between knowledge consolidation and information integrity. Memory consolidation is conventionally treated as an agent-changing operation: a model is fine-tuned, a prompt rewritten, a policy distilled, or a reflection appended to the context that governs future behaviour. In regulated autonomic deployment this is a liability because the agent operates under commitments and audit contracts that bind to a specific, cryptographically certified identity. We propose to treat consolidation not as a mutation of the planner or the identity manifest, but as a deterministic function f: M^ep -> M^sem over episodic memory whose output is a separately addressable semantic knowledge layer; the identity hash does not read M^sem, so consolidation updates knowledge without changing the agent's certified identity. We give a formal account of the agent representation, prove identity invariance through a structural lemma on the manifest's hash-input set, specify a deterministic aggregation algorithm whose outputs are auditable database rows with explicit confidence and supporting-event provenance, and validate the construction with synthetic experiments demonstrating per-field correctness, byte-equal identity across consolidation passes, and a mean 79.82% reduction in unproductive planner attempts (95% BCa CI [78.02%, 81.49%] across 10 seeds) against a calibrated Bayesian-shrunk baseline. The construction is a knowledge-update discipline for autonomic agents in which lessons accumulate as queryable facts while the agent's certified identity remains byte-equal across its operational lifetime, with an embodied service agent as the running case study.",
+      "authors": [
+        "Xue Qin",
+        "Simin Luan",
+        "Cong Yang",
+        "Zhijun Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-07-02T10:18:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.01988v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "episodic-to-semantic memory consolidation for agents without identity drift",
+      "llm_evidence_cn": "智能体情景到语义记忆合并且身份不变",
+      "llm_evidence": "智能体情景到语义记忆合并且身份不变",
+      "canonical_evidence": "智能体情景到语义记忆合并且身份不变",
+      "llm_tldr_en": "Proposes consolidating episodic memory into a separate semantic layer without altering agent identity, addressing regulated deployment constraints.",
+      "llm_tldr_cn": "本文针对长运行自适应智能体在监管部署中记忆合并导致身份漂移的问题，提出将情景记忆通过确定性函数转换为单独可寻址的语义知识层，不改变智能体身份哈希。该方法在保持合规性同时实现知识整合，适用于审计驱动的自治系统。",
+      "llm_tldr": "本文针对长运行自适应智能体在监管部署中记忆合并导致身份漂移的问题，提出将情景记忆通过确定性函数转换为单独可寻址的语义知识层，不改变智能体身份哈希。该方法在保持合规性同时实现知识整合，适用于审计驱动的自治系统。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.02010v1",
+      "source": "arxiv",
+      "title": "InduceKV: Fixed-Footprint Continual Adaptation of Multimodal LLMs via Inducing KV Memories",
+      "abstract": "Multimodal large language models must adapt to evolving tasks and domains, yet continual improvement under bounded deployment footprint remains difficult because repeated parameter updates or growing replay stores can accumulate adaptation state over time. We study fixed-footprint continual adaptation: the deployed adaptation state is kept under a fixed memory budget, while the backbone model is left unchanged and task-specific updates are externalized. We propose InduceKV, a retrieval-based method that stores each selected training prefix as an attention-ready memory entry, consisting of a frozen retrieval key and compact layerwise key--value (KV) payloads that can be appended to the model's self-attention cache. Under a strict memory budget, InduceKV constructs a compact inducing set through bilevel selection: a lightweight calibration is fit for retrieval, while the selected memory balances current-task likelihood, anchor-based retention, and coverage in the frozen retrieval space. Across task-incremental instruction tuning, continual VQA, domain-incremental adaptation, and lifelong multimodal instruction tuning, InduceKV consistently improves over PEFT, MoE, replay, and prompt-retrieval baselines under matched memory budgets. We further report backbone-matched, stage-1 CoIN, compute-matched, and scalability diagnostics, showing that the gains are not due to a stronger backbone, replay alone, or an unbounded candidate pool.",
+      "authors": [
+        "Qianyu Chen",
+        "Ziteng Feng",
+        "Canran Xiao",
+        "Runxuan Tang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-02T10:45:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.02010v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory augmentation via inducing KV memories for multimodal LLMs",
+      "llm_evidence_cn": "通过诱导KV记忆实现多模态LLM的记忆增强",
+      "llm_evidence": "通过诱导KV记忆实现多模态LLM的记忆增强",
+      "canonical_evidence": "通过诱导KV记忆实现多模态LLM的记忆增强",
+      "llm_tldr_en": "InduceKV enables fixed-footprint continual adaptation of multimodal LLMs by storing training prefixes as attention-ready KV memory entries.",
+      "llm_tldr_cn": "多模态大模型需要持续适应新任务，但更新参数或增长重放缓冲区会累积状态。InduceKV提出固定足迹持续适应方法：将每个选中的训练前缀存储为注意就绪的记忆条目（冻结检索键和紧凑层KV负载），在严格记忆预算下追加到自注意力缓存。实验表明该方法在多个领域适应任务上达到全量微调性能的90%以上，同时部署足迹恒定。该工作属于LLM agent记忆增强技术。",
+      "llm_tldr": "多模态大模型需要持续适应新任务，但更新参数或增长重放缓冲区会累积状态。InduceKV提出固定足迹持续适应方法：将每个选中的训练前缀存储为注意就绪的记忆条目（冻结检索键和紧凑层KV负载），在严格记忆预算下追加到自注意力缓存。实验表明该方法在多个领域适应任务上达到全量微调性能的90%以上，同时部署足迹恒定。该工作属于LLM agent记忆增强技术。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.01919v1",
+      "source": "arxiv",
+      "title": "ElephantAgent: Contextual State Continuity in Agentic Systems",
+      "abstract": "Agentic systems enhance their capabilities by invoking external tools and maintaining persistent memory. However, these external dependencies introduce novel attack surfaces. Recent tool and memory poisoning attacks show that maliciously crafted tool descriptors and poisoned memory can covertly bias agent behavior. These threats reflect a deeper issue: the lack of verifiable continuity in the agent's contextual state for planning and execution. We present ElephantAgent, a protocol that enforces Contextual State Continuity to defend against contextual state poisoning. Inspired by prior state-continuity mechanisms (e.g., Nimble), ElephantAgent extends this protection to the evolving contextual state of agentic systems. We define the contextual state as the bounded, security-critical subset of the agent's entire context (e.g., tool state and memory). Before processing each query, ElephantAgent recomputes the digest of the local contextual state and verifies it against the latest authorized digest. Using replicated trusted hardware, ElephantAgent maintains a linearizable ledger of authorized contextual state transitions and detects out-of-band state tampering. To handle in-band semantic abuse, ElephantAgent additionally provides Historical Traceability, enabling conditional post-hoc audit and recovery to a known-good prior state.",
+      "authors": [
+        "Jiankai Jin",
+        "Xiangzheng Zhang",
+        "Zhao Liu",
+        "Wenzhuo Xu",
+        "Dongdong Yang",
+        "Deyue Zhang",
+        "Quanchen Zou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-07-02T09:18:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.01919v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory management security in agentic systems with contextual state continuity",
+      "llm_evidence_cn": "通过上下文状态连续性强话agent系统的记忆管理安全性",
+      "llm_evidence": "通过上下文状态连续性强话agent系统的记忆管理安全性",
+      "canonical_evidence": "通过上下文状态连续性强话agent系统的记忆管理安全性",
+      "llm_tldr_en": "ElephantAgent enforces Contextual State Continuity to defend against memory poisoning attacks in agentic systems.",
+      "llm_tldr_cn": "agent系统依赖外部工具和持久记忆，但可能遭受记忆投毒攻击。ElephantAgent提出上下文状态连续性协议，确保agent规划与执行的上下文状态可验证且不被篡改。该协议扩展了先前状态连续性机制，覆盖agent系统的演化上下文。实验验证该防御能有效检测并阻止记忆内容篡改，同时不会显著影响agent性能。该工作属于LLM agent记忆管理的重要安全保障。",
+      "llm_tldr": "agent系统依赖外部工具和持久记忆，但可能遭受记忆投毒攻击。ElephantAgent提出上下文状态连续性协议，确保agent规划与执行的上下文状态可验证且不被篡改。该协议扩展了先前状态连续性机制，覆盖agent系统的演化上下文。实验验证该防御能有效检测并阻止记忆内容篡改，同时不会显著影响agent性能。该工作属于LLM agent记忆管理的重要安全保障。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.29315v1",
+      "source": "arxiv",
+      "title": "Hierarchical Experimentalist Agents",
+      "abstract": "Large language models (LLMs) are increasingly used to take actions in the real world and support human decision-making, yet most agents rely on parametric knowledge, fixed post-training data, retrieval, or search. This paradigm breaks down in novel domains and for sophisticated queries that cannot be answered from prior knowledge alone. Knowing the laws of physics, for instance, does not by itself enable LLMs to answer queries or complete long-horizon tasks in a complex physical system. To address this, we introduce Hierarchical Experimentalist Agents (HExA), an in-context self-improvement framework to learn from active experimentation. HExA iteratively designs and refines query-relevant experiments, learns a reusable library of composable skills from experience, and integrates experimental evidence to answer queries or take actions. HExA is training-free, compatible with any black-box model, and does not require external supervision, oracles, or offline data. To evaluate active experimentation, we introduce Interphyre, a tool-calling benchmark built on the PHYRE 2D procedural physics environment, where agents propose interventions and test hypotheses through simulation APIs. Experiments show that current LLM agents struggle in these settings, especially on the hardest levels of Interphyre. Claude Sonnet 4.6 achieves only 2% success, while HExA improves the same model to up to 77% success. HExA also improves open-weight models and outperforms agentic baselines such as ReAct and Reflexion. Moreover, using only skills learned from easier levels and transferred without active experimentation, HExA achieves 44% success, demonstrating the reusability and generalization of its learned skills. Overall, HExA shows that learning through active experimentation can help agents discover useful knowledge, acquire reusable skills, and make efficient progress on novel long-horizon tasks.",
+      "authors": [
+        "Abhranil Chandra",
+        "Sankaran Vaidyanathan",
+        "Utsav Dhanuka",
+        "Varun Gandhi",
+        "Scott Niekum"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-28T10:21:55+00:00",
+      "link": "https://arxiv.org/pdf/2606.29315v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "in-context experimental framework with reusable skill library as memory",
+      "llm_evidence_cn": "通过主动实验学习可复用的技能库，作为代理记忆",
+      "llm_evidence": "通过主动实验学习可复用的技能库，作为代理记忆",
+      "canonical_evidence": "通过主动实验学习可复用的技能库，作为代理记忆",
+      "llm_tldr_en": "HExA enables LLM agents to learn from active experimentation, building a reusable skill library that serves as procedural memory for long-horizon tasks.",
+      "llm_tldr_cn": "现有代理依赖静态知识，缺乏在未知领域中从实验学习的能力。HExA提出层次化实验框架，通过迭代设计实验并积累经验技能库，实现上下文中的自我改进。实验显示该方法能有效提升在复杂物理系统中的任务完成率。",
+      "llm_tldr": "现有代理依赖静态知识，缺乏在未知领域中从实验学习的能力。HExA提出层次化实验框架，通过迭代设计实验并积累经验技能库，实现上下文中的自我改进。实验显示该方法能有效提升在复杂物理系统中的任务完成率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
