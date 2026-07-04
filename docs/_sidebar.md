@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-04 <!--dpr-date:20260704-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/04/2607.00627v1-agi-maze-as-a-benchmark-framework-for-world-modeling-agents" data-sidebar-item="{&quot;title&quot;: &quot;AGI Maze as a Benchmark Framework for World-Modeling Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.00627v1-agi-maze-as-a-benchmark-framework-for-world-modeling-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;用于需要记忆的世界建模智能体的基准框架&quot;}">AGI Maze as a Benchmark Framework for World-Modeling Agents</a>
   * 2026-07-03 <!--dpr-date:20260703-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/03/2607.02255v1-agenticsts-a-bounded-memory-testbed-for-long-horizon-llm-agents" data-sidebar-item="{&quot;title&quot;: &quot;AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.02255v1-agenticsts-a-bounded-memory-testbed-for-long-horizon-llm-agents&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;用于评估LLM agent记忆组件的边界记忆测试平台&quot;}">AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents</a>
