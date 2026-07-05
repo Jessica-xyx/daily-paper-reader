@@ -1,0 +1,184 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-05T19:58:41.071693+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.30296v2",
+      "source": "arxiv",
+      "title": "ManimAgent: Self-Evolving Multimodal Agents for Visual Education",
+      "abstract": "Multi-round reflection lets agents built on large language models recover from failures within a single task, but each task remains an isolated episode: lessons learned across many reflection rounds on one task are discarded before the next begins. We study this gap on a code-generation task: from a scientific paper section, the agent writes Python in the open-source Manim library to render a mathematical animation. We present ManimAgent, a self-evolving multimodal agent that carries reflection experience across tasks through a dual-channel Episodic Memory Bank grown entirely from its own task stream, with no weight updates and no human seeds. After each animation converges, a vision-language model scores the rendered keyframes; the resulting signals populate a positive channel M+ that stores success rationales as soft Reference Examples, and a negative channel M- that stores validated failure patterns as hard Known Pitfalls. On a fixed-probe evaluation against no-memory, matched-budget retrieval-augmented generation, and shuffled-memory baselines, blind human Pass@1 rises and reflection rounds fall as memory size grows. We will release the code, frozen memory snapshots, and the task stream.",
+      "authors": [
+        "Wenjia Jiang",
+        "Zongyuan Cai",
+        "Yuanhang Shao",
+        "Chenru Wang",
+        "Boyan Han",
+        "Zhixue Song",
+        "Keyu Chen",
+        "Shengwei An",
+        "Xu Yang",
+        "Zhou Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-29T13:37:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.30296v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Proposes episodic memory bank for cross-task experience sharing in LLM agents",
+      "llm_evidence_cn": "提出用于LLM智能体跨任务经验共享的情节记忆库",
+      "llm_evidence": "提出用于LLM智能体跨任务经验共享的情节记忆库",
+      "canonical_evidence": "提出用于LLM智能体跨任务经验共享的情节记忆库",
+      "llm_tldr_en": "ManimAgent uses a dual-channel episodic memory bank to carry reflection experience across tasks for generating mathematical animations, enabling self-evolution without weight updates.",
+      "llm_tldr_cn": "该论文针对智能体跨任务经验无法积累的问题，提出了ManimAgent，通过双通道情节记忆库将反思经验保留并跨任务传递。该方法无需权重更新或人工种子，仅在任务流中自动构建记忆。实验表明该记忆机制能够提升多轮代码生成任务的成功率。该工作为LLM智能体提供了一种轻量级的记忆增强方法。",
+      "llm_tldr": "该论文针对智能体跨任务经验无法积累的问题，提出了ManimAgent，通过双通道情节记忆库将反思经验保留并跨任务传递。该方法无需权重更新或人工种子，仅在任务流中自动构建记忆。实验表明该记忆机制能够提升多轮代码生成任务的成功率。该工作为LLM智能体提供了一种轻量级的记忆增强方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.31650v1",
+      "source": "arxiv",
+      "title": "ECHO: Prune to act, trace to learn with selective turn memory in agentic RL",
+      "abstract": "Long-horizon language agents must repeatedly interact with tools, accumulate evidence, and make decisions under bounded context windows. Existing context-management methods make such rollouts feasible by truncating distant history, folding past turns into summaries, or selecting compact memory states. However, these breakthroughs introduce two coupled limitations. First, as the number of turns grows, historical observations are progressively removed or collapsed into compressed states, making it harder for the policy to reuse fine-grained evidence. Second, once the original turns are no longer source-addressable, outcome-based RL loses an explicit path for aligning policy updates with the evidence that supported a successful final answer. To this end, we propose ECHO, a selective turn-memory framework that jointly addresses history collapse and traceable learning through source-indexed reconstruction. Specifically, ECHO compresses each completed environment turn into a compact memory record, reconstructs bounded policy contexts by selecting from these records, and reuses the selected source indices to route positive outcome credit to the evidence and selection actions that support successful answers. On BrowseComp-Plus, ECHO reaches 43.4% held-out accuracy, outperforming GRPO (28.9%) and the rolling-summary baseline SUPO (36.1%), while using fewer turns and lower trajectory volume than SUPO (Figure 1). Additionally, the trained policy improves zero-shot generalization across multi-objective QA, code generation, and deep information-seeking benchmarks on both dense and MoE backbones.",
+      "authors": [
+        "Zijun Xie",
+        "Binbin Zheng",
+        "Enlei Gong",
+        "Jihua Liu",
+        "Yuyang You",
+        "Lingfeng Liu",
+        "Jiayao Tang",
+        "Guanqun Zhao",
+        "Aoqi Hu",
+        "Zeyu Chen"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-30T13:29:58+00:00",
+      "link": "https://arxiv.org/pdf/2606.31650v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "selective turn memory for agentic RL",
+      "llm_evidence_cn": "用于代理强化学习的选择性回合记忆",
+      "llm_evidence": "用于代理强化学习的选择性回合记忆",
+      "canonical_evidence": "用于代理强化学习的选择性回合记忆",
+      "llm_tldr_en": "ECHO introduces selective turn memory that prunes irrelevant turns while preserving trace for RL, improving long-horizon agent learning.",
+      "llm_tldr_cn": "长程语言代理需在有限上下文下管理记忆。现有方法截断或压缩历史，导致细粒度证据丢失且RL梯度无法对齐。本文提出ECHO，通过选择性回合记忆保留关键历史，同时为RL提供可追溯的梯度路径。实验表明该方法在长程工具使用任务中提升了代理的学习效率和最终性能。",
+      "llm_tldr": "长程语言代理需在有限上下文下管理记忆。现有方法截断或压缩历史，导致细粒度证据丢失且RL梯度无法对齐。本文提出ECHO，通过选择性回合记忆保留关键历史，同时为RL提供可追溯的梯度路径。实验表明该方法在长程工具使用任务中提升了代理的学习效率和最终性能。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01043v1",
+      "source": "arxiv",
+      "title": "DART-VLN: Test-Time Memory Decay and Anti-Loop Regularization for Discrete Vision-Language Navigation",
+      "abstract": "Memory-based discrete vision-language navigation (VLN) agents must act under partial observability, yet even strong frozen backbones remain vulnerable at test time. Two common failure modes are stale historical evidence at memory readout and inefficient local backtracking during action selection. We present DART-VLN, a training-free test-time control framework for discrete VLN. DART-VLN combines Test-Time Memory Decay, a read-side memory reweighting rule that suppresses stale and redundant evidence without rewriting stored content, with Anti-Loop Regularization, a lightweight next-hop penalty that discourages immediate reversals during action selection. The framework introduces no new learnable parameters and leaves the learned backbone unchanged. Experiments on R2R and REVERIE show a consistent pattern: decay-only provides stable read-side gains, while decay+anti-loop achieves the best overall quality-efficiency trade-off, yielding shorter trajectories, lower runtime, and improved navigation performance in key settings. Behavioral analysis further confirms that anti-loop regularization reduces local backtracking and improves path efficiency under frozen backbones. Overall, the results show that modest test-time control can make memory-based discrete VLN more reliable and efficient without retraining.",
+      "authors": [
+        "Shaoheng Zhang",
+        "Zhichen Li",
+        "Jie Mei"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-01T15:07:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.01043v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes test-time memory decay and anti-loop regularization for VLN agents",
+      "llm_evidence_cn": "提出测试时记忆衰减和反循环正则化用于视觉语言导航智能体",
+      "llm_evidence": "提出测试时记忆衰减和反循环正则化用于视觉语言导航智能体",
+      "canonical_evidence": "提出测试时记忆衰减和反循环正则化用于视觉语言导航智能体",
+      "llm_tldr_en": "Presents DART-VLN, a training-free test-time control framework combining memory decay to suppress stale evidence and anti-loop regularization to prevent backtracking loops.",
+      "llm_tldr_cn": "基于记忆的离散视觉语言导航智能体在部分可观测环境下常因过时记忆和局部回溯导致失败。本文提出DART-VLN框架，包含测试时记忆衰减（抑制陈旧证据）和反循环正则化（防止立即回溯），无需训练新参数。实验表明该方法显著提升了导航成功率，且不改变底层模型。",
+      "llm_tldr": "基于记忆的离散视觉语言导航智能体在部分可观测环境下常因过时记忆和局部回溯导致失败。本文提出DART-VLN框架，包含测试时记忆衰减（抑制陈旧证据）和反循环正则化（防止立即回溯），无需训练新参数。实验表明该方法显著提升了导航成功率，且不改变底层模型。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.00151v1",
+      "source": "arxiv",
+      "title": "SmoothAgent: Efficient Long-Horizon LLM-Based Agent Serving with Lookahead Context Engineering",
+      "abstract": "LLM-based agents execute multi-turn workflows with continuously growing contexts, where LLM calls are interleaved with tool invocations and environment feedback. To maintain model quality, modern agent frameworks rely on context engineering strategies such as offloading, reduction, and isolation to control the context length. However, these strategies introduce significant context transformation overhead: each transformation invalidates existing KV caches and triggers re-prefill, leading to increased time-to-first-token (TTFT).   In this paper, we identify that context transformations are segment-decomposable, where the transformation of a prefix is independent of future tokens. This property enables transformations to be executed ahead of time. Based on this insight, we propose a lookahead programming model that allows agent frameworks to express context transformations as asynchronous operations without modifying their execution logic. The runtime proactively executes these transformations and prepares transformed KV caches in advance, enabling direct context replacement without blocking. We further design a lookahead-aware scheduler in LLM serving systems to support these asynchronous requests alongside latency-critical workloads with controlled interference. We implement our approach to support representative context engineering strategies and integrate it into existing agent frameworks and LLM serving systems. Experiments show that our approach effectively eliminates transformation overhead and reduces TTFT by up to 11.9x.",
+      "authors": [
+        "Zaifeng Pan",
+        "Qianxu Wang",
+        "Zhengding Hu",
+        "Chang Chen",
+        "Yue Guan",
+        "Yanbo Zhou",
+        "Steven Swanson",
+        "Yufei Ding"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC"
+      ],
+      "published": "2026-06-30T20:27:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.00151v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "context engineering for agent serving efficiency",
+      "llm_evidence_cn": "面向智能体服务效率的上下文工程",
+      "llm_evidence": "面向智能体服务效率的上下文工程",
+      "canonical_evidence": "面向智能体服务效率的上下文工程",
+      "llm_tldr_en": "SmoothAgent optimizes context transformation by decomposing segments to avoid full re-prefill, improving TTFT in long-horizon agents.",
+      "llm_tldr_cn": "LLM智能体多轮工作流中上下文不断增长，现有上下文工程策略（卸载、缩减、隔离）每次变换都使KV缓存失效并触发重填充。本文发现上下文变换具有分段可分解性，前缀变换独立于未来令牌，据此提出预测执行和异步预填充机制，显著减少了首个令牌时间。该工作为长时程智能体上下文管理提供了高效解决方案。",
+      "llm_tldr": "LLM智能体多轮工作流中上下文不断增长，现有上下文工程策略（卸载、缩减、隔离）每次变换都使KV缓存失效并触发重填充。本文发现上下文变换具有分段可分解性，前缀变换独立于未来令牌，据此提出预测执行和异步预填充机制，显著减少了首个令牌时间。该工作为长时程智能体上下文管理提供了高效解决方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
