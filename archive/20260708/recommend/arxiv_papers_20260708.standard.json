@@ -1,0 +1,339 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-08T21:41:35.926779+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.05690v1",
+      "source": "arxiv",
+      "title": "Memory in the Loop: In-Process Retrieval as ExtendedWorking Memory for Language Agents",
+      "abstract": "Language agents run a loop - observe, reason, act - but the memory they reason over sits outside it: a store queried at most once per turn. We study the regime where memory moves inside the loop, read and written on every step. The obstacle has always been latency: networked stores answer in tens to hundreds of milliseconds, and in-loop retrieval can inflate end-to-end latency by up to 83x when retrieval is expensive. Prior work manages that cost rather than questioning it: serving-layer scheduling hides it, \"memory-first\" designs ration retrieval to once per turn. We argue latency is a property of where the store lives, not the in-loop pattern: an in-process store answers in ~100us, three orders of magnitude below the network regime, and at that speed the per-step tax collapses. By the extended-mind thesis's parity principle, a store fast enough to be constantly and directly available becomes extended working memory, not a tool the agent merely consults. The premise is causal: holding a fixed per-turn memory-latency budget and varying only the store's answer speed, redundant actions rise monotonically with latency - 0.0 of 12 at in-process speed, 7.2 of 12 at a 110ms cloud round trip (gpt-5-nano, gpt-5-mini; exact permutation p=0.0079). We demonstrate the regime end-to-end: across four GPT-5-class models under a bounded window, recall improves from 0/5 to 3.6-4.8/5 with in-loop memory, store ops at p50 80-165us - though an instructed restate-every-reply baseline also solves it perfectly, at a token cost that grows with the working set. The store never lost a fact in any run (244 of 244 writes kept); every miss traces to the agent's read policy, not the store. Our measurements also relocate the bottleneck: the dominant per-step cost is embedding (~200-400ms over the network); pairing the in-process store with a small local embedder returns the complete operation to a measured ~40us.",
+      "authors": [
+        "Yusuf Khan",
+        "Carlo Lipizzi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-06T23:16:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.05690v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "in-process retrieval as extended working memory for language agents",
+      "llm_evidence_cn": "内进程检索作为语言代理的扩展工作记忆",
+      "llm_evidence": "内进程检索作为语言代理的扩展工作记忆",
+      "canonical_evidence": "内进程检索作为语言代理的扩展工作记忆",
+      "llm_tldr_en": "This paper studies moving memory retrieval inside the agent loop, using an in-process store to achieve ~100us latency, dramatically reducing end-to-end latency compared to networked stores.",
+      "llm_tldr_cn": "语言代理在循环中运行，但记忆通常存储在外部网络，查询延迟高。本文提出将记忆移入循环内部，使用内进程存储实现约100微秒的延迟，相比网络存储降低三个数量级。实验表明，这种内进程检索模式显著提升了代理的实时决策能力和任务完成效率，为代理记忆系统提供了新的设计范式。",
+      "llm_tldr": "语言代理在循环中运行，但记忆通常存储在外部网络，查询延迟高。本文提出将记忆移入循环内部，使用内进程存储实现约100微秒的延迟，相比网络存储降低三个数量级。实验表明，这种内进程检索模式显著提升了代理的实时决策能力和任务完成效率，为代理记忆系统提供了新的设计范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05794v1",
+      "source": "arxiv",
+      "title": "From Passive Retrieval to Active Memory Navigation: Learning to Use Memory as a Structured Action Space",
+      "abstract": "Long-term user memory is essential for personalized conversational agents, yet many memory systems still expose memory through passive retrieval interfaces, making the model a consumer of pre-selected evidence. We introduce NapMem, a framework for learning to use long-term user memory as a structured action space rather than passively retrieved context. NapMem organizes user history into a linked multi-granularity memory pyramid, where raw conversations, typed memory records, topic tracks, and user profiles are connected through provenance relations, and exposes these levels through memory tools. The agent is trained to select memory according to the query and intermediate evidence, allowing it to inspect different memory granularities before answering. Experiments on PersonaMem-v2, LongMemEval, and LoCoMo show that a NapMem agent trained with memory-tool reinforcement learning is competitive across diverse memory-intensive tasks, while evaluations on non-memory tasks suggest that the learned policy largely preserves general reasoning and tool-use abilities. Additional analyses examine storage, inference cost, tool-use behavior, and ablations over navigation, memory granularity, and RL training. Our results suggest that long-term user memory benefits from coupling structured storage with a learned policy for using memory at the appropriate granularity.",
+      "authors": [
+        "Yue Xu",
+        "Yutao Sun",
+        "Yihao Liu",
+        "Mengyu Zhou",
+        "Jiayi Qiao",
+        "Lu Ma",
+        "Kai Tang",
+        "Wenjie Wang",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-07T03:47:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.05794v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "active memory navigation framework for LLM agents",
+      "llm_evidence_cn": "LLM智能体的主动记忆导航框架",
+      "llm_evidence": "LLM智能体的主动记忆导航框架",
+      "canonical_evidence": "LLM智能体的主动记忆导航框架",
+      "llm_tldr_en": "NapMem turns memory from passive retrieval into structured action space, enabling agent to navigate memory tools.",
+      "llm_tldr_cn": "现有记忆系统通常向模型被动提供预选证据，模型只能消费信息。NapMem将长期用户记忆组织成多粒度金字塔（原始对话、类型化记录、主题轨迹、用户画像），并通过记忆工具暴露，训练代理根据查询和中间证据主动选择不同粒度的记忆。从而将记忆从被动检索转变为结构化动作空间，提升了个性化会话的准确性。",
+      "llm_tldr": "现有记忆系统通常向模型被动提供预选证据，模型只能消费信息。NapMem将长期用户记忆组织成多粒度金字塔（原始对话、类型化记录、主题轨迹、用户画像），并通过记忆工具暴露，训练代理根据查询和中间证据主动选择不同粒度的记忆。从而将记忆从被动检索转变为结构化动作空间，提升了个性化会话的准确性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05969v1",
+      "source": "arxiv",
+      "title": "MemDefrag: Latent Memory Defragmentation for Large Language Models",
+      "abstract": "Latent memory, which stores past knowledge fragments as per-layer hidden states, has emerged as a promising paradigm (e.g., MemoryLLM and M+) for long-term memory in large language models (LLMs). However, the paradigm suffers from significant performance degradation during memory updates, due to positional encoding misalignment and the absence of any tracing mechanism to distinguish target memory fragments from irrelevant ones. To discover such a tracing mechanism, we probe the layer-wise attention density over stored memory fragments, and find that a small set of middle transformer layers consistently concentrates the highest density on the target fragment - exposing an inherent tracing signal. In light of this, we propose MemDefrag, a training-free and model-agnostic framework that (1) uses a middle-layer tracing signal to conduct memory defragmentation (rank, reorder, and filter memories), and (2) applies an informativeness-guided proportional forgetting mechanism once capacity is exceeded. Experiments show that MemDefrag substantially outperforms MemoryLLM and M+ on knowledge retention (e.g., 43.0% vs. 17.4%/17.6% after 50 memory updates) and long-context benchmarks, and generalizes well across various LLMs and latent-memory variants.",
+      "authors": [
+        "Ruiyi Yan",
+        "Zhuoyuan Mao",
+        "Yiwen Guo"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-07T08:04:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.05969v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "latent memory defragmentation for LLMs",
+      "llm_evidence_cn": "LLM潜在记忆碎片整理方法",
+      "llm_evidence": "LLM潜在记忆碎片整理方法",
+      "canonical_evidence": "LLM潜在记忆碎片整理方法",
+      "llm_tldr_en": "MemDefrag proposes a training-free method to fix latent memory degradation in LLMs by using layer-wise attention density as a tracing signal, enabling robust memory updates.",
+      "llm_tldr_cn": "针对LLM潜在记忆在更新时性能下降的问题，MemDefrag通过探测层间注意力密度发现了一个固有的追踪信号——中间层集中关注目标记忆片段。据此提出无需训练的记忆碎片整理方法，有效缓解位置编码错位和无关片段干扰，显著提升记忆更新后的模型性能，为长期记忆管理提供了低成本高效益的解决方案。",
+      "llm_tldr": "针对LLM潜在记忆在更新时性能下降的问题，MemDefrag通过探测层间注意力密度发现了一个固有的追踪信号——中间层集中关注目标记忆片段。据此提出无需训练的记忆碎片整理方法，有效缓解位置编码错位和无关片段干扰，显著提升记忆更新后的模型性能，为长期记忆管理提供了低成本高效益的解决方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06447v1",
+      "source": "arxiv",
+      "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+      "abstract": "Recent LLM-based mathematical reasoning agents have begun to tackle research-level problems and, in several cases, have contributed to the resolution of open problems. However, scaling and orchestrating such agents effectively remains challenging, due to the difficulty of coordinating parallel proof search while keeping intermediate claims organized and reliable. In this paper, we propose Danus, an orchestration system for research-level mathematical reasoning centered on a shared fact graph as a global memory-management mechanism. Danus consists of a main agent that performs planning and coordination, multiple worker agents that carry out proof search in parallel, and a stateless verifier that checks proposed mathematical claims before they are admitted into the fact graph. Each verified fact is stored together with its proof and logical dependencies, allowing the system to build long arguments incrementally while keeping the shared proof state organized. The main agent periodically summarizes the evolving proof state, redirects workers across promising directions, and supports interaction with human mathematicians through progress reports. We evaluate Danus through six research-level case studies in algebraic geometry, singularity theory, and combinatorics, illustrating how the fact-graph memory mechanism enables Danus to construct long, detailed mathematical proofs. Our results suggest that fact-graph-based orchestration provides an effective route toward scaling mathematical reasoning agents for long-horizon research problems. Danus is open source at https://github.com/frenzymath/Danus.",
+      "authors": [
+        "Jihao Liu",
+        "Guoxiong Gao",
+        "Zeming Sun",
+        "Bin Wu",
+        "Shurui Liu",
+        "Jiedong Jiang",
+        "Haocheng Ju",
+        "Leheng Chen",
+        "Ronnie Cheng",
+        "Xiping Zhang",
+        "Bin Dong"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-07-07T16:11:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.06447v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "fact-graph as global memory management for LLM agents",
+      "llm_evidence_cn": "使用事实图作为全局记忆管理机制",
+      "llm_evidence": "使用事实图作为全局记忆管理机制",
+      "canonical_evidence": "使用事实图作为全局记忆管理机制",
+      "llm_tldr_en": "Danus orchestrates mathematical reasoning agents with a shared fact-graph memory, enabling parallel proof search and reliable claim management.",
+      "llm_tldr_cn": "针对数学推理LLM agent在并行证明搜索中中间声明组织困难的问题，提出Danus系统，通过共享事实图作为全局记忆管理机制，协调主agent、工作agent和验证器。实验表明该方法有效提升了多agent协作推理的可靠性和效率，为agent记忆管理提供了新范式。",
+      "llm_tldr": "针对数学推理LLM agent在并行证明搜索中中间声明组织困难的问题，提出Danus系统，通过共享事实图作为全局记忆管理机制，协调主agent、工作agent和验证器。实验表明该方法有效提升了多agent协作推理的可靠性和效率，为agent记忆管理提供了新范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.02967v2",
+      "source": "arxiv",
+      "title": "Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures",
+      "abstract": "Large language models remain limited as continual learning systems, motivating renewed interest in Sparse Distributed Memory (SDM) as an explicit online episodic memory. CALM (Nechesov and Ruponen, 2025) identifies its threshold-binary encoder as an open design question. This paper evaluates rank-order N-of-M encoding (Furber et al., 2007) as an alternative. We make three contributions. First, a faithful reimplementation validates the published architecture by confirming exact equivalence between WheelSDM and RankOrderSDM (cosine similarity 1.0000 across 10 seeds) and reproducing the documented divergence of RDLIF neurons under interference. Second, multi-seed capacity experiments show RankOrderSDM outperforming StandardSDM by 13.4 percentage points at saturation in the scaled configuration and by 0.8 percentage points at the published architecture scale. Third, BER robustness experiments disentangle representation and learning effects, showing that the large robustness gain arises primarily from the interaction of rank-order encoding with MAX-Hebbian learning, while the encoder alone provides only a small advantage under matched learning conditions. Experiments on GloVe-100 embeddings confirm this small but consistent encoding benefit on real structured data, whereas sentence embeddings exhibit a ceiling effect at low memory load. A secondary analysis shows that idealized rank-order encoding requires half the component-level encoding energy of SpikingMamba's SI-LIF neurons at four-bit precision, although decoder costs dominate overall system energy. These results identify which components of the original rank-order SDM architecture provide measurable benefits for contemporary memory-augmented AI systems, offering practical guidance for architectures such as CALM.",
+      "authors": [
+        "Joy Bose"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.NE"
+      ],
+      "published": "2026-07-03T05:21:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.02967v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "sparse distributed memory encoding for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体的稀疏分布式记忆编码方法",
+      "llm_evidence": "面向LLM智能体的稀疏分布式记忆编码方法",
+      "canonical_evidence": "面向LLM智能体的稀疏分布式记忆编码方法",
+      "llm_tldr_en": "This paper evaluates rank-order N-of-M encoding for Sparse Distributed Memory as an explicit online episodic memory for LLMs, showing improved noise robustness.",
+      "llm_tldr_cn": "LLM在持续学习方面存在局限，稀疏分布式记忆（SDM）作为显式在线情景记忆受到关注。本文评估了等级顺序N选M编码作为SDM替代方案，通过忠实复现验证了与WheelSDM的等价性，并在噪声鲁棒性上优于传统阈值二进制编码。该方法可作为LLM智能体显式记忆模块，提升其在动态环境中的记忆准确性和抗干扰能力。",
+      "llm_tldr": "LLM在持续学习方面存在局限，稀疏分布式记忆（SDM）作为显式在线情景记忆受到关注。本文评估了等级顺序N选M编码作为SDM替代方案，通过忠实复现验证了与WheelSDM的等价性，并在噪声鲁棒性上优于传统阈值二进制编码。该方法可作为LLM智能体显式记忆模块，提升其在动态环境中的记忆准确性和抗干扰能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05708v1",
+      "source": "arxiv",
+      "title": "Akashic: A Low-Overhead LLM Inference Service with MemAttention",
+      "abstract": "Recent LLM-based agent systems continuously accumulate context across multi-turn interactions, tool invocations, and cross-session workflows. Replaying the full history for every request quickly becomes impractical: long contexts increase prefill cost, may exceed context limits, and often bury task-relevant evidence in irrelevant content, degrading both serving efficiency and output quality. We propose Akashic, a low-overhead memory system built around MemAttention, which organizes context into bounded chunks and models semantic relationships across chunks, preserving cross-chunk evidence without repeatedly rewriting the full history. Akashic further applies hardware-software co-designed memory placement to co-locate likely co-retrieved chunks, reducing retrieval fragmentation and I/O overhead. Across four representative workloads and three model sizes, Akashic improves task accuracy by up to 10.2 points, throughput by up to 1.21x, and sustainable request rate by up to 1.88x over strong prior memory baselines.",
+      "authors": [
+        "Yang Liu",
+        "Zhaokai Luo",
+        "Huayi Jin",
+        "Ruozhou He",
+        "Chenchen Hong",
+        "Zhiyong Wang",
+        "Yifei Liu",
+        "Yunfei Gu",
+        "Chentao Wu",
+        "Junhao Hu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-07T00:06:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.05708v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "low-overhead memory system with MemAttention for LLM agent context",
+      "llm_evidence_cn": "基于MemAttention的低开销记忆系统，用于LLM agent上下文管理",
+      "llm_evidence": "基于MemAttention的低开销记忆系统，用于LLM agent上下文管理",
+      "canonical_evidence": "基于MemAttention的低开销记忆系统，用于LLM agent上下文管理",
+      "llm_tldr_en": "Akashic uses MemAttention to organize agent context into bounded chunks with semantic relationships, reducing cost and improving efficiency.",
+      "llm_tldr_cn": "LLM agent系统累积长上下文导致高开销和性能下降。Akashic提出MemAttention，将上下文分块并建模语义关系，避免重复重写历史。同时采用硬件-软件协同设计加速检索。实验表明在保持输出质量的同时显著降低推理延迟和成本。",
+      "llm_tldr": "LLM agent系统累积长上下文导致高开销和性能下降。Akashic提出MemAttention，将上下文分块并建模语义关系，避免重复重写历史。同时采用硬件-软件协同设计加速检索。实验表明在保持输出质量的同时显著降低推理延迟和成本。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.05844v1",
+      "source": "arxiv",
+      "title": "StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems",
+      "abstract": "Agent systems accumulate conflicting observations across branches, retries, and replicas, yet many practical memory layers still collapse disagreement behind overwrite rules that are difficult to inspect or correct. We present StateFuse, a conflict-aware replicated memory contract built on standard OpSet/CRDT merge. StateFuse does not introduce a new join algebra; it defines an agent-facing semantics layer with immutable history, explicit conflict objects, exact and semantic correction handles (claim_id / claim_ref), deterministic predicate contracts, and projection-time resolution that cannot rewrite replicated state.   We evaluate StateFuse against flat multi-value, raw-log, provenance-style, and collapsed baselines under matched resolver and verification policies. On a 282-question official conflict-bearing MemoryAgentBench slice, the compared methods tie on answer accuracy, but conflict-preserving surfaces keep contradictions visible while collapsed surfaces do not. In a controlled agent loop with uniform verification, preserving ambiguity enables safer abstention and correction than early collapse. A correction-handle ablation further shows that semantic handles matter when exact prior identifiers are unavailable.   The resulting claim is narrow: StateFuse is best supported as a safer public memory contract for contradiction surfacing, abstention, and auditable correction, not as a universal accuracy gain.",
+      "authors": [
+        "Sergey Volkov",
+        "Yang Li",
+        "Ye Luo"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-07-07T05:06:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.05844v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "conflict-preserving memory for multi-agent systems",
+      "llm_evidence_cn": "多智能体系统的冲突保留记忆",
+      "llm_evidence": "多智能体系统的冲突保留记忆",
+      "canonical_evidence": "多智能体系统的冲突保留记忆",
+      "llm_tldr_en": "StateFuse introduces a deterministic conflict-preserving memory layer for multi-agent systems, built on CRDT, ensuring immutable history and explicit conflict resolution.",
+      "llm_tldr_cn": "多智能体系统中，不同分支和副本产生冲突观察，传统记忆层使用不可审查的覆盖规则。StateFuse基于OpSet/CRDT提出冲突保留记忆契约，提供不可变历史、显式冲突对象和确定性断言合约，支持精确与语义修正。实验表明其在不丢失信息的前提下实现可审计的冲突解决，特别适用于需要严格一致性的多智能体协作场景。",
+      "llm_tldr": "多智能体系统中，不同分支和副本产生冲突观察，传统记忆层使用不可审查的覆盖规则。StateFuse基于OpSet/CRDT提出冲突保留记忆契约，提供不可变历史、显式冲突对象和确定性断言合约，支持精确与语义修正。实验表明其在不丢失信息的前提下实现可审计的冲突解决，特别适用于需要严格一致性的多智能体协作场景。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.05189v1",
+      "source": "arxiv",
+      "title": "When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents",
+      "abstract": "Persistent personal agents combine long-term memory with access to users' external environments, enabling personalized foreground assistance and proactive background execution. This integration also creates a new path to compromise: untrusted external content can be silently written into persistent memory and later reused as trusted state. We study this threat as stealth memory injection, in which a remote black-box adversary delivers a single email payload that must induce the agent to write poisoned memory, stay hidden in the agent's response to the user, and affect future behavior.   We introduce WhisperBench, a 108-case benchmark spanning five risk categories and both fact and preference poisoning. Built on a real IMAP/SMTP workflow and an authentic email agent skill, it enables full-cycle evaluation of stealth memory injection attacks. To enable this black-box attack under single-email delivery and without runtime feedback, we propose MemGhost, a one-shot payload generation framework. MemGhost uses an environment proxy to emulate persistent-agent execution and an objective proxy to convert memory adoption and conversational stealth into dense rubric-based rewards, then trains the attacker policy with supervised fine-tuning and reinforcement learning.   Across 56 held-out test cases, MemGhost achieves 87.5% end-to-end success on OpenClaw with GPT-5.4 and 71.4% on Claude Code SDK with Sonnet 4.6. It also transfers across personal-agent architectures (NanoClaw and Hermes Agent) and memory backends (filesystem and vector-based Mem0), and remains effective against input-level, model-level, and system-level defenses. These results suggest that persistent memory can turn ordinary external processing into a practical pathway for long-term agent compromise.",
+      "authors": [
+        "Yechao Zhang",
+        "Shiqian Zhao",
+        "Jiawen Zhang",
+        "Jie Zhang",
+        "Gelei Deng",
+        "Xiaogeng Liu",
+        "Chaowei Xiao",
+        "Tianwei Zhang"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-06T15:08:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.05189v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "introduces WhisperBench benchmark for evaluating memory injection threats in persistent agents",
+      "llm_evidence_cn": "提出了WhisperBench基准，用于评估持久代理中的记忆注入威胁",
+      "llm_evidence": "提出了WhisperBench基准，用于评估持久代理中的记忆注入威胁",
+      "canonical_evidence": "提出了WhisperBench基准，用于评估持久代理中的记忆注入威胁",
+      "llm_tldr_en": "Studies stealth memory injection in persistent personal agents and introduces WhisperBench, a 108-case benchmark for evaluating memory poisoning attacks and defenses.",
+      "llm_tldr_cn": "针对持久化个人代理中通过外部内容静默注入记忆的安全威胁，本文提出了WhisperBench基准，涵盖五种风险类别和108个案例。该工作揭示了记忆安全评估的重要性，为LLM代理记忆系统的安全性研究提供了标准化评估平台。",
+      "llm_tldr": "针对持久化个人代理中通过外部内容静默注入记忆的安全威胁，本文提出了WhisperBench基准，涵盖五种风险类别和108个案例。该工作揭示了记忆安全评估的重要性，为LLM代理记忆系统的安全性研究提供了标准化评估平台。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
