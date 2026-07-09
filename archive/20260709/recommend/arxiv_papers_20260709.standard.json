@@ -1,0 +1,286 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-09T21:55:13.548144+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.01935v2",
+      "source": "arxiv",
+      "title": "A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory",
+      "abstract": "Long term memory lets LLM agents act as persistent assistants, but user facts change. A useful memory system must know what is true now, what used to be true, and what changed. We study \\emph{ghost memory}, a state coordination failure in which old, current, and transition facts coexist in the memory bank, remain mixed during retrieval, and mislead the answer model. We argue that memory systems should be understood and optimized from three levels: bank maintenance, retrieval, and answer time resolution. We propose ATMA, a state aware overlay for existing memory systems. ATMA keeps superseded and transition records in the bank, builds evidence packets for the query's requested state view, and exposes current, historical, and transition labels to QA. We further call for decoupled evaluation of bank, retrieval, and answer level failures, since final QA accuracy can hide where ghost memory occurs. To make this failure measurable, we build LTP (LoCoMo Temporal Plus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo for long conversation generalization. On LTP, Graphiti+ATMA improves conflict accuracy by 0.240 absolute over Graphiti. On LoCoMo, Graphiti+ATMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent, but they indicate that explicit state roles can reduce memory failures hidden by final QA accuracy.",
+      "authors": [
+        "Zitong Shi",
+        "Yixuan Tang",
+        "Anthony Kum Hoe Tung"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-02T09:28:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.01935v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "state-aware overlay for long-term agent memory, decoupling ghost memory failures",
+      "llm_evidence_cn": "长期智能体记忆的状态感知覆盖层，解决幽灵记忆失败",
+      "llm_evidence": "长期智能体记忆的状态感知覆盖层，解决幽灵记忆失败",
+      "canonical_evidence": "长期智能体记忆的状态感知覆盖层，解决幽灵记忆失败",
+      "llm_tldr_en": "A-TMA is a state-aware overlay that decouples ghost memory failures in LLM agents by maintaining superseded records and exposing temporal labels, improving retrieval accuracy.",
+      "llm_tldr_cn": "长期记忆使LLM智能体成为持久助手，但用户事实变化导致新旧信息混合的幽灵记忆问题。本文提出ATMA，一种状态感知覆盖层，通过保留过期记录、构建证据包并暴露当前/历史/过渡标签，从记忆库维护、检索和答案解析三个层面优化记忆系统。实验表明该方法有效减少状态协调失败，提升问答准确性。",
+      "llm_tldr": "长期记忆使LLM智能体成为持久助手，但用户事实变化导致新旧信息混合的幽灵记忆问题。本文提出ATMA，一种状态感知覆盖层，通过保留过期记录、构建证据包并暴露当前/历史/过渡标签，从记忆库维护、检索和答案解析三个层面优化记忆系统。实验表明该方法有效减少状态协调失败，提升问答准确性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06964v1",
+      "source": "arxiv",
+      "title": "End-to-End LLM Flight Planning with RAG-based Memory and Multi-modal Coach Agent",
+      "abstract": "Bridging the gap between human pilot intent and autonomous flight operation is critical for real-world electric vertical takeoff and landing (eVTOL) aircraft deployment. Flight planning traditionally relies on classic algorithms that struggle to incorporate flexible human preferences. We present FRAMe, an End-to-End Large Language Model (LLM) Flight Planning tool with RAG-based Memory and Multi-modal Coach Agent. Our system integrates a planner LLM with a multi-modal coach agent and retrieval augmented generation (RAG)-based memory to generate flight plans that satisfy mission constraints while aligning with human flight operator preferences. We demonstrate the system in a range of real-world-inspired scenarios of varying difficulty levels. Across four LLMs, the full FRAMe system (RAG and coach) yields the highest validity for every planner (up to 93.8% aggregate, 99% on Easy scenarios for the strongest planner) and shifts preference-relevant metrics in the operator-favored direction where the metric has headroom. FRAMe signifies how advanced LLMs can be deployed for human-centric mission planning, translating natural language instructions into safe, efficient, and flexible flight routes. The code is available at: github.com/amin-tabrizian/FlightPlanningLLMs",
+      "authors": [
+        "Amin Tabrizian",
+        "Arsyi Aziz",
+        "Aarifah Ullah",
+        "Mahyar Ghazanfari",
+        "Pouria Razzaghi",
+        "Peng Wei"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-08T03:40:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.06964v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RAG-based memory for LLM flight planning agent",
+      "llm_evidence_cn": "基于RAG记忆的LLM飞行规划智能体",
+      "llm_evidence": "基于RAG记忆的LLM飞行规划智能体",
+      "canonical_evidence": "基于RAG记忆的LLM飞行规划智能体",
+      "llm_tldr_en": "FRAMe integrates a planner LLM with RAG-based memory and a multi-modal coach agent for end-to-end flight planning, aligning with human preferences.",
+      "llm_tldr_cn": "针对飞行员意图与自主飞行之间的鸿沟，本文提出FRAMe系统，将规划器LLM与基于检索增强生成（RAG）的记忆和多模态教练智能体集成，生成满足任务约束且符合操作员偏好的飞行计划。在多种现实场景中验证了系统的有效性，展示了记忆在长期任务中的关键作用。",
+      "llm_tldr": "针对飞行员意图与自主飞行之间的鸿沟，本文提出FRAMe系统，将规划器LLM与基于检索增强生成（RAG）的记忆和多模态教练智能体集成，生成满足任务约束且符合操作员偏好的飞行计划。在多种现实场景中验证了系统的有效性，展示了记忆在长期任务中的关键作用。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.07108v1",
+      "source": "arxiv",
+      "title": "Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation",
+      "abstract": "Large language model (LLM)-based agentic recommender systems show promise in modeling user preferences through natural-language reasoning, yet they remain limited by text-centric inputs and coarse-grained memory updates, making agents prone to missing visual evidence, semantic noise, and preference drift. To address these limitations, we propose MMEACR, a Multimodal Memory-Enhanced Agent Collaboration framework for recommendation. MMEACR introduces a dual-track memory architecture that separates interpretable agent reasoning from fine-grained multimodal matching. In the reasoning track, collaborative User and Item Memory Agents maintain persistent multimodal memories and update them through an attribute-guided reinforcement-and-reflection mechanism. In the matching track, a decoupled multi-modal embedding memory is built from raw interaction narratives and item images to preserve detailed cross-modal signals beyond structured memory updates. The two tracks are integrated through weighted Reciprocal Rank Fusion to produce robust and interpretable rankings. Experiments on three real-world domains show that MMEACR achieves strong overall performance against competitive LLM-based and agent-based baselines, with notable gains in visually grounded recommendation scenarios.",
+      "authors": [
+        "Hao Cong",
+        "Huizu Lin",
+        "Zihan Wang",
+        "Chengkai Huang",
+        "Quan Z. Sheng",
+        "Lina Yao"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-07-08T07:50:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.07108v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes multimodal memory-enhanced agent collaboration framework",
+      "llm_evidence_cn": "提出多模态记忆增强的Agent协作框架",
+      "llm_evidence": "提出多模态记忆增强的Agent协作框架",
+      "canonical_evidence": "提出多模态记忆增强的Agent协作框架",
+      "llm_tldr_en": "MMEACR introduces a dual-track memory architecture that separates agent reasoning from multimodal matching for recommendation.",
+      "llm_tldr_cn": "基于LLM的Agent推荐系统受限于文本输入和粗粒度记忆更新，导致视觉证据丢失和偏好漂移。本文提出MMEACR，一个多模态记忆增强的Agent协作框架，包含双轨记忆架构：推理轨维护可解释Agent记忆，匹配轨进行细粒度多模态匹配。通过属性引导的强化与反思机制持续更新记忆，显著提升了推荐性能和多模态理解能力。",
+      "llm_tldr": "基于LLM的Agent推荐系统受限于文本输入和粗粒度记忆更新，导致视觉证据丢失和偏好漂移。本文提出MMEACR，一个多模态记忆增强的Agent协作框架，包含双轨记忆架构：推理轨维护可解释Agent记忆，匹配轨进行细粒度多模态匹配。通过属性引导的强化与反思机制持续更新记忆，显著提升了推荐性能和多模态理解能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.05378v1",
+      "source": "arxiv",
+      "title": "CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents",
+      "abstract": "Long-horizon agentic LLMs are increasingly limited by finite context windows, as extended interaction trajectories can exceed the maximum context length before a task is completed. Context compaction offers a natural solution by summarizing previous interaction states and continuing the rollout under a compressed context, but incorporating compaction into reinforcement learning remains underexplored. We propose CompactionRL, a reinforcement learning strategy to train long-horizon agentic LLMs with context compaction. Our approach jointly optimizes task execution and summary generation with token-level loss normalization and cross-trajectory generalized advantage estimation. This design enables the LLM agents to learn from compacted long-horizon trajectories. We train CompactionRL on top of open models and observe consistent performance gains on agentic coding tasks. CompactionRL enables the open GLM-4.5-Air model (106B-A30B) to achieve Pass@1 scores of 66.8% on SWE-bench Verified and 24.5% on Terminal-Bench 2.0, with absolute gains of 7.0 and 3.1 points, respectively. Built upon GLM-4.7-Flash (30B-A3B), CompactionRL improves Pass@1 by 5.5 and 6.8 points, reaching 56.0% on SWE-bench Verified and 20.2% on Terminal-Bench 2.0, respectively. CompactionRL is thus deployed in the RL pipeline for training the open GLM-5.2 model (750B-A40B).",
+      "authors": [
+        "Yujiang Li",
+        "Zhenyu Hou",
+        "Yi Jing",
+        "Jie Tang",
+        "Yuxiao Dong"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-06T17:55:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.05378v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Context compaction for long-horizon agents",
+      "llm_evidence_cn": "基于上下文压缩的长周期代理训练方法",
+      "llm_evidence": "基于上下文压缩的长周期代理训练方法",
+      "canonical_evidence": "基于上下文压缩的长周期代理训练方法",
+      "llm_tldr_en": "CompactionRL trains LLM agents with context compaction via reinforcement learning, jointly optimizing task execution and summary generation for long-horizon tasks.",
+      "llm_tldr_cn": "针对长周期代理受限于有限上下文窗口的问题，本文提出CompactionRL强化学习策略，联合优化任务执行与摘要生成，通过令牌级损失归一化和跨轨迹广义优势估计，使代理能从压缩后的长交互历史中学习。该方法有效解决了上下文压缩与强化学习结合的难题，提升了代理在长周期任务中的表现。",
+      "llm_tldr": "针对长周期代理受限于有限上下文窗口的问题，本文提出CompactionRL强化学习策略，联合优化任务执行与摘要生成，通过令牌级损失归一化和跨轨迹广义优势估计，使代理能从压缩后的长交互历史中学习。该方法有效解决了上下文压缩与强化学习结合的难题，提升了代理在长周期任务中的表现。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.06974v1",
+      "source": "arxiv",
+      "title": "MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning",
+      "abstract": "Large language models (LLMs) increasingly improve their reasoning at test time via additional computation, yet most existing works treat each problem in isolation. When problems arrive sequentially, accumulating reusable experience across them can further improve performance. Existing memory-based methods either store whole-solution templates that generalize poorly to novel problems or use heuristic step-level selection that is not optimized for final-answer correctness. Learning selection policies requires large-scale training data and fixed action spaces, making such approaches unsuitable for test-time settings where memory expands incrementally and only limited supervision is available. We propose MILES (Modular Instruction Memory with LEarnable Selection for self-improving LLM reasoning), a framework that dynamically expands step-wise memory and applies correctness-optimized memory composition under realistic test-time constraints. MILES maintains modular memory units consisting of asymmetric pairs of sub-goal embeddings and sub-instructions, each associated with a learnable selection head. This memory structure enables a coarse-to-fine retrieval mechanism: The coarse level enables memory expansion and collects supervision for training selection heads from confident samples, while the fine stage applies learned selection heads to rerank coarse-level candidates and guide reasoning for uncertain samples. MILES consistently matches or outperforms prior methods while achieving superior accuracy-efficiency tradeoffs. Extensive experiments demonstrate its effectiveness, robustness, and transferability.",
+      "authors": [
+        "Ruilin Tong",
+        "Dong Gong"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-08T03:51:37+00:00",
+      "link": "https://arxiv.org/pdf/2607.06974v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "modular instruction memory for LLM reasoning",
+      "llm_evidence_cn": "模块化指令记忆",
+      "llm_evidence": "模块化指令记忆",
+      "canonical_evidence": "模块化指令记忆",
+      "llm_tldr_en": "MILES stores modular instruction memories with learned selection to improve LLM reasoning across sequential problems.",
+      "llm_tldr_cn": "该论文提出MILES，为LLM推理存储模块化指令记忆，并通过可学习选择机制在测试时自适应检索。解决了现有方法中模板泛化差和选择不优化的问题。在数学推理等任务上，MILES提升了跨问题推理性能。",
+      "llm_tldr": "该论文提出MILES，为LLM推理存储模块化指令记忆，并通过可学习选择机制在测试时自适应检索。解决了现有方法中模板泛化差和选择不优化的问题。在数学推理等任务上，MILES提升了跨问题推理性能。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.03441v1",
+      "source": "arxiv",
+      "title": "No Time Like the Present: Agentic Test-Time Training for LLM Agents",
+      "abstract": "LLM agents often degrade over long episodes: as trajectories grow, they revisit explored states, repeat failed actions, and lose strategies that previously worked. Test-time training (TTT) offers a way to adapt model weights to the evolving task state, but existing LLM TTT methods largely adapt once to a fixed input. We study continuous TTT in multi-turn agent episodes, where each update changes the policy that generates later training text. This creates a self-training loop that helps when new trajectory information appears, but can amplify drift when the agent gets stuck and repeatedly trains on similar text. We find that update-text repetition distinguishes these regimes and introduce Agentic Test-Time Training (aTTT), a token-level reweighting method that downweights the loss on tokens appearing in repeated $n$-grams from prior updates while leaving novel tokens fully weighted. To run such updates inside live episodes, we build a concurrent serving system using vLLM's runtime LoRA API, limiting overhead to 1.9$\\times$ the no-TTT cost. aTTT improves success by up to 5.0 points on ALFWorld and 4.9 points on SWE-bench Lite. The gains concentrate where models already have task competence but drift over long trajectories, suggesting that aTTT mainly preserves existing competence rather than teaching new abilities.",
+      "authors": [
+        "Yanbo Wang",
+        "Jinhua Hao",
+        "Yuze Shi",
+        "Kun Yuan",
+        "Ming Sun"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-03T15:54:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.03441v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses agent memory degradation over long episodes, introduces token-level reweighting",
+      "llm_evidence_cn": "处理智能体在长周期中的记忆退化，提出令牌级重加权",
+      "llm_evidence": "处理智能体在长周期中的记忆退化，提出令牌级重加权",
+      "canonical_evidence": "处理智能体在长周期中的记忆退化，提出令牌级重加权",
+      "llm_tldr_en": "Agentic Test-Time Training (aTTT) mitigates memory degradation in LLM agents by reweighting tokens to avoid drift, a memory-based reasoning enhancement.",
+      "llm_tldr_cn": "本文针对LLM智能体在长交互中性能退化的问题，提出Agentic测试时训练（aTTT），通过令牌级重加权避免重复训练导致的漂移。该方法间接改善了智能体的记忆保持与推理能力，属于记忆相关推理方法。实验验证了有效性。",
+      "llm_tldr": "本文针对LLM智能体在长交互中性能退化的问题，提出Agentic测试时训练（aTTT），通过令牌级重加权避免重复训练导致的漂移。该方法间接改善了智能体的记忆保持与推理能力，属于记忆相关推理方法。实验验证了有效性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.06595v1",
+      "source": "arxiv",
+      "title": "When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents",
+      "abstract": "Personal AI agents powered by large language models can reason and act using available tools to access emails, manage calendars, and push code to remote repositories, all with minimal oversight. When augmented with long-term memory, an agent can recall specific details relevant to the current task, reducing the need for large context windows. Currently, long-term memory agents tend to fall into two distinct domains: conversational and action-planning agents. Personal assistant agents sit at the convergence of these two domains and handle sensitive information while interacting with untrusted information sources, creating previously unaccounted security vulnerabilities. In this work, we introduce the novel attack vector, GhostWriter, which exploits current memory subsystems in tool-using personal agents to poison their memory store. GhostWriter operates in two phases: injection, where an adversary sends a hidden attack payload to the target agent; and activation, in which the poisoned memory is retrieved. We show that GhostWriter achieves near-universal injection rates of approximately 98% and a high average activation rate of approximately 60% against state-of-the-art agents. This attack is possible due to the lack of security-focused memory governance. In response, we propose Agentic Memory Sentry (AM-Sentry), which leverages two mitigation techniques: a memory-saving policy and a memory-retrieval screen. Our experiments show that AM-Sentry dramatically reduces GhostWriter's success rate while preserving agent utility.",
+      "authors": [
+        "George Torres",
+        "Sharad Shrestha",
+        "Satyajayant Misra"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-06T19:30:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.06595v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "introduces memory poisoning attacks on LLM agents",
+      "llm_evidence_cn": "介绍对LLM Agent的记忆投毒攻击",
+      "llm_evidence": "介绍对LLM Agent的记忆投毒攻击",
+      "canonical_evidence": "介绍对LLM Agent的记忆投毒攻击",
+      "llm_tldr_en": "GhostWriter attack vector poisons long-term memory via untrusted content, showing serious security vulnerabilities.",
+      "llm_tldr_cn": "长期记忆使LLM Agent能够回忆细节，但也引入安全漏洞。本文提出GhostWriter攻击向量，通过不可信信息来源向Agent记忆注入恶意内容。攻击者可以在不触发警报的情况下操纵Agent未来行为。该工作揭示了个人助理Agent在记忆收敛处的独特风险，强调了记忆安全研究的紧迫性。",
+      "llm_tldr": "长期记忆使LLM Agent能够回忆细节，但也引入安全漏洞。本文提出GhostWriter攻击向量，通过不可信信息来源向Agent记忆注入恶意内容。攻击者可以在不触发警报的情况下操纵Agent未来行为。该工作揭示了个人助理Agent在记忆收敛处的独特风险，强调了记忆安全研究的紧迫性。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

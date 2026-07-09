@@ -6,46 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-08
-- 运行时间：2026-07-08 21:47:45 UTC
+- 最新运行日期：2026-07-09
+- 运行时间：2026-07-09 22:00:15 UTC
 - 运行状态：成功
-- 本次总论文数：8
-- 精读区：6
-- 速读区：2
+- 本次总论文数：7
+- 精读区：4
+- 速读区：3
 
 ### 今日简报（AI）
-今日共盘点8篇论文，精读6篇，聚焦记忆增强语言智能体与多智能体系统。  
-最值得关注两个方向：进程内检索作为扩展工作记忆（9.0分）和主动记忆导航（9.0分），均可显著提升智能体长期任务能力。  
-普通读者建议优先阅读这两篇高分论文，了解如何通过结构化记忆空间或内置检索机制，让AI记住并灵活调用过往信息。
-- 详情：[/202607/08/README](/202607/08/README)
+聚焦大模型智能体长期记忆管理——今日7篇论文揭示记忆解耦、多模态规划与安全攻击三大热点。  
+最值得关注的是两项9.0高分工作：A-TMA首创状态感知记忆解耦，攻克长期任务中的记忆失效；另一篇实现端到端飞行规划，融合RAG记忆与多模态教练智能体。  
+普通读者可重点学习这两篇中记忆机制如何提升智能体可靠性，并警惕后续记忆投毒攻击的防御策略。
+- 详情：[/202607/09/README](/202607/09/README)
 
 ### 精读区论文标签
-1. [Memory in the Loop: In-Process Retrieval as ExtendedWorking Memory for Language Agents](/202607/08/2607.05690v1-memory-in-the-loop-in-process-retrieval-as-extendedworking-memory-for-language-agents)  
+1. [A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory](/202607/09/2607.01935v2-a-tma-decoupling-state-aware-memory-failures-in-long-term-agent-memory)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：内进程检索作为语言代理的扩展工作记忆
-2. [From Passive Retrieval to Active Memory Navigation: Learning to Use Memory as a Structured Action Space](/202607/08/2607.05794v1-from-passive-retrieval-to-active-memory-navigation-learning-to-use-memory-as-a-structured-action-space)  
+   evidence：长期智能体记忆的状态感知覆盖层，解决幽灵记忆失败
+2. [End-to-End LLM Flight Planning with RAG-based Memory and Multi-modal Coach Agent](/202607/09/2607.06964v1-end-to-end-llm-flight-planning-with-rag-based-memory-and-multi-modal-coach-agent)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：LLM智能体的主动记忆导航框架
-3. [MemDefrag: Latent Memory Defragmentation for Large Language Models](/202607/08/2607.05969v1-memdefrag-latent-memory-defragmentation-for-large-language-models)  
+   evidence：基于RAG记忆的LLM飞行规划智能体
+3. [Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation](/202607/09/2607.07108v1-seeing-and-reflecting-multimodal-memory-enhanced-agent-collaboration-for-recommendation)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：LLM潜在记忆碎片整理方法
-4. [Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory](/202607/08/2607.06447v1-danus-orchestrating-mathematical-reasoning-agents-with-fact-graph-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：使用事实图作为全局记忆管理机制
-5. [Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures](/202607/08/2607.02967v2-rank-order-n-of-m-codes-for-sparse-distributed-memory-disentangling-representation-and-learning-effects-in-noise-robustness-against-contemporary-neuromorphic-architectures)  
+   evidence：提出多模态记忆增强的Agent协作框架
+4. [CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents](/202607/09/2607.05378v1-compactionrl-reinforcement-learning-with-context-compaction-for-long-horizon-agents)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：面向LLM智能体的稀疏分布式记忆编码方法
-6. [Akashic: A Low-Overhead LLM Inference Service with MemAttention](/202607/08/2607.05708v1-akashic-a-low-overhead-llm-inference-service-with-memattention)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：基于MemAttention的低开销记忆系统，用于LLM agent上下文管理
+   evidence：基于上下文压缩的长周期代理训练方法
 
 ### 速读区论文标签
-1. [StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems](/202607/08/2607.05844v1-statefuse-deterministic-conflict-preserving-memory-for-multi-agent-systems)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：多智能体系统的冲突保留记忆
-2. [When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents](/202607/08/2607.05189v1-when-claws-remember-but-do-not-tell-stealthy-memory-injection-in-persistent-personal-agents)  
+1. [MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning](/202607/09/2607.06974v1-miles-modular-instruction-memory-with-learnable-selection-for-self-improving-llm-reasoning)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：提出了WhisperBench基准，用于评估持久代理中的记忆注入威胁
+   evidence：模块化指令记忆
+2. [No Time Like the Present: Agentic Test-Time Training for LLM Agents](/202607/09/2607.03441v1-no-time-like-the-present-agentic-test-time-training-for-llm-agents)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：处理智能体在长周期中的记忆退化，提出令牌级重加权
+3. [When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents](/202607/09/2607.06595v1-when-agents-remember-too-much-memory-poisoning-attacks-on-large-language-model-agents)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：介绍对LLM Agent的记忆投毒攻击
 
 
 <div class="dpr-home-promo-card">
