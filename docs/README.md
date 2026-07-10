@@ -6,43 +6,37 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-09
-- 运行时间：2026-07-09 22:00:15 UTC
+- 最新运行日期：2026-07-10
+- 运行时间：2026-07-10 21:44:33 UTC
 - 运行状态：成功
-- 本次总论文数：7
-- 精读区：4
-- 速读区：3
+- 本次总论文数：5
+- 精读区：3
+- 速读区：2
 
 ### 今日简报（AI）
-聚焦大模型智能体长期记忆管理——今日7篇论文揭示记忆解耦、多模态规划与安全攻击三大热点。  
-最值得关注的是两项9.0高分工作：A-TMA首创状态感知记忆解耦，攻克长期任务中的记忆失效；另一篇实现端到端飞行规划，融合RAG记忆与多模态教练智能体。  
-普通读者可重点学习这两篇中记忆机制如何提升智能体可靠性，并警惕后续记忆投毒攻击的防御策略。
-- 详情：[/202607/09/README](/202607/09/README)
+今日聚焦LLM与智能体的记忆管理，两篇高分研究探讨记忆压缩与主动记忆机制。  
+最值得精读《What to Keep, What to Forget》和《Remember When It Matters》，均获9.0高分，分别从率失真视角和主动记忆角度优化长程任务。  
+下一步可关注如何将记忆压缩与主动回忆策略融入实际Agent系统，提升长程决策效率。
+- 详情：[/202607/10/README](/202607/10/README)
 
 ### 精读区论文标签
-1. [A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory](/202607/09/2607.01935v2-a-tma-decoupling-state-aware-memory-failures-in-long-term-agent-memory)  
+1. [What to Keep, What to Forget: A Rate--Distortion View of Memory Compaction in LLMs and Agents](/202607/10/2607.08032v1-what-to-keep-what-to-forget-a-rate--distortion-view-of-memory-compaction-in-llms-and-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：长期智能体记忆的状态感知覆盖层，解决幽灵记忆失败
-2. [End-to-End LLM Flight Planning with RAG-based Memory and Multi-modal Coach Agent](/202607/09/2607.06964v1-end-to-end-llm-flight-planning-with-rag-based-memory-and-multi-modal-coach-agent)  
+   evidence：从率失真视角看待记忆压缩
+2. [Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents](/202607/10/2607.08716v1-remember-when-it-matters-proactive-memory-agent-for-long-horizon-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：基于RAG记忆的LLM飞行规划智能体
-3. [Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation](/202607/09/2607.07108v1-seeing-and-reflecting-multimodal-memory-enhanced-agent-collaboration-for-recommendation)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出多模态记忆增强的Agent协作框架
-4. [CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents](/202607/09/2607.05378v1-compactionrl-reinforcement-learning-with-context-compaction-for-long-horizon-agents)  
+   evidence：为长视界智能体提出主动记忆智能体，更新结构化记忆库并注入提醒
+3. [Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures](/202607/10/2607.02967v1-rank-order-n-of-m-codes-for-sparse-distributed-memory-disentangling-representation-and-learning-effects-in-noise-robustness-against-contemporary-neuromorphic-architectures)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：基于上下文压缩的长周期代理训练方法
+   evidence：将稀疏分布记忆作为LLM的情景记忆
 
 ### 速读区论文标签
-1. [MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning](/202607/09/2607.06974v1-miles-modular-instruction-memory-with-learnable-selection-for-self-improving-llm-reasoning)  
+1. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/10/2607.08448v1-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：模块化指令记忆
-2. [No Time Like the Present: Agentic Test-Time Training for LLM Agents](/202607/09/2607.03441v1-no-time-like-the-present-agentic-test-time-training-for-llm-agents)  
+   evidence：记忆增强的代理框架用于引导冻结的视觉-语言-动作模型
+2. [CoACT: Action-Preserving Observation Compression for Coding Agents](/202607/10/2607.02911v1-coact-action-preserving-observation-compression-for-coding-agents)  
    标签：评分：6.0/10、query:llm-agent-memory
-   evidence：处理智能体在长周期中的记忆退化，提出令牌级重加权
-3. [When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents](/202607/09/2607.06595v1-when-agents-remember-too-much-memory-poisoning-attacks-on-large-language-model-agents)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：介绍对LLM Agent的记忆投毒攻击
+   evidence：针对编码智能体的观察压缩以减少记忆成本
 
 
 <div class="dpr-home-promo-card">

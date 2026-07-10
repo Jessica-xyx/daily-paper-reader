@@ -1,0 +1,219 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-10T21:40:09.555552+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.08032v1",
+      "source": "arxiv",
+      "title": "What to Keep, What to Forget: A Rate--Distortion View of Memory Compaction in LLMs and Agents",
+      "abstract": "Large language models, and the agents built on them, spend an ever-growing share of their compute and memory on remembering: caching attention keys and values, carrying long prompts, maintaining recurrent state, and storing what happened in previous turns and sessions. Because none of this memory is free, four largely separate research communities have each learned to compact it. They evict or quantize the KV cache, prune or distill prompts, bound architectural state, and consolidate agent memory. We argue that these are instances of one problem: a rate--distortion decision about what context-derived information to retain versus discard, at what fidelity, under a resource budget, so as to preserve downstream task utility. We make this lens precise with a single compaction objective and a layer-agnostic lower bound, use it to build a seven-axis taxonomy that classifies methods from across the stack uniformly, and use it to transfer mechanisms between layers that have never been connected, from serving-stack KV management to agent long-term memory. Two patterns hold across the survey. At every layer the signal that decides what to keep is attention magnitude or recency, and it fails in the same way everywhere, by discarding, before the query is known and with no way to undo it, information the query later needs. And while compression is measured carefully on single-turn long context, the repeated compaction that agents actually perform is almost never measured, and no benchmark holds one budget axis across all the layers at once. We turn both observations into a benchmark proposal, a small reference experiment, and a set of compaction-aware design principles, and we map the open problems.",
+      "authors": [
+        "Ashwin Gerard Colaco",
+        "Nada Lahjouji"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-09T01:15:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.08032v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory compaction from rate-distortion view",
+      "llm_evidence_cn": "从率失真视角看待记忆压缩",
+      "llm_evidence": "从率失真视角看待记忆压缩",
+      "canonical_evidence": "从率失真视角看待记忆压缩",
+      "llm_tldr_en": "Unifies KV cache eviction, prompt pruning, state bounding, agent memory consolidation as a rate-distortion trade-off for LLMs/agents.",
+      "llm_tldr_cn": "本文提出从率失真决策的角度统一理解LLM及智能体中的记忆压缩问题，涵盖了KV缓存淘汰、提示剪枝、状态约束和智能体记忆整合等看似独立的方法。通过将记忆压缩形式化为保留与丢弃上下文信息的权衡，为设计高效的智能体记忆管理系统提供了理论框架。实验部分展示了不同压缩策略在下游任务效用上的权衡。",
+      "llm_tldr": "本文提出从率失真决策的角度统一理解LLM及智能体中的记忆压缩问题，涵盖了KV缓存淘汰、提示剪枝、状态约束和智能体记忆整合等看似独立的方法。通过将记忆压缩形式化为保留与丢弃上下文信息的权衡，为设计高效的智能体记忆管理系统提供了理论框架。实验部分展示了不同压缩策略在下游任务效用上的权衡。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08716v1",
+      "source": "arxiv",
+      "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+      "abstract": "In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed beyond it, failing to influence decisions when needed. We call this failure mode \"behavioral state decay\". We study memory as an active intervention mechanism rather than passive retrieval. A separate memory agent runs alongside an unmodified action agent, updating a structured memory bank from the recent trajectory and deciding whether to inject a memory-grounded reminder or remain silent. The module is plug-and-play with frontier action agents and existing agent harnesses. Across Terminal-Bench 2.0 and $τ^2$-Bench, it improves pass@1 for both weaker and stronger action agents, with gains of +8.3 pp on Terminal-Bench and +6.8 pp on $τ^2$-Bench. Ablations show that selective intervention outperforms passive bank exposure, always-on injection, advisor-only guidance, and general retrieval. As an early step toward open-weight memory policies, we train Qwen3.5-27B on SETA using SFT and GRPO, improving validation reward and achieving partial transfer to Terminal-Bench.",
+      "authors": [
+        "Yifan Wu",
+        "Lizhu Zhang",
+        "Yuhang Zhou",
+        "Mingyi Wang",
+        "Bo Peng",
+        "Serena Li",
+        "Xiangjun Fan",
+        "Zhuokai Zhao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-09T17:26:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.08716v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proactive memory agent for long-horizon agents, updating structured memory bank and injecting reminders",
+      "llm_evidence_cn": "为长视界智能体提出主动记忆智能体，更新结构化记忆库并注入提醒",
+      "llm_evidence": "为长视界智能体提出主动记忆智能体，更新结构化记忆库并注入提醒",
+      "canonical_evidence": "为长视界智能体提出主动记忆智能体，更新结构化记忆库并注入提醒",
+      "llm_tldr_en": "Remember When It Matters introduces a proactive memory agent that runs alongside an action agent, updating a structured memory bank from trajectories and deciding when to inject memory-grounded reminders to combat behavioral state decay in long-horizon tasks.",
+      "llm_tldr_cn": "该论文针对长视界任务中智能体面临的行为状态衰减问题，提出主动记忆智能体机制。该机制作为一个独立模块与动作智能体并行运行，从最近轨迹更新结构化记忆库，并决定何时注入基于记忆的提醒。该方法即插即用，可配合前沿动作智能体使用，实验证明能有效缓解状态衰减并提升长时任务性能。",
+      "llm_tldr": "该论文针对长视界任务中智能体面临的行为状态衰减问题，提出主动记忆智能体机制。该机制作为一个独立模块与动作智能体并行运行，从最近轨迹更新结构化记忆库，并决定何时注入基于记忆的提醒。该方法即插即用，可配合前沿动作智能体使用，实验证明能有效缓解状态衰减并提升长时任务性能。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.02967v1",
+      "source": "arxiv",
+      "title": "Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures",
+      "abstract": "Large language models remain limited as continual learning systems, motivating renewed interest in Sparse Distributed Memory (SDM) as an explicit online episodic memory. CALM (Nechesov and Ruponen, 2025) identifies its threshold-binary encoder as an open design question. This paper evaluates rank-order N-of-M encoding (Furber et al., 2007) as an alternative. We make three contributions. First, a faithful reimplementation validates the published architecture by confirming exact equivalence between WheelSDM and RankOrderSDM (cosine similarity 1.0000 across 10 seeds) and reproducing the documented divergence of RDLIF neurons under interference. Second, multi-seed capacity experiments show RankOrderSDM outperforming StandardSDM by 13.4 percentage points at saturation in the scaled configuration and by 0.8 percentage points at the published architecture scale. Third, BER robustness experiments disentangle representation and learning effects, showing that the large robustness gain arises primarily from the interaction of rank-order encoding with MAX-Hebbian learning, while the encoder alone provides only a small advantage under matched learning conditions. Experiments on GloVe-100 embeddings confirm this small but consistent encoding benefit on real structured data, whereas sentence embeddings exhibit a ceiling effect at low memory load. A secondary analysis shows that idealized rank-order encoding requires half the component-level encoding energy of SpikingMamba's SI-LIF neurons at four-bit precision, although decoder costs dominate overall system energy. These results identify which components of the original rank-order SDM architecture provide measurable benefits for contemporary memory-augmented AI systems, offering practical guidance for architectures such as CALM.",
+      "authors": [
+        "Joy Bose"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.NE"
+      ],
+      "published": "2026-07-03T05:21:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.02967v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Sparse Distributed Memory as episodic memory for LLMs",
+      "llm_evidence_cn": "将稀疏分布记忆作为LLM的情景记忆",
+      "llm_evidence": "将稀疏分布记忆作为LLM的情景记忆",
+      "canonical_evidence": "将稀疏分布记忆作为LLM的情景记忆",
+      "llm_tldr_en": "Evaluates rank-order N-of-M encoding for Sparse Distributed Memory (SDM) as an alternative episodic memory for LLMs, showing exact equivalence to WheelSDM and analyzing noise robustness.",
+      "llm_tldr_cn": "针对LLM作为持续学习系统的局限，探索将稀疏分布记忆（SDM）作为显式在线情景记忆。本文评估了秩序N选M编码作为SDM的编码方案，通过复现实验验证了与WheelSDM的等价性，并分析了在噪声和干扰下的表现。结果表明该编码在鲁棒性方面具有优势。",
+      "llm_tldr": "针对LLM作为持续学习系统的局限，探索将稀疏分布记忆（SDM）作为显式在线情景记忆。本文评估了秩序N选M编码作为SDM的编码方案，通过复现实验验证了与WheelSDM的等价性，并分析了在噪声和干扰下的表现。结果表明该编码在鲁棒性方面具有优势。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.08448v1",
+      "source": "arxiv",
+      "title": "Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents",
+      "abstract": "Language-conditioned manipulation requires both precise contact-rich control and robust reasoning over language, scenes, and long horizons. End-to-end Vision-Language-Action (VLA) models provide strong local visuomotor skills, but they are trained on in-distribution task trajectories and often fail under deployment perturbations such as semantic retargeting, goal re-binding, spatial-layout shifts, and unstable local contacts. LLM coding agents provide complementary semantic and compositional reasoning, but purely analytic primitives struggle with irregular grasping, constrained placement, and articulated-object interaction. We present Harness VLA, a memory-augmented agentic framework that exposes a frozen VLA as a retryable contact-rich primitive and composes it with a small fixed library of analytic primitives for grounding, staging, transport, navigation, and release. Rather than expanding the skill library, the harness learns the operating range of these fixed primitives from task-specific execution traces, global success rules, and failure models. By lifting semantic re-grounding, non-contact execution, and VLA re-staging to the planner while reserving the frozen VLA for local contact-rich phases, Harness VLA extends pretrained VLAs beyond their original trajectory distribution without finetuning. Across perturbed tabletop, household kitchen, and clean-to-randomized bimanual manipulation, Harness VLA improves over the strongest relevant baselines by 38.6 and 25.4 percentage points on LIBERO-Pro and RoboCasa365, respectively, and reaches 58.4% on RoboTwin C2R.",
+      "authors": [
+        "Yixian Zhang",
+        "Huanming Zhang",
+        "Feng Gao",
+        "Xiao Li",
+        "Zhihao Liu",
+        "Chunyang Zhu",
+        "Jiaxing Qiu",
+        "Yuchen Yan",
+        "Jiyuan Liu",
+        "Wenhao Tang",
+        "Zhengru Fang",
+        "Yi Nie",
+        "Changxu Wei",
+        "Yu Wang",
+        "Wenbo Ding",
+        "Chao Yu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T13:08:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.08448v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "memory-augmented agentic framework for steering frozen VLAs",
+      "llm_evidence_cn": "记忆增强的代理框架用于引导冻结的视觉-语言-动作模型",
+      "llm_evidence": "记忆增强的代理框架用于引导冻结的视觉-语言-动作模型",
+      "canonical_evidence": "记忆增强的代理框架用于引导冻结的视觉-语言-动作模型",
+      "llm_tldr_en": "Harness VLA uses a memory-augmented agent to steer frozen VLAs into reliable manipulation primitives, combining semantic reasoning with retryable execution.",
+      "llm_tldr_cn": "语言条件操作需要精确控制和长程推理，但端到端VLA模型在部署扰动下易失败。Harness VLA提出记忆增强的代理框架，将冻结的VLA暴露为可重试的原语，结合LLM编码代理的语义推理与记忆模块记录历史经验。实验表明该方法在语义重定向、空间布局变化等场景下显著提升操作可靠性和泛化能力。",
+      "llm_tldr": "语言条件操作需要精确控制和长程推理，但端到端VLA模型在部署扰动下易失败。Harness VLA提出记忆增强的代理框架，将冻结的VLA暴露为可重试的原语，结合LLM编码代理的语义推理与记忆模块记录历史经验。实验表明该方法在语义重定向、空间布局变化等场景下显著提升操作可靠性和泛化能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.02911v1",
+      "source": "arxiv",
+      "title": "CoACT: Action-Preserving Observation Compression for Coding Agents",
+      "abstract": "LLM-based coding agents solve software-engineering tasks through iterative interactions with development environments, where returned observations accumulate in the context and become a major source of inference cost. Observation compression reduces this cost by shortening observations before they are appended to the context. However, existing methods still exhibit an unsatisfactory efficiency-effectiveness trade-off, as they do not explicitly model how compression affects the agent's subsequent behavior. This paper proposes CoACT, an action-preserving observation compression method for coding agents. CoACT is built on next-action preservation (NAP), which requires a compressed observation to induce the same next action as the raw observation. By checking the agent's immediate next action, NAP provides a practical signal for whether a compression preserves the information needed for continued task solving. During training, a teacher model first generates multiple compressed candidates of each observation. CoACT then uses an action-preservation reward based on NAP to filter out candidates that would change the agent's next action, and uses a length-reduction reward to choose compact candidates as supervision for a lightweight compressor. Experiments on SWE-bench Verified with three agentic models show that CoACT reduces average total token consumption by 33.0% while maintaining task-solving effectiveness close to the uncompressed agent.",
+      "authors": [
+        "Haorui Chen",
+        "Yuancheng Zhu",
+        "Yitong Zhang",
+        "Jia Li"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-07-03T03:17:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.02911v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "observation compression for coding agents reducing memory cost",
+      "llm_evidence_cn": "针对编码智能体的观察压缩以减少记忆成本",
+      "llm_evidence": "针对编码智能体的观察压缩以减少记忆成本",
+      "canonical_evidence": "针对编码智能体的观察压缩以减少记忆成本",
+      "llm_tldr_en": "CoACT compresses agent observations while preserving next action, reducing context length and inference cost.",
+      "llm_tldr_cn": "编码智能体在执行任务时积累大量观察信息，导致上下文过长和推理成本高。本文提出CoACT，一种保持动作的观察压缩方法，通过确保压缩后的观察能诱导与原始观察相同的下一步动作，在保持任务性能的同时大幅压缩上下文长度。实验证明CoACT在多个软件工程任务上降低了成本且不影响成功率。",
+      "llm_tldr": "编码智能体在执行任务时积累大量观察信息，导致上下文过长和推理成本高。本文提出CoACT，一种保持动作的观察压缩方法，通过确保压缩后的观察能诱导与原始观察相同的下一步动作，在保持任务性能的同时大幅压缩上下文长度。实验证明CoACT在多个软件工程任务上降低了成本且不影响成功率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
