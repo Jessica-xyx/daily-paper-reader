@@ -6,37 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-10
-- 运行时间：2026-07-10 21:44:33 UTC
+- 最新运行日期：2026-07-11
+- 运行时间：2026-07-11 20:22:49 UTC
 - 运行状态：成功
-- 本次总论文数：5
-- 精读区：3
-- 速读区：2
+- 本次总论文数：1
+- 精读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-今日聚焦LLM与智能体的记忆管理，两篇高分研究探讨记忆压缩与主动记忆机制。  
-最值得精读《What to Keep, What to Forget》和《Remember When It Matters》，均获9.0高分，分别从率失真视角和主动记忆角度优化长程任务。  
-下一步可关注如何将记忆压缩与主动回忆策略融入实际Agent系统，提升长程决策效率。
-- 详情：[/202607/10/README](/202607/10/README)
+今日速读1篇论文，聚焦大语言模型代理的记忆中毒攻击风险。  
+核心发现：代理记忆过多时易被攻击者注入恶意信息，操纵后续行为。  
+建议关注LLM代理的记忆安全设计，避免盲目信任其长期记忆能力。
+- 详情：[/202607/11/README](/202607/11/README)
 
 ### 精读区论文标签
-1. [What to Keep, What to Forget: A Rate--Distortion View of Memory Compaction in LLMs and Agents](/202607/10/2607.08032v1-what-to-keep-what-to-forget-a-rate--distortion-view-of-memory-compaction-in-llms-and-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：从率失真视角看待记忆压缩
-2. [Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents](/202607/10/2607.08716v1-remember-when-it-matters-proactive-memory-agent-for-long-horizon-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：为长视界智能体提出主动记忆智能体，更新结构化记忆库并注入提醒
-3. [Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures](/202607/10/2607.02967v1-rank-order-n-of-m-codes-for-sparse-distributed-memory-disentangling-representation-and-learning-effects-in-noise-robustness-against-contemporary-neuromorphic-architectures)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：将稀疏分布记忆作为LLM的情景记忆
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/10/2607.08448v1-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
+1. [When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents](/202607/11/2607.06595v1-when-agents-remember-too-much-memory-poisoning-attacks-on-large-language-model-agents)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：记忆增强的代理框架用于引导冻结的视觉-语言-动作模型
-2. [CoACT: Action-Preserving Observation Compression for Coding Agents](/202607/10/2607.02911v1-coact-action-preserving-observation-compression-for-coding-agents)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：针对编码智能体的观察压缩以减少记忆成本
+   evidence：针对LLM智能体的记忆中毒攻击
 
 
 <div class="dpr-home-promo-card">
