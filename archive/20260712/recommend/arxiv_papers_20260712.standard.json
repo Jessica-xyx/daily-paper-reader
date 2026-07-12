@@ -1,0 +1,142 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-12T20:59:18.248835+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.07388v1",
+      "source": "arxiv",
+      "title": "TF-Engram: A Train-Free Engram with SSD-Backed Memory for Large Language Models",
+      "abstract": "Large Language Models (LLMs) store factual knowledge and domain-specific patterns implicitly in dense Transformer parameters, making knowledge expansion costly through pretraining, fine-tuning, retrieval augmentation, or longer contexts. Engram-style memory offers a compact hidden-state injection pathway, but existing GPU-resident designs often rely on hash-based compression, causing unrelated phrases to collide in shared slots and weakening phrase-level semantic fidelity. We present TF-Engram, a train-free Engram system that constructs phrase-specific semantic memory offline from external corpora, stores large memory tables across a GPU--DRAM--SSD hierarchy, and uses Early-Exit Guided Predictive Prefetching to hide external-memory latency during autoregressive decoding. On Qwen3-0.6B, TF-Engram improves the average downstream score from 57.6 to 59.4, outperforming both the frozen backbone and a parameter-matched LoRA baseline. System evaluation shows that large TF-Engram tables can be built with moderate offline cost, SSD-backed storage substantially reduces GPU memory demand, and predictive prefetching recovers much of the throughput loss caused by external memory access. These results demonstrate that static phrase memory can be integrated into LLM inference as a scalable, train-free, and low-overhead system component.",
+      "authors": [
+        "Yutang Ma",
+        "Kecheng Huang",
+        "Xikun Jiang",
+        "Zili Shao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-08T13:19:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.07388v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "train-free engram memory with SSD backend for LLMs",
+      "llm_evidence_cn": "无需训练的Engram记忆系统，结合SSD存储用于LLM",
+      "llm_evidence": "无需训练的Engram记忆系统，结合SSD存储用于LLM",
+      "canonical_evidence": "无需训练的Engram记忆系统，结合SSD存储用于LLM",
+      "llm_tldr_en": "TF-Engram constructs phrase-specific semantic memory offline and stores it across a GPU-DRAM-SSD hierarchy, using early-exit prefetching to enable efficient knowledge injection for LLMs.",
+      "llm_tldr_cn": "TF-Engram提出了一种无需训练的Engram记忆系统，从外部语料离线构建短语级语义记忆，并利用GPU-DRAM-SSD层次存储和早期退出预测预取技术，实现了高效的外部知识注入，避免了哈希碰撞导致的语义退化。",
+      "llm_tldr": "TF-Engram提出了一种无需训练的Engram记忆系统，从外部语料离线构建短语级语义记忆，并利用GPU-DRAM-SSD层次存储和早期退出预测预取技术，实现了高效的外部知识注入，避免了哈希碰撞导致的语义退化。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.08497v1",
+      "source": "arxiv",
+      "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
+      "abstract": "Recent unified multimodal models show a single architecture can jointly perform vision/language understanding and image generation/editing. However, they repeatedly feed all historical visual and textual inputs into a shared context window, limiting long-horizon multimodal dialogue due to visual token explosion and unreliable cross-turn referencing. We propose a Cognitive-structured Multimodal Agent that externalizes visual information into an Episodic Visual Memory and selectively reactivates relevant episodes during reasoning. The agent consists of a Perceptual Abstraction Engine for structured visual abstraction, a Cognitive Retrieval Engine for cross-turn memory retrieval, and a Multimodal Executive Controller for autonomous task inference and action planning. To address the lack of turn-level retrieval supervision in existing datasets, we develop a Unified Scenario Engine that programmatically generates structured multi-turn conversations with fine-grained retrieval annotations, enabling reinforcement learning to optimize abstraction and retrieval policies. We also construct a long-horizon visual-dialogue benchmark stratified by difficulty to evaluate episodic visual recall. Our 8B agent achieves 91.4% retrieval accuracy over 20-turn sessions, surpassing 32B baselines by +8.2% while nearly halving per-turn inference time (23.1s -> 12.7s). We further present the Cognitive-structured Multimodal Agent Harness (CMA-Harness), a tool-augmented deployment of the same cognitive structure integrating persistent multimodal memory, web access, image generation/editing/composition tools, and OpenAI-compatible serving. Structured memory and modular decision-making offer a more scalable, efficient paradigm for long-horizon multimodal agents than monolithic parameter scaling. Code: https://github.com/caseclose/cma-harness ; Project page: https://caseclose.github.io/cma-harness/",
+      "authors": [
+        "Feng Wang",
+        "Canmiao Fu",
+        "Zhipeng Huang",
+        "Chen Li",
+        "Jing Lyu",
+        "Ge Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-09T13:55:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.08497v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Externalizes visual information into episodic visual memory for multimodal agent",
+      "llm_evidence_cn": "将视觉信息外化到情景视觉记忆以增强多模态智能体",
+      "llm_evidence": "将视觉信息外化到情景视觉记忆以增强多模态智能体",
+      "canonical_evidence": "将视觉信息外化到情景视觉记忆以增强多模态智能体",
+      "llm_tldr_en": "Proposes a cognitive-structured multimodal agent with episodic visual memory, enabling selective reactivation of relevant visual episodes for long-horizon multimodal dialogues and tasks.",
+      "llm_tldr_cn": "多模态模型在处理长对话时面临视觉token爆炸和跨轮引用不可靠的问题。本文提出认知结构化多模态智能体，将视觉信息外化到情景视觉记忆，通过认知检索引擎仅激活相关片段，显著减少计算开销。在视觉理解和生成任务上，该方法超越统一模型，尤其在长对话场景中性能提升明显。",
+      "llm_tldr": "多模态模型在处理长对话时面临视觉token爆炸和跨轮引用不可靠的问题。本文提出认知结构化多模态智能体，将视觉信息外化到情景视觉记忆，通过认知检索引擎仅激活相关片段，显著减少计算开销。在视觉理解和生成任务上，该方法超越统一模型，尤其在长对话场景中性能提升明显。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.07707v1",
+      "source": "arxiv",
+      "title": "Co-LMLM: Continuous-Query Limited Memory Language Models",
+      "abstract": "Limited memory language models (LMLMs) externalize factual knowledge during pretraining to a knowledge base (KB), rather than memorizing it in their weights. During generation, the model then fetches knowledge from the KB as needed. This recently introduced paradigm provides multiple advantages, including knowledge control capabilities that remain beyond conventional LLMs. We propose continuous-query LMLM (CO-LMLM), where the KB pairs continuous keys with textual knowledge values, a significant departure from prior reliance on relational KB and queries. CO-LMLM generates flexible vector queries at minimal cost, while still integrating human-readable and attributable retrieved knowledge into its generation. We pair this design with an annotation pipeline that tags free-form factual spans in arbitrary text, removing prior work's restriction to Wikipedia. Across pretraining on Wikipedia and FineWeb-Edu and at multiple model scales, CO-LMLM outperforms prior LMLMs and vanilla LLMs in both perplexity and factual precision. At 360M scale, this includes lower perplexity than models pretrained on 40x more data, and SimpleQA-verified performance that is in line with gpt-4o-mini and higher than Claude Sonnet 4.5.",
+      "authors": [
+        "Yair Feldman",
+        "Linxi Zhao",
+        "Nathan Godey",
+        "Dongyoung Go",
+        "Yilun Hua",
+        "Kilian Q. Weinberger",
+        "Jennifer J. Sun",
+        "Yoav Artzi"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-08T17:59:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.07707v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "continuous-query limited memory language model with external knowledge base",
+      "llm_evidence_cn": "连续查询有限记忆语言模型，外部知识库",
+      "llm_evidence": "连续查询有限记忆语言模型，外部知识库",
+      "canonical_evidence": "连续查询有限记忆语言模型，外部知识库",
+      "llm_tldr_en": "CO-LMLM introduces continuous keys in the knowledge base for flexible vector queries, enabling more expressive retrieval while maintaining human-readable attributed knowledge.",
+      "llm_tldr_cn": "CO-LMLM在有限记忆语言模型基础上，将知识库的键改为连续向量，支持灵活查询，同时保留可读的文本知识值，通过标注管道提升语义保真度，解决了关系型查询表达能力不足的问题。",
+      "llm_tldr": "CO-LMLM在有限记忆语言模型基础上，将知识库的键改为连续向量，支持灵活查询，同时保留可读的文本知识值，通过标注管道提升语义保真度，解决了关系型查询表达能力不足的问题。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
