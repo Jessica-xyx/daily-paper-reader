@@ -1,0 +1,54 @@
+{
+  "label": "2026-07-13",
+  "date": "2026-07-13",
+  "generated_at": "2026-07-13T21:28:58",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202607/13/2607.09493v1-shared-selective-persistent-memory-for-agentic-llm-systems",
+      "section": "deep",
+      "title_en": "Shared Selective Persistent Memory for Agentic LLM Systems",
+      "authors": "Sanjana Pedada, Aditya Dhavala, Neelraj Patil",
+      "date": "2026-07-10",
+      "pdf": "https://arxiv.org/pdf/2607.09493v1",
+      "score": "9.0",
+      "evidence": "为智能体LLM系统设计的共享选择性持久记忆架构",
+      "tldr": "多轮交互的LLM智能体系统面临会话上下文重置与历史无关的困境，简单保留完整历史不仅低效且会降低生成质量。提出共享选择性持久记忆架构，识别并保留任务规范、数据模式、工具配置、输出约束四类可复用上下文，丢弃推理痕迹。在协作工作台平台实现，支持跨用户共享与角色控制。引入零令牌数据刷新机制，分离生成程序与运行时数据。在三个企业场景中任务完成率达96%，远超无记忆的79%和全历史的71%；零令牌刷新减少14倍任务时间，摘要生成降低97倍令牌成本。在四个公开数据集上复现验证泛化性。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Agentic LLM systems that generate code through multi-turn tool use face a fundamental context problem: each session starts from zero, discarding the configuration choices, domain constraints, data schemas, and tool-use patterns that made previous sessions productive. Naively persisting entire conversation histories is token-inefficient and counterproductive: irrelevant context degrades generation quality. We introduce shared selective persistent memory, an architecture that identifies and retains four categories of reusable context (task specifications, data schemas, tool configurations, and output constraints) while discarding session-specific reasoning traces. Crucially, this memory is shared: workspaces encapsulating selective memory can be transferred across users with role-based access control, enabling collaborative reuse without redundant specification. We implement it in a deployed collaborative workspace platform where LLM agents produce, edit, and maintain git-versioned artifacts (dashboards, reports, and data-driven documents) from heterogeneous sources (CSV, SQL, REST APIs, and MCP servers). A complementary zero-token data refresh mechanism decouples generated programs from runtime data, enabling artifact reuse without re-invocation. Across three enterprise scenarios, shared selective persistent memory achieves 96% task completion (vs. 79% without memory and 71% with full history). Zero-token refresh eliminates LLM re-invocation for recurring updates (14x task-time reduction), while summary-driven generation cuts per-invocation token cost by 97x versus raw data injection. A replication on four public datasets confirms generalizability, with zero-token refresh succeeding in 12/12 trials. Notably, naive full-history persistence actively degrades completion by biasing the agent with stale traces, while selective memory outperforms both extremes.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/13/2607.09603v1-mosaic-runtime-efficient-multi-agent-embodied-planning",
+      "section": "quick",
+      "title_en": "Mosaic: Runtime-Efficient Multi-Agent Embodied Planning",
+      "authors": "Kunjal Panchal, Saayan Mitra, Sunav Choudhary, Victor Bursztyn, Somdeb Sarkhel, Hui Guan",
+      "date": "2026-07-10",
+      "pdf": "https://arxiv.org/pdf/2607.09603v1",
+      "score": "7.0",
+      "evidence": "用于具身代理状态跟踪的语义记忆",
+      "tldr": "多智能体具身规划因执行延迟高而不实用，失败动作是主要瓶颈。Mosaic通过智能体中心语义记忆实现准确轻量的状态跟踪，并利用整数线性规划进行约束协调。在AI2-THOR和搜救基准上执行速度提升27-32%，LLM调用减少30-33%，成功率提高4-10%。这表明高效记忆与约束协调是实现低延迟可扩展多智能体规划的关键。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "LLM-based multi-agent embodied planning remains impractical due to prohibitively high execution latency. We identify failed actions as the dominant bottleneck, stemming from two core challenges: inaccurate state tracking under partial observability and inefficient coordination that produces redundant or conflicting actions. We introduce Mosaic, a runtime-efficient multi-agent planning framework that addresses both challenges. Mosaic maintains accurate yet lightweight state tracking through agent-centric semantic memory that stores objects in relative coordinates, enabling geometric transformations and coordination. It ensures efficient coordination through Integer Linear Programming that allocates actions at every planning step, enforcing physical feasibility and inter-agent coordination constraints. Across AI2-THOR and search-and-rescue benchmarks, Mosaic achieves 27-32% faster execution, 30-33% fewer LLM calls, 25-31% fewer steps, and 4-10% points higher success rates. These results demonstrate that efficient memory and constraint-guided coordination are critical for scalable, low-latency multi-agent planning.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/13/2607.09175v1-scoped-verification-for-reliable-long-horizon-agentic-context-evolution-under-distribution-shift",
+      "section": "quick",
+      "title_en": "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift",
+      "authors": "Dan C. Hsu, Luke Lu",
+      "date": "2026-07-10",
+      "pdf": "https://arxiv.org/pdf/2607.09175v1",
+      "score": "6.0",
+      "evidence": "代理上下文演进的记忆管理",
+      "tldr": "部署的LLM代理依赖持续更新的系统指令，长周期演化下平面文本维护导致验证困难。本文提出GRACE，将指令组织为类型化语义图，仅局部验证修改节点并增量重构为文本。在分布漂移协议下，GRACE将pass³从0.091提升至0.673，超越Gemini 3.1 Pro的0.242。结果揭示了可靠长周期上下文演化的两个关键：局部可验证的结构基板和整合机制。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Deployed LLM agents rely on agentic context, the model-external textual control content assembled by an operational harness. In this work, the mutable component of that context is a persistent system-level instruction that is updated from operational experience while the model, tools, and harness remain fixed. Over long evolution horizons, flat-text maintenance makes verification increasingly difficult as accumulated instructions grow and interact. We propose Graph-Regularized Agentic Context Evolution (GRACE), which maintains the persistent instruction component as a typed semantic graph and validates proposed updates within the local typed neighborhoods of modified nodes. Accepted graph updates are reconstructed as incremental edits to the textual instruction checkpoint used at deployment. We evaluate GRACE within a fixed telecom agent harness derived from $τ^2$-bench under a controlled distribution-shift protocol. Across five independent replications, GRACE improves strict reliability, measured by pass^3, from the Gemini 2.5 Flash zero-shot value of 0.091 to 0.673$\\pm$0.136 at the final checkpoint. This exceeds a Gemini 3.1 Pro zero-shot reference of 0.242 on the same held-out set, while the flat-text HCE baseline finishes at 0.191$\\pm$0.051. These results identify two requirements for reliable long-horizon context evolution, a structural substrate that makes verification local and a consolidation mechanism that keeps accumulated instruction content usable.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
