@@ -1,0 +1,489 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-14T20:20:31.119016+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 8,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [
+    {
+      "id": "2607.10350v1",
+      "source": "arxiv",
+      "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
+      "abstract": "Recent VLM and VLA systems have improved robotic perception and action prediction, yet long-horizon embodied agents still require a general runtime layer for reasoning, memory, tool use, verification, and cross-embodiment execution. We present ABot-AgentOS, a general robotic Agent Operating System that sits above low-level controllers and provides a deliberative agent layer for scene-conditioned planning, context-isolated skill execution, multi-stage verification, multi-modal memory, and edge-cloud collaboration. To evaluate such systems, we introduce EmbodiedWorldBench, an executable benchmark with 16 indoor, outdoor, and hybrid scenes, four difficulty levels, and over 200 tasks involving navigation, object search, NPC dialogue, dynamic events, and trace-grounded scoring. ABot-AgentOS further introduces Universal Multi-modal Graph Memory, a persistent source-grounded substrate that converts dialogue, visual observations, spatial context, temporal relations, and task traces into typed nodes and edges. A failure-driven self-evolution loop converts diagnosed memory failures into gated runtime evo-assets that are promoted only to later evaluation splits, preventing current-split ground-truth leakage while enabling continual improvement. On an initial EmbodiedWorldBench subset, ABot-AgentOS improves over a single-controller baseline in both task success and goal completion. Across memory benchmarks, ABot-AgentOS Static achieves 87.5 on LoCoMo, 59.9 on OpenEQA EM-EQA, 88.6 on Mem-Gallery, and 76.5 Acc@All on NExT-QA; self-evolution further improves LoCoMo to 88.7, OpenEQA to 60.4, and Mem-Gallery to 89.0. These results suggest that a general Agent OS layer can improve long-horizon embodied execution while providing persistent, auditable memory for continual interaction.",
+      "authors": [
+        "Jiayi Tian",
+        "Shiao Liu",
+        "Yuting Xu",
+        "Jia Lu",
+        "Zihao Guan",
+        "Honglin Han",
+        "Di Yang",
+        "Minqi Gu",
+        "Yifei Qian",
+        "Tianlin Zhang",
+        "Yanqing Zhu",
+        "Zeqian Ye",
+        "Menglin Yang",
+        "Fei Wang",
+        "Xu Hu",
+        "Xiuxian Li",
+        "Wei Zhang",
+        "Shihui Su",
+        "Yiyan Ji",
+        "Jingbo Wang",
+        "Ziteng Feng",
+        "Jiaheng Liu",
+        "Zhaoxiang Zhang",
+        "Xiaolong Wu",
+        "Mingyang Yin",
+        "Zedong Chu",
+        "Mu Xu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-11T15:24:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.10350v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "lifelong multi-modal memory for robotic agents",
+      "llm_evidence_cn": "机器人代理的终身多模态记忆",
+      "llm_evidence": "机器人代理的终身多模态记忆",
+      "canonical_evidence": "机器人代理的终身多模态记忆",
+      "llm_tldr_en": "ABot-AgentOS provides a general robotic agent OS with lifelong multi-modal memory, enabling scene-conditioned planning and long-horizon embodiment.",
+      "llm_tldr_cn": "长期执行体代理需要通用运行时层支持推理、记忆、工具使用等。提出ABot-AgentOS，一个通用的机器人代理操作系统，位于低级控制器之上，提供场景条件规划、上下文隔离技能执行、多阶段验证、多模态记忆和边云协作。同时引入EmbodiedWorldBench基准，包含16个场景、4个难度级别、200+任务。",
+      "llm_tldr": "长期执行体代理需要通用运行时层支持推理、记忆、工具使用等。提出ABot-AgentOS，一个通用的机器人代理操作系统，位于低级控制器之上，提供场景条件规划、上下文隔离技能执行、多阶段验证、多模态记忆和边云协作。同时引入EmbodiedWorldBench基准，包含16个场景、4个难度级别、200+任务。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.10582v1",
+      "source": "arxiv",
+      "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference",
+      "abstract": "Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning, whose key-value (KV) cache can become a major memory bottleneck. Existing eviction policies generally apply the same attention- or recency-based rule to every token, ignoring semantic structure already available to the agent orchestrator.   We introduce MemDecay, a training-free, region-aware KV-cache eviction policy. MemDecay assigns tokens region-specific base priorities and decay rates, refreshes retention scores when tokens receive attention, and evicts the lowest-scoring pages under a fixed cache budget while allowing critical regions to be pinned. We also provide a procedure for calibrating decay rates from measured attention lifetimes.   We evaluate MemDecay at approximately 450 and 1,700 token contexts using Qwen2.5-1.5B and 3B. Across all settings, attention lifetimes differ by an order of magnitude across regions: system-token half-lives range from 148 to 189 decoding steps, compared with 14 to 16 for scratchpad tokens. Pinning preserves system-region facts at full-cache accuracy in every setting, while no baseline preserves more than 13 of 24. Region-aware retention remains effective as context grows, whereas recency-based retention collapses. Accumulated-attention retention performs better on unpinned content, however, and ablations identify attention-score normalization as the main limitation of the current formulation. These results establish semantic prompt structure as a robust signal for KV-cache management while clarifying how it should be combined with attention-based importance.",
+      "authors": [
+        "Venkatesha Matam",
+        "Keon Kim"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-12T05:35:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.10582v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Region-aware KV cache eviction for LLM agents",
+      "llm_evidence_cn": "面向LLM代理的区域感知KV缓存驱逐",
+      "llm_evidence": "面向LLM代理的区域感知KV缓存驱逐",
+      "canonical_evidence": "面向LLM代理的区域感知KV缓存驱逐",
+      "llm_tldr_en": "MemDecay introduces region-aware priority decay for KV cache eviction, reducing memory bottleneck in agent inference.",
+      "llm_tldr_cn": "LLM代理推理中KV缓存成为主要记忆瓶颈。本文提出MemDecay，一种无训练的区域感知驱逐策略，为不同区域分配基础优先级和衰减率，在固定预算下驱逐低分页面。实验显示在保持生成质量的同时显著降低缓存占用。",
+      "llm_tldr": "LLM代理推理中KV缓存成为主要记忆瓶颈。本文提出MemDecay，一种无训练的区域感知驱逐策略，为不同区域分配基础优先级和衰减率，在固定预算下驱逐低分页面。实验显示在保持生成质量的同时显著降低缓存占用。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.11149v1",
+      "source": "arxiv",
+      "title": "The Hidden Footprint: Making Storage a First-Class Metric for LLM Agent Evaluation",
+      "abstract": "LLM agent benchmarks measure task completion, reliability, and inference cost, but not the persistent data an agent run leaves on disk, including logs, context snapshots, checkpoints, and debug traces. We introduce AgentFootprint, a cross-framework benchmark of post-run agent storage footprint. Its serialization-aware metric suite measures total retention, channel composition, duplication, growth, compressibility, and conversation-history reconstructability. It addresses a measurement trap: naive byte-level measurement understates duplication by an order of magnitude because database paging and JSON escaping obscure repeated content. A fixed-trace control separates agent-generated logical volume from persistence-layer amplification: replaying the same trajectory through seven persisting frameworks yields a 6.7x spread. Under identical models, tools, and tasks, configurations with 100% accuracy differ by 15.7x in retained bytes, although their defaults support different recovery and audit capabilities. Three full-history configurations grow superlinearly on a repeated-observation stress task. Exported trajectories from 108 instance-normalized SWE-bench Verified submissions span three orders of magnitude per instance, with no detectable correlation with resolve rate. A content-addressed store reduces retention by 4.8x-32.7x while preserving every reconstructability score. These results establish persistent storage as a resource metric to report jointly with accuracy and reconstructability.",
+      "authors": [
+        "Chenglin Yu",
+        "Hongquan Gui",
+        "Ying Yu",
+        "Hongxia Yang",
+        "Ming Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-13T06:44:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.11149v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "storage footprint as evaluation metric for agent memory",
+      "llm_evidence_cn": "存储足迹作为代理记忆的评估指标",
+      "llm_evidence": "存储足迹作为代理记忆的评估指标",
+      "canonical_evidence": "存储足迹作为代理记忆的评估指标",
+      "llm_tldr_en": "AgentFootprint introduces cross-framework benchmark measuring persistent data footprint, addressing duplication and reconstruction in LLM agent evaluation.",
+      "llm_tldr_cn": "现有LLM代理基准评测任务完成度、可靠性和推理成本，但忽略运行后留下的持久数据（日志、上下文快照等）。提出AgentFootprint跨框架基准，包含序列化感知指标集，测量总保留量、渠道组成、重复率、增长、可压缩性和对话历史可重建性，并解决重复率低估陷阱。",
+      "llm_tldr": "现有LLM代理基准评测任务完成度、可靠性和推理成本，但忽略运行后留下的持久数据（日志、上下文快照等）。提出AgentFootprint跨框架基准，包含序列化感知指标集，测量总保留量、渠道组成、重复率、增长、可压缩性和对话历史可重建性，并解决重复率低估陷阱。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09322v2",
+      "source": "arxiv",
+      "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
+      "abstract": "In this work, we introduce LongMedBench, a real-world EHR-based benchmark for long-horizon clinical decision-making. Prior evaluations of LLM-based medical agents have largely emphasized short-context knowledge QA and tool use. However, real-world medical care is inherently longitudinal, and clinicians must aggregate evidence across repeated visits, tests, and evolving treatments. Therefore, long-horizon interaction is essential for realistic assessment. LongMedBench is constructed via a reproducible pipeline that integrates MIMIC-IV admission records and clinical notes into time-series event streams and long-context memory datasets, enabling long-horizon, multi-session interactions between agents and a clinical environment. It comprises 335 patients, with 19.72 inpatient visits per patient on average and 44.91 medical events per visit. Guided by the long-horizon decision process, we propose an evaluation taxonomy with three suites: fact-based QA, temporal reasoning, and long-horizon decision-making. This taxonomy measures how agents understand and leverage historical patient information over extended horizons. Our experiments show that while recent LLMs can make good use of explicit timestamps, they have challenges in implicit time inference; The RAG and agent memory system can improve the performance of information retrieval tasks, but the performance of decision-making tasks is highly dependent on the model's immediate context.",
+      "authors": [
+        "Zihan Xu",
+        "Yanzhen Chen",
+        "Xiaocheng Zhang",
+        "Zhiting Fan",
+        "Weiqi Zhai",
+        "Hongxia Xu",
+        "Zuozhu Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-10T12:04:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.09322v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for long-horizon clinical decision-making with memory datasets",
+      "llm_evidence_cn": "用于长时序临床决策的基准测试，包含记忆数据集",
+      "llm_evidence": "用于长时序临床决策的基准测试，包含记忆数据集",
+      "canonical_evidence": "用于长时序临床决策的基准测试，包含记忆数据集",
+      "llm_tldr_en": "Introduces LongMedBench, an EHR-based benchmark with long-context memory datasets for evaluating LLM medical agents on long-horizon multi-session interactions.",
+      "llm_tldr_cn": "本文提出了LongMedBench，一个基于真实EHR数据的基准测试，用于评估LLM医疗智能体在长时序、多会话交互中的表现。该基准通过可复现的流水线将MIMIC-IV记录和临床笔记整合为时间序列事件流和长上下文记忆数据集，解决了现有评估仅关注短上下文知识问答和工具使用的局限性，为长期临床决策提供了更真实的评测环境。",
+      "llm_tldr": "本文提出了LongMedBench，一个基于真实EHR数据的基准测试，用于评估LLM医疗智能体在长时序、多会话交互中的表现。该基准通过可复现的流水线将MIMIC-IV记录和临床笔记整合为时间序列事件流和长上下文记忆数据集，解决了现有评估仅关注短上下文知识问答和工具使用的局限性，为长期临床决策提供了更真实的评测环境。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09822v1",
+      "source": "arxiv",
+      "title": "Memory-Conditioned Tool Calling for Camera-First Visual Agents",
+      "abstract": "Recognition tells an agent what is in an image; personal memory affects what is worth looking up next. In a camera-first setting the user can send only an image, so the agent must form the lookups. We study whether personal visual memory improves agent-side tool choice and tool arguments, and thereby more user-aligned multi-tool lookups. The design uses a three-layer personal visual memory (profile, short-term focus, observations) that is loaded on each turn to condition an LLM tool-calling loop under camera-first intake, and includes conflict-aware write-back intended to refresh the user model for later captures. On 800 images paired with synthetic memory blocks constructed for controlled ablation, removing the full three-layer memory block reduces tool-query relevance by 0.47 points absolute (4.21 -> 3.74 on a 5-point scale; 11.2% relative) and end-to-end utility by 0.082 absolute (0.842 -> 0.760; 9.7% relative). These results measure memory conditioning of tool policy under image-only intake with fixed synthetic blocks, not multi-session write-back from live user histories.",
+      "authors": [
+        "Xiaofan Wu",
+        "Xi Zeng",
+        "Miaoxia Chen",
+        "Peishan Chen",
+        "Shuyan Li",
+        "Jiyun Yao",
+        "Hanyong Zhong",
+        "Jiahao Zhu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "published": "2026-07-10T08:40:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.09822v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Personal visual memory conditions tool calling",
+      "llm_evidence_cn": "个人视觉记忆条件化工具调用",
+      "llm_evidence": "个人视觉记忆条件化工具调用",
+      "canonical_evidence": "个人视觉记忆条件化工具调用",
+      "llm_tldr_en": "Proposes three-layer personal visual memory to condition LLM tool calls in camera-first agents.",
+      "llm_tldr_cn": "摄像头优先场景下，代理需根据视觉记忆判断下一步查询。本文提出三层个人视觉记忆（轮廓、短期焦点、观察），加载每轮以条件化工具调用。消融实验证明移除记忆使工具查询质量大幅下降。",
+      "llm_tldr": "摄像头优先场景下，代理需根据视觉记忆判断下一步查询。本文提出三层个人视觉记忆（轮廓、短期焦点、观察），加载每轮以条件化工具调用。消融实验证明移除记忆使工具查询质量大幅下降。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.10608v1",
+      "source": "arxiv",
+      "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory",
+      "abstract": "Memory is becoming a core component of long-horizon AI agents, allowing agents to reuse past experience when operating web browsers, software tools, and other interactive environments. Existing work mostly treats memory as a supply problem, asking what experience to write, how to store it, and which entry to retrieve for the next task. Yet we still lack a clear account of how models consume retrieved memory across a multi-step action trajectory. This consumption process matters because it determines not only what memories should be retrieved, but also what models and control policies are needed to use them safely. To diagnose this process, we propose Entry--Propagation--Recovery (E-P-R), a trajectory-level framework that asks where memory first changes an action, whether that change carries forward, and whether the agent can recover after leaving a correct path. We instantiate E-P-R on WebArena and on MemTrapBench, a controlled benchmark we build to isolate these phases. We find that the main failure often begins at entry: agents adopt conflicting memory at the first exposed decision point even when it is task-wrong. Repeated exposure then amplifies this early error, while recovery after divergence is weak. Together, these effects create a compliance trap: across models, conflicting memory induces similar compliance rates, but once agents comply, their success rates collapse to a low floor. Stronger agents therefore suffer larger absolute damage because each compliance event erases more baseline capability. These results suggest that memory-augmented agents should be evaluated not only by retrieval quality or final success rate, but by how they consume memory throughout the trajectory.",
+      "authors": [
+        "Yixiong Chen",
+        "Xinyi Bai",
+        "Alan Yuille"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-12T07:05:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.10608v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "diagnoses how AI agents consume conflicting memory",
+      "llm_evidence_cn": "诊断AI智能体如何消费冲突记忆",
+      "llm_evidence": "诊断AI智能体如何消费冲突记忆",
+      "canonical_evidence": "诊断AI智能体如何消费冲突记忆",
+      "llm_tldr_en": "This paper proposes Entry-Propagation-Recovery (E-P-R), a trajectory-level framework to diagnose how LLM agents consume retrieved memory, addressing the compliance trap in multi-step actions.",
+      "llm_tldr_cn": "该论文针对LLM智能体在长程任务中消费检索记忆的过程缺乏诊断框架的问题，提出条目-传播-恢复（E-P-R）框架，从轨迹层面分析记忆如何首次进入、传播并导致恢复行为。通过实验揭示了智能体在消费冲突记忆时的系统模式，为安全使用记忆提供了指导。",
+      "llm_tldr": "该论文针对LLM智能体在长程任务中消费检索记忆的过程缺乏诊断框架的问题，提出条目-传播-恢复（E-P-R）框架，从轨迹层面分析记忆如何首次进入、传播并导致恢复行为。通过实验揭示了智能体在消费冲突记忆时的系统模式，为安全使用记忆提供了指导。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.11126v1",
+      "source": "arxiv",
+      "title": "ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory",
+      "abstract": "Large language model (LLM) agents increasingly rely on external tools served by shared providers and accessed by heterogeneous downstream agents. Existing approaches improve tool use on the agent side through parameter updates, prompt refinement, or agent-side memory, making tool knowledge difficult to share and limited to behaviors observed in past tasks. We argue that reusable tool knowledge should instead be maintained by the tool provider. We introduce ToolAtlas, a graph-based framework that builds a persistent provider-side tool memory of tool capabilities, failure boundaries, and cross-tool compositions through execution-verified probing. At inference time, agents query the tool memory via adaptive graph traversal. Across two MCP-based benchmarks spanning eight services, ToolAtlas outperforms existing tool-side optimization and agent-side memory baselines by up to 21.61% in pass@1 and 18.61% in pass@4. The same tool memory also transfers across environment instances and agent frameworks without retraining or task-time exploration, yielding up to 24.16%/16.22% and 17.49%/14.27% relative gains in pass@1/pass@4, respectively. Ablation studies show that these gains arise from combining tool-centered memory organization with capability-guided execution probing. These results establish provider-side tool memory as an effective and reusable paradigm for tool servers. Our code is in: https://github.com/PuppyKnightUniversity/ToolAtlas.",
+      "authors": [
+        "Yue Fang",
+        "Zhibang Yang",
+        "Fangkai Yang",
+        "Xiaoting Qin",
+        "Liqun Li",
+        "Qingwei Lin",
+        "Saravan Rajmohan",
+        "Dongmei Zhang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-13T06:01:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.11126v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "provider-side tool memory augmentation",
+      "llm_evidence_cn": "提供者侧工具记忆增强",
+      "llm_evidence": "提供者侧工具记忆增强",
+      "canonical_evidence": "提供者侧工具记忆增强",
+      "llm_tldr_en": "ToolAtlas builds persistent tool-side memory via execution-verified probing, enabling reusable tool knowledge across heterogeneous agents.",
+      "llm_tldr_cn": "LLM代理依赖外部工具，但现有方法在代理侧改进工具使用，导致知识难以共享。提出ToolAtlas，一个基于图的框架，在工具提供者侧构建持久化工具记忆，包含工具能力、失败边界和跨工具组合，通过执行验证探测构建，推理时通过自适应图遍历查询。",
+      "llm_tldr": "LLM代理依赖外部工具，但现有方法在代理侧改进工具使用，导致知识难以共享。提出ToolAtlas，一个基于图的框架，在工具提供者侧构建持久化工具记忆，包含工具能力、失败边界和跨工具组合，通过执行验证探测构建，推理时通过自适应图遍历查询。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.08960v1",
+      "source": "arxiv",
+      "title": "Eluna: An Agentic LLM System for Automating Warehouse Operations with Reasoning and Task Execution",
+      "abstract": "Warehouse operations are governed by Standard Operating Procedures (SOPs) that encode complex, multi-system decision logic, which must be executed reliably under strict time constraints, yet LLM agents lack mechanisms to enforce procedural compliance and degrade under the context overload full SOP specifications introduce. We present Eluna, a production-deployed agentic system for reliable SOP execution. Eluna is a graph-guided, multi-agent framework that encodes SOPs as directed acyclic graphs with progressive disclosure and delegates independent tasks to parallel sub-agents, each with persistent code execution and live data access. To meet production latency and accuracy needs, we use asymmetric episodic distillation where a strong teacher is improved through episodic error memories, then a smaller student is fine-tuned on the corrected trajectories with memory stripped, internalizing corrections without inference-time overhead. On a 13-task benchmark and two production applications, our fine-tuned models match or exceed their teacher, beat all larger off-the-shelf baselines, and reach 94% expert agreement on the ticket processing application.",
+      "authors": [
+        "Ning Liu",
+        "Kalle Kujanpää",
+        "Zhaoxuan Zhu",
+        "P Aditya Sreekar",
+        "Kaiwen Liu",
+        "Chuanneng Sun",
+        "Jorge Marchena Menendez",
+        "Matthew Bales",
+        "Tianyu Yang",
+        "Shahnawaz Alam",
+        "Rose Yu",
+        "Baoyuan Liu",
+        "Kristina Klinkner",
+        "Shervin Malmasi"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-09T21:51:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.08960v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "persistent code execution and live data access imply memory management",
+      "llm_evidence_cn": "持久化代码执行和实时数据访问涉及记忆管理",
+      "llm_evidence": "持久化代码执行和实时数据访问涉及记忆管理",
+      "canonical_evidence": "持久化代码执行和实时数据访问涉及记忆管理",
+      "llm_tldr_en": "Eluna uses graph-guided multi-agent framework with persistent sub-agents for SOP execution, enabling efficient memory of task states.",
+      "llm_tldr_cn": "针对LLM代理在标准操作程序执行中缺乏过程合规性和上下文过载的问题，提出Eluna系统，采用图引导的多代理框架，将SOP编码为有向无环图，并通过渐进式披露和并行子代理机制实现持久化代码执行和实时数据访问，以生产级延迟和准确性要求，通过非对称情节蒸馏提升性能。",
+      "llm_tldr": "针对LLM代理在标准操作程序执行中缺乏过程合规性和上下文过载的问题，提出Eluna系统，采用图引导的多代理框架，将SOP编码为有向无环图，并通过渐进式披露和并行子代理机制实现持久化代码执行和实时数据访问，以生产级延迟和准确性要求，通过非对称情节蒸馏提升性能。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.11226v1",
+      "source": "arxiv",
+      "title": "Heterogeneous Agent Cohorts for Safe Open-Ended Exploration with Runtime Constraint Memory",
+      "abstract": "LLM agents today are caught in an awkward bind. Lock them down with static safety instructions and they rarely venture beyond the obvious; give them free reign with tools and multi-agent debate, and safety violations quickly follow. Rather than forcing a single model to juggle both creativity and caution, we separate the concerns across specialized roles. A Disrupter generates unconventional proposals, a Validator enforces hard runtime checks at the tool gateway, and a Broker pulls in distant but relevant analogies. Failures are not discarded -- they are compiled, via MCTS, into compact, signed constraint patches we call Scars. These patches are cached locally and inherited by future cohorts, turning repeated failures into reusable, low-cost runtime constraints. In a spatial-semantic sandbox (N=20 runs, p<0.01), our cohort reaches remote targets where debate fails, the Validator prevents all executed breaches, and Scars reduce token consumption by 15.1% by avoiding redundant validator checks. Furthermore, credit-based Communication Allocation Scores (CAS) restrict outbound bandwidth, reducing overall token costs by 55.9% under resource constraints.",
+      "authors": [
+        "Tengjiao Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-13T08:17:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.11226v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "runtime constraint memory using MCTS-compiled Scars",
+      "llm_evidence_cn": "使用MCTS编译的Scar实现运行时约束记忆",
+      "llm_evidence": "使用MCTS编译的Scar实现运行时约束记忆",
+      "canonical_evidence": "使用MCTS编译的Scar实现运行时约束记忆",
+      "llm_tldr_en": "Heterogeneous Agent Cohorts use separate roles and MCTS-compiled Scars as runtime constraint memory, enabling safe exploration with reusable failure knowledge.",
+      "llm_tldr_cn": "LLM代理在安全与创造力之间难以平衡。提出异构代理队列框架，分离角色：生成者提出方案，验证者执行检查，经纪人检索类比。失败通过MCTS编译成紧凑的签名约束补丁（Scar），缓存并继承给未来队列，形成可复用的约束记忆。",
+      "llm_tldr": "LLM代理在安全与创造力之间难以平衡。提出异构代理队列框架，分离角色：生成者提出方案，验证者执行检查，经纪人检索类比。失败通过MCTS编译成紧凑的签名约束补丁（Scar），缓存并继承给未来队列，形成可复用的约束记忆。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.11357v1",
+      "source": "arxiv",
+      "title": "OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis",
+      "abstract": "Failure diagnosis in modern software systems requires iterative evidence acquisition and hypothesis reasoning guided by operational experience. Existing LLM-based methods improve diagnosis through agentic reasoning or knowledge augmentation, but they often lack a mechanism to coordinate the evolving diagnostic state with operational experience during iterative diagnosis. We propose OpsMem, a dual-memory framework that maintains a short-term memory for the current diagnostic state and a long-term memory for reusable operational experience. OpsMem uses cross-memory resonance to activate state-relevant long-term memory, conditions multi-agent diagnosis on the short-term and activated long-term memories, and consolidates reusable experience from solved incidents back into long-term memory. Experiments on a real-world Huawei microservice failure diagnosis dataset show that OpsMem outperforms representative agentic-reasoning and knowledge-augmented baselines, improving Match and Relevant by up to 46.88% and 18.39% over the strongest baseline, respectively.",
+      "authors": [
+        "Yongqian Sun",
+        "Rongchen Gao",
+        "Yu Luo",
+        "Wenwei Gu",
+        "Shenglin Zhang",
+        "Qingyi Guo",
+        "Qiuai Fu",
+        "Yaoliang Wu",
+        "Dan Pei"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-07-13T10:22:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.11357v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Dual-memory framework for agent reasoning in diagnosis",
+      "llm_evidence_cn": "用于诊断的双记忆推理框架",
+      "llm_evidence": "用于诊断的双记忆推理框架",
+      "canonical_evidence": "用于诊断的双记忆推理框架",
+      "llm_tldr_en": "OpsMem introduces short-term and long-term memory with cross-memory resonance for iterative failure diagnosis.",
+      "llm_tldr_cn": "针对软件故障诊断中迭代推理的需求，提出OpsMem双记忆框架，结合短期诊断状态和长期操作经验，通过跨记忆共振激活相关经验。实验表明该方法提升了诊断准确率，为代理记忆推理提供了实例。",
+      "llm_tldr": "针对软件故障诊断中迭代推理的需求，提出OpsMem双记忆框架，结合短期诊断状态和长期操作经验，通过跨记忆共振激活相关经验。实验表明该方法提升了诊断准确率，为代理记忆推理提供了实例。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.11614v1",
+      "source": "arxiv",
+      "title": "Extending LLM Context via Associative Recurrent Memory",
+      "abstract": "Extending the context length of large language models (LLMs) is critical for many real-world applications, yet standard transformers remain constrained by quadratic compute and linear memory scaling. In this work, we investigate the Associative Recurrent Memory Transformer (ARMT) as a practical approach for enabling long-context processing in LLMs, constant memory scaling, and better efficiency. We make three main contributions. First, we construct two domain-specific long-context datasets designed to evaluate realistic workloads, focusing on narrow-domain fine-tuning scenarios. Second, we propose a comprehensive training recipe for ARMT-based context extension, combining continued pre-training, synthetic long-context data generation, curriculum learning, and selective integration of associative memory into chosen model layers. Third, we present an extensive experimental study demonstrating that ARMT-augmented models: (i) process inputs well beyond their original context limits without degrading performance relative to in-limit baselines; (ii) generalize more effectively to out-of-distribution context lengths; and (iii) need 30% less FLOPs while preserving baseline performance within the original context window.",
+      "authors": [
+        "Gleb Kuzmin",
+        "Ivan Rodkin",
+        "Aydar Bulatov",
+        "Yuri Kuratov",
+        "Lyudmila Rvanova",
+        "Mikhail Katkov",
+        "Ilia Sochenkov",
+        "Misha Tsodyks",
+        "Timothy Baldwin",
+        "Mikhail Burtsev",
+        "Artem Shelmanov"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-13T14:37:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.11614v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "associative recurrent memory for LLM context extension",
+      "llm_evidence_cn": "用于LLM上下文扩展的关联循环记忆",
+      "llm_evidence": "用于LLM上下文扩展的关联循环记忆",
+      "canonical_evidence": "用于LLM上下文扩展的关联循环记忆",
+      "llm_tldr_en": "Investigates Associative Recurrent Memory Transformer (ARMT) for extending LLM context with constant memory scaling, including training recipes and domain-specific datasets.",
+      "llm_tldr_cn": "本文研究关联循环记忆变换器（ARMT）作为LLM上下文扩展的实用方法，实现恒定内存缩放。贡献包括构建了两个领域特定的长上下文数据集，提出了结合继续预训练、合成数据生成和课程学习的训练方案，并通过选择性微调证明了ARMT在保持模型能力的同时有效扩展上下文。该工作为将记忆机制集成到LLM中以支持智能体应用提供了可行路径。",
+      "llm_tldr": "本文研究关联循环记忆变换器（ARMT）作为LLM上下文扩展的实用方法，实现恒定内存缩放。贡献包括构建了两个领域特定的长上下文数据集，提出了结合继续预训练、合成数据生成和课程学习的训练方案，并通过选择性微调证明了ARMT在保持模型能力的同时有效扩展上下文。该工作为将记忆机制集成到LLM中以支持智能体应用提供了可行路径。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
