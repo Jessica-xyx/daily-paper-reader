@@ -6,55 +6,40 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-14
-- 运行时间：2026-07-14 20:28:00 UTC
+- 最新运行日期：2026-07-15
+- 运行时间：2026-07-15 21:30:08 UTC
 - 运行状态：成功
-- 本次总论文数：11
-- 精读区：6
-- 速读区：5
+- 本次总论文数：6
+- 精读区：5
+- 速读区：1
 
 ### 今日简报（AI）
-今日11篇论文聚焦机器人智能体系统与高效推理内存管理，精读两篇均获9.0高分。  
-最值得看《ABot-AgentOS》的通用机器人操作系统与终身多模态记忆，以及《MemDecay》的区域感知KV缓存淘汰策略。  
-建议读者重点关注智能体长期记忆与运行时约束结合的新方向，如速读中ToolAtlas的工具侧记忆复用。
-- 详情：[/202607/14/README](/202607/14/README)
+今日重点推荐6篇论文，其中2篇精读获得9.0高分，聚焦LLM智能体的无损加速与多跳推理。  
+最值得关注的是《Speculate with Memory》和《Track, Rank, Crack》，两者均从内存机制优化智能体性能。  
+建议优先精读这两篇9.0分论文，掌握其核心方法后再拓展速读内容。
+- 详情：[/202607/15/README](/202607/15/README)
 
 ### 精读区论文标签
-1. [ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory](/202607/14/2607.10350v1-abot-agentos-a-general-robotic-agent-os-with-lifelong-multi-modal-memory)  
+1. [Speculate with Memory: Lossless Acceleration for LLM Agents](/202607/15/2607.12236v1-speculate-with-memory-lossless-acceleration-for-llm-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：机器人代理的终身多模态记忆
-2. [MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference](/202607/14/2607.10582v1-memdecay-region-aware-kv-cache-eviction-for-efficient-llm-agent-inference)  
+   evidence：提出三种在线记忆系统用于投机执行加速
+2. [Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents](/202607/15/2607.12267v1-track-rank-crack-epistemic-working-memory-scales-multi-hop-reasoning-in-language-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向LLM代理的区域感知KV缓存驱逐
-3. [The Hidden Footprint: Making Storage a First-Class Metric for LLM Agent Evaluation](/202607/14/2607.11149v1-the-hidden-footprint-making-storage-a-first-class-metric-for-llm-agent-evaluation)  
+   evidence：语言智能体多跳推理中的认知工作记忆
+3. [PM-Bench: Evaluating Prospective Memory in LLM Agents](/202607/15/2607.12385v1-pm-bench-evaluating-prospective-memory-in-llm-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：存储足迹作为代理记忆的评估指标
-4. [LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making](/202607/14/2607.09322v2-longmedbench-benchmarking-medical-agents-for-long-horizon-clinical-decision-making)  
+   evidence：LLM智能体前瞻记忆评估基准
+4. [MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations](/202607/15/2607.12893v1-memops-benchmarking-lifecycle-memory-operations-in-long-horizon-conversations)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：长时间对话中生命周期记忆操作的基准
+5. [RCWT: Measuring Task-Budget Displacement from Coordination Content in LLM Calls](/202607/15/2607.12216v1-rcwt-measuring-task-budget-displacement-from-coordination-content-in-llm-calls)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：用于长时序临床决策的基准测试，包含记忆数据集
-5. [Memory-Conditioned Tool Calling for Camera-First Visual Agents](/202607/14/2607.09822v1-memory-conditioned-tool-calling-for-camera-first-visual-agents)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：个人视觉记忆条件化工具调用
-6. [The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory](/202607/14/2607.10608v1-the-compliance-trap-diagnosing-how-ai-agents-consume-conflicting-memory)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：诊断AI智能体如何消费冲突记忆
+   evidence：测量记忆增强型LLM系统中协调内容对任务预算的置换效应
 
 ### 速读区论文标签
-1. [ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory](/202607/14/2607.11126v1-toolatlas-learning-once-reusing-everywhere-with-tool-side-memory)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提供者侧工具记忆增强
-2. [Heterogeneous Agent Cohorts for Safe Open-Ended Exploration with Runtime Constraint Memory](/202607/14/2607.11226v1-heterogeneous-agent-cohorts-for-safe-open-ended-exploration-with-runtime-constraint-memory)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：使用MCTS编译的Scar实现运行时约束记忆
-3. [Eluna: An Agentic LLM System for Automating Warehouse Operations with Reasoning and Task Execution](/202607/14/2607.08960v1-eluna-an-agentic-llm-system-for-automating-warehouse-operations-with-reasoning-and-task-execution)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：持久化代码执行和实时数据访问涉及记忆管理
-4. [OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis](/202607/14/2607.11357v1-opsmem-dual-memory-reasoning-with-cross-memory-resonance-for-failure-diagnosis)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：用于诊断的双记忆推理框架
-5. [Extending LLM Context via Associative Recurrent Memory](/202607/14/2607.11614v1-extending-llm-context-via-associative-recurrent-memory)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：用于LLM上下文扩展的关联循环记忆
+1. [How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture](/202607/15/2607.12254v1-how-to-realize-recursively-self-improving-agents-and-personal-singularity-a-goal--scope--tool--and-benchmark-driven-multi-agent-architecture)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：具有记忆的自我改进多代理架构
 
 
 <div class="dpr-home-promo-card">
