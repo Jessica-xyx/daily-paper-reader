@@ -6,40 +6,49 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-15
-- 运行时间：2026-07-15 21:30:08 UTC
+- 最新运行日期：2026-07-16
+- 运行时间：2026-07-16 19:51:48 UTC
 - 运行状态：成功
-- 本次总论文数：6
+- 本次总论文数：9
 - 精读区：5
-- 速读区：1
+- 速读区：4
 
 ### 今日简报（AI）
-今日重点推荐6篇论文，其中2篇精读获得9.0高分，聚焦LLM智能体的无损加速与多跳推理。  
-最值得关注的是《Speculate with Memory》和《Track, Rank, Crack》，两者均从内存机制优化智能体性能。  
-建议优先精读这两篇9.0分论文，掌握其核心方法后再拓展速读内容。
-- 详情：[/202607/15/README](/202607/15/README)
+今日精选9篇论文，重点涵盖通用机器人操作系统与LLM代理置信度评估两大方向。  
+高分精读推荐《ABot-AgentOS》（终身多模态记忆机器人系统）和《Critic Experience Bank》（自进化置信度估计），速读中《Harness VLA》与《LongMedBench》分别涉及视觉语言代理和医疗决策基准。  
+建议关注记忆引导的VLA操控、长程临床决策基准以及代理置信度自我优化技术，这些方向对构建可靠自主系统具有实用价值。
+- 详情：[/202607/16/README](/202607/16/README)
 
 ### 精读区论文标签
-1. [Speculate with Memory: Lossless Acceleration for LLM Agents](/202607/15/2607.12236v1-speculate-with-memory-lossless-acceleration-for-llm-agents)  
+1. [ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory](/202607/16/2607.10350v2-abot-agentos-a-general-robotic-agent-os-with-lifelong-multi-modal-memory)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出三种在线记忆系统用于投机执行加速
-2. [Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents](/202607/15/2607.12267v1-track-rank-crack-epistemic-working-memory-scales-multi-hop-reasoning-in-language-agents)  
+   evidence：针对机器人的终身多模态记忆
+2. [Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents](/202607/16/2607.12397v1-critic-experience-bank-self-evolving-step-level-confidence-estimation-for-llm-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：语言智能体多跳推理中的认知工作记忆
-3. [PM-Bench: Evaluating Prospective Memory in LLM Agents](/202607/15/2607.12385v1-pm-bench-evaluating-prospective-memory-in-llm-agents)  
+   evidence：基于经验记忆库的LLM智能体置信度估计方法
+3. [Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents](/202607/16/2607.13157v1-oracle-agent-memory-as-an-enterprise-memory-substrate-for-long-horizon-ai-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：LLM智能体前瞻记忆评估基准
-4. [MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations](/202607/15/2607.12893v1-memops-benchmarking-lifecycle-memory-operations-in-long-horizon-conversations)  
+   evidence：研究Oracle代理记忆作为企业级记忆基础，覆盖完整生命周期。
+4. [Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents](/202607/16/2607.13591v1-memory-as-a-controlled-process-learned-adaptive-memory-management-for-llm-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：长时间对话中生命周期记忆操作的基准
-5. [RCWT: Measuring Task-Budget Displacement from Coordination Content in LLM Calls](/202607/15/2607.12216v1-rcwt-measuring-task-budget-displacement-from-coordination-content-in-llm-calls)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：测量记忆增强型LLM系统中协调内容对任务预算的置换效应
+   evidence：LLM代理的自适应记忆管理方法
+5. [Experience Memory Graph: One-Shot Error Correction for Agents](/202607/16/2607.13884v1-experience-memory-graph-one-shot-error-correction-for-agents)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：提出经验记忆图框架，用于LLM代理的一次性错误纠正。
 
 ### 速读区论文标签
-1. [How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture](/202607/15/2607.12254v1-how-to-realize-recursively-self-improving-agents-and-personal-singularity-a-goal--scope--tool--and-benchmark-driven-multi-agent-architecture)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：具有记忆的自我改进多代理架构
+1. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/16/2607.08448v2-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：使用记忆增强的agent框架进行VLA操控
+2. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/16/2607.08448v3-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：用于冻结的视觉-语言-行动模型的记忆增强智能体框架
+3. [LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making](/202607/16/2607.09322v1-longmedbench-benchmarking-medical-agents-for-long-horizon-clinical-decision-making)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：提供长上下文记忆数据集用于agent评测
+4. [Self-Improving AI Coding Agents Through Accumulated Behavioral Rules: A Closed-Loop Framework](/202607/16/2607.13091v1-self-improving-ai-coding-agents-through-accumulated-behavioral-rules-a-closed-loop-framework)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：累积行为规则作为编码代理的持久记忆。
 
 
 <div class="dpr-home-promo-card">
