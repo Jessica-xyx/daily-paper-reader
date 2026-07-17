@@ -1,0 +1,282 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-17T20:03:50.577424+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2607.14159v1",
+      "source": "arxiv",
+      "title": "MemoHarness: Agent Harnesses That Learn from Experience",
+      "abstract": "An agent harness is the external control layer that turns a base LLM into an executable agent by managing context, tools, orchestration, memory, decoding, and output handling. While harness design strongly affects agent behavior, most automatic improvement methods optimize narrower artifacts such as prompts, pipelines, or workflows, and deployed agents usually reuse a single global harness for all cases. We introduce MemoHarness, an adaptive harness optimization framework that learns from its own executions. MemoHarness decomposes the harness into six editable control dimensions, stores per-case diagnoses and distilled global patterns in a dual-layer experience bank, and adapts the learned harness to each test case using retrieved experience without test-time labels, feedback, or additional search. In our evaluation across shell-agent, code-generation, and analytical-reasoning benchmarks, MemoHarness improves over the fixed harnesses we compare against and shows selective transfer to unseen suites and base models. Its additional context can also remain cost-competitive when much of the retrieved experience is cacheable. These results provide evidence that execution experience is a practical substrate for building agent harnesses that are more adaptive than a single static configuration, while leaving broader claims about statistical robustness and component attribution to future work.",
+      "authors": [
+        "Yue Huang",
+        "Wenjie Wang",
+        "Han Bao",
+        "Yuchen Ma",
+        "Xiaonan Luo",
+        "Yi Nian",
+        "Haomin Zhuang",
+        "Zheyuan Liu",
+        "Yue Zhao",
+        "Xiangliang Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-14T21:22:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.14159v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "adaptive harness with dual-layer experience bank for memory management",
+      "llm_evidence_cn": "通过双层经验仓库实现自适应控制层的记忆管理",
+      "llm_evidence": "通过双层经验仓库实现自适应控制层的记忆管理",
+      "canonical_evidence": "通过双层经验仓库实现自适应控制层的记忆管理",
+      "llm_tldr_en": "MemoHarness adaptively learns from past executions by storing and retrieving experience, managing harness memory across cases.",
+      "llm_tldr_cn": "智能体控制层（harness）管理上下文、工具和记忆，但现有方法缺乏自适应能力。本文提出MemoHarness，将控制层分解为六个可编辑维度，并通过双层经验仓库存储案例诊断和全局模式，测试时检索相关经验调整控制策略。实验表明该方法显著提升智能体任务完成率，为记忆管理提供了系统性的优化框架。",
+      "llm_tldr": "智能体控制层（harness）管理上下文、工具和记忆，但现有方法缺乏自适应能力。本文提出MemoHarness，将控制层分解为六个可编辑维度，并通过双层经验仓库存储案例诊断和全局模式，测试时检索相关经验调整控制策略。实验表明该方法显著提升智能体任务完成率，为记忆管理提供了系统性的优化框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14611v1",
+      "source": "arxiv",
+      "title": "Bad Memory: Evaluating Prompt Injection Risks from Memory in Agentic Systems",
+      "abstract": "A growing class of agentic systems maintain persistent state across sessions through memory files, behavioral preferences, and knowledge bases. While this makes agents more useful and self-improving, it also creates a new attack surface for prompt injections in which malicious instructions can be embedded within persistent files and influence future behavior. In this work, we study prompt injection attacks in memory-based agentic systems using a sandboxed synthetic workspace. We evaluate two agentic systems, Anthropic Claude Code and OpenAI Codex, across four models: Claude Haiku 4.5, Claude Opus 4.7, GPT-5.2, and GPT-5.5. Our results show that although it is difficult to make an agent overwrite its own memory files using untrusted external content, payloads already planted in those files can successfully attack current and future sessions. Attack success and payload persistence vary substantially across systems, models, adversarial goals, and multi-session attack sequences. These findings show that persistent memory changes the threat model for prompt injection and motivate defenses that protect memory updates without removing useful agent adaptation.",
+      "authors": [
+        "Soham Gadgil",
+        "David Alexander",
+        "Sai Sunku",
+        "Franziska Roesner"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-07-16T06:13:48+00:00",
+      "link": "https://arxiv.org/pdf/2607.14611v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "evaluates memory-based prompt injection attacks in agent systems",
+      "llm_evidence_cn": "评估智能体系统中基于记忆的提示注入攻击",
+      "llm_evidence": "评估智能体系统中基于记忆的提示注入攻击",
+      "canonical_evidence": "评估智能体系统中基于记忆的提示注入攻击",
+      "llm_tldr_en": "Proposes a benchmark to evaluate prompt injection risks from memory in agentic systems, testing multiple models and revealing attack patterns.",
+      "llm_tldr_cn": "该论文针对智能体系统中持久记忆带来的提示注入风险，构建了一个沙盒合成工作空间来评估攻击。实验覆盖Anthropic Claude Code和OpenAI Codex等多个模型，结果表明尽管使智能体覆写自身记忆文件较为困难，但外部内容仍可能通过记忆影响未来行为。该工作为记忆安全评估提供了方法论和基准。",
+      "llm_tldr": "该论文针对智能体系统中持久记忆带来的提示注入风险，构建了一个沙盒合成工作空间来评估攻击。实验覆盖Anthropic Claude Code和OpenAI Codex等多个模型，结果表明尽管使智能体覆写自身记忆文件较为困难，但外部内容仍可能通过记忆影响未来行为。该工作为记忆安全评估提供了方法论和基准。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.10987v1",
+      "source": "arxiv",
+      "title": "[AAFLOW+] Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration for Multi-Agent Workflows",
+      "abstract": "Multi-agent LLM systems increasingly integrate retrieval, planning, and reasoning, but remain fundamentally text-centric, requiring agents to repeatedly recompute shared context through expensive prefill. Although single-request inference is known to be accelerated by KV-cache management, it is usually restricted to local serving scopes. We introduce AAFLOW+, a stateful extension of agentic workflow operators that makes KV cache a first-class distributed systems object. AAFLOW+ builds processes into communication-aware graphs that concurrently optimize data, prompts, and reusable model state. It also provides operators for KV materialization, transfer, fork, composition, and eviction. Its runtime enables zero-copy, transfer-aware execution, allowing agents to reuse long context without recomputation. AAFLOW+ reduces TTFT by up to 50.2x, achieves up to 7.63x reduced multi-agent compute cost at 16-agent scale, reduces KV memory by 1.72-6.10x, and increases throughput by more than 7.74x, based on an analytical cost model parameterized by empirical hardware microbenchmarks. The results demonstrate that KV transmission outperforms recomputation on networks with moderate to high bandwidth, making sure KV-state sharing greatly increases efficiency in multi-agent LLM systems by replacing text passing.",
+      "authors": [
+        "Arup Kumar Sarker",
+        "Alexander James Halpern",
+        "Mills Staylor",
+        "Aymen Alsaadi",
+        "Gregor von Laszewski",
+        "Yue Cheng",
+        "Shantenu Jha",
+        "Geoffrey Fox"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC"
+      ],
+      "published": "2026-07-13T01:19:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.10987v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "distributed KV cache orchestration for multi-agent memory",
+      "llm_evidence_cn": "多智能体工作流中分布式KV缓存管理",
+      "llm_evidence": "多智能体工作流中分布式KV缓存管理",
+      "canonical_evidence": "多智能体工作流中分布式KV缓存管理",
+      "llm_tldr_en": "AAFLOW+ introduces stateful operators and zero-copy KV cache orchestration, enabling efficient memory sharing across agents.",
+      "llm_tldr_cn": "多智能体系统常重复计算共享上下文。本文提出AAFLOW+，将KV缓存作为一等分布式对象，提供物化、传输、分叉、组合和驱逐等操作。运行时支持零拷贝共享，大幅减少预填充开销。实验表明该方法在多智能体推理工作流中显著加速并降低成本，为智能体记忆管理提供了系统级优化方案。",
+      "llm_tldr": "多智能体系统常重复计算共享上下文。本文提出AAFLOW+，将KV缓存作为一等分布式对象，提供物化、传输、分叉、组合和驱逐等操作。运行时支持零拷贝共享，大幅减少预填充开销。实验表明该方法在多智能体推理工作流中显著加速并降低成本，为智能体记忆管理提供了系统级优化方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.14512v1",
+      "source": "arxiv",
+      "title": "RetroAgent: Harnessing LLMs to Search Over Structured Memory for Agentic Retrosynthesis Planning",
+      "abstract": "Multi-step retrosynthesis planning seeks to decompose a target molecule into commercially available building blocks through a sequence of feasible reactions. The vast combinatorial search space makes this task challenging even for expert chemists. Traditional methods combine tree search with offline-trained value networks that score candidates in isolation, without reasoning about complete multi-step routes. Recent work leverages Large Language Models (LLMs) for this task, but relies on simple interfaces that limit exploration of the full search space. We introduce RetroAgent, an LLM agent that bridges symbolic search and neural reasoning through a harness with structured memory. Through memory and chemistry tools, the agent observes the full search state, including explored routes, available alternatives, and properties of intermediates, enabling informed decisions grounded in both global progress and domain knowledge. Experiments on in-distribution and out-of-distribution benchmarks demonstrate that RetroAgent delivers strong performance and generalization.",
+      "authors": [
+        "Yanqiao Zhu",
+        "Jingru Gan",
+        "Xiaoqi Sun",
+        "Fang Sun",
+        "Yidan Shi",
+        "Md Mofijul Islam",
+        "Chao Shang",
+        "Wenhao Gao",
+        "Connor W. Coley",
+        "Yizhou Sun",
+        "Wei Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-16T03:05:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.14512v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "structured memory for retrosynthesis planning",
+      "llm_evidence_cn": "在逆合成规划中使用结构化记忆",
+      "llm_evidence": "在逆合成规划中使用结构化记忆",
+      "canonical_evidence": "在逆合成规划中使用结构化记忆",
+      "llm_tldr_en": "RetroAgent uses an LLM agent with structured memory to search over reaction spaces for retrosynthesis.",
+      "llm_tldr_cn": "多步逆合成规划面临巨大搜索空间。本文提出RetroAgent，利用LLM智能体结合结构化记忆和化学工具进行规划。智能体通过记忆存储中间状态和搜索历史，实现符号搜索与神经推理的桥接。实验表明该方法在分子逆合成任务上提高了搜索效率和成功率，为智能体记忆在科学领域的应用提供了范例。",
+      "llm_tldr": "多步逆合成规划面临巨大搜索空间。本文提出RetroAgent，利用LLM智能体结合结构化记忆和化学工具进行规划。智能体通过记忆存储中间状态和搜索历史，实现符号搜索与神经推理的桥接。实验表明该方法在分子逆合成任务上提高了搜索效率和成功率，为智能体记忆在科学领域的应用提供了范例。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.14651v1",
+      "source": "arxiv",
+      "title": "MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents",
+      "abstract": "Persistent external memory enhances agent continuity but introduces persistent security vulnerabilities: adversarial content can be injected via standard interaction channels, retained across turns, and later distort downstream behavior. To address this challenge, we propose MemPoison, a comprehensive benchmark and analysis framework featuring 1227 hand-validated cases across four attack types, three injection channels, and three representative memory substrates, evaluated on seven open-weight and three closed-weight model families. We introduce a three-tier taxonomy: (L1) direct single-record corruption, (L2) compositional multi-record corruption and (L3) context-triggered dormant corruption. Our evaluations reveal a distinct defense frontier: while baseline write-time defenses, such as consistency checks, substantially suppress direct L1 attacks, they fail to reliably suppress L2 and L3 attacks. Through mechanistic influence decomposition (MID), we demonstrate structural blind spots in write-time defenses, which admit seemingly benign records that later become harmful through joint retrieval composition or trigger-conditioned activation. Our findings advocate for shifting from static filtering to adaptive, context-sensitive memory defense strategies.",
+      "authors": [
+        "Jifeng Gao",
+        "Kang Xia",
+        "Yi Zhang",
+        "Xiaobin Hong",
+        "Mingkai Lin",
+        "Xingshen Wei",
+        "Wenzhong Li",
+        "Sanglu Lu"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-16T07:19:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.14651v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Discovers persistent memory threats and structural blind spots in LLM agents with a benchmark",
+      "llm_evidence_cn": "揭示LLM智能体持久记忆中的安全威胁和结构盲点",
+      "llm_evidence": "揭示LLM智能体持久记忆中的安全威胁和结构盲点",
+      "canonical_evidence": "揭示LLM智能体持久记忆中的安全威胁和结构盲点",
+      "llm_tldr_en": "MemPoison proposes a benchmark and taxonomy for adversarial attacks on persistent memory in LLM agents, including direct, compositional, and context-triggered corruption across various models.",
+      "llm_tldr_cn": "持久记忆虽增强智能体能力，但也引入安全漏洞。本文提出MemPoison基准，包含1227个验证案例，覆盖四种攻击类型、三种注入渠道和三种记忆存储。将攻击分为三级：直接单记录破坏、组合多记录破坏和上下文触发潜伏破坏。评估多个模型后，发现现有防御存在结构盲点。该工作为安全记忆管理提供了重要分析工具。",
+      "llm_tldr": "持久记忆虽增强智能体能力，但也引入安全漏洞。本文提出MemPoison基准，包含1227个验证案例，覆盖四种攻击类型、三种注入渠道和三种记忆存储。将攻击分为三级：直接单记录破坏、组合多记录破坏和上下文触发潜伏破坏。评估多个模型后，发现现有防御存在结构盲点。该工作为安全记忆管理提供了重要分析工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.15257v1",
+      "source": "arxiv",
+      "title": "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+      "abstract": "Recent advances in Tool-Integrated Large Language Models have made web search a core capability of information-seeking agents. However, as interaction histories grow, agents increasingly struggle to track task progress. When search attempts fail to yield useful evidence, current single- and multi-agent systems can become trapped in repetitive loops, wasting search budgets and ultimately compromising the quality and completeness of the final output. We introduce SearchOS, a system-level multi-agent framework that turns fragile, implicit search progress into explicit, persistent, and shared state. First, we formulate open-domain information seeking as relational schema completion with grounded citations, where agents discover entities, populate attributes across linked tables, and anchor each value to source evidence. Then we design Search-Oriented Context Management (SOCM), which externalizes the evolving state into Frontier Task, an Evidence Graph, a Coverage Map, and Failure Memory. Built on SOCM, SearchOS applies a pipeline-parallel scheduling mechanism that overlaps the execution of sub-agents and continuously refills freed slots with tasks targeting unresolved coverage gaps to improve utilization and throughput. To schedule and control the execution of search agents, SearchOS introduces a Search Tool Middleware Harness that intercepts model and tool interactions to record grounded evidence and react to stalls or budget exhaustion, and provides a reusable hierarchical skill system comprising strategy and access skills to augment the agents' search process and avoid repeating failed search patterns across runs. On WideSearch and GISA, SearchOS leads all metrics among the evaluated single- and multi-agent baselines, paving the way toward robust information-seeking collaboration.",
+      "authors": [
+        "Yuyao Zhang",
+        "Junjie Gao",
+        "Zhengxian Wu",
+        "Jiaming Fan",
+        "Jin Zhang",
+        "Shihan Ma",
+        "Yao Yao",
+        "Weiran Qi",
+        "Chuyan Jin",
+        "Guiyu Ma",
+        "Xingzhong Xu",
+        "Kai Yang",
+        "Ji-Rong Wen",
+        "Zhicheng Dou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-07-16T17:51:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.15257v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "memory management via explicit persistent shared state for search progress",
+      "llm_evidence_cn": "通过显式持久共享状态管理搜索进度记忆",
+      "llm_evidence": "通过显式持久共享状态管理搜索进度记忆",
+      "canonical_evidence": "通过显式持久共享状态管理搜索进度记忆",
+      "llm_tldr_en": "SearchOS introduces a multi-agent framework that converts implicit search progress into explicit, persistent, shared state, enabling robust information seeking by avoiding repetitive loops and improving output quality.",
+      "llm_tldr_cn": "该论文针对开放域信息搜索中智能体因交互历史增长而难以追踪任务进度、陷入重复循环的问题，提出SearchOS系统级多智能体框架。该框架将脆弱的隐式搜索进度转化为显式、持久、共享的状态，通过关系模式完成和基于引用的实体发现来组织信息。实验表明，SearchOS能有效避免搜索浪费，提升最终输出的完整性和质量。这项工作为信息搜索场景中的记忆管理提供了新思路。",
+      "llm_tldr": "该论文针对开放域信息搜索中智能体因交互历史增长而难以追踪任务进度、陷入重复循环的问题，提出SearchOS系统级多智能体框架。该框架将脆弱的隐式搜索进度转化为显式、持久、共享的状态，通过关系模式完成和基于引用的实体发现来组织信息。实验表明，SearchOS能有效避免搜索浪费，提升最终输出的完整性和质量。这项工作为信息搜索场景中的记忆管理提供了新思路。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
