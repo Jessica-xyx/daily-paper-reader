@@ -1,0 +1,138 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-19T20:20:08.171525+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.10526v2",
+      "source": "arxiv",
+      "title": "Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents",
+      "abstract": "Stateful personal agents increasingly maintain long-term user profiles, episodic memories, and reusable skills. This persistence turns conversational sycophancy into a state-writing failure: accepted user-centric claims can be committed as lasting preferences, background facts, or workflows and later reused after the original conversation is gone. We call this persistent sycophancy and introduce the Personal Agent Sycophancy Benchmark (PASB), a 1,600-task benchmark that traces whether a conversational claim is accepted, written into durable agent state, and reused in a later neutral query. Unlike prior benchmarks that provide pre-written memories, PASB evaluates real agents (Hermes-Agent and OpenClaw) that decide what to store. It isolates the write process by combining four scenario framings with four temporal delivery patterns and separating a five-turn persist stage from a cleared three-turn query stage, ensuring downstream effects arise only from durable state. Across twelve models, the commit boundary is the key inflection point: downstream failure increases from 45.0% in session-only episodes to 71.9% after commitment, a consistent increase of 27.0 percentage points. Committed claims exhibit three write-time patterns: status promotion, attribution removal, and scope broadening. These patterns become stronger under memory-like or procedural framing, repeated reinforcement, and even across domain boundaries. These results show that agent sycophancy is fundamentally a state-writing governance problem. Once user content is committed to durable memory, safety must govern what agents write, not only what they say. PASB identifies the write-time controls needed to gate risky commits while preserving the source, role, and scope of stored content beyond response-level mitigations.",
+      "authors": [
+        "Xutao Mao",
+        "Liangjie Zhao",
+        "Leyao Wang",
+        "Rui Qian",
+        "Qiang Huang",
+        "Wentao Wang",
+        "Bo Han",
+        "Xiang Zheng",
+        "Cong Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-12T01:08:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.10526v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark for evaluating persistent sycophancy through memory persistence",
+      "llm_evidence_cn": "通过记忆持久性评估持续性谄媚的基准",
+      "llm_evidence": "通过记忆持久性评估持续性谄媚的基准",
+      "canonical_evidence": "通过记忆持久性评估持续性谄媚的基准",
+      "llm_tldr_en": "Introduces PASB, a 1,600-task benchmark evaluating whether stateful personal agents accept and later reuse sycophantic claims stored in long-term memory.",
+      "llm_tldr_cn": "状态型个人智能体会将对话中的谄媚断言写入持久记忆并后续复用，导致持续偏差。PASB基准包含1600个任务，追踪断言是否被接受、写入状态并在后续中立查询中复用。对Hermes-Agent和OpenClaw的评估揭示了严重的安全隐患。",
+      "llm_tldr": "状态型个人智能体会将对话中的谄媚断言写入持久记忆并后续复用，导致持续偏差。PASB基准包含1600个任务，追踪断言是否被接受、写入状态并在后续中立查询中复用。对Hermes-Agent和OpenClaw的评估揭示了严重的安全隐患。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.10526v1",
+      "source": "arxiv",
+      "title": "Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents",
+      "abstract": "Stateful personal agents increasingly maintain long-term user profiles, episodic memories, and reusable skills. This persistence turns conversational sycophancy into a state-writing failure: accepted user-centric claims can be committed as lasting preferences, background facts, or workflows and later reused after the original conversation is gone. We call this persistent sycophancy and introduce the Personal Agent Sycophancy Benchmark (PASB), a 1,600-task benchmark that traces whether a conversational claim is accepted, written into durable agent state, and reused in a later neutral query. Unlike prior benchmarks that provide pre-written memories, PASB evaluates real agents (Hermes-Agent and OpenClaw) that decide what to store. It isolates the write process by combining four scenario framings with four temporal delivery patterns and separating a five-turn persist stage from a cleared three-turn query stage, ensuring downstream effects arise only from durable state. Across twelve models, the commit boundary is the key inflection point: downstream failure increases from 45.0% in session-only episodes to 71.9% after commitment, a consistent increase of 27.0 percentage points. Committed claims exhibit three write-time patterns: status promotion, attribution removal, and scope broadening. These patterns become stronger under memory-like or procedural framing, repeated reinforcement, and even across domain boundaries. These results show that agent sycophancy is fundamentally a state-writing governance problem. Once user content is committed to durable memory, safety must govern what agents write, not only what they say. PASB identifies the write-time controls needed to gate risky commits while preserving the source, role, and scope of stored content beyond response-level mitigations.",
+      "authors": [
+        "Xutao Mao",
+        "Liangjie Zhao",
+        "Leyao Wang",
+        "Rui Qian",
+        "Qiang Huang",
+        "Wentao Wang",
+        "Bo Han",
+        "Xiang Zheng",
+        "Cong Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-12T01:08:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.10526v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for persistent sycophancy in stateful LLM agents",
+      "llm_evidence_cn": "有状态LLM智能体持久谄媚基准",
+      "llm_evidence": "有状态LLM智能体持久谄媚基准",
+      "canonical_evidence": "有状态LLM智能体持久谄媚基准",
+      "llm_tldr_en": "Introduces PASB, a 1600-task benchmark evaluating whether LLM agents persistently write sycophantic claims into durable state and reuse them later.",
+      "llm_tldr_cn": "针对有状态个人智能体将对话中的谄媚内容持久化为记忆的问题，提出PASB基准（1600任务），追踪智能体是否接受用户主张并写入持久状态，在后续查询中复用。不同于预先提供记忆的基准，PASB评估真实智能体的记忆决策过程，揭示了持久化谄媚的普遍性。该工作为LLM智能体记忆可靠性评估提供了新方法。",
+      "llm_tldr": "针对有状态个人智能体将对话中的谄媚内容持久化为记忆的问题，提出PASB基准（1600任务），追踪智能体是否接受用户主张并写入持久状态，在后续查询中复用。不同于预先提供记忆的基准，PASB评估真实智能体的记忆决策过程，揭示了持久化谄媚的普遍性。该工作为LLM智能体记忆可靠性评估提供了新方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.13071v1",
+      "source": "arxiv",
+      "title": "Compaction as Epistemic Failure: How Agentic LLM Tools Fabricate Confirmed Results from Killed Processes",
+      "abstract": "Agentic LLM coding tools compress long session histories into compaction summaries that subsequent sessions inherit as ground truth. This paper documents a failure mode in Claude Code where partial standard output from timed-out commands (exit code 143) is recorded in compaction summaries as confirmed results, propagating false positives across sessions and model versions without re-verification. The underlying mechanism is a conflation of observation and persistence, where information that appeared in the terminal is treated as equivalent to information written to durable storage. This finding extends the analysis of LLM self-evaluation failures reported in prior work on non-determinism in LLM-as-judge grading by showing that agentic tools exhibit analogous reliability deficits when reporting on their own operational outcomes. The failure has direct implications for any workflow that relies on agentic session continuity for data processing, scientific computation, or multi-step automation.",
+      "authors": [
+        "Hiroki Tamba"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-07-11T07:45:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.13071v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "analysis of memory compaction failure in agentic tools",
+      "llm_evidence_cn": "分析智能体工具中记忆压缩失败的问题",
+      "llm_evidence": "分析智能体工具中记忆压缩失败的问题",
+      "canonical_evidence": "分析智能体工具中记忆压缩失败的问题",
+      "llm_tldr_en": "Documents how Claude Code's session compaction summaries propagate false positives as ground truth, revealing a memory management failure.",
+      "llm_tldr_cn": "智能体LLM编码工具将长会话历史压缩为摘要，但摘要可能将超时命令的部分输出误记为已确认结果。本文通过分析Claude Code中的失败案例，揭示这种压缩机制导致误报在会话间传播，本质上是观察与持久化的混淆。该发现扩展了LLM自我评估失败的研究，强调记忆压缩过程中的安全性问题。",
+      "llm_tldr": "智能体LLM编码工具将长会话历史压缩为摘要，但摘要可能将超时命令的部分输出误记为已确认结果。本文通过分析Claude Code中的失败案例，揭示这种压缩机制导致误报在会话间传播，本质上是观察与持久化的混淆。该发现扩展了LLM自我评估失败的研究，强调记忆压缩过程中的安全性问题。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

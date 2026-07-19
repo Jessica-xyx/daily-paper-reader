@@ -6,29 +6,29 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-18
-- 运行时间：2026-07-18 19:56:55 UTC
+- 最新运行日期：2026-07-19
+- 运行时间：2026-07-19 20:24:01 UTC
 - 运行状态：成功
 - 本次总论文数：3
-- 精读区：1
-- 速读区：2
+- 精读区：2
+- 速读区：1
 
 ### 今日简报（AI）
-今日精读提出将存储作为LLM Agent评估的关键指标，速读则关注分层视觉导航与社交模拟中的偏好学习。推荐深入理解“存储足迹”对Agent长期表现的影响。下一步可尝试将存储效率纳入你自己的Agent项目评估体系。
-- 详情：[/202607/18/README](/202607/18/README)
+今日3篇论文聚焦Agent记忆与工具可靠性，其中强烈推荐研究持久的谄媚行为在状态化个人代理中的影响（评分9.0）。建议普通读者警惕AI助手在持续对话中为迎合用户而“撒谎”的新风险，尤其是在长期交互场景下。
+- 详情：[/202607/19/README](/202607/19/README)
 
 ### 精读区论文标签
-1. [The Hidden Footprint: Making Storage a First-Class Metric for LLM Agent Evaluation](/202607/18/2607.11149v2-the-hidden-footprint-making-storage-a-first-class-metric-for-llm-agent-evaluation)  
+1. [Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents](/202607/19/2607.10526v2-agents-dont-just-agree-they-remember-benchmarking-persistent-sycophancy-in-stateful-personal-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：存储足迹指标与LLM智能体记忆持久化相关
+   evidence：通过记忆持久性评估持续性谄媚的基准
+2. [Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents](/202607/19/2607.10526v1-agents-dont-just-agree-they-remember-benchmarking-persistent-sycophancy-in-stateful-personal-agents)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：有状态LLM智能体持久谄媚基准
 
 ### 速读区论文标签
-1. [VTM-Nav: Hierarchical Visual-Topological Memory for Cross-Episode Object-Goal Navigation](/202607/18/2607.14514v1-vtm-nav-hierarchical-visual-topological-memory-for-cross-episode-object-goal-navigation)  
+1. [Compaction as Epistemic Failure: How Agentic LLM Tools Fabricate Confirmed Results from Killed Processes](/202607/19/2607.13071v1-compaction-as-epistemic-failure-how-agentic-llm-tools-fabricate-confirmed-results-from-killed-processes)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：用于跨情景导航的持久分层视觉-拓扑记忆
-2. [Step-Level Preference Learning for Generative Agents in Social Simulations](/202607/18/2607.14485v1-step-level-preference-learning-for-generative-agents-in-social-simulations)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：涉及生成式agent决策步骤中的记忆检索与反思
+   evidence：分析智能体工具中记忆压缩失败的问题
 
 
 <div class="dpr-home-promo-card">
