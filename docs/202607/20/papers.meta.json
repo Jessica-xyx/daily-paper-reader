@@ -1,0 +1,39 @@
+{
+  "label": "2026-07-20",
+  "date": "2026-07-20",
+  "generated_at": "2026-07-20T20:30:21",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202607/20/2607.15657v1-do-agents-dream-of-false-memories-black-box-visual-attacks-on-long-term-memory-in-multimodal-ai-agents",
+      "section": "deep",
+      "title_en": "Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal AI Agents",
+      "authors": "Halima Bouzidi, Mboutidem Ekemini Mkpong, Mohammad Abdullah Al Faruque",
+      "date": "2026-07-17",
+      "pdf": "https://arxiv.org/pdf/2607.15657v1",
+      "score": "9.0",
+      "evidence": "对多模态AI代理长期记忆的黑盒视觉攻击",
+      "tldr": "多模态AI代理依赖视觉长时记忆进行生成，但对视觉数据无条件信任存在安全漏洞。本文提出Lucid黑盒对抗攻击框架，无需访问模型或文本通道，仅通过微小图像扰动实现两种攻击：记忆污染（有上下文时篡改视觉回忆）和记忆注入（无上下文时植入新内容）。在五种黑盒记忆架构上，污染攻击成功率达61.6%，注入攻击达58.4%，揭示了多模态记忆管道的结构性脆弱性。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Multimodal AI agents increasingly rely on persistent long-term memory to ground generation in past visual and textual episodes. We show that unconditional trust in visual data creates a critical vulnerability. We propose Lucid, a black-box adversarial framework that compromises multimodal memory pipelines under a strictly image-bounded threat model, requiring no access to the target MLLM, target retrieval encoder, or the text channel. Lucid crafts imperceptible perturbations to enable two distinct failure modes based on the availability of historical context: (1) Memory poisoning, an in-context attack where the adversarial image replaces a benign one whose content is reinforced by prior textual context, reliably corrupting visual recall and steering the agent toward attacker-chosen narratives; (2) Memory injection, an out-of-context attack where the adversarial image replaces a benign one in a conversation turn devoid of prior textual grounding, causing the agent to generate attacker-influenced responses with no corrective signal from memory. We evaluate Lucid across various conversation domains and five black-box memory architectures, including graph-structured, LLM-summarized, and commercially deployed systems. Lucid achieves 61.6% ASR on poisoning and 58.4% ASR on injection, exposing a structural vulnerability in multimodal memory pipelines.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/20/2607.15715v1-behavioral-controllability-of-agentic-models-for-information-extraction-from-fixed-workflows-to-reflective-agents",
+      "section": "quick",
+      "title_en": "Behavioral Controllability of Agentic Models for Information Extraction: From Fixed Workflows to Reflective Agents",
+      "authors": "Lujia Zhang, Xingzhou Chen, Hongwei Feng",
+      "date": "2026-07-17",
+      "pdf": "https://arxiv.org/pdf/2607.15715v1",
+      "score": "7.0",
+      "evidence": "研究记忆等组件是否带来可控的改进",
+      "tldr": "本研究探究LLM代理在信息提取中的行为可控性，通过会议论文数据集提取任务，比较固定工作流与反射代理变体。评估重点包括工具执行、重试、反射、内存使用、运行时间和故障恢复等过程级行为，而非仅关注提取覆盖率。结果显示反射机制在某些场景下能改善故障恢复，但并非一致提升任务完成，且可能引入新失败模式。基于观察，提出了优化代理设计S2，在相同任务中引入更丰富的PDF工具和动态工具选择。贡献在于揭示了代理行为可控性的复杂性，并提供了过程级评估框架以指导更可靠的代理系统设计。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Large language model (LLM) agents are increasingly used for complex information-extraction tasks, yet it remains unclear whether agentic components such as reflection and memory lead to observable and controllable improvements over fixed LLM workflows. We study this question through conference-paper dataset extraction, where a system must identify datasets mentioned in scholarly PDFs and produce structured records. We compare a fixed workflow baseline with reflective agent variants and specify an optimized agent condition (S2) that extends the same task with richer PDF tools and dynamic tool selection. Our evaluation emphasizes process-level behavior--including tool execution, retries, reflection, memory use, runtime, and failure recovery--while treating extraction coverage and field completeness as secondary outcome measures. The paper characterizes when agentic mechanisms change system behavior, whether these changes improve task completion, and how the observed failure modes motivate an optimized agent design under the same evaluation harness.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

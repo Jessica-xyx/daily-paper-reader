@@ -1,0 +1,93 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-20T20:27:45.815853+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.15657v1",
+      "source": "arxiv",
+      "title": "Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal AI Agents",
+      "abstract": "Multimodal AI agents increasingly rely on persistent long-term memory to ground generation in past visual and textual episodes. We show that unconditional trust in visual data creates a critical vulnerability. We propose Lucid, a black-box adversarial framework that compromises multimodal memory pipelines under a strictly image-bounded threat model, requiring no access to the target MLLM, target retrieval encoder, or the text channel. Lucid crafts imperceptible perturbations to enable two distinct failure modes based on the availability of historical context: (1) Memory poisoning, an in-context attack where the adversarial image replaces a benign one whose content is reinforced by prior textual context, reliably corrupting visual recall and steering the agent toward attacker-chosen narratives; (2) Memory injection, an out-of-context attack where the adversarial image replaces a benign one in a conversation turn devoid of prior textual grounding, causing the agent to generate attacker-influenced responses with no corrective signal from memory. We evaluate Lucid across various conversation domains and five black-box memory architectures, including graph-structured, LLM-summarized, and commercially deployed systems. Lucid achieves 61.6% ASR on poisoning and 58.4% ASR on injection, exposing a structural vulnerability in multimodal memory pipelines.",
+      "authors": [
+        "Halima Bouzidi",
+        "Mboutidem Ekemini Mkpong",
+        "Mohammad Abdullah Al Faruque"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-07-17T06:05:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.15657v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "black-box visual attacks on long-term memory in multimodal AI agents",
+      "llm_evidence_cn": "对多模态AI代理长期记忆的黑盒视觉攻击",
+      "llm_evidence": "对多模态AI代理长期记忆的黑盒视觉攻击",
+      "canonical_evidence": "对多模态AI代理长期记忆的黑盒视觉攻击",
+      "llm_tldr_en": "Lucid proposes black-box visual adversarial attacks on multimodal agent memory, achieving memory poisoning and corruption without model access.",
+      "llm_tldr_cn": "该论文揭示了多模态AI代理对长期记忆的盲目信任带来的安全漏洞。提出Lucid框架，在仅能操作图像的黑盒威胁模型下，生成不可察觉的扰动以实现记忆中毒和损坏。实验表明攻击能可靠地操控代理的检索和生成行为。该工作凸显了记忆安全的重要性。",
+      "llm_tldr": "该论文揭示了多模态AI代理对长期记忆的盲目信任带来的安全漏洞。提出Lucid框架，在仅能操作图像的黑盒威胁模型下，生成不可察觉的扰动以实现记忆中毒和损坏。实验表明攻击能可靠地操控代理的检索和生成行为。该工作凸显了记忆安全的重要性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.15715v1",
+      "source": "arxiv",
+      "title": "Behavioral Controllability of Agentic Models for Information Extraction: From Fixed Workflows to Reflective Agents",
+      "abstract": "Large language model (LLM) agents are increasingly used for complex information-extraction tasks, yet it remains unclear whether agentic components such as reflection and memory lead to observable and controllable improvements over fixed LLM workflows. We study this question through conference-paper dataset extraction, where a system must identify datasets mentioned in scholarly PDFs and produce structured records. We compare a fixed workflow baseline with reflective agent variants and specify an optimized agent condition (S2) that extends the same task with richer PDF tools and dynamic tool selection. Our evaluation emphasizes process-level behavior--including tool execution, retries, reflection, memory use, runtime, and failure recovery--while treating extraction coverage and field completeness as secondary outcome measures. The paper characterizes when agentic mechanisms change system behavior, whether these changes improve task completion, and how the observed failure modes motivate an optimized agent design under the same evaluation harness.",
+      "authors": [
+        "Lujia Zhang",
+        "Xingzhou Chen",
+        "Hongwei Feng"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-17T07:51:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.15715v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "studies whether components like memory lead to controllable improvements in LLM agents",
+      "llm_evidence_cn": "研究记忆等组件是否带来可控的改进",
+      "llm_evidence": "研究记忆等组件是否带来可控的改进",
+      "canonical_evidence": "研究记忆等组件是否带来可控的改进",
+      "llm_tldr_en": "Studies whether agentic components (reflection, memory) improve information extraction over fixed workflows; finds measurable process-level benefits.",
+      "llm_tldr_cn": "针对LLM智能体中反思和记忆等组件是否带来可观测和可控改进的问题，通过会议论文数据集抽取任务比较固定工作流与反思智能体变体。评估强调过程级行为，包括工具执行、重试、反思和记忆使用。结果表明智能体组件在特定条件下可带来可控改进。",
+      "llm_tldr": "针对LLM智能体中反思和记忆等组件是否带来可观测和可控改进的问题，通过会议论文数据集抽取任务比较固定工作流与反思智能体变体。评估强调过程级行为，包括工具执行、重试、反思和记忆使用。结果表明智能体组件在特定条件下可带来可控改进。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
