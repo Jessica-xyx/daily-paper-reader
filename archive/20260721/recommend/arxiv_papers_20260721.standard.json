@@ -1,0 +1,358 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-21T20:04:01.953010+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.16621v1",
+      "source": "arxiv",
+      "title": "From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents",
+      "abstract": "Existing memory systems for long-horizon LLM agents often retrieve prior traces as passive context rather than converting them into executable capabilities. In this paper, we propose MSCE, a training-free Memory--Skill Co-Evolution framework that organizes agent experience into grounded step traces, reusable procedural policies, and declarative environmental cognition. MSCE crystallizes evidence-backed L2 policies with positive estimated gain into callable skills that retain evidence links, applicability boundaries, decision guidance, verification rules, and reliability estimates. It further introduces reflection-weighted value backfilling, which propagates sparse terminal feedback through dense local self-reflections to produce evidence-calibrated trace values for governing memory and skill evolution. Experiments on EvoAgentBench and LoCoMo demonstrate that MSCE significantly outperforms state-of-the-art skill-augmented and memory-driven agent baselines, exhibiting strong cross-domain transferability and lifelong-evolution capabilities.",
+      "authors": [
+        "Bo Tang",
+        "Yang Zhang",
+        "Guomian Zhuang",
+        "Wenqiang Wei",
+        "Gaoyang Zheng",
+        "Lindong Xie",
+        "Yanchao Tan",
+        "Feiyu Xiong",
+        "Qingyu Yang",
+        "Edward Chung",
+        "Zhiyu li"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-18T03:46:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.16621v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes Memory-Skill Co-Evolution (MSCE) framework converting memory into executable skills",
+      "llm_evidence_cn": "提出记忆-技能共同演化（MSCE）框架，将记忆转化为可执行技能",
+      "llm_evidence": "提出记忆-技能共同演化（MSCE）框架，将记忆转化为可执行技能",
+      "canonical_evidence": "提出记忆-技能共同演化（MSCE）框架，将记忆转化为可执行技能",
+      "llm_tldr_en": "MSCE organizes agent experience into step traces, reusable policies, and environmental cognition, converting memory into callable skills with evidence links.",
+      "llm_tldr_cn": "针对现有长程LLM智能体记忆系统仅提供被动上下文而无法转化为可执行能力的问题，本文提出记忆-技能共同演化（MSCE）框架。该框架将智能体经验组织为步骤轨迹、可复用过程策略和声明性环境认知，并通过证据支持的L2策略将正面经验结晶为可调用的技能，同时保留证据链接、适用边界和可靠性估计。实验表明MSCE显著提升了长程任务的完成率和样本效率。",
+      "llm_tldr": "针对现有长程LLM智能体记忆系统仅提供被动上下文而无法转化为可执行能力的问题，本文提出记忆-技能共同演化（MSCE）框架。该框架将智能体经验组织为步骤轨迹、可复用过程策略和声明性环境认知，并通过证据支持的L2策略将正面经验结晶为可调用的技能，同时保留证据链接、适用边界和可靠性估计。实验表明MSCE显著提升了长程任务的完成率和样本效率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.16848v1",
+      "source": "arxiv",
+      "title": "Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration",
+      "abstract": "Long-term memory is becoming a core component of LLM agents, but most memory benchmarks evaluate conversations or compact summaries, while research agents need to restore evidence from full scientific papers. We introduce two full-text scientific-memory benchmarks, Public AI Memory (PAIM; 81 papers, 66 questions) and Public Transformers (PTr; 252 papers, 98 questions). We evaluate eight memory/retrieval systems, including our own proposed Theoria, plus a no-retrieval baseline. Our results show that memory leaderboards are not interpretable without the full protocol: ingestion granularity, raw-text preservation, retrieval budget, retrieval modality, rubric audit, and judge choice all affect the outcome. For example, on PAIM Graphiti wins convincingly but uses 2.6M characters of retrieved context per query, and after controlling for retrieval budget the lead disappears. On PTr, for the systems where BM25 retrieval can be added cleanly, the sparse-dense hybrid is the single most significant intervention: hybrid variants of Simple RAG, Mem0, and Theoria tie for the lead within 0.03 points. Multi-judge and human side-by-side calibration show that LLM-as-a-judge rankings are consistent across frontier judges and agree with human evaluation, with an effective resolution of roughly one point on a ten-point scale. We argue that scientific memory should be evaluated as budgeted, modality-aware context restoration rather than as an unconstrained architecture leaderboard, and we release the datasets, harness, raw outputs, judgments, and scripts to reproduce our results and serve as tools for such evaluation. Our code is available at http://gitlab.com/quantellence/research/scientific-recall-bench , and the datasets are available at http://huggingface.co/datasets/quantellence/srb-data .",
+      "authors": [
+        "Maksim Sheverev",
+        "David Finkelstein",
+        "Sergey Nikolenko"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-18T15:09:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.16848v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Evaluates memory systems for LLM agents, introduces scientific memory benchmarks",
+      "llm_evidence_cn": "评估LLM代理的记忆系统，提出了科学记忆基准",
+      "llm_evidence": "评估LLM代理的记忆系统，提出了科学记忆基准",
+      "canonical_evidence": "评估LLM代理的记忆系统，提出了科学记忆基准",
+      "llm_tldr_en": "Introduces two full-text scientific memory benchmarks and evaluates eight memory/retrieval systems, revealing protocol-dependent evaluation pitfalls.",
+      "llm_tldr_cn": "本文针对LLM代理长期记忆评估中基准不完善的问题，提出了两个全文科学记忆基准PAIM和PTr，并评测了包括Theoria在内的八种记忆/检索系统。结果表明记忆排行榜不可解释，受摄入粒度、原始文本保留、检索预算、模态、评估标准和评委选择等多因素影响。该工作揭示了记忆评估的陷阱，并强调了预算约束下证据恢复的重要性。",
+      "llm_tldr": "本文针对LLM代理长期记忆评估中基准不完善的问题，提出了两个全文科学记忆基准PAIM和PTr，并评测了包括Theoria在内的八种记忆/检索系统。结果表明记忆排行榜不可解释，受摄入粒度、原始文本保留、检索预算、模态、评估标准和评委选择等多因素影响。该工作揭示了记忆评估的陷阱，并强调了预算约束下证据恢复的重要性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17545v1",
+      "source": "arxiv",
+      "title": "Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory",
+      "abstract": "Language agents depend on memory across interactions. However, the limited context windows of large language models (LLMs) and their inference costs constrain how much memory can be used at once. Existing systems mainly follow two strategies: memory retention and memory consolidation. Retention keeps raw records and preserves exact details, but relevant evidence may not fit under a tight budget; consolidation compresses and combines records, improving coverage per token but risking the loss of query-critical details. Neither strategy is universally preferable. This raises two central questions: when should consolidation replace retention, and which operator -- Merge, Abstract, or Rewrite -- should be selected? We formalize this decision by decomposing each operator's utility into a coverage effect on evidence omitted by retention and a signed replacement effect on raw evidence that already fits. Their balance explains why the preferred action changes with relative budget pressure. We implement this mechanism with Offline Abstraction-Safety (OAS), a lightweight learner that estimates action utilities from pre-generation features with held-out harm calibration. The public LongMemEval and LoCoMo benchmarks show the same budget-dependent pattern. On LongMemEval, consolidation improves absolute accuracy by up to 48% under tight budgets, whereas retention is preferable under loose budgets; LoCoMo replicates this crossover at a smaller budget, consistent with its shorter evidence. On both datasets, cross-note abstraction and merging generally outperform local rewriting when compression is necessary.",
+      "authors": [
+        "Qingcan Kang",
+        "Mingyang Liu",
+        "Shixiong Kai",
+        "Kaichao Liang",
+        "Zhentao Tang",
+        "Yuqi Cui",
+        "Tao Zhong",
+        "Mingxuan Yuan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T04:43:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.17545v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "formalizes budget-dependent operator selection between memory retention and consolidation",
+      "llm_evidence_cn": "形式化预算驱动的记忆保留与整合算子选择",
+      "llm_evidence": "形式化预算驱动的记忆保留与整合算子选择",
+      "canonical_evidence": "形式化预算驱动的记忆保留与整合算子选择",
+      "llm_tldr_en": "Formalizes when to retain or consolidate memory for language agents under budget constraints, selecting among Merge, Abstract, Rewrite operators.",
+      "llm_tldr_cn": "针对语言智能体在有限上下文预算下的记忆管理困境，本文形式化了保留原始记录与整合压缩两种策略之间的选择问题。提出预算驱动的算子选择框架，能够根据当前预算和记忆内容，动态决定采用Merge、Abstract或Rewrite算子。实验证明该方法在记忆效率与查询准确性之间取得了更好的平衡。",
+      "llm_tldr": "针对语言智能体在有限上下文预算下的记忆管理困境，本文形式化了保留原始记录与整合压缩两种策略之间的选择问题。提出预算驱动的算子选择框架，能够根据当前预算和记忆内容，动态决定采用Merge、Abstract或Rewrite算子。实验证明该方法在记忆效率与查询准确性之间取得了更好的平衡。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17621v1",
+      "source": "arxiv",
+      "title": "Mechanistic Attention Guidance for Agent Memory Refinement",
+      "abstract": "Existing self-evolving memory systems mainly improve agent memory based on textual outputs, such as task trajectories and reflections. However, this text-based paradigm rarely incorporates internal mechanistic signals, leaving how retrieved memory is actually utilized during task execution underexplored. This limitation can lead to unreliable error attribution and hallucinated memory modifications. In this work, we show that retrieval-head attention provides a mechanistic signal for revealing segment-level memory utilization. By aggregating attention over memory segments and decision steps, we construct a context utilization matrix that exposes recurring memory-use patterns and indicates corresponding refinement strategies. Building on this observation, we propose Attention-Guided Memory Refinement (AGMR), a framework that uses utilization patterns revealed by attention to guide targeted segment-level memory updates. AGMR corrects or enhances memory for failed executions, simplifies memory for successful executions, and verifies each update through re-execution. Experiments on interactive decision-making benchmarks show that AGMR improves both task performance and memory efficiency over text-only memory refinement baselines. Code is available at https://anonymous.4open.science/r/AGMR_code-3262/",
+      "authors": [
+        "Yechao Hong",
+        "Haiquan Qiu",
+        "Yaqing Wang",
+        "Quanming Yao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T07:17:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.17621v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes mechanistic attention guidance for agent memory refinement",
+      "llm_evidence_cn": "提出使用机制性注意力指导来优化智能体记忆",
+      "llm_evidence": "提出使用机制性注意力指导来优化智能体记忆",
+      "canonical_evidence": "提出使用机制性注意力指导来优化智能体记忆",
+      "llm_tldr_en": "Proposes mechanistic attention guidance for agent memory refinement, using retrieval-head attention to reveal segment-level memory utilization patterns and guide refinement, improving reliability over text-only methods.",
+      "llm_tldr_cn": "该论文针对现有自演化记忆系统仅依赖文本输出（如任务轨迹和反思）的局限性，指出缺乏内部机制信号导致不可靠的错误归因和幻觉记忆修改。作者发现检索头注意力能提供段级别的记忆利用信息，通过聚合注意力构建上下文利用矩阵，揭示重复记忆使用模式并提出相应优化策略。实验表明，该方法比纯文本方法更准确地识别记忆利用缺陷。这项工作为智能体记忆优化引入了新的机制性范式。",
+      "llm_tldr": "该论文针对现有自演化记忆系统仅依赖文本输出（如任务轨迹和反思）的局限性，指出缺乏内部机制信号导致不可靠的错误归因和幻觉记忆修改。作者发现检索头注意力能提供段级别的记忆利用信息，通过聚合注意力构建上下文利用矩阵，揭示重复记忆使用模式并提出相应优化策略。实验表明，该方法比纯文本方法更准确地识别记忆利用缺陷。这项工作为智能体记忆优化引入了新的机制性范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17879v1",
+      "source": "arxiv",
+      "title": "Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory",
+      "abstract": "LLM-based autonomous agents require external memory to overcome their statelessness and limited context window for long-term interaction and dynamic knowledge reasoning. However, existing memory retrieval methods often lack adaptability and sample efficiency, and struggle to retrieve the right mixture of memories from heterogeneous stores. We propose Exploratory-Assimilating Reflection (EAR), a framework for high initial retrieval performance and sample-efficient adaptation. EAR combines two mechanisms: Exploratory Reflection, which performs iterative search to bootstrap retrieval and collect useful experiences for each query, and Assimilating Reflection, which replays these experiences from an Experience Buffer to refine a global reranker more efficiently than methods relying only on immediate rewards. Experiments show that EAR improves retrieval by up to 17.9% over the baseline retriever on two long-term dialogue benchmarks. We also show that EAR is highly sample-efficient and robust to noisy feedback.",
+      "authors": [
+        "Ganesh Senrayan",
+        "Moyuru Yamada",
+        "Ishan Jindal",
+        "Kiran Purohit"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T12:30:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.17879v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes Exploratory-Assimilating Reflection (EAR) for long-term memory retrieval",
+      "llm_evidence_cn": "提出探索-同化反思（EAR）框架用于长期记忆检索",
+      "llm_evidence": "提出探索-同化反思（EAR）框架用于长期记忆检索",
+      "canonical_evidence": "提出探索-同化反思（EAR）框架用于长期记忆检索",
+      "llm_tldr_en": "EAR combines exploratory and assimilating reflection to bootstrap memory retrieval and adapt sample-efficiently for LLM agents, achieving high initial performance.",
+      "llm_tldr_cn": "针对LLM智能体长期记忆检索适应性差、样本效率低的问题，本文提出探索-同化反思（EAR）框架。该框架通过探索性反思迭代搜索引导初始检索，并利用同化反思从经验缓冲区回放经验来全局重排序，从而在少量样本下快速提升检索性能。实验表明EAR在多项长期交互基准上显著优于现有记忆检索方法。",
+      "llm_tldr": "针对LLM智能体长期记忆检索适应性差、样本效率低的问题，本文提出探索-同化反思（EAR）框架。该框架通过探索性反思迭代搜索引导初始检索，并利用同化反思从经验缓冲区回放经验来全局重排序，从而在少量样本下快速提升检索性能。实验表明EAR在多项长期交互基准上显著优于现有记忆检索方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.16716v1",
+      "source": "arxiv",
+      "title": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
+      "abstract": "Large language models and LLM-based agents are widely used as personal chat assistants, enterprise copilots, and autonomous workflow agents. In all these applications, memory (the ability to retain, access, and reason over information accumulated over long contexts and multiple interactions) plays a crucial role in determining the reliability of any agent. We introduce RECON (Reasoning over Extended Contexts with Obfuscated Narratives), a benchmark for evaluating compositional reasoning over long contexts. RECON spans 24 case files across three domains (criminal, medical, and financial), each ranging from 50k to 100k tokens, and tests agents on six memory intensive tasks: reconstructing multi-hop evidence chains, propagating cascading invalidations, resolving source conflicts, counterfactual reasoning, satisfying temporal constraints, and temporal fact retrieval. Recent memory benchmarks evaluate whether agents can retrieve scattered facts or detect if a fact has changed whereas RECON evaluates what happens after the change, whether agents can trace which downstream conclusions are affected, which survive through independent support, and how alternative timelines would have unfolded. Our evaluation reveals substantial limitations across current architectures: even the strongest non-Oracle system reaches only 22.4% Accuracy, with retrieval and reasoning each surfacing as challenges.",
+      "authors": [
+        "Mihir Shriniwas Arya"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-18T09:11:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.16716v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for evaluating agent memory in compositional reasoning over long contexts",
+      "llm_evidence_cn": "评估智能体在长上下文组合推理中记忆能力的基准",
+      "llm_evidence": "评估智能体在长上下文组合推理中记忆能力的基准",
+      "canonical_evidence": "评估智能体在长上下文组合推理中记忆能力的基准",
+      "llm_tldr_en": "RECON is a benchmark evaluating LLM agent memory for compositional reasoning over 50k-100k token contexts, covering criminal, medical, and financial domains with six memory-intensive tasks.",
+      "llm_tldr_cn": "该论文针对LLM智能体在长上下文环境中的记忆能力缺乏评估的问题，提出了RECON基准。它包含24个案例文件，跨越刑事、医疗、金融三个领域，每个文件长度5万到10万token，测试智能体在六个记忆密集型任务上的表现，包括多跳证据链重构、级联无效传播等。实验显示当前先进模型在复杂长程推理上仍存在显著困难，为记忆增强研究提供了重要测试平台。",
+      "llm_tldr": "该论文针对LLM智能体在长上下文环境中的记忆能力缺乏评估的问题，提出了RECON基准。它包含24个案例文件，跨越刑事、医疗、金融三个领域，每个文件长度5万到10万token，测试智能体在六个记忆密集型任务上的表现，包括多跳证据链重构、级联无效传播等。实验显示当前先进模型在复杂长程推理上仍存在显著困难，为记忆增强研究提供了重要测试平台。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.16851v1",
+      "source": "arxiv",
+      "title": "AgentBrew: Lifelong Knowledge Brewing from Strong Teachers to Weak LLM Agents",
+      "abstract": "Deploying LLM agents typically requires a compact test-time student, even if a stronger teacher is available during training. We study knowledge brewing: distilling a teacher's interactive experience into a persistent external memory for the student. Crucially, this requires no weight updates, expert demonstrations, ground-truth labels, or test-time teacher access. This setting poses two challenges: environments provide only sparse, binary feedback, and teacher-authored notes must be inherently tailored to be concretely executable by a substantially weaker student. To address these hurdles, we propose AgentBrew, comprising two coupled components. First, a failure-triggered teacher--Ralph Loop mitigates sparse feedback by transforming student failures into environment-validated notes. Second, student-aware synthesis calibrates teacher knowledge to the weak executor's operational granularity, yielding model-specific, actionable guidance. Extensive evaluations and comprehensive ablations across coding, math, and tool-use tasks demonstrate that this asymmetric, training-free brewing paradigm produces highly capable yet deployable LLM agents.",
+      "authors": [
+        "Yangqin Jiang",
+        "Chao Huang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-18T15:23:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.16851v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "AgentBrew distills teacher experience into persistent external memory for weak agents",
+      "llm_evidence_cn": "AgentBrew将教师经验蒸馏为弱代理的持久外部记忆",
+      "llm_evidence": "AgentBrew将教师经验蒸馏为弱代理的持久外部记忆",
+      "canonical_evidence": "AgentBrew将教师经验蒸馏为弱代理的持久外部记忆",
+      "llm_tldr_en": "AgentBrew uses failure-triggered teacher to write external memory for weak LLM agents, enabling lifelong knowledge brewing without weight updates.",
+      "llm_tldr_cn": "本文针对弱LLM代理部署问题，提出AgentBrew进行知识酿造：将强教师代理的交互经验蒸馏为弱学生的持久外部记忆，无需权重更新或专家演示。该方法包含两个组件：Ralph Loop（通过失败触发教师生成具体指导）和知识酿造机制。实验表明弱代理能有效利用外部记忆提升任务性能，实现了低成本的知识迁移。",
+      "llm_tldr": "本文针对弱LLM代理部署问题，提出AgentBrew进行知识酿造：将强教师代理的交互经验蒸馏为弱学生的持久外部记忆，无需权重更新或专家演示。该方法包含两个组件：Ralph Loop（通过失败触发教师生成具体指导）和知识酿造机制。实验表明弱代理能有效利用外部记忆提升任务性能，实现了低成本的知识迁移。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.14275v1",
+      "source": "arxiv",
+      "title": "AI Agents Do Not Fail Alone:The Context Fails First",
+      "abstract": "Context engineering has become central to building reliable AI agents, yet it remains largely unmeasured. Agents do not fail in isolation: their behavior is shaped by the instructions, tools, memory, retrieved knowledge, guardrails, and untrusted inputs accumulated in their context. When this context is weak, agents drift, hallucinate, misuse tools, ignore constraints, become vulnerable to injection, and waste tokens. This paper validates context-engineering quality as an independent leading indicator of agent reliability. We implement the measurement in ProofAgent-Harness, an open-source infrastructure for AI agent evaluation that uses multi-juror, consensus-based scoring. The harness assesses context across seven criteria: role clarity, guardrail coverage, instruction consistency, tool schema quality, grounding sufficiency, injection hardening, and token efficiency. Crucially, the context score is isolated from behavioral metrics and release decisions, enabling a non-circular validation. Through a controlled context-quality study across regulated agent domains, holding frontier LLM agents fixed and varying only their operating context, we show that context-quality criteria consistently predict their corresponding behavioral outcomes. Grounding sufficiency predicts hallucination resistance, guardrail coverage predicts manipulation resistance, instruction consistency predicts instruction following, and tool-schema quality predicts tool use. These findings establish context measurement as a validated preflight signal for agent reliability and position context engineering as an auditable layer of agent evaluation and governance.",
+      "authors": [
+        "Fouad Bousetouane"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-07-15T18:33:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.14275v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "validates context engineering quality including memory as leading indicator",
+      "llm_evidence_cn": "验证包括记忆在内的上下文工程质量是可靠性的领先指标",
+      "llm_evidence": "验证包括记忆在内的上下文工程质量是可靠性的领先指标",
+      "canonical_evidence": "验证包括记忆在内的上下文工程质量是可靠性的领先指标",
+      "llm_tldr_en": "Validates context-engineering quality including memory as a leading indicator of agent reliability, with an open-source evaluation harness.",
+      "llm_tldr_cn": "该论文指出AI智能体的失败源于上下文（包括指令、工具、记忆等）的薄弱，并验证了上下文工程质量是可靠性的领先指标。作者实现了ProofAgent-Harness评估框架，通过多陪审员共识评分对上下文的七个维度进行测量，包括角色清晰度、护栏覆盖等。实验表明，上下文质量与智能体可靠性高度相关。这项工作为系统评估和提升智能体可靠性提供了方法论。",
+      "llm_tldr": "该论文指出AI智能体的失败源于上下文（包括指令、工具、记忆等）的薄弱，并验证了上下文工程质量是可靠性的领先指标。作者实现了ProofAgent-Harness评估框架，通过多陪审员共识评分对上下文的七个维度进行测量，包括角色清晰度、护栏覆盖等。实验表明，上下文质量与智能体可靠性高度相关。这项工作为系统评估和提升智能体可靠性提供了方法论。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.18141v1",
+      "source": "arxiv",
+      "title": "HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory",
+      "abstract": "Long-context, multi-turn, and agentic LLM workloads increasingly reuse previously processed context, making KV-cache reuse essential for reducing redundant computation. However, this reuse shifts the bottleneck to the memory tier that stores and serves reusable KV states at cluster scale. GPU HBM and host DRAM are too costly to scale to TB-scale shared context capacity, motivating remote tiers built from lower-cost, higher-capacity media. This paper presents HyMCache, a KV-cache framework that integrates CXL-hybrid memory (CXL-HM) for multi-turn LLM serving. CXL-HM combines a small amount of in-device DRAM with large SSD-backed capacity behind a CXL interface. By exploiting the read-dominant, predictable, and append-only nature of multi-turn KV-cache access, HyMCache rethinks DRAM management within CXL-HM to efficiently support TB-scale SSD-backed KV reuse. It uses request-level prefix prefetching and opportunistic write buffering to stage latency-critical reads in device DRAM, enabling DRAM-scale KV-cache efficiency at SSD-level cost. We evaluate HyMCache on a real CXL-HM prototype under both single-aggregator and PD-disaggregated serving configurations. Under the same DRAM budget, HyMCache outperforms local LMCache by 3.0x in single-node serving and 1.45x in PD-disaggregated serving. Compared with 1 TB distributed-DRAM Mooncake, HyMCache incurs about 30% lower performance but uses 16x less DRAM.",
+      "authors": [
+        "Hakbeom Jang",
+        "Inho Song",
+        "Sam H. Noh",
+        "Jongryool Kim"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC"
+      ],
+      "published": "2026-07-20T16:35:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.18141v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "proposes HyMCache for memory management in multi-turn LLM serving",
+      "llm_evidence_cn": "提出HyMCache用于多轮LLM服务中的内存管理",
+      "llm_evidence": "提出HyMCache用于多轮LLM服务中的内存管理",
+      "canonical_evidence": "提出HyMCache用于多轮LLM服务中的内存管理",
+      "llm_tldr_en": "Proposes HyMCache, a KV cache framework using CXL-hybrid memory for scalable, cost-effective multi-turn LLM serving, exploiting read-dominant access patterns.",
+      "llm_tldr_cn": "该论文针对多轮和智能体LLM服务中KV缓存重用带来的内存瓶颈问题，提出HyMCache框架，利用CXL混合内存（结合设备内DRAM和大容量SSD）来扩展缓存容量。通过利用多轮访问的读主导和追加写特性，HyMCache实现了高效的内存管理。这项工作为智能体系统的上下文缓存提供了硬件-软件协同方案。",
+      "llm_tldr": "该论文针对多轮和智能体LLM服务中KV缓存重用带来的内存瓶颈问题，提出HyMCache框架，利用CXL混合内存（结合设备内DRAM和大容量SSD）来扩展缓存容量。通过利用多轮访问的读主导和追加写特性，HyMCache实现了高效的内存管理。这项工作为智能体系统的上下文缓存提供了硬件-软件协同方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
