@@ -6,51 +6,31 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-21
-- 运行时间：2026-07-21 20:10:52 UTC
+- 最新运行日期：2026-07-22
+- 运行时间：2026-07-22 21:20:35 UTC
 - 运行状态：成功
-- 本次总论文数：9
-- 精读区：6
-- 速读区：3
+- 本次总论文数：3
+- 精读区：2
+- 速读区：1
 
 ### 今日简报（AI）
-今日日报聚焦LLM智能体长期演进评估，从技能协同治理到科学记忆基准均有突破性发现。
-
-最值得关注的是精读中两篇9.0高分论文：前者提出记忆-技能协同治理框架，后者批评传统记忆榜单并提出预算化上下文恢复评估范式。
-
-建议读者优先精读这两篇，速读部分《AI Agents Do Not Fail Alone》揭示上下文失效是智能体失败主因，可补充理解。
-- 详情：[/202607/21/README](/202607/21/README)
+今日聚焦3篇Agent记忆相关论文，2篇精读评分高达9.0/10，表现亮眼。  
+最值得关注的方向：基于预算的遗忘与巩固策略（Retain or Consolidate?）以及分层认知路由架构（Supra Cognitive Modes），均对语言智能体长期记忆优化有重要启示。  
+建议普通读者优先精读这两篇9分文章，深入理解记忆管理如何提升智能体行为一致性与资源效率。
+- 详情：[/202607/22/README](/202607/22/README)
 
 ### 精读区论文标签
-1. [From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents](/202607/21/2607.16621v1-from-memory-to-skills-evidence-grounded-co-evolution-governance-for-long-horizon-llm-agents)  
+1. [Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory](/202607/22/2607.17545v2-retain-or-consolidate-budget-dependent-operator-selection-for-language-agent-memory)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出记忆-技能共同演化（MSCE）框架，将记忆转化为可执行技能
-2. [Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration](/202607/21/2607.16848v1-beyond-memory-leaderboards-evaluating-scientific-memory-as-budgeted-context-restoration)  
+   evidence：预算相关的保留与合并选择
+2. [Supra Cognitive Modes: A Routed Architecture for Agent Memory](/202607/22/2607.19096v1-supra-cognitive-modes-a-routed-architecture-for-agent-memory)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：评估LLM代理的记忆系统，提出了科学记忆基准
-3. [Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory](/202607/21/2607.17545v1-retain-or-consolidate-budget-dependent-operator-selection-for-language-agent-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：形式化预算驱动的记忆保留与整合算子选择
-4. [Mechanistic Attention Guidance for Agent Memory Refinement](/202607/21/2607.17621v1-mechanistic-attention-guidance-for-agent-memory-refinement)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出使用机制性注意力指导来优化智能体记忆
-5. [Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory](/202607/21/2607.17879v1-exploratory-and-assimilating-reflection-reflective-recall-cycle-for-long-term-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出探索-同化反思（EAR）框架用于长期记忆检索
-6. [RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts](/202607/21/2607.16716v1-recon-benchmarking-agent-memory-for-compositional-reasoning-over-long-contexts)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：评估智能体在长上下文组合推理中记忆能力的基准
+   evidence：提出一种基于语义分类和多检索模式的代理记忆路由架构
 
 ### 速读区论文标签
-1. [AgentBrew: Lifelong Knowledge Brewing from Strong Teachers to Weak LLM Agents](/202607/21/2607.16851v1-agentbrew-lifelong-knowledge-brewing-from-strong-teachers-to-weak-llm-agents)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：AgentBrew将教师经验蒸馏为弱代理的持久外部记忆
-2. [AI Agents Do Not Fail Alone:The Context Fails First](/202607/21/2607.14275v1-ai-agents-do-not-fail-alonethe-context-fails-first)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：验证包括记忆在内的上下文工程质量是可靠性的领先指标
-3. [HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory](/202607/21/2607.18141v1-hymcache-a-kv-cache-framework-for-multi-turn-llm-serving-with-cxl-hybrid-memory)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：提出HyMCache用于多轮LLM服务中的内存管理
+1. [MechMem-RTL: Reusing Verified Mechanism Memories for LLM-Based RTL Repair](/202607/22/2607.17053v1-mechmem-rtl-reusing-verified-mechanism-memories-for-llm-based-rtl-repair)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：复用验证过的机制记忆用于LLM的RTL修复，类似于记忆增强方法
 
 
 <div class="dpr-home-promo-card">
