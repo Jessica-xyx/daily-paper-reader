@@ -1,0 +1,39 @@
+{
+  "label": "2026-07-23",
+  "date": "2026-07-23",
+  "generated_at": "2026-07-23T21:24:32",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202607/23/2607.20064v1-pro-long-programmatic-memory-enables-long-horizon-reasoning",
+      "section": "deep",
+      "title_en": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+      "authors": "Alexis Fox, Junlin Wang, Paul Rosu, Bhuwan Dhingra",
+      "date": "2026-07-22",
+      "pdf": "https://arxiv.org/pdf/2607.20064v1",
+      "score": "9.0",
+      "evidence": "面向LLM智能体长程推理的程序化记忆",
+      "tldr": "长期任务依赖持续感知与推理，现有上下文管理在信息保存与检索间存在权衡。PRO-LONG提出程序化记忆框架，通过保留完整结构化交互日志并利用编码代理高效搜索历史来解决该问题。在ARC-AGI-3上，平均提升18.0个百分点，token用量减少4.2-5.8倍。Fable 5上以$1,750成本达97.4% best@2，匹配或超越现有专业框架。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Long-horizon tasks require sustained perception, reasoning, and exploration, and are a persistent challenge for large language model (LLM) agents. This gap is reflected in their limited performance on continual learning benchmarks such as ARC-AGI-3, especially when models are evaluated out of the box. Various agent harnesses have been proposed to close this gap, and each commits to a strategy for handling long sequences of observations, i.e., what information to save from the environment and how to load it into model context, a choice we argue is particularly consequential. Existing methods for context management face a significant tradeoff, as preserving more information makes retrieving relevant details less tractable. We propose PRO-LONG, a minimal context management framework built around programmatic memory for LLM agents in long-horizon, exploratory settings. PRO-LONG addresses the tradeoff by keeping a complete, structured interaction log and capitalizing on recent progress in coding agents to search this history efficiently. On the full ARC-AGI-3 public game set, PRO-LONG improves over a base coding agent by an average of 18.0 percentage points across frontier models, and matches or exceeds state-of-the-art specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens. With Fable 5, PRO-LONG achieves 97.4% best@2 at a total cost of \\$1,750. Relevant code and logs are available at https://github.com/alexisfox7/PRO-LONG.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/23/2607.19739v1-personalized-recommendation-tool-learning-via-autonomous-language-agents",
+      "section": "quick",
+      "title_en": "Personalized Recommendation Tool Learning via Autonomous Language Agents",
+      "authors": "Mingdai Yang, Zhiwei Liu, Weizhi Zhang, Yibo Wang, Hao Peng, Philip Yu",
+      "date": "2026-07-22",
+      "pdf": "https://arxiv.org/pdf/2607.19739v1",
+      "score": "6.0",
+      "evidence": "基于记忆的推荐框架",
+      "tldr": "大型语言模型在推荐系统中存在幻觉和上下文长度限制，难以直接用于全排名任务。本文提出PRTA框架，让LLM作为中央规划器，与多个传统推荐模型工具交互，通过反思机制实现个性化工具选择。实验在三个公开数据集上显示，该方法在全排名推荐中优于传统和LLM基线。该架构通过设计而非修改模型本身解决了LLM的局限性。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Although large language models (LLMs) have recently gained traction in recommender systems due to their strong reasoning capabilities and extensive world knowledge, previous LLM-based agents suffer from hallucination and context-length limitations, and thus are not suitable for full-ranking recommendation tasks. To circumvent these limitations through architectural design rather than modifying the LLM itself, we propose an agent-based recommendation framework, memory-based $\\textbf{P}$ersonalized $\\textbf{R}$ecommendation $\\textbf{T}$ool learning via autonomous language $\\textbf{A}$gents (PRTA), in which an LLM acts as a central planner interacting with multiple recommendation models as tools. The LLM-based agent is responsible for high-level reasoning and personalized tool selection, while traditional recommendation models perform full-ranking scoring, leveraging their scalability in modeling behavioral patterns. To support personalized tool selection, we design reflection mechanisms that enable the agent to evaluate and compare tools for each user based on user profiles and candidate ranked lists. Extensive experiments across three public datasets demonstrate the superiority of \\modelname over traditional recommendation and LLM-based baselines in improving full-ranking recommendation performance.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
