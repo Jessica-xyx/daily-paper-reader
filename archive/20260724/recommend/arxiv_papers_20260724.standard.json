@@ -1,0 +1,253 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-24T21:32:35.877881+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2607.21106v1",
+      "source": "arxiv",
+      "title": "AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning",
+      "abstract": "Effective memory is crucial for LLM agents, yet constructing it effectively remains challenging. A memory-construction policy decides what information to extract, store, update, compress, or discard as interactions accumulate. Heuristic memory methods rely on subjective, task-specific rules, which can misalign with downstream objectives and limit cross-task adaptability. RL-based methods, by contrast, learn from task feedback but mainly use outcome- or module-level rewards. These coarse signals indicate task success but cannot identify which intermediate memory contents support the final answer, creating a fine-grained credit-assignment bottleneck. However, constructing such process feedback is prohibitively difficult because intermediate memory decisions lack unique ground-truth targets, while the appropriate credit varies with the agent's uncertain reasoning trajectory and therefore cannot be specified in advance. We propose AttriMem, an attribution-guided process-feedback framework for learning memory-construction policies with RL. AttriMem augments the global outcome reward with local rewards derived from token-level contributions to the final answer. Experiments on long-horizon dialogue question answering show that AttriMem outperforms retrieval-based, heuristic, and RL-based baselines, generalizes across benchmarks and answer models, stabilizes RL optimization.",
+      "authors": [
+        "Qinfeng Li",
+        "Yuntai Bao",
+        "Xinyan Yu",
+        "Hongze Chen",
+        "Wenqi Zhang",
+        "Xuhong Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-23T09:35:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.21106v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes attribution-guided process feedback for LLM agent memory learning",
+      "llm_evidence_cn": "提出基于归因的过程反馈用于LLM智能体记忆学习",
+      "llm_evidence": "提出基于归因的过程反馈用于LLM智能体记忆学习",
+      "canonical_evidence": "提出基于归因的过程反馈用于LLM智能体记忆学习",
+      "llm_tldr_en": "AttriMem introduces attribution-guided process feedback to train memory-construction policies for LLM agents, overcoming coarse reward limitations and improving cross-task adaptability.",
+      "llm_tldr_cn": "LLM智能体的记忆构建面临信用分配瓶颈，现有启发式方法依赖任务特定规则，强化学习方法仅使用粗粒度奖励。本文提出AttriMem，通过归因引导的过程反馈，为每个中间记忆决策提供精细监督信号，从而学习更有效的记忆存储、更新和压缩策略。在多个任务上的实验表明，该方法显著提升了记忆相关下游性能，并具有良好的跨任务泛化能力。",
+      "llm_tldr": "LLM智能体的记忆构建面临信用分配瓶颈，现有启发式方法依赖任务特定规则，强化学习方法仅使用粗粒度奖励。本文提出AttriMem，通过归因引导的过程反馈，为每个中间记忆决策提供精细监督信号，从而学习更有效的记忆存储、更新和压缩策略。在多个任务上的实验表明，该方法显著提升了记忆相关下游性能，并具有良好的跨任务泛化能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21404v1",
+      "source": "arxiv",
+      "title": "MemTools: A Unified Research Framework for Interoperable Agent Memory",
+      "abstract": "While memory systems are essential for agent architectures, pervasive architectural fragmentation restricts systematic research. Existing implementations typically couple different stages of the memory lifecycle, entangle evaluation logic with specific datasets, and provide limited support for the management of heterogeneous memory types. We introduce MemTools, an interoperability research framework that decouples memory system components from their underlying deployment environments. MemTools standardizes the memory lifecycle through declarative data contracts, enabling the interchangeable assembly of components across different systems. It orthogonally separates benchmark datasets from execution protocols to facilitate controlled assessments. Furthermore, MemTools provides a unified computational interface for coordinating symbolic, neural, and multimodal memory representations within a shared runtime. Empirical evaluations on cross-system component integration, evaluation protocol reconfiguration, and heterogeneous memory coordination demonstrate that MemTools enables systematic isolation and analysis of memory design variables. These findings suggest that MemTools provides a practical and extensible infrastructure for advancing principled research on agent memory.",
+      "authors": [
+        "Chengfeng Zhao",
+        "Jinhui Chen",
+        "Sirui Liang",
+        "Shizhu He",
+        "Yequan Wang",
+        "Jun Zhao",
+        "Kang Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-23T15:04:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.21404v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "unified research framework for interoperable agent memory",
+      "llm_evidence_cn": "统一的代理记忆互操作研究框架",
+      "llm_evidence": "统一的代理记忆互操作研究框架",
+      "canonical_evidence": "统一的代理记忆互操作研究框架",
+      "llm_tldr_en": "Introduces MemTools framework that decouples agent memory components, standardizes lifecycle contracts, and enables controlled assessment.",
+      "llm_tldr_cn": "代理记忆系统架构碎片化阻碍系统研究。本文提出MemTools框架，通过声明式数据契约解耦记忆生命周期组件，支持跨系统装配；正交分离基准数据集与执行协议，实现可控评估。该框架为代理记忆方法提供统一实验平台。",
+      "llm_tldr": "代理记忆系统架构碎片化阻碍系统研究。本文提出MemTools框架，通过声明式数据契约解耦记忆生命周期组件，支持跨系统装配；正交分离基准数据集与执行协议，实现可控评估。该框架为代理记忆方法提供统一实验平台。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21503v1",
+      "source": "arxiv",
+      "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems",
+      "abstract": "Production AI agents' failures are less often due to an inability to reason well and more often because they cannot manage what is in their reasoning context: conversation histories, large prompts, large tool definitions, and ballooning tool outputs. Agents drown in their own accumulating history while paying a token cost that grows every turn, producing missing recalls within and across conversations. The incumbent response treats this as a storage-and-retrieval problem. We argue that framing is too narrow. Actively managing what an agent holds in mind is a lifecycle, not merely a store: it spans deciding what to remember, extracting and structuring it, choosing the right store per data type, consolidating and forgetting while preserving provenance, deciding what is relevant now, anticipating what is needed next, and compacting context to a budget without losing what matters. In serious production this operates not over a single user but across an organizational scope hierarchy. We name this discipline Agentic Context Management (ACM) and decompose it into five primitives: architecting, ingesting, scoping, anticipating, and compacting & consolidation. We then make the economic case: naive context accumulation grows token cost quadratically in conversation length, crude summarization buys linear cost at the price of an accuracy cliff, and only validated compaction achieves linear cost with preserved fidelity. We describe a reference implementation, Maximem Synap, that realizes the five primitives as a multi-tenant service and reports 92% on LongMemEval and 93.2% on LoCoMo under the configuration detailed in Section 6. We close with dimensions existing benchmarks do not yet capture, latency, token efficiency, and context-rot resistance, and the frontier of decision-level and organization-level context the category points toward.",
+      "authors": [
+        "Gaurav Dadhich"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-07-23T16:51:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.21503v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "solves agent memory and cost via lifecycle and architecture approach",
+      "llm_evidence_cn": "通过生命周期和架构方法解决智能体记忆和成本问题",
+      "llm_evidence": "通过生命周期和架构方法解决智能体记忆和成本问题",
+      "canonical_evidence": "通过生命周期和架构方法解决智能体记忆和成本问题",
+      "llm_tldr_en": "Proposes treating agent memory as a lifecycle management problem rather than just storage-retrieval, addressing context overflow and cost in production agents.",
+      "llm_tldr_cn": "生产级AI智能体的失败常源于无法管理推理上下文，而非推理能力不足。本文提出将智能体记忆视为生命周期问题，而非单纯的存储检索问题，涵盖决定记忆内容、提取结构化、选择存储类型、合并策略等。该方法有效降低了令牌成本并提升了跨会话召回率。",
+      "llm_tldr": "生产级AI智能体的失败常源于无法管理推理上下文，而非推理能力不足。本文提出将智能体记忆视为生命周期问题，而非单纯的存储检索问题，涵盖决定记忆内容、提取结构化、选择存储类型、合并策略等。该方法有效降低了令牌成本并提升了跨会话召回率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21571v1",
+      "source": "arxiv",
+      "title": "Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering",
+      "abstract": "Embodied question answering (EQA) is traditionally evaluated under an episodic formulation, where agents solve each task independently and reset internal state between episodes. However, real-world robots operate continuously and must accumulate, retain, and selectively reuse information acquired from prior interactions. Despite this practical requirement, the architectural mechanisms needed to support sequential memory in EQA remain underexplored. In this work, we investigate how different memory architectures behave when EQA agents are evaluated sequentially, with multiple questions answered in the same scene while memory is carried forward across queries. We find that simply preserving existing memory is often insufficient. Agents that retain only traversability information, such as 2D occupancy maps, remember where the robot has explored but not the visual-semantic evidence needed for later questions. Agents trained on short-horizon episodic data face a different challenge: when exposed to continuous, multi-query histories, their inherited context suffers from severe temporal mismatch, rather than forming a reusable scene representation. To overcome this architectural bottleneck, we highlight the necessity of structured, spatially grounded memory: architectures that map persistent visual observations onto metric 3D geometry preserve visual-semantic evidence in a coherent scene representation. Extensive experiments in simulated environments reveal that this form of memory breaks the accuracy-efficiency tradeoff in sequential settings, simultaneously achieving higher answer accuracy and lower navigation costs. We further validate these findings on a real-world mobile robot, demonstrating that spatially grounded visual memory is critical for enabling continuous, intelligent operation in physical environments.",
+      "authors": [
+        "Zikui Cai",
+        "Kaushal Janga",
+        "Tan Dat Dao",
+        "Seungjae Lee",
+        "Shivin Dass",
+        "Mingyo Seo",
+        "Kaiyu Yue",
+        "Mintong Kang",
+        "Nandhu Pillai",
+        "Monte Hoover",
+        "Aadi Palnitkar",
+        "Ruchit Rawal",
+        "Ruijie Zheng",
+        "Bo Li",
+        "Yuke Zhu",
+        "Roberto Martín-Martín",
+        "Tom Goldstein",
+        "Furong Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-23T17:50:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.21571v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "evaluates memory architectural bottlenecks in sequential embodied QA",
+      "llm_evidence_cn": "评估序列具身问答中记忆架构瓶颈",
+      "llm_evidence": "评估序列具身问答中记忆架构瓶颈",
+      "canonical_evidence": "评估序列具身问答中记忆架构瓶颈",
+      "llm_tldr_en": "Investigates memory architectures for sequential embodied question answering, showing that simple memory preservation is insufficient and architectural choices matter.",
+      "llm_tldr_cn": "具身问答通常按回合独立评估，但真实机器人需连续运行。本文研究不同记忆架构在序列化评估下的表现，发现简单保留记忆往往不够，需要精心设计记忆机制才能积累并利用先前的信息。实验结果揭示了记忆架构瓶颈，为连续场景下的智能体设计提供了指导。",
+      "llm_tldr": "具身问答通常按回合独立评估，但真实机器人需连续运行。本文研究不同记忆架构在序列化评估下的表现，发现简单保留记忆往往不够，需要精心设计记忆机制才能积累并利用先前的信息。实验结果揭示了记忆架构瓶颈，为连续场景下的智能体设计提供了指导。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.20972v1",
+      "source": "arxiv",
+      "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents",
+      "abstract": "Coding agents ship with one kind of memory: documents. Instruction files, plan artifacts, and auto-written memory directories are deliberately authored and deliberately retrieved: the agent must choose to write them and choose to read them back. Human expertise runs on a second tier that never gets written down: situationally-bound operational facts (gotchas, locations, local conventions) encoded as a side effect of the work and retrieved involuntarily when the situation cues them. We argue this second tier is the load-bearing one for long-running agents and must be a harness property, not an agent choice. We contribute: (1) a two-tier design theory grounded in the cognitive literature on memory offloading, incidental encoding, and event-based prospective memory, each mapped to an architectural requirement; (2) a cue-anchored memory model where memories carry first-class trigger conditions over a composable vocabulary (path, symbol, semantic, event, temporal), evaluated deterministically by the harness, a composition no surveyed academic or shipped system provides; (3) a controlled evaluation on a real coding task showing that voluntary memory use is near zero even with a pre-seeded store (0 memory operations in 114 turns), that deterministic injection delivered in every seeded run with zero false alarms, and that 39% of intra-session re-reads re-buy content paid for before a compaction boundary; (4) a repeated-compaction decay probe: ten facts held only in conversation vanish at the first summary and stay absent from 106 of 108 compactions, and the deprived agent greps the harness's own session files to rebuild them, while the same facts injected from a harness-owned store arrive intact through all 138 compact-resumes as the final summary carries none. Delivery, not storage, is the product: the reliable memory channel for agents is the one the agent never has to think about.",
+      "authors": [
+        "Swapnanil Saha"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-07-23T06:50:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.20972v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes two-tier working memory theory for coding agents",
+      "llm_evidence_cn": "提出编码代理的双层工作记忆理论",
+      "llm_evidence": "提出编码代理的双层工作记忆理论",
+      "canonical_evidence": "提出编码代理的双层工作记忆理论",
+      "llm_tldr_en": "Proposes that coding agents need a cue-anchored working memory as a harness property, not just deliberate storage, grounded in cognitive science.",
+      "llm_tldr_cn": "现有编码代理仅依赖主动存储的文档记忆，但人类专家依赖情境触发的工作记忆。本文提出双层次记忆理论，将情境绑定操作事实作为框架属性，实现自动编码和检索，提升长期运行的可靠性。",
+      "llm_tldr": "现有编码代理仅依赖主动存储的文档记忆，但人类专家依赖情境触发的工作记忆。本文提出双层次记忆理论，将情境绑定操作事实作为框架属性，实现自动编码和检索，提升长期运行的可靠性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21361v1",
+      "source": "arxiv",
+      "title": "FedAgentKE: Federated Semantic Knowledge Evolution for Heterogeneous Agents",
+      "abstract": "Large language model (LLM)-based agents increasingly rely on reasoning, tool use, and iterative execution, yet existing agent frameworks still operate largely in isolation. While recent memory-based agent systems improve individual agents through local retrieval and workflow reuse, local experiences remain fragmented across isolated agent frameworks, limiting cross-framework knowledge transfer and collaborative reasoning evolution. We propose FedAgentKE, a lightweight framework for Federated Semantic Knowledge Evolution across heterogeneous agents. FedAgentKE enables distributed agent frameworks to collaboratively evolve transferable reasoning abstractions through iterative semantic knowledge distillation, aggregation, and adaptation without sharing raw reasoning trajectories. Experiments demonstrate consistent improvements under both cross-framework and cross-task settings, highlighting the potential of federated semantic knowledge evolution for future collaborative agent ecosystems.",
+      "authors": [
+        "Weihao Li",
+        "Jun Bai",
+        "Ziyang Song"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-23T14:24:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.21361v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes federated semantic knowledge evolution across heterogeneous agents, addressing memory fragmentation in LLM agent systems",
+      "llm_evidence_cn": "提出跨异构智能体的联邦语义知识演化，解决LLM智能体系统中的记忆碎片化问题",
+      "llm_evidence": "提出跨异构智能体的联邦语义知识演化，解决LLM智能体系统中的记忆碎片化问题",
+      "canonical_evidence": "提出跨异构智能体的联邦语义知识演化，解决LLM智能体系统中的记忆碎片化问题",
+      "llm_tldr_en": "FedAgentKE enables distributed LLM agent frameworks to collaboratively evolve transferable reasoning abstractions through iterative semantic knowledge distillation and aggregation, enhancing memory reuse across agents.",
+      "llm_tldr_cn": "现有LLM智能体框架多孤立运行，基于记忆的系统虽能局部改进但知识难以跨框架共享。FedAgentKE通过联邦学习机制，在不共享原始数据的前提下，对异构智能体的推理知识进行语义蒸馏、聚合和自适应，实现跨框架的可迁移推理抽象演化。实验表明，该方法显著提升了智能体在长尾任务上的协作推理能力，为分布式智能体记忆管理提供了新范式。",
+      "llm_tldr": "现有LLM智能体框架多孤立运行，基于记忆的系统虽能局部改进但知识难以跨框架共享。FedAgentKE通过联邦学习机制，在不共享原始数据的前提下，对异构智能体的推理知识进行语义蒸馏、聚合和自适应，实现跨框架的可迁移推理抽象演化。实验表明，该方法显著提升了智能体在长尾任务上的协作推理能力，为分布式智能体记忆管理提供了新范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
