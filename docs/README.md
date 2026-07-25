@@ -6,41 +6,27 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-24
-- 运行时间：2026-07-24 21:35:48 UTC
+- 最新运行日期：2026-07-25
+- 运行时间：2026-07-25 21:21:41 UTC
 - 运行状态：成功
-- 本次总论文数：6
-- 精读区：6
-- 速读区：0
+- 本次总论文数：2
+- 精读区：0
+- 速读区：2
 
 ### 今日简报（AI）
-1) 今日精读两篇高分论文，聚焦AI Agent记忆学习的归因反馈与统一框架，均为9.0/10。  
-2) 最值得关注的方向：通过归因引导过程反馈优化Agent记忆，以及MemTools框架实现记忆工具的互操作。  
-3) 建议后续结合具体Agent任务（如对话、决策），尝试用归因反馈修正记忆错漏，或利用MemTools集成现有记忆系统。
-- 详情：[/202607/24/README](/202607/24/README)
+今日速读2篇论文，聚焦具身智能体操作系统与神经符号元策略。最值得关注的是《PhyAgentOS》提出解耦认知规划与物理执行的自主进化操作系统（7分），以及《Neuro-Symbolic Meta-Policies》在部分可观测环境下结合时序知识图谱的元策略（6分）。建议优先阅读PhyAgentOS中认知-执行分离的架构思路，对机器人系统设计有启发。
+- 详情：[/202607/25/README](/202607/25/README)
 
 ### 精读区论文标签
-1. [AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning](/202607/24/2607.21106v1-attrimem-attribution-guided-process-feedback-for-agent-memory-learning)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出基于归因的过程反馈用于LLM智能体记忆学习
-2. [MemTools: A Unified Research Framework for Interoperable Agent Memory](/202607/24/2607.21404v1-memtools-a-unified-research-framework-for-interoperable-agent-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：统一的代理记忆互操作研究框架
-3. [Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems](/202607/24/2607.21503v1-agentic-context-management-solving-agent-memory-and-cost-by-treating-them-as-lifecycle-and-architecture-problems)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：通过生命周期和架构方法解决智能体记忆和成本问题
-4. [Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering](/202607/24/2607.21571v1-beyond-episodic-evaluation-memory-architectural-bottlenecks-in-sequential-embodied-question-answering)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：评估序列具身问答中记忆架构瓶颈
-5. [Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents](/202607/24/2607.20972v1-delivery-not-storage-cue-anchored-working-memory-as-a-harness-property-for-coding-agents)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出编码代理的双层工作记忆理论
-6. [FedAgentKE: Federated Semantic Knowledge Evolution for Heterogeneous Agents](/202607/24/2607.21361v1-fedagentke-federated-semantic-knowledge-evolution-for-heterogeneous-agents)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出跨异构智能体的联邦语义知识演化，解决LLM智能体系统中的记忆碎片化问题
+- 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](/202607/25/2607.16636v1-phyagentos-a-self-evolving-operating-system-for-embodied-agents-with-decoupled-cognitive-planning-and-physical-execution)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：为具身代理提供系统级记忆服务
+2. [Neuro-Symbolic Meta-Policies for Temporal Knowledge-Graph Memory under Partial Observability](/202607/25/2607.18368v1-neuro-symbolic-meta-policies-for-temporal-knowledge-graph-memory-under-partial-observability)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：面向时序知识图谱记忆的神经符号元策略
 
 
 <div class="dpr-home-promo-card">

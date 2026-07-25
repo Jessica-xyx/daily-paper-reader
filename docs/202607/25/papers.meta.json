@@ -1,0 +1,39 @@
+{
+  "label": "2026-07-25",
+  "date": "2026-07-25",
+  "generated_at": "2026-07-25T21:21:48",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202607/25/2607.16636v1-phyagentos-a-self-evolving-operating-system-for-embodied-agents-with-decoupled-cognitive-planning-and-physical-execution",
+      "section": "quick",
+      "title_en": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "authors": "Yang Liu, Weixing Chen, Xinshuai Song, Tao Pu, Siwen Mo, Yongjie Bai, Zihao Chen, Qianran Sun, Liruo Zhong, Ying Shen, Liang Lin",
+      "date": "2026-07-18",
+      "pdf": "https://arxiv.org/pdf/2607.16636v1",
+      "score": "7.0",
+      "evidence": "为具身代理提供系统级记忆服务",
+      "tldr": "具身智能体依赖多种模型协作，但缺乏统一的执行抽象、共享状态和持久经验。PhyAgentOS作为自进化操作系统，提供调度、验证、记忆等系统级服务。其会话中心运行时以会话为调度单元，通过状态即文件协议解耦认知与物理执行，并用会话验证器区分执行终止与任务完成。在Optimus-67等基准和19+实体上验证，性能领先，无需重训练。贡献在于为异构具身体构建了可累积经验、可自我进化的运行时基础。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Vision-language-action models, world models, and agentic planners each advance physical intelligence, yet their composition lacks a common execution abstraction, shared state, semantic verification, and persistent experience across heterogeneous embodiments. We present PhyAgentOS, a runtime foundation delivering scheduling, verification, memory, benchmarking, and safety as system-level services. Its Session-Centered Runtime treats a session, not an action, as the minimum unit of scheduling, compatibility preflight, supervised execution, evidence collection, and acceptance. To decouple cognition from physical execution, the cognition-physics boundary is a file system: the State-as-a-File protocol materializes cross-layer state as Markdown with YAML, yielding inspectable, versionable records without code dependencies between Agent and Runtime layers. These views form a unified cognitive state space aligning intent, capabilities, environment, execution, and experience. The SessionVerifier distinguishes execution termination from semantic task completion via evidence-grounded verdicts of success, failure, or replan. Verified outcomes are consolidated through epistemic memory into reusable knowledge and corrective lessons, closing a trial-and-error loop without retraining. Benchmarking reuses the deployment session and verification path, so results trace to real execution. Layered safety constrains both policy-driven and agent-driven execution: preflight, action bridges, SafetyGuard, heartbeat monitoring, and target-local constraints. Validation is progressive: games test cognitive planning, simulation adds dynamics and control, real robots add hardware noise, with the cognitive layer held constant. PhyAgentOS is benchmarked on Optimus-67, StarDojo, and DST-Dojo, validated on 19+ simulated and physical embodiments, and gains on LIBERO, Calvin, and RoboCasa365 across multiple VLA models.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/25/2607.18368v1-neuro-symbolic-meta-policies-for-temporal-knowledge-graph-memory-under-partial-observability",
+      "section": "quick",
+      "title_en": "Neuro-Symbolic Meta-Policies for Temporal Knowledge-Graph Memory under Partial Observability",
+      "authors": "Taewoon Kim, Vincent François-Lavet, Michael Cochez",
+      "date": "2026-07-20",
+      "pdf": "https://arxiv.org/pdf/2607.18368v1",
+      "score": "6.0",
+      "evidence": "面向时序知识图谱记忆的神经符号元策略",
+      "tldr": "部分可观测强化学习面临记忆管理难题。本文提出神经符号元策略，学习在每个决策点应用符号记忆启发式，结合RDF图和时序注释。在RoomKG环境中，容量512时StarE-GNN取得最佳保留性能，且保持步骤级可追溯。该方法实现自适应可检查的控制器，直接关联语义网。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Partially observable reinforcement learning requires deciding what to retain, retrieve, and forget over time. We introduce a neuro-symbolic meta-policy that learns which symbolic memory heuristic to apply at each decision point while keeping execution symbolic. Our setting uses temporal knowledge-graph memory in RoomKG, where hidden state and observations are represented as Resource Description Framework (RDF) graphs and memory is augmented with temporal RDF triple annotations. The model combines knowledge-graph encoding of memory contents with value heads for question answering, exploration, and forgetting, yielding a controller that is both adaptive and inspectable. This gives the work a direct Semantic Web grounding through RDF-based representation, annotation-compatible graph semantics, and graph-based symbolic operations over explicit memory state. On train/test room splits at long-term memory capacity of 512, the qualifier-aware StarE-GNN configuration achieves the best held-out performance among the compared symbolic, neural, and neuro-symbolic systems while preserving step-level traceability of memory-management decisions.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
