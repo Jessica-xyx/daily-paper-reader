@@ -1,0 +1,183 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-26T20:53:26.637025+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.18975v1",
+      "source": "arxiv",
+      "title": "Mi-Memory: A Lifecycle Memory Framework for Personal AI",
+      "abstract": "Personal AI is moving beyond chat-only interaction toward continuous services that span phones, cars, homes, wearables, cameras, and tools. In this setting, memory cannot remain a cache of prior conversations. It should serve as a continuity and governance substrate: preserving durable user state, grounding answers in multimodal and device evidence, supporting correction and forgetting, bounding policy evolution, and remaining deployable under latency, cost, privacy, and edge-cloud constraints. This technical report presents Mi-Memory, a lifecycle memory framework for Personal AI organized around four roles: Structure, Expansion, Evolution, and Deployment. A shared audit contract links these roles through four recurring artifact families: typed evidence payloads preserve source identity and provenance, diagnostic traces localize evidence loss across the serving pipeline, strategy artifacts make memory-policy changes explicit, and gate/rollback records bound accepted evolution. MiMemory instantiates the roles through MemStack, MemSense/MemFuse, D$^{2}$ACCI/E$^{2}$MEND, and LiteMem. In controlled-reference Structure evaluations, MemStack reaches 93.59%, 57.24%, and 87.47% on LoCoMo, PersonaMem-V2, and LongMemEval, respectively; other tracks report module-level, preliminary/internal, transfer-feasibility, or design-only evidence with explicit boundaries. MiMemory is a step toward auditable, evidence-gated, and deployment-aware memory systems for Personal AI. Project homepage: https://darwin-agent.github.io/Mi-Memory/ .",
+      "authors": [
+        "Xule Liu",
+        "Hanlin Teng",
+        "Chao Li",
+        "Yanan Ni",
+        "Shuo Lu",
+        "Audrey Wang",
+        "Yijun Liu",
+        "Yunfei Wang",
+        "Xiaofeng Li",
+        "Xian Yi",
+        "Yuanfa Li",
+        "Kang Zhao",
+        "Jian Liang",
+        "Yuxuan Chen",
+        "Jinyuan Chen",
+        "Heng Qu",
+        "Kun Shao",
+        "Jian Luan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-21T11:10:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.18975v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "presents Mi-Memory, a lifecycle memory framework for Personal AI",
+      "llm_evidence_cn": "提出了Mi-Memory，一个面向个人AI的生命周期记忆框架",
+      "llm_evidence": "提出了Mi-Memory，一个面向个人AI的生命周期记忆框架",
+      "canonical_evidence": "提出了Mi-Memory，一个面向个人AI的生命周期记忆框架",
+      "llm_tldr_en": "Mi-Memory organizes memory for Personal AI into four roles (Structure, Expansion, Evolution, Deployment) with a shared audit contract linking typed evidence payloads, enabling continuity, governance, and deployment under constraints.",
+      "llm_tldr_cn": "个人AI需要超越会话缓存的持续记忆服务，但现有方案缺乏对生命周期、治理和边缘-云部署的支持。Mi-Memory框架围绕四个角色（结构、扩展、演化、部署）组织记忆，通过共享审计契约连接类型化证据载荷，支持持久用户状态、多模态证据、纠正与遗忘，并在延迟、成本、隐私等约束下可部署。该框架为LLM Agent的记忆管理提供了全面的生命周期方案。",
+      "llm_tldr": "个人AI需要超越会话缓存的持续记忆服务，但现有方案缺乏对生命周期、治理和边缘-云部署的支持。Mi-Memory框架围绕四个角色（结构、扩展、演化、部署）组织记忆，通过共享审计契约连接类型化证据载荷，支持持久用户状态、多模态证据、纠正与遗忘，并在延迟、成本、隐私等约束下可部署。该框架为LLM Agent的记忆管理提供了全面的生命周期方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.20064v2",
+      "source": "arxiv",
+      "title": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+      "abstract": "Long-horizon tasks require sustained perception, reasoning, and exploration, and are a persistent challenge for large language model (LLM) agents. This gap is reflected in their limited performance on continual learning benchmarks such as ARC-AGI-3, especially when models are evaluated out of the box. Various agent harnesses have been proposed to close this gap, and each commits to a strategy for handling long sequences of observations, i.e., what information to save from the environment and how to load it into model context, a choice we argue is particularly consequential. Existing methods for context management face a significant tradeoff, as preserving more information makes retrieving relevant details less tractable. We propose PRO-LONG, a minimal context management framework built around programmatic memory for LLM agents in long-horizon, exploratory settings. PRO-LONG addresses the tradeoff by keeping a complete, structured interaction log and capitalizing on recent progress in coding agents to search this history efficiently. On the full ARC-AGI-3 public game set, PRO-LONG improves over a base coding agent by an average of 18.0 percentage points across frontier models, and matches or exceeds state-of-the-art specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens. With Fable 5, PRO-LONG achieves 97.4% best@2 at a total cost of \\$1,750. Relevant code and logs are available at https://github.com/alexisfox7/PRO-LONG.",
+      "authors": [
+        "Alexis Fox",
+        "Junlin Wang",
+        "Paul Rosu",
+        "Bhuwan Dhingra"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-22T12:11:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.20064v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Programmatic memory for long-horizon agent reasoning",
+      "llm_evidence_cn": "程序化内存用于长程agent推理",
+      "llm_evidence": "程序化内存用于长程agent推理",
+      "canonical_evidence": "程序化内存用于长程agent推理",
+      "llm_tldr_en": "PRO-LONG proposes a minimal context management strategy using programmatic memory to improve long-horizon reasoning in LLM agents, addressing the tradeoff between information preservation and retrieval tractability.",
+      "llm_tldr_cn": "PRO-LONG提出了一种最小化上下文管理策略，通过程序化内存提升LLM agent的长程推理能力，解决了信息保存与检索可处理性之间的权衡问题。该方法在不增加模型参数的情况下，显著提高了持续学习基准上的性能。",
+      "llm_tldr": "PRO-LONG提出了一种最小化上下文管理策略，通过程序化内存提升LLM agent的长程推理能力，解决了信息保存与检索可处理性之间的权衡问题。该方法在不增加模型参数的情况下，显著提高了持续学习基准上的性能。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.20764v1",
+      "source": "arxiv",
+      "title": "ArbiGraph: Arbitrarily Scalable Verifiable Task Graphs for Evaluating Context Management",
+      "abstract": "We introduce ARBIGRAPH, a benchmark generator for evaluating whether tool-assisted language agents can retain, update, compose, and discard task-relevant context across extended reasoning workflows. ARBIGRAPH represents each task as a natural-language problem with an executable Python solver, and composes tasks through typed intermediate states, instantiated here as scalar and list values. This design enables controllable task graphs whose length, dependency structure, distractor count, and value type can be varied while preserving exact automatic verification. We instantiate ARBIGRAPH with math, GSM-style word-problems, and Python-tracing task categories, and evaluate a Qwen3.5-27B tool-assisted agent across four topologies. The results show high accuracy on isolated tasks but substantial degradation on more complex dependent tasks: accuracy drops by up to 33.3% on branching chains of dependent math tasks. This shows that ARBIGRAPH exposes failures that are not visible from single-task evaluation alone. Our code, generated datasets, and evaluation results are available at https://github.com/pavelgolikov/ArbiGraph.git",
+      "authors": [
+        "Pavel Golikov",
+        "Evgenii Opryshko",
+        "Gennady Pekhimenko",
+        "Mark C. Jeffrey"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-22T22:30:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.20764v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Benchmark for evaluating agent context management (memory)",
+      "llm_evidence_cn": "用于评估agent上下文管理（记忆）的基准",
+      "llm_evidence": "用于评估agent上下文管理（记忆）的基准",
+      "canonical_evidence": "用于评估agent上下文管理（记忆）的基准",
+      "llm_tldr_en": "ArbiGraph generates controllable task graphs to evaluate tool-assisted agents ability to retain, update, compose, and discard context, enabling systematic measurement of memory management capabilities.",
+      "llm_tldr_cn": "ArbiGraph是一个可定制的基准生成器，通过构建不同长度、依赖关系和干扰项的任务图，系统地评估工具辅助agent在长时间推理中的上下文保留、更新、组合和丢弃能力。它提供自动化的精确验证，为agent记忆管理能力的标准化评估提供了有力工具。",
+      "llm_tldr": "ArbiGraph是一个可定制的基准生成器，通过构建不同长度、依赖关系和干扰项的任务图，系统地评估工具辅助agent在长时间推理中的上下文保留、更新、组合和丢弃能力。它提供自动化的精确验证，为agent记忆管理能力的标准化评估提供了有力工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.18816v1",
+      "source": "arxiv",
+      "title": "AgentTrails: Towards Trust and Reuse for Agentic Tasks",
+      "abstract": "LLM-powered agents increasingly tackle complex tasks by invoking tools, querying databases, executing code, and manipulating intermediate artifacts. These agents follow trajectories that are typically stored as chronological logs, obscuring the underlying dataflow -- the dependencies between their actions and the artifacts they create and manipulate. This limits developers' ability to understand the agents' trails, compare executions, debug failures, and re-use the computations. We present AgentTrails, a prototype system for agent provenance and sensemaking. AgentTrails converts raw trajectories into structured provenance graphs, where tool calls are modeled as computational actions and inputs and outputs as data artifacts. The system supports the comparison of executions by placing multiple provenance graphs on a shared canvas and constructing a joined quotient graph that aligns recurring tools, artifacts, and dependency structures across trajectories. On top of this representation, AgentTrails supports pattern extraction, downstream analysis, and skill abstraction. We demonstrate AgentTrails on real-world agent trajectories, showing that it reveals hidden dependencies, aligns divergent executions, and surfaces recurring tool-use patterns beyond chronological logs.",
+      "authors": [
+        "Eden Wu",
+        "Sonia Castelo",
+        "Yurong Liu",
+        "Cláudio T. Silva",
+        "Juliana Freire"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "published": "2026-07-21T07:53:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.18816v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "system for agent memory provenance and sensemaking",
+      "llm_evidence_cn": "智能体记忆溯源与理解系统",
+      "llm_evidence": "智能体记忆溯源与理解系统",
+      "canonical_evidence": "智能体记忆溯源与理解系统",
+      "llm_tldr_en": "AgentTrails converts raw agent trajectories into structured provenance graphs, modeling tool calls as actions and artifacts as data, enabling comparison, debugging, and reuse of agent computations.",
+      "llm_tldr_cn": "LLM智能体产生大量轨迹日志，但缺乏结构化数据流表示，难以理解和复用。本文提出AgentTrails原型系统，将原始轨迹转换为结构化溯源图，将工具调用建模为计算动作，输入输出为数据工件。该系统支持轨迹比较、调试和计算复用，促进智能体任务的信任和重用。",
+      "llm_tldr": "LLM智能体产生大量轨迹日志，但缺乏结构化数据流表示，难以理解和复用。本文提出AgentTrails原型系统，将原始轨迹转换为结构化溯源图，将工具调用建模为计算动作，输入输出为数据工件。该系统支持轨迹比较、调试和计算复用，促进智能体任务的信任和重用。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

@@ -6,27 +6,34 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-25
-- 运行时间：2026-07-25 21:21:41 UTC
+- 最新运行日期：2026-07-26
+- 运行时间：2026-07-26 20:57:15 UTC
 - 运行状态：成功
-- 本次总论文数：2
-- 精读区：0
-- 速读区：2
+- 本次总论文数：4
+- 精读区：3
+- 速读区：1
 
 ### 今日简报（AI）
-今日速读2篇论文，聚焦具身智能体操作系统与神经符号元策略。最值得关注的是《PhyAgentOS》提出解耦认知规划与物理执行的自主进化操作系统（7分），以及《Neuro-Symbolic Meta-Policies》在部分可观测环境下结合时序知识图谱的元策略（6分）。建议优先阅读PhyAgentOS中认知-执行分离的架构思路，对机器人系统设计有启发。
-- 详情：[/202607/25/README](/202607/25/README)
+今日精读两篇高分论文，聚焦个人AI生命周期记忆框架与程序化记忆的长程推理能力。  
+重点推荐《Mi-Memory》和《PRO-LONG》，分别从记忆管理和编程式推理提升AI自主性。  
+可优先阅读精读论文，尝试将记忆分层或程序化思想融入个人AI项目或学习。
+- 详情：[/202607/26/README](/202607/26/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Mi-Memory: A Lifecycle Memory Framework for Personal AI](/202607/26/2607.18975v1-mi-memory-a-lifecycle-memory-framework-for-personal-ai)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：提出了Mi-Memory，一个面向个人AI的生命周期记忆框架
+2. [PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning](/202607/26/2607.20064v2-pro-long-programmatic-memory-enables-long-horizon-reasoning)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：程序化内存用于长程agent推理
+3. [ArbiGraph: Arbitrarily Scalable Verifiable Task Graphs for Evaluating Context Management](/202607/26/2607.20764v1-arbigraph-arbitrarily-scalable-verifiable-task-graphs-for-evaluating-context-management)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：用于评估agent上下文管理（记忆）的基准
 
 ### 速读区论文标签
-1. [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](/202607/25/2607.16636v1-phyagentos-a-self-evolving-operating-system-for-embodied-agents-with-decoupled-cognitive-planning-and-physical-execution)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：为具身代理提供系统级记忆服务
-2. [Neuro-Symbolic Meta-Policies for Temporal Knowledge-Graph Memory under Partial Observability](/202607/25/2607.18368v1-neuro-symbolic-meta-policies-for-temporal-knowledge-graph-memory-under-partial-observability)  
+1. [AgentTrails: Towards Trust and Reuse for Agentic Tasks](/202607/26/2607.18816v1-agenttrails-towards-trust-and-reuse-for-agentic-tasks)  
    标签：评分：6.0/10、query:llm-agent-memory
-   evidence：面向时序知识图谱记忆的神经符号元策略
+   evidence：智能体记忆溯源与理解系统
 
 
 <div class="dpr-home-promo-card">

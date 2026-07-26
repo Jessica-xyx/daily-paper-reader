@@ -1,0 +1,69 @@
+{
+  "label": "2026-07-26",
+  "date": "2026-07-26",
+  "generated_at": "2026-07-26T20:57:20",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202607/26/2607.18975v1-mi-memory-a-lifecycle-memory-framework-for-personal-ai",
+      "section": "deep",
+      "title_en": "Mi-Memory: A Lifecycle Memory Framework for Personal AI",
+      "authors": "Xule Liu, Hanlin Teng, Chao Li, Yanan Ni, Shuo Lu, Audrey Wang, Yijun Liu, Yunfei Wang, Xiaofeng Li, Xian Yi, Yuanfa Li, Kang Zhao, Jian Liang, Yuxuan Chen, Jinyuan Chen, Heng Qu, Kun Shao, Jian Luan",
+      "date": "2026-07-21",
+      "pdf": "https://arxiv.org/pdf/2607.18975v1",
+      "score": "9.0",
+      "evidence": "提出了Mi-Memory，一个面向个人AI的生命周期记忆框架",
+      "tldr": "个人AI正从对话交互向跨设备连续服务演进，需解决记忆持久化、可审计、可纠正、多模态融合等挑战。本文提出Mi-Memory生命周期记忆框架，通过结构、扩展、进化、部署四个角色，并定义审计合约链接四种工件（证据载荷、诊断追踪、策略工件、门控记录），实现可追溯和可控演化。实例化包括MemStack（结构）、MemSense/MemFuse（扩展）、D2ACCI/E2MEND（进化）、LiteMem（部署）。结构评估中MemStack在LoCoMo、PersonaMem-V2、LongMemEval上分别达93.59%、57.24%、87.47%；其他模块提供初步或设计证据。该框架为构建可审计、证据门控、部署感知的个人AI记忆系统提供了统一框架。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Personal AI is moving beyond chat-only interaction toward continuous services that span phones, cars, homes, wearables, cameras, and tools. In this setting, memory cannot remain a cache of prior conversations. It should serve as a continuity and governance substrate: preserving durable user state, grounding answers in multimodal and device evidence, supporting correction and forgetting, bounding policy evolution, and remaining deployable under latency, cost, privacy, and edge-cloud constraints. This technical report presents Mi-Memory, a lifecycle memory framework for Personal AI organized around four roles: Structure, Expansion, Evolution, and Deployment. A shared audit contract links these roles through four recurring artifact families: typed evidence payloads preserve source identity and provenance, diagnostic traces localize evidence loss across the serving pipeline, strategy artifacts make memory-policy changes explicit, and gate/rollback records bound accepted evolution. MiMemory instantiates the roles through MemStack, MemSense/MemFuse, D$^{2}$ACCI/E$^{2}$MEND, and LiteMem. In controlled-reference Structure evaluations, MemStack reaches 93.59%, 57.24%, and 87.47% on LoCoMo, PersonaMem-V2, and LongMemEval, respectively; other tracks report module-level, preliminary/internal, transfer-feasibility, or design-only evidence with explicit boundaries. MiMemory is a step toward auditable, evidence-gated, and deployment-aware memory systems for Personal AI. Project homepage: https://darwin-agent.github.io/Mi-Memory/ .",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/26/2607.20064v2-pro-long-programmatic-memory-enables-long-horizon-reasoning",
+      "section": "deep",
+      "title_en": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+      "authors": "Alexis Fox, Junlin Wang, Paul Rosu, Bhuwan Dhingra",
+      "date": "2026-07-22",
+      "pdf": "https://arxiv.org/pdf/2607.20064v2",
+      "score": "9.0",
+      "evidence": "程序化内存用于长程agent推理",
+      "tldr": "长程任务中LLM代理面临持续推理挑战，现有上下文管理在信息保留与检索之间存在严重权衡。PRO-LONG提出程序化记忆框架，维护完整结构化交互日志，并利用编码代理高效搜索历史。在ARC-AGI-3上平均提升18.0个百分点，匹配或超越最先进框架（76.1% pass@1），同时token消耗减少4.2-5.8倍。该方法以极低成本（Fable 5上$1750实现97.4% best@2）展示了程序化记忆在长程推理中的有效性。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Long-horizon tasks require sustained perception, reasoning, and exploration, and are a persistent challenge for large language model (LLM) agents. This gap is reflected in their limited performance on continual learning benchmarks such as ARC-AGI-3, especially when models are evaluated out of the box. Various agent harnesses have been proposed to close this gap, and each commits to a strategy for handling long sequences of observations, i.e., what information to save from the environment and how to load it into model context, a choice we argue is particularly consequential. Existing methods for context management face a significant tradeoff, as preserving more information makes retrieving relevant details less tractable. We propose PRO-LONG, a minimal context management framework built around programmatic memory for LLM agents in long-horizon, exploratory settings. PRO-LONG addresses the tradeoff by keeping a complete, structured interaction log and capitalizing on recent progress in coding agents to search this history efficiently. On the full ARC-AGI-3 public game set, PRO-LONG improves over a base coding agent by an average of 18.0 percentage points across frontier models, and matches or exceeds state-of-the-art specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens. With Fable 5, PRO-LONG achieves 97.4% best@2 at a total cost of \\$1,750. Relevant code and logs are available at https://github.com/alexisfox7/PRO-LONG.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/26/2607.20764v1-arbigraph-arbitrarily-scalable-verifiable-task-graphs-for-evaluating-context-management",
+      "section": "deep",
+      "title_en": "ArbiGraph: Arbitrarily Scalable Verifiable Task Graphs for Evaluating Context Management",
+      "authors": "Pavel Golikov, Evgenii Opryshko, Gennady Pekhimenko, Mark C. Jeffrey",
+      "date": "2026-07-22",
+      "pdf": "https://arxiv.org/pdf/2607.20764v1",
+      "score": "8.0",
+      "evidence": "用于评估agent上下文管理（记忆）的基准",
+      "tldr": "现有评估多关注单任务，忽略多步骤推理中的上下文管理。ArbiGraph提出可任意扩展的任务图生成器，通过组装自然语言问题与可执行求解器创建可控图，支持长度、依赖、干扰和值类型的变化，并自动验证。评估Qwen3.5-27B代理发现，在依赖链任务中准确率下降高达33.3%。该基准暴露了单任务评估无法发现的缺陷。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "We introduce ARBIGRAPH, a benchmark generator for evaluating whether tool-assisted language agents can retain, update, compose, and discard task-relevant context across extended reasoning workflows. ARBIGRAPH represents each task as a natural-language problem with an executable Python solver, and composes tasks through typed intermediate states, instantiated here as scalar and list values. This design enables controllable task graphs whose length, dependency structure, distractor count, and value type can be varied while preserving exact automatic verification. We instantiate ARBIGRAPH with math, GSM-style word-problems, and Python-tracing task categories, and evaluate a Qwen3.5-27B tool-assisted agent across four topologies. The results show high accuracy on isolated tasks but substantial degradation on more complex dependent tasks: accuracy drops by up to 33.3% on branching chains of dependent math tasks. This shows that ARBIGRAPH exposes failures that are not visible from single-task evaluation alone. Our code, generated datasets, and evaluation results are available at https://github.com/pavelgolikov/ArbiGraph.git",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/26/2607.18816v1-agenttrails-towards-trust-and-reuse-for-agentic-tasks",
+      "section": "quick",
+      "title_en": "AgentTrails: Towards Trust and Reuse for Agentic Tasks",
+      "authors": "Eden Wu, Sonia Castelo, Yurong Liu, Cláudio T. Silva, Juliana Freire",
+      "date": "2026-07-21",
+      "pdf": "https://arxiv.org/pdf/2607.18816v1",
+      "score": "6.0",
+      "evidence": "智能体记忆溯源与理解系统",
+      "tldr": "LLM代理执行任务时，轨迹以时间顺序日志存储，隐藏了数据依赖，阻碍理解与复用。AgentTrails将原始轨迹转换为结构化溯源图，建模工具调用为动作、工件为数据节点，支持多轨迹对齐与商图构建。在真实场景中，它揭示了隐藏依赖，对齐了不同执行路径，并发现了重复工具使用模式。该系统增强了代理任务的可信度、可调试性和计算复用性。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "LLM-powered agents increasingly tackle complex tasks by invoking tools, querying databases, executing code, and manipulating intermediate artifacts. These agents follow trajectories that are typically stored as chronological logs, obscuring the underlying dataflow -- the dependencies between their actions and the artifacts they create and manipulate. This limits developers' ability to understand the agents' trails, compare executions, debug failures, and re-use the computations. We present AgentTrails, a prototype system for agent provenance and sensemaking. AgentTrails converts raw trajectories into structured provenance graphs, where tool calls are modeled as computational actions and inputs and outputs as data artifacts. The system supports the comparison of executions by placing multiple provenance graphs on a shared canvas and constructing a joined quotient graph that aligns recurring tools, artifacts, and dependency structures across trajectories. On top of this representation, AgentTrails supports pattern extraction, downstream analysis, and skill abstraction. We demonstrate AgentTrails on real-world agent trajectories, showing that it reveals hidden dependencies, aligns divergent executions, and surfaces recurring tool-use patterns beyond chronological logs.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
