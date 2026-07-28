@@ -1,0 +1,471 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-28T21:39:50.256118+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 9,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.22962v1",
+      "source": "arxiv",
+      "title": "ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
+      "abstract": "LLM agents that operate over many turns accumulate facts in an external memory store and reuse them as premises for downstream reasoning. A hallucinated fact written at one step therefore persists as a false premise for every subsequent step, a failure mode we call memory contamination. Existing memory management addresses retrieval and capacity but not write-time correctness; this admission problem cannot be solved by utility- or recency-based criteria, and uncontrolled contamination compounds across long trajectories. We propose ConsistencyGate, a write-time admission gate that, before committing a candidate fact m extracted from context c, queries the LLM K times for a soft support score and admits m only when the average exceeds a threshold. The mechanism is model-agnostic, requires no fine-tuning, and reduces to a single forward pass in a log-probability variant for latency-sensitive deployments. To measure the effect on natural data, we construct two real-conversation benchmarks (LoCoMo-Contam and MSC-Contam) by planting controlled single-detail corruptions in long-term conversations from LoCoMo and MSC, and complement them with a structured synthetic corpus (MemContam) that isolates a near-oracle upper bound. Across four LLM backbones, ConsistencyGate reduces contamination on every benchmark relative to a write-everything baseline, with the cost concentrated on facts that are stated only implicitly in the source context. We release all three benchmarks together with the gate implementation.",
+      "authors": [
+        "Yan Zhang",
+        "Shibo Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-25T00:08:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.22962v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "write-time admission gate to prevent memory contamination in LLM agents",
+      "llm_evidence_cn": "在写入时设置准入门控，防止LLM代理记忆污染",
+      "llm_evidence": "在写入时设置准入门控，防止LLM代理记忆污染",
+      "canonical_evidence": "在写入时设置准入门控，防止LLM代理记忆污染",
+      "llm_tldr_en": "ConsistencyGate prevents memory contamination in LLM agents by using self-consistency scores to admit facts at write time, stopping hallucinated facts from persisting.",
+      "llm_tldr_cn": "ConsistencyGate针对LLM代理长期记忆中的幻觉累积问题，提出写入时准入门控：在事实提交前多次查询LLM获取支持分数，仅当平均得分高于阈值时写入。实验表明该方法有效阻断污染传播，且不严重损害有用事实的召回。",
+      "llm_tldr": "ConsistencyGate针对LLM代理长期记忆中的幻觉累积问题，提出写入时准入门控：在事实提交前多次查询LLM获取支持分数，仅当平均得分高于阈值时写入。实验表明该方法有效阻断污染传播，且不严重损害有用事实的召回。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23504v1",
+      "source": "arxiv",
+      "title": "MemVLN: Episodic and Procedural Memory for Vision-and-Language Navigation",
+      "abstract": "Vision-and-Language Navigation in Continuous Environments (VLN-CE) requires agents to maintain long-horizon visual history for trajectory consistency while executing actions with low latency. Existing video-based VLN approaches typically struggle to satisfy both demands simultaneously. To address these challenges, we propose MemVLN, a novel VLN framework that achieves state-of-the-art performance with real-time inference efficiency (14 FPS). MemVLN utilizes a visual encoder to process continuous observations and a Large Language Model (LLM) to interpret instructions and generate actions. Central to our approach is an Episodic Memory management that applies pyramidal resolutions. This mechanism concentrates computation on immediate percepts while retaining compressed long-term history. Complementing to this design, we introduce Procedural Memory for fast action with a compact vocabulary of atomic mid-level actions to bypass auto-regressive decoding latency. Experiments on VLN-CE show that MemVLN-4B surpasses the baseline Qwen3-VL-4B architecture by 5.8\\% SR in R2R and 9.7\\% SR in RxR, while achieving a 7$\\times$ speedup in inference latency.",
+      "authors": [
+        "Yuqi Liu",
+        "Shengju Qian",
+        "Tianyuan Qu",
+        "Mingxian Lin",
+        "Zixuan Wang",
+        "Xin Wang",
+        "Bei Yu",
+        "Jiaya Jia"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-26T07:08:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.23504v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes episodic and procedural memory management for vision-and-language navigation agents",
+      "llm_evidence_cn": "提出用于视觉语言导航agent的情景记忆和程序记忆管理",
+      "llm_evidence": "提出用于视觉语言导航agent的情景记忆和程序记忆管理",
+      "canonical_evidence": "提出用于视觉语言导航agent的情景记忆和程序记忆管理",
+      "llm_tldr_en": "MemVLN introduces episodic memory with pyramidal resolution for VLN-CE agents, achieving state-of-the-art navigation performance with real-time inference efficiency.",
+      "llm_tldr_cn": "连续环境视觉语言导航要求agent维护长程视觉历史并低延迟执行。现有视频方法难以兼顾两者。本文提出MemVLN，利用LLM和视觉编码器，核心是采用金字塔分辨率的情景记忆管理：对近期感知分配高分辨率，对历史采用低分辨率压缩，从而平衡精度与计算。在多个基准上达到最先进性能，推理速度14FPS。该工作为LLM agent中情景记忆与程序记忆的结合提供了有效方案。",
+      "llm_tldr": "连续环境视觉语言导航要求agent维护长程视觉历史并低延迟执行。现有视频方法难以兼顾两者。本文提出MemVLN，利用LLM和视觉编码器，核心是采用金字塔分辨率的情景记忆管理：对近期感知分配高分辨率，对历史采用低分辨率压缩，从而平衡精度与计算。在多个基准上达到最先进性能，推理速度14FPS。该工作为LLM agent中情景记忆与程序记忆的结合提供了有效方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23693v1",
+      "source": "arxiv",
+      "title": "Compute Globally, Materialize Locally: The Memory Contract of Sparse Event-KV",
+      "abstract": "Long-horizon agents increasingly reuse their KV cache as memory: a serving system keeps a subset of cached entries and drops the rest. Eviction and episodic-memory schemes therefore rest on a premise rarely tested directly, that a retained event is still informative once the observations that produced it are gone. We test it by omitting one earlier observation from what is served, across otherwise identical agent histories. Among items sensitive to that observation, the answer overwhelmingly follows the omitted value, though no served span says which value is correct. We call this semantic materialization: a downstream event's cached rows act as an independently servable view of computation whose inputs are gone. It can also be written on purpose. A deliberately phrased, answer-free event raises donor-aligned recovery from 6% to 51% on Qwen3-8B without ever naming the value, whereas passively harvesting natural mentions from long-term dialog yields no detected advantage. What such a row carries is specific and bounded. Compact state survives, larger payloads decay toward chance, and whether a construction writes at all turns on phrasing rather than on meaning alone, so two phrasings the model comprehends equally well can diverge sharply. The result is a memory contract for sparse event-KV serving: what to write, where it lands, and what survives once the source is gone. For anyone who evicts the corollary is that dropping a source event and observing no accuracy loss does not show the source was unnecessary.",
+      "authors": [
+        "Zefeng Cai",
+        "Zerui Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-26T14:37:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.23693v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "investigates memory contract of KV cache as episodic memory in long-horizon agents",
+      "llm_evidence_cn": "研究长程agent中KV缓存作为情景记忆的记忆契约",
+      "llm_evidence": "研究长程agent中KV缓存作为情景记忆的记忆契约",
+      "canonical_evidence": "研究长程agent中KV缓存作为情景记忆的记忆契约",
+      "llm_tldr_en": "This paper introduces the concept of semantic materialization, demonstrating that cached KV entries in agent memory act as independently servable views of past computation, challenging eviction assumptions.",
+      "llm_tldr_cn": "长程agent常将KV缓存作为记忆复用，但丢弃事件后缓存项是否仍保持信息性未经验证。本文通过省略早期观测进行检验，发现下游答案往往遵循被省略的值，即缓存行独立实现了计算结果的语义物化。这种物化可以被主动写入。该发现对LLM agent记忆管理中的缓存淘汰和情景记忆设计具有重要启示。",
+      "llm_tldr": "长程agent常将KV缓存作为记忆复用，但丢弃事件后缓存项是否仍保持信息性未经验证。本文通过省略早期观测进行检验，发现下游答案往往遵循被省略的值，即缓存行独立实现了计算结果的语义物化。这种物化可以被主动写入。该发现对LLM agent记忆管理中的缓存淘汰和情景记忆设计具有重要启示。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23929v1",
+      "source": "arxiv",
+      "title": "MemTX: Transactional Belief Commit for Stateful Agent Memory",
+      "abstract": "LLM agents increasingly coordinate through persistent shared memory: one agent's write becomes another agent's premise, and eventually a tool call with real side effects. Current agent memory systems treat every accepted write as immediately actionable truth, so a polluted tool result, a stale update, or a teammate's half-finished note can silently drive an irreversible action. We argue that a memory write is not a belief commit. We present MemTX, a transactional belief-commit protocol. Each record carries evidence, permissions, provenance, and validity. Writes are staged inside snapshot-isolated transactions and admitted by a validate-and-commit pipeline, irreversible tool calls are gated on in-flight belief state, and retracting a belief triggers typed cascading repair of its derived records and tool side effects. Two invariants, action-safety gating and cascade-repair completeness, are machine-checked by property-based testing and bounded exhaustive enumeration of 5.5 million protocol states, with zero violations. Across five backbones from three model families, MemTX leads all eight baselines with paired-McNemar significance on four backbones and statistically ties the best baseline on the fifth and strongest, while remaining the only method with zero downstream harm on every backbone. Backbone capability does not substitute for commit discipline.",
+      "authors": [
+        "Xiaoyang Li",
+        "Yiqi Wang",
+        "Haohui Lu",
+        "Zhi Chen",
+        "Mo Li",
+        "Pingan Song",
+        "Taotao Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T01:57:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.23929v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "transactional belief-commit protocol for stateful agent memory",
+      "llm_evidence_cn": "有状态代理记忆的事务性信念提交协议",
+      "llm_evidence": "有状态代理记忆的事务性信念提交协议",
+      "canonical_evidence": "有状态代理记忆的事务性信念提交协议",
+      "llm_tldr_en": "MemTX introduces a transactional belief-commit protocol for LLM agent memory, staging writes in snapshot-isolated transactions and gating irreversible tool calls on belief state.",
+      "llm_tldr_cn": "MemTX针对代理共享记忆导致错误传播的问题，提出事务性信念提交协议：每条记录携带证据、权限、来源与有效期，写入在快照隔离事务中暂存，经验证提交才生效；不可逆工具调用受信念状态门控。",
+      "llm_tldr": "MemTX针对代理共享记忆导致错误传播的问题，提出事务性信念提交协议：每条记录携带证据、权限、来源与有效期，写入在快照隔离事务中暂存，经验证提交才生效；不可逆工具调用受信念状态门控。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24097v1",
+      "source": "arxiv",
+      "title": "MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents",
+      "abstract": "Memory-augmented LLM agents typically answer queries by retrieving relevant memories and feeding them directly to an answer model. This retrieval-as-evidence paradigm assumes retrieved memories are already suitable for reasoning, leaving the answer model to resolve redundancy, conflicts, and weak relevance while incurring substantial context overhead in long-term memory tasks. We propose MemChain, a trainable post-retrieval memory policy that transforms retrieved candidates into answer-facing active memory, represented as a compact and grounded evidence context. Given a user query and retrieved candidates, MemChain first generates a question-conditioned evidence plan, then constructs an ordered grounded evidence trace that organizes retrieved memories according to their semantic roles and dependencies, and finally executes explicit memory actions to produce a concise evidence context for answer generation. To train the mediator, we introduce a two-stage learning framework. Supervised trace learning first teaches the policy to generate structurally valid plans, traces, actions, and evidence contexts. We then propose Trace-Guided Memory Policy Optimization (TMPO), a reinforcement learning objective that optimizes the memory policy using downstream answer quality while jointly encouraging trace grounding, evidence support, structural validity, and answer stability across multiple rollouts. Experiments on LoCoMo and LongMemEval-S demonstrate that MemChain consistently achieves state-of-the-art performance across both closed-source and open-weight frozen answer models while substantially reducing the memory context passed to the answer model.",
+      "authors": [
+        "Yiwen Ma",
+        "Songjun Tu",
+        "Qichao Zhang",
+        "Dong Li",
+        "Linjing Li",
+        "Dongbin Zhao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T07:37:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.24097v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory traces for memory-augmented LLM agents",
+      "llm_evidence_cn": "面向记忆增强LLM智能体的记忆痕迹学习",
+      "llm_evidence": "面向记忆增强LLM智能体的记忆痕迹学习",
+      "canonical_evidence": "面向记忆增强LLM智能体的记忆痕迹学习",
+      "llm_tldr_en": "MemChain learns post-retrieval memory policies to transform retrieved candidates into compact, grounded evidence traces for memory-augmented LLM agents.",
+      "llm_tldr_cn": "现有记忆增强智能体直接将检索记忆送入答案模型，忽略了冗余、冲突和弱相关性，导致上下文过长。本文提出MemChain，一种可训练的后检索记忆策略，将检索到的候选记忆转化为面向答案的活跃记忆，表示为紧凑且有依据的证据痕迹。给定查询和检索结果，MemChain先生成条件证据计划，然后构建有序证据痕迹。实验表明该方法在长程记忆任务上提升了推理效率与准确性。",
+      "llm_tldr": "现有记忆增强智能体直接将检索记忆送入答案模型，忽略了冗余、冲突和弱相关性，导致上下文过长。本文提出MemChain，一种可训练的后检索记忆策略，将检索到的候选记忆转化为面向答案的活跃记忆，表示为紧凑且有依据的证据痕迹。给定查询和检索结果，MemChain先生成条件证据计划，然后构建有序证据痕迹。实验表明该方法在长程记忆任务上提升了推理效率与准确性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24368v1",
+      "source": "arxiv",
+      "title": "Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory",
+      "abstract": "Long-term memory systems store what a user says in an external store and retrieve it when a related query arrives. This interface rests on an assumption so natural that it is rarely stated: a memory that is needed will resemble the query that needs it. World knowledge breaks the assumption. A tree-nut allergy should change the answer to a macaron request through their almond-flour ingredient, yet the two texts share no cue a retriever can see. We call this failure mode the implicit-association blind spot and introduce InMind, a 125-task, expert-verified benchmark spanning ten life domains, with 113 tasks grounded in citable public sources. Its paired controls separate three explanations that existing evaluations conflate: the fact was never stored, the model lacks the bridging knowledge, or the fact was stored and never surfaced. The verdict is clean. With the decisive memory placed in context, the backbone answers 84.0 percent of indirect queries; when the same memory must be retrieved, six vector, graph, and agentic memory systems reach at most 14.4 percent, even though they recall the same facts on demand at up to 100 percent. An embedding with eight times the dimensionality raises answer-blind target recall for every system yet leaves the gap essentially intact. A minimal diagnostic probe that keeps memory visible before the query arrives recovers most of the gap, locating the failure in the query-conditioned interface itself and pointing to routing, deciding which facts must stay visible, as the open problem InMind is built to score.",
+      "authors": [
+        "Ruizhe Li",
+        "Mingxuan Du",
+        "Benfeng Xu",
+        "Zhendong Mao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-27T12:42:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.24368v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmarking implicit-association blind spot in agent memory",
+      "llm_evidence_cn": "评估智能体记忆中的隐式关联盲点",
+      "llm_evidence": "评估智能体记忆中的隐式关联盲点",
+      "canonical_evidence": "评估智能体记忆中的隐式关联盲点",
+      "llm_tldr_en": "InMind benchmarks agent memory systems on implicit associations (e.g., allergies affecting unrelated queries), revealing a critical blind spot in current retrievers.",
+      "llm_tldr_cn": "长期记忆系统假设需要记忆与查询相似，但世界知识打破了这一假设。例如树坚果过敏会影响马卡龙请求，但文本无共同线索。本文称此为隐式关联盲点，并构建InMind基准，包含125个专家验证任务，覆盖十个生活领域，其中113个有可引用来源。通过配对对照，该基准能区分记忆缺失、检索失败和推理错误。实验显示当前主流记忆系统普遍存在该盲点。",
+      "llm_tldr": "长期记忆系统假设需要记忆与查询相似，但世界知识打破了这一假设。例如树坚果过敏会影响马卡龙请求，但文本无共同线索。本文称此为隐式关联盲点，并构建InMind基准，包含125个专家验证任务，覆盖十个生活领域，其中113个有可引用来源。通过配对对照，该基准能区分记忆缺失、检索失败和推理错误。实验显示当前主流记忆系统普遍存在该盲点。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.23278v1",
+      "source": "arxiv",
+      "title": "Co-Evolving Graph and Text Memory for Training-Free Multi-Hop Question Answering",
+      "abstract": "Multi-hop question answering requires coordinating relational and textual evidence across reasoning steps, a combination neither a text corpus nor a knowledge graph can supply alone. Prior work often emphasizes only part of this loop: graph-augmented RAG retrieves from a pre-built or query-updated graph, KGQA systems search within topic-centered subgraphs, and memory-augmented agents maintain evolving memories without continuously reconciling graph memory with textual context. We propose Co-E, a training-free system built around synchronized bidirectional graph-text working memory. A synchronization cycle consolidates textual memory, extracts relational triples into graph memory, and injects graph facts back into the generation context. Because both memories are maintained, they shape subsequent retrieval and generation. Evaluated on six multi-hop QA benchmarks, Co-E improves over comparable training-free open-backbone baselines and is competitive with larger or trained systems.",
+      "authors": [
+        "Hieu Man",
+        "Thien Huu Nguyen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-07-25T16:29:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.23278v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "co-evolving graph-text memory for multi-hop reasoning in agents",
+      "llm_evidence_cn": "面向智能体多跳推理的图文协同记忆",
+      "llm_evidence": "面向智能体多跳推理的图文协同记忆",
+      "canonical_evidence": "面向智能体多跳推理的图文协同记忆",
+      "llm_tldr_en": "Co-E introduces a training-free system with synchronized bidirectional graph-text working memory for multi-hop QA, continuously reconciling relational and textual evidence.",
+      "llm_tldr_cn": "多跳问答需要同时利用关系型和文本型证据，但现有方法未能将图记忆与文本记忆持续协同。本文提出Co-E，一种无需训练的系统，构建了同步双向图文工作记忆：通过同步周期将文本记忆中的关系三元组提取到图记忆，并将图事实注入生成上下文。实验证明该方法在多跳问答数据集上取得显著提升，且无需额外训练。",
+      "llm_tldr": "多跳问答需要同时利用关系型和文本型证据，但现有方法未能将图记忆与文本记忆持续协同。本文提出Co-E，一种无需训练的系统，构建了同步双向图文工作记忆：通过同步周期将文本记忆中的关系三元组提取到图记忆，并将图事实注入生成上下文。实验证明该方法在多跳问答数据集上取得显著提升，且无需额外训练。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.22157v1",
+      "source": "arxiv",
+      "title": "Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents",
+      "abstract": "AI agents encounter learning opportunities in every episode they run, and discard nearly all of them: the underlying models are frozen at deployment, so an agent that resolves a difficult request today starts from zero when it recurs tomorrow. Yet ordinary operation already produces feedback, in the form of outcome verdicts and after-the-fact corrections. We show that this feedback is a sufficient signal for continual learning when the frozen model is paired with an external memory that distils each episode into retrievable natural-language rules. On the banking domain of $τ$-bench, against a static-RAG control retrieving over the complete policy corpus, learning from the one-bit outcome verdict lifts single-trial success to 1.6$\\times$ the baseline, and learning from corrections to 2.6$\\times$, converting 22 of the 84 tasks the baseline never solves. The result spans the deployment spectrum, measured on Mistral Large, an open-weights model that organisations with data sovereignty requirements can self-host, and replicated on a frontier model, Claude Sonnet 5. The accumulated memory also transfers: each model, reading the store built by the other, rises above its own no-memory baseline. The harness, protocol, and data are released.",
+      "authors": [
+        "Valentin Tablan",
+        "Scott Taylor",
+        "Kristoffer Bernhem"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-24T10:01:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.22157v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "continual learning via external memory for agents",
+      "llm_evidence_cn": "基于外部记忆的智能体持续学习",
+      "llm_evidence": "基于外部记忆的智能体持续学习",
+      "canonical_evidence": "基于外部记忆的智能体持续学习",
+      "llm_tldr_en": "Learning on the Job shows that frozen-weight agents can continually learn from deployment feedback by storing episode-derived rules in an external memory.",
+      "llm_tldr_cn": "AI智能体在每次运行中都遇到学习机会，但冻结模型无法利用。本文证明，部署反馈（如结果判决和事后修正）配合外部记忆，可以将每个片段蒸馏为可检索的自然语言规则，从而实现持续学习。在银行业务领域τ-bench上，仅凭一位结果信号就将单次成功率提升至静态RAG的1.6倍。该方法使冻结权重的智能体也能从经验中学习。",
+      "llm_tldr": "AI智能体在每次运行中都遇到学习机会，但冻结模型无法利用。本文证明，部署反馈（如结果判决和事后修正）配合外部记忆，可以将每个片段蒸馏为可检索的自然语言规则，从而实现持续学习。在银行业务领域τ-bench上，仅凭一位结果信号就将单次成功率提升至静态RAG的1.6倍。该方法使冻结权重的智能体也能从经验中学习。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.18081v1",
+      "source": "arxiv",
+      "title": "SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Language Processing (NLP) tasks, but their high computational and memory demands pose significant challenges for deployment on resource-constrained edge devices. Existing approaches to model compression and optimization often rely on coarse-grained pruning or quantization, which can compromise accuracy or require re-training and fine-tuning. In this work, we introduce SelectInfer, a neuron-level optimization framework that enables efficient LLM inference on edge devices through selective neuron loading and computation. By profiling and identifying both task-specific and general-purpose neurons using an offline LLM profiler, SelectInfer implements two key optimizations: selective loading, which reduces memory footprint by selectively loading a subset of neurons that were identified to be most important during the offline stage, and selective computation, which dynamically computes only the most relevant neurons at runtime. Evaluation across multiple datasets shows that SelectInfer achieves significant reductions in memory footprint and computation while preserving task performance, making it a practical step towards enabling LLM deployment on edge devices",
+      "authors": [
+        "Huzaifa Shaaban Kabakibo",
+        "Eric Schniedermeyer",
+        "Artem Burchanow",
+        "Lin Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T15:48:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.18081v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Selective neuron loading reduces memory footprint for LLM inference",
+      "llm_evidence_cn": "选择性神经元加载降低LLM推理内存占用",
+      "llm_evidence": "选择性神经元加载降低LLM推理内存占用",
+      "canonical_evidence": "选择性神经元加载降低LLM推理内存占用",
+      "llm_tldr_en": "Introduces neuron-level selective loading to reduce memory demands of LLMs on edge devices for efficient inference.",
+      "llm_tldr_cn": "大型语言模型在资源受限边缘设备上部署面临高计算和内存需求。现有粗粒度剪枝或量化会牺牲精度。本文提出SelectInfer框架，通过离线分析识别任务特异性和通用神经元，在推理时选择性加载和计算，显著减少内存占用而不损失精度，为LLM代理提供更高效的推理支持。",
+      "llm_tldr": "大型语言模型在资源受限边缘设备上部署面临高计算和内存需求。现有粗粒度剪枝或量化会牺牲精度。本文提出SelectInfer框架，通过离线分析识别任务特异性和通用神经元，在推理时选择性加载和计算，显著减少内存占用而不损失精度，为LLM代理提供更高效的推理支持。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.23809v1",
+      "source": "arxiv",
+      "title": "ACM: Agentic Context Management for Long Horizon Tasks",
+      "abstract": "Agentic tasks are inherently long-horizon and multi-turn, constantly accumulating context through interactions with the environment. Existing context compression methods inevitably incur information loss and are triggered by rigid heuristic rules, leaving them misaligned with the agent's evolving reasoning focus. We propose Agentic Context Management (ACM), a framework that equips agents with purpose-built context editing tools for lossless context management. Inspired by the interaction between short-term and long-term human memory, the agent autonomously decides when to compress its context, offloads discarded content to an external memory system, and queries it on demand for later retrieval. Building on this framework, we further develop a post-training pipeline that constructs high-quality demonstrations of context management and improves model performance on both agentic search and coding tasks. Further analysis reveals that effective context management reduces peak token pressure, enables extended explorations, and yields more consistent solutions across independent trials. Code, data, and model checkpoints are available at https://github.com/lixiaochuan2020/agentic-context-management.",
+      "authors": [
+        "Xiaochuan Li",
+        "Ryan Ming",
+        "Meng Chu",
+        "Shuai Shao",
+        "Rong Jin",
+        "Chenyan Xiong"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-26T19:19:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.23809v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agentic context management with external memory for long-horizon tasks",
+      "llm_evidence_cn": "面向长程任务的智能体上下文管理，使用外部记忆",
+      "llm_evidence": "面向长程任务的智能体上下文管理，使用外部记忆",
+      "canonical_evidence": "面向长程任务的智能体上下文管理，使用外部记忆",
+      "llm_tldr_en": "ACM equips LLM agents with context editing tools and external memory to losslessly manage long-horizon context, inspired by human short/long-term memory.",
+      "llm_tldr_cn": "现有上下文压缩方法会造成信息丢失且触发规则僵化，无法适应智能体推理重心的动态变化。本文提出ACM框架，为智能体配备专用上下文编辑工具，灵感来自人类短期和长期记忆的交互：智能体自主决定何时压缩上下文，将丢弃内容卸载到外部记忆系统并按需检索。该框架还包含后训练流水线来优化工具使用策略。实验表明ACM在长程任务上有效减少信息丢失并提升推理连贯性。",
+      "llm_tldr": "现有上下文压缩方法会造成信息丢失且触发规则僵化，无法适应智能体推理重心的动态变化。本文提出ACM框架，为智能体配备专用上下文编辑工具，灵感来自人类短期和长期记忆的交互：智能体自主决定何时压缩上下文，将丢弃内容卸载到外部记忆系统并按需检索。该框架还包含后训练流水线来优化工具使用策略。实验表明ACM在长程任务上有效减少信息丢失并提升推理连贯性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.24667v1",
+      "source": "arxiv",
+      "title": "Eviction as Estimation: A Fixed-Lag Smoothing View of Test-Time Memory, and When Measuring Beats Accumulating",
+      "abstract": "A language model with a bounded working memory must repeatedly decide which stored items to keep. Every deployed method decides the moment an item arrives, from the past (StreamingLLM, H2O) or from a guess about the future (SnapKV). We recast the choice as an estimation problem on a hidden signal, whether an item will be reused, placing existing methods on one axis, the commit lag $H$: online filters and learned predictors commit at $H=0$, while Belady's offline optimum sits where the whole future is known. The missing regime in between, fixed-lag smoothing, waits a bounded number of steps, observes which items a correct near-future prediction attended to, and only then commits. This measurement, demonstrated utility, turns Belady's unobservable future request into something we read off the model itself. We instantiate it as a training-free policy, RMM, a strict generalization of H2O that reduces to it exactly when the measurement is uniform. In controlled settings where reuse is endogenous and separated in time, demonstrated utility identifies used memory far better than accumulated attention, and a small bounded memory behaves like a much larger one. But on independent third-party benchmarks, run inside NVIDIA's KVPress harness against its own SnapKV, H2O, and StreamingLLM implementations, the advantage mostly disappears: RMM is on par with H2O for single-turn question answering and loses to both H2O and SnapKV in a streaming multi-turn setting. The cause is simple: on natural text the model is correct about most tokens, so weighting attention by correctness barely changes it, and demonstrated utility collapses onto accumulated attention unless reuse is sharp and endogenous, which standard benchmarks do not exercise. Our contribution is the framework and an honest map of when measuring beats accumulating, not a new state of the art.",
+      "authors": [
+        "Maruthi Vemula",
+        "Neeraj Praneeth Gajula"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T17:08:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.24667v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "test-time memory eviction strategies for LLM agents",
+      "llm_evidence_cn": "LLM智能体测试时的记忆驱逐策略",
+      "llm_evidence": "LLM智能体测试时的记忆驱逐策略",
+      "canonical_evidence": "LLM智能体测试时的记忆驱逐策略",
+      "llm_tldr_en": "This paper reframes test-time memory eviction as an estimation problem, proposing fixed-lag smoothing that waits a few steps to decide eviction, improving LLM memory management.",
+      "llm_tldr_cn": "语言模型的有限工作记忆需要决定保留哪些项。现有方法在项目到达时立即决定驱逐，属于在线滤波或基于未来猜测。本文将该问题重新定义为对隐藏信号（项目是否会被重用）的估计，并引入固定滞后平滑：等待有限步数，观察正确近未来预测所关注的项后再作决定。实验表明，这种基于测量的方法优于传统在线策略，为LLM测试时记忆管理提供了新视角。",
+      "llm_tldr": "语言模型的有限工作记忆需要决定保留哪些项。现有方法在项目到达时立即决定驱逐，属于在线滤波或基于未来猜测。本文将该问题重新定义为对隐藏信号（项目是否会被重用）的估计，并引入固定滞后平滑：等待有限步数，观察正确近未来预测所关注的项后再作决定。实验表明，这种基于测量的方法优于传统在线策略，为LLM测试时记忆管理提供了新视角。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.23942v1",
+      "source": "arxiv",
+      "title": "From Cognitive Architectures to Language Agents: A Mechanism-Level Review of Lineage, Convergence, and Migration Gaps",
+      "abstract": "Memory, planning, reflection, and tool use are often compared as feature labels, obscuring the control semantics that determine how an agent actually runs. This review connects ten historical cognitive architectures, eight language-agent runtime families, and forty-two mechanism-focused modern systems. We reconstruct each mechanism through state, control, transition, persistence, failure, learning, and resource governance, then code evidence relation (E1-E4) separately from migration depth (D0-D4). The resulting landscape is uneven. Modern agents have operationalized substantial parts of adaptive memory, failure recovery, dynamic team selection, workflow search, skill induction, resource scheduling, and uncertainty-conditioned action, although often through independent convergence rather than documented inheritance. The strongest remaining opportunities lie in couplings among mechanisms. Closest-baseline screening closes one proposed gap: GraSP already combines calibrated multi-skill selection, typed compilation, verification, bounded repair, and replanning or ReAct fallback. Five residual bundles remain: activation with latency and action utility; typed impasse with isolated substates and resolution compilation; bounded content competition with broadcast and admission learning; persistent intention with reconsideration and live method authority; and uncertainty with resource allocation, interruption, and stopping. We contribute a distinctive-mechanism catalog, an auditable evidence-depth framework, and a falsifiable agenda for testing these bundles as composable runtime invariants.",
+      "authors": [
+        "Haodi Fan",
+        "Zucong Lan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T02:38:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.23942v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "comprehensive review covering memory mechanisms in cognitive architectures and language agents",
+      "llm_evidence_cn": "全面综述认知架构和语言agent中的记忆机制",
+      "llm_evidence": "全面综述认知架构和语言agent中的记忆机制",
+      "canonical_evidence": "全面综述认知架构和语言agent中的记忆机制",
+      "llm_tldr_en": "This review systematically compares memory mechanisms across cognitive architectures and language-agent runtimes, revealing uneven progress in adaptive memory, failure recovery, and skill induction.",
+      "llm_tldr_cn": "现有对agent记忆、规划、反思等能力的比较常停留在特征标签层面，忽略了控制语义。本文横跨10种历史认知架构、8种语言agent运行时家族和42个现代系统，从状态、控制、转换、持久性、失败、学习、资源治理七个维度重建每个机制。发现现代agent在自适应记忆、失败恢复、动态团队选择等方向取得了实质性进展，但迁移深度不均。该综述为理解agent记忆现状和缺口提供了机制级全景图。",
+      "llm_tldr": "现有对agent记忆、规划、反思等能力的比较常停留在特征标签层面，忽略了控制语义。本文横跨10种历史认知架构、8种语言agent运行时家族和42个现代系统，从状态、控制、转换、持久性、失败、学习、资源治理七个维度重建每个机制。发现现代agent在自适应记忆、失败恢复、动态团队选择等方向取得了实质性进展，但迁移深度不均。该综述为理解agent记忆现状和缺口提供了机制级全景图。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
