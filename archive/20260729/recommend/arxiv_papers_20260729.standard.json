@@ -1,0 +1,341 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-29T21:39:41.760597+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.25992v1",
+      "source": "arxiv",
+      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
+      "abstract": "Recently, memory management has become a key infrastructure for LLM-based agents, as it directly affects long-horizon reasoning, personalized responses, and knowledge reuse. However, existing LLM memory systems typically adopt a coarse-grained (utility-agnostic) manner that treats heterogeneous user-LLM interaction records uniformly, leading to redundant and low-impact records persisting in the memory repository. To address this challenge, we present MemLens, a value-aware memory management system that takes memory records as first-class data objects. MemLens provides an end-to-end interactive analytics dashboard that exposes the complete memory lifecycle, including Shapley-style memory evaluation, value-aware storage, and memory-assisted response. Through a study-copilot application, the system enables users to inspect memory values, visualize hierarchical memory structures, and compare various memory management strategies in terms of response quality, retrieval latency, and token consumption. Therefore, our MemLens can serve as an efficient, interpretable, and personalized long-term memory management system for LLM-based agents.",
+      "authors": [
+        "Shuyue Wei",
+        "Chang Liu",
+        "Zimu Zhou",
+        "Yongxin Tong",
+        "Lizhen Cui"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "published": "2026-07-28T17:08:56+00:00",
+      "link": "https://arxiv.org/pdf/2607.25992v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "value-aware memory management system for LLM agents",
+      "llm_evidence_cn": "价值感知的LLM代理内存管理系统",
+      "llm_evidence": "价值感知的LLM代理内存管理系统",
+      "canonical_evidence": "价值感知的LLM代理内存管理系统",
+      "llm_tldr_en": "MemLens introduces value-aware memory management for LLM agents, using Shapley-style evaluation and interactive analytics to prioritize high-impact records, reducing redundancy.",
+      "llm_tldr_cn": "该论文针对现有LLM代理内存系统粗粒度、忽略效用的问题，提出MemLens价值感知内存管理系统。将内存记录作为一等数据对象，通过Shapley值评估记录贡献，实现价值感知存储与交互式分析仪表盘。实验表明能有效减少冗余记录，提升长程推理和个性化响应质量。",
+      "llm_tldr": "该论文针对现有LLM代理内存系统粗粒度、忽略效用的问题，提出MemLens价值感知内存管理系统。将内存记录作为一等数据对象，通过Shapley值评估记录贡献，实现价值感知存储与交互式分析仪表盘。实验表明能有效减少冗余记录，提升长程推理和个性化响应质量。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26017v1",
+      "source": "arxiv",
+      "title": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+      "abstract": "Memory is essential for LLM agents to accumulate task experience and reuse task-specific execution strategies. However, real-world deployment over boundary-agnostic and evolving task streams exposes a fundamental stability-plasticity dilemma. External retrieval-based memory can rapidly absorb new evidence, but it often fails to internalize recurring execution patterns and incurs inference-time retrieval overhead. Parametric memory enables stable and efficient execution once learned, but typically relies on explicit task boundaries and fixed parameter budgets. Inspired by the human brain, which balances plasticity and stability through complementary episodic storage and gradual consolidation, we propose UniMem, a self-routing framework for autonomous memory management. UniMem uses learnable routing tokens as memory controllers, enabling adaptive coordination between complementary memory pathways: novel or sparse tasks are retained in an episodic buffer for retrieval-augmented execution, while recurring and reliable patterns are consolidated into expandable parametric memory. By decoupling task identification from task execution with routing tokens and parametric memory blocks, UniMem expands memory on demand without task labels during deployment or uncontrolled parameter growth. Experiments on long-horizon streaming task sequences show that UniMem consistently outperforms baselines while maintaining execution fidelity, achieving an average gain of 4.0 EM points across three backbone models.",
+      "authors": [
+        "Siyu Xia",
+        "Chenheng Zhang",
+        "Yanting Wu",
+        "Haoxuan Li",
+        "Jiajun Chai",
+        "Xiaohan Wang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Zhouchen Lin",
+        "Haifeng Zhang",
+        "Jun Wang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-28T17:28:21+00:00",
+      "link": "https://arxiv.org/pdf/2607.26017v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes UniMem, a complementary episodic-to-parametric memory for LLM agents",
+      "llm_evidence_cn": "提出UniMem互补情景参数记忆框架，解决LLM智能体稳定性-可塑性困境",
+      "llm_evidence": "提出UniMem互补情景参数记忆框架，解决LLM智能体稳定性-可塑性困境",
+      "canonical_evidence": "提出UniMem互补情景参数记忆框架，解决LLM智能体稳定性-可塑性困境",
+      "llm_tldr_en": "UniMem combines episodic and parametric memory for LLM agents, enabling stable and efficient execution across boundary-agnostic task streams via self-routing and gradual consolidation inspired by human memory.",
+      "llm_tldr_cn": "该论文针对LLM智能体在边界无关持续任务流中面临的稳定性-可塑性困境，提出UniMem框架。UniMem借鉴人脑互补学习系统，通过自路由机制协同外部检索记忆（情景）和内部参数记忆，并在在线使用中逐步巩固。实验证明UniMem在多种持续学习设置下优于纯检索或纯参数方法，为智能体长期记忆提供了有效方案。",
+      "llm_tldr": "该论文针对LLM智能体在边界无关持续任务流中面临的稳定性-可塑性困境，提出UniMem框架。UniMem借鉴人脑互补学习系统，通过自路由机制协同外部检索记忆（情景）和内部参数记忆，并在在线使用中逐步巩固。实验证明UniMem在多种持续学习设置下优于纯检索或纯参数方法，为智能体长期记忆提供了有效方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23929v2",
+      "source": "arxiv",
+      "title": "MemTX: Transactional Belief Commit for Stateful Agent Memory",
+      "abstract": "LLM agents increasingly coordinate through persistent shared memory: one agent's write becomes another agent's premise, and eventually a tool call with real side effects. Current agent memory systems treat every accepted write as immediately actionable truth, so a polluted tool result, a stale update, or a teammate's half-finished note can silently drive an irreversible action. We argue that a memory write is not a belief commit. We present MemTX, a transactional belief-commit protocol. Each record carries evidence, permissions, provenance, and validity. Writes are staged inside snapshot-isolated transactions and admitted by a validate-and-commit pipeline, irreversible tool calls are gated on in-flight belief state, and retracting a belief triggers typed cascading repair of its derived records and tool side effects. Two invariants, action-safety gating and cascade-repair completeness, are machine-checked by property-based testing and bounded exhaustive enumeration of 5.5 million protocol states, with zero violations. Across five backbones from three model families, MemTX leads all eight baselines with paired-McNemar significance on four backbones and statistically ties the best baseline on the fifth and strongest, while remaining the only method with zero downstream harm on every backbone. Backbone capability does not substitute for commit discipline.",
+      "authors": [
+        "Xiaoyang Li",
+        "Yiqi Wang",
+        "Haohui Lu",
+        "Zhi Chen",
+        "Mo Li",
+        "Pingan Song",
+        "Mingkai Zheng",
+        "Taotao Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T01:57:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.23929v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "transactional belief commit for stateful agent memory",
+      "llm_evidence_cn": "状态代理内存的事务性信念提交",
+      "llm_evidence": "状态代理内存的事务性信念提交",
+      "canonical_evidence": "状态代理内存的事务性信念提交",
+      "llm_tldr_en": "MemTX introduces a transactional protocol for shared agent memory, staging writes in snapshot-isolated transactions and gating irreversible actions on validated belief state.",
+      "llm_tldr_cn": "该论文针对多代理共享内存中写入即视为真相导致错误传播的问题，提出MemTX事务性信念提交协议。每条记录含证据、权限、来源和有效性，写入先暂存于快照隔离事务，经验证确认后提交，不可逆工具调用等待信念状态确认。信念撤回触发级联效应，防止污染扩散。",
+      "llm_tldr": "该论文针对多代理共享内存中写入即视为真相导致错误传播的问题，提出MemTX事务性信念提交协议。每条记录含证据、权限、来源和有效性，写入先暂存于快照隔离事务，经验证确认后提交，不可逆工具调用等待信念状态确认。信念撤回触发级联效应，防止污染扩散。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23942v1",
+      "source": "arxiv",
+      "title": "From Cognitive Architectures to Language Agents: A Mechanism-Level Review of Lineage, Convergence, and Migration Gaps",
+      "abstract": "Memory, planning, reflection, and tool use are often compared as feature labels, obscuring the control semantics that determine how an agent actually runs. This review connects ten historical cognitive architectures, eight language-agent runtime families, and forty-two mechanism-focused modern systems. We reconstruct each mechanism through state, control, transition, persistence, failure, learning, and resource governance, then code evidence relation (E1-E4) separately from migration depth (D0-D4). The resulting landscape is uneven. Modern agents have operationalized substantial parts of adaptive memory, failure recovery, dynamic team selection, workflow search, skill induction, resource scheduling, and uncertainty-conditioned action, although often through independent convergence rather than documented inheritance. The strongest remaining opportunities lie in couplings among mechanisms. Closest-baseline screening closes one proposed gap: GraSP already combines calibrated multi-skill selection, typed compilation, verification, bounded repair, and replanning or ReAct fallback. Five residual bundles remain: activation with latency and action utility; typed impasse with isolated substates and resolution compilation; bounded content competition with broadcast and admission learning; persistent intention with reconsideration and live method authority; and uncertainty with resource allocation, interruption, and stopping. We contribute a distinctive-mechanism catalog, an auditable evidence-depth framework, and a falsifiable agenda for testing these bundles as composable runtime invariants.",
+      "authors": [
+        "Haodi Fan",
+        "Zucong Lan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T02:38:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.23942v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "mechanism-level review covering memory, planning, reflection in LLM agents",
+      "llm_evidence_cn": "涵盖LLM代理中记忆、规划、反思的机制级综述",
+      "llm_evidence": "涵盖LLM代理中记忆、规划、反思的机制级综述",
+      "canonical_evidence": "涵盖LLM代理中记忆、规划、反思的机制级综述",
+      "llm_tldr_en": "Comprehensive review connecting cognitive architectures to modern LLM agent systems, providing mechanism-level analysis of memory, planning, reflection, and tool use.",
+      "llm_tldr_cn": "现有代理系统常将记忆、规划等作为特征标签，模糊了控制语义。本文连接10种历史认知架构与42个现代系统，从状态、控制、持久化等维度重建机制，揭示现代代理在自适应记忆、故障恢复等方面的进展。为记忆方法提供了系统分类和迁移缺口分析。",
+      "llm_tldr": "现有代理系统常将记忆、规划等作为特征标签，模糊了控制语义。本文连接10种历史认知架构与42个现代系统，从状态、控制、持久化等维度重建机制，揭示现代代理在自适应记忆、故障恢复等方面的进展。为记忆方法提供了系统分类和迁移缺口分析。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25066v1",
+      "source": "arxiv",
+      "title": "Addressable Recall Compaction for Long Context-Window Control in AI Agents",
+      "abstract": "Long-horizon LLM agents accumulate reasoning traces, actions, and tool observations that can eventually exceed a model's fixed context window. Existing compaction methods address this limitation by discarding, summarizing, or retrieving earlier information, but they may remove task-critical details or fail to recover them reliably. We propose ARC (Addressable Recall Compaction), a context-management framework that separates archival storage from active-context presentation. ARC stores tool observations in an append-only, ID-addressable log and replaces older observations with compact citations when compaction is required. The agent can subsequently use these identifiers to request stored content without re-executing the corresponding tools or depending solely on similarity-based retrieval. We evaluate ARC using Qwen3-8B with a 16k context window and Qwen3-32B with a 32k context window. On the Needle-in-a-Haystack evaluation, ARC achieves an average exact-answer accuracy of 99.40%, compared with 88.12% for the best-performing baseline in our evaluation. ARC also reduces estimated serving time and HBM traffic under our hardware-cost model. On the LongBench-v2 Hard subset, ARC obtains an average accuracy of 29.97%, compared with 28.25% for the best-performing baseline. These results indicate that explicit, address-based recall can improve information retention and serving efficiency relative to the evaluated context-management baselines under the tested settings.",
+      "authors": [
+        "Thang Dang",
+        "Yuma Ichikawa",
+        "Sakina Fatima",
+        "Koichi Shirahata"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-27T20:51:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.25066v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "addressable recall compaction for context-window control",
+      "llm_evidence_cn": "可寻址召回压缩用于上下文窗口控制",
+      "llm_evidence": "可寻址召回压缩用于上下文窗口控制",
+      "canonical_evidence": "可寻址召回压缩用于上下文窗口控制",
+      "llm_tldr_en": "ARC separates archival storage from active context via ID-addressable log and compact citations, enabling reliable retrieval of older observations without re-execution.",
+      "llm_tldr_cn": "长期运行的LLM代理会积累超出固定上下文窗口的轨迹。ARC提出可寻址召回压缩框架，将工具观测存储到可追加且可寻址的日志中，用紧凑引用替换旧观测，代理可通过标识符请求存储内容，无需重复执行。在长上下文场景下保持了关键细节的可用性。",
+      "llm_tldr": "长期运行的LLM代理会积累超出固定上下文窗口的轨迹。ARC提出可寻址召回压缩框架，将工具观测存储到可追加且可寻址的日志中，用紧凑引用替换旧观测，代理可通过标识符请求存储内容，无需重复执行。在长上下文场景下保持了关键细节的可用性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25380v1",
+      "source": "arxiv",
+      "title": "Memory for Large Language Models",
+      "abstract": "Memory has evolved into a foundational architectural dimension in large language models (LLMs), shifting from an implicit byproduct of computation to a spectrum of explicit, controllable mechanisms. While recent advances introduce diverse strategies---spanning transient attention, recurrent state dynamics, parameter-efficient adaptations, and scalable lookup storage---this rapid evolution has led to a highly fragmented research landscape. In this survey, we present a systematic, architecture-centric taxonomy of memory in LLMs. Our framework characterizes memory along three orthogonal axes: representation (implicit versus explicit), update dynamics (offline versus online), and persistence (short-term versus long-term). We further formalize the granular mechanisms dictating memory writing, routing, state transitions, and consolidation. This unified perspective elucidates the conceptual boundaries between computation-coupled and independently addressable memory, effectively bridging disparate architectural paradigms. Additionally, we critically analyze hybrid memory architectures, system-level efficiency trade-offs, and multi-dimensional evaluation methodologies. By consolidating these scattered advancements into a cohesive framework, this survey charts the trajectory of memory-centric LLM design and provides a principled foundation for future innovations in scalable and adaptive language modeling.",
+      "authors": [
+        "Sining Zhoubian",
+        "Dan Zhang",
+        "Evgeny Kharlamov",
+        "Jie Tang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-28T07:34:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.25380v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "survey of memory architectures for LLMs, including agent memory",
+      "llm_evidence_cn": "涵盖智能体记忆的大型语言模型记忆架构综述",
+      "llm_evidence": "涵盖智能体记忆的大型语言模型记忆架构综述",
+      "canonical_evidence": "涵盖智能体记忆的大型语言模型记忆架构综述",
+      "llm_tldr_en": "A systematic survey presenting an architecture-centric taxonomy of memory in LLMs, covering representation, update dynamics, and persistence, with mechanisms for writing and reading.",
+      "llm_tldr_cn": "针对大语言模型记忆研究碎片化的问题，本综述提出以架构为中心的术语体系，沿表示（隐式与显式）、更新（离线与在线）和持久性（短期与长期）三个正交轴进行分类，并形式化记忆读写机制。该工作为理解和比较不同记忆方法提供了统一框架，对智能体记忆研究具有重要参考价值。",
+      "llm_tldr": "针对大语言模型记忆研究碎片化的问题，本综述提出以架构为中心的术语体系，沿表示（隐式与显式）、更新（离线与在线）和持久性（短期与长期）三个正交轴进行分类，并形式化记忆读写机制。该工作为理解和比较不同记忆方法提供了统一框架，对智能体记忆研究具有重要参考价值。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.22711v1",
+      "source": "arxiv",
+      "title": "CORVUS: Context Optimization and Reduction Via Underlying Synchronization for LLM Coding Agents",
+      "abstract": "LLM coding agents operate by constructing trajectories that accumulate reasoning, tool calls, and results to enable multi-step decision-making. However, the conventional append-only trajectory architecture found in practice tightly couples file-read actions with their observations, capturing snapshots that become permanently fixed in the chronological history. As files change through agent edits or concurrent human modifications, these snapshots become stale, causing reasoning errors and causing agents to redundantly re-read files, with each re-read appending yet another copy to the trajectory. To mitigate this, we propose CORVUS, a novel trajectory architecture that decouples file-read actions from their observations by maintaining a synchronized registry of relevant files and injecting only their current contents at each reasoning cycle. This structural change produces significantly lighter-weight trajectories that remain synchronized with the actual codebase state by construction, eliminating redundant file copies and stale snapshots that bloat conventional trajectories. We evaluated CORVUS on SWE- POLYBENCH_VERIFIED and SWE-BENCH PRO across four LLMs, achieving 9-50% reduction in average input tokens per task, 15-32% shorter final prompts, and up to 37% fewer reasoning cycles while maintaining comparable pass rates.",
+      "authors": [
+        "Mingwei Zheng",
+        "David OBrien",
+        "Siwei Cui",
+        "Pardis Pashakhanloo",
+        "Rajdeep Mukherjee",
+        "Myeongsoo Kim",
+        "Sachit Kuhar"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-07-20T23:01:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.22711v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "context optimization and reduction with underlying synchronization",
+      "llm_evidence_cn": "上下文优化与缩减通过底层同步",
+      "llm_evidence": "上下文优化与缩减通过底层同步",
+      "canonical_evidence": "上下文优化与缩减通过底层同步",
+      "llm_tldr_en": "CORVUS decouples file-read actions from observations using a content-addressed cache and reactive invalidation, reducing stale snapshots and redundant re-reads in LLM coding agents.",
+      "llm_tldr_cn": "LLM编码代理的常规轨迹架构将文件读取行为与快照耦合，导致过时和冗余读取。CORVUS提出新轨迹架构，通过内容寻址缓存和响应式失效机制解耦读取行为和观测，保持数据新鲜度并减少冗余，提升了编码代理的推理效率和准确性。",
+      "llm_tldr": "LLM编码代理的常规轨迹架构将文件读取行为与快照耦合，导致过时和冗余读取。CORVUS提出新轨迹架构，通过内容寻址缓存和响应式失效机制解耦读取行为和观测，保持数据新鲜度并减少冗余，提升了编码代理的推理效率和准确性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.25614v1",
+      "source": "arxiv",
+      "title": "MemSFT: Mitigating Alignment Tax with an External Parametric Memory",
+      "abstract": "Adapting Large Language Models (LLMs) to specialized domains often incurs an alignment tax, as fine-tuning on domain-specific tasks can cause catastrophic forgetting and substantially degrade performance on general tasks. We propose MemSFT, which mitigates the alignment tax by decoupling domain specialization from backbone parameter updates through a plug-and-play parametric memory. The memory is trained to imitate the behavior of a non-parametric retriever operating over domain data, thereby memorizing knowledge and patterns that would otherwise be accessed through retrieval. Once trained on a specific domain, the memory can be reused across LLMs of different sizes. During generation, a learned router dynamically fuses the output distributions of the memory and backbone at each decoding step, allowing domain expertise to be invoked selectively. Across biology, geoscience, and law, evaluations with models ranging from Qwen3-8B to Qwen3-235B-A22B show that MemSFT consistently improves domain performance with negligible degradation in general performance, whereas full SFT suffers severe forgetting on general tasks. Overall, our results demonstrate a practical path to decoupling general model capabilities from domain-specific knowledge at the parameter level, thereby equipping LLMs with new specialized capabilities without compromising their general capabilities.",
+      "authors": [
+        "Jiarui Wang",
+        "Xiang Shi",
+        "Jiaqi Cao",
+        "Rubin Wei",
+        "Xiquan Wang",
+        "Hao Sun",
+        "Jingzhi Wang",
+        "Zhiqi Yang",
+        "Qipeng Guo",
+        "Bowen Zhou",
+        "Zhouhan Lin"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-07-28T11:45:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.25614v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "external parametric memory as plug-and-play augmentation",
+      "llm_evidence_cn": "外部参数化记忆作为即插即用增强",
+      "llm_evidence": "外部参数化记忆作为即插即用增强",
+      "canonical_evidence": "外部参数化记忆作为即插即用增强",
+      "llm_tldr_en": "MemSFT uses a plug-and-play parametric memory trained to imitate a non-parametric retriever, mitigating alignment tax when fine-tuning LLMs for specialized domains.",
+      "llm_tldr_cn": "微调LLM到专业领域时会产生对齐税，导致通用能力下降。MemSFT提出即插即用参数化记忆模块，训练其模仿非参数检索器行为，从而记忆领域知识，避免直接修改骨干参数。该记忆可跨不同大小模型复用，通过学习路由器动态融合输出分布，在保持通用性能的同时实现有效领域适应。",
+      "llm_tldr": "微调LLM到专业领域时会产生对齐税，导致通用能力下降。MemSFT提出即插即用参数化记忆模块，训练其模仿非参数检索器行为，从而记忆领域知识，避免直接修改骨干参数。该记忆可跨不同大小模型复用，通过学习路由器动态融合输出分布，在保持通用性能的同时实现有效领域适应。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
