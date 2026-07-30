@@ -1,0 +1,443 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-30T21:40:51.751495+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2607.26520v1",
+      "source": "arxiv",
+      "title": "A Graph-Native Bitemporal Memory Store for Conversational AI Agents",
+      "abstract": "Conversational AI agents commonly lack persistent memory across sessions. The obvious fixes like injecting full chat histories into the context window, or delegating to a third-party memory service, either exhaust the model's context budget or send personal data through infrastructure the user does not control. We describe a memory store that avoids both problems: an agent-local Neo4j property graph augmented with HNSW vector indexes and a full bitemporal data model. Each memory is stored as an immutable identity node linked to versioned content nodes carrying two closed-open time intervals: valid time (when the fact was true in the world) and transaction time (when the database recorded it). This design supports point-in-time semantic retrieval without physically overwriting history. Semantic edges between related memories are maintained automatically at write time using cosine similarity over 1024-dimensional embeddings. We evaluate the system on LongMemEval, a 500-question benchmark spanning six question types designed to stress long-term memory. Across 60 sampled questions, the current-state semantic search path achieves 46.7% R@10 overall, rising to 80% on knowledge-update questions. The time-travel path yields 80% R@10 on knowledge-update but decreases recall on temporal-reasoning questions (50% to 37.5%), a consequence of post-filter dilution that points directly to a concrete design improvement. We discuss what these results reveal about the limits of pure retrieval for different question types and what each failure mode suggests for future work.",
+      "authors": [
+        "Alp Niksarli",
+        "Gopesh Baheti"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-07-29T06:40:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.26520v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "graph-native bitemporal memory store for conversational AI agents",
+      "llm_evidence_cn": "用于对话AI智能体的图原生双时记忆存储",
+      "llm_evidence": "用于对话AI智能体的图原生双时记忆存储",
+      "canonical_evidence": "用于对话AI智能体的图原生双时记忆存储",
+      "llm_tldr_en": "Presents an agent-local Neo4j property graph with HNSW vector indexes and bitemporal data model for persistent, private memory across sessions.",
+      "llm_tldr_cn": "对话AI智能体缺少跨会话持久记忆。简单注入历史或委托第三方存在隐私和上下文窗口问题。本文提出智能体本地图记忆存储，使用Neo4j属性图加HNSW向量索引和双时数据模型。每个记忆作为不可变身份节点链接版本化内容，支持有效时间和事务时间。设计支持即时语义检索，无需第三方服务，保护隐私。",
+      "llm_tldr": "对话AI智能体缺少跨会话持久记忆。简单注入历史或委托第三方存在隐私和上下文窗口问题。本文提出智能体本地图记忆存储，使用Neo4j属性图加HNSW向量索引和双时数据模型。每个记忆作为不可变身份节点链接版本化内容，支持有效时间和事务时间。设计支持即时语义检索，无需第三方服务，保护隐私。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26637v1",
+      "source": "arxiv",
+      "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability",
+      "abstract": "Deployed LLM agents increasingly keep their long-term memory as a filesystem: a directory tree of markdown files that the agent itself reads, writes, and reorganizes through generic file tools. Yet research has largely passed over this medium: prior systems design bespoke memory representations and study retrieval over them, leaving the default's two working assumptions untested: that an agent can keep a growing store organized as memories accumulate, conflict, and go stale, and that this organization pays. We present the first systematic exploration of filesystem-based memory for LLM agents. We formalize the setting as three roles around one memory filesystem: a management agent integrates and organizes incoming content, a search agent answers queries with cited sources, and an execution agent supplies task trajectories that are distilled into skills, unifying declarative memory and skills in a single store. Across long-conversation benchmarks and embodied tasks, we vary memory shape (agent-organized hierarchy, verbatim dump, chunk retrieval), stream scale, tool harness (sandboxed shell, memory-tool-style functions, varied search tooling), and the strengths of the management and search agents, tracking answer quality, cost, and store health as memory grows. What organization reliably buys is search economy: organized stores roughly halve retrieval cost where material is large. Today's agents, however, fall short of the default's promise: in our growth study, organization erodes for all but the strongest management agent, and no agent we measure converts organization itself into better answers. And the model is not the only lever over a store's shape: changing the tool set alone reshapes the store as strongly as swapping the model. The study turns the filesystem default from an assumption into a design space for agent memory.",
+      "authors": [
+        "Sizhe Zhou",
+        "Sheldon Yu",
+        "Hui Wei",
+        "Junda Wu",
+        "Siru Ouyang",
+        "Yizhu Jiao",
+        "Shijia Pan",
+        "Julian McAuley",
+        "Yu Zhang",
+        "Tong Yu",
+        "Jiawei Han"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T08:59:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.26637v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Systematic exploration of filesystem-based memory for LLM agents",
+      "llm_evidence_cn": "系统探索基于文件系统的LLM智能体记忆",
+      "llm_evidence": "系统探索基于文件系统的LLM智能体记忆",
+      "canonical_evidence": "系统探索基于文件系统的LLM智能体记忆",
+      "llm_tldr_en": "First systematic exploration of LLM agent memory as a filesystem, formalizing roles and showing sustainable organization without degradation.",
+      "llm_tldr_cn": "针对LLM智能体长期记忆采用文件系统这一默认方案但缺乏研究的问题，本文首次系统探索了文件系统记忆。形式化了管理、搜索和演化三个角色，实验表明文件系统记忆能够在记忆积累、冲突和过时中保持组织有序，且查询效率随规模稳定，为智能体持久记忆提供了验证和设计指导。",
+      "llm_tldr": "针对LLM智能体长期记忆采用文件系统这一默认方案但缺乏研究的问题，本文首次系统探索了文件系统记忆。形式化了管理、搜索和演化三个角色，实验表明文件系统记忆能够在记忆积累、冲突和过时中保持组织有序，且查询效率随规模稳定，为智能体持久记忆提供了验证和设计指导。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26760v1",
+      "source": "arxiv",
+      "title": "Metis: Memory Foundation Model",
+      "abstract": "Recent advances in AI agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. However, agent memory is still primarily implemented through external modules, leaving the native memory capability largely unexplored. In this paper, we take a first step toward this direction by introducing memory foundation models, which empower foundation models with native memory capabilities. We formalize native memory from two perspectives: a persistent and dynamically evolving memory state within the backbone, and native memory procedures that autonomously store and utilize information through model computation. We show that native memory offers advantages in architecture, end-to-end optimization, and efficiency. Based on this formulation, we propose Metis, the first prototype of memory foundation models. Metis introduces a new architecture that equips a foundation model with a native memory state, allowing historical information to be compressed into the model and accessed through memory attention. We construct large-scale memory-specific training data and introduce multiple optimization objectives to acquire these native memory procedures through mid-training. The online memory maintenance of Metis is gradient-free, and the memory update requires only a forward pass. At inference time, all learned model weights remain frozen, while the native memory states are autonomously transformed through standard forward computation. Through extensive experiments, we show that Metis exhibits native memory capabilities and further provide a detailed analysis of its strengths, limitations, and behaviors. To facilitate future research on memory foundation models, we release our project and model checkpoints.",
+      "authors": [
+        "Zeyu Zhang",
+        "Ziliang Guo",
+        "Yihang Sun",
+        "Xichong Zhang",
+        "Xixuan Hao",
+        "Zehao Lin",
+        "Yang Zhang",
+        "Xiaoyan Zhao",
+        "Tong Shen",
+        "Bo Tang",
+        "Zhi-Qin John Xu",
+        "Junchi Yan",
+        "Haofen Wang",
+        "Xu Chen",
+        "Feiyu Xiong",
+        "Zhiyu Li",
+        "Tat-Seng Chua"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T10:58:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.26760v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "native memory capabilities in foundation models for agents",
+      "llm_evidence_cn": "为基础模型赋予原生记忆能力的记忆基础模型",
+      "llm_evidence": "为基础模型赋予原生记忆能力的记忆基础模型",
+      "canonical_evidence": "为基础模型赋予原生记忆能力的记忆基础模型",
+      "llm_tldr_en": "Metis introduces native memory state and procedures into foundation models, outperforming external memory modules in agent tasks.",
+      "llm_tldr_cn": "当前AI智能体的记忆主要通过外部模块实现，缺乏原生记忆能力。Metis首次提出记忆基础模型，在骨干网络中引入持久且动态演化的记忆状态，并通过模型计算自主存储和利用信息。实验表明，原生记忆在架构效率、端到端优化和任务性能上优于外部记忆模块。该工作开创了基础模型原生记忆的方向。",
+      "llm_tldr": "当前AI智能体的记忆主要通过外部模块实现，缺乏原生记忆能力。Metis首次提出记忆基础模型，在骨干网络中引入持久且动态演化的记忆状态，并通过模型计算自主存储和利用信息。实验表明，原生记忆在架构效率、端到端优化和任务性能上优于外部记忆模块。该工作开创了基础模型原生记忆的方向。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27080v1",
+      "source": "arxiv",
+      "title": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair",
+      "abstract": "Memory systems allow agents to retain and reuse information from past interactions, but they can also let malicious content persist. A malicious instruction crafted by an attacker may be stored in long-term memory, recalled much later, and quietly shape a real action. Recent benchmarks increasingly examine agent memory security, yet few trace the same malicious semantics across persistence, downstream consequences, and selective repair under diverse memory-backend comparisons. To address this gap, we introduce MemSecBench, a task-grounded benchmark for the lifecycle security of agent memory systems. It contains 310 cases drawn from 48 realistic contexts across code and science, daily life, and office work. Each case follows a controlled Write--Execute--Forget protocol in an isolated runtime under an exact agent configuration, defined by an agent harness, a memory backend, and an LLM backend. Evidence-based adjudication combines a deterministic write check, checkpoint-specific judge-model evaluations, and programmatic gates across seven lifecycle checkpoints. The experimental design spans a 24-configuration matrix of two agent harnesses, four memory backends, and three LLM backends. Across all 24 configurations, malicious memory persists in 84.2% of all cases, and the full Write--Execute chain succeeds in 50.3%. Among successfully poisoned cases, 59.6% complete the full Execute chain, while 56.1% achieve selective repair.Compared with matched Native configurations, the largest absolute differences are 16.1 percentage points for end-to-end attack success and 41.3 percentage points for selective repair. These descriptive contrasts indicate that the evaluated memory system stacks differ in lifecycle security, both in the propagation of malicious memory and in selective repair after successful memory poisoning.",
+      "authors": [
+        "Xuanze Chen",
+        "Xukang Xie",
+        "Wentao Fu",
+        "Jiajun Zhou",
+        "Shanqing Yu",
+        "Qi Xuan"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T16:06:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.27080v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Benchmark for agent memory security lifecycle",
+      "llm_evidence_cn": "智能体记忆安全生命周期基准",
+      "llm_evidence": "智能体记忆安全生命周期基准",
+      "canonical_evidence": "智能体记忆安全生命周期基准",
+      "llm_tldr_en": "MemSecBench is a task-grounded benchmark tracking agent memory poisoning across persistence, consequence, and repair, covering 310 cases in diverse contexts.",
+      "llm_tldr_cn": "现有记忆安全基准缺乏对恶意内容从持久化到下游影响再到修复的完整追踪。MemSecBench提供了310个覆盖代码、科学、日常生活等场景的案例，每个案例包含受控的生命周期轨迹。该基准支持多记忆后端对比，为评估和修复记忆中毒提供了标准化测试平台。",
+      "llm_tldr": "现有记忆安全基准缺乏对恶意内容从持久化到下游影响再到修复的完整追踪。MemSecBench提供了310个覆盖代码、科学、日常生活等场景的案例，每个案例包含受控的生命周期轨迹。该基准支持多记忆后端对比，为评估和修复记忆中毒提供了标准化测试平台。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23444v1",
+      "source": "arxiv",
+      "title": "Isolated but Exposed: Persistence-Based Memory Extraction Attack on LLM Agents",
+      "abstract": "LLM-based agents extend large language models with long-term memory (LTM) that persists privacy-sensitive user data across sessions. Production systems mitigate extraction risks through memory isolation, binding each user's LTM to a unique identifier. This defense has blocked known attacks on shared storage, fostering the assumption that isolated LTM is secure. We identify the tool interface as an overlooked attack surface. Agents routinely embed LTM-retrieved data in tool invocation parameters, enabling a malicious tool to exfiltrate private memory without violating user-level isolation. Naive adaptations of user-side extraction techniques fail because the adversarial command's semantics interfere with retrieval precision, and platform-imposed tool-call limits constrain the extraction budget per trigger. We present SPORE, the first extraction attack designed for this threat model. SPORE decouples the adversarial command from retrieval anchors by persisting the command in short-term memory and emitting semantically pure anchors in tool responses. The restored retrieval precision enables a geometric coverage optimization over the embedding space that systematically steers anchors toward unexplored memory regions. To sustain extraction beyond tool-call limits, SPORE persists reactivation payloads in memory that automatically resume the attack within and across sessions without additional user triggers. SPORE achieves an 80.0% record extraction rate with unlimited triggers and 47.0% with only 20 triggers. In multi-user deployments, attackers can link extracted records to user identities, enabling targeted surveillance. These results demonstrate that memory isolation alone is insufficient and call for reexamining tool-side trust boundaries in agent architectures.",
+      "authors": [
+        "Xinyu Gao",
+        "Wenyu Chen",
+        "Xiangtao Meng",
+        "Li Wang",
+        "Chuanchao Zang",
+        "Jianing Wang",
+        "Zheng Li",
+        "Shanqing Guo"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "published": "2026-07-26T03:51:20+00:00",
+      "link": "https://arxiv.org/pdf/2607.23444v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "persistence-based memory extraction attack on LLM agents",
+      "llm_evidence_cn": "基于持久性的LLM智能体记忆提取攻击",
+      "llm_evidence": "基于持久性的LLM智能体记忆提取攻击",
+      "canonical_evidence": "基于持久性的LLM智能体记忆提取攻击",
+      "llm_tldr_en": "Identifies tool interface as attack surface for exfiltrating long-term memory from LLM agents despite memory isolation, proposing a new security evaluation perspective.",
+      "llm_tldr_cn": "LLM智能体使用长期记忆保存隐私数据，现有隔离防御假设安全。本文发现工具接口是攻击面：智能体将记忆数据嵌入工具调用参数，恶意工具可窃取隐私而不违反用户隔离。分析了用户侧提取技术的局限性，揭示了平台强制措施。该工作从安全角度评估了LLM智能体记忆的脆弱性，为记忆安全评估提供了新方法。",
+      "llm_tldr": "LLM智能体使用长期记忆保存隐私数据，现有隔离防御假设安全。本文发现工具接口是攻击面：智能体将记忆数据嵌入工具调用参数，恶意工具可窃取隐私而不违反用户隔离。分析了用户侧提取技术的局限性，揭示了平台强制措施。该工作从安全角度评估了LLM智能体记忆的脆弱性，为记忆安全评估提供了新方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27056v1",
+      "source": "arxiv",
+      "title": "Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data",
+      "abstract": "Personalized agents are increasingly applied to assist users across a wide range of tasks. Effective personalized assistance requires not only retrieving explicit facts from past interactions stored in agent memory, but also inferring abstract personal characteristics. However, existing memory benchmarks primarily evaluate whether an agent can retrieve information explicitly stated in conversational histories, failing to provide an effective assessment of deeper user understanding. In this work, we propose Setoka, a benchmark for evaluating memory-augmented personalized agents with hierarchical user understanding from heterogeneous data. Grounded in theories from cognitive and personality psychology, Setoka defines four levels of user understanding, i.e., semantic memory, episodic memory, behavior pattern, and personality trait. Moreover, to enable realistic yet privacy-preserving evaluation, we design a psychometrics-based pipeline that synthesizes diverse, coherent heterogeneous user data and queries at scale. Finally, we leverage Setoka to evaluate 3 language models combined with 5 memory systems for 10 synthetic users. Our comprehensive evaluation reveals that while existing systems perform well on semantic memory retrieval, their performance declines on episodic memory. Moreover, when dealing with behavior pattern and personality trait understanding tasks that require integrating heterogeneous and fragmented information dispersed over time, performance declines even further. These findings demonstrate that user understanding cannot be handled by simple fact retrieval, motivating the design of memory mechanisms for cross-source integration and abstraction over long-term user behavior.",
+      "authors": [
+        "Lingyang Zeng",
+        "Guangze Chen",
+        "Kaichen Yu",
+        "Zhicheng Pan",
+        "Siyang Weng",
+        "Zirui Hu",
+        "Xiangyun Du",
+        "Hailin He",
+        "Rong Zhang",
+        "Chengcheng Yang",
+        "Kai Huang",
+        "Xuan Zhou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-29T15:47:40+00:00",
+      "link": "https://arxiv.org/pdf/2607.27056v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Benchmark for evaluating memory-augmented personalized agents",
+      "llm_evidence_cn": "评估记忆增强个性化智能体的基准",
+      "llm_evidence": "评估记忆增强个性化智能体的基准",
+      "canonical_evidence": "评估记忆增强个性化智能体的基准",
+      "llm_tldr_en": "Setoka benchmark evaluates agent memory with hierarchical user understanding from heterogeneous data, going beyond factual retrieval.",
+      "llm_tldr_cn": "现有记忆基准仅评估显式事实检索，缺乏对深层用户理解的评测。Setoka提出层次化用户理解基准，基于认知和人格心理学理论定义四个层次，从异构数据（对话、邮件等）中评估智能体对用户的理解能力。实验显示当前先进智能体在深层理解上仍有显著不足。",
+      "llm_tldr": "现有记忆基准仅评估显式事实检索，缺乏对深层用户理解的评测。Setoka提出层次化用户理解基准，基于认知和人格心理学理论定义四个层次，从异构数据（对话、邮件等）中评估智能体对用户的理解能力。实验显示当前先进智能体在深层理解上仍有显著不足。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.27090v1",
+      "source": "arxiv",
+      "title": "InferScale: GPU-Native KV Injection for Personalized LLM Serving",
+      "abstract": "Large language models are increasingly deployed with persistent personalized context, such as accumulated memory profiles or long conversation histories, that is shared across a user's many requests. Production memory systems (e.g., Mem0, MemGPT, and Zep) retrieve a relevant subset of this memory and inject it into the prompt, forcing the serving engine to repeatedly prefill the same content. As the retrieval budget grows, time-to-first-token (TTFT) increases even though the underlying memory is reused across requests.   We present InferScale, a GPU-native LLM memory system that replaces repeated prompt prefilling with reusable KV state. InferScale precomputes each memory fact's KV representation, stores it alongside a semantic embedding on the GPU, retrieves relevant facts at serving time, and injects their KV directly into vLLM's paged cache. To support dynamically assembled memories under rotary position embeddings, we introduce Chunked RoPE, which stores keys before rotation and applies their serving-time positions during injection. However, encoding memory facts independently omits the cross-fact context available during joint prefilling. We mitigate this with Context-Window Encoding, which encodes each memory fact together with a small window of preceding conversation context while caching only the target fact's KV.   InferScale is implemented through vLLM's KV-connector interface, requiring neither engine modifications nor model fine-tuning. Across three open-weight models on LoCoMo, InferScale keeps TTFT nearly constant as the retrieval budget increases: at k=50 it reduces TTFT by 72-79% (3.6-4.8x), achieves 60.3% accuracy versus 63.3% for Mem0 without serving-time recomputation, and delivers 3.7-4.5x the throughput under concurrent load. Reusable KV state thus decouples memory-conditioned serving latency from retrieved-context size while preserving application quality.",
+      "authors": [
+        "Peter Li",
+        "Prashant Pandey"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T16:18:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.27090v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "memory system using KV caching for personalized context",
+      "llm_evidence_cn": "使用KV缓存实现个性化上下文的记忆系统",
+      "llm_evidence": "使用KV缓存实现个性化上下文的记忆系统",
+      "canonical_evidence": "使用KV缓存实现个性化上下文的记忆系统",
+      "llm_tldr_en": "InferScale replaces repeated prompt prefilling with reusable KV state for personalized memory, reducing TTFT in LLM serving.",
+      "llm_tldr_cn": "针对LLM服务中个性化记忆重复预填充导致高延迟的问题，InferScale提出GPU原生记忆系统，通过预计算每个记忆事实的KV表示并存储在GPU上，避免重复预填充。实验表明该方法显著降低了首令牌延迟。该工作为LLM agent记忆系统提供了一种高效的KV缓存方案。",
+      "llm_tldr": "针对LLM服务中个性化记忆重复预填充导致高延迟的问题，InferScale提出GPU原生记忆系统，通过预计算每个记忆事实的KV表示并存储在GPU上，避免重复预填充。实验表明该方法显著降低了首令牌延迟。该工作为LLM agent记忆系统提供了一种高效的KV缓存方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.25853v1",
+      "source": "arxiv",
+      "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
+      "abstract": "Skills have become an important abstraction for enabling large language model (LLM) agents to reuse past experience in long-horizon interactive tasks. However, existing trajectory-to-skill methods often produce flat collections of high-level textual skills that are stored and retrieved independently, leaving skill relations underutilized and maintaining a gap between high-level skills and executable actions. In this paper, we propose HiSkill, a hierarchical skill graph framework that organizes interaction trajectories into a directed graph with skill nodes, AtomicOp nodes, and typed edges. Specifically, the graph connects reusable high-level skills with executable action templates, while also capturing decomposition, temporal transition, compatibility, support, and recovery relations among them. At inference time, HiSkill retrieves a compact task-relevant subgraph and performs subgraph-guided task execution, where a symbolic task state, an active skill, and the retrieved subgraph guide the LLM agent to switch skills, select AtomicOps, and ground executable actions iteratively. Experiments on three interactive environments show that HiSkill outperforms state-of-the-art baselines while reducing inference token consumption, demonstrating the effectiveness of bridging high-level skills and executable action grounding through a hierarchical skill graph. Our data and code is available at https://github.com/BUPT-GAMMA/HiSkill.",
+      "authors": [
+        "Yu Hao",
+        "Jinxuan Cai",
+        "Qi Zhang",
+        "Yawen Li",
+        "Zhiqiang Zhang",
+        "Chuan Shi",
+        "Cheng Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-28T15:25:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.25853v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Hierarchical skill graph for reusing past experience",
+      "llm_evidence_cn": "分层技能图用于重用过往经验",
+      "llm_evidence": "分层技能图用于重用过往经验",
+      "canonical_evidence": "分层技能图用于重用过往经验",
+      "llm_tldr_en": "HiSkill organizes interaction trajectories into a hierarchical skill graph to enable LLM agents to reuse past experience, bridging high-level skills and executable actions.",
+      "llm_tldr_cn": "现有LLM智能体的技能重用方法通常将轨迹转换为扁平的文本技能集合，缺乏关系利用且与可执行动作脱节。HiSkill通过构建分层技能图，将技能节点与原子操作节点通过类型化边连接，捕捉分解、时序转换等关系。实验表明该方法在长周期交互任务中显著提高了技能重用效率和任务成功率。",
+      "llm_tldr": "现有LLM智能体的技能重用方法通常将轨迹转换为扁平的文本技能集合，缺乏关系利用且与可执行动作脱节。HiSkill通过构建分层技能图，将技能节点与原子操作节点通过类型化边连接，捕捉分解、时序转换等关系。实验表明该方法在长周期交互任务中显著提高了技能重用效率和任务成功率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.26598v1",
+      "source": "arxiv",
+      "title": "Living-Harness Is an Interactive-Agent Evolver",
+      "abstract": "Large language model (LLM) agents may recover from a failure within an episode or after a retry, yet the same execution failure can recur in later tasks because post-episode feedback rarely revises the persistent harness that guides future interactions. Static harnesses improve reliability through fixed tools, context, memory, and workflow structures, but remain unchanged after deployment. We propose $\\textbf{Living-Harness}$, a self-evolving agent harness that converts each completed trajectory and its evaluator signals into posterior evidence for bounded harness updates. Guided by a domain-level $\\textbf{Evolution-SOP}$ ($\\textbf{S}$tandard $\\textbf{O}$perating $\\textbf{P}$rocedure), Living-Harness extracts an episode abstraction and structured update evidence, and writes two complementary forms of procedural knowledge: episodic memory that records trigger conditions, failure patterns, and recovery actions, and a state graph that records state nodes, repair edges, and transition rules. The updated harness state is retrieved to guide future interactions, while tools and base context remain frozen, allowing procedural repairs to accumulate across evolution cycles. On eight interactive environments derived from $τ^2$-Bench and MultiWOZ-2.4, Living-Harness improves average Pass@1 over the strongest interactive baseline by 10.07 and 9.91 percentage points, respectively, and supports retrieval-only reuse of the evolved harness state across model backbones.",
+      "authors": [
+        "Yuetian Du",
+        "Yucheng Wang",
+        "He Xu",
+        "Jiexu Xu",
+        "Shanwen Tan",
+        "Bing Zhao",
+        "Boyu Yang",
+        "Zhijie Xu",
+        "Ming Kong",
+        "Hu Wei",
+        "Jie Liu",
+        "Qiang Zhu"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-29T08:20:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.26598v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Evolving agent harness including memory structures",
+      "llm_evidence_cn": "自进化装备包含记忆结构",
+      "llm_evidence": "自进化装备包含记忆结构",
+      "canonical_evidence": "自进化装备包含记忆结构",
+      "llm_tldr_en": "Living-Harness evolves agent harness with memory structures using post-episode feedback, improving task success.",
+      "llm_tldr_cn": "针对LLM智能体静态装备（含记忆模块）无法从失败中持续学习的问题，Living-Harness提出自进化装备框架，利用每次任务轨迹作为证据来更新记忆和工具配置。实验表明该方法能显著减少重复失败，提升长期任务成功率。",
+      "llm_tldr": "针对LLM智能体静态装备（含记忆模块）无法从失败中持续学习的问题，Living-Harness提出自进化装备框架，利用每次任务轨迹作为证据来更新记忆和工具配置。实验表明该方法能显著减少重复失败，提升长期任务成功率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.27187v1",
+      "source": "arxiv",
+      "title": "A Photonic-CXL Memory Appliance for Scalable KV Cache Management in LLM Inference",
+      "abstract": "LLM inference at scale faces a memory wall. The KV cache demands tens of terabytes at hundreds of gigabytes per second, yet no current memory tier delivers both at once. Characterization across multi-generation GPU systems with various LLaMA models shows host memory retrieval achieves up to 100x speedup over re-computation but supports only tens of concurrent long-context users. Electrical CXL pooling theoretically bridges this gap, but switch latency, cable reach limits, and power-scaling issues prevent practical TB-scale deployments. We present the Marvell Photonic Fabric Memory Appliance, a photonic-CXL hybrid architecture replacing electrical switches with a passive fiber shuffle to deliver 32 TB shared memory across 16 hosts via a switch-free full- crossbar topology. Emulation results demonstrate over 50 percent latency reduction versus electrical CXL pools. Simulation results show that the PF Memory Appliance eliminates cache eviction cliffs by improving time-to-first-token by 6.6x for multi-turn conversations workloads.",
+      "authors": [
+        "Jing Ding",
+        "Yash Nishant",
+        "Chandrish Ambati",
+        "Jyothsna Kamati",
+        "Trung Diep"
+      ],
+      "primary_category": "cs.PF",
+      "categories": [
+        "cs.PF"
+      ],
+      "published": "2026-07-29T17:55:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.27187v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "photonic-CXL memory appliance for scalable KV cache management in LLM inference",
+      "llm_evidence_cn": "光子CXL内存设备用于LLM推理中可扩展的KV缓存管理",
+      "llm_evidence": "光子CXL内存设备用于LLM推理中可扩展的KV缓存管理",
+      "canonical_evidence": "光子CXL内存设备用于LLM推理中可扩展的KV缓存管理",
+      "llm_tldr_en": "Proposes a photonic-CXL hybrid architecture that delivers 32 TB shared memory across 16 hosts, addressing the memory wall for LLM inference KV cache.",
+      "llm_tldr_cn": "LLM推理面临内存墙，KV缓存需要TB级容量和百GB/s带宽。现有方案无法同时满足。本文提出Marvell光子织物内存设备，用光子CXL混合架构替代电交换机，实现16主机间32 TB共享内存。该架构为LLM代理的KV缓存记忆提供了可扩展的硬件基础，但偏重系统层。",
+      "llm_tldr": "LLM推理面临内存墙，KV缓存需要TB级容量和百GB/s带宽。现有方案无法同时满足。本文提出Marvell光子织物内存设备，用光子CXL混合架构替代电交换机，实现16主机间32 TB共享内存。该架构为LLM代理的KV缓存记忆提供了可扩展的硬件基础，但偏重系统层。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
