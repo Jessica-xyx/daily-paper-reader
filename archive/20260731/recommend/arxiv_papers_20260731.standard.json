@@ -1,0 +1,327 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-31T21:47:22.255057+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.27415v1",
+      "source": "arxiv",
+      "title": "Bridging Inference-Time Scaling and Episodic Memory with Action-Centric Graphs",
+      "abstract": "Recent advancements in inference-time scaling have significantly unlocked the complex reasoning capabilities of Large Language Models~(LLMs). However, for agents, these approaches suffer from a critical inefficiency, operating in a stateless manner and engaging in redundant search processes. Existing memory mechanisms largely rely on the reasoning capabilities of LLMs, leading to prohibitive computational costs. In this paper, we propose a novel framework, \\textit{GAMER}~(Graph-based Action-centric Memory with Episodic Reasoning), that bridges the gap between inference scaling and episodic memory. Our approach models historical reasoning as a dynamic \\textit{Action-Centric Graph}. By decoupling the memory mechanism from LLMs, our method can save token/money usage by providing less memory context than memory mechanism baselines. To extract knowledge from the graph effectively, we use a dual-stream Temporal Difference learning mechanism to estimate the positive~(suggestion) and negative~(avoidance) value of action nodes based on past successes and failures. During the inference phase, this learned value function optimizes decision-making bi-directionally, so that positive values provide action suggestions, while negative values indicate high-risk actions. By performing efficient searches on the graph, our method significantly improves the efficiency of inference scaling. Experiments on multiple benchmarks demonstrate that \\textit{GAMER} achieves superior performance by \\textbf{20.81\\%/6.17\\%} for success/progress rate compared to vanilla baselines.",
+      "authors": [
+        "Xu Zheng",
+        "Chaohao Lin",
+        "Zhuomin Chen",
+        "Weijieying Ren",
+        "Haifeng Chen",
+        "Wei Cheng",
+        "Dongsheng Luo"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T19:31:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.27415v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "action-centric graph memory with episodic reasoning for agents",
+      "llm_evidence_cn": "用动作中心图实现智能体情景记忆与推理",
+      "llm_evidence": "用动作中心图实现智能体情景记忆与推理",
+      "canonical_evidence": "用动作中心图实现智能体情景记忆与推理",
+      "llm_tldr_en": "GAMER models historical reasoning as a dynamic action-centric graph, decoupling memory from LLM reasoning to bridge inference-time scaling and episodic memory efficiently.",
+      "llm_tldr_cn": "针对推理时扩展在智能体中的无状态冗余搜索以及现有记忆机制过度依赖LLM推理的问题，提出GAMER框架。将历史推理建模为动态动作中心图，通过将记忆机制与LLM解耦来支持情景推理。该方法可保存推理过程并避免重复搜索，降低计算成本，为智能体在长程任务中实现高效记忆复用提供了新路径。",
+      "llm_tldr": "针对推理时扩展在智能体中的无状态冗余搜索以及现有记忆机制过度依赖LLM推理的问题，提出GAMER框架。将历史推理建模为动态动作中心图，通过将记忆机制与LLM解耦来支持情景推理。该方法可保存推理过程并避免重复搜索，降低计算成本，为智能体在长程任务中实现高效记忆复用提供了新路径。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27834v1",
+      "source": "arxiv",
+      "title": "MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory",
+      "abstract": "Persistent memory lets long-running large language model agents reuse information across sessions and tasks. Yet errors in writable memory can persist and corrupt future behavior. Existing systems improve storage and retrieval, but they do not provide a transaction boundary for reliable updates and recovery. We therefore propose MemTxn, a governance layer outside the answer model. MemTxn verifies whether an update is supported by its source. It also selects the visible version when facts conflict and restores the application-visible state after a fault. The system uses Ordered PatchTest to validate writes, a Temporal Resolver to select versions, and a durable snapshot journal to recover state. On an item-disjoint audit, MemTxn accepts all 60 supported originals and rejects all 179 hard negatives. Under persistent multi-key faults on LongMemEval-S and LoCoMo states, it restores the complete declared active map without knowing the actual physical write set. On MemoryAgentBench FactConsolidation, MemTxn achieves the highest average F1 across all twelve answer-model configurations. It outperforms Dense by 17.06--24.07 points in five representative settings.",
+      "authors": [
+        "Hanshuai Cui",
+        "Zhiqing Tang",
+        "Zhi Yao",
+        "Fanshuai Meng",
+        "Qianli Ma",
+        "Weijia Jia"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-30T08:15:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.27834v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "transaction boundary for reliable agent memory updates and recovery",
+      "llm_evidence_cn": "为智能体记忆更新与恢复提供事务边界",
+      "llm_evidence": "为智能体记忆更新与恢复提供事务边界",
+      "canonical_evidence": "为智能体记忆更新与恢复提供事务边界",
+      "llm_tldr_en": "MemTxn is a governance layer providing transaction boundaries for source-supported memory updates, conflict resolution, and complete-state recovery in agent memory.",
+      "llm_tldr_cn": "针对LLM智能体持久记忆中的错误写入会持续污染未来行为、现有系统缺乏事务边界的问题，提出MemTxn治理层。它位于答案模型之外，通过Ordered PatchTest验证写入是否有源支持，用Temporal Resolver在事实冲突时选择可见版本，并用持久快照日志在故障后恢复应用可见状态。实验在项不相交审计上验证了写入验证与完整状态恢复，为智能体记忆提供了事务级可靠性保障。",
+      "llm_tldr": "针对LLM智能体持久记忆中的错误写入会持续污染未来行为、现有系统缺乏事务边界的问题，提出MemTxn治理层。它位于答案模型之外，通过Ordered PatchTest验证写入是否有源支持，用Temporal Resolver在事实冲突时选择可见版本，并用持久快照日志在故障后恢复应用可见状态。实验在项不相交审计上验证了写入验证与完整状态恢复，为智能体记忆提供了事务级可靠性保障。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28156v1",
+      "source": "arxiv",
+      "title": "RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning",
+      "abstract": "Existing multimodal long-term memory agents use external memory to overcome the limited context available for long videos. However, most methods emphasize what to store rather than how stored memory should be retrieved. When retrieval becomes inaccurate or repeatedly fails to obtain useful evidence, existing agents lack mechanisms to diagnose failures from previous task trajectories and adapt future search strategies.We introduce Reflective Retrieval Memory (RRM), a reflective memory framework for long-horizon multimodal reasoning. RRM augments an entity-centric multimodal memory graph with reflective experience memory, which distills transferable procedural retrieval knowledge from historical task trajectories. Unlike episodic and semantic memories that preserve factual evidence from the current video, reflective experience memory captures reusable search strategies across tasks. RRM converts retrieved experiences into query-level guidance, while answer generation remains conditioned only on factual evidence newly retrieved from the current video. A lifecycle management mechanism further regulates experience memory through usage frequency, reuse feedback, and temporal decay, thereby reducing redundancy and noise. RRM consistently outperforms previous state-of-the-art approaches on M3-Bench-Robot, M3-Bench-Web, and Video-MME-Long, demonstrating the effectiveness of reflective retrieval memory for long-horizon multimodal reasoning.",
+      "authors": [
+        "Jingxiang Fan",
+        "Junbao Zhuo",
+        "Bochao Zou"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-30T12:58:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.28156v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Reflective retrieval memory framework for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体的反思式检索记忆框架",
+      "llm_evidence": "面向LLM智能体的反思式检索记忆框架",
+      "canonical_evidence": "面向LLM智能体的反思式检索记忆框架",
+      "llm_tldr_en": "RRM augments multimodal agent memory with reflective experience distilled from past trajectories, enabling long-horizon agents to diagnose and adapt retrieval failures.",
+      "llm_tldr_cn": "现有基于多模态长时记忆的智能体普遍只关注存什么，而忽略如何检索；当检索反复失败时，智能体缺乏从历史轨迹中诊断错误并调整检索策略的能力。为此，论文提出反思式检索记忆框架RRM，在实体为中心的图记忆之上增加反思式经验记忆，将历史任务中的成功与失败提炼为可迁移的程序性检索知识。实验表明，RRM能够在长视频等长程多模态推理任务中有效提升检索准确率与最终回答质量。该工作为智能体记忆的检索环节引入元认知与经验学习，拓展了记忆增强推理的研究方向。",
+      "llm_tldr": "现有基于多模态长时记忆的智能体普遍只关注存什么，而忽略如何检索；当检索反复失败时，智能体缺乏从历史轨迹中诊断错误并调整检索策略的能力。为此，论文提出反思式检索记忆框架RRM，在实体为中心的图记忆之上增加反思式经验记忆，将历史任务中的成功与失败提炼为可迁移的程序性检索知识。实验表明，RRM能够在长视频等长程多模态推理任务中有效提升检索准确率与最终回答质量。该工作为智能体记忆的检索环节引入元认知与经验学习，拓展了记忆增强推理的研究方向。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28272v1",
+      "source": "arxiv",
+      "title": "MemHarness: Memory Is Reconstructed, Not Replayed",
+      "abstract": "Retrieving past experiences has become a common strategy to enhance large language model agents. However, most existing memory-augmented agents treat retrieved experiences as static records to be replayed verbatim, injecting them into the context regardless of whether they align with the agent's current situation. This ``replay'' paradigm ignores the gap between the abstract, general nature of stored experience and the concrete, ever-changing states encountered at decision time, frequently causing negative transfer. In contrast, humans rarely recall past experiences verbatim; instead, they reorganize and adapt retrieved memories to fit the present context. Inspired by this, we propose MemHarness, a framework that equips LLM agents to actively harness and reconstruct past experiences based on the present context. At each decision step, a unified policy model critiques and reconstructs the retrieved experience conditioned on the current state, producing context-grounded guidance before acting. This reconstructive ability emerges naturally through end-to-end training with GRPO. Experiments on ALFWorld and WebShop show that MemHarness substantially outperforms pure RL and static memory-augmented baselines, demonstrating strong robustness in out-of-distribution (OOD) scenarios. Furthermore, our analyses reveal that this reconstruction objective not only prevents negative transfer but also serves as latent guidance during training, fundamentally improving the agent's intrinsic reasoning capabilities.",
+      "authors": [
+        "Rong Wu",
+        "Daocheng Fu",
+        "Licheng Wen",
+        "Xuemeng Yang",
+        "Shu Zou",
+        "Jianbiao Mei",
+        "Yuxin Wang",
+        "Hairong Zhang",
+        "Yu Yang",
+        "Tao Hu",
+        "Cong Zhang",
+        "Botian Shi",
+        "Pinlong Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-30T14:25:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.28272v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "memory reconstruction for memory-augmented LLM agents",
+      "llm_evidence_cn": "面向记忆增强智能体的记忆重建方法",
+      "llm_evidence": "面向记忆增强智能体的记忆重建方法",
+      "canonical_evidence": "面向记忆增强智能体的记忆重建方法",
+      "llm_tldr_en": "MemHarness enables LLM agents to reconstruct retrieved experiences to fit current context, replacing verbatim replay and avoiding negative transfer.",
+      "llm_tldr_cn": "针对现有记忆增强智能体将检索经验作为静态记录重放、导致负迁移的问题，提出MemHarness框架。该方法借鉴人类回忆时的重组与适应机制，使智能体根据当前决策情境主动重建过往经历，而不是逐字注入。实验表明其能减小存储经验与动态状态之间的差距，提升记忆对决策的正面作用，为记忆增强智能体提供重建式新范式。",
+      "llm_tldr": "针对现有记忆增强智能体将检索经验作为静态记录重放、导致负迁移的问题，提出MemHarness框架。该方法借鉴人类回忆时的重组与适应机制，使智能体根据当前决策情境主动重建过往经历，而不是逐字注入。实验表明其能减小存储经验与动态状态之间的差距，提升记忆对决策的正面作用，为记忆增强智能体提供重建式新范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27773v1",
+      "source": "arxiv",
+      "title": "ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory",
+      "abstract": "LLM agents increasingly rely on long-term memory to support multi-session interaction and personalization. However, existing agent memory systems are designed around forward-only evolution, continuously accumulating, consolidating, and overwriting knowledge, with no principled mechanism to inspect, version, or revert prior states. This makes agents brittle under corrections, concept drift, and memory corruption, particularly after they have already been exposed to subsequent information. We present ChronoMem, a semantic version-control layer for agentic memory integrated into the production-ready, open-source Agent Development Kit by Google. ChronoMem commits whole-memory snapshots at each memory write, maintains structured version histories, and supports natural-language rollback requests by mapping undo intents to concrete historical versions through hybrid lexical and semantic retrieval, rank fusion, and reranking. We further introduce a post-exposure evaluation protocol that tests whether an agent can behave counterfactually after rollback by answering queries and summarizing history as if future updates had never occurred. On long-horizon conversational benchmarks augmented with evolving memory states and rollback tasks, ChronoMem substantially improves rollback-consistent question answering and history summarization relative to prompt-only and retrieval-only baselines, while achieving strong performance in semantic version selection. To our knowledge, ChronoMem is the first open-source system and benchmark for systematic semantic global memory rollback in LLM agents.",
+      "authors": [
+        "Yongye Su",
+        "Wujiang Xu",
+        "Chaoji Zuo",
+        "Elisa Bertino"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-30T07:07:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.27773v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Adds version control and semantic rollback for LLM agent long-term memory",
+      "llm_evidence_cn": "为LLM智能体长期记忆提供版本控制与语义回滚机制",
+      "llm_evidence": "为LLM智能体长期记忆提供版本控制与语义回滚机制",
+      "canonical_evidence": "为LLM智能体长期记忆提供版本控制与语义回滚机制",
+      "llm_tldr_en": "ChronoMem is a semantic version-control layer for agentic memory, integrated with Google's Agent Development Kit, that commits whole-memory snapshots at every write and supports rollback to prior states.",
+      "llm_tldr_cn": "现有LLM智能体的长期记忆系统只能前向演进，不断累积、整合和覆盖知识，缺乏检查与回滚机制。ChronoMem作为记忆的语义版本控制层，集成于Google开源Agent开发套件，在每次记忆写入时提交整体快照并维护结构化版本历史。它支持对先前记忆状态的语义回滚，从而增强智能体在修正、概念漂移和记忆损坏场景下的鲁棒性。",
+      "llm_tldr": "现有LLM智能体的长期记忆系统只能前向演进，不断累积、整合和覆盖知识，缺乏检查与回滚机制。ChronoMem作为记忆的语义版本控制层，集成于Google开源Agent开发套件，在每次记忆写入时提交整体快照并维护结构化版本历史。它支持对先前记忆状态的语义回滚，从而增强智能体在修正、概念漂移和记忆损坏场景下的鲁棒性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27958v1",
+      "source": "arxiv",
+      "title": "$Σ$-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems",
+      "abstract": "Memory is central to long-horizon LLM agents, yet existing memory systems primarily preserve interaction content rather than modeling which agents can be trusted and under what conditions. This limitation is particularly important in multi-agent systems, where a central model may be unable to directly verify plausible or correlated peer responses. We introduce $Σ$-Mem, an online reliability memory that records historical competence evidence for individual peers and peer relationship evidence across the peer set. Both forms of evidence are maintained as real symmetric states and updated from post-decision correctness feedback. By Weyl's inequality, the spectral change caused by each event-level update is bounded, enabling stable online adaptation without retraining the underlying models. $Σ$-Mem provides a general write-and-read interface: the same memory can be used for residual steering of a central model, response-free peer routing, or reliability-weighted voting. Across five Qwen-family models, $Σ$-Mem adapts to counterfactual reliability shifts and generalizes to unseen peers and task domains. Direct memory readouts also outperform majority voting and the best fixed peer over the full OOD evaluation set. Moreover, performance improves consistently as more correctness feedback becomes available, indicating that $Σ$-Mem progressively accumulates actionable reliability information. These results establish reliability memory as a reusable foundation for adaptive coordination in LLM-based multi-agent systems.",
+      "authors": [
+        "Peilin Feng",
+        "Suorong Yang",
+        "Soujanya Poria"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-07-30T10:05:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.27958v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Online reliability memory for trust modeling in LLM-based multi-agent systems",
+      "llm_evidence_cn": "用于LLM多智能体系统可信度建模的在线可靠性记忆",
+      "llm_evidence": "用于LLM多智能体系统可信度建模的在线可靠性记忆",
+      "canonical_evidence": "用于LLM多智能体系统可信度建模的在线可靠性记忆",
+      "llm_tldr_en": "Sigma-Mem introduces an online reliability memory that records competence and relationship evidence among peers, updated via correctness feedback, enabling stable trust-aware memory in long-horizon LLM multi-agent systems.",
+      "llm_tldr_cn": "现有LLM智能体记忆主要保存交互内容，并不刻画哪些智能体在何种条件下可信，这在多智能体场景尤为关键。论文提出Σ-Mem在线可靠性记忆，以实对称状态记录个体能力证据与同伴关系证据，并通过事后正确性反馈在线更新，利用Weyl不等式保证谱变化有界。实验表明该方法可在不牺牲稳定性的前提下持续适应多智能体系统动态。该工作将可靠性建模引入智能体记忆，为长程多智能体协作提供可信依据。",
+      "llm_tldr": "现有LLM智能体记忆主要保存交互内容，并不刻画哪些智能体在何种条件下可信，这在多智能体场景尤为关键。论文提出Σ-Mem在线可靠性记忆，以实对称状态记录个体能力证据与同伴关系证据，并通过事后正确性反馈在线更新，利用Weyl不等式保证谱变化有界。实验表明该方法可在不牺牲稳定性的前提下持续适应多智能体系统动态。该工作将可靠性建模引入智能体记忆，为长程多智能体协作提供可信依据。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.28103v1",
+      "source": "arxiv",
+      "title": "MIND: Lightweight and Effective Memory Injection Defense for LLM Agents via Intent-Aware Information Bottleneck",
+      "abstract": "Memory-augmented LLM-based agents are vulnerable to memory injection attacks: Agents may retrieve poisoned memory from attackers, which diverts their behavior from initial user intent and finally causes task failure. However, existing defense mechanisms either incur high computational cost or suffer from information redundancy in multi-turn contexts. To address these challenges, we propose Memory Intent-Aware Neural Denoising(MIND), a lightweight defense framework for memory injection attack. Our preliminary analysis reveals that benign and poisoned trajectories exhibit distinguishable relationships between the initial user intent and subsequent behavior. Building on this observation, MIND employs an intent-aware Information Bottleneck(IB) to extract compact intent--behavior representations from the initial intent and turn-level behavior. The IB preserves intent-relevant cross-turn attack signals while filtering task-irrelevant and repetitive information, and a lightweight detector identifies malicious memories from the resulting representations. As such, MIND mitigates information redundancy in multi-turn contexts while avoiding the overhead of repeated LLM auditing. Extensive experiments show that MIND reduces attack success rates while preserving task accuracy and inference efficiency. Notably, on ReAct-StrategyQA, MIND reduces mean ASR-r and ASR-a by 55.4% and 55.3%, respectively, while matching the undefended agent in average accuracy and latency.",
+      "authors": [
+        "Dongyi Liu",
+        "Haixing He",
+        "Xiaobao Wu",
+        "Jia Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-30T12:11:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.28103v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Presents a lightweight intent-aware information bottleneck defense against memory injection attacks in memory-augmented LLM agents",
+      "llm_evidence_cn": "提出意图感知信息瓶颈的轻量级防御，对抗记忆增强LLM代理中的记忆注入攻击",
+      "llm_evidence": "提出意图感知信息瓶颈的轻量级防御，对抗记忆增强LLM代理中的记忆注入攻击",
+      "canonical_evidence": "提出意图感知信息瓶颈的轻量级防御，对抗记忆增强LLM代理中的记忆注入攻击",
+      "llm_tldr_en": "MIND introduces a lightweight intent-aware information bottleneck defense that denoises poisoned memory in memory-augmented LLM agents, reducing memory injection attack risks with low computational cost.",
+      "llm_tldr_cn": "记忆增强的LLM代理容易遭受记忆注入攻击，有毒记忆可能使代理偏离用户意图导致任务失败。MIND观察到良性轨迹与中毒轨迹在初始意图与后续行为关系上存在可区分特征，据此设计意图感知信息瓶颈进行记忆去噪。该方法以较低计算成本过滤有毒记忆，同时减少多轮上下文的信息冗余。实验表明它能有效降低攻击成功率，为LLM代理记忆安全提供高效轻量防护，并可集成到现有代理中。",
+      "llm_tldr": "记忆增强的LLM代理容易遭受记忆注入攻击，有毒记忆可能使代理偏离用户意图导致任务失败。MIND观察到良性轨迹与中毒轨迹在初始意图与后续行为关系上存在可区分特征，据此设计意图感知信息瓶颈进行记忆去噪。该方法以较低计算成本过滤有毒记忆，同时减少多轮上下文的信息冗余。实验表明它能有效降低攻击成功率，为LLM代理记忆安全提供高效轻量防护，并可集成到现有代理中。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.25415v1",
+      "source": "arxiv",
+      "title": "A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain",
+      "abstract": "Production LLM agents are increasingly assembled from a frozen model wrapped in a harness: a prompt template, a tool set, a memory/retrieval layer, a planning strategy, and a verification policy. Two 2026 systems, Meta-Harness (Lee et al., 2026) and HyperAgents (Meta AI, 2026), show that this harness can itself be optimized or even self-rewritten by an agentic proposer -- at the cost of either an expensive code-search loop or unconstrained self-modifying code, neither of which is auditable or usable with a fully black-box model API. We take a narrower, more constrained position: treat the harness as a small, fixed, human-legible action space and learn a policy over it online with classic sample-efficient reinforcement learning (an $ε$-greedy contextual bandit and REINFORCE), scored against a multi-objective reward (task success, verifier score, policy compliance, cost, latency, and an unsupported-claim penalty). We instantiate this control system with DSPy (Khattab et al., 2024) as both the context assembler and the source of the strongest non-adaptive baseline (a DSPy BootstrapFewShot static prompt), and evaluate it across three verifiable task domains -- tool-use workflows, code generation (HumanEval), and multi-hop retrieval QA (HotpotQA) -- and two model providers (a local Ollama model and AWS Bedrock). We release the harness-control-system code, the cross-domain verifiable task suite, the full trajectory/reward-decomposition logs from training, and a provider-agnostic deployment recipe for applying this to a new organization's domain and verification setup.",
+      "authors": [
+        "Debjyoti Paul"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-28T08:10:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.25415v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Optimizes frozen LLM agent harness with memory/retrieval layer using RL",
+      "llm_evidence_cn": "利用强化学习优化包含记忆/检索层的冻结LLM智能体外套件",
+      "llm_evidence": "利用强化学习优化包含记忆/检索层的冻结LLM智能体外套件",
+      "canonical_evidence": "利用强化学习优化包含记忆/检索层的冻结LLM智能体外套件",
+      "llm_tldr_en": "Proposes a control system that learns a policy over a fixed human-legible harness action space for frozen LLM agents, where the harness includes a memory/retrieval layer, using sample-efficient RL, avoiding costly code search and self-modifying code.",
+      "llm_tldr_cn": "生产环境中的LLM智能体通常由冻结模型配合提示模板、工具集、记忆/检索层、规划策略和验证策略等外套件组装而成。现有系统（如Meta-Harness和HyperAgents）虽能优化甚至重写外套件，但依赖昂贵代码搜索或不受控的自修改代码，既不可审计也不适用于黑盒API。本文采取更受限的路线，将外套件抽象为小型固定且人类可读的动作空间，利用样本高效的经典强化学习（ε-greedy）在线学习策略。该方法在保持可审计性和黑盒兼容性的同时，为冻结LLM智能体的领域适应提供了一条实用路径。",
+      "llm_tldr": "生产环境中的LLM智能体通常由冻结模型配合提示模板、工具集、记忆/检索层、规划策略和验证策略等外套件组装而成。现有系统（如Meta-Harness和HyperAgents）虽能优化甚至重写外套件，但依赖昂贵代码搜索或不受控的自修改代码，既不可审计也不适用于黑盒API。本文采取更受限的路线，将外套件抽象为小型固定且人类可读的动作空间，利用样本高效的经典强化学习（ε-greedy）在线学习策略。该方法在保持可审计性和黑盒兼容性的同时，为冻结LLM智能体的领域适应提供了一条实用路径。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

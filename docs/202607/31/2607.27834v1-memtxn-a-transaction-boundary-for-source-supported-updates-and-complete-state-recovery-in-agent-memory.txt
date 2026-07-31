@@ -1,0 +1,551 @@
+Title: MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory
+
+URL Source: https://arxiv.org/pdf/2607.27834v1
+
+Published Time: Fri, 31 Jul 2026 00:40:35 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory 
+
+## Hanshuai Cui 2,1 , Zhiqing Tang 1, Zhi Yao 2,1 , Fanshuai Meng 1, Qianli Ma 1, Weijia Jia 1
+
+> 1
+
+Institute of Artificial Intelligence and Future Networks, Beijing Normal University, Zhuhai 519087, China 
+
+> 2
+
+School of Artificial Intelligence, Beijing Normal University, Beijing 100875, China 
+
+Abstract 
+
+Persistent memory lets long-running large language model agents reuse information across sessions and tasks. Yet errors in writable memory can persist and corrupt future behavior. Existing systems improve storage and retrieval, but they do not provide a transaction boundary for reliable updates and recov-ery. We therefore propose MemTxn , a governance layer out-side the answer model. MemTxn verifies whether an update is supported by its source. It also selects the visible version when facts conflict and restores the application-visible state after a fault. The system uses Ordered PatchTest to validate writes, a Temporal Resolver to select versions, and a durable snapshot journal to recover state. On an item-disjoint audit, MemTxn 
+
+accepts all 60 supported originals and rejects all 179 hard neg-atives. Under persistent multi-key faults on LongMemEval-S and LoCoMo states, it restores the complete declared ac-tive map without knowing the actual physical write set. On MemoryAgentBench FactConsolidation, MemTxn achieves the highest average F1 across all twelve answer-model config-urations. It outperforms Dense by 17 .06 –24 .07 points in five representative settings. 
+
+## Introduction 
+
+Long-running assistants and memory-augmented agents in-creasingly persist conversational facts, preferences, and task state for decisions made hours or sessions later (Park et al. 2023; Packer et al. 2023; Chhikara et al. 2025). Writable memory can make unsupported extractions durable and ex-pose the wrong version when facts conflict. Partial writes can also corrupt future tasks (Xiong et al. 2026). The central problem is therefore no longer only which memory is rele-vant . A memory system must decide which proposed state may commit and which conflicting version should be visible. It must also identify the prior application state to restore after failure. Figure 1 summarizes MemTxn ’s write and recovery paths. In the write trace, a negated return-policy update from a held-out LongMemEval-S item (Wu et al. 2025a) retains lexical support 1.0 but fails ordered support; MemTxn re-jects it and commits only the supported value. In the recov-ery trace, MemTxn restores the complete application-visible preimage after a persistent fault, whereas single-key undo can leave a mixed state. Earlier systems retrieve and reflect over episodic experi-ence, while MemGPT manages short- and long-term mem-ory tiers (Park et al. 2023; Shinn et al. 2023; Packer et al. Why overlap checks are not write guarantees           
+
+> TRANSACTION
+> BOUNDARY
+> CHECK
+> ordered support
+> COMMIT
+> supported only
+> ROLLBACK
+> full preimage
+> SOURCE
+> 30 -day return policy
+> ... not satisfied ...
+> PROPOSAL
+> not 30 -day return policy
+> lexical overlap = 1.0
+> > >
+> 1
+> 2
+> 3
+> OVERLAP -ONLY PATH
+> score 1.0 →
+> unsupported value
+> persists
+> MEMTXN CHECK
+> ordered support
+> "not "→FAIL
+> REJECT PRE -COMMIT
+> ✓
+
+× ✓    
+
+> SINGLE -KEY UNDO
+> mixed state
+> remains ✓✓✓
+> FULL PREIMAGE
+> complete
+> S₀restored
+> RECOVERY TRACE
+> PASS
+
+Figure 1: MemTxn rejects unsupported edits before commit and restores the full application-state preimage after a fault. 2023). Retrieval-augmented generation and dense passage retrieval rank external evidence for downstream genera-tion (Lewis et al. 2020; Karpukhin et al. 2020). Recent systems move beyond passive retrieval: they extract per-sistent user memories, organize structured stores, compress memory, model temporal relations, and learn memory opera-tions (Chhikara et al. 2025; Xu et al. 2025; Kang et al. 2025; Li et al. 2025; Fang et al. 2026; Rasmussen et al. 2025; Yan et al. 2026). Together these advances make persistent memory more editable and autonomous. Yet relevance, recency, and learned memory actions do not constitute a commit contract. They neither require source support for a proposed value nor distinguish answer-time fallback from rejection of a durable write. They also do not specify the complete application-visible state to restore when an invariant violation remains after a database reopen. Our key observation is that an external-memory update can be governed as an application-level transaction . Evidence support governs admission, while an explicit conflict con-tract selects the committed version visible to an answer. A persisted preimage enables recovery. Storage atomicity can make a physical write all-or-nothing, but it cannot enforce these semantic contracts. Building such a transaction boundary for writable agent memory raises two challenges. (C1) How to decide which proposed state may commit and which conflicting version should be visible without answer supervision? Subtle ex-traction errors can preserve nearly all source words while changing their order or polarity, whereas relevance or re-arXiv:2607.27834v1 [cs.AI] 30 Jul 2026 cency alone cannot establish source support. Consulting gold answers, benchmark labels, or future queries would instead leak evaluation signals into persistent state. (C2) How to re-store the complete intended application state after a durable multi-key fault without knowing the actual physical write set? A single logical memory update can modify versions, pointers, fact keys, and event records across several physical keys. A single-key baseline can therefore leave a mixed state that survives reopen, while storage atomicity alone cannot identify the application-level preimage to restore. We introduce MemTxn , an answer-model-external gover-nance layer with three governance paths. Ordered PatchTest activates only proposals satisfying the declared ordered lex-ical support contract against a cited span. A deterministic conflict trigger and Temporal Resolver select the version vis-ible to the answer model under a declared chronology con-tract. A durable snapshot journal restores the audited active map after an invariant failure. In the item-disjoint audit, the frozen gate accepts all 60 supported originals and rejects all 179 audited hard negatives. Across controlled faults on LongMemEval-S and LoCoMo states, MemTxn restores the complete active map without the physical write set, while the single-key baseline leaves mixed states. On MemoryAgent-Bench FactConsolidation (Hu, Wang, and McAuley 2026), 
+
+MemTxn achieves the highest average F1 across all twelve answer-model configurations. In five representative settings, it outperforms Dense by 17.06–24.07 points. We make the following contributions. 
+
+• We identify the missing transaction boundary in writable agent memory and formalize separate contracts for source-supported update admission, conflict-conditioned visibility, and complete-state recovery. 
+
+• We develop MemTxn with answer-independent admis-sion, temporal resolution, and invariant-checked recovery while keeping rejection, fallback, and rollback observ-able. 
+
+• We validate MemTxn on source-support, recovery, and FactConsolidation evaluations, achieving exact correct-ness in both audits and the highest average F1 across all twelve answer-model configurations. 
+
+## Related Work 
+
+Writable agent memory. Generative Agents (Park et al. 2023) retrieves and reflects over episodic memories, while MemGPT/Letta (Packer et al. 2023) manages a memory hier-archy. Voyager (Wang et al. 2024a) and Reflexion (Shinn et al. 2023) retain reusable skills or verbalized experience. Recent surveys organize agent memory by cognitive role and by its progression from storage to experience (Wu et al. 2025b; Luo et al. 2026). Mem0 (Chhikara et al. 2025) supports persistent user memories; A-MEM (Xu et al. 2025) con-structs autonomous notes; MemoryOS (Kang et al. 2025) and MemOS (Li et al. 2025) organize hierarchical stores; LightMem (Fang et al. 2026) compresses memory; Lang-Mem (LangChain 2025) provides long-term memory tools; and Zep (Rasmussen et al. 2025) builds temporal graphs. Empirical evidence nevertheless shows that retained experi-ence can propagate errors or become misaligned with later tasks (Xiong et al. 2026). The Agent-Memory Protocol (Wu et al. 2026) focuses on protecting identifiers at the user boundary. MemTxn addresses the orthogonal transaction boundary for write activation, conflict visibility, and com-plete application-state recovery. 
+
+Retrieval and long-memory evaluation. RAG (Lewis et al. 2020) and dense passage retrieval (Karpukhin et al. 2020) expose external knowledge to a generator. BGE-M3 (Chen et al. 2024) provides multilingual dense re-trieval. LongMemEval (Wu et al. 2025a), LoCoMo (Ma-harana et al. 2024), MemoryAgentBench (Hu, Wang, and McAuley 2026), BEAM (Tavakoli et al. 2026), Mem-Bench (Tan et al. 2025), Mem2ActBench (Shen et al. 2026), and RealMem (Bian et al. 2026) measure complementary conversational, incremental, tool-use, and project-state abil-ities. These benchmarks define evaluation units rather than memory transaction protocols. Our natural and controlled studies provide complementary evidence at their respective units. 
+
+Editing and regression safety. KnowledgeEditor (De Cao, Aziz, and Titov 2021), MEND (Mitchell et al. 2022), ROME (Meng et al. 2022), MEMIT (Meng et al. 2023), WISE (Wang et al. 2024b), and AlphaEdit (Fang et al. 2025) modify parametric knowledge. KnowEdit (Zhang et al. 2024) surveys and benchmarks that setting, while Memory-R1 (Yan et al. 2026) learns operations for external stores. MemTxn 
+
+leaves model weights unchanged. Write-ahead logging, par-tial rollback, checkpoints, and atomic commit provide the storage foundation (Mohan et al. 1992; SQLite Project 2026). 
+
+MemTxn lifts transaction semantics to agent memory by making cited-span write support, answer-context selection, recovery intent, and application-level restoration indepen-dently observable. Storage atomicity can faithfully persist a semantically invalid state. MemTxn governs that higher-level state and supplies the compensating action required after a declared abort or memory-invariant failure. Tool-using agent studies illustrate realistic state-changing settings (Schick et al. 2023; Yao et al. 2025). Safety benchmarks further motivate persistent-state checks because a write can outlive the interaction that caused it (Ruan et al. 2024; Debenedetti et al. 2024; Zhang et al. 2025). 
+
+## Method 
+
+Overview 
+
+MemTxn is an answer-model-external governance layer with three separate paths: source-supported update admission, conflict-conditioned answer-context selection, and durable recovery of the complete application-visible state. This sep-aration prevents an answer-time route decision from silently becoming a write decision. It also prevents a storage-level repair from being mistaken for restoration of the intended application state. Figure 2 reads from left to right and follows the same return-policy key through five numbered steps. In Steps 1–2, the held-out source supports 30-day against the illustrative prior v1 = 14-day . After the metadata checks and Ordered PatchTest pass, the store creates v2, links it to v1, and makes Governed Write     
+
+> 1→2 · check →commit
+> CASE PROBLEM
+
+prior v 1: 14 -day     
+
+> →30 -day source sB
+> time ν₂
+> WRITE CONTRACT · GOVERNS
+
+Support → versioned child 
+
+Support Gate        
+
+> Matches value · source · time
+> span ✓source ✓order ✓
+> COMMIT z REJECT ∅
+> GATE OUTPUT
+
+Accepted child z      
+
+> 30 -day ·sB·ν₂
+> Answer model cannot commit state.
+> Memory store owns version state Conflict selects answer context
+
+Versioned Memory M t          
+
+> v2
+> 30 -day
+> sB·ν₂
+> ACTIVE
+> parent
+> v1
+> 14 -day
+> sA·ν ₁
+> parent: v2→v1
+> active: →v2
+> COMMIT z →v2RESTORED ·v2
+
+Conflict -Conditioned Answer           
+
+> QUERY
+> How many days?
+> RETRIEVE C
+> v1:14 -day
+> v2:30 -day
+> CONFLICT
+> same key ✓
+> source differs ✓
+> value differs ✓
+> TEMPORAL RULE
+> ν₂>ν₁
+> select v2
+> GOVERNED CONTEXT
+> v2·30 -day
+> ANSWER
+
+30 days 
+
+> TRANSACTIONAL RECORD
+
+commit + active pointer + snapshot S ₀ 
+
+> PERSISTED S ₀
+> active = v 2
+
+Durable Recovery  
+
+> RESTORE FROM S₀
+> Saved S ₀anchors recovery
+> START HERE
+> SNAPSHOT S ₀
+
+active = v2 
+
+> 30 -day ·
+> versions intact
+> REOPEN + AUDIT
+> REOPENED FAULT
+
+active → v3  
+
+> missing v3row
+> RESTORE COMPLETE S ₀
+
+active = v2   
+
+> 30 -day ✓·
+> parent chain ✓
+> RECOVERY CONTRACT
+
+Restore full snapshot  
+
+> No partial reconstruction.
+> accepted
+> z
+> persist
+> S₀
+> RECOVERED S ₀· ACTIVE v 2
+
+MemTxn Core     
+
+> 3→4 · versioned state, then governed answer
+> 1
+> 2
+> 34
+> 5DURABLE AUDIT & RECOVERY
+
+Figure 2: MemTxn workflow on the return-policy example. The write lane governs activation, the answer lane resolves conflicts, and the audit lane restores state. 
+
+v2 active. In Steps 3–4, a conflict-conditioned query retrieves both versions, and the Temporal Resolver selects v2 under the declared chronology. In Step 5, an injected fault survives a database reopen: the active pointer refers to v3, but the v3 row is missing. Recovery restores the saved application-visible preimage A0 = Π app (S0), leaving v2 active. The figure also distinguishes state-changing decisions from answer-time routing. Rejection leaves persistent state unchanged, while a governed answer uses the selected con-text without authorizing a write. Write activation is answer-independent: neither labels nor a future query can rescue an unsupported proposal. Recovery is durability-aware: rollback is counted only after the fault survives reopen and restoration re-establishes the complete saved active map. Both admission and recovery remain observable outside the answer model. 
+
+System model and trust boundary 
+
+At logical time t, persistent memory is St = ( Vt, A t, Jt),where Vt is an append-only set of versions, At : κ 7 → vid 
+
+is the active-version map, and Jt contains durable state events and recovery intents. We write Πapp (St) = At for the application-visible active-state projection; repair may ap-pend to Vt and Jt without changing the recovered projection. An upstream extractor proposes q = (id , κ, u, r, v, e, s, ν ),where κ is a normalized key, u and r are subject and relation, 
+
+v is the value, e is a cited evidence span, s is an opaque source ID, and ν is chronology metadata. The store augments an accepted proposal into z = (vid , q, ρ, σ, t c) with version ID, parent pointer, lifecycle status, and commit time. Parent pointers and lifecycle status are not extractor outputs; frozen regression tasks remain evaluator-side. A governed update is an application-level transaction 
+
+τ = ( q, S 0, K τ , σ τ ) with a pre-update state, declared log-ical scope, and a status in Proposed , Rejected , Active ,
+
+Superseded , or RolledBack . Its recovery intent persists the application-visible preimage A0 = Π app (S0) rather than the entire physical state. Its interface intentionally omits the physical write set. SQLite supplies atomic writes; MemTxn 
+
+supplies semantic admission, visibility, and compensating recovery. The proposer, candidate value, and writable child are un-trusted. SQLite, the persisted intent, and the saved active-map snapshot form the recovery trusted base. Ordered PatchTest receives only proposal fields and the raw source referenced by the opaque source ID. Gold answers, benchmark types, session IDs, safety labels, and fault labels enter only af-ter runtime decisions. The boundary establishes cited-source consistency, declared-chronology visibility, and restoration from an intact intent. It does not guarantee source truth, se-mantic role binding, concurrency, repeated-fault tolerance, or recovery from physical loss. 
+
+Source-supported update admission 
+
+Let T (x) be the normalized content-token sequence of text 
+
+x, ⪯ the ordered-subsequence relation, and F (q) an indi-cator that key, value, source ID, chronology, and evidence are all present and T (v)̸ = ∅. Let Ds be the source text referenced by opaque ID s, and let Q(e, D s) indicate that 
+
+norm( e) is a substring of norm( Ds). Lexical baselines ac-cept when metadata and source checks pass and the fraction of candidate-token occurrences covered by the cited evidence reaches the fixed or calibrated threshold θ in Table 1. The frozen Ordered PatchTest instead uses 
+
+Support ord (q) = F (q) ∧ Q(e, D s) ∧ [T (v) ⪯ T (e)] . (1) Equation 1 requires every value token to appear in the cited evidence in source order. It therefore rejects audited negation insertions, out-of-source substitutions, and token reorder-ings when they violate this contract. Fixed- and calibrated-coverage baselines remain explicit ablations of this ordered rule. Activation is a state transition rather than an answer-time score. If the predicate passes, the store creates z with parent 
+
+At(κ) when present and null otherwise, then atomically up-dates the pointer. Otherwise persistent state is unchanged. Accepted proposals become active independently of any future question. Each decision records the normalized ev-idence, predicate components, parent version, and resulting status so that admission can be replayed without evaluator data. 
+
+Conflict-conditioned version resolution 
+
+The deterministic trigger greedily canonicalizes keys in chronology order when normalized subject–relation Jaccard is at least .60 or keys match exactly. A conflict requires differ-ent source IDs and values that are neither exact nor Jaccard-equivalent at .80 ; every qualifying pair activates the governed answer route. Gold answers and update labels are absent. In the natural runtime, the system uses Dense raw chunks when no qualifying conflict is detected and governed persistent ver-sions otherwise. Fallback never reverses an accepted write or counts as rollback. For the controlled temporal protocol, the Temporal Re-solver groups conflicting candidates by key and applies the declared recency-as-truth contract by selecting 
+
+Resolve( Cκ) = arg max 
+
+> q∈Cκ
+
+ν(q). (2) Equation 2 is explicitly scoped to settings in which chronol-ogy defines the version visible to the answer model. The resolver does not establish semantic truth; it only applies the chronology rule defined by the benchmark or application. Chronology ties are broken deterministically by source order and proposal ID. 
+
+Durable audit and complete-state recovery 
+
+For a controlled transaction τ , let S0 be the pre-fault persis-tent state and A0 = Π app (S0) the active-pointer snapshot stored in its recovery intent. Let I(S) denote the conjunc-tion of pointer/version existence, fact-key consistency, active status, and event replay. The audited condition requires both application-state equality and I(S). The controller first per-sists A0 and a pending intent, executes the audited update, closes the writer, and reopens the database as S1. A counted rollback satisfies 
+
+RB( τ ) ⇐⇒ PersistIntent( A0) ∧ Reopen( S1)
+
+∧  [Π app (S1)̸ = A0] ∨ ¬ I(S1)
+
+∧ Restore( A0) ∧ Reopen( S2)
+
+∧ I(S2) ∧ Πapp (S2) = A0.
+
+(3) The implementation uses SQLite WAL with 
+
+synchronous=FULL . Versions, active pointers, state events, and recovery intents are separate durable tables. The evaluated recovery contract begins when an external detector invokes the controller, isolating durable restoration from deployment-specific anomaly detection. Snapshot recovery does not assume that one intended log-ical key identifies the complete physical write set. One com-pensating transaction restores the saved active map, marks displaced versions rolled back, records the repair, and fi-nalizes the intent before obtaining S2. The write-set ora-cle instead logs preimages for the injected physical write set; matching its coverage demonstrates complete restora-tion without that privileged information. 
+
+Contract implications and complexity 
+
+The definitions yield three scoped implications. If normaliza-tion and source lookup implement the frozen predicate, every activated proposal satisfies Equation 1. Under the declared chronology contract, Equation 2 selects the chronology-maximal visible version with deterministic tie-breaking. If the recovery intent and A0 remain intact and the controller is invoked, Equation 3 targets the complete saved active map rather than a guessed key. The fault matrix tests both dura-bility boundaries after process termination and reopen. For n candidates, pairwise trigger construction costs 
+
+O(n2) and post-grouping resolution costs O(n). Ordered PatchTest is linear in the inspected source and token se-quences and makes no verifier call. Snapshot persistence and restoration cost O(|At|) keys in exchange for write-set inde-pendence. These bounds exclude shared extraction, retrieval, and answer calls. 
+
+## Experiments 
+
+Evaluation Overview 
+
+We first evaluate the complete write–reject–retain workflow. We then isolate the three components of the transaction boundary. The source-support audit compares write gates on adversarial proposals. The temporal-resolution study mea-sures conflict handling on MemoryAgentBench FactConsoli-dation. The persistent-fault audit tests complete-state restora-tion on benchmark-derived LongMemEval-S and LoCoMo states. The final ablations and stress tests identify the source and robustness of the gains. These experiments use different statistical units: API cases, source items, fixed benchmark histories, and persisted histories. We report these units separately rather than pooling them. Runtime decisions are label-blind. PatchTest sees only proposal fields and the cited source, while the resolver sees candidate keys, values, source IDs, and chronology. Gold an-swers, benchmark categories, unsafe labels, and fault classes are joined only after decisions. Experiments cover ten local model configurations and two API configurations. Calibra-tion always precedes confirmation, including item-disjoint threshold selection before the held-out source-support audit. 
+
+End-to-End API-Endpoint Governance 
+
+Workflow and component accuracy. Figure 3 evaluates 100 controlled cases per endpoint spanning valid writes, unsup-ported writes, and retained tasks. The compact labels 5.3C, 5.4m, and 5.4 denote the GPT-5.3-Codex-Spark, GPT-5.4-mini, and GPT-5.4 endpoints, respectively. Across these three API-endpoint configurations, each with 300 method rows, MemTxn averages 1.0 on valid writes and wrong-write re-jection and .992 on old-task retention. Retrieval retains only 
+
+.225 of old tasks, while Versioned retains none. Endpoint call-error rates remain below .007 ; exact checkpoint revisions 5.3C 5.4m 5.4    
+
+> 0.5
+> 1.0
+> accuracy
+> New valid
+> Reject wrong
+> Retain old
+> 0.0
+> 0.5
+> 1.0
+> mean accuracy
+> Retrieval Versioned MemTxn (a) API endpoints (b) Task components
+
+Figure 3: API-endpoint governance results. Overall work-flow accuracy across three endpoint configurations and component-level accuracy for valid writes, wrong-write re-jection, and retained tasks.                                       
+
+> Gate θAcc ↑Bal. ↑Prec. ↑F1 ↑FA ↓FR ↓
+> Lexical 0.60 25.10 50.00 25.10 40.13 179 0
+> Calibrated 0.95 73.22 82.12 48.39 65.22 64 0
+> Qwen –68.62 77.39 44.19 60.32 72 3
+> Hybrid –78.24 83.81 53.77 68.67 49 3
+> Ordered –100.00 100.00 100.00 100.00 00
+
+Table 1: Item-disjoint source-support audit. Sixty supported and 179 in-contract hard-negative probes from 12 unseen test items. Bold/underline mark the best/second-best gate results. were not independently verified. These results show that the same governance boundary admits supported updates, rejects unsupported ones, and preserves prior tasks. The following studies isolate these capabilities and their downstream QA effect. 
+
+Source-Support Admission 
+
+Admission quality. This item-disjoint audit is constructed from LongMemEval-S extraction outputs (Wu et al. 2025a) and tests whether a proposed value may safely become active. The ordered rule is frozen before evaluation. All development item IDs are excluded, and probes remain clustered by source item. Table 1 reports 12 unseen test items. They comprise 60 supported originals and 179 hard negatives generated by negation insertion, token reordering, and out-of-source substitution. Ordered PatchTest is the only gate with 100% accuracy, balanced accuracy, precision, and F1. It accepts every supported original with zero false accepts and zero false rejects. Every comparator makes at least three decision errors, and the strongest alternative still falsely accepts 49 negatives. Thus the result reflects held-out application of the declared rule rather than threshold selection on the test items. 
+
+Error-type breakdown. Figure 4 separates supported originals from the three corruption templates. Ordered PatchTest correctly classifies all 60 originals, 59 negations, 60 substitutions, and 60 reorderings, whereas every compara-tor fails on at least one category. Thus the ordered rule rejects all 179 audited hard negatives without a verifier call. This controlled result is scoped to the declared ordered lexical-support contract and does not establish semantic-role fidelity or truth. Support Negation Substitution Reordering     
+
+> 0
+> 50
+> 100
+> correct decisions (%)
+> Fixed Calibrated Qwen Hybrid Ordered
+
+Figure 4: Probe-class source-support decisions. Correct-decision rates for five gates on supported originals, nega-tions, substitutions, and reorderings. Question: What is the country of citizenship of 
+
+Cédric Klapisch ?
+
+Earlier memory ( 𝑣 !): France Later update ( 𝑣 "): Malaysia 
+
+Dense 
+
+Answer: France 
+
+F1 = 0; stale = 1 
+
+MEMTXN 
+
+Detects the conflict and 
+
+exposes only the later value. 
+
+Answer: Malaysia 
+
+F1 = 1; stale = 0 
+
+Exposes both values to 
+
+the answer model. 
+
+Case Study: Memory Update and Version Visibility 
+
+Figure 5: Matched-budget FactConsolidation trace with one answer call per method. 
+
+Temporal Resolution on FactConsolidation 
+
+Main FactConsolidation results. MemoryAgentBench FactConsolidation (Hu, Wang, and McAuley 2026) defines the latest conflicting assertion as correct, matching the re-solver’s chronology contract. All methods use the same prompt and one answer call; MemTxn changes only version visibility. Table 2 reports aggregate and breakdown met-rics for seven methods on five representative models (800 questions each), while Figure 5 traces one matched-budget example. MemTxn leads every model block, improving over Dense by 17.06–24.07 F1 points and reducing conditional stale rate by 15.97–37.6 points. Larger single-hop than multi-hop gains indicate remaining answer-reasoning limits. 
+
+Matched top-8 control. With both candidate pools fixed at eight, Table 3 shows MemTxn gains of 15.01–22.93 F1 points across six models (800 questions each), with every model-level 95% confidence interval above zero. The pooled gain is +19.51 points over 4,800 pairs; stale rate is omitted because the reused Dense eligibility pool used retrieval depth 24. 
+
+Cross-model gains. Figure 6 summarizes 48 default-protocol cells across six models. All gains are positive and consistently larger for single-hop than multi-hop questions; default- and matched-pool magnitudes remain incomparable. 
+
+Complete-State Recovery 
+
+Recovery scope and cost. The audit applies four persis-tent fault classes to 58 LongMemEval-S histories and 10 LoCoMo conversations, spanning 5–64 active and 2–16 Model Method Overall (%) Hop (%) Context length (%) Tok./q ↓
+
+F1 ↑ ∆Dense ↑ SubEM ↑ Stale ↓ SH ↑ MH ↑ 6K ↑ 32K ↑ 64K ↑ 262K ↑
+
+Qwen2.5-7B 
+
+Bm25 22.92 +2.03 23.00 31.79 40.60 5.24 18.30 25.02 25.51 22.85 168 
+
+Dense 20.89 +0.00 19.75 49.50 38.46 3.31 15.80 24.57 23.73 19.44 166 
+
+Mem0 23.32 +2.43 23.12 43.65 41.03 5.61 18.45 26.41 24.15 24.27 166 
+
+A-Mem 36.66 +15.78 36.00 25.65 65.29 8.04 38.12 35.95 37.26 35.33 165 
+
+Zep 33.71 +12.83 32.88 15.40 56.27 11.16 34.39 38.57 32.49 29.41 167 
+
+LightMem 21.10 +0.22 20.00 46.47 37.86 4.34 17.03 23.27 25.68 18.43 120 
+
+MemTxn 42.88 +21.99 42.12 15.11 73.65 12.10 47.39 41.35 45.38 37.40 167 Qwen3.5-9B 
+
+Bm25 25.54 +4.16 26.88 28.15 46.71 4.37 20.76 27.65 25.66 28.08 163 
+
+Dense 21.38 +0.00 21.62 47.19 39.23 3.52 16.62 25.52 23.74 19.65 161 
+
+Mem0 27.25 +5.87 28.88 39.56 48.70 5.80 24.26 30.63 27.62 26.48 160 
+
+A-Mem 40.66 +19.28 41.38 23.63 72.04 9.28 44.59 39.10 38.66 40.30 160 
+
+Zep 34.31 +12.93 33.88 10.36 56.24 12.37 35.72 34.83 35.70 30.98 161 
+
+LightMem 22.93 +1.55 23.25 44.03 40.15 5.72 19.00 27.33 24.83 20.57 111 
+
+MemTxn 45.45 +24.07 45.50 9.64 77.05 13.85 50.03 43.33 48.62 39.80 161 Qwen3.5-35B-A3B 
+
+Bm25 28.37 +1.77 35.62 21.15 51.63 5.10 24.05 29.20 31.21 29.00 164 
+
+Dense 26.59 +0.00 31.75 40.14 48.83 4.36 22.46 27.93 30.18 25.80 160 
+
+Mem0 29.38 +2.78 35.62 32.26 52.75 6.00 27.65 31.73 29.93 28.20 159 
+
+A-Mem 41.50 +14.91 44.12 22.19 72.80 10.20 46.76 39.15 39.71 40.38 158 
+
+Zep 32.01 +5.42 31.87 6.62 51.26 12.77 32.90 33.98 33.23 27.94 161 
+
+LightMem 26.46 -0.14 32.12 37.41 47.96 4.96 22.22 29.87 28.55 25.19 111 
+
+MemTxn 47.96 +21.37 50.38 9.64 80.66 15.27 53.94 44.71 50.30 42.90 160 Llama-3.2-3B 
+
+Bm25 25.43 +1.27 24.38 29.83 46.75 4.11 21.92 27.39 28.26 24.16 175 
+
+Dense 24.16 +0.00 22.88 46.04 43.47 4.85 19.64 24.25 28.67 24.07 173 
+
+Mem0 26.54 +2.38 25.12 42.04 45.90 7.19 24.85 27.94 27.48 25.90 172 
+
+A-Mem 39.38 +15.23 38.25 25.36 69.55 9.22 43.53 37.13 37.73 39.14 172 
+
+Zep 32.90 +8.74 32.38 11.65 55.00 10.81 32.31 34.62 34.81 29.88 174 
+
+LightMem 23.96 -0.20 22.88 42.30 43.21 4.70 20.28 25.29 26.98 23.27 128 
+
+MemTxn 44.25 +20.09 43.38 11.08 76.05 12.44 47.23 40.77 47.68 41.31 174 GPT-5.4 
+
+Bm25 29.31 -2.94 40.75 15.27 55.60 3.02 26.13 31.02 31.66 28.44 539 
+
+Dense 32.25 +0.00 46.12 22.59 58.98 5.52 30.38 33.12 34.51 30.99 534 
+
+Mem0 33.12 +0.87 46.00 21.46 57.88 8.36 31.21 36.51 32.04 32.72 535 
+
+A-Mem 42.37 +10.12 48.12 17.15 75.63 9.11 46.88 40.42 40.20 41.98 514 
+
+Zep 31.27 -0.98 32.12 5.18 50.63 11.92 32.83 33.62 31.48 27.17 529 
+
+LightMem 31.62 -0.63 43.88 23.60 58.27 4.97 30.65 32.21 31.82 31.80 493 
+
+MemTxn 49.31 +17.06 55.38 6.62 83.95 14.66 55.88 46.90 52.05 42.39 516 
+
+Table 2: MemoryAgentBench FactConsolidation results. Five representative model settings, seven methods, and 800 QA rows per model; ∆Dense is the absolute F1 difference in percentage points. Bold/underline mark best/second-best comparable values; conditional stale rates are unranked. 
+
+Model F1 (%) ∆ 95% CI W/T/L D MQ2.5-7B 20.89 41.94 +21.05 [18 .10 , 24 .05] 187/601/12 Q3.5-9B 21.44 44.37 +22.93 [19 .96 , 25 .99] 205/584/11 Q3.5-35B 26.86 46.41 +19.55 [16 .79 , 22 .39] 201/585/14 L3.2-3B 24.14 44.35 +20.21 [17 .26 , 23 .20] 178/610/12 GPT-5.4m 30.15 48.44 +18.29 [15 .77 , 20 .87] 220/564/16 GPT-5.4 32.80 47.81 +15.01 [12 .83 , 17 .27] 210/573/17 Pooled 26.05 45.55 +19.51 [18 .38 , 20 .63] 1201/3517/82 
+
+Table 3: Matched top-8 F1 over 800 questions per model (4,800 pooled pairs); bold marks the higher F1. affected keys. Passing requires complete pre-fault restora-tion under status, pointer/version/fact-key, event-replay, and second-reopen checks. Table 4 reports the hardest setting, with 64 active keys and 16 affected keys. MemTxn and the write-set oracle have Q2.5-7B Q3.5-9B Q3.5-35B L3.2-3B GPT-5.4m GPT-5.4 SH-6K MH-6K SH-32K MH-32K SH-64K MH-64K SH-262K MH-262K                                          
+
+> +43.5 +45.8 +40.4 +38.5 +36.2 +31.2
+> +19.7 +21.0 +22.6 +16.7 +21.1 +19.8
+> +28.5 +30.0 +27.5 +29.4 +22.3 +21.3 +5.1 +5.6 +6.1 +3.6 +12.8 +6.2
+> +35.8 +40.2 +31.4 +33.0 +29.3 +27.5
+> +7.5 +9.6 +8.8 +5.0 +13.5 +7.6
+> +32.9 +35.2 +28.1 +29.4 +24.1 +19.8 +3.0 +5.1 +6.1 +5.1 +7.6 +3.0 0
+> 10
+> 20
+> 30
+> 40
+> F1 gain over Dense
+
+Figure 6: MemTxn–Dense F1 gains across models and hop/context-length settings. zero failures over 272 runs, whereas the single-key baseline fails all 136 partial-commit and event-divergence runs. Thus MemTxn matches the privileged oracle’s coverage without receiving the physical write set. No design falsely rolls back Source Design Record W-set? Obs. scope P/E kB P/E att. ms LME-S 
+
+Single One key No A/W 0.08 20.95 
+
+W-set Actual W-set Yes A/W/P/E 0.91 20.74 
+
+MemTxn Active map No A/W/P/E 3.62 22.49 LoCoMo 
+
+Single One key No A/W 0.07 20.21 
+
+W-set Actual W-set Yes A/W/P/E 0.66 19.61 
+
+MemTxn Active map No A/W/P/E 2.63 20.08 
+
+Table 4: Recovery scope and cost; W-set is the oracle. 0.0 0.5 1.0      
+
+> success rate
+> MemTxn
+> −Safety
+> −Regress
+> −Scope
+> −Source
+> −Time
+> −Rollback
+> Retrieval
+> Overall Detect Old -task
+> 110 100 1K
+> number of updates
+> 0.3
+> 0.6
+> 0.9
+> overall accuracy
+> No memory
+> Retrieval
+> Versioned
+> MemTxn
+
+(a) Component ablation (b) Accuracy vs. update count 
+
+Figure 7: Component ablations and update-scale accuracy. 
+
+r (%) Overall ↑ ∆Best ↑ Detect ↑ Recover ↑ Unsafe ↓ Forget ↓
+
+100 100.00 +48.89 100.00 100.00 0.00 0.00 
+
+90 92.63 +41.51 96.70 94.35 3.30 6.76 80 84.99 +33.88 93.30 87.76 6.70 13.60 70 77.75 +26.64 89.50 81.55 10.50 20.63 60 70.03 +18.91 86.70 73.70 13.30 27.88 50 62.47 +11.35 83.60 64.98 16.40 34.74 
+
+Table 5: Gate-reliability stress; ∆Best is the gain over the strongest control at the same r.a valid commit. 
+
+Ablations and Stress Tests 
+
+Mechanism ablations and update scale. Figure 7 shows that removing any governance component lowers at least one of overall success, detection, or old-task retention. Only full MemTxn reaches 1.0 on all three component targets and maintains it through 1,000 updates. 
+
+Gate reliability. Table 5 shows smooth degradation from 100.00% accuracy at r = 100% to 62.47% at r = 50% ,where the gain over the strongest non-MemTxn control re-mains 11.35 points. The monotone margin indicates graceful failure rather than a sharp collapse under imperfect gating. 
+
+Robustness axes. Figure 8 shows smooth degradation as gate reliability falls and higher MemTxn accuracy than re-trieval and versioned memory on all five retained sensitivity axes. The advantage persists across memory size, retrieval depth, unsafe-update rate, old-task mix, and test composition, rather than depending on one stress dimension. 0.6 0.8 1.0     
+
+> gate reliability r
+> 0.5
+> 1.0
+> overall success
+> Mem
+> k
+> Unsafe
+> Old
+> Test
+> 0.0
+> 0.5
+> 1.0
+> mean success
+> Ret. Ver. Test MemTxn
+
+(a) Gate reliability (b) Stress axes 
+
+Figure 8: Robustness to gate reliability and sensitivity axes. 
+
+## Discussion and Limitations 
+
+The results support source-constrained admission, chronology-based visibility, and complete-state recov-ery under the declared contracts, but not semantic truth or robustness to concurrent or repeated faults, intent corruption, or physical loss. Coverage under naturally occurring update triggers remains outside the controlled evaluation. Production deployment additionally requires consent, retention, encryption, access control, and audit minimization. 
+
+## Conclusion 
+
+We presented MemTxn , an answer-model-external transac-tion boundary for writable agent memory. It separates source-supported update admission, chronology-conditioned answer selection, and invariant-checked complete-state recovery. Or-dered PatchTest accepted all 60 supported originals and re-jected all 179 template-generated hard negatives. MemTxn 
+
+also restored the complete declared active map across persis-tent multi-key faults without the actual physical write set. On MemoryAgentBench FactConsolidation, MemTxn achieved the highest average F1 across all twelve answer-model con-figurations. It improved F1 over Dense by 17 .06 –24 .07 points in five representative settings. The six-model matched-top-8 control retained gains of 15 .01 –22 .93 points. Together, these results showed that auditable commit decisions, explicit ver-sion visibility, and durable recovery could jointly improve the reliability of long-term agent memory under declared con-tracts. Future work will extend MemTxn to handle concur-rent and repeated faults, broaden natural-input governance coverage, and recover from physical storage loss. 
+
+## References 
+
+Bian, H.; Yao, Z.; Hu, S.; Xu, Z.; Zhang, S.; Guo, Y.; Yang, Z.; Han, X.; Wang, H.; and Chen, R. 2026. RealMem: Bench-marking LLMs in Real-World Memory-Driven Interaction. In Findings of the Association for Computational Linguis-tics: ACL 2026 , 14349–14365. Association for Computa-tional Linguistics. Chen, J.; Xiao, S.; Zhang, P.; Luo, K.; Lian, D.; and Liu, Z. 2024. M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation. In Findings of the Association for Computational Linguistics: ACL 2024 , 2318–2335. As-sociation for Computational Linguistics. Chhikara, P.; Khant, D.; Aryan, S.; Singh, T.; and Yadav, D. 2025. Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory. In ECAI 2025 , volume 413 of 
+
+Frontiers in Artificial Intelligence and Applications , 2993– 3000. IOS Press. De Cao, N.; Aziz, W.; and Titov, I. 2021. Editing Fac-tual Knowledge in Language Models. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing , 6491–6506. Association for Computational Lin-guistics. Debenedetti, E.; Zhang, J.; Balunović, M.; Beurer-Kellner, L.; Fischer, M.; and Tramèr, F. 2024. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and De-fenses for LLM Agents. In Advances in Neural Information Processing Systems , volume 37, 82895–82920. Curran As-sociates, Inc. Fang, J.; Deng, X.; Xu, H.; Jiang, Z.; Tang, Y.; Xu, Z.; Deng, S.; Yao, Y.; Wang, M.; Qiao, S.; Chen, H.; and Zhang, N. 2026. LightMem: Lightweight and Efficient Memory-Augmented Generation. In International Conference on Learning Representations .Fang, J.; Jiang, H.; Wang, K.; Ma, Y.; Shi, J.; Wang, X.; He, X.; and Chua, T.-S. 2025. AlphaEdit: Null-Space Con-strained Knowledge Editing for Language Models. In Inter-national Conference on Learning Representations , volume 2025, 16366–16396. Hu, Y.; Wang, Y.; and McAuley, J. 2026. Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions. In 
+
+International Conference on Learning Representations .Kang, J.; Ji, M.; Zhao, Z.; and Bai, T. 2025. Memory OS of AI Agent. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing , 25961– 25970. Association for Computational Linguistics. Karpukhin, V.; Oguz, B.; Min, S.; Lewis, P.; Wu, L.; Edunov, S.; Chen, D.; and Yih, W.-t. 2020. Dense Passage Retrieval for Open-Domain Question Answering. In Proceedings of the 2020 Conference on Empirical Methods in Natural Lan-guage Processing (EMNLP) , 6769–6781. Association for Computational Linguistics. LangChain. 2025. LangMem: Long-Term Memory for Lan-guage Agents. Software repository and documentation. Ac-cessed 2026-07-18. Lewis, P.; Perez, E.; Piktus, A.; Petroni, F.; Karpukhin, V.; Goyal, N.; Küttler, H.; Lewis, M.; Yih, W.-t.; Rocktäschel, T.; Riedel, S.; and Kiela, D. 2020. Retrieval-Augmented Gen-eration for Knowledge-Intensive NLP Tasks. In Advances in Neural Information Processing Systems , volume 33, 9459– 9474. Curran Associates, Inc. Li, Z.; Xi, C.; Li, C.; Chen, D.; Chen, B.; Song, S.; Niu, S.; Wang, H.; Yang, J.; Tang, C.; Yu, Q.; Zhao, J.; Wang, Y.; Liu, P.; Lin, Z.; Wang, P.; Huo, J.; Chen, T.; Chen, K.; Li, K.; Tao, Z.; Lai, H.; Wu, H.; Tang, B.; Wang, Z.; Fan, Z.; Zhang, N.; Zhang, L.; Yan, J.; Yang, M.; Xu, T.; Xu, W.; Chen, H.; Wang, H.; Yang, H.; Zhang, W.; Xu, Z.-Q. J.; Chen, S.; and Xiong, F. 2025. MemOS: A Memory OS for AI System. arXiv:2507.03724. Luo, J.; Tian, Y.; Cao, C.; Luo, Z.; Lin, H.; Li, K.; Kong, C.; Yang, R.; and Ma, J. 2026. From Storage to Experi-ence: A Survey on the Evolution of LLM Agent Memory Mechanisms. In Findings of the Association for Computa-tional Linguistics: ACL 2026 , 41622–41652. Association for Computational Linguistics. Maharana, A.; Lee, D.-H.; Tulyakov, S.; Bansal, M.; Bar-bieri, F.; and Fang, Y. 2024. Evaluating Very Long-Term Conversational Memory of LLM Agents. In Proceedings of the 62nd Annual Meeting of the Association for Computa-tional Linguistics (Volume 1: Long Papers) , 13851–13870. Association for Computational Linguistics. Meng, K.; Bau, D.; Andonian, A.; and Belinkov, Y. 2022. Locating and Editing Factual Associations in GPT. In 
+
+Advances in Neural Information Processing Systems , vol-ume 35, 17359–17372. Curran Associates, Inc. Meng, K.; Sharma, A. S.; Andonian, A.; Belinkov, Y.; and Bau, D. 2023. Mass-Editing Memory in a Transformer. In 
+
+International Conference on Learning Representations .Mitchell, E.; Lin, C.; Bosselut, A.; Manning, C. D.; and Finn, C. 2022. Fast Model Editing at Scale. In International Conference on Learning Representations .Mohan, C.; Haderle, D.; Lindsay, B.; Pirahesh, H.; and Schwarz, P. 1992. ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Roll-backs Using Write-Ahead Logging. ACM Transactions on Database Systems , 17(1): 94–162. Packer, C.; Wooders, S.; Lin, K.; Fang, V.; Patil, S. G.; Stoica, I.; and Gonzalez, J. E. 2023. MemGPT: Towards LLMs as Operating Systems. arXiv:2310.08560. Park, J. S.; O’Brien, J. C.; Cai, C. J.; Morris, M. R.; Liang, P.; and Bernstein, M. S. 2023. Generative Agents: Interactive Simulacra of Human Behavior. In Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology , 22. Rasmussen, P.; Paliychuk, P.; Beauvais, T.; Ryan, J.; and Chalef, D. 2025. Zep: A Temporal Knowledge Graph Archi-tecture for Agent Memory. arXiv:2501.13956. Ruan, Y.; Dong, H.; Wang, A.; Pitis, S.; Zhou, Y.; Ba, J.; Dubois, Y.; Maddison, C. J.; and Hashimoto, T. 2024. Iden-tifying the Risks of LM Agents with an LM-Emulated Sand-box. In International Conference on Learning Representa-tions , volume 2024, 27031–27098. Schick, T.; Dwivedi-Yu, J.; Dessi, R.; Raileanu, R.; Lomeli, M.; Hambro, E.; Zettlemoyer, L.; Cancedda, N.; and Scialom, T. 2023. Toolformer: Language Models Can Teach Them-selves to Use Tools. In Advances in Neural Information Processing Systems , volume 36, 68539–68551. Curran As-sociates, Inc. Shen, Y.; Li, K.; Zhou, W.; and Hu, S. 2026. Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , 8173–8190. Associa-tion for Computational Linguistics. Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023. Reflexion: Language Agents with Verbal Re-inforcement Learning. In Advances in Neural Information Processing Systems , volume 36, 8634–8652. Curran Asso-ciates, Inc. SQLite Project. 2026. Write-Ahead Logging. Official SQLite documentation. Accessed 2026-07-18. Tan, H.; Zhang, Z.; Ma, C.; Chen, X.; Dai, Q.; and Dong, Z. 2025. MemBench: Towards More Comprehensive Eval-uation on the Memory of LLM-based Agents. In Findings of the Association for Computational Linguistics: ACL 2025 ,19336–19352. Association for Computational Linguistics. Tavakoli, M.; Salemi, A.; Ye, C.; Abdalla, M.; Zamani, H.; and Mitchell, J. R. 2026. Beyond a Million Tokens: Bench-marking and Enhancing Long-Term Memory in LLMs. In 
+
+International Conference on Learning Representations .Wang, G.; Xie, Y.; Jiang, Y.; Mandlekar, A.; Xiao, C.; Zhu, Y.; Fan, L.; and Anandkumar, A. 2024a. Voyager: An Open-Ended Embodied Agent with Large Language Mod-els. Transactions on Machine Learning Research .Wang, P.; Li, Z.; Zhang, N.; Xu, Z.; Yao, Y.; Jiang, Y.; Xie, P.; Huang, F.; and Chen, H. 2024b. WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models. In Advances in Neural Information Pro-cessing Systems , volume 37, 53764–53797. Curran Asso-ciates, Inc. Wu, D.; Wang, H.; Yu, W.; Zhang, Y.; Chang, K.-W.; and Yu, D. 2025a. LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory. In International Conference on Learning Representations , volume 2025, 86809–86836. Wu, J.; Hu, M.; Zhu, J.; Wang, J.; and Jin, Y. 2026. Agent-Memory Protocol: A Privacy-Focused Protocol for LLM Agents and User Memory Interaction. In Proceedings of the Second AAAI Bridge Program on AI for Medicine and Healthcare , volume 317 of Proceedings of Machine Learn-ing Research , 293–301. PMLR. Wu, Y.; Liang, S.; Zhang, C.; Wang, Y.; Zhang, Y.; Guo, H.; Tang, R.; and Liu, Y. 2025b. From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs. arXiv:2504.15965. Xiong, Z.; Lin, Y.; Xie, W.; He, P.; Liu, Z.; Tang, J.; Lakkaraju, H.; and Xiang, Z. 2026. How Memory Man-agement Impacts LLM Agents: An Empirical Study of Experience-Following Behavior. In Proceedings of the 64th Annual Meeting of the Association for Computational Lin-guistics (Volume 1: Long Papers) , 623–645. Association for Computational Linguistics. Xu, W.; Liang, Z.; Mei, K.; Gao, H.; Tan, J.; and Zhang, Y. 2025. A-Mem: Agentic Memory for LLM Agents. In 
+
+Advances in Neural Information Processing Systems , vol-ume 38, 17577–17604. Curran Associates, Inc. Yan, S.; Yang, X.; Huang, Z.; Nie, E.; Ding, Z.; Li, Z.; Ma, X.; Bi, J.; Kersting, K.; Pan, J. Z.; Schütze, H.; Tresp, V.; and Ma, Y. 2026. Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , 12805–12825. Association for Computational Linguistics. Yao, S.; Shinn, N.; Razavi, P.; and Narasimhan, K. 2025. 
+
+τ -bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. In International Conference on Learn-ing Representations , volume 2025, 9965–10017. Zhang, H.; Huang, J.; Mei, K.; Yao, Y.; Wang, Z.; Zhan, C.; Wang, H.; and Zhang, Y. 2025. Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and De-fenses in LLM-based Agents. In International Conference on Learning Representations , volume 2025, 35331–35366. Zhang, N.; Yao, Y.; Tian, B.; Wang, P.; Deng, S.; Wang, M.; Xi, Z.; Mao, S.; Zhang, J.; Ni, Y.; Cheng, S.; Xu, Z.; Xu, X.; Gu, J.-C.; Jiang, Y.; Xie, P.; Huang, F.; Liang, L.; Zhang, Z.; Zhu, X.; Zhou, J.; and Chen, H. 2024. A Comprehensive Study of Knowledge Editing for Large Language Models. arXiv:2401.01286.
