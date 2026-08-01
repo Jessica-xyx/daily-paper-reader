@@ -6,44 +6,34 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-31
-- 运行时间：2026-07-31 21:54:18 UTC
+- 最新运行日期：2026-08-01
+- 运行时间：2026-08-01 21:18:58 UTC
 - 运行状态：成功
-- 本次总论文数：8
-- 精读区：6
-- 速读区：2
+- 本次总论文数：4
+- 精读区：1
+- 速读区：3
 
 ### 今日简报（AI）
-今日精读6篇、速读2篇，聚焦LLM智能体记忆与推理优化，高分论文集中于“行动中心图”与“事务边界”两大方向。最值得关注的是记忆增强与状态恢复能力，以及面向智能体的轻量级防御机制。建议普通读者优先看高分精读，把握记忆管理在Agent系统中的核心价值。
-- 详情：[/202607/31/README](/202607/31/README)
+今日精读1篇、速读3篇，共4篇论文，重点聚焦大模型记忆与上下文机制。
+最值得关注的是精读论文《Understanding Is Done Early》，揭示大模型深度分工规律并用于无界上下文记忆（9.0分）；速读中《ForgetBench》探讨长程记忆遗忘动态（7.0分）。
+建议优先阅读精读论文，理解“早期理解、后期处理”机制，可进一步关注其与长上下文应用的结合。
+- 详情：[/202608/01/README](/202608/01/README)
 
 ### 精读区论文标签
-1. [Bridging Inference-Time Scaling and Episodic Memory with Action-Centric Graphs](/202607/31/2607.27415v1-bridging-inference-time-scaling-and-episodic-memory-with-action-centric-graphs)  
+1. [Understanding Is Done Early: A Depth Division of Labor in Large Language Models and Its Use for Unbounded-Context Memory](/202608/01/2607.28263v1-understanding-is-done-early-a-depth-division-of-labor-in-large-language-models-and-its-use-for-unbounded-context-memory)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：用动作中心图实现智能体情景记忆与推理
-2. [MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory](/202607/31/2607.27834v1-memtxn-a-transaction-boundary-for-source-supported-updates-and-complete-state-recovery-in-agent-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：为智能体记忆更新与恢复提供事务边界
-3. [RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning](/202607/31/2607.28156v1-rrm-experience-driven-reflective-retrieval-memory-for-long-horizon-multimodal-reasoning)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向LLM智能体的反思式检索记忆框架
-4. [MemHarness: Memory Is Reconstructed, Not Replayed](/202607/31/2607.28272v1-memharness-memory-is-reconstructed-not-replayed)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向记忆增强智能体的记忆重建方法
-5. [ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory](/202607/31/2607.27773v1-chronomem-version-control-and-semantic-rollback-for-large-language-model-agent-memory)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：为LLM智能体长期记忆提供版本控制与语义回滚机制
-6. [$Σ$-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems](/202607/31/2607.27958v1--mem-an-online-reliability-memory-for-llm-based-multi-agent-systems)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：用于LLM多智能体系统可信度建模的在线可靠性记忆
+   evidence：提出理解记忆CoMem，通过分层写入与检索实现无界上下文记忆
 
 ### 速读区论文标签
-1. [MIND: Lightweight and Effective Memory Injection Defense for LLM Agents via Intent-Aware Information Bottleneck](/202607/31/2607.28103v1-mind-lightweight-and-effective-memory-injection-defense-for-llm-agents-via-intent-aware-information-bottleneck)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出意图感知信息瓶颈的轻量级防御，对抗记忆增强LLM代理中的记忆注入攻击
-2. [A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain](/202607/31/2607.25415v1-a-control-system-a-dataset-and-a-recipe-for-making-frozen-llm-agents-learn-a-domain)  
+1. [ForgetBench: Benchmarking Forgetting Dynamics of Long-Term Parametric Memory in Language Models](/202608/01/2607.26455v1-forgetbench-benchmarking-forgetting-dynamics-of-long-term-parametric-memory-in-language-models)  
    标签：评分：7.0/10、query:llm-agent-memory
-   evidence：利用强化学习优化包含记忆/检索层的冻结LLM智能体外套件
+   evidence：针对大模型参数记忆遗忘评估的基准，可迁移至智能体记忆评测
+2. [Agent Retrieval Bench: Evaluating Repository Context Retrieval for Coding Agents](/202608/01/2607.24882v1-agent-retrieval-bench-evaluating-repository-context-retrieval-for-coding-agents)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：面向编码智能体的检索评测，涵盖其记忆/上下文获取环节
+3. [ARES: Adaptive Reasoning-Effort Steering for PPA- and Cost-Aware RTL Optimization with LLM Agents](/202608/01/2607.27879v1-ares-adaptive-reasoning-effort-steering-for-ppa--and-cost-aware-rtl-optimization-with-llm-agents)  
+   标签：评分：6.0/10、query:llm-agent-memory
+   evidence：评估LLM智能体在RTL优化中长期记忆的影响，发现记忆构建作用有限
 
 
 <div class="dpr-home-promo-card">
