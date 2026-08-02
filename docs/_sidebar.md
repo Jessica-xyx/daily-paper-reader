@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-02 <!--dpr-date:20260802-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/02/2607.26410v1-voice-memory-for-agentic-speech-recognition" data-sidebar-item="{&quot;title&quot;: &quot;Voice Memory for Agentic Speech Recognition&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.26410v1-voice-memory-for-agentic-speech-recognition&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;智能体语音识别中使用memory.md记忆文件进行记忆增强与更新&quot;}">Voice Memory for Agentic Speech Recognition</a>
   * 2026-08-01 <!--dpr-date:20260801-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/01/2607.28263v1-understanding-is-done-early-a-depth-division-of-labor-in-large-language-models-and-its-use-for-unbounded-context-memory" data-sidebar-item="{&quot;title&quot;: &quot;Understanding Is Done Early: A Depth Division of Labor in Large Language Models and Its Use for Unbounded-Context Memory&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.28263v1-understanding-is-done-early-a-depth-division-of-labor-in-large-language-models-and-its-use-for-unbounded-context-memory&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;提出理解记忆CoMem，通过分层写入与检索实现无界上下文记忆&quot;}">Understanding Is Done Early: A Depth Division of Labor in Large Language Models and Its Use for Unbounded-Context Memory</a>
