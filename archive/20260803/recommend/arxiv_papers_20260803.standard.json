@@ -1,0 +1,298 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-03T21:25:20.021617+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.29032v1",
+      "source": "arxiv",
+      "title": "TransMem: Transforming Hidden States into Memory for Large Language Models",
+      "abstract": "Large language model (LLM) agents increasingly operate over long interaction histories, where effective reasoning requires identifying and exploiting task-relevant evidence distributed across past observations and actions. However, useful information encoded in previously computed representations is often underutilized during subsequent generation. We propose \\textbf{TransMem}, a lightweight inference-time parametric memory module that transforms sparse historical hidden states from a frozen LLM backbone into reusable memory representations. TransMem uses a lightweight gating network to dynamically apply the latent intervention to the current hidden states, without repeatedly encoding the preceding context. To learn transferable memory utilization rather than task-specific knowledge, we introduce evidence-conditioned self-distillation. A memory-augmented student processes the full context and matches the predictive distribution of an evidence-only teacher that shares the same frozen backbone. Experiments on LoCoMo, HotpotQA, and MemoryAgentBench demonstrate consistent improvements across different model architectures and scales. TransMem yields gains of 11.58--29.25 $F_1$ on LoCoMo and 10.20--13.03 $F_1$ on HotpotQA, while improving the average MemoryAgentBench accuracy from 29.54\\% to 40.00\\%. These results establish sparse historical hidden states as an effective and efficient memory substrate for long-context LLM agents. Our code is available at https://github.com/Haodong-Lei-Ray/TransMem.",
+      "authors": [
+        "Haodong Lei",
+        "Junming Liu",
+        "Yirong Chen",
+        "Pinlong Cai",
+        "Botian Shi",
+        "Ding Wang",
+        "Hongsong Wang"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.CL"
+      ],
+      "published": "2026-07-31T05:11:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.29032v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Inference-time parametric memory module for LLM agents",
+      "llm_evidence_cn": "LLM代理的推理时参数化记忆模块",
+      "llm_evidence": "LLM代理的推理时参数化记忆模块",
+      "canonical_evidence": "LLM代理的推理时参数化记忆模块",
+      "llm_tldr_en": "TransMem is a lightweight inference-time parametric memory module that transforms sparse historical hidden states from a frozen LLM backbone into reusable memory representations via a gating network, enabling memory-based reasoning without repeated context encoding.",
+      "llm_tldr_cn": "本文提出TransMem，一种轻量级推理时参数化记忆模块，将冻结LLM骨干的历史稀疏隐藏状态转化为可复用记忆表示，并通过门控网络动态作用于当前隐藏状态，免去重复编码前文。该方法支持可迁移的记忆利用，为LLM代理的记忆增强提供了高效方案。",
+      "llm_tldr": "本文提出TransMem，一种轻量级推理时参数化记忆模块，将冻结LLM骨干的历史稀疏隐藏状态转化为可复用记忆表示，并通过门控网络动态作用于当前隐藏状态，免去重复编码前文。该方法支持可迁移的记忆利用，为LLM代理的记忆增强提供了高效方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29377v1",
+      "source": "arxiv",
+      "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+      "abstract": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces \\emph{zero-token memory operations}: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interaction traces as its source of record. It organizes the traces in two complementary ways. An entity--context graph exposes connections across interactions, while a temporal hierarchy preserves conversational locality and session state. For each query, Zero-Mem weighs the two views, retrieves from both, and follows their structure to recover supporting relations or surrounding context. Deterministic calibration first discards conflicting evidence and then keeps the reader's answer grounded in the retrieved traces. Only the final-QA reader invokes an LLM. Across long-memory and long-context question-answering benchmarks, Zero-Mem achieves competitive performance while eliminating LLM calls and LLM-token consumption from memory operations. With the same final-QA reader and context budget, it reduces memory-operation time cost by 57.6\\% relative to the fastest compared baseline. Ablations support the contribution of the two views and their query-dependent coordination. Overall, the results show that structured agent memory need not generate an intermediate representation of the past. After peer review, the code and implementation details will be available at \\textcolor{blue}{https://github.com/TheMoon0815/Zero-mem}.",
+      "authors": [
+        "Yilin Xiao",
+        "Zhehan Zhu",
+        "Yujing Zhang",
+        "Jin Chen",
+        "Zijin Hong",
+        "Luyao Zhuang",
+        "Qinggang Zhang",
+        "Shengyuan Chen",
+        "Xiaocao Ouyang",
+        "Lingfei Ren",
+        "Xiao Huang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-31T13:01:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.29377v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "zero-token memory operations using entity-context graph and temporal hierarchy for LLM agents",
+      "llm_evidence_cn": "提出零令牌记忆操作，用实体上下文图和时间层次管理 LLM 智能体记忆",
+      "llm_evidence": "提出零令牌记忆操作，用实体上下文图和时间层次管理 LLM 智能体记忆",
+      "canonical_evidence": "提出零令牌记忆操作，用实体上下文图和时间层次管理 LLM 智能体记忆",
+      "llm_tldr_en": "Zero-Mem introduces zero-token memory operations for LLM agents, preserving original interaction traces and organizing them via an entity-context graph and temporal hierarchy, eliminating extra LLM calls for memory access.",
+      "llm_tldr_cn": "LLM 智能体需要记忆来保证长期行为一致性，但许多系统用额外的 LLM 调用来操作记忆，产生持续令牌和时间开销，且可能丢失原始证据。Zero-Mem 提出零令牌记忆操作：除最终问答外，任何步骤都不调用 LLM 或消耗输入输出令牌。它以原始交互轨迹为记录源，通过实体上下文图展示跨交互连接，并用时间层次组织轨迹，实现了无需生成的结构化记忆访问。该方法显著减少了记忆相关的推理开销，同时保留证据。",
+      "llm_tldr": "LLM 智能体需要记忆来保证长期行为一致性，但许多系统用额外的 LLM 调用来操作记忆，产生持续令牌和时间开销，且可能丢失原始证据。Zero-Mem 提出零令牌记忆操作：除最终问答外，任何步骤都不调用 LLM 或消耗输入输出令牌。它以原始交互轨迹为记录源，通过实体上下文图展示跨交互连接，并用时间层次组织轨迹，实现了无需生成的结构化记忆访问。该方法显著减少了记忆相关的推理开销，同时保留证据。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29433v1",
+      "source": "arxiv",
+      "title": "Know It, Act on It: Investigating Memory Utilization in LLM Personalization",
+      "abstract": "As large language model (LLM) agents evolve into personalized companions, memory has emerged as a core capability. However, LLMs face a knowledge utilization problem: they may fail to act on relevant user preferences even when they are fully present in context. When an agent fails to tailor its response in a context where previously shared user preferences should matter, it is unclear whether the model failed to remember that information or remembered it but failed to use it. To isolate this breakdown, we introduce a decoupled evaluation paradigm that administers paired Know and Act tests to the same user preference. We conduct large-scale experiments across 16 systems and five memory architectures, evaluating 1,000 preferences embedded at three levels of expression strength. Our results show a large gap between Know and Act outcomes: agents often pass the recall test for a user preference but fail to reflect that same preference in the paired behavioral scenario. While memory architectures reduce this gap, utilization remains especially weak for health and therapy-related preferences, where failures to act carry the greatest real-world stakes.",
+      "authors": [
+        "Zhaoxin Feng",
+        "Jianfei Ma",
+        "Emmanuele Chersoni"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-31T13:57:21+00:00",
+      "link": "https://arxiv.org/pdf/2607.29433v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "decoupled Know/Act evaluation paradigm for memory utilization in LLM personalization",
+      "llm_evidence_cn": "针对LLM个性化中记忆利用的解耦评估范式",
+      "llm_evidence": "针对LLM个性化中记忆利用的解耦评估范式",
+      "canonical_evidence": "针对LLM个性化中记忆利用的解耦评估范式",
+      "llm_tldr_en": "Proposes a decoupled evaluation paradigm with paired Know and Act tests to isolate whether LLM agents fail to remember preferences or fail to use them, evaluated across 16 systems and five memory architectures.",
+      "llm_tldr_cn": "针对LLM个性化场景中记住却不用的问题，论文提出解耦评估范式，对同一用户偏好分别进行Know与Act测试，以区分记忆缺失与记忆未利用。在16个系统和五种记忆架构上评估1000条偏好，揭示了记忆存储与记忆利用之间的断裂，为衡量agent记忆能力提供了可复用的评测方法。",
+      "llm_tldr": "针对LLM个性化场景中记住却不用的问题，论文提出解耦评估范式，对同一用户偏好分别进行Know与Act测试，以区分记忆缺失与记忆未利用。在16个系统和五种记忆架构上评估1000条偏好，揭示了记忆存储与记忆利用之间的断裂，为衡量agent记忆能力提供了可复用的评测方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29600v1",
+      "source": "arxiv",
+      "title": "HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation",
+      "abstract": "Vision-and-language navigation (VLN) enables robots to follow instructions in previously unseen environments. Recently, a training-free paradigm has emerged: the robot queries a multimodal LLM to understand its observations and plan the next action. However, long-horizon navigation based on either image streams or dense map inevitably introduces a growing memory and reasoning bottleneck. We present HAM-VLN, a decision-coupled, agent-authored memory that equips the robot with a persistent, depth-grounded world graph. In the same model call used to select the next action, HAM-VLN also records semantic and reflective information---including room type, objects, navigation progress, and failure notes. Recent waypoints remain verbatim within a bounded window, while older history re-enters the context only through retrieval scored by relevance, recency, and salience, together with one-hop topological expansion. This design requires no additional LLM calls beyond the per-waypoint decision. Compared to previous methods, HAM-VLN not only improves various navigation metrics but also reduces the context length by more than 65%. Specifically, HAM-VLN achieves 61.0% Success Rate (SR) on VLN-CE R2R, 52.7% SR on VLN-CE RxR, and 79.7% SR on HM3D-v2 ObjectNav without any training.",
+      "authors": [
+        "An Liu",
+        "Bingxi Liu",
+        "Hongyu Ding",
+        "Yixuan Jiang",
+        "Yaran Chen",
+        "Fulin Tang",
+        "Cong Leng",
+        "Hong Zhang",
+        "Jian Cheng"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-31T16:32:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.29600v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Hierarchical agentic memory for zero-shot vision-language navigation",
+      "llm_evidence_cn": "用于零样本视觉语言导航的层级智能体记忆",
+      "llm_evidence": "用于零样本视觉语言导航的层级智能体记忆",
+      "canonical_evidence": "用于零样本视觉语言导航的层级智能体记忆",
+      "llm_tldr_en": "HAM-VLN equips a multimodal LLM robot with a decision-coupled, depth-grounded world graph memory. It records semantic and reflective cues during action selection, mitigating memory and reasoning bottlenecks in long-horizon navigation.",
+      "llm_tldr_cn": "长时程视觉语言导航中，基于图像流或稠密地图的现有方法会带来记忆与推理瓶颈。HAM-VLN提出决策耦合、由智能体自主构建的持久世界图记忆，在与动作选择同一次模型调用中记录语义和反思信息。该记忆包含房间类型、物体、导航进度和失败记录，同时保留最近的路径点。实验表明该方法在零样本导航中显著缓解了记忆瓶颈，提升了复杂环境的导航表现。",
+      "llm_tldr": "长时程视觉语言导航中，基于图像流或稠密地图的现有方法会带来记忆与推理瓶颈。HAM-VLN提出决策耦合、由智能体自主构建的持久世界图记忆，在与动作选择同一次模型调用中记录语义和反思信息。该记忆包含房间类型、物体、导航进度和失败记录，同时保留最近的路径点。实验表明该方法在零样本导航中显著缓解了记忆瓶颈，提升了复杂环境的导航表现。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29104v1",
+      "source": "arxiv",
+      "title": "Reproducing LightMem: Naive RAG Is Just as Good for Memory Management",
+      "abstract": "Long-term conversational agents require access to information from earlier interactions, such as a user's preferences, past requests, or previously mentioned facts. Repeatedly providing the full dialogue history can be expensive as conversations grow, so many memory approaches instead transform past interactions into compact entries that can be retrieved when needed. LightMem is a recent lightweight memory-management approach that reports strong effectiveness while maintaining relatively low construction cost. However, it still relies on a separate constructed memory representation and is evaluated with only one retriever, leaving unclear how sensitive its results are to retriever choice and whether memory construction discards answer-relevant information.   In this study, we reproduce LightMem and compare it with Naive RAG, which retrieves directly from raw user turns. We recover LightMem's main configuration trend, but find that retriever choice is a major source of performance variation: changing only the retriever over a fixed LightMem store shifts answer accuracy from 58.1% to 75.5%. Constructed memories also do not consistently outperform raw-turn retrieval. Naive RAG generally performs better at matched retrieval depths, whereas LightMem performs better mainly under tight answering-token budgets. Oracle evaluation further shows that memory construction removes some answer-relevant information.   Overall, LightMem offers a context-efficiency trade-off rather than a general advantage over Naive RAG. Its value depends on the retriever and available token budget, motivating future work on retrieval, reranking, query formulation, and their interaction with raw and constructed memory representations.",
+      "authors": [
+        "Yongjie Zhou",
+        "Shuai Wang",
+        "Bevan Koopman",
+        "Guido Zuccon"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-07-31T07:33:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.29104v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Memory management evaluation and reproduction",
+      "llm_evidence_cn": "记忆管理评测与复现",
+      "llm_evidence": "记忆管理评测与复现",
+      "canonical_evidence": "记忆管理评测与复现",
+      "llm_tldr_en": "This paper reproduces LightMem, a lightweight memory-management approach, and finds that naive RAG performs equally well, questioning whether complex memory construction is necessary and highlighting sensitivity to retriever choice in memory evaluation.",
+      "llm_tldr_cn": "本文复现了轻量级记忆管理方法LightMem，并发现朴素RAG在记忆管理上表现相当，表明复杂的记忆构造可能并非必要。研究还揭示了记忆评测对检索器选择的敏感性，对记忆管理策略和评测方式有重要参考价值。",
+      "llm_tldr": "本文复现了轻量级记忆管理方法LightMem，并发现朴素RAG在记忆管理上表现相当，表明复杂的记忆构造可能并非必要。研究还揭示了记忆评测对检索器选择的敏感性，对记忆管理策略和评测方式有重要参考价值。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29440v1",
+      "source": "arxiv",
+      "title": "Beyond Retrieval: Analytic Memory for Multimodal Agents",
+      "abstract": "Long-term multimodal memory must support not only retrieving relevant information but also computing over observations accumulated across interactions. Existing systems largely emphasize \\emph{retrieval memory}, organizing interaction histories through summaries and indexes to return query-relevant information at multiple granularities, from high-level abstractions to underlying records. In this paper, we formulate \\emph{analytic memory} as a complementary abstraction that organizes recurring multimodal observations into queryable structures supporting filtering, aggregation, ranking, and temporal comparison. We present AdaMM, a framework that jointly supports retrieval and analytic memory. Rather than relying on application-defined schemas, AdaMM extracts provenance-linked attribute-value observations from dialogue, images, and contextual metadata, discovers recurring field structures, and materializes them for analytical access. At inference time, a memory-aware planner decomposes queries into retrieval and analytic operations and routes each operation to the appropriate tools. Experiments on two long-term multimodal memory benchmarks, MemEye and MemGallery, show that AdaMM improves performance by up to 11.3\\% and 7.3\\%, respectively.",
+      "authors": [
+        "Zhoujin Tian",
+        "Yao Tian",
+        "Hao Zhang",
+        "Cheng Chen",
+        "Yakun Li",
+        "Lei Zhang",
+        "Xiaofang Zhou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-31T14:07:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.29440v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "analytic memory abstraction supporting computation over multimodal observations, complementing retrieval memory",
+      "llm_evidence_cn": "提出超越检索的分析记忆抽象，支持过滤聚合和时序比较",
+      "llm_evidence": "提出超越检索的分析记忆抽象，支持过滤聚合和时序比较",
+      "canonical_evidence": "提出超越检索的分析记忆抽象，支持过滤聚合和时序比较",
+      "llm_tldr_en": "Formulates analytic memory as a complementary abstraction for multimodal agents, organizing observations into queryable structures supporting filtering, aggregation, ranking, and temporal comparison alongside retrieval.",
+      "llm_tldr_cn": "论文指出长期多模态记忆不应只支持检索，还应支持对累积观测的计算操作。作者形式化分析记忆这一互补抽象，将重复出现的多模态观察组织为可查询结构，支持过滤、聚合、排序与时间比较，并提出AdaMM框架同时支持检索记忆与分析记忆。该方法不依赖应用定义的模式，从数据中提取溯源与结构，拓展了agent记忆的能力边界。",
+      "llm_tldr": "论文指出长期多模态记忆不应只支持检索，还应支持对累积观测的计算操作。作者形式化分析记忆这一互补抽象，将重复出现的多模态观察组织为可查询结构，支持过滤、聚合、排序与时间比较，并提出AdaMM框架同时支持检索记忆与分析记忆。该方法不依赖应用定义的模式，从数据中提取溯源与结构，拓展了agent记忆的能力边界。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.29167v1",
+      "source": "arxiv",
+      "title": "Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory",
+      "abstract": "Long-term memory lets large language model(LLM) agents reuse prior preferences and work flows, but it also turns untrusted observations into persistent action context. We identify memory provenance laundering: during LLM-based memory consolidation, an external observation may be rewritten as apparent user history or workflow support, preserving an action trigger while erasing the low-trust source that should limit its authority. Existing prompt filters, content sanitizers, and tool guards do not enforce source-authority non-amplification after lossy memory consolidation. We formalize this boundary and instantiate it as Provenance-Preserving Memory Fire wall (PPMF), a lightweight memory middleware that preserves platform-maintained provenance and authorizes tool calls by matching action risk to the authority of action-relevant memories. In our schema-grounded evaluation with fixed risk policies, vulnerable consolidated memories reach up to 1.000 attack success rate(ASR); with intact platform-maintained provenance, confirmation, and risk labels, no evaluated unauthorized high-risk action passes the PPMF gate while confirmed benign actions and targeted low-risk memory use remain executable.",
+      "authors": [
+        "Jinghan Xu",
+        "Yiyong Xiao",
+        "Wanru Shao",
+        "Hankai Liu",
+        "Xinjin Li"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-31T08:46:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.29167v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "provenance-preserving persistent memory firewall for LLM agents",
+      "llm_evidence_cn": "维护持久记忆来源权威的轻量级记忆中间件",
+      "llm_evidence": "维护持久记忆来源权威的轻量级记忆中间件",
+      "canonical_evidence": "维护持久记忆来源权威的轻量级记忆中间件",
+      "llm_tldr_en": "Identifies memory provenance laundering in LLM agents and presents PPMF, a lightweight memory middleware that enforces source-authority non-amplification for persistent memory after lossy consolidation.",
+      "llm_tldr_cn": "论文识别出LLM智能体持久记忆中的来源洗白问题：外部观察在记忆整合时可能被改写成用户历史，却删除低可信来源。现有过滤器无法在压缩记忆后保证来源权威不放大，因此提出保留来源的记忆防火墙PPMF，作为轻量中间件约束记忆的权威边界，提升agent长期记忆的安全性。",
+      "llm_tldr": "论文识别出LLM智能体持久记忆中的来源洗白问题：外部观察在记忆整合时可能被改写成用户历史，却删除低可信来源。现有过滤器无法在压缩记忆后保证来源权威不放大，因此提出保留来源的记忆防火墙PPMF，作为轻量中间件约束记忆的权威边界，提升agent长期记忆的安全性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
