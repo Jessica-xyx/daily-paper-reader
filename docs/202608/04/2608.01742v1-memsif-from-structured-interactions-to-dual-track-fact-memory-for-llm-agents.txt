@@ -1,0 +1,1234 @@
+Title: MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents
+
+URL Source: https://arxiv.org/pdf/2608.01742v1
+
+Published Time: Tue, 04 Aug 2026 02:18:59 GMT
+
+Number of Pages: 28
+
+Markdown Content:
+# MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents 
+
+## YuFei Luo 1, Xiucheng Xu 2, Zhen Yang 1∗
+
+> 1
+
+Beijing University of Posts and Telecommunications 
+
+> 2
+
+University of Chinese Academy of Sciences luoyf@bupt.edu.cn, xuxiucheng24s@ict.ac.cn, yangzhenyz@bupt.edu.cn 
+
+Abstract 
+
+Long-term memory is critical for LLM agents operating over long-horizon interactions. However, several persistent limita-tions of existing memory systems can be traced to two recur-ring misalignment patterns in long-term interaction settings: Temporal–Structural Misalignment (TSM) and Delayed Util-ity Manifestation (DUM). TSM arises when temporal prox-imity does not reliably align with topical or event-level relat-edness, whereas DUM arises when write-time salience does not reliably predict future query utility. To mitigate these misalignment patterns, we propose MemSIF (Memory with Structured Interactions and Facts), a structured interaction-to-fact memory framework. Structured Interaction Memory or-ganizes raw interactions into Topical Segments that preserve local topical coherence and Event Trajectories that maintain cross-time event continuity. Dual-Track Fact Memory uses two complementary tracks: CoreFact memory consolidates stable, schema-guided information at write time, whereas ActiveFact memory forms facts on demand and promotes those supported by multiple historical sources and recurring query demand for reuse. Experiments on LoCoMo and LongMemEval-S across five backbone LLMs show that MemSIF achieves the high-est Total ACC in all settings, outperforming the strongest baseline by 2.29%–8.79% on LoCoMo and 2.87%–6.15% on LongMemEval-S. These results support the effectiveness of combining Structured Interaction Memory with Dual-Track Fact Memory to mitigate TSM and DUM. Code is available at https://github.com/luoyufeihaha/MemSIF. 
+
+## 1 Introduction 
+
+LLM agents have evolved from single-turn response systems into systems capable of supporting long-horizon tasks (Xia et al. 2025; Singh et al. 2025; Schmidgall et al. 2025). As interaction histories accumulate, processing them entirely within the context window becomes not only costly but also potentially detrimental to performance (Liu et al. 2024; Du et al. 2025; Pollertlam and Kornsuwannawit 2026). Building retrievable and updatable external memory is thus central to extending agent capabilities (Xiong et al. 2026; Yu et al. 2026; Zhang et al. 2025b; Zheng et al. 2026). Existing memory systems manage long-range context through summarization, retrieval, or structured indexing, re-ducing context overhead and improving access to histori-cal evidence (Zhong et al. 2024; Chhikara et al. 2025; Xu 
+
+> ∗
+
+Corresponding author. (a) Temporal –Structural Misalignment    
+
+> Module A
+> design notes Dinner
+> plan?
+> How do
+> Ifix
+> the bug?
+> Meeting
+> schedule
+> Follow -up on
+> Module A bug
+> ... ...
+
+...      
+
+> (b) Delayed Utility Manifestation
+> (1) Write -time interactions
+> AI bought XPS parts
+> from Parts -Store.
+> Later ...
+> (2) Query -time utility
+> Where can I buy
+> XPS parts?
+> MemSIF on subset Best baseline on subset Other baselines on subset Full -set Total ACC
+
+# .1TiT1iT +2iT +nT  
+
+> Awrite query tt
+
+Figure 1: TSM and DUM as recurring mismatch patterns, with diagnostic-subset results on Qwen3-4B. Subset con-struction details are provided in Appendix A. et al. 2026b). Recent studies identify two broad limitations in current long-term memory systems. The first concerns the organization of historical interactions, including topic fragmentation and difficulty in linking multi-hop evidence distributed across time (Zhang et al. 2026; Tan et al. 2025; Gutiérrez et al. 2024). The second concerns the assessment of information utility, including the premature removal of potentially useful information and the need to update stored information as user states evolve (Zhong et al. 2024; Cham 2026; Huang et al. 2026). These limitations are not isolated failures of specific systems. Rather, they reflect two recur-ring systematic misalignments in long-term memory design: Temporal–Structural Misalignment (TSM), in which tempo-ral proximity does not reliably align with topical or event-level relatedness, and Delayed Utility Manifestation (DUM), in which write-time salience does not reliably predict the value of information for future queries. Figure 1(a) illustrates the first mismatch pattern, TSM. Temporally adjacent conversation turns may address unre-lated topics, whereas non-contiguous turns may represent different stages of the same evolving event or task. Conse-quently, predefined temporal boundaries may either group unrelated topics within the same memory unit or separate related evidence across multiple units, making it difficult to preserve both local topical coherence and cross-time event continuity. Existing methods seek to improve the organi-zation of historical interactions using hierarchical memory arXiv:2608.01742v1 [cs.AI] 3 Aug 2026 structures, as in xMemory (Hu et al. 2026), or self-contained memory entries, as in SimpleMem (Liu et al. 2026). How-ever, because these approaches still operate over predefined memory units, evidence associated with the same event may remain dispersed across disconnected entries. The results on the Non-Contiguous Evidence (NCE) subset in Figure 1(a) further indicate that existing systems remain limited in their ability to link related evidence distributed across time. Figure 1(b) illustrates the second mismatch pattern, DUM. The utility of stored information may change as subsequent interactions unfold and task demands change. Because fu-ture utility is unknown at write time, information that appears unimportant may become critical for answering later queries, making it difficult for a memory system to reliably determine which information should be retained or consolidated into reusable facts. Write-time consolidation methods, including Mem0 (Chhikara et al. 2025) and MemoryOS (Kang et al. 2025), must select or compress information before future queries are known. They face a trade-off: aggressive filtering may discard information that later becomes critical, whereas conservative retention may preserve large amounts of re-dundant detail. Query-time methods, including CoM (Xu et al. 2026c) and GAM (Yan et al. 2025), defer evidence selection until a query is observed and can recover initially low-salience information through evidence-chain organiza-tion or deep retrieval. However, the success of these query-time methods depends on retrieving the relevant raw inter-actions for each query. Because the recovered evidence is used only for the current query rather than persistently con-solidated, the system must retrieve it again for subsequent queries, leaving future reuse vulnerable to retrieval misses. Results on the Low-Salience, High-Utility (LSHU) subset in Figure 1(b) further indicate that existing systems remain limited in their ability to retain, recover, reuse information whose value becomes apparent only after write time. Existing long-term memory approaches typically optimize either interaction organization or fact construction indepen-dently. However, improving interaction organization cannot protect low-salience evidence from removal at write time, whereas mechanisms that account for utility assessment can-not repair evidence chains broken by temporal segmentation. To jointly mitigate TSM and DUM, we propose MemSIF 
+
+(Memory with Structured Interactions and Facts), a struc-tured interaction-to-fact memory framework that couples in-teraction organization with fact construction. MemSIF con-sists of two modules: Structured Interaction Memory and Dual-Track Fact Memory. To mitigate TSM, Structured In-teraction Memory organizes interaction history into Topi-cal Segments and Event Trajectories; the former preserves local topic coherence, while the latter maintains cross-time event continuity. Building on Structured Interaction Memory, Dual-Track Fact Memory mitigates DUM through two tracks: CoreFact and ActiveFact. CoreFact consolidates schema-guided stable information whose long-term value is clear at write time. ActiveFact forms candidate facts on demand when their utility becomes evident through queries. These candidates are promoted to reusable entries when supported by multiple historical sources and recurring query demand. Experiments across five backbone LLMs show that Mem-SIF achieves the highest Total ACC in every setting on Lo-CoMo and LongMemEval-S, outperforming the strongest baseline by 2.29%–8.79% and 2.87%–6.15%, respectively. On the NCE and LSHU diagnostic subsets shown in Figure 1, 
+
+MemSIF outperforms the strongest baseline by 8.30% and 10.48%, respectively. These targeted results further support its effectiveness in mitigating TSM and DUM. Our contribu-tions are summarized as follows: 
+
+• We characterize TSM and DUM as two recurring mis-alignment patterns in long-term Agent memory, validate them through empirical diagnostics, and construct tar-geted diagnostic subsets for evaluation. 
+
+• We propose MemSIF , a structured interaction-to-fact memory framework that jointly addresses TSM and DUM through structured interaction organization and dual-track fact memory. 
+
+• We evaluate MemSIF across two long-term memory QA benchmarks and five backbone LLMs, demonstrat-ing consistent Total ACC improvements under all set-tings, mechanistic evidence, and a favorable accuracy– efficiency trade-off. 
+
+## 2 Related Work 
+
+2.1 Interaction Organization in Agent Memory 
+
+Interaction organization concerns how agent memory sys-tems segment, index, and retrieve historical interactions at different granularities (Park et al. 2023; Packer et al. 2023; Zhong et al. 2024; Lu et al. 2023). Fine-grained approaches use messages, turns, or short spans as memory units (Shinn et al. 2023; Zhao et al. 2024); for example, A-Mem (Xu et al. 2026b) constructs a MemoryNote for each turn. Coarse-grained approaches organize larger contexts, such as the sliding-window entries in SimpleMem (Liu et al. 2026) and the Pages and Sessions in MemoryOS (Kang et al. 2025). Fixed granularities make construction tractable and retrieval efficient. Recent work introduces richer structures, includ-ing xMemory’s hierarchical memory components (Hu et al. 2026), SEEM’s combination of relational fact graphs with episodic event frames (Lu et al. 2026), Wu et al.’s (Wu et al. 2026) Event Progression Graph and Topic Associa-tive Network, and SAGE’s (Wang et al. 2026) graph memory refinement through reader–writer feedback. Fixed-granularity units may nevertheless misalign with in-teraction structure. Local topic shifts occur within a window or session, while related event evidence recur across tempo-rally separated units. Structured methods relax fixed bound-aries through hierarchical aggregation, event modeling, con-solidation, or graph evolution, yet they often treat interaction organization and fact construction as separate design stages. MemSIF instead jointly organizes interactions and constructs facts within a unified framework, coupling contiguous Topi-cal Segments with non-contiguous Event Trajectories so that fact construction draws on both local coherence and cross-time evidence continuity. 
+
+2.2 Fact Construction in Agent Memory 
+
+Fact construction concerns when agent memory systems con-solidate information into reusable facts and how those facts Travel 
+
+CoreFact Memory ActiveFact Memory 
+
+> Candidate Clusters
+> (Subject -Specific)
+> Candidate Promotion
+
+Structured Interaction Memory  
+
+> Mitigating Temporal --Structural Misalignment (TSM)
+
+Dual -Track Fact Memory  
+
+> Mitigating Delayed Utility Manifestation (DUM)
+> Travel
+
+Interaction History 
+
+Topical Segment Construction Event Trajectory Aggregation 
+
+Memory Retrieval and 
+
+Answer Generation 
+
+> Generate Answer
+> Query -Local
+> Evidence
+
+# ...  
+
+> TSM: Temporal proximity may not
+> reliably reflect topical or event -
+> level relatedness.
+> Preserve Local Topical Coherence
+> Double -Threshold
+> Split / Merge
+> : Travel
+> : Pr oject
+
+# ... 
+
+# ... ... Cross -Time 
+
+> Event
+> Continuity
+> Maintain Cross -Time Event Continuity
+> Travel
+> Trajectory
+> Trace Back to
+> Fact -Level
+> Evidence Sufficient?
+> DUM: Write -time salience may not
+> reliably predict future query utility.
+
+ActiveFact Formation  
+
+> From :Schema -Guided
+> CoreFact Consolidation
+> Yes No
+> Candidate Accumulation
+> Joint Retrieval from
+> AND
+> Retrieved
+> facts
+
+   
+
+> •Fact Statements
+> •Triggering Queries
+> •Historical Sources Retained Across Queries
+> Persist / Update
+> into act
+
+
+
+> Incremental
+> Update 1
+
+( , , )Tu u=  
+
+> User Query
+> topic -coherent Blue: selected Topical
+> Segments; gray: other
+> Topical Segments 1
+
+u2u3uTuint ( , )= fact core act 
+
+( , )= 1S2Sact 
+
+core 
+
+      
+
+> Complementary persistent tracks, jointly retrieved at query time
+> Query -time ·Demand -driven Write -time ·Schema -guided
+> Multiple historical sources AND
+> Recurring query demand
+> →Prefers quiet accommodation
+> Promoted for reuse across later queries
+> “Works as a designer ”
+> →Occupation = Designer
+> Reusable value identifiable at write time int
+> 
+> Query -time
+> Demand -
+> driven
+> trace -back
+> Travel
+> Pet
+> Pet
+
+# ... 
+
+> Travel
+> Project
+
+# ...  
+
+> Project
+> Travel
+> After
+> answer
+> generation core
+
+and act 
+
+ int 
+
+123Query Demand q 
+
+> Source Support s
+> 
+> i
+
+S jE 1Et
+
+qFigure 2: Overview of MemSIF . Structured Interaction Memory and Dual-Track Fact Memory jointly address TSM and DUM. are updated as user states and task demands evolve (Zhang et al. 2025b; Huang et al. 2026). Existing methods differ in when they assess memory value and how they structure the resulting facts (Cham 2026; Xiong et al. 2026). Write-time approaches (Modarressi et al. 2023) construct memory be-fore queries are known. Mem0 (Chhikara et al. 2025) extracts and consolidates salient information, while SimpleMem (Liu et al. 2026) improves fact usability through self-contained memory formulation. Query-time approaches defer evidence selection and composition until a query is observed (Qian et al. 2024; Sarthi et al. 2024); for example, CoM (Xu et al. 2026c) and GAM (Yan et al. 2025) retrieve and combine query-relevant evidence on demand. Structure-constrained methods guide construction with predefined memory types or hierarchical organizations, such as Profile and Knowledge memories in MemoryOS (Kang et al. 2025) and the compo-nent hierarchy in xMemory (Hu et al. 2026). Each strategy introduces a trade-off. Write-time meth-ods create compact reusable facts but may discard details whose utility appears later. Query-time methods recover task-relevant evidence but primarily construct query-specific con-texts rather than persist reusable facts. Structure-constrained methods improve consistency but may not accommodate fu-ture needs beyond their predefined structures. MemSIF ad-dresses these trade-offs through Dual-Track Fact Memory. CoreFact memory consolidates write-time facts, while Ac-tiveFact memory forms facts on demand when their utility emerges only later and traces back to Structured Interaction Memory when fact-level evidence is insufficient. This design couples interaction organization with fact construction, mak-ing the joint treatment of TSM and DUM its central focus. 
+
+## 3 Method 
+
+3.1 Overview 
+
+As shown in Figure 2, MemSIF is a structured interaction-to-fact memory framework for long-term agent memory. Given an interaction history H, MemSIF constructs Structured In-teraction Memory Mint = ( S, E) and maintains Dual-Track Fact Memory Mfact = ( Mcore , Mact ). Structured Interac-tion Memory organizes H into Topical Segments Si ∈ S and Event Trajectories Ej ∈ E to preserve local topic boundaries and cross-time event continuity, addressing TSM. Dual-Track Fact Memory mitigates DUM through two complementary tracks. CoreFact memory consolidates stable, schema-guided information whose reusable value can be identified at write time, whereas ActiveFact memory forms candidate facts on demand when their utility becomes evident through subse-quent queries. Both tracks ultimately maintain persistent, updatable facts but differ in the timing and evidence used for consolidation. Throughout this section, a fact refers to a normalized, provenance-linked memory record rather than an externally verified proposition. 
+
+3.2 Structured Interaction Memory 
+
+To mitigate TSM without relying on predefined temporal boundaries, Structured Interaction Memory constructs two complementary representations from raw interaction history: Topical Segments and Event Trajectories. Given an interaction history H = ( u1, u 2, . . . , u T ), where each ut is a single message, MemSIF constructs Structured Interaction Memory Mint = ( S, E). A Topical Segment 
+
+Si ∈ S is a temporally contiguous, topic-coherent interaction unit. An Event Trajectory Ej ∈ E associates non-contiguous Topical Segments belonging to the same evolving event or task. These two structures jointly organize H for downstream fact construction. MemSIF uses a shared matching function for segment construction and trajectory aggregation: 
+
+ϕ(A, B ) = αs sem (A, B ) + (1 − α)J(KA, KB ), (1) where A and B can be messages, Topical Segments, or Event Trajectories. The weight α balances semantic similarity and entity overlap. The semantic score ssem is normalized co-sine similarity and J computes Jaccard overlap between key-entity sets. For composite units such as segments and tra-jectories, text embeddings are mean-pooled from constituent messages and entity sets are unioned. After each append or assignment, the affected unit’s embedding and entity set are updated accordingly. 
+
+Topical Segment Construction. MemSIF processes mes-sages chronologically. The first message initializes S1. For each subsequent message ut, MemSIF compares it with the current segment Si using ϕ(ut, S i) and applies a double-threshold rule with τsplit < τ merge . If ϕ(ut, S i) ≥ τmerge ,the message is appended to Si; if ϕ(ut, S i) ≤ τsplit , it starts a new segment. Scores between thresholds invoke an LLM to determine whether the message continues the topic; if it does, the message is appended to Si, otherwise a new segment is created. This design delegates only ambiguous boundary decisions to the LLM, keeping construction efficient while preserving topic coherence. 
+
+Event Trajectory Aggregation. MemSIF next processes Topical Segments chronologically. For each Si, it retrieves the top-K candidate trajectories according to ϕ(Si, E j ) and uses an LLM to assess event identity, task continuity, and state consistency. If multiple trajectories are compatible, MemSIF selects the highest-scoring one and appends Si to it. If no trajectory is compatible, Si initializes a new trajectory. 
+
+3.3 Schema-Guided CoreFact Consolidation 
+
+CoreFact memory Mcore consolidates information whose reusable value can be identified at write time. Converting Structured Interaction Memory contents into fact memory can introduce redundancy and increase retrieval cost; Mem-SIF adopts a configurable CoreFact schema Ycore that spec-ifies compact, reusable fact types for the target setting, such as user preferences and task states. The schema is specified before memory construction and fixed within each setting. An LLM first extracts schema-eligible candidate facts from Topical Segments. Event Trajectories then provide cross-time evidence to supplement or reconcile facts that span multiple segments. Each CoreFact entry is represented as f core = ⟨subject , type , stmt , meta ⟩, where subject is the described entity, type ∈ Y core is its schema category, and stmt is the normalized statement. The metadata records the timestamp, source provenance, and validity status. Before writing, MemSIF retrieves CoreFact entries using subject, type, and semantic similarity. A schema-constrained LLM selects one of four operations. Add creates a new fact; 
+
+Update integrates compatible new evidence into an existing fact; Merge consolidates duplicate or near-duplicate entries; and Supersede marks an outdated fact as replaced while retaining it for historical queries. Information outside Ycore 
+
+or uncertain at write time remains in Structured Interaction Memory as recoverable evidence for ActiveFact formation. 
+
+3.4 Query-Driven ActiveFact Formation 
+
+ActiveFact memory Mact targets information whose reusable value is uncertain at write time and may become evident through subsequent queries. It operates through four stages: query-local extraction, post-answer candidate accu-mulation, candidate promotion, and persistent maintenance. Query-local evidence can support the current answer without immediate consolidation, whereas candidates supported by multiple historical sources and recurring query demand are promoted into persistent entries for direct reuse, rather than requiring repeated reconstruction from raw history. 
+
+Query-Local Extraction and Candidate Accumulation. 
+
+When the retrieved fact-level evidence is insufficient for a query qt, MemSIF retrieves relevant Topical Segments and Event Trajectories and extracts query-local evidence. Each evidence entry contains a normalized statement, subject, and source provenance. It supports the generation of the current answer at but is not written directly into ActiveFact memory. Only after at has been generated does each evidence entry become eligible for candidate accumulation. Mem-SIF organizes candidate facts into subject-specific clusters 
+
+Ck = ( sk, Xk, Qk, Rk), where sk denotes the normalized subject, Xk contains deduplicated fact statements, Qk con-tains distinct triggering queries after near-duplicate removal, and Rk contains identifiers of distinct historical interac-tion units in the evidence provenance. An evidence entry is merged into an existing cluster when its subject matches sk
+
+and its statement is compatible with the accumulated state-ments in Xk; otherwise, it initializes a new cluster. Candidate updates use only the extracted statement, its source provenance, and the triggering query qt. Query-local evidence is cleared after each answer, whereas candidate clusters are retained across queries within the same interac-tion history, allowing historical support and query demand to accumulate over time. 
+
+Candidate Promotion and Maintenance. As candidate clusters accumulate, MemSIF evaluates each cluster using two signals: source support and query demand: 
+
+Score src (Ck) = (1 − 1/|R k|) · Coh( Xk), (2) 
+
+Score qry (Ck) = (1 − 1/|Q k|) · Coh( Qk). (3) 
+
+|R k| and |Q k| denote the numbers of distinct historical sources and retained triggering queries, respectively. Coh( ·)
+
+denotes the average pairwise normalized cosine similarity in a set; for a singleton set, Coh( ·) = 1 . The source score captures the amount and consistency of historical support, whereas the query score captures repeated and semantically coherent demand. The promotion decision is defined as:             
+
+> P(Ck) = 1[Score src (Ck)≥θs∧Score qry (Ck)≥θq].
+
+(4) A candidate is promoted only when it is both historically supported and repeatedly demanded. When P (Ck) = 1 ,MemSIF normalizes the cluster into a promoted ActiveFact entry ˜f act  
+
+> k
+
+= ⟨subject , stmt , meta ⟩, where subject = sk, stmt is the normalized statement synthesized from Xk, and meta records provenance, timestamps, and triggering-query refer-ences. The resulting entry is stored in ActiveFact memory Method Qwen3-4B Qwen3-32B DeepSeek-v4-pro S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total Full-Context 78.94 48.06 38.77 45.74 62.89 85.04 65.09 59.41 59.85 74.47 85.48 75.99 78.53 63.48 80.92 Naive RAG 69.91 37.59 40.00 29.17 55.25 77.85 46.90 53.06 39.04 64.63 80.45 50.34 70.98 51.76 71.18 Mem0 59.48 46.10 26.25 35.42 48.64 57.56 45.46 47.69 44.38 52.47 65.48 48.82 51.89 47.33 58.47 MemoryOS 64.93 43.26 23.13 41.67 50.84 71.77 48.91 33.94 41.64 57.86 81.76 55.71 38.66 47.44 65.86 MemGAS 70.58 45.01 33.94 40.59 56.43 74.15 50.32 41.71 51.01 61.62 82.63 56.07 46.48 56.84 68.62 LightMem 76.54 53.19 53.12 37.50 64.98 83.89 61.70 68.13 43.75 74.06 83.01 80.47 82.05 63.85 81.15 GAM 77.73 55.35 49.39 41.15 65.48 87.15 68.52 64.31 58.85 77.21 88.43 73.09 83.41 62.79 82.97 CoM 80.54 59.39 44.34 43.10 66.83 86.02 66.67 65.00 56.25 76.26 84.42 69.15 77.88 55.21 78.44 xMemory 75.36 56.03 34.38 45.83 61.48 80.09 50.10 55.26 52.01 67.70 81.72 66.66 70.41 62.07 75.38 SimpleMem 73.67 59.89 35.18 44.76 61.36 87.23 63.09 57.29 55.18 74.61 90.11 75.49 80.01 60.02 83.45 MemSIF 85.44 61.96 69.49 50.38 75.62 † 91.20 68.79 79.13 65.62 82.99 † 91.79 78.29 82.59 65.30 85.74 †
+
+Table 1: Main experimental results on LoCoMo. Results report mean ACC (%) over three runs. Bold and underlining denote the best and second-best results in each column. For Total ACC, † shows the 95% paired-bootstrap confidence interval for MemSIF’s improvement over the strongest baseline under the same backbone excludes zero. 
+
+Method Qwen3-4B Qwen3-32B DeepSeek-v4-pro S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total Full-Context 44.19 29.95 24.47 35.35 33.84 52.83 40.93 39.99 59.24 47.28 61.70 47.80 46.71 69.18 55.22 Naive RAG 62.25 44.56 23.46 51.25 45.53 73.97 54.06 45.56 75.29 61.37 80.53 59.32 53.83 70.01 66.24 LightMem 75.59 47.23 56.02 69.59 62.08 81.17 53.06 62.11 74.28 67.73 84.50 56.83 68.71 79.36 72.32 GAM 70.52 51.78 35.47 61.02 54.77 76.87 56.25 43.22 69.33 61.31 79.50 60.50 49.03 73.62 65.47 CoM 74.75 51.28 54.48 71.41 62.72 80.52 60.13 62.77 72.87 69.30 83.35 63.50 62.21 77.56 71.64 SimpleMem 70.98 50.22 52.28 68.27 60.17 78.40 58.83 65.10 56.11 66.35 84.57 65.86 67.45 76.27 73.86 MemSIF 79.76 57.72 63.61 74.22 68.87 † 83.41 64.20 69.15 78.87 73.92 † 86.54 67.69 70.60 82.30 76.73 †
+
+Table 2: Main experimental results on LongMemEval-S. Results report mean ACC (%) over three runs. Bold and underlining denote the best and second-best results in each column. For Total ACC, † shows the 95% paired-bootstrap confidence interval for MemSIF’s improvement over the strongest baseline under the same backbone excludes zero. 
+
+Mact . In continual deployment, compatible entries are up-dated as subsequent queries surface additional evidence from the evolving interaction history. 
+
+3.5 Memory Retrieval and Answer Generation 
+
+For each query qt, MemSIF retrieves relevant CoreFact en-tries from Mcore and persistent ActiveFact entries from 
+
+Mact by semantic similarity. An LLM-based sufficiency checker determines whether the retrieved fact-level evidence covers the information required by qt. When sufficient, the re-trieved entries form the answer context; otherwise, MemSIF retrieves query-local evidence from Structured Interaction Memory Mint . The answer context then combines the re-trieved fact entries with the query-local evidence rather than directly including the raw interaction units. The LLM gener-ates at from the answer context. After generation, the query-local evidence enters the ActiveFact pipeline. Appendix G illustrates MemSIF’s behavior under TSM and DUM through concrete case studies. 
+
+## 4 Experiments 
+
+4.1 Experimental Setup 
+
+Benchmark Dataset. We evaluate MemSIF on two long-term memory QA benchmarks, LoCoMo (Maharana et al. 2024) and LongMemEval-S (Wu et al. 2024). LoCoMo con-tains 10 two-party conversations, each spanning approxi-mately 27 sessions and averaging 16.6K tokens. We exclude adversarial questions and retain 1,540 evidence-grounded samples. LongMemEval-S contains 500 independent sam-ples with interaction histories averaging over 100K tokens. After excluding 30 abstention questions, 470 samples remain for evaluation. Dataset statistics are provided in Appendix B. 
+
+Diagnostic Subsets. Two diagnostic subsets are con-structed from LoCoMo gold evidence. Non-Contiguous Ev-idence (NCE) subset selects questions whose gold evidence spans widely separated turns, measured by Temporal Evi-dence Dispersion ( TED ≥ 0.3). The Low-Salience, High-Utility (LSHU) subset selects questions with evidence of low write-time salience yet high query-time utility ( S(e) ≤ 2,
+
+U (e, q ) = 3 ). Full construction criteria and empirical analy-ses of TSM and DUM are provided in Appendix A. 
+
+Baselines. We compare MemSIF with 10 baselines: Full-Context and Naive RAG as basic bounds; Mem0 (Chhikara et al. 2025), MemoryOS (Kang et al. 2025), MemGAS (Xu et al. 2025), xMemory (Hu et al. 2026), and SimpleMem (Liu et al. 2026) as write-time consolidation methods; and Light-Mem (Fang et al. 2025), GAM (Yan et al. 2025), and CoM (Xu et al. 2026c) as query-time composition methods. Method LoCoMo LongMemEval-S S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total MemSIF 85.44 61.96 69.49 50.38 75.62 79.76 57.72 63.61 74.22 68.87                                         
+
+> w/o TS 79.83 (-5.61) 53.63 (-8.33) 62.77 (-6.72) 47.41 (-2.97) 69.46 (-6.16) 73.18 (-6.58) 48.25 (-9.47) 57.78 (-5.83) 68.88 (-5.34) 61.94 (-6.93)
+> w/o ET 81.33 (-4.11) 56.18 (-5.78) 59.13 (-10.36 )49.87 (-0.51) 70.14 (-5.48) 75.83 (-3.93) 52.55 (-5.17) 56.73 (-6.88) 69.91 (-4.31) 63.77 (-5.10)
+> w/o CF 75.17 (-10.27 )56.17 (-5.79) 66.86 (-2.63) 39.22 (-11.16 )67.72 (-7.90) 65.48 (-14.28 )49.25 (-8.47) 55.93 (-7.68) 61.43 (-12.79 )56.10 (-12.77 )
+> w/o AF 78.27 (-7.17) 48.73 (-13.23 )63.11 (-6.38) 41.77 (-8.61) 67.43 (-8.19 )72.33 (-7.43) 45.34 (-12.38 )55.72 (-7.89 )64.68 (-9.54) 59.72 (-9.15)
+
+Table 3: Ablation study of MemSIF on Qwen3-4B. Each cell shows absolute ACC (%) with ∆ from MemSIF Full. Bold ∆
+
+marks the largest drop per column. GAM LM CoM SM MemSIF                
+
+> (a) Qwen3-8B (Total)
+> 60
+> 65
+> 70
+> 75
+> 80
+> Accuracy (%)
+> 71.7
+> 68.3 69.1
+> 65.2
+> 79.4
+> LM = LightMem
+> SM = SimpleMem
+> GAM LM CoM SM MemSIF
+> (b) Llama-3.1-8B (Total)
+> 60
+> 65
+> 70
+> 75
+> 62.7
+> 66.0
+> 67.9
+> 65.2
+> 74.4 LM = LightMem
+> SM = SimpleMem
+> S-hop M-hop Temp Kno
+> (c) Qwen3-8B (Category)
+> 55
+> 65
+> 75
+> 85 86.0
+> 63.1
+> 48.8 48.5
+> 87.5
+> 68.1
+> 76.3
+> 52.1
+> GAM
+> MemSIF
+> S-hop M-hop Temp Kno
+> (d) Llama-3.1-8B (Category)
+> 55
+> 65
+> 75
+> 85 79.8
+> 53.3 51.0
+> 63.1
+> 84.6
+> 68.9
+> 54.6
+> 67.5
+> CoM
+> MemSIF
+
+Figure 3: Backbone generalization on LoCoMo. Panels (a,b): Total ACC of representative baselines on Qwen3-8B and Llama-3.1-8B-Instruct. Panels (c,d): MemSIF vs. strongest per-backbone baseline across question categories. Full results in Appendix E. 
+
+Variant Total LSHU Tokens/q Time/q (s) w/o AF 67.43 74.45 1,935 1.14 Query-local only 73.09 81.28 3,364 1.53 Full MemSIF 75.62 85.69 3,052 1.40 
+
+Table 4: ActiveFact formation analysis on LoCoMo with Qwen3-4B. Query-local: query-local extraction only. 
+
+Evaluation Metric. We use Accuracy (ACC) as the pri-mary metric. A GPT-4o (Hurst et al. 2024) judge labels an answer as correct if it directly addresses the question and is semantically consistent with the essential reference infor-mation. We validate the evaluator on 440 answers sampled from both datasets and all systems under Qwen3-4B. Two annotators, blinded to system identity and GPT-4o labels, independently evaluate each sample using the same criteria. GPT-4o achieves 93.0% agreement with the adjudicated hu-man labels (Cohen’s κ=0.81); full protocols and analyses are provided in Appendix D.1. 
+
+Implementation Details. The main experiments use Qwen3-4B, Qwen3-32B (Yang et al. 2025), and DeepSeek-v4-pro (Xu et al. 2026a) (all in non-thinking mode) on both datasets. We evaluate Qwen3-8B (Yang et al. 2025) (non-thinking) and Llama-3.1-8B-Instruct (Grattafiori et al. 2024) on LoCoMo. We use Qwen3-Embedding-8B (Zhang et al. 2025a) as the embedding backbone. MemSIF uses α = 0 .8
+
+for the interaction matching function, τsplit = 0 .325 and 
+
+τmerge = 0 .60 for Topical Segment boundaries, Top-K = 3 
+
+for Event Trajectory aggregation, and θs = θq = 0 .45 for Ac-tiveFact promotion. To quantify the uncertainty of reported gains, we perform paired bootstrap resampling with 10,000 resamples between MemSIF and the strongest baseline in each dataset–backbone setting. We report the 95% confi-dence interval of ∆ACC = ACC MemSIF − ACC baseline . Full methodology is provided in Appendix D.2. Appendix C pro-vides implementation details. 
+
+4.2 Main Results 
+
+Tables 1 and 2 report ACC for single-hop (S-hop), multi-hop (M-hop), temporal (Temp), and knowledge (Kno) questions. MemSIF achieves the highest Total ACC across both datasets and all three main backbones, supporting its effectiveness across interaction lengths and model capacities. We examine the contributions of its individual components below. On LoCoMo, MemSIF outperforms the strongest baseline by 8.79%, 5.78%, and 2.29% under Qwen3-4B, Qwen3-32B, and DeepSeek-v4-pro, respectively. The largest gain occurs under Qwen3-4B, suggesting that MemSIF is particularly beneficial when backbone capacity is limited. The largest category-level gains under Qwen3-4B and Qwen3-32B oc-cur on Temp (16.37% and 11.00%), consistent with the role of Event Trajectories in recovering temporally distributed ev-idence. Under DeepSeek-v4-pro, MemSIF trails LightMem by 2.18% on M-hop and GAM by 0.82% on Temp, indicat-ing that MemSIF’s gains are not uniform across all categories under the strongest backbone. MemSIF nonetheless achieves the highest Total ACC under all three backbones. On LongMemEval-S, MemSIF exceeds the strongest base-line by 6.15%, 4.62%, and 2.87% under Qwen3-4B, Qwen3-32B, and DeepSeek-v4-pro, respectively. Unlike LoCoMo, where the largest gains concentrate on Temp, MemSIF leads all question categories across the three backbones on this benchmark. Since each query is paired with an indepen-dent history exceeding 100K tokens, evidence access may place greater emphasis on long-context evidence filtering. The broad category-level gains are consistent with the role of Dual-Track Fact Memory: CoreFact memory keeps reusable information accessible, while ActiveFact memory forms facts from evidence whose utility emerges at query time. Figure 3 further evaluates Qwen3-8B and Llama-3.1-8B-Instruct on LoCoMo. MemSIF outperforms the strongest baseline by 7.69% and 6.47%, respectively, with category-level patterns consistent with the three main backbones. These results further support MemSIF’s generalization across model scales and families. Complete numerical re-sults are provided in Appendix E. Paired bootstrap analysis further supports the reliability of these gains: the 95% confidence intervals for Total ACC im-provement over the strongest baseline exclude zero in all six dataset–backbone settings. This includes smaller gains un-der DeepSeek-v4-pro on LoCoMo (+2.29 %, 95% CI [0.45, 5.03]) and LongMemEval-S (+2.87 %, 95% CI [0.32, 6.44]). Full confidence intervals appear in Appendix D.2. 
+
+4.3 Ablation and Mechanism Analysis 
+
+To understand how each design contributes to MemSIF’s per-formance, we conduct component ablation, diagnostic subset analysis, and sensitivity studies. We ablate four components on both datasets with Qwen3-4B (Table 3). w/o TS constructs Event Trajectories directly from raw messages. w/o ET uses Topical Segments alone. w/o CF removes CoreFact mem-ory, relying solely on ActiveFact memory. w/o AF disables ActiveFact memory, keeping only CoreFact memory. Removing Event Trajectories causes the largest Temp drop (10.36% on LoCoMo), consistent with its role in cross-time event continuity; removing Topical Segments impairs M-hop, which requires topic-coherent units to assemble evi-dence across segments. Removing CoreFact memory is most consequential on LongMemEval-S (12.77% Total decrease), where maintaining compact, reusable facts becomes impor-tant under 100K+ token contexts; removing ActiveFact mem-ory causes the largest M-hop losses (13.23% and 12.38%), re-flecting its role in recovering evidence whose utility emerges at query time. No component dominates all patterns; TSM and DUM require complementary solutions. To directly test how MemSIF handles TSM and DUM, we conduct ablation on two diagnostic subsets (Figure 4). On the NCE subset, removing Event Trajectories or Topical Segments causes the largest drops (5.56%–8.30%), show-ing that interaction structuring is central to mitigating TSM. On the LSHU subset, removing ActiveFact memory pro-duces the largest declines (9.34%–11.24%), while removing CoreFact memory causes moderate drops (3.93%–4.98%). The larger drop from removing ActiveFact memory identi-fies query-driven formation as the primary mechanism on LSHU, while the smaller CoreFact memory drop indicates a complementary contribution from reusable write-time facts. Table 4 reports ActiveFact formation analysis. Query-local only achieves 73.09% Total ACC, already exceeding the strongest LoCoMo baseline (CoM, 66.83%), showing that on-demand evidence extraction is effective even without persistent candidate accumulation. Full MemSIF further im-proves LSHU ACC by 4.41% over Query-local only while reducing token usage and runtime, as persistent ActiveFact entries retained from earlier queries can be reused without trace-back to Structured Interaction Memory. MemSIF is robust to its construction-time hyperparam-eters. Varying the matching weight changes Total ACC by only 2.83%, indicating that performance does not depend on a finely tuned value. Combining semantic similarity with entity overlap (75.60%) outperforms either signal alone, showing that the two signals provide complementary evidence. For segment construction, the default double-threshold setting MemSIF w/o Topical    
+
+> Segments
+> w/o Event
+> Trajectories
+> 50
+> 60
+> 70
+> Accuracy (%)  Qwen3-4B
+> Qwen3-32B
+> 63.2
+> 71.3
+> 54.9
+> 63.5
+> 56.8
+> 65.7
+> MemSIF w/o CoreFact w/o ActiveFact
+> 70
+> 80
+> 90
+> 85.7
+> 91.4
+> 80.7
+> 87.5
+> 74.5
+> 82.1
+> (a) Non-contiguous Evidence subset (b) Low-Salience, High-Utility subset
+
+Figure 4: Diagnostic-subset ablation results under Qwen3-4B and Qwen3-32B. 11000                            
+
+> 12000 Full-Context
+> 0123456789
+> Amortized Runtime per Query (s)
+> 0
+> 2000
+> 4000
+> 6000
+> Amortized Tokens per Query
+> Naive RAG
+> MemoryOS
+> xMemory
+> LightMem
+> SimpleMem
+> Mem0
+> MemGAS
+> COM
+> GAM
+> MemSIF
+> 11000
+> 12000 Full-Context
+> 0246810 12 14 16 18 20 22 24 26 28 30
+> Amortized Runtime per Query (s)
+> 0
+> 2000
+> 4000
+> 6000
+> Naive RAG
+> MemoryOS
+> xMemory
+> LightMem
+> SimpleMem
+> Mem0
+> MemGAS
+> COM
+> GAM
+> MemSIF
+> 45
+> 50
+> 55
+> 60
+> 65
+> 70
+> 75
+> 80
+> 85
+> ACC (%)
+> (a) Qwen3-4B (b) Qwen3-32B
+
+Figure 5: Accuracy–cost trade-off on LoCoMo under Qwen3-4B and Qwen3-32B. darker, larger bubbles indicate higher ACC. outperforms single-threshold alternatives, and varying the gap width from 0.075 to 0.475 keeps Total ACC within the range 71.13%–75.62%, with the default setting performing best. Complete results are in Appendix F. 
+
+4.4 Efficiency Analysis 
+
+We evaluate amortized tokens and runtime per query, cov-ering the full pipeline from memory construction to answer generation; detailed measurement scope is in Appendix H. Figure 5 reports the accuracy–cost trade-off on LoCoMo. MemSIF achieves the highest ACC while offering a fa-vorable accuracy–cost trade-off under both Qwen3-4B and Qwen3-32B. Under Qwen3-32B, it uses 40.6% fewer tokens than GAM (2.41K vs. 4.06K) while improving ACC from 77.21% to 82.99%; compared with SimpleMem at a simi-lar token budget, it improves ACC by 8.38% and reduces runtime by 42.8% (7.04 vs. 12.31s). This efficiency comes from the dual-track design: CoreFact memory stores compact reusable facts, while persistent ActiveFact entries are reused across queries, reducing repeated access to raw interactions and Structured Interaction Memory. Complete numerical re-sults are in Appendix H. 
+
+## 5 Conclusion 
+
+We introduced MemSIF , a structured interaction-to-fact memory framework that mitigates Temporal–Structural Mis-alignment and Delayed Utility Manifestation through Struc-tured Interaction Memory and Dual-Track Fact Memory. Experiments on LoCoMo and LongMemEval-S across five backbone LLMs show consistent Total ACC gains. Ablation and diagnostic results support the complementary contri-butions of these two components, while efficiency analy-ses show a favorable accuracy–cost trade-off. More broadly, LLM memory systems should move beyond retrieval effi-ciency to explicitly model how interaction experience evolves into reusable knowledge over time. MemSIF takes a step in this direction. The NCE and LSHU diagnostic subsets pro-vide a reusable framework for evaluating these misalignment patterns. Future work includes online CoreFact schema adap-tation and extension to multi-agent settings. 
+
+## References 
+
+Cham, E. E. 2026. WritePolicyBench: Benchmarking Mem-ory Write Policies under Byte Budgets. arXiv preprint arXiv:2602.02574 .Chhikara, P.; Khant, D.; Aryan, S.; Singh, T.; and Yadav, D. 2025. Mem0: Building production-ready ai agents with scal-able long-term memory. arXiv preprint arXiv:2504.19413 .Du, Y.; Tian, M.; Ronanki, S.; Rongali, S.; Bodapati, S.; Galstyan, A.; Wells, A.; Schwartz, R.; Huerta, E. A.; and Peng, H. 2025. Context length alone hurts LLM performance despite perfect retrieval. arXiv preprint arXiv:2510.05381 .Fang, J.; Deng, X.; Xu, H.; Jiang, Z.; Tang, Y.; Xu, Z.; Deng, S.; Yao, Y.; Wang, M.; Qiao, S.; et al. 2025. Lightmem: Lightweight and efficient memory-augmented generation. 
+
+arXiv preprint arXiv:2510.18866 .Grattafiori, A.; Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.; Letman, A.; Mathur, A.; Schelten, A.; Vaughan, A.; et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783 .Gutiérrez, B. J.; Shu, Y.; Gu, Y.; Yasunaga, M.; and Su, Y. 2024. Hipporag: Neurobiologically inspired long-term memory for large language models. Advances in neural in-formation processing systems , 37: 59532–59569. Hu, Z.; Zhu, Q.; Zhao, R.; Liang, D.; Yan, H.; He, Y.; and Gui, L. 2026. Beyond RAG for agent memory: Retrieval by de-coupling and aggregation. arXiv preprint arXiv:2602.02007 .Huang, W.-C.; Zhang, W.; Liang, Y.; Bei, Y.; Chen, Y.; Feng, T.; Pan, X.; Tan, Z.; Wang, Y.; Wei, T.; et al. 2026. Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey. arXiv preprint arXiv:2602.06052 .Hurst, A.; Lerer, A.; Goucher, A. P.; Perelman, A.; Ramesh, A.; Clark, A.; Ostrow, A.; Welihinda, A.; Hayes, A.; Rad-ford, A.; et al. 2024. Gpt-4o system card. arXiv preprint arXiv:2410.21276 .Kang, J.; Ji, M.; Zhao, Z.; and Bai, T. 2025. Memory os of ai agent. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing , 25972–25981. Liu, J.; Su, Y.; Xia, P.; Han, S.; Zheng, Z.; Xie, C.; Ding, M.; and Yao, H. 2026. SimpleMem: Efficient Lifelong Memory for LLM Agents. arXiv preprint arXiv:2601.02553 .Liu, N. F.; Lin, K.; Hewitt, J.; Paranjape, A.; Bevilacqua, M.; Petroni, F.; and Liang, P. 2024. Lost in the middle: How language models use long contexts. Transactions of the association for computational linguistics , 12: 157–173. Lu, J.; An, S.; Lin, M.; Pergola, G.; He, Y.; Yin, D.; Sun, X.; and Wu, Y. 2023. Memochat: Tuning llms to use memos for consistent long-range open-domain conversation. arXiv preprint arXiv:2308.08239 .Lu, Z.; Li, D.; Shi, Y.; Wang, B.; Wang, L.; and Hu, B. 2026. Structured Episodic Event Memory. arXiv preprint arXiv:2601.06411 .Maharana, A.; Lee, D.-H.; Tulyakov, S.; Bansal, M.; Bar-bieri, F.; and Fang, Y. 2024. Evaluating very long-term conversational memory of llm agents. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , 13851–13870. Modarressi, A.; Imani, A.; Fayyaz, M.; and Schütze, H. 2023. Ret-llm: Towards a general read-write memory for large lan-guage models. arXiv preprint arXiv:2305.14322 .Packer, C.; Fang, V.; Patil, S.; Lin, K.; Wooders, S.; and Gonzalez, J. 2023. MemGPT: towards LLMs as operating systems. arXiv preprint arXiv:2310.08560 .Park, J. S.; O’Brien, J.; Cai, C. J.; Morris, M. R.; Liang, P.; and Bernstein, M. S. 2023. Generative agents: Interac-tive simulacra of human behavior. In Proceedings of the 36th annual acm symposium on user interface software and technology , 1–22. Pollertlam, N.; and Kornsuwannawit, W. 2026. Beyond the context window: A cost-performance analysis of fact-based memory vs. long-context LLMs for persistent agents. arXiv preprint arXiv:2603.04814 .Qian, H.; Zhang, P.; Liu, Z.; Mao, K.; and Dou, Z. 2024. Memorag: Moving towards next-gen rag via memory-inspired knowledge discovery. arXiv preprint arXiv:2409.05591 , 1. Sarthi, P.; Abdullah, S.; Tuli, A.; Khanna, S.; Goldie, A.; and Manning, C. 2024. Raptor: Recursive abstractive processing for tree-organized retrieval. In International Conference on Learning Representations , volume 2024, 32628–32649. Schmidgall, S.; Su, Y.; Wang, Z.; Sun, X.; Wu, J.; Yu, X.; Liu, J.; Moor, M.; Liu, Z.; and Barsoum, E. 2025. Agent laboratory: Using llm agents as research assistants. Findings of the Association for Computational Linguistics: EMNLP 2025 , 5977–6043. Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023. Reflexion: Language agents with verbal re-inforcement learning. Advances in neural information pro-cessing systems , 36: 8634–8652. Singh, J.; Magazine, R.; Pandya, Y.; and Nambi, A. 2025. Agentic reasoning and tool integration for llms via reinforce-ment learning. arXiv preprint arXiv:2505.01441 .Tan, Z.; Yan, J.; Hsu, I.-H.; Han, R.; Wang, Z.; Le, L.; Song, Y.; Chen, Y.; Palangi, H.; Lee, G.; et al. 2025. In prospect and retrospect: Reflective memory management for long-term personalized dialogue agents. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , 8416–8439. Wang, J.; Zhao, H.; Pan, G.; Wang, X.; Wang, Y.; Deng, Q.; and Zhang, M. 2026. SAGE: A Self-Evolving Agentic Graph-Memory Engine for Structure-Aware Associative Memory. 
+
+arXiv preprint arXiv:2605.12061 .Wu, D.; Wang, H.; Yu, W.; Zhang, Y.; Chang, K.-W.; and Yu, D. 2024. Longmemeval: Benchmarking chat as-sistants on long-term interactive memory. arXiv preprint arXiv:2410.10813 .Wu, Z.; Zhang, H.; Lin, F.; Xu, W.; Xu, X.; Chen, Y.; Zou, H. P.; Chen, S.; Zhang, W.; Liu, X.; Yu, P. S.; and Wang, H. 2026. GAM: Hierarchical Graph-based Agentic Memory for LLM Agents. arXiv preprint arXiv:2604.12285 .Xia, P.; Zeng, K.; Liu, J.; Qin, C.; Wu, F.; Zhou, Y.; Xiong, C.; and Yao, H. 2025. Agent0: Unleashing self-evolving agents from zero data via tool-integrated reasoning. arXiv preprint arXiv:2511.16043 .Xiong, Z.; Lin, Y.; Xie, W.; He, P.; Liu, Z.; Tang, J.; Lakkaraju, H.; and Xiang, Z. 2026. How memory manage-ment impacts llm agents: An empirical study of experience-following behavior. In Proceedings of the 64th Annual Meet-ing of the Association for Computational Linguistics (Volume 1: Long Papers) , 623–645. Xu, A.; Lin, B.; Xue, B.; Wang, B.; Xu, B.; Wu, B.; Zhang, B.; Lin, C.; Dong, C.; Ling, C.; et al. 2026a. DeepSeek-V4: To-wards Highly Efficient Million-Token Context Intelligence. 
+
+arXiv preprint arXiv:2606.19348 .Xu, D.; Wen, Y.; Jia, P.; Zhang, Y.; Wang, Y.; Guo, H.; Tang, R.; Zhao, X.; Chen, E.; Xu, T.; et al. 2025. From Single to Multi-Granularity: Toward Long-Term Memory Associa-tion and Selection of Conversational Agents. arXiv preprint arXiv:2505.19549 .Xu, W.; Liang, Z.; Mei, K.; Gao, H.; Tan, J.; and Zhang, Y. 2026b. A-mem: Agentic memory for llm agents. Advances in Neural Information Processing Systems , 38: 17577–17604. Xu, X.; Xu, B.; Xueyun, T.; Huang, Z.; Chen, R.; Yunfan, L.; and Shen, H. 2026c. Chain-of-memory: Lightweight memory construction with dynamic evolution for llm agents. In Proceedings of the 64th Annual Meeting of the Associa-tion for Computational Linguistics (Volume 1: Long Papers) ,11618–11631. Yan, B.; Li, C.; Qian, H.; Lu, S.; and Liu, Z. 2025. Gen-eral agentic memory via deep research. arXiv preprint arXiv:2511.18423 .Yang, A.; Li, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Gao, C.; Huang, C.; Lv, C.; et al. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388 .Yu, Y.; Yao, L.; Xie, Y.; Tan, Q.; Feng, J.; Li, Y.; and Wu, L. 2026. Agentic memory: Learning unified long-term and short-term memory management for large language model agents. arXiv preprint arXiv:2601.01885 .Zhang, Y.; Li, M.; Long, D.; Zhang, X.; Lin, H.; Yang, B.; Xie, P.; Yang, A.; Liu, D.; Lin, J.; et al. 2025a. Qwen3 em-bedding: Advancing text embedding and reranking through foundation models. arXiv preprint arXiv:2506.05176 .Zhang, Z.; Bu, W.; Pan, K.; Miao, B.; Zhang, W.; Wang, G.; Ji, W.; Tang, R.; Li, J.; and Tang, S. 2026. Evolving gener-alist virtual agents with generative and associative memory. In Proceedings of the AAAI Conference on Artificial Intelli-gence , volume 40, 13006–13014. Zhang, Z.; Dai, Q.; Bo, X.; Ma, C.; Li, R.; Chen, X.; Zhu, J.; Dong, Z.; and Wen, J.-R. 2025b. A survey on the memory mechanism of large language model-based agents. ACM Transactions on Information Systems , 43(6): 1–47. Zhao, A.; Huang, D.; Xu, Q.; Lin, M.; Liu, Y.-J.; and Huang, G. 2024. Expel: Llm agents are experiential learners. In Pro-ceedings of the AAAI Conference on Artificial Intelligence ,volume 38, 19632–19642. Zheng, J.; Shi, C.; Cai, X.; Li, Q.; Zhang, D.; Li, C.; Yu, D.; and Ma, Q. 2026. Lifelong learning of large language model based agents: A roadmap. IEEE Transactions on Pattern Analysis and Machine Intelligence .Zhong, W.; Guo, L.; Gao, Q.; Ye, H.; and Wang, Y. 2024. Memorybank: Enhancing large language models with long-term memory. In Proceedings of the AAAI conference on artificial intelligence , volume 38, 19724–19731. A Empirical Analysis of Temporal–Structural Misalignment and Delayed Utility Manifestation 
+
+In brief, this section demonstrates that TSM and DUM are ob-servable in method-independent diagnostics. For TSM, NCE construction and ASV/SNTD analyses show that chronolog-ical proximity is an incomplete proxy for topical or event-level structure. For DUM, LSHU construction, LSHUR, and controlled compaction diagnostics show that write-time salience often underestimates future utility, affecting 43.71% of queries with at least one critical evidence utterance. The connection between these findings and MemSIF’s architec-tural responses is discussed in Section A.7. 
+
+A.1 Purpose and Connections to the Main Text 
+
+This appendix provides the empirical basis for the TSM and DUM claims introduced in Section 1. It defines the diag-nostic measurements, describes the construction of the Non-Contiguous Evidence (NCE) and Low-Salience, High-Utility (LSHU) subsets used in the main text, and presents the em-pirical diagnostics underlying Figure 1. The diagnostic def-initions and subset construction are independent of method outputs, and method performance is referenced only to con-nect these fixed subsets to Figure 1. 
+
+A.2 Experimental Foundation 
+
+The analysis uses two long-horizon dialogue benchmarks with complementary properties. LoCoMo provides densely annotated gold evidence over shared multi-session conver-sations, making it suitable for both TSM and DUM anal-yses. After excluding adversarial questions following the standard protocol, it contains 1,540 evidence-grounded QA samples from 10 two-party conversations, each spanning approximately 27 sessions and averaging 16.6K tokens. LongMemEval-S provides a complementary large-context setting, where each sample is paired with an independent in-teraction history averaging over 100K tokens. After exclud-ing 30 abstention questions, 470 evaluation samples remain. TSM is analyzed on both datasets, while DUM is analyzed only on LoCoMo because it requires gold evidence annota-tions. For the TSM analysis, raw dialogue turns are consolidated into fixed-size segments, with segment length ℓ varied over 
+
+{1, 2, 4, 8} to test robustness to analysis granularity. This segmentation is used only for empirical diagnosis and is independent of MemSIF’s semantic segmentation module, avoiding bias toward the proposed method. All segments are encoded with Qwen3-Embedding-8B, and cosine similarity between normalized embeddings defines the semantic space used by ASV and SNTD@ k.For the DUM analysis, LoCoMo gold evidence utterances are evaluated along two axes, write-time salience and query-time utility. Salience is scored without revealing the future query, while utility is scored with the query but without the gold answer. This design separates whether an utterance appears worth storing when first observed from whether it later becomes useful for answering a specific query. For TSM, GPT-4o provides post-hoc validation that embedding-based measurements correspond to genuine top-ical shifts or same-thread relations, using blind judging and 
+
+N = 3 self-consistency majority voting. For DUM, salience and utility scores are assigned by GPT-4o with a single call at temperature 0.1, where salience scoring is query-hidden and utility scoring uses the future query but excludes the gold answer. Diagnostic detail-recoverability and answer-correctness judgments use GPT-4o with blind evaluation, deterministic input shuffling where applicable, and N = 3 
+
+majority voting. Additional decoding settings, prompt tem-plates, random seeds, and computational costs are reported in Section A.6. 
+
+A.3 Diagnostic Subset Construction 
+
+We construct two diagnostic subsets from the 1,540 non-adversarial LoCoMo questions to evaluate Temporal– Structural Misalignment and Delayed Utility Manifestation more directly. Both subsets are constructed independently of MemSIF and baseline outputs, and the same fixed ques-tion IDs are used in Figures 1 and 4. NCE operationalizes the cross-time evidence-fragmentation aspect of TSM, while LSHU operationalizes DUM at the query level by selecting questions whose critical evidence was not salient when first observed. 
+
+Non-Contiguous Evidence. For each question q, let Eq de-note its gold evidence utterances and let pos( e) denote the global message position of evidence utterance e in an inter-action history of length Lq . We define Temporal Evidence Dispersion (TED) as 
+
+TED( q) = max e∈E q pos( e) − min e∈E q pos( e)
+
+Lq − 1 . (5) TED lies in [0 , 1] and measures the normalized span covered by the evidence, allowing comparison across conversations of different lengths. We first retain the 409 questions containing at least two gold evidence utterances. Their TED distribution is concentrated near very small spans and large spans, with a relatively sparse transition region, with 156 questions falling in [0 , 0.1) , 67 in [0 .1, 0.3) , and 186 in [0 .3, 1] . We therefore use TED( q) ≥ 0.3, a threshold located at the valley between the two modes of the empirical TED distribution, yielding 186 questions. The selected questions have mean TED 0.581 
+
+and mean evidence span 352 .6 message positions. 
+
+Low-Salience, High-Utility. For each gold evidence utter-ance e, GPT-4o assigns a write-time salience score S(e) ∈{1, 2, 3} using only e and its two preceding utterances. Be-cause salience is intended to represent write-time value, the query is hidden during this step and the score is assigned independently of any future query. For each evidence–query pair (e, q ), GPT-4o separately assigns a query-time utility score U (e, q ) ∈ { 1, 2, 3} using the same local context to-gether with q. The gold answer is excluded from both scor-ing procedures. All scores are obtained with a single call at temperature 0.1.A score of S(e) ≤ 2 indicates that the utterance has no clear archival value when first observed, whereas U (e, q ) = 3 k=1     
+
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> 30
+> 35
+> ASV Mean (%)
+> 10.6%
+> 28.7%
+> k=2
+> 10.3%
+> 22.9%
+> k=4
+> 10.6%
+> 27.1%
+> k=8
+> 9.8%
+> 23.8%
+> 62.4% 63.4%
+> 69.8%
+> 59.2%
+> 65.4%
+> 48.2%
+> 30
+> 40
+> 50
+> 60
+> 70
+> Adj. Sim. Mean (%)
+> 63.5%
+> 31.1%
+> LoCoMo ASV LoCoMo Adj. Sim. LongMemEval ‑S ASV LongMemEval ‑S Adj. Sim.
+
+Figure 6: Adjacent Semantic Volatility (ASV) and adjacent similarity across segment lengths on LoCoMo and LongMemEval-S. Table 5: Question category distributions of the diagnostic subsets.                
+
+> Subset S-hop M-hop Temp Kno Total
+> NCE 0 (0.0%) 152 (81.7%) 12 (6.5%) 22 (11.8%) 186 LSHU 271 (63.9%) 44 (10.4%) 109 (25.7%) 0 (0.0%) 424
+
+indicates that it is critical for answering q. We define the strict Low-Salience, High-Utility (LSHU) subset as 
+
+DLSHU = {q : ∃e ∈ E q , S (e) ≤ 2 ∧ U (e, q ) = 3 } . (6) Across 2,229 evidence–query pairs, 1,035 receive U (e, q ) = 3, of which 430 also satisfy S(e) ≤ 2, giving a pair-level LSHU rate of 41 .55% . At the question level, 970 questions contain at least one critical evidence utterance, and 424 con-tain at least one strict LSHU utterance. The resulting query-level rate is 43 .71% among high-utility questions and 27 .53% 
+
+among all 1,540 evaluation questions. Table 5 reports the category distributions of the resulting subsets. NCE is dominated by M-hop questions, consistent with their reliance on evidence distributed across interac-tion units. LSHU is more concentrated in S-hop and Temp questions, suggesting that delayed utility is not restricted to multi-hop evidence composition. The complete question-ID lists are provided in the sup-plementary materials, enabling exact reproduction of both diagnostic evaluations. These fixed subsets are used for the diagnostic comparisons in Figure 1. 
+
+A.4 Temporal–Structural Misalignment 
+
+In long-horizon dialogues, chronological order does not con-sistently indicate topical continuity, since adjacent turns may mix unrelated topics while segments sharing the same event or task can appear at widely separated positions. This section examines whether temporal order alone suffices to capture the topical organization of such dialogues. The analysis follows a construct-proxy-validation frame-work. The core construct, topical relatedness, captures whether segments share an event or task thread. Adjacent Semantic Volatility (ASV) and Semantic-Neighbor Temporal Distance (SNTD@ k) serve as embedding-based operational proxies; LLM judgments independently validate that these proxies track the intended construct, distinguishing mean-ingful topical shifts from surface-level variation. Two complementary claims are examined. Claim 1.1 (Sec-tion A.4) tests whether temporal adjacency guarantees top-ical continuity, using ASV and semantic-shift validation. Claim 1.2 (Section A.4) tests whether topical relatedness is confined to local proximity, using SNTD@ k and same-thread validation. The LoCoMo and LongMemEval-S corpora introduced in Section A.2 are used, with segment embeddings computed via Qwen3-Embedding-8B. LLM-based validation employs GPT-4o with blind judging and N = 3 majority voting, as detailed in Section A.2. 
+
+Claim 1.1: Temporal Adjacency Does Not Guarantee Se-mantic Continuity Claim 1.1 tests whether temporal ad-jacency consistently indicates topical continuity. If temporal adjacency were a reliable proxy for topical continuity, ad-jacent segment similarities would exhibit infrequent sharp changes. Adjacent semantic similarity variation thus serves as a measurable proxy for local topical discontinuity. This is quantified through Adjacent Semantic Volatility (ASV). Given a segment sequence s1, . . . , s m under a fixed segment length, with normalized embeddings e1, . . . , e m,the cosine similarity between adjacent segments is: 
+
+ai = cos( ei, e i+1 ), i = 1 , . . . , m − 1. (7) Let A = {a1, . . . , a m−1} denote the adjacent similarity se-quence. ASV measures the mean absolute fluctuation: 
+
+ASV = 1
+
+m − 2
+
+> m−2
+
+X
+
+> i=1
+
+|ai+1 − ai|. (8) Higher ASV indicates greater fluctuation in adjacent simi-larity, reflecting weaker local topical continuity. ASV is computed per conversation using the segment em-beddings from Section A.2 and aggregated at the dataset level, repeating under segment lengths ℓ ∈ { 1, 2, 4, 8} for robustness. Figure 6 reports the results. Across all segment lengths, both datasets display non-trivial volatility. If temporal adjacency consistently indicated topical continuity, adjacent similarities would show limited Table 6: LLM semantic-shift validation by volatility bucket.               
+
+> Dataset Bucket Semantic Shift Rate
+> LoCoMo High-volatility / low-similarity 23.00% LoCoMo Mid 3.00% LoCoMo Low-volatility / high-similarity 3.00% LongMemEval-S High-volatility / low-similarity 47.00% LongMemEval-S Mid 20.00% LongMemEval-S Low-volatility / high-similarity 12.00%
+
+local fluctuation. The observed ASV, stable across granular-ities, thus indicates that adjacency is not a consistent proxy for topical continuity. LongMemEval-S’s consistently higher ASV further suggests that denser interaction histories weaken this consistency. To verify that ASV captures authentic topical discontinu-ity, LLM semantic-shift validation is conducted. Adjacent pairs under ℓ = 2 are bucketed by a local pattern score 
+
+ri = z(1 −ai)+ z(∆ i), ∆i = max {| ai−ai−1|, |ai+1 −ai|} ,
+
+(9) where unavailable boundary terms are omitted and z(·)
+
+denotes within-conversation standardization. The high-volatility/low-similarity bucket is sampled from the top ter-cile of ri, the low-volatility/high-similarity bucket from the bottom tercile, and the mid bucket from the middle tercile. This contrasts stable local continuity against sharp local se-mantic drops. For each bucket, 100 pairs are judged by GPT-4o with N = 3 majority voting as described in Section A.2. Table 6 reports the results. LLM validation supports the use of ASV as a proxy for top-ical discontinuity: semantic shift rates are notably higher in high-volatility than low-volatility buckets for both datasets, with 23% versus 3% for LoCoMo and 47% versus 12% for LongMemEval-S. The higher shift rates in the high-volatility buckets suggest that ASV captures meaningful top-ical discontinuities rather than only embedding noise. The embedding-based volatility metric thus provides evidence that memory systems should model topical structure rather than rely solely on chronological adjacency. These results indicate that temporal adjacency does not consistently guarantee topical continuity. Temporal order alone is insufficient for capturing topical structure in long-horizon memory. 
+
+Claim 1.2: Temporal Dispersion of Semantic Neighbors 
+
+This section examines whether topically related segments are confined to local proximity. If local temporal windows sufficed, semantic neighbors should cluster nearby; however, information about the same event, task, or character can re-cur across sessions at widely separated positions. The anal-ysis tests whether topical relatedness is fully captured by lo-cal temporal proximity: SNTD@ k serves as the operational proxy via embedding similarity, and LLM same-thread vali-dation evaluates whether temporally distant semantic neigh-bors reflect authentic topical threads. This is quantified through Semantic-Neighbor Temporal Distance at rank k (SNTD@ k). Given a segment sequence 
+
+s1, . . . , s m under a fixed segment length ℓ = 2 , with normal-ized embeddings e1, . . . , e m, the top-k semantic neighbors 
+
+Nk(i) of segment i are retrieved within the same conversa-tion by cosine similarity, excluding i itself. The normalized Table 7: LLM same-thread validation by temporal-distance bucket. 
+
+Dataset Distance Bucket Same-thread Rate 
+
+LoCoMo Near 82.00% LoCoMo Mid 74.00% LoCoMo Far 70.00% LongMemEval-S Near 59.00% LongMemEval-S Mid 37.00% LongMemEval-S Far 5.00% 
+
+temporal distance between segment i and neighbor j is: 
+
+d(i, j ) = |i − j|
+
+m − 1 . (10) SNTD@ k is the mean normalized temporal distance across all top-k semantic neighbors: 
+
+SNTD@ k = 1
+
+m
+
+> m
+
+X
+
+> i=1
+
+1
+
+k
+
+X 
+
+> j∈N k(i)
+
+d(i, j ). (11) Higher SNTD@ k indicates wider temporal dispersion of se-mantic neighbors. A random baseline, Random SNTD@ k,is constructed by drawing k non-self segments uniformly at random. If SNTD@ k is substantially lower than the ran-dom baseline, semantic neighbors are locally concentrated; if SNTD@ k increases with k, broader semantic retrieval is reaching more temporally distant neighbors. Following the construct-proxy-validation framework, SNTD@ k is com-puted per conversation from the embeddings of Section A.2, under neighbor ranks k ∈ { 1, 2, 4, 8}, with the random base-line computed identically. Retrieval is restricted to the same conversation. Figure 7 reports results. Both datasets show that semantic neighbors are not ran-domly scattered. LoCoMo exhibits local concentration, with SNTD@1 at 20.98% versus the random baseline of 33.87%. However, SNTD@ k rises from 20.98% to 28.11% as k
+
+increases from 1 to 8, approaching the random baseline. LongMemEval-S shows stronger local concentration, with SNTD@1 at 1.91%, yet follows the same monotonic trend from 1.91% to 14.91%. These results indicate that the closest semantic neighbors are generally temporally concentrated, but broader semantic retrieval progressively covers more distant segments. This increase is interpreted descriptively, since including lower-ranked neighbors naturally expands temporal coverage; by itself, it does not establish that the dis-tant neighbors belong to the same topical thread. We therefore use LLM same-thread judgments to evaluate whether tempo-rally distant semantic neighbors represent genuine cross-time associations. To verify whether distant semantic neighbors reflect au-thentic topical threads, LLM same-thread validation is con-ducted following the same protocol as Section A.4. Using segment length ℓ = 2 , semantic-neighbor pairs are divided into near/mid/far temporal-distance buckets; GPT-4o judges same-thread membership with N = 3 voting. Table 7 reports the results. In LoCoMo, same-thread rates remain high across all buckets, with near at 82.00%, mid at 74.00%, and far at k=1 k=2 k=4 k=8  
+
+> 20.0%
+> 22.0%
+> 24.0%
+> 26.0%
+> 28.0%
+> 33.5%
+> 34.0%
+> SNTD@ k (%)
+> 21.0%
+> 23.1%
+> 25.7%
+> 28.1%
+> 33.9%
+> 33.9%
+> 33.5% 33.6%
+
+(a) LoCoMo      
+
+> k=1 k=2 k=4 k=8
+> 1.0%
+> 4.0%
+> 7.0%
+> 10.0%
+> 13.0%
+> 16.0%
+> 33.5%
+> 34.0%
+> 1.9%
+> 2.8%
+> 5.7%
+> 14.9%
+> 33.6%
+> 33.8% 33.6% 33.7%
+
+(b) LongMemEval-S Figure 7: Semantic-Neighbor Temporal Distance (SNTD@ k) compared with random baseline on LoCoMo and LongMemEval-S. 70.00%, indicating robust cross-temporal topical continu-ity. In LongMemEval-S, rates decline sharply with distance, from 59.00% at near range to 5.00% at far range, indicating stronger local topical concentration. The two datasets there-fore expose different degrees of temporal dispersion, where LoCoMo contains robust cross-time topical continuity while LongMemEval-S is more locally concentrated. In both cases, however, temporal position alone is an incomplete descrip-tion of topical structure, because semantic relatedness must be modeled separately from raw chronology. These results indicate that topical relatedness is not fully captured by local temporal proximity. While both datasets exhibit local concentration, semantic structure cannot be re-duced to narrow chronological windows. Local proximity is useful but insufficient for representing the topical structure of long-horizon dialogues. Taken together, Section A.4 provides evidence for Temporal–Structural Misalignment from two complemen-tary angles. ASV analysis indicates non-trivial adjacent volatility, with LLM validation confirming that high-volatility pairs are more likely to correspond to topical discontinuity, indicating that temporal adjacency does not consistently guarantee topical continuity. SNTD@ k analysis shows that semantic neighbors are locally concentrated yet can span progressively wider temporal distances, with LLM validation demonstrating dataset-dependent degrees of cross-time topical continuity. LoCoMo provides strong evidence for recurring cross-time event threads, while LongMemEval-S shows a more local structure; together they indicate that chronological order alone does not describe topical organi-zation. Section A.7 discusses how these findings motivate MemSIF’s architectural responses. 
+
+A.5 Delayed Utility Manifestation 
+
+In long-horizon dialogues, the utility of an interaction is often not apparent when it first occurs, since segments that appear as low-salience background details at write time may later become critical evidence for answering future queries. Write-time salience is therefore an imperfect guide to future query-time utility. This misalignment has direct consequences for memory systems that commit to retention or compaction decisions before future information needs are known. Following the construct-proxy-validation framework in-troduced in Section A.4, the core construct here is the pre-dictability of future utility—that is, whether the eventual value of information can be consistently judged at write time. Low-Salience High-Utility Rate (LSHUR), Compaction De-tail Loss (CDL), and Query Answerability Drop (QAD) serve as operational proxies computed from LLM-assisted judg-ments under the consistency controls of Section A.2. CDL-QAD correlation provides an internal consistency check. Two complementary claims are examined. Claim 2.1 (Sec-tion A.5) tests whether write-time salience aligns with future utility, using LSHUR as the proxy. Claim 2.2 (Section A.5) tests whether premature compaction reduces detail recover-ability and answerability, using CDL and QAD as proxies with CDL-QAD correlation for validation. The LoCoMo corpus is used exclusively, as gold evidence annotations are required for salience and utility scoring. Salience and utility scores are assigned by GPT-4o with a sin-gle call at temperature 0.1, following the query-hidden and gold-answer-hidden protocol described in Section A.2. Di-agnostic detail-recoverability and answer-correctness judg-ments use GPT-4o with blind evaluation and N = 3 majority voting. 
+
+Claim 2.1: Write-Time Salience Is Misaligned with Fu-ture Utility Claim 2.1 tests whether write-time salience consistently predicts future query-time utility. If write-time salience sufficed, future high-utility evidence would consis-tently appear high-salience when first observed; a systematic mismatch would indicate that write-time value assessment is inherently incomplete. This is quantified through Low-Salience High-Utility Rate Table 8: Overall Low-Salience High-Utility Rate (LSHUR). 
+
+Metric Numerator / Denominator Rate 
+
+LSHUR-pair 430 / 1,035 41.55% LSHUR-query 424 / 970 43.71% 
+
+(LSHUR). For each evidence-query pair (e, q ), write-time salience score S(e) ∈ { 1, 2, 3} and query-time utility score 
+
+U (e, q ) ∈ { 1, 2, 3} are independently assigned. S = 3 in-dicates the utterance merits immediate archival as a durable fact; S ≤ 2 indicates no clear immediate archival value. 
+
+U = 3 indicates critical/direct evidence for answering the future query. At the pair level, LSHUR is the proportion of future high-utility pairs whose write-time salience falls below threshold τs:
+
+LSHUR pair = |{ (e, q ) : S(e) ≤ τs ∧ U (e, q ) ≥ τu}| |{ (e, q ) : U (e, q ) ≥ τu}| .
+
+(12) At the query level, LSHUR counts queries with at least one low-salience high-utility evidence: 
+
+LSHUR query = |{ q : ∃e, S (e) ≤ τs ∧ U (e, q ) ≥ τu}| |{ q : ∃e, U (e, q ) ≥ τu}| .
+
+(13) The low-salience threshold is fixed at τs = 2 (i.e., S(e) ≤ 2), and the utility threshold is fixed at τu = 3 , admitting only evidence judged critical for answering the future query. Write-time salience is scored with the LLM seeing only the target utterance and its two preceding utterances, with no future query, gold answer, or downstream task provided, ensuring query-agnostic scoring. Query-time utility scoring adds the future query but excludes the gold answer. Salience and utility scores are assigned by GPT-4o with a single call at temperature 0.1, following Section A.2. Table 8 reports overall LSHUR. Results reveal a substantial salience-utility misalignment across the full LoCoMo evaluation set. At the pair level, 41.55% of future-critical evidence–query pairs are low-salience at write time. At the query level, 43.71% of queries with at least one critical evidence utterance contain at least one such low-salience critical utterance. If write-time salience were a reliable proxy for future utility, the propor-tion of low-salience high-utility evidence would be expected to be substantially lower. The observed rates instead indi-cate that value assessment at write time is often incomplete, suggesting that memory architectures should avoid relying solely on write-time retention decisions. The category distribution of the resulting LSHU questions is provided in Table 5. The subset is concentrated in S-hop and Temp questions, indicating that delayed utility extends beyond multi-hop evidence composition. Because salience scoring is query-hidden, utility scoring excludes the gold an-swer, and neither score uses method outputs, the subset con-struction does not depend on gold-answer leakage or method performance. These results indicate that write-time salience is an imper-fect proxy for future utility. A non-trivial fraction of future-critical evidence is misjudged at write time, affecting 43.71% of queries that contain at least one critical evidence utterance. 
+
+Claim 2.2: Premature Compaction Reduces Detail Re-coverability and Answerability This subsection exam-ines whether the salience-utility misalignment established in Claim 2.1 produces measurable consequences. If a system performs early compaction based on write-time salience, be-fore future queries reveal actual needs, query-relevant details may be lost, degrading downstream answerability. Two metrics are defined. Compaction Detail Loss (CDL) measures the proportion of query-critical gold facts unre-coverable from compacted memory. For query q with gold fact set Gq and compacted memory Mc, an LLM judge classifies each fact as fully recoverable, partially recover-able, or not recoverable. The Detail Recovery Rate (DRR) yields CDL c(q) = 1 −DRR c(q). Query Answerability Drop (QAD) measures the relative degradation in answer correct-ness when using compacted memory versus raw gold evi-dence. For each query, answers are generated from raw ev-idence and from compacted memory Mc; an LLM judge performs blind correctness evaluation. CDL is computed at the fact level and then aggregated, whereas QAD is computed at the query level. Both metrics report strict and lenient variants. Under the strict setting, partially correct/recoverable counts as incor-rect/unrecoverable. Under the lenient setting, it counts as 0.5. QAD is then QAD c = Acc raw − Acc c.
+
+CDL and QAD are evaluated on 100 queries sampled from the strict LSHU subset using question-category strat-ification. Premature compaction is simulated at the query level via salience-ranked truncation. For each query q, its gold evidence utterances are ranked by their query-hidden write-time salience score S(e), and only the top-c utterances are retained as compacted memory Mc for c ∈ { 2, 4, 8}.This models query-agnostic compaction without knowledge of future information needs. This setup is not intended as a deployable memory baseline; it is a controlled diagnos-tic that isolates the effect of salience-ranked retention from retrieval errors. Even when the candidate pool is restricted to gold evidence, write-time salience alone fails to preserve all query-critical details. Query-critical gold facts are drawn from LoCoMo gold evidence annotations. Answer gener-ation uses GPT-4o-mini; all recoverability and correctness judgments use GPT-4o under the protocol described in Sec-tion A.2. 
+
+Detail Recoverability (CDL). Table 9 reports CDL across memory sources. Compacted memory reduces detail recoverability. The raw evidence baseline serves as a diagnostic upper-bound source, since recoverability is still judged from natural-language ev-idence under the same blind LLM protocol. It achieves a strict CDL of 17.81%, while all compaction settings raise strict CDL to 49%–56%. Even under lenient criteria, CDL remains above 47%. When compaction decisions are made at write time without knowledge of future queries, nearly half of the gold-standard evidence becomes unrecoverable. The gap between the raw baseline and all compaction set-tings indicates that write-time salience, as the sole retention criterion, is prone to discarding query-relevant details. Table 9: Compaction Detail Loss (CDL) across memory sources.                                       
+
+> Memory Source Fully Recov. Partially Recov. Not Recov. DRR Strict CDL Strict DRR Lenient CDL Lenient
+> Raw evidence 120 15 11 82.19% 17.81% 87.33% 12.67%
+> c= 2 64 478 43.84% 56.16% 45.21% 54.79%
+> c= 4 73 370 50.00% 50.00% 51.03% 48.97%
+> c= 8 74 666 50.68% 49.32% 52.74% 47.26%
+
+Answerability Degradation (QAD). Table 10 reports QAD across memory sources. The answerability degrades measurably under com-paction. Raw gold evidence achieves strict accuracy of 56.00%; compacted memory accuracy drops to 31%–40% across c settings, yielding QAD strict of 16%–25%. Lenient QAD shows consistent attenuation of 12%–23%. This degra-dation indicates that the detail loss measured by CDL trans-lates into tangible downstream harm: answers generated from compacted memory are measurably less accurate, and the ef-fect persists even under lenient evaluation criteria that credit partial correctness. 
+
+CDL–QAD Correlation. To verify that memory-level loss and task-level degradation are internally consistent, CDL-QAD correlation is computed at both aggregate and per-QA levels. Figure 8 reports the per-QA results. At the aggregate level, Pearson r is positive under both settings (strict: r = 0 .58 ; lenient: r = 0 .94 ). At the per-QA level spanning 300 observations from 100 queries across three compaction settings, correlations are moderate but con-sistently positive (strict: r = 0 .39 ; lenient: r = 0 .36 ). These correlations show that memory-level detail loss and task-level degradation co-vary consistently, while residual per-instance variability remains. These results indicate that premature compaction based on write-time salience substantially reduces detail recover-ability, with strict DRR dropping from 82.19% under raw evidence to 43.84%–50.68% under salience-ranked com-paction, and degrades answerability by 16%–25%. The posi-tive CDL-QAD correlation indicates that memory-level loss is associated with task-level degradation. Taken together, Section A.5 provides evidence for De-layed Utility Manifestation from two complementary angles. LSHUR analysis indicates that write-time salience underesti-mates future query-time utility, with the gap affecting 43.71% of queries that contain at least one critical evidence utterance. CDL and QAD analyses indicate that premature compaction based on write-time salience produces measurable degra-dation in both detail recoverability and answerability, with positive CDL-QAD correlation confirming that these two dimensions of loss are internally consistent. These results demonstrate that write-time salience is an imperfect proxy for future utility, since information value often emerges only when future queries reveal specific needs. Section A.7 dis-cusses how these findings motivate MemSIF’s Dual-Track Fact Memory. 
+
+A.6 Reproducibility and Implementation Details 
+
+Segment embeddings are computed with Qwen3-Embedding-8B. GPT-4o is used for DUM salience and utility scoring as well as judgment-oriented validation. Task-specific prompts, query-hidden salience scoring, gold-answer-hidden utility scoring, and blind evaluation are used to reduce direct leakage and method-output bias. 
+
+Decoding and Consistency Controls. Salience and util-ity scores are assigned with a single call at temperature 
+
+0.1. Salience scoring is query-hidden: the model sees only the target utterance and its two preceding utterances. Utility scoring uses the future query but excludes the gold answer. Judgment-oriented steps, including TSM semantic-shift vali-dation, same-thread validation, detail recoverability, and an-swer correctness, use temperature 0.0 with N = 3 self-consistency majority voting. Correctness and recoverability judgments use blind evaluation with deterministically shuf-fled input order where applicable. 
+
+Computational Cost. Embedding computation processes the full LoCoMo corpus under each segment-length con-figuration; its cost is deterministic and substantially lower than the LLM-based annotation and judgment steps. TSM LLM validation involves 600 pairwise judgments (2 datasets 
+
+× 3 buckets × 100 pairs) at ∼200 tokens per judgment. DUM salience and utility annotation includes utility scoring for 2,229 evidence–query pairs plus salience scoring for the corresponding evidence utterances, for approximately 3,000 LLM calls in total. Answer generation for QAD evaluation (100 queries × 4 memory sources = 400 generations) con-sumes approximately 200K output tokens. 
+
+Reproducibility. All sampling and bucket-construction operations, including the 100-query stratified sample for CDL/QAD evaluation, use fixed seed 42. Fixed-length seg-mentation, embedding computation, and statistical aggrega-tion are deterministic given the same inputs. LLM-based steps are reproducible given the same model versions, prompts, decoding settings, and released intermediate an-notations. Full prompt templates and generated annotation files are provided in the supplementary materials. 
+
+A.7 From Empirical Findings to Architecture Design 
+
+The empirical findings of Sections A.4 and A.5 clarify why MemSIF separates interaction organization from fact con-struction. TSM shows that chronological adjacency alone cannot represent both local topic boundaries and cross-time event continuity. This motivates Structured Interaction Memory, where Topical Segments preserve locally coher-ent interaction units while Event Trajectories reconnect non-contiguous units that belong to the same evolving event or task. Table 10: Query Answerability Drop (QAD) across memory sources. 
+
+Memory Source Correct Partially Correct Incorrect Acc Strict Acc Lenient QAD Strict QAD Lenient 
+
+Raw gold evidence 56 21 23 56.00% 66.50% — —
+
+c = 2 31 25 44 31.00% 43.50% 25.00% 23.00% 
+
+c = 4 31 35 34 31.00% 48.50% 25.00% 18.00% 
+
+c = 8 40 29 31 40.00% 54.50% 16.00% 12.00% 0.0 0.5 1.0     
+
+> Compaction Detail Loss (CDL)
+> 0.0
+> 0.5
+> 1.0
+> Query Answerability Drop (QAD)
+> Pearson r= 0.3869
+> Spearman ρ= 0.3816
+
+## (a) Per-QA Strict       
+
+> 0.0 0.5 1.0
+> Compaction Detail Loss (CDL)
+> 0.0
+> 0.5
+> 1.0
+> Pearson r= 0.3598
+> Spearman ρ= 0.3578
+
+## (b) Per-QA Lenient 
+
+Figure 8: Compaction Detail Loss–Query Answerability Drop (CDL–QAD) correlation at per-QA level (300 observations = 100 queries × 3 compaction settings c ∈ { 2, 4, 8}). QAD values are discrete (strict: {0.0, 1.0}, lenient: {0.0, 0.5, 1.0}); a small vertical jitter ( ±0.025) is applied to reveal point density. All reported statistics (Pearson r, Spearman ρ) are computed on the original unjittered data. DUM shows that write-time salience is an incomplete pre-dictor of future utility and that salience-based compaction can reduce both detail recoverability and answerability. This motivates Dual-Track Fact Memory. CoreFact memory con-solidates schema-guided information whose reusable value can be identified at write time, while uncertain details remain recoverable from Structured Interaction Memory. ActiveFact memory then supports query-driven formation when later queries reveal the utility of those details. Together, these two designs address different points in the memory activation and consolidation process. Structured Interaction Memory changes how interaction histories are organized, whereas Dual-Track Fact Memory changes when uncertain information is activated and consolidated. Queries reveal which recoverable details matter, and recurring source support with recurring query demand can turn such details into persistent ActiveFact entries. 
+
+## B Dataset Statistics 
+
+Evaluation is conducted on two long-term memory QA benchmarks, LoCoMo (Maharana et al. 2024) and LongMemEval-S (Wu et al. 2024). LoCoMo contains 10 long-term two-party conversations, each spanning approximately 27 sessions over 184–293 cal-endar days and averaging 16.6K tokens. All questions within the same conversation share the interaction history, requiring memory systems to answer diverse queries against a single evolving dialogue. We exclude 446 adversarial questions and retain 1,540 evidence-grounded evaluation samples. LongMemEval-S contains 500 independent samples, each paired with a distinct long interaction history averaging over 100K tokens. After excluding 30 abstention questions that do not require evidence-grounded retrieval, 470 evaluation samples remain. Table 12 summarizes the key statistics and question category distributions. 
+
+Question Categories. We report all results using four categories, S-hop, M-hop, Temp, and Kno. S-hop de-notes single-hop factual recall, M-hop requires evidence Table 11: Main results on LoCoMo with Qwen3-8B and Llama-3.1-8B-Instruct. Bold indicates the best result and underlined the second-best for each column. 
+
+# Method Qwen3-8B Llama-3.1-8B-Instruct S-hop M-hop Temp Kno Total S-hop M-hop Temp Kno Total Full-Context 86.49 58.16 44.37 33.33 69.21 77.75 47.66 50.12 58.54 65.28 Naive RAG 76.42 37.21 45.99 27.33 59.84 69.80 38.63 46.88 42.55 57.62 Mem0 67.66 50.20 37.24 42.02 56.52 52.23 52.78 37.80 47.94 49.06 MemoryOS 70.84 51.65 32.88 46.52 57.90 56.41 57.95 45.46 50.86 54.06 MemGAS 49.58 52.70 53.58 49.46 50.98 72.06 33.64 47.92 47.87 58.48 LightMem 81.52 53.19 58.12 31.25 68.32 78.76 46.11 51.17 62.41 66.01 GAM 86.02 63.12 48.75 48.50 71.72 79.52 38.62 43.03 52.20 62.72 CoM 81.28 64.54 50.00 39.58 69.10 79.81 53.27 51.04 63.12 67.91 xMemory 79.38 53.90 38.75 41.67 63.89 65.52 52.65 43.75 50.71 57.70 SimpleMem 75.37 61.57 47.50 45.75 65.19 79.86 39.59 49.20 65.95 65.23 
+
+# MemSIF 87.51 68.09 76.32 52.08 79.41 84.56 68.86 54.61 67.51 74.38 
+
+Table 12: Dataset statistics and question category distribution.                       
+
+> Statistic LoCoMo LongMemEval-S
+> Conversations / Samples 10 470 Sessions per history 27.2 (19–32) 47.7 (38–62) Avg. tokens 16,641 103,030 Date span (days) 238 (184–293) 28.6 (0–304)
+> Question Category Distribution
+> S-hop 841 (54.6%) 150 (31.9%) M-hop 282 (18.3%) 121 (25.7%) Temp 321 (20.8%) 127 (27.0%) Kno 96 (6.2%) 72 (15.3%)
+> Total 1,540 470
+> Token counts are computed using the cl100k_base tokenizer.
+
+from multiple segments, Temp involves temporal reasoning, and Kno requires knowledge-based inference or synthesis. For LongMemEval-S, single-session-user, single-session-assistant, and single-session-preference are mapped to S-hop; multi-session to M-hop; temporal-reasoning to Temp; and knowledge-update to Kno. 
+
+## C Implementation Details 
+
+C.1 MemSIF Hyperparameters 
+
+MemSIF computes a matching score for memory units fol-lowing Equation (1) in the main paper: 
+
+ϕ(A, B ) = α · ssem (A, B ) + (1 − α) · J(KA, KB ), (14) where ssem is cosine similarity normalized to [0 , 1] , and 
+
+J(KA, KB ) is the Jaccard overlap between key-entity sets. Topical Segment construction uses a double-threshold boundary strategy: scores above τmerge = 0 .60 trigger au-tomatic merging, scores below τsplit = 0 .325 trigger auto-matic splitting, and intermediate scores invoke an LLM judge for resolution. Event Trajectory aggregation uses the same Table 13: MemSIF hyperparameters (LoCoMo defaults). 
+
+# Component Parameter Value 
+
+# Topical Segment α 0.8 Topical Segment τmerge 0.60 Topical Segment τsplit 0.325 Event Trajectory α 0.8 Event Trajectory Top-K 3ActiveFact Promotion θs 0.45 ActiveFact Promotion θq 0.45 
+
+matching function ϕ with α = 0 .8 and Top-K = 3 , relying on an LLM judge for assignment decisions. For ActiveFact promotion, a candidate cluster is promoted only when both its source-support score and query-demand score exceed the thresholds θs = θq = 0 .45 .In our LoCoMo and LongMemEval-S experiments, the configurable CoreFact schema uses four fact types, Iden-tity (static attributes such as occupation and location), Event 
+
+(time-anchored occurrences such as travel and achieve-ments), Preference (subjective attitudes across domains such as food, entertainment, and career), and Relation (social ties such as family, friend, and colleague). The Event category describes fact content and is distinct from Event Trajectories, which organize conversational segments. All hyperparame-ters are shared across backbones. 
+
+C.2 Baseline Configurations 
+
+The eight memory-augmented baselines (Mem0, Mem-oryOS, LightMem, MemGAS, GAM, CoM, xMemory, SimpleMem) are run using their official open-source im-plementations and recommended hyperparameters, except that embedding-based components use the unified Qwen3-Embedding-8B encoder for fair comparison. The two non-memory baselines are configured as follows: 
+
+Full-Context. The entire interaction history is provided as context, with tail truncation to fit within the backbone model’s effective context budget ( ≈32K tokens after reserv-ing space for the system prompt and answer generation). No memory construction is performed. 
+
+Naive RAG. Each dialogue turn is treated as an indi-vidual retrieval chunk. Chunks are indexed using Qwen3-Embedding-8B with cosine similarity, and the top-100 most relevant chunks are retrieved and concatenated in chronolog-ical order, subject to the same context budget as Full-Context. 
+
+Model and Retrieval Configuration. Qwen3-series mod-els (32B, 8B, 4B) are deployed locally; DeepSeek-v4-pro is accessed through its official API. Qwen3-series mod-els and DeepSeek-v4-pro are run in non-thinking modes, while Llama-3.1-8B-Instruct uses its standard instruction-following configuration. All backbones share identical answer-generation parameters (temperature = 0 .1, max to-kens = 512 ), as described in Section D. The unified embedding encoder for all methods is Qwen3-Embedding-8B, which produces 4096-dimensional embed-dings and uses cosine similarity as the distance metric. 
+
+Hardware. All experiments are conducted on 2 × NVIDIA H20 GPUs (96 GB each). 
+
+## D Evaluation Protocol 
+
+All methods share identical answer-generation and GPT-4o judge prompts (Appendix I). The only method-specific com-ponents are memory construction and retrieval. 
+
+Evaluation Pipeline. Evaluation proceeds in three stages per test question. First, each method constructs and retrieves memory evidence using its own mechanism. Second, the retrieved evidence is inserted into the answer-generation prompt provided in Appendix I, and the backbone LLM produces an answer. Third, a GPT-4o judge compares the generated answer against the gold reference using the judge prompt in Appendix I and returns a CORRECT or WRONG 
+
+label. For LoCoMo, we follow the online query-state protocol used in the main text. Questions from the same conversa-tion are processed in a fixed randomized order. Query-local evidence is cleared after each answer, while candidate clus-ters and persistent ActiveFact entries are retained within the same conversation and reset across conversations. Memory updates use only retrieved interaction evidence; gold an-swers and judge feedback are never used for memory up-dates. LongMemEval-S samples use isolated memory states, as each sample carries an independent interaction history. 
+
+Repeated Runs. Reported ACC values are averaged over three independent runs. 
+
+D.1 Validation of the LLM-based Evaluator 
+
+To assess the reliability of GPT-4o as the automatic evaluator, we conduct a human verification study on a stratified sample of generated answers from the Qwen3-4B experiments. 
+
+Sampling. We sample 220 generated answers from each dataset (11 systems × 20 answers per system), totaling 440 answers, stratified by dataset and method. Each method contributes the same number of randomly selected an-swers within each dataset. Within each stratum, answers are sampled without conditioning on the GPT-4o decision, thereby retaining the natural distribution of answers judged as CORRECT and WRONG . The sample covers MemSIF and all compared methods. 
+
+Annotation Protocol. Two annotators independently label each generated answer as correct or incorrect. For each in-stance, they are shown the question, reference answer, and generated answer, matching the inputs provided to the GPT-4o judge. Annotators are blinded to both the method identity and the GPT-4o judgment. They follow the same evaluation criterion as the automatic judge: an answer is considered correct only when it directly addresses the question and is semantically consistent with the essential information in the reference answer. Disagreements are resolved through dis-cussion to obtain an adjudicated human label. 
+
+Agreement Results. Table 14 reports inter-annotator agreement and the agreement between GPT-4o and the adju-dicated human labels. We report both percent agreement and Cohen’s κ to account for chance agreement. Human–human agreement establishes an upper bound for the evaluation task: even expert annotators do not achieve perfect agreement, and GPT-4o–human agreement should be interpreted relative to this ceiling. Table 14: Human validation of the GPT-4o evaluator. H–H denotes agreement between the two human annotators, and GPT–H denotes agreement between GPT-4o and the adjudicated human labels. Overall aggregates both datasets with equal weight.                       
+
+> Dataset # Ans. H–H Agr. H–H κGPT–H Agr. GPT–H κ
+> LoCoMo 220 96.4% 0.90 93.6% 0.82 LongMemEval-S 220 94.5% 0.86 92.3% 0.79 Overall 440 95.5% 0.88 93.0% 0.81
+
+Method-wise and Disagreement Analysis. Across all 440 sampled answers, GPT-4o and the adjudicated human labels disagree on 31 cases (7.0%). The disagreements are nearly symmetric: 15 cases where GPT-4o accepts answers that hu-mans reject, and 16 cases where GPT-4o rejects answers that humans accept, indicating no systematic bias toward either over-acceptance or over-rejection. Across individual methods, GPT-4o–human agreement ranges from 87.5% to 97.5%. Agreement for MemSIF is 92.5%, compared with 87.5%–97.5% for the baselines. The most frequent disagree-ment patterns involve partially correct answers and semanti-cally equivalent answers with indirect wording. 
+
+D.2 Statistical Reliability Analysis 
+
+To quantify the uncertainty of the reported accuracy gains, we perform paired bootstrap resampling between MemSIF and the strongest baseline in each of the six dataset–backbone settings from the main results (Tables 1 and 2). Table 15: Paired bootstrap reliability analysis. ∆ACC =
+
+ACC MemSIF − ACC baseline . The strongest baseline is selected per dataset–backbone setting. All confidence intervals exclude zero.                                    
+
+> Dataset Backbone Baseline ∆ACC (%) 95% CI Low 95% CI High
+> LoCoMo Qwen3-4B CoM 8.79 4.28 11.41 LoCoMo Qwen3-32B GAM 5.78 1.43 7.39 LoCoMo DeepSeek-v4-pro SimpleMem 2.29 0.45 5.03 LongMemEval-S Qwen3-4B CoM 6.15 1.69 10.83 LongMemEval-S Qwen3-32B CoM 4.62 0.67 8.64 LongMemEval-S DeepSeek-v4-pro SimpleMem 2.87 0.32 6.44
+
+For each setting, we first average the per-sample binary correctness judgments across the three independent runs, yielding a single score in [0 , 1] for each method–sample pair. The paired difference for sample i is ∆i = Acc MemSIF (i) −
+
+Acc baseline (i), and the point estimate is the sample mean ¯∆ = 
+
+> 1
+> n
+
+Pni=1 ∆i.We construct the bootstrap distribution of ¯∆ with B =10 ,000 resamples. The resampling strategy respects the de-pendence structure of each dataset. For LoCoMo, where mul-tiple questions share the same conversation history, we use a paired cluster bootstrap: the 10 conversations are resam-pled with replacement, and all questions belonging to each sampled conversation are included. For LongMemEval-S, where each sample carries an independent interaction his-tory, we use a category-stratified paired bootstrap: within each of the four question categories (S-hop, M-hop, Temp, Kno), we resample the same number of questions with re-placement. In both strategies, MemSIF and the baseline share the same resampling indices, preserving the paired structure. For each bootstrap replicate b, we compute ¯∆(b), and the 95% confidence interval is obtained via the percentile method as 
+
+[ ¯∆(0 .025) , ¯∆(0 .975) ]. Random seeds are set to 2026 + k for the k-th comparison. All six confidence intervals exclude zero, confirming that MemSIF’s improvements over the strongest baselines are sta-tistically reliable at the 95% confidence level. The intervals are wider for LongMemEval-S than for LoCoMo, reflect-ing the smaller sample size (470 vs. 1,540 questions). The narrowest intervals occur under DeepSeek-v4-pro on both datasets, consistent with the smaller point estimates; never-theless, even these comparisons yield confidence intervals with positive lower bounds, indicating that the gains are not attributable to sampling variability alone. 
+
+## E Supplementary Experimental Results 
+
+To assess whether MemSIF’s benefits generalize across model scales and architectures, supplementary experiments are conducted with two additional backbones on LoCoMo, Qwen3-8B, which extends the Qwen3 family to an interme-diate scale, and Llama-3.1-8B-Instruct, which represents a different architecture family. Table 11 reports the results. 
+
+Qwen3-8B Results. Under Qwen3-8B (Table 11), Mem-SIF achieves the highest Total ACC at 79.41%, surpassing GAM, the best-performing baseline at 71.72%, by 7.69%. This result lies between Qwen3-4B at 75.62% and Qwen3-32B at 82.99%, following the increasing trend observed across the evaluated Qwen3 scales. The Temp category shows the largest gain, with MemSIF achieving 76.32% versus GAM’s 48.75%, a 27.57% advan-tage. This gap is consistent with the Event Trajectory design, where linking evidence across sessions provides the cross-temporal connections that Temp questions require, which session-level memory organization does not offer. MemSIF leads on all four categories, indicating balanced benefits across question types. 
+
+Llama-3.1-8B-Instruct Results. Under Llama-3.1-8B-Instruct (Table 11), MemSIF again achieves the highest To-tal ACC at 74.38%, surpassing CoM, the best-performing baseline at 67.91%, by 6.47%. MemSIF leads on all four categories. The M-hop category shows the largest gain, at 68.86% versus 57.95%, while S-hop and Temp also show consistent gains. Notably, the Llama backbone exhibits a different category-level profile from Qwen3, with Kno scores substantially higher than under Qwen3-8B (e.g., MemSIF achieves 67.51% vs. 52.08%). This difference reflects Llama-3.1-8B-Instruct’s capacity for knowledge-intensive reasoning. Mem-SIF leads all four categories, indicating that the benefits ex-tend across architectures with varying category-level charac-teristics. 
+
+Cross-Backbone Analysis. Across the 4B, 8B, and 32B Qwen3 backbones on LoCoMo, MemSIF’s Total ACC rises from 75.62% through 79.41% to 82.99%, while maintaining the lead over the best-performing baseline at every scale. The relative gain over the best-performing baseline is largest at 4B, at 8.79% over CoM’s 66.83%, and narrows to 5.78% at 32B, suggesting that MemSIF provides stronger marginal benefits when the backbone’s intrinsic reasoning capacity is more limited. The Llama-3.1-8B result, at 74.38% with a gain of 6.47% over the best baseline, indicates that MemSIF’s benefits trans-fer across architectures, though the magnitude and category profile vary with the backbone’s strengths. 
+
+## F Sensitivity and Strategy Analysis 
+
+All experiments in this section use LoCoMo with Qwen3-4B and follow the same retrieval, generation, and judging pipeline as the main experiments (Appendix D). We focus on construction-time hyperparameters that affect interaction matching and Topical Segment boundary decisions under the main LoCoMo online query-state protocol, the interaction matching weight and the Topical Segment boundary thresh-olds. Unless noted otherwise, all other hyperparameters are fixed to their default values (Appendix C.1). Accuracy is re-ported for four question categories (S-hop, M-hop, Temp, and Kno), together with the total set. The default configu-ration serves as the reference configuration throughout this section. 
+
+Interaction Matching Weight. The matching function 
+
+ϕ(A, B ) = α · ssem (A, B ) + (1 − α) · J(KA, KB ) com-bines semantic similarity and entity overlap as complemen-tary signals, where semantic similarity captures topical co-herence, while entity overlap grounds recurring participants, objects, or events. To evaluate whether this design is robust to the choice of α, a unified α is applied to both Topical Case 1: Structured Interaction Memory under Temporal -Structural Misalignment 
+
+1. Raw interaction timeline 
+
+Aug 23 (many unrelated sessions omitted) Oct 13 Oct 22 Time 
+
+Session 1 
+
+> Applied to
+> adoption agencies
+> Art & pet chatter
+> (horse paintings,
+> pet photos)
+
+Within -session 
+
+topic mixing 
+
+Session 2  
+
+> Consulted
+> adoption mentor Pottery setback
+
+Session 3  
+
+> Passed
+> adoption interview Poetry
+> discussion
+
+Cross -session event fragmentation 2. Structured Interaction 
+
+Memory organization Topical Segment splitting 
+
+> Topical Segment 1:
+> Adoption application
+> Topical Segment 2:
+> Adoption mentor consultation
+> Topical Segment 3:
+> Adoption interview passed
+
+Event Trajectory: Caroline ’s adoption journey 
+
+Topical Segments isolate adoption discussion 
+
+from interleaved chatter 
+
+Event Trajectory reconnects 
+
+adoption evidence across sessions 
+
+3. Retrieval and answer outcome 
+
+What is Caroline excited about 
+
+in the adoption process? 
+
+Evidence retrieved from Event 
+
+Trajectory Query • Applied to adoption agencies 
+
+• Consulted adoption mentor 
+
+• Passed adoption interview 
+
+Answer 
+
+Creating a family for kids 
+
+who need one. 
+
+CORRECT 
+
+> Adoption
+> Unrelated
+
+Legend 
+
+# • • •Figure 9: Case study 1, Structured Interaction Memory under Temporal–Structural Misalignment (TSM) through Topical Segments and Event Trajectories. Table 16: Sensitivity to the interaction matching weight α
+
+on LoCoMo with Qwen3-4B. “Per-Module” uses α = 0 .8
+
+for both Topical Segment construction and Event Trajectory aggregation. 
+
+α S-hop M-hop Temp Kno Total 0.00 (entity only) 78.92 75.93 62.49 49.04 73.09 0.25 81.37 75.95 55.20 57.71 73.45 0.50 84.43 65.06 66.46 59.69 75.60 0.75 85.76 65.73 48.68 60.23 72.77 1.00 (semantic only) 86.25 61.11 58.20 67.82 74.65 
+
+Per-Module ( 0.8) 85.44 61.96 69.49 50.38 75.62 
+
+Segment construction and Event Trajectory merging, sweep-ing α ∈ { 0.0, 0.25 , 0.50 , 0.75 , 1.0}. The Per-Module row uses the actual per-module defaults, α = 0 .8 for both Topi-cal Segment construction and Event Trajectory aggregation (Appendix C.1). The results show that semantic similarity and entity over-lap are complementary. The pure-entity setting ( α = 0 .0)reaches 73.09% Total ACC, and the pure-semantic setting (α = 1 .0) reaches 74.65%; both are lower than the balanced unified setting ( α = 0 .5, 75.60%) and the Per-Module de-fault (75.62%). Across the unified sweep, Total ACC ranges from 72.77% to 75.60%, indicating that MemSIF is robust to the choice of matching weight. Category-level trends further show that the two signals play different roles. S-hop and Kno improve as α increases, suggesting that single-hop recall and knowledge-oriented questions benefit more from semantic matching. In contrast, M-hop peaks under entity-only matching, consistent with cases where evidence is connected through recurring enti-ties. The Per-Module default gives the best overall balance across categories. 
+
+Segment Boundary Thresholds. Topical Segment con-struction employs a double-threshold strategy, where turns whose matching score exceeds τmerge are auto-merged into the current segment, turns whose score falls below τsplit 
+
+start a new segment, and cases falling between τsplit and 
+
+τmerge invoke an LLM judge to resolve the boundary. This design separates high-confidence merge and split decisions from ambiguous boundaries, reserving the LLM judge only for uncertain cases and reducing unnecessary LLM calls. The default thresholds on LoCoMo are τmerge = 0.60 
+
+and τsplit = 0 .325 , yielding a gap of 0.275 centered at 
+
+c = 0 .4625 (Appendix C.1). To assess sensitivity, the gap width w = τmerge − τsplit is varied while keeping c fixed, producing five configurations from Very Narrow ( w = 0 .075 ) to Very Wide ( w = 0 .475 ). The default setting achieves the highest Total ACC among the tested configurations, at 75.62%. Category-level trends Case 2: Dual -Track Fact Memory under Delayed Utility Manifestation 
+
+# 1. Low -salience evidence 
+
+Brief counseling / 
+
+mental health aside Helping others motivation Counseling workshop 
+
+weak domain cue support -oriented motivation later reinforcing cue 
+
+recoverable low -salience evidence Low -salience evidence remains recoverable 
+
+in Structured Interaction Memory 
+
+# 2. Dual -Track Fact Memory 
+
+## Evidence from Structured Interaction Memory 
+
+## CoreFact memory ActiveFact activation 
+
+## Query -local ActiveFacts 
+
+counseling / mental health → workshop → help others 
+
+# 3. Retrieval and outcome 
+
+## Query 
+
+What fields would Caroline be likely 
+
+to pursue in her education? 
+
+Dual -track fact 
+
+retrieval 
+
+## Answer 
+
+Psychology, counseling certification 
+
+• Stable fact track 
+
+• Broad background only 
+
+• No counseling -domain 
+
+evidence 
+
+• Activated for current query 
+
+• Extracted from Structured 
+
+Interaction Memory 
+
+• Retains source provenance 
+
+May 8 , Session 1 Jun 9, Session 2 Jun 27, Session 3 
+
+CORRECT 
+
+Time 
+
+# • • •Figure 10: Case study 2, Dual-Track Fact Memory under Delayed Utility Manifestation (DUM) through CoreFact memory and ActiveFact memory. Table 17: Sensitivity to segment boundary thresholds on LoCoMo with Qwen3-4B. Gap width w is varied while keeping the center c fixed.                                                 
+
+> Setting τmerge τsplit wS-hop M-hop Temp Kno Total Very Narrow 0.50 0.425 0.075 82.23 59.18 59.01 49.55 71.13 Narrow 0.55 0.375 0.175 86.47 62.21 54.22 52.85 73.21
+> Default 0.60 0.325 0.275 85.44 61.96 69.49 50.38 75.62
+> Wide 0.65 0.275 0.375 79.73 65.04 59.71 54.59 71.30 Very Wide 0.70 0.225 0.475 80.75 64.91 63.63 53.90 72.61
+
+reveal trade-offs, where M-hop improves from Very Narrow to Wide, indicating that allowing a broader ambiguous re-gion for boundary judgment can help isolate evidence needed for multi-segment reasoning. Conversely, S-hop drops under wider gaps, indicating a trade-off between fine-grained evi-dence separation and preserving local single-hop continuity. Temp peaks at the default setting, indicating that a moderate gap best balances these effects for temporal questions. Over-all, the default setting provides the best balance among the tested gaps. 
+
+Summary. Taken together, these analyses indicate that MemSIF’s construction-time choices remain robust across a range of hyperparameter settings. The matching score benefits from combining semantic and entity signals, while Table 18: Amortized efficiency comparison on LoCoMo (Qwen3-4B and Qwen3-32B). Bold indicates the best and underlined the second-best per column (higher ACC / lower tokens and time are better).                                                                          
+
+> Method Qwen3-4B Qwen3-32B ACC (%) Tokens Time (s) ACC (%) Tokens Time (s) Full-Context 62.89 11,523 0.11 74.47 11,525 0.43
+> Naive RAG 55.25 3,532 0.10 64.63 3,533 0.64 Mem0 48.64 7,056 5.90 52.47 6,780 17.17 MemoryOS 50.84 2,291 8.84 57.86 4,822 29.29 MemGAS 56.43 1,697 0.94 61.62 1,650 1.33 LightMem 64.98 1,661 1.06 74.06 1,581 5.51 GAM 65.48 4,064 1.30 77.21 4,055 8.74 CoM 66.83 2,084 0.92 76.26 2,078 3.65 xMemory 61.48 6,897 6.70 67.70 6,271 17.19 SimpleMem 61.36 2,310 2.49 74.61 2,293 12.31
+> MemSIF 75.62 3,052 1.40 82.99 2,410 7.04
+
+the double-threshold segmentation strategy remains effec-tive across reasonable gap-width variations. These results confirm the complementarity of the underlying signals. 
+
+## G Case Studies 
+
+Two representative LoCoMo cases illustrate how MemSIF addresses the two mismatch patterns, where Structured Inter-action Memory reconstructs dispersed evidence under TSM, while Dual-Track Fact Memory extracts low-salience evi-dence under DUM. 
+
+Case 1: Structured Interaction Memory under TSM. 
+
+Structured Interaction Memory’s handling of Temporal– Structural Misalignment (TSM) is examined through the fol-lowing case. The query “What is Caroline excited about in the adoption process?” (gold: creating a family for kids who need one ) depends on evidence scattered across three ses-sions over two months, spanning applying to agencies, con-sulting a mentor, and passing the interview. Within each ses-sion, adoption discussion is interleaved with unrelated chat-ter such as pet photos, horse paintings, and pottery; across sessions, the fragments are separated by weeks of unrelated conversation. This illustrates TSM in its dual form, com-bining within-session topic mixing with cross-session event fragmentation. Structured Interaction Memory handles these two patterns through complementary structures. Topical Segments detect topic boundaries and split conversations accordingly, isolat-ing adoption discussion from interleaved chatter within the same session. Event Trajectories then reconnect the separated adoption segments across sessions, merging them into a sin-gle trajectory ( Caroline’s adoption journey ) that recovers the causal chain of apply, consult, and pass. Figure 9 illustrates the reconstructed structure. Once linked by Event Trajectories, all three adoption fragments are retrieved through their shared trajectory. This case illus-trates why both interaction-level views are needed. Topical Segments separate adoption-related turns from local topic mixing, while Event Trajectories reconnect the separated fragments into a shared retrieval path that spans beyond any fixed chronological window. 
+
+Case 2: Dual-Track Fact Memory under DUM. Dual-Track Fact Memory’s handling of Delayed Utility Manifes-tation (DUM) is examined through the following case. The query “What fields would Caroline be likely to pursue in her education?” (gold: Psychology, counseling certification ) de-pends on a brief mention of counseling and mental health that appears in only three conversational turns before the topic shifts to art. At write time, this aside has low apparent archival value and lies below the typical retention threshold of salience-based filters. For this query, MemSIF retrieves the counseling-related evidence from Structured Interaction Memory, extracts query-local evidence for answering, and can accumulate candidates toward persistent ActiveFact en-tries when similar evidence and query demand recur. CoreFact memory alone cannot answer this query. Its re-trieval returns only the generalized preference that Caroline has direction, and cannot identify counseling as the specific domain. CoreFact memory does not encode the aside at write time, since it lacks sufficient salience and cross-session cor-roboration. ActiveFact memory fills this gap. When the retrieved CoreFact entries are insufficient for the query, MemSIF traces back to Structured Interaction Memory and extracts the counseling-related evidence as query-local evidence with source provenance. This evidence supports the current an-swer and, after answer generation, updates the cross-query candidate state. When recurring source support and recurring query demand are observed, the candidate can be promoted to a persistent ActiveFact entry for later queries. Figure 10 illustrates the complementary roles, where CoreFact memory anchors reusable background knowledge identified at write time, while ActiveFact memory forms facts on demand when the current question requires them. This case illustrates DUM, where the counseling aside lies be-low the salience threshold for CoreFact consolidation, yet remains recoverable through Structured Interaction Mem-ory and can be extracted as query-local evidence when the educational-domain query makes it useful. 
+
+## H Efficiency Analysis Details 
+
+We report amortized cost for each method as the total cost of memory construction, retrieval, and answer generation divided by the number of test queries Nq . Embedding com-putation and the external evaluation judge are excluded. This captures both the one-time memory-building overhead and the per-query inference cost under the same scope as the main text. Table 18 reports token and runtime cost per query alongside Total ACC for all methods under Qwen3-4B and Qwen3-32B on LoCoMo ( Nq = 1 ,540 ). Under Qwen3-32B, MemSIF achieves the highest ACC at 82.99% while consuming 2.41K tokens and 7.04 seconds per query. Compared with GAM, the strongest accuracy base-line at 77.21%, MemSIF uses 40.6% fewer tokens (2.41K vs. 4.06K) and 19.4% less runtime (7.04s vs. 8.74s), while improving ACC by 5.78%. Compared with SimpleMem at a similar token budget (2.29K vs. 2.41K), MemSIF reduces runtime by 42.8% and improves ACC by 8.38%. LightMem and MemGAS achieve the lowest token con-sumption under Qwen3-32B (1.58K–1.65K tokens), but their ACC remains below MemSIF, indicating that aggressive compression trades evidence completeness for token effi-ciency. Full-Context and Naive RAG are fast in wall-clock time because they bypass memory construction, but both achieve lower ACC than MemSIF. Full-Context incurs the highest to-ken cost at 11.5K per query, while Naive RAG has moderate token consumption but lower accuracy than most explicit-memory methods. These results confirm that explicit mem-ory organization yields higher accuracy than full-context or simple retrieval baselines, even when those baselines are computationally efficient. 
+
+## I Prompt Templates 
+
+This section reports the prompt templates used by MemSIF’s LLM-based modules and by the shared answer-generation and evaluation pipeline. The prompts use structured outputs where applicable to make intermediate decisions auditable. Internal MemSIF prompts do not use gold answers, generated answers, or evaluation feedback. All methods use the same answer-generation prompt. The context field contains the evidence retrieved or constructed by each method. Answer generation uses temperature 0.1 and max tokens 512 . The GPT-4o judge uses the same evaluation prompt for all methods with temperature 0.0 and max tokens 
+
+256 . A generated answer is labeled CORRECT only when it directly answers the question and is semantically consistent with the essential information in the gold answer; mere topic or entity overlap is insufficient. Prompt 1: Answer Generation Prompt 
+
+System Message 
+
+You are a helpful assistant. Answer the question concisely and directly using only the provided context. If the context contains relevant clues, make a concise inference grounded only in that context. Do not use external knowledge. Reply with “I don’t know” if the context is insufficient. 
+
+User Message Context: {} 
+
+Question: {} 
+
+Instruction. Provide a direct, short answer based only on the context above. Do not repeat the question. 
+
+Prompt 2: Answer Evaluation Judge Prompt 
+
+System Message 
+
+You are an answer evaluation judge. Determine whether a generated answer should be labeled as CORRECT or WRONG . Return only valid JSON. 
+
+User Message 
+
+Evaluate the generated answer against the gold answer for the given question. 
+
+Question: {} 
+
+Gold Answer: {} 
+
+Generated Answer: {} 
+
+Evaluation Criteria 
+
+The question asks about information grounded in prior interaction histories. The gold answer may be concise, and semantic equivalence does not require exact lexical overlap. Label the generated answer as CORRECT only if it directly answers the question and is semantically consistent with the essential information in the gold answer, including relevant entities, events, relations, attributes, quantities, or preferences. Mere topic or entity overlap is insufficient. Additional information is acceptable only if it does not contradict or materially alter the answer; otherwise, label the answer as WRONG .For time-related questions, different date formats or relative expressions are equivalent only when they refer to the same time point or period. 
+
+Output Format 
+
+Return only one JSON object with a brief reason and the final label: 
+
+{"reason": "...", "label": "CORRECT" or "WRONG" }
+
+Do not include both CORRECT and WRONG in the label field. Prompt 3: Topical Segment Boundary Judge Prompt 
+
+System Message 
+
+You are a dialogue segmentation judge. Determine whether a new utterance continues the current Topical Segment or should start a new segment. 
+
+User Message 
+
+Given the current segment, a new utterance, and a short look-ahead context, decide whether the new utterance preserves the same topic or introduces a topic/event shift. 
+
+CURRENT_SEGMENT: {current_segment} 
+
+NEW_UTTERANCE: {new_utterance} 
+
+SUBSEQUENT_TURNS: {next_turns} 
+
+Decision Criteria 
+
+Return 1 if the new utterance continues the same topic, event, goal, or discussion direction. Return 0 if it introduces a different topic, changes the focus or goal, or if the look-ahead context indicates that the conversation has shifted. Merge only clear continuations into the current segment. 
+
+Output Format 
+
+Return only 0 or 1.
+
+Prompt 4: Event Trajectory Compatibility Prompt 
+
+System Message 
+
+You are an event-trajectory judge. Determine whether a new Topical Segment belongs to an existing Event Trajectory. 
+
+User Message 
+
+Given an Event Trajectory summary, its existing segment summary, and a new Topical Segment, decide whether the new segment should be linked to the same evolving event or task. 
+
+EVENT_TRAJECTORY_OVERVIEW: {event_trajectory_summary} 
+
+EXISTING_SEGMENT_SUMMARY: {existing_segment_summary} 
+
+NEW_TOPICAL_SEGMENT: {new_topical_segment_text} 
+
+Decision Criteria 
+
+Return 1 if the new segment is a follow-up, progress update, elaboration, phase transition, decision, or clarification for the same evolving event or task. Return 0 if it reflects a different activity, goal, context, or topic. Link only segments with clear event identity, task continuity, and state consistency. 
+
+Output Format 
+
+Return only 0 or 1.Prompt 5: CoreFact Construction Prompt 
+
+System Message 
+
+You are a CoreFact construction agent. Extract schema-eligible facts from Structured Interaction Memory and decide how they should update CoreFact memory. Return only valid JSON. 
+
+User Message 
+
+Given a CoreFact schema, Topical Segment evidence, Event Trajectory evidence, and existing CoreFacts, construct reusable facts that are supported by the provided evidence. Topical Segments provide local interaction details, while Event Trajectories provide cross-time context and corroboration. 
+
+COREFACT SCHEMA: {corefact_schema} 
+
+TOPICAL SEGMENT EVIDENCE: {topical_segments} 
+
+EVENT TRAJECTORY EVIDENCE: {event_trajectories} 
+
+EXISTING COREFACTS: {existing_corefacts} 
+
+Rules 
+
+Extract only facts that fit the provided schema and have clear reusable value. Preserve important names, numbers, titles, dates, relations, and preferences. Use Event Trajectories to merge or update facts that are supported across multiple segments. Do not invent, infer, or extend information beyond the provided evidence. Mark obsolete facts as supersede rather than deleting them. 
+
+Output Format 
+
+Return only one JSON object: 
+
+{"corefacts": [{"operation": "add | update | merge | supersede", "type": "schema type", "subject": "entity or user", "statement": "normalized factual statement", "evidence": ["source ids or short provenance"], "target_ids": ["existing fact ids, if applicable"] }]}Prompt 6: Evidence Sufficiency Checker Prompt 
+
+System Message 
+
+You are an evidence sufficiency assessor. Determine whether the retrieved facts are sufficient to answer a query. Return only valid JSON. 
+
+User Message 
+
+Given a query, its information needs, and the currently retrieved fact summary, decide whether the summary provides enough evidence to answer the query. 
+
+QUERY: {query} 
+
+INFORMATION NEEDS: {needs_block} 
+
+RETRIEVED FACT SUMMARY: {accumulated_summary} 
+
+Rules 
+
+Check each information need. Set enough=true only if all needs are covered clearly and specifically by the retrieved facts. Set 
+
+enough=false if any need is missing, vague, off-topic, or unclear. Do not answer the query, and do not invent or infer facts not explicitly stated in the retrieved facts. 
+
+Output Format 
+
+Return only one JSON object: 
+
+{"enough": true or false }Prompt 7: Query-local Evidence Extraction Prompt 
+
+System Message 
+
+You are a query-local evidence extraction agent. Select evidence relevant to a query from the provided sources and distill it into concise query-local evidence. 
+
+Stage 1: Evidence Selection Inputs RETRIEVED TOPICAL SEGMENTS AND EVENT TRAJECTORIES: {retrieved_interaction_units} 
+
+SUBJECTS: {subjects_block} 
+
+USER QUERY: {query} 
+
+INFORMATION NEEDS: {needs_block} 
+
+Selection Rules 
+
+Select an interaction unit only if its description directly matches the query or information needs and its subject_id matches the queried entity. Do not select a unit merely because it mentions the same person. If no unit is clearly relevant, return an empty list. Copy selected identifiers verbatim. 
+
+Selection Output 
+
+Return only one JSON object: 
+
+{"selected": [{"subject_id": "copied id", "interaction_unit_id": "copied id"} ]}
+
+Stage 2: Evidence Distillation Inputs USER QUERY: {query} 
+
+RETRIEVED EVIDENCE: {facts_text} 
+
+Distillation Rules 
+
+Summarize only information grounded in the retrieved evidence and useful for answering the query. Do not speculate. Keep the summary within five sentences, omit irrelevant details, use plain prose, and attribute claims to the correct person when multiple subjects appear. If no evidence helps answer the query, return exactly NO_RELEVANT_EVIDENCE .
+
+Distillation Output 
+
+Return the summary text only.
