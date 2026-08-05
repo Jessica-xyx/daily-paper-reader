@@ -6,83 +6,47 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-04
-- 运行时间：2026-08-04 21:43:30 UTC
+- 最新运行日期：2026-08-05
+- 运行时间：2026-08-05 21:51:43 UTC
 - 运行状态：成功
-- 本次总论文数：21
-- 精读区：10
-- 速读区：11
+- 本次总论文数：9
+- 精读区：7
+- 速读区：2
 
 ### 今日简报（AI）
-今日精读10篇、速读11篇，共处理21篇论文，核心聚焦AI代理的长期记忆管理。最值得关注的是CrystalMem和PMMC两篇高分精读，分别提出知识结晶与多模态记忆编译，速读中MAPLE-Guard则关注记忆链接安全。建议关注记忆优化与安全防护的平衡，从代理自我进化视角提升长时任务表现。
-- 详情：[/202608/04/README](/202608/04/README)
+今日精读9篇，聚焦LLM智能体记忆机制，其中两篇获满分评价。最值得关注：RoMeRL破解自我进化中的记忆-奖励陷阱，Verifiable Memory用局部与全局验证器实现统一记忆管理。建议普通读者留意记忆隐私与安全风险，如DP-MemView的属性级隐私保护及Salami攻击的隐蔽投毒。
+- 详情：[/202608/05/README](/202608/05/README)
 
 ### 精读区论文标签
-1. [CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization](/202608/04/2608.00303v1-crystalmem-elastic-memory-for-self-evolving-llm-agents-via-knowledge-crystallization)  
+1. [RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States](/202608/05/2608.02508v2-romerl-balancing-feedback-coverage-and-the-memory-reward-trap-in-self-evolving-agent-memory-via-reduced-order-utility-states)  
+   标签：评分：10.0/10、query:llm-agent-memory
+   evidence：引入降阶记忆强化学习以平衡反馈覆盖并规避记忆-奖励陷阱
+2. [Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents](/202608/05/2608.03137v1-verifiable-memory-learning-unified-memory-management-with-local-and-global-verifiers-for-large-language-model-agents)  
+   标签：评分：10.0/10、query:llm-agent-memory
+   evidence：提出统一记忆管理策略及局部/全局验证器
+3. [Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory](/202608/05/2608.03420v1-towards-improving-sequential-decision-making-in-llm-agents-via-experience-memory)  
+   标签：评分：10.0/10、query:llm-agent-memory
+   evidence：利用经验记忆提升LLM智能体的序列决策能力
+4. [Metis: Memory Foundation Model](/202608/05/2607.26760v2-metis-memory-foundation-model)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：CrystalMem提出基于知识结晶的弹性记忆用于配额变化下的agent记忆管理
-2. [PMMC: Prospective Multimodal Memory Compilation for Long-Term LVLM Agents](/202608/04/2608.00962v1-pmmc-prospective-multimodal-memory-compilation-for-long-term-lvlm-agents)  
+   evidence：为智能体提供原生记忆能力的记忆基础模型
+5. [Beyond Retrieval: Analytic Memory for Multimodal Agents](/202608/05/2607.29440v2-beyond-retrieval-analytic-memory-for-multimodal-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向长期多模态LVLM智能体的前瞻性记忆编译框架
-3. [PATH-Bench: Path-Dependent Evaluation of Lifelong Agents](/202608/04/2608.01149v1-path-bench-path-dependent-evaluation-of-lifelong-agents)  
+   evidence：提出分析记忆与AdaMM框架，在检索之外支持对多模态观察的计算
+6. [When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary](/202608/05/2608.01679v2-when-memory-becomes-authority-benchmarking-authority-collapse-at-the-memory-consolidation-boundary)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向终身智能体记忆与技能迁移的路径依赖评测
-4. [Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination](/202608/04/2608.01234v1-learning-what-to-remember-and-what-to-internalize-in-llm-self-evolution-via-adaptive-memory-parameter-coordination)  
+   evidence：提出AuthMem-Bench基准，评测LLM智能体记忆整合中的权威性崩塌问题
+7. [LeanMem: Simple and Efficient Long-Term Memory for LLM Agents](/202608/05/2608.03463v1-leanmem-simple-and-efficient-long-term-memory-for-llm-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向LLM自演化的自适应记忆与参数协调方法
-5. [Stop When Memory Suffices: Evidence-Conditioned Progressive Execution for LLM Agents](/202608/04/2608.01285v1-stop-when-memory-suffices-evidence-conditioned-progressive-execution-for-llm-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向长程智能体记忆的证据条件化渐进执行方法
-6. [V-Mem: Modality-Routed Retrieval for Long-Term Multimodal Agentic Memory](/202608/04/2608.01543v1-v-mem-modality-routed-retrieval-for-long-term-multimodal-agentic-memory)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出面向长期多模态LLM agent记忆的模态路由检索方法
-7. [PGMem: Tightly Coupled Persona-Memory Graph for Lifelong Personalized Agents](/202608/04/2608.01708v1-pgmem-tightly-coupled-persona-memory-graph-for-lifelong-personalized-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出面向智能体的记忆增强技术，构建人设-记忆图
-8. [CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents](/202608/04/2608.01739v1-coevo-mem-co-evolving-retrieval-policy-and-memory-bank-for-llm-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向LLM智能体的检索策略与记忆库协同演化方法
-9. [MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents](/202608/04/2608.01742v1-memsif-from-structured-interactions-to-dual-track-fact-memory-for-llm-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：MemSIF将原始交互组织为话题片段并构建双轨事实记忆，用于长期agent记忆
-10. [MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents](/202608/04/2608.02113v1-memarbiter-decision-time-memory-arbitration-for-long-horizon-llm-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：解决记忆-行动差距的记忆仲裁框架
+   evidence：面向LLM智能体的轻量长期记忆框架，按内容类型差异化存储
 
 ### 速读区论文标签
-1. [MAPLE-Guard: Memory-Aware Link Enforcement Against Memory-Link Poisoning in Multi-Agent Systems](/202608/04/2608.00426v1-maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems)  
+1. [DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents](/202608/05/2608.03130v1-dp-memview-a-memory-interface-for-attribute-level-transcript-privacy-in-long-term-llm-agents)  
    标签：评分：8.0/10、query:llm-agent-memory
-   evidence：多智能体系统中针对记忆投毒的安全防御
-2. [TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue Agents](/202608/04/2608.00967v1-trajwiki-source-grounded-memory-trajectories-for-long-horizon-dialogue-agents)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：为长时对话智能体提供基于轨迹的记忆框架，支持溯源、更新与诊断
-3. [When Memory Updates but Behavior Does Not: Repairing Implicit Stale Dependencies in Personalized Agent Responses](/202608/04/2608.01619v1-when-memory-updates-but-behavior-does-not-repairing-implicit-stale-dependencies-in-personalized-agent-responses)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出StateAuditor，检测过期记忆依赖并触发记忆增强agent的行为修复
-4. [When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary](/202608/04/2608.01679v1-when-memory-becomes-authority-benchmarking-authority-collapse-at-the-memory-consolidation-boundary)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：记忆整合权威崩塌的评测基准
-5. [RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States](/202608/04/2608.02508v1-romerl-balancing-feedback-coverage-and-the-memory-reward-trap-in-self-evolving-agent-memory-via-reduced-order-utility-states)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：针对自进化智能体的记忆学习与奖励陷阱，提出降阶效用状态方法
-6. [LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference](/202608/04/2608.02515v1-livemem-maintaining-memory-state-continuity-in-long-running-llm-inference)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出内建记忆方法，在上下文切换时保持记忆状态连续
-7. [Personalizing Large Language Model Agents with Small Policy Models](/202608/04/2608.00215v1-personalizing-large-language-model-agents-with-small-policy-models)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：FABLE学习每用户的执行策略，涵盖记忆、信息获取与回复决策
-8. [Practical Online KV Cache Compaction for LLM Agents: An Empirical Study](/202608/04/2608.00902v1-practical-online-kv-cache-compaction-for-llm-agents-an-empirical-study)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：面向LLM智能体长轨迹上下文的KV缓存在线压缩，属于智能体记忆管理策略
-9. [Long-Horizon Embodied Decision-Making via Multimodal Memory Compression](/202608/04/2608.01456v1-long-horizon-embodied-decision-making-via-multimodal-memory-compression)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：需要多模态记忆压缩的具身决策基准
-10. [Benign Alone, Harmful Together: Exploiting Experience Composition in Self-Evolving LLM Agents](/202608/04/2608.01759v1-benign-alone-harmful-together-exploiting-experience-composition-in-self-evolving-llm-agents)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：利用智能体记忆经验组合的攻击
-11. [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](/202608/04/2608.00155v1-agentstream-how-well-do-self-evolving-llm-agents-perform-under-streaming-tasks)  
+   evidence：提出面向长期LLM智能体属性级转录隐私的差分隐私记忆接口
+2. [Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw](/202608/05/2608.01637v1-salami-attack-stealthy-collusive-memory-poisoning-against-openclaw)  
    标签：评分：6.0/10、query:llm-agent-memory
-   evidence：面向自进化智能体利用累积经验的评测框架
+   evidence：利用萨拉米战术针对LLM智能体的共谋记忆投毒攻击框架
 
 
 <div class="dpr-home-promo-card">

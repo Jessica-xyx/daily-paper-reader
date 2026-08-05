@@ -1,0 +1,381 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-05T21:41:12.486886+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 8,
+    "deep_cap": 6,
+    "deep_selected": 7,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2608.02508v2",
+      "source": "arxiv",
+      "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States",
+      "abstract": "Learning-based memory systems for self-evolving LLM agents face two tightly coupled challenges. First, trajectory-indexed utilities grow with the interaction history, thereby dispersing limited feedback over an ever-expanding state space. Second, because trajectory-level rewards are jointly assigned to co-retrieved memories, irrelevant experiences may receive misleading utility updates and consequently enter the memory-reward trap. To address these challenges, we introduce Reduced-Order Memory Reinforcement Learning (RoMeRL), which represents the growing trajectory-indexed utility space using a fixed-dimensional per-task memory state factorized by outcome polarity and memory dynamics. RoMeRL incorporates new experiences through a fixed set of semantic coordinates whose contents are updated or replaced over time, thereby concentrating feedback over a bounded utility support. Theoretically, we show that this reduced-order parameterization increases the average feedback received by each utility coordinate and characterize the steady-state occupancy of erroneous coordinates under a generic coordinate-transition model. Empirically, across ALFWorld and LifelongAgentBench, RoMeRL improves task performance, reduces the Cold-Q ratio by 80.0%, increases feedback density by approximately 6.0 times, reduces the maintained memory size by 84.4%, and cuts LLM calls by 21.1%. These results show that reduced-order utility states support efficient self-evolving agent memory while limiting persistent reward contamination. Code is available at: https://github.com/YOUNG-fnxm/RoMeRL",
+      "authors": [
+        "Yi Yang",
+        "Zhennan Chen",
+        "Yihong Zhuang",
+        "Tiehan Fan",
+        "Yinan Chen",
+        "Jian Li",
+        "Jian Yang",
+        "Ying Tai"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-08-03T17:07:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.02508v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "introduces reduced-order memory reinforcement learning to balance feedback coverage and avoid memory-reward trap",
+      "llm_evidence_cn": "引入降阶记忆强化学习以平衡反馈覆盖并规避记忆-奖励陷阱",
+      "llm_evidence": "引入降阶记忆强化学习以平衡反馈覆盖并规避记忆-奖励陷阱",
+      "canonical_evidence": "引入降阶记忆强化学习以平衡反馈覆盖并规避记忆-奖励陷阱",
+      "llm_tldr_en": "RoMeRL addresses feedback dispersion and the memory-reward trap in self-evolving agent memory by using fixed-dimensional per-task states factorized by outcome polarity and memory dynamics.",
+      "llm_tldr_cn": "自我进化LLM智能体的学习型记忆系统面临两个挑战：轨迹索引效用随历史增长而分散有限反馈，以及轨迹级奖励共同分配给共检索记忆而误导无关经验更新。RoMeRL将不断增长的效用空间压缩为按结果极性和记忆动力学分解的固定维度逐任务状态，从而保持反馈覆盖并避免记忆-奖励陷阱。实验显示其能在自我进化过程中更稳定地提升记忆策略。",
+      "llm_tldr": "自我进化LLM智能体的学习型记忆系统面临两个挑战：轨迹索引效用随历史增长而分散有限反馈，以及轨迹级奖励共同分配给共检索记忆而误导无关经验更新。RoMeRL将不断增长的效用空间压缩为按结果极性和记忆动力学分解的固定维度逐任务状态，从而保持反馈覆盖并避免记忆-奖励陷阱。实验显示其能在自我进化过程中更稳定地提升记忆策略。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.03137v1",
+      "source": "arxiv",
+      "title": "Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
+      "abstract": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing methods commonly optimize long-term memory (LTM) and short-term memory (STM) separately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem), a framework that represents LTM, active context, and episodic history as distinct states and controls them with one memory operation policy. Seven atomic operations let the policy add, revise, or soft-delete LTM entries; retrieve LTM into the active context; filter or summarize the active context; and restore selected episodic fragments. VerMem is initialized by supervised fine-tuning and trained with a three-stage reinforcement-learning curriculum. The local verifier scores executable memory transitions, and a global verifier assesses evidence coherence and terminal-memory consistency after task completion. These scores are combined with programmatically computed task, evidence-recall, efficiency, and constraint signals through hierarchical credit assignment. The verifiers are used only during training. Across five benchmarks and two LLM backbones, VerMem achieves the best result on the vast majority of reported metrics and consistently outperforms strong memory baselines. Under controlled online-token budgets on three interactive benchmarks, it also achieves the strongest efficiency--performance frontier among the compared methods. Code is available at https://github.com/Sun-SYSU-24/VerMem.",
+      "authors": [
+        "Xiaolong Sun",
+        "Qichao Wang",
+        "Hangyu Li",
+        "Liang Chen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T05:06:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.03137v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "presents unified memory management policy with atomic operations and local/global verifiers",
+      "llm_evidence_cn": "提出统一记忆管理策略及局部/全局验证器",
+      "llm_evidence": "提出统一记忆管理策略及局部/全局验证器",
+      "canonical_evidence": "提出统一记忆管理策略及局部/全局验证器",
+      "llm_tldr_en": "VerMem unifies long-term, active-context, and episodic history memory under one operation policy with atomic actions and local/global verifiers for better credit assignment.",
+      "llm_tldr_cn": "现有方法通常分别优化长期记忆和短期记忆，统一策略又因轨迹级反馈难以给单个记忆决策提供有效信用分配。VerMem将长期记忆、活动上下文和情节历史建模为不同状态，用七种原子操作统一控制记忆的增删改、检索和过滤等。结合局部与全局验证器提供细粒度反馈，实验显示VerMem能提升长程交互中的记忆管理与证据恢复能力，优于分开优化方法。",
+      "llm_tldr": "现有方法通常分别优化长期记忆和短期记忆，统一策略又因轨迹级反馈难以给单个记忆决策提供有效信用分配。VerMem将长期记忆、活动上下文和情节历史建模为不同状态，用七种原子操作统一控制记忆的增删改、检索和过滤等。结合局部与全局验证器提供细粒度反馈，实验显示VerMem能提升长程交互中的记忆管理与证据恢复能力，优于分开优化方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.03420v1",
+      "source": "arxiv",
+      "title": "Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory",
+      "abstract": "Large language models have improved substantially on single-shot reasoning tasks, but their performance in sequential decision-making is less well understood. We study this on fully-observable two-player zero-sum games, which provide ground-truth evaluation: outcomes are determined by the rules, and optimality of individual moves can be computed or approximated, without relying on a judge model. Across model tiers, LLMs play suboptimally in simple games such as tic-tac-toe or Connect Four, and lose to MCTS opponents. Obfuscations that preserve the game tree but rewrite its surface form leave performance largely unchanged, indicating the gap is not fully explained by recall of memorized strategies. Motivated by this performance gap, we introduce an agentic framework enhanced with an experience memory designed for the sequential setting and addressing common challenges of sequential decision-making such as credit assignment. We show that post-game reflection and rule extraction yield measurable improvements on tic-tac-toe without modifying the model weights.",
+      "authors": [
+        "Jakub Rada",
+        "Viliam Lisý"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T10:12:12+00:00",
+      "link": "https://arxiv.org/pdf/2608.03420v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "uses experience memory to improve sequential decision-making in LLM agents",
+      "llm_evidence_cn": "利用经验记忆提升LLM智能体的序列决策能力",
+      "llm_evidence": "利用经验记忆提升LLM智能体的序列决策能力",
+      "canonical_evidence": "利用经验记忆提升LLM智能体的序列决策能力",
+      "llm_tldr_en": "This paper studies LLM sequential decision-making in zero-sum games and introduces experience memory to address suboptimal play, with ground-truth evaluation.",
+      "llm_tldr_cn": "大模型在单步推理上已有较大提升，但序列决策表现仍不理想。本文以完全可观察的双人零和博弈为测试环境，发现各规模模型在井字棋、四子棋等简单游戏中表现欠佳，并败给MCTS对手；表面改写混淆对表现影响不大，说明缺陷并非源于记忆策略的回忆。为此提出基于经验记忆的改进方法，利用历史对局经验指导后续决策，从而提升序列决策能力。",
+      "llm_tldr": "大模型在单步推理上已有较大提升，但序列决策表现仍不理想。本文以完全可观察的双人零和博弈为测试环境，发现各规模模型在井字棋、四子棋等简单游戏中表现欠佳，并败给MCTS对手；表面改写混淆对表现影响不大，说明缺陷并非源于记忆策略的回忆。为此提出基于经验记忆的改进方法，利用历史对局经验指导后续决策，从而提升序列决策能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26760v2",
+      "source": "arxiv",
+      "title": "Metis: Memory Foundation Model",
+      "abstract": "Recent advances in AI agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. However, agent memory is still primarily implemented through external modules, leaving the native memory capability largely unexplored. In this paper, we take a first step toward this direction by introducing memory foundation models, which empower foundation models with native memory capabilities. We formalize native memory from two perspectives: a persistent and dynamically evolving memory state within the backbone, and native memory procedures that autonomously store and utilize information through model computation. We show that native memory offers advantages in architecture, end-to-end optimization, and efficiency. Based on this formulation, we propose Metis, the first prototype of memory foundation models. Metis introduces a new architecture that equips a foundation model with a native memory state, allowing historical information to be compressed into the model and accessed through memory attention. We construct large-scale memory-specific training data and introduce multiple optimization objectives to acquire these native memory procedures through mid-training. The online memory maintenance of Metis is gradient-free, and the memory update requires only a forward pass. At inference time, all learned model weights remain frozen, while the native memory states are autonomously transformed through standard forward computation. Through extensive experiments, we show that Metis exhibits native memory capabilities and further provide a detailed analysis of its strengths, limitations, and behaviors. To facilitate future research on memory foundation models, we release our project and model checkpoints.",
+      "authors": [
+        "Zeyu Zhang",
+        "Ziliang Guo",
+        "Yihang Sun",
+        "Xichong Zhang",
+        "Xixuan Hao",
+        "Zehao Lin",
+        "Yang Zhang",
+        "Xiaoyan Zhao",
+        "Tong Shen",
+        "Bo Tang",
+        "Zhi-Qin John Xu",
+        "Junchi Yan",
+        "Haofen Wang",
+        "Xu Chen",
+        "Feiyu Xiong",
+        "Zhiyu Li",
+        "Tat-Seng Chua"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T10:58:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.26760v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Memory foundation model with native memory capabilities for agents",
+      "llm_evidence_cn": "为智能体提供原生记忆能力的记忆基础模型",
+      "llm_evidence": "为智能体提供原生记忆能力的记忆基础模型",
+      "canonical_evidence": "为智能体提供原生记忆能力的记忆基础模型",
+      "llm_tldr_en": "Metis introduces memory foundation models, embedding persistent and evolving memory states into backbone models to enable native memory procedures that autonomously store and utilize information.",
+      "llm_tldr_cn": "传统智能体记忆多采用外部模块,未将记忆能力内化到基础模型。Metis提出记忆基础模型的新范式,在骨干模型内构建持续动态演化的记忆状态,并通过模型计算自动完成记忆的存储与利用。原生记忆在架构与端到端优化方面展现优势,为智能体记忆能力的内置化迈出第一步。",
+      "llm_tldr": "传统智能体记忆多采用外部模块,未将记忆能力内化到基础模型。Metis提出记忆基础模型的新范式,在骨干模型内构建持续动态演化的记忆状态,并通过模型计算自动完成记忆的存储与利用。原生记忆在架构与端到端优化方面展现优势,为智能体记忆能力的内置化迈出第一步。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29440v2",
+      "source": "arxiv",
+      "title": "Beyond Retrieval: Analytic Memory for Multimodal Agents",
+      "abstract": "Long-term multimodal memory must support not only retrieving relevant information but also computing over observations accumulated across interactions. Existing systems largely emphasize \\emph{retrieval memory}, organizing interaction histories through summaries and indexes to return query-relevant information at multiple granularities, from high-level abstractions to underlying records. In this paper, we formulate \\emph{analytic memory} as a complementary abstraction that organizes recurring multimodal observations into queryable structures supporting filtering, aggregation, ranking, and temporal comparison. We present AdaMM, a framework that jointly supports retrieval and analytic memory. Rather than relying on application-defined schemas, AdaMM extracts provenance-linked attribute-value observations from dialogue, images, and contextual metadata, discovers recurring field structures, and materializes them for analytical access. At inference time, a memory-aware planner decomposes queries into retrieval and analytic operations and routes each operation to the appropriate tools. Experiments on two long-term multimodal memory benchmarks, MemEye and MemGallery, show that AdaMM improves performance by up to 11.3\\% and 6.9\\%, respectively.",
+      "authors": [
+        "Zhoujin Tian",
+        "Hao Zhang",
+        "Yao Tian",
+        "Cheng Chen",
+        "Yakun Li",
+        "Lei Zhang",
+        "Xiaofang Zhou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-31T14:07:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.29440v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes analytic memory and the AdaMM framework to support computing over multimodal observations beyond retrieval",
+      "llm_evidence_cn": "提出分析记忆与AdaMM框架，在检索之外支持对多模态观察的计算",
+      "llm_evidence": "提出分析记忆与AdaMM框架，在检索之外支持对多模态观察的计算",
+      "canonical_evidence": "提出分析记忆与AdaMM框架，在检索之外支持对多模态观察的计算",
+      "llm_tldr_en": "Long-term multimodal agents need both retrieving and computing over observations. This paper formulates analytic memory, organized into queryable structures for filtering, aggregation, ranking, and temporal comparison, implemented in the AdaMM framework.",
+      "llm_tldr_cn": "现有长期多模态记忆主要依赖检索，难以对跨交互积累的观察进行计算。论文提出分析记忆这一互补抽象，将重复出现的多模态观察组织为可查询结构，支持过滤、聚合、排序和时间比较。基于该抽象实现的AdaMM框架联合支持检索记忆与分析记忆，并自动提取来源信息而无需预定义模式。该工作扩展了LLM智能体记忆的范畴。",
+      "llm_tldr": "现有长期多模态记忆主要依赖检索，难以对跨交互积累的观察进行计算。论文提出分析记忆这一互补抽象，将重复出现的多模态观察组织为可查询结构，支持过滤、聚合、排序和时间比较。基于该抽象实现的AdaMM框架联合支持检索记忆与分析记忆，并自动提取来源信息而无需预定义模式。该工作扩展了LLM智能体记忆的范畴。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01679v2",
+      "source": "arxiv",
+      "title": "When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary",
+      "abstract": "Persistent memory allows (self-evolving) LLM agents to adapt across tasks by consolidating heterogeneous interaction histories into reusable facts, preferences, observations, and rules. Yet consolidation also imposes an implicit authorization boundary: it determines whether stored information may later be consumed as a user fact, an attested observation, or a standing instruction. We identify authority collapse, in which consolidation preserves a claim while erasing the source constraints governing its authorized use, causing the stored memory to imply greater authority than its source permits. We introduce AuthMem-Bench, a controlled paired benchmark that holds the focal claim and downstream task fixed while varying only source authority. It evaluates write-time collapse, downstream authorization errors, and automatic authority preservation. Across seven consolidators based on widely used agent-memory systems and seven LLM backbones, we observe authority collapse in 48 of 49 evaluated configurations. In a controlled action-grounded evaluation, collapsed memories without authority metadata yield a mean unauthorized-action rate of 50.3%. In an end-to-end evaluation, automatically predicted and persisted authority labels reduce the observed unauthorized-action rate from 16.9% to 0.0%, while benign task success remains essentially unchanged. These findings show that memory-driven adaptation must preserve not only what was learned, but also the authority under which it may be reused.",
+      "authors": [
+        "Qiuyang Zhan",
+        "Rui Zhang",
+        "Sheng Guo",
+        "Lepeng Zhao",
+        "Zhuotao Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-03T04:15:40+00:00",
+      "link": "https://arxiv.org/pdf/2608.01679v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Presents AuthMem-Bench, a controlled paired benchmark evaluating memory consolidation authority collapse in LLM agents",
+      "llm_evidence_cn": "提出AuthMem-Bench基准，评测LLM智能体记忆整合中的权威性崩塌问题",
+      "llm_evidence": "提出AuthMem-Bench基准，评测LLM智能体记忆整合中的权威性崩塌问题",
+      "canonical_evidence": "提出AuthMem-Bench基准，评测LLM智能体记忆整合中的权威性崩塌问题",
+      "llm_tldr_en": "Introduces authority collapse in memory consolidation, where source constraints are lost, and provides AuthMem-Bench, a paired benchmark that varies only memory source constraints to evaluate this failure.",
+      "llm_tldr_cn": "持久记忆使LLM智能体基于历史交互整合出可复用的事实，但整合可能抹去信息的授权边界，造成权威性崩塌。本文提出AuthMem-Bench配对基准，在固定焦点主张和下游任务的同时仅改变信息源约束，专门评测该问题。基准有助于揭示记忆整合何时让存储内容获得超出原始来源的权威。这项工作为记忆评测补充了来源授权维度。",
+      "llm_tldr": "持久记忆使LLM智能体基于历史交互整合出可复用的事实，但整合可能抹去信息的授权边界，造成权威性崩塌。本文提出AuthMem-Bench配对基准，在固定焦点主张和下游任务的同时仅改变信息源约束，专门评测该问题。基准有助于揭示记忆整合何时让存储内容获得超出原始来源的权威。这项工作为记忆评测补充了来源授权维度。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.03463v1",
+      "source": "arxiv",
+      "title": "LeanMem: Simple and Efficient Long-Term Memory for LLM Agents",
+      "abstract": "Long-term memory is essential for LLM-based agents to sustain interactions and reliably leverage distant history. However, existing memory systems typically process heterogeneous dialogue content through a uniform summarization and retrieval pipeline, leading to either excessive token consumption or irreversible loss of fine-grained evidence. We argue that historical dialogue content should be handled differently according to its compressibility, temporal dynamics, and fidelity requirements. Based on this insight, we propose LeanMem, a lightweight long-term memory framework. LeanMem first filters out low-value content, then stores informative segments as compact profile memory, temporally structured event memory, or source-grounded record memory, depending on the nature of the information. During maintenance, only dynamically evolving event memories are selectively updated, avoiding redundant consolidation of stable profiles and immutable records. During inference, LeanMem dynamically selects memory types and allocates retrieval budgets according to query-specific evidence demands, assembling relevant evidence on demand. On LoCoMo and LongMemEval-S with GPT-4.1-mini and Qwen3-8B, LeanMem improves accuracy over the strongest memory-based baseline in every setting, by up to 15.1 points, at the lowest or near-lowest construction cost, inference tokens, and latency. The code and datasets are included in the supplementary materials.",
+      "authors": [
+        "Yuxin Liao",
+        "Le Wu",
+        "Min Hou",
+        "Hao Liu",
+        "Han Wu",
+        "Zishu Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T10:59:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.03463v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Lightweight long-term memory framework for LLM agents with differentiated storage by content type",
+      "llm_evidence_cn": "面向LLM智能体的轻量长期记忆框架，按内容类型差异化存储",
+      "llm_evidence": "面向LLM智能体的轻量长期记忆框架，按内容类型差异化存储",
+      "canonical_evidence": "面向LLM智能体的轻量长期记忆框架，按内容类型差异化存储",
+      "llm_tldr_en": "LeanMem is a lightweight long-term memory framework that filters low-value content and stores informative segments as profile, event, or record memory according to compressibility and fidelity, reducing token use while preserving evidence.",
+      "llm_tldr_cn": "现有LLM智能体长期记忆系统用统一流水线处理异构对话内容，导致令牌消耗大或细粒度信息丢失。LeanMem提出按内容的可压缩性、时间动态和保真需求分类处理，先过滤低价值内容，再将有信息量的片段分别存为紧凑画像记忆、时序事件记忆或带来源的记录记忆。该方法在降低令牌开销的同时保留关键证据，为智能体长期交互提供了轻量高效的记忆方案。",
+      "llm_tldr": "现有LLM智能体长期记忆系统用统一流水线处理异构对话内容，导致令牌消耗大或细粒度信息丢失。LeanMem提出按内容的可压缩性、时间动态和保真需求分类处理，先过滤低价值内容，再将有信息量的片段分别存为紧凑画像记忆、时序事件记忆或带来源的记录记忆。该方法在降低令牌开销的同时保留关键证据，为智能体长期交互提供了轻量高效的记忆方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.03130v1",
+      "source": "arxiv",
+      "title": "DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents",
+      "abstract": "Long-term memory enables persistent personalization in LLM agents, but repeated memory-conditioned responses can cumulatively reveal protected attributes even when they are never stated explicitly. We formalize this threat as adaptive transcript privacy and introduce DP-MemView, a differentially private interface that privately selects public response-conditioning views and exposes those views---rather than raw memory---to the response LLM. Each private selection is charged to every protected attribute whose memory group intersects the read set. Per-attribute ledgers block any selection that would exceed its cap and return a fixed generic view instead. Under an explicit interface contract, we prove pure B_a-DP for the entire adaptive transcript. We also extend the result to stores that differ across multiple protected groups and bound how much observing the transcript can change an adversary's prior odds. We evaluate the online and preallocated modes with three response LLMs on a controlled adjacent-store benchmark and a public-corpus transfer track. Both modes keep transcript distinguishability near chance while preserving target-required personalization and overall response quality. Further diagnostics show that removing key safeguards causes mismatched output support, missing ledger charges, revealing side channels, or growing long-horizon leakage.",
+      "authors": [
+        "Jong Wook Kim",
+        "Byoungjae Min",
+        "Kennedy Edemacu",
+        "Yoonhyuk Choi",
+        "Sae-Hong Cho",
+        "Beakcheol Jang"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-04T05:00:10+00:00",
+      "link": "https://arxiv.org/pdf/2608.03130v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "presents a differentially private memory interface for attribute-level transcript privacy in long-term LLM agents",
+      "llm_evidence_cn": "提出面向长期LLM智能体属性级转录隐私的差分隐私记忆接口",
+      "llm_evidence": "提出面向长期LLM智能体属性级转录隐私的差分隐私记忆接口",
+      "canonical_evidence": "提出面向长期LLM智能体属性级转录隐私的差分隐私记忆接口",
+      "llm_tldr_en": "DP-MemView adds a differentially private interface that privately selects memory views for responses, preventing cumulative leakage of protected attributes from long-term memory.",
+      "llm_tldr_cn": "长期记忆使LLM智能体能够持续个性化，但重复的记忆条件化响应可能间接泄露受保护属性。DP-MemView设计了一个差分隐私接口，只向响应LLM公开经过私有选择的条件化视图而非原始记忆，并为每次选择按访问组对属性计费，超限则返回固定通用视图。在明确接口契约下证明纯B_a-DP，从而在保持个性化能力的同时保护属性级隐私。",
+      "llm_tldr": "长期记忆使LLM智能体能够持续个性化，但重复的记忆条件化响应可能间接泄露受保护属性。DP-MemView设计了一个差分隐私接口，只向响应LLM公开经过私有选择的条件化视图而非原始记忆，并为每次选择按访问组对属性计费，超限则返回固定通用视图。在明确接口契约下证明纯B_a-DP，从而在保持个性化能力的同时保护属性级隐私。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.01637v1",
+      "source": "arxiv",
+      "title": "Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw",
+      "abstract": "Long-term memory enables LLM agents to retain useful information across sessions, but also creates an attack surface through which adversaries may poison an agent's persistent memory to steer its behavior. Existing memory poisoning attacks mainly rely on individually malicious records, overlooking a compositional threat: multiple benign-looking memories may jointly induce unsafe behavior. In this paper, we introduce MemCollusion, an automated red-teaming framework for constructing collusive memory poisoning attacks. MemCollusion applies salami tactics---a strategy that slices an adversarial objective into small, individually innocuous pieces---to generate memory fragments that are individually benign looking but collectively harmful. It constructs memory coalitions using four design constraints, five theory-informed strategies, and a fine-tuned generator. To assess collusive memory poisoning in a realistic cross-session setting, we develop MoltLab, a controlled research reproduction of Moltbook, in which crafted platform content must first be observed and distilled into persistent memory before influencing the agent's behavior in a separate session. We evaluate MemCollusion on OpenClaw using two backbone models across 48 scenarios. Under the strongest memory-saving setting, MemCollusion achieves an average Memory Save Rate of 81.3% and an Attack Success Rate of 75.0%, and remains effective under both benign memory dilution and memory-level defenses.",
+      "authors": [
+        "Zheng Lin",
+        "Yuzhe Huang",
+        "Zhenxing Niu",
+        "Xianmin Ye",
+        "Haichang Gao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-03T03:17:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.01637v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Collusive memory poisoning attack framework using salami tactics against LLM agents",
+      "llm_evidence_cn": "利用萨拉米战术针对LLM智能体的共谋记忆投毒攻击框架",
+      "llm_evidence": "利用萨拉米战术针对LLM智能体的共谋记忆投毒攻击框架",
+      "canonical_evidence": "利用萨拉米战术针对LLM智能体的共谋记忆投毒攻击框架",
+      "llm_tldr_en": "MemCollusion is an automated red-teaming framework that uses salami tactics to craft collusive memory poisoning attacks, where multiple benign-looking memories jointly induce unsafe behavior.",
+      "llm_tldr_cn": "长期记忆使LLM智能体面临投毒攻击,但已有攻击多依赖单条恶意记忆,忽略多条良性记忆组合后产生的共谋威胁。MemCollusion是一种自动红队框架,采用萨拉米战术将恶意目标切片为多个看似无害的记忆片段,构造共谋投毒攻击。在OpenClaw上的实验表明,这类组合式攻击能隐蔽地诱导不安全行为,揭示记忆安全需要防范协作式投毒。",
+      "llm_tldr": "长期记忆使LLM智能体面临投毒攻击,但已有攻击多依赖单条恶意记忆,忽略多条良性记忆组合后产生的共谋威胁。MemCollusion是一种自动红队框架,采用萨拉米战术将恶意目标切片为多个看似无害的记忆片段,构造共谋投毒攻击。在OpenClaw上的实验表明,这类组合式攻击能隐蔽地诱导不安全行为,揭示记忆安全需要防范协作式投毒。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
