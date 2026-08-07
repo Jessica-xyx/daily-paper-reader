@@ -1,0 +1,287 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-07T00:53:59.930746+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.27773v2",
+      "source": "arxiv",
+      "title": "ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory",
+      "abstract": "LLM agents increasingly rely on long-term memory to support multi-session interaction and personalization. However, existing agent memory systems are designed around forward-only evolution, continuously accumulating, consolidating, and overwriting knowledge, with no principled mechanism to inspect, version, or revert prior states. This makes agents brittle under corrections, concept drift, and memory corruption, particularly after they have already been exposed to subsequent information. We present ChronoMem, a semantic version-control layer for agentic memory integrated into the production-ready, open-source Agent Development Kit by Google. ChronoMem commits whole-memory snapshots at each memory write, maintains structured version histories, and supports natural-language rollback requests by mapping undo intents to concrete historical versions through hybrid lexical and semantic retrieval, rank fusion, and reranking. We further introduce a post-exposure evaluation protocol that tests whether an agent can behave counterfactually after rollback by answering queries and summarizing history as if future updates had never occurred. On long-horizon conversational benchmarks augmented with evolving memory states and rollback tasks, ChronoMem substantially improves rollback-consistent question answering and history summarization relative to prompt-only and retrieval-only baselines, while achieving strong performance in semantic version selection. To our knowledge, ChronoMem is the first open-source system and benchmark for systematic semantic global memory rollback in LLM agents.",
+      "authors": [
+        "Yongye Su",
+        "Wujiang Xu",
+        "Chaoji Zuo",
+        "Elisa Bertino"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-30T07:07:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.27773v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Version control and semantic rollback for LLM agent memory",
+      "llm_evidence_cn": "为LLM智能体记忆提供版本控制与语义回滚",
+      "llm_evidence": "为LLM智能体记忆提供版本控制与语义回滚",
+      "canonical_evidence": "为LLM智能体记忆提供版本控制与语义回滚",
+      "llm_tldr_en": "ChronoMem introduces a semantic version-control layer for LLM agent memory, committing whole-memory snapshots at each write and allowing semantic rollback, which addresses brittleness from corrections and memory corruption.",
+      "llm_tldr_cn": "针对LLM智能体长期记忆只进不退、难以纠错的问题，ChronoMem提出语义版本控制层，在每次记忆写入时提交全量快照，并维护结构化版本历史。该机制支持语义回滚，可应对概念漂移与记忆损坏。集成于Google ADK，为生产级智能体记忆系统提供了可审计、可回滚的管理能力。",
+      "llm_tldr": "针对LLM智能体长期记忆只进不退、难以纠错的问题，ChronoMem提出语义版本控制层，在每次记忆写入时提交全量快照，并维护结构化版本历史。该机制支持语义回滚，可应对概念漂移与记忆损坏。集成于Google ADK，为生产级智能体记忆系统提供了可审计、可回滚的管理能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01742v2",
+      "source": "arxiv",
+      "title": "MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents",
+      "abstract": "Long-term memory is critical for LLM agents operating over long-horizon interactions. However, several persistent limitations of existing memory systems can be traced to two recurring misalignment patterns in long-term interaction settings: Temporal-Structural Misalignment (TSM) and Delayed Utility Manifestation (DUM). TSM arises when temporal proximity does not reliably align with topical or event-level relatedness, whereas DUM arises when write-time salience does not reliably predict future query utility. To mitigate these misalignment patterns, we propose MemSIF (Memory with Structured Interactions and Facts), a structured interaction-to-fact memory framework. Structured Interaction Memory organizes raw interactions into Topical Segments that preserve local topical coherence and Event Trajectories that maintain cross-time event continuity. Dual-Track Fact Memory uses two complementary tracks: CoreFact memory consolidates stable, schema-guided information at write time, whereas ActiveFact memory forms facts on demand and promotes those supported by multiple historical sources and recurring query demand for reuse. Experiments on LoCoMo and LongMemEval-S across five backbone LLMs show that MemSIF achieves the highest Total ACC in all settings, outperforming the strongest baseline by 2.29%-8.79% on LoCoMo and 2.87%-6.15% on LongMemEval-S. These results support the effectiveness of combining Structured Interaction Memory with Dual-Track Fact Memory to mitigate TSM and DUM. Code is available at https://github.com/luoyufeihaha/MemSIF.",
+      "authors": [
+        "YuFei Luo",
+        "Xiucheng Xu",
+        "Zhen Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-03T06:09:57+00:00",
+      "link": "https://arxiv.org/pdf/2608.01742v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "structured interaction-to-fact dual-track memory framework for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体的结构化交互到事实双轨记忆框架",
+      "llm_evidence": "面向LLM智能体的结构化交互到事实双轨记忆框架",
+      "canonical_evidence": "面向LLM智能体的结构化交互到事实双轨记忆框架",
+      "llm_tldr_en": "MemSIF addresses temporal-structural misalignment and delayed utility manifestation in long-term agent memory by organizing interactions into topical segments and extracting facts to a dual-track memory.",
+      "llm_tldr_cn": "长期交互中，时间近邻与主题事件不一定对齐，写入时显著的信息可能对未来查询无用，这是现有记忆系统的两个痼疾。MemSIF将原始交互组织为主题分段，形成结构化交互记忆，并从中提炼事实进入事实记忆，形成双轨记忆框架。该方法在长程智能体任务上缓解了两类错配问题，提升了记忆的检索与应用效果。这项工作为长期智能体记忆设计提供了新的结构化思路。",
+      "llm_tldr": "长期交互中，时间近邻与主题事件不一定对齐，写入时显著的信息可能对未来查询无用，这是现有记忆系统的两个痼疾。MemSIF将原始交互组织为主题分段，形成结构化交互记忆，并从中提炼事实进入事实记忆，形成双轨记忆框架。该方法在长程智能体任务上缓解了两类错配问题，提升了记忆的检索与应用效果。这项工作为长期智能体记忆设计提供了新的结构化思路。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04746v1",
+      "source": "arxiv",
+      "title": "Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems",
+      "abstract": "LLM agents that persist across sessions accumulate stored memories whose validity varies enormously by content type, yet existing memory architectures treat all memories as equally persistent and systematically contaminate retrieved context with outdated facts. We show that per-memory, type-conditioned temporal decay, a property of western scrub jay episodic memory, can be operationalized as an auto-classified coefficient $π_i$ in an external LLM-agent memory store, yielding ScrubJay-MEM: each memory is encoded as a jointly-bound What--Where--When tuple with an estimated perishability $π_i$ and utility horizon $τ_i$, retrieved by query-adaptive scoring, and revised retroactively at $O(1)$ LLM calls per update. We introduce the Temporal Generalization Test (TGT), a benchmark with held-out retention intervals and a Generalization Gap (GenGap) metric. On TGT, ScrubJay-MEM is the only retrieval-based system with substantially positive GenGap ($+0.108$); on MemoryAgentBench EventQA-64k it improves F1 by $+2.66$ over Mem0 and $+3.09$ over Qwen3-Embedding-4B under a llm backbone. A decay ablation collapses GenGap by $5.7\\times$, establishing type-conditioned decay as necessary for the result. Gains narrow under stronger backbones and reverse on fact-consolidation tasks, scoping the contribution to temporal reasoning over perishable facts.",
+      "authors": [
+        "Kartikey Singh Bhandari",
+        "Aarya Wadhwani",
+        "Dhruv Kumar",
+        "Pratik Narang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-08-05T12:12:44+00:00",
+      "link": "https://arxiv.org/pdf/2608.04746v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "biologically-inspired episodic memory principles applied to LLM agent memory stores",
+      "llm_evidence_cn": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
+      "llm_evidence": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
+      "canonical_evidence": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
+      "llm_tldr_en": "ScrubJay-MEM applies scrub jay episodic memory principles to agent memory, encoding memories as What-Where-When tuples with per-memory perishability and utility horizons to reduce outdated context contamination.",
+      "llm_tldr_cn": "现有记忆架构将不同内容的记忆视为同样持久，往往会用过期事实污染检索上下文。ScrubJay-MEM借鉴丛鸦情景记忆的特点，为每条记忆编码What-Where-When三元组，并估计其易腐系数与效用时限，再以查询自适应评分检索、事后以常数次LLM调用更新。在时间敏感任务上，该方法显著减少过时信息污染。这为智能体记忆的时效性管理提供了仿生新思路。",
+      "llm_tldr": "现有记忆架构将不同内容的记忆视为同样持久，往往会用过期事实污染检索上下文。ScrubJay-MEM借鉴丛鸦情景记忆的特点，为每条记忆编码What-Where-When三元组，并估计其易腐系数与效用时限，再以查询自适应评分检索、事后以常数次LLM调用更新。在时间敏感任务上，该方法显著减少过时信息污染。这为智能体记忆的时效性管理提供了仿生新思路。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04843v1",
+      "source": "arxiv",
+      "title": "MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance Trade-off",
+      "abstract": "Long-horizon LLM agents require memory systems that recover useful evidence from large interaction histories without passing excessive context to downstream models. Existing memory pipelines often rely on hand-crafted heuristics and repeated LLM calls, which can introduce redundant context and high inference cost. We propose MemoryCPT, an end-to-end trainable agent memory pipeline that spans offline memory construction and online query-conditioned context generation. MemoryCPT consists of two stages: Query-agnostic Distillation (QAD), which distills a modular memory-construction pipeline into a compact model using explicit reasoning traces; and Query-aware Retrieval and Summarization (QAR), which combines reciprocal rank fusion (RRF) with a LoRA-based summarizer trained via Group Relative Policy Optimization (GRPO) under a cost-aware reward. We further introduce Quality per Cost (QPC) to quantify answer quality per unit inference cost. Experiments on LoCoMo and LongMemEval show that MemoryCPT improves the cost-performance trade-off over the evaluated baselines, while ablation and sensitivity analyses characterize the contributions of its components and the effects of key design choices.",
+      "authors": [
+        "Songxin Lei",
+        "Kun Ouyang",
+        "Weilin Ruan",
+        "Yuqian Wu",
+        "Zhijiang Guo",
+        "Yushi Sun",
+        "Fugee Tsung"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-08-05T13:37:08+00:00",
+      "link": "https://arxiv.org/pdf/2608.04843v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "end-to-end agent memory framework for cost-performance trade-off",
+      "llm_evidence_cn": "面向成本性能权衡的端到端智能体记忆框架",
+      "llm_evidence": "面向成本性能权衡的端到端智能体记忆框架",
+      "canonical_evidence": "面向成本性能权衡的端到端智能体记忆框架",
+      "llm_tldr_en": "MemoryCPT is an end-to-end trainable agent memory pipeline with query-agnostic distillation and query-aware retrieval/summarization, achieving cost-performance trade-off in LLM agents.",
+      "llm_tldr_cn": "长时程LLM智能体需要从庞大交互历史中恢复有用证据，同时避免向模型传入过多上下文。现有记忆流水线依赖手工规则和重复LLM调用，导致冗余与高成本。提出MemoryCPT，一个端到端可训练的记忆流水线，分为查询无关蒸馏和查询感知检索摘要两个阶段，结合倒数排名融合与LoRA优化。实验显示MemoryCPT在降低成本的同时保持甚至提升记忆恢复质量，为智能体记忆提供了成本-性能平衡方案。",
+      "llm_tldr": "长时程LLM智能体需要从庞大交互历史中恢复有用证据，同时避免向模型传入过多上下文。现有记忆流水线依赖手工规则和重复LLM调用，导致冗余与高成本。提出MemoryCPT，一个端到端可训练的记忆流水线，分为查询无关蒸馏和查询感知检索摘要两个阶段，结合倒数排名融合与LoRA优化。实验显示MemoryCPT在降低成本的同时保持甚至提升记忆恢复质量，为智能体记忆提供了成本-性能平衡方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05095v1",
+      "source": "arxiv",
+      "title": "Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite",
+      "abstract": "Agents for long term reasoning require a memory that can be efficiently and effectively updated over time, as new facts and external feedback continue to arrive. Recently, graph memory has been adopted to offer structural organization for multi-hop retrieval and reasoning. However, existing methods store all memories in a flat graph, and accumulated historical memories can introduce irrelevant contexts and increase the cost of evidence selection during retrieval. Moreover, they typically update memory units independently, requiring repeated unit-wise rewrite to cover related changes. To address these issues, we propose HiGram, an evolving hierarchical graph memory framework with path-level localization and rewriting. Specifically, we first propose a hierarchical graph memory, which organizes the memory into coarse-to-fine architecture composed of upper-level nodes and MemoryUnits, thereby reducing the amount of irrelevant information during retrieval. We further propose MicroGraph-based path-level localization, which leverages query and update conditioned MicroGraphs to identify support subgraph and evidence path before rewrite. Finally, we propose a coordinated rewriting method that jointly revises intra-unit memory and inter-unit dependencies, enable valid dependency structures updating in the localized evidence path. Experiments on benchmarks for long-term conversational question answering and conflict-aware memory evaluation demonstrate that our method demonstrate substantial improvements over baselines in answer quality and token efficiency. Besides, our method improves answer accuracy and query-valid evidence selection under dynamic, static, and conditional conflicts.",
+      "authors": [
+        "Xiawei Yue",
+        "Boran Wang",
+        "Xiaoqing Zhang",
+        "Shuxin Zheng",
+        "Ziwei Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-05T17:32:43+00:00",
+      "link": "https://arxiv.org/pdf/2608.05095v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Hierarchical graph memory framework with path-level localization and rewrite",
+      "llm_evidence_cn": "提出分层图记忆框架，支持路径级定位与重写",
+      "llm_evidence": "提出分层图记忆框架，支持路径级定位与重写",
+      "canonical_evidence": "提出分层图记忆框架，支持路径级定位与重写",
+      "llm_tldr_en": "HiGram introduces an evolving hierarchical graph memory for LLM agents, using path-level localization and rewriting to reduce irrelevant context and improve memory update efficiency in long-term reasoning.",
+      "llm_tldr_cn": "针对长期推理智能体记忆更新困难的问题，HiGram提出演化式分层图记忆框架。现有平面图记忆在历史累积后易引入无关上下文，且单元级重写无法覆盖关联变化。HiGram通过路径级定位与重写，只在受影响路径上更新记忆，减少了证据选择成本和重复更新。实验表明，该方法在多跳检索与长期推理中提升了更新效率和检索准确性，为智能体结构化记忆提供了新思路。",
+      "llm_tldr": "针对长期推理智能体记忆更新困难的问题，HiGram提出演化式分层图记忆框架。现有平面图记忆在历史累积后易引入无关上下文，且单元级重写无法覆盖关联变化。HiGram通过路径级定位与重写，只在受影响路径上更新记忆，减少了证据选择成本和重复更新。实验表明，该方法在多跳检索与长期推理中提升了更新效率和检索准确性，为智能体结构化记忆提供了新思路。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04574v1",
+      "source": "arxiv",
+      "title": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents",
+      "abstract": "Memory-augmented VLM agents act on persistent spatial knowledge, yet that knowledge silently goes stale as the environment changes. We ask what happens when an agent must reconcile a confident memory claim with a contradicting observation, and whether current models can catch the conflict before it becomes a safety-relevant mistake. Using a dynamic FrozenLake testbed, we pair a staleness-detection task with a downstream navigation task across three closed-source models and three open-weight VLMs under both text and image inputs (1,800 detection runs, and 12,000 text-mode navigation episodes over four LLM navigators at a shared 50-seed scale). Three findings emerge. First, text solvability does not imply visual grounding: models that flag stale entries reliably from text nonetheless span vision F1 from 0.887 down to 0.067 on the identical grids, and the weakest keeps making fluent, confident decisions that ignore the image. Second, consuming stale memory without an audit is a safety liability: in our primary GPT-4o setting, an agent that trusts raw memory dies more than twice as often as the same agent given no memory at all. Third, auditing helps but does not close the gap: a transparent read-time filter removes much of the safety cost in text mode, yet even oracle stale labels bring no further significant gain on the current grid size, and when visual auditing is unreliable, filtering yields no consistent benefit. Together these results frame spatial-memory staleness as a safety failure mode and isolate reliable visual grounding and action selection under memory--observation conflict as the central open challenges for memory-augmented agents.",
+      "authors": [
+        "Yushi Sun",
+        "Yanjie Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-05T08:04:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.04574v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "empirical study and task design for evaluating memory staleness in agent systems",
+      "llm_evidence_cn": "针对智能体记忆陈旧性的实证研究与评测任务设计",
+      "llm_evidence": "针对智能体记忆陈旧性的实证研究与评测任务设计",
+      "canonical_evidence": "针对智能体记忆陈旧性的实证研究与评测任务设计",
+      "llm_tldr_en": "This paper empirically studies spatial memory staleness in VLM agents, showing that models often fail to detect conflicts between persistent knowledge and new observations, using a dynamic FrozenLake testbed.",
+      "llm_tldr_cn": "记忆增强型VLM智能体依赖持续的空间知识，但环境变化会使这些记忆静默过期。作者在动态FrozenLake测试台上设计过期检测与下游导航任务，联合考查多模型表现。实验表明，文本可解性不等于视觉基础，模型在冲突出现时常无法及时识别，可能造成安全风险。该研究为评估智能体记忆一致性提供了重要实证基础。",
+      "llm_tldr": "记忆增强型VLM智能体依赖持续的空间知识，但环境变化会使这些记忆静默过期。作者在动态FrozenLake测试台上设计过期检测与下游导航任务，联合考查多模型表现。实验表明，文本可解性不等于视觉基础，模型在冲突出现时常无法及时识别，可能造成安全风险。该研究为评估智能体记忆一致性提供了重要实证基础。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.05013v1",
+      "source": "arxiv",
+      "title": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
+      "abstract": "LLM agents are increasingly applied to open-ended everyday requests that span work, study, and life. These tasks are long-horizon, cross-environment, and multimodal, forcing the agent to preserve goals and constraints across many steps while navigating heterogeneous tools and attachments. While prior work has addressed individual failure modes such as goals drift, states loss, and context overflow, whether a single harness can manage them jointly and remain effective across backends has received less study. We present OneDayAgent, a long-horizon harness for autonomous agents. OneDayAgent turns an open-ended request into a managed execution process that decomposes tasks into bounded subtasks, maintains execution memory under context pressure, and verifies and repairs the final deliverable. We evaluate OneDayAgent on AgentIF-OneDay across 104 tasks. With the GLM-5.2 backend, OneDayAgent sets a new state of the art with an overall score of 0.821. The same harness runs across five backend LLMs from three model families, indicating the harness generalizes across backends without tuning, even as different models induce distinct execution styles under the same workflow.",
+      "authors": [
+        "Jingsheng Zheng",
+        "Xinyuan Fang",
+        "Jintian Zhang",
+        "Zhengke Gui",
+        "Huajun Chen",
+        "Ningyu Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-08-04T17:55:41+00:00",
+      "link": "https://arxiv.org/pdf/2608.05013v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "OneDayAgent is a long-horizon harness that maintains execution memory under context pressure",
+      "llm_evidence_cn": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
+      "llm_evidence": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
+      "canonical_evidence": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
+      "llm_tldr_en": "OneDayAgent is a long-horizon harness that decomposes tasks into bounded subtasks and maintains execution memory under context pressure. It jointly handles goal drift, state loss, and context overflow.",
+      "llm_tldr_cn": "面向开放式的长程日常请求，智能体需要跨环境保留目标与约束，但已有方法通常只能单独处理目标漂移、状态丢失或上下文溢出。OneDayAgent将开放式请求转化为受控执行过程，分解成有界子任务，并在上下文压力下维护执行记忆和验证执行结果。其设计验证了单一框架可以联合应对多个长程故障模式并保持跨后端有效性，为长时程自主智能体提供了系统化方案。",
+      "llm_tldr": "面向开放式的长程日常请求，智能体需要跨环境保留目标与约束，但已有方法通常只能单独处理目标漂移、状态丢失或上下文溢出。OneDayAgent将开放式请求转化为受控执行过程，分解成有界子任务，并在上下文压力下维护执行记忆和验证执行结果。其设计验证了单一框架可以联合应对多个长程故障模式并保持跨后端有效性，为长时程自主智能体提供了系统化方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
