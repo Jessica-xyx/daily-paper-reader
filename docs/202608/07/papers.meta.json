@@ -1,8 +1,8 @@
 {
   "label": "2026-08-07",
   "date": "2026-08-07",
-  "generated_at": "2026-08-07T01:01:19",
-  "count": 7,
+  "generated_at": "2026-08-07T20:21:10",
+  "count": 10,
   "papers": [
     {
       "paper_id": "202608/07/2607.27773v2-chronomem-version-control-and-semantic-rollback-for-large-language-model-agent-memory",
@@ -80,8 +80,23 @@
       "selection_source": "fresh_fetch"
     },
     {
-      "paper_id": "202608/07/2608.04574v1-when-memory-lies-an-empirical-study-of-spatial-memory-staleness-in-vlm-agents",
+      "paper_id": "202608/07/2608.05906v1-causal-episodic-memory-for-feedback-driven-agent-repair",
       "section": "deep",
+      "title_en": "Causal Episodic Memory for Feedback-Driven Agent Repair",
+      "authors": "Khang Nhat Hoang Vo, Tam Minh Chu, Anh Trac Duc Dinh, Thuyen Vinh Ha Bui, Tho Quan",
+      "date": "2026-08-06",
+      "pdf": "https://arxiv.org/pdf/2608.05906v1",
+      "score": "9.0",
+      "evidence": "提出MERIT，利用在线双极性情节记忆进行反馈驱动的Text-to-SQL修复",
+      "tldr": "LLM代理在修复Text-to-SQL失败时常常丢弃已成功的修正，迫使后续回合重复探索类似解法。本文提出训练免费的MERIT代理，它维护由oracle验证的成功和观察到的失败构成的双极性记忆，通过确定性分类器判定失败类型，并采用词法-稠密混合检索从先前完成回合中提取经验，让冻结的Qwen2.5-7B生成修订。在Spider和BIRD上，MERIT将执行准确率从66.34%/47.35%提升到69.79%/48.44%，Spider增益经配对检验显著，而BIRD增益较弱且与未类型化动态检索无可靠差异。这些结果厘清了因果跨查询记忆的适用条件，并强调模式本地经验是最稳定的收益来源。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "LLM agents that repair failures often discard successful corrections, forcing later episodes to rediscover similar solutions. We study whether finalized repair outcomes can improve subsequent Text-to-SQL episodes without parameter updates. We introduce MERIT, a training-free agent that maintains an online dual-polarity memory of oracle-verified corrections and observed unsuccessful directions. Under oracle-assisted benchmark feedback, only memories from earlier finalized episodes are eligible for retrieval. A deterministic classifier assigns a coarse failure type, which conditions a hybrid lexical-dense retriever before the frozen model generates each revision. Using Qwen2.5-7B-Instruct with identical initial predictions and repair budgets, MERIT improves execution accuracy over stateless iterative repair from \\(66.34\\%\\) to \\(69.79\\%\\) on Spider and from \\(47.35\\%\\) to \\(48.44\\%\\) on BIRD. Paired analyses provide clear evidence for the Spider gain but weaker evidence on BIRD. MERIT is not reliably separated from untyped dynamic retrieval on either benchmark, while Reflexion-style memory reaches \\(51.24\\%\\) on BIRD at substantially higher inference cost. Ablations show that negative memory contributes modestly, the value of type conditioning and lexical--dense ranking is dataset dependent, and schema-local experience provides the most consistent benefit. These results clarify when causal cross-query memory improves repair and when broader memory representations remain preferable.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/07/2608.04574v1-when-memory-lies-an-empirical-study-of-spatial-memory-staleness-in-vlm-agents",
+      "section": "quick",
       "title_en": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents",
       "authors": "Yushi Sun, Yanjie Zhang",
       "date": "2026-08-05",
@@ -95,17 +110,47 @@
       "selection_source": "fresh_fetch"
     },
     {
-      "paper_id": "202608/07/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents",
+      "paper_id": "202608/07/2608.01637v1-salami-attack-stealthy-collusive-memory-poisoning-against-openclaw",
       "section": "quick",
-      "title_en": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
-      "authors": "Jingsheng Zheng, Xinyuan Fang, Jintian Zhang, Zhengke Gui, Huajun Chen, Ningyu Zhang",
-      "date": "2026-08-04",
-      "pdf": "https://arxiv.org/pdf/2608.05013v1",
-      "score": "6.0",
-      "evidence": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
-      "tldr": "长期开放任务使LLM智能体面临目标漂移、状态丢失与上下文溢出等挑战。OneDayAgent提出统一框架，将请求分解为有界子任务，维护执行记忆并验证修复交付物。其在不依赖后端调参的情况下，于AgentIF-OneDay上以GLM-5.2取得0.821的SOTA分数，并跨五个模型稳定生效。该工作证明单一框架可联合应对多种失效模式，具有良好的通用性与实际意义。",
+      "title_en": "Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw",
+      "authors": "Zheng Lin, Yuzhe Huang, Zhenxing Niu, Xianmin Ye, Haichang Gao",
+      "date": "2026-08-03",
+      "pdf": "https://arxiv.org/pdf/2608.01637v1",
+      "score": "7.0",
+      "evidence": "针对LLM代理记忆的共谋投毒攻击框架",
+      "tldr": "长期记忆增强了LLM代理的跨会话能力，但带来记忆中毒风险。现有攻击依赖单个恶意记录，忽视多个良性记忆组合的威胁。本文提出MemCollusion框架，采用萨拉米战术将恶意目标切片为无害片段，组成记忆联盟进行共谋攻击。在OpenClaw上，最强记忆保存设置下实现81.3%的保存率和75.0%的攻击成功率，且能抵抗记忆稀释和防御，揭示了组合式记忆中毒的严重风险。",
       "tags": "query:llm-agent-memory",
-      "abstract_en": "LLM agents are increasingly applied to open-ended everyday requests that span work, study, and life. These tasks are long-horizon, cross-environment, and multimodal, forcing the agent to preserve goals and constraints across many steps while navigating heterogeneous tools and attachments. While prior work has addressed individual failure modes such as goals drift, states loss, and context overflow, whether a single harness can manage them jointly and remain effective across backends has received less study. We present OneDayAgent, a long-horizon harness for autonomous agents. OneDayAgent turns an open-ended request into a managed execution process that decomposes tasks into bounded subtasks, maintains execution memory under context pressure, and verifies and repairs the final deliverable. We evaluate OneDayAgent on AgentIF-OneDay across 104 tasks. With the GLM-5.2 backend, OneDayAgent sets a new state of the art with an overall score of 0.821. The same harness runs across five backend LLMs from three model families, indicating the harness generalizes across backends without tuning, even as different models induce distinct execution styles under the same workflow.",
+      "abstract_en": "Long-term memory enables LLM agents to retain useful information across sessions, but also creates an attack surface through which adversaries may poison an agent's persistent memory to steer its behavior. Existing memory poisoning attacks mainly rely on individually malicious records, overlooking a compositional threat: multiple benign-looking memories may jointly induce unsafe behavior. In this paper, we introduce MemCollusion, an automated red-teaming framework for constructing collusive memory poisoning attacks. MemCollusion applies salami tactics---a strategy that slices an adversarial objective into small, individually innocuous pieces---to generate memory fragments that are individually benign looking but collectively harmful. It constructs memory coalitions using four design constraints, five theory-informed strategies, and a fine-tuned generator. To assess collusive memory poisoning in a realistic cross-session setting, we develop MoltLab, a controlled research reproduction of Moltbook, in which crafted platform content must first be observed and distilled into persistent memory before influencing the agent's behavior in a separate session. We evaluate MemCollusion on OpenClaw using two backbone models across 48 scenarios. Under the strongest memory-saving setting, MemCollusion achieves an average Memory Save Rate of 81.3% and an Attack Success Rate of 75.0%, and remains effective under both benign memory dilution and memory-level defenses.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/07/2608.03844v1-mafia-query-only-memory-attacks-via-probing-and-factual-injection-against-audited-llm-agents",
+      "section": "quick",
+      "title_en": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
+      "authors": "Jiaming Chen, Yisen Gao, Yanping Li, Zifan Liu, Yumeng Zhang, Jun Zhang",
+      "date": "2026-08-04",
+      "pdf": "https://arxiv.org/pdf/2608.03844v1",
+      "score": "7.0",
+      "evidence": "提出针对LLM Agent记忆模块的查询级注入攻击框架",
+      "tldr": "记忆增强的LLM代理依赖丰富上下文，但其记忆模块易受恶意记录污染，现有查询-only攻击在大型良性记忆池和输入审计下失效。MAFIA通过记忆探测、预算分配和调度实现检索竞争性注入，并利用紧凑事实伪装绕过语义审计。实验表明攻击成功率最高90.7%，审计检测率从83.3%降至7.4%，暴露了代理记忆系统的严重漏洞。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Memory-augmented LLM agents rely on rich context for long-horizon reasoning and acting, yet their memory modules expose a persistent attack surface for malicious records, making the study of memory poisoning threats imperative. However, existing query-only attacks often fail to remain effective in two realistic and prevalent settings: large-scale benign memory pools and active input auditing. Consequently, current approaches fall short when facing the dual challenges of high retrieval competitiveness and rigorous semantic checks. To overcome these limitations, we propose MAFIA, a query-only Memory Attack framework via probing and Factual Injection against Audit, tailored to this extended threat model. Specifically, MAFIA introduces: (1) a placement strategy that ensures retrieval-competitive injection via memory probing, budget allocation, and scheduling; and (2) a payload design that bypasses audits using compact factual cloaks, preserving malicious effects while maintaining high semantic similarity. Extensive evaluations reveal that MAFIA achieves up to a 90.7% attack success rate while suppressing audit detection from a peak of 83.3% to at most 7.4%, exposing critical vulnerabilities across agentic memory systems. Code will be made publicly available at https://github.com/JiamingChen1234/MAFIA.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/07/2607.28942v2-nesyfs-a-neuro-symbolic-fast-slow-thinking-framework-for-llm-agent-under-partial-observability",
+      "section": "quick",
+      "title_en": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
+      "authors": "Duo Xu, Faramarz Fekri",
+      "date": "2026-07-31",
+      "pdf": "https://arxiv.org/pdf/2607.28942v2",
+      "score": "6.0",
+      "evidence": "用神经符号快慢思考框架处理Agent的动作-观测历史",
+      "tldr": "大语言模型智能体在部分可观测环境中常因历史信息冗余而决策失误。为此提出神经符号快慢思考框架NeSyFS，用知识图谱表示信念状态，快思考模块执行反应式动作，慢思考模块基于扭曲序列蒙特卡洛进行不确定性感知规划，并通过反思模块纠正任务目标偏差。在ALFWorld、Webshop和ScienceWorld上显著超越既有方法，为智能体在不确定环境中的可靠决策提供统一范式。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of NeSyFS. The fast-thinking module performs reactive action, while slow-thinking conducts a new uncertainty-aware planning by following the high-level structure of twisted sequential Monte Carlo (TSMC) algorithm. To mitigate the misalignment of task objective, a reflection module is used to reflect fast-thinking actions, and also switches to the slow-thinking module whenever reactive actions repeatedly fail. Experiments on three representative benchmarks, i.e. ALFWorld, Webshop, and ScienceWorld, demonstrate significant advantages over previous methods.",
       "source": "arxiv",
       "selection_source": "fresh_fetch"
     }

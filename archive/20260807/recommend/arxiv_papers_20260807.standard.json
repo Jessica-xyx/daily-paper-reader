@@ -1,15 +1,15 @@
 {
   "mode": "standard",
-  "generated_at": "2026-08-07T00:53:59.930746+00:00",
+  "generated_at": "2026-08-07T20:18:08.161075+00:00",
   "stats": {
     "mode": "standard",
     "tag_count": 1,
-    "deep_divecandidates": 6,
+    "deep_divecandidates": 7,
     "deep_cap": 6,
     "deep_selected": 6,
-    "quick_candidates": 1,
+    "quick_candidates": 4,
     "quick_skim_target": 11,
-    "quick_selected": 1
+    "quick_selected": 4
   },
   "deep_dive": [
     {
@@ -33,14 +33,14 @@
         "keyword:llm-agent-memory",
         "query:llm-agent-memory"
       ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "Version control and semantic rollback for LLM agent memory",
-      "llm_evidence_cn": "为LLM智能体记忆提供版本控制与语义回滚",
-      "llm_evidence": "为LLM智能体记忆提供版本控制与语义回滚",
-      "canonical_evidence": "为LLM智能体记忆提供版本控制与语义回滚",
-      "llm_tldr_en": "ChronoMem introduces a semantic version-control layer for LLM agent memory, committing whole-memory snapshots at each write and allowing semantic rollback, which addresses brittleness from corrections and memory corruption.",
-      "llm_tldr_cn": "针对LLM智能体长期记忆只进不退、难以纠错的问题，ChronoMem提出语义版本控制层，在每次记忆写入时提交全量快照，并维护结构化版本历史。该机制支持语义回滚，可应对概念漂移与记忆损坏。集成于Google ADK，为生产级智能体记忆系统提供了可审计、可回滚的管理能力。",
-      "llm_tldr": "针对LLM智能体长期记忆只进不退、难以纠错的问题，ChronoMem提出语义版本控制层，在每次记忆写入时提交全量快照，并维护结构化版本历史。该机制支持语义回滚，可应对概念漂移与记忆损坏。集成于Google ADK，为生产级智能体记忆系统提供了可审计、可回滚的管理能力。",
+      "llm_score": 10.0,
+      "llm_evidence_en": "ChronoMem provides version control and semantic rollback for LLM agent memory",
+      "llm_evidence_cn": "ChronoMem为LLM智能体记忆提供版本控制与语义回滚",
+      "llm_evidence": "ChronoMem为LLM智能体记忆提供版本控制与语义回滚",
+      "canonical_evidence": "ChronoMem为LLM智能体记忆提供版本控制与语义回滚",
+      "llm_tldr_en": "ChronoMem adds a semantic version-control layer to agent memory, enabling inspection, versioning, and rollback of memory states in the Google Agent Development Kit.",
+      "llm_tldr_cn": "现有LLM智能体长期记忆系统只向前演化，不断积累、整合和覆写知识，无法检查、版本化或回滚先前的状态，导致在修正、概念漂移和记忆污染时表现脆弱。ChronoMem为智能记忆加入语义版本控制层，集成于Google的开源Agent Development Kit，在每次记忆写入时提交整体快照并维护结构化的版本历史。它支持语义级回滚，使智能体能恢复旧记忆状态。该工作为智能体记忆管理提供了可审计、可回溯的基础设施。",
+      "llm_tldr": "现有LLM智能体长期记忆系统只向前演化，不断积累、整合和覆写知识，无法检查、版本化或回滚先前的状态，导致在修正、概念漂移和记忆污染时表现脆弱。ChronoMem为智能记忆加入语义版本控制层，集成于Google的开源Agent Development Kit，在每次记忆写入时提交整体快照并维护结构化的版本历史。它支持语义级回滚，使智能体能恢复旧记忆状态。该工作为智能体记忆管理提供了可审计、可回溯的基础设施。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
@@ -70,14 +70,14 @@
         "keyword:llm-agent-memory",
         "query:llm-agent-memory"
       ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "structured interaction-to-fact dual-track memory framework for LLM agents",
-      "llm_evidence_cn": "面向LLM智能体的结构化交互到事实双轨记忆框架",
-      "llm_evidence": "面向LLM智能体的结构化交互到事实双轨记忆框架",
-      "canonical_evidence": "面向LLM智能体的结构化交互到事实双轨记忆框架",
-      "llm_tldr_en": "MemSIF addresses temporal-structural misalignment and delayed utility manifestation in long-term agent memory by organizing interactions into topical segments and extracting facts to a dual-track memory.",
-      "llm_tldr_cn": "长期交互中，时间近邻与主题事件不一定对齐，写入时显著的信息可能对未来查询无用，这是现有记忆系统的两个痼疾。MemSIF将原始交互组织为主题分段，形成结构化交互记忆，并从中提炼事实进入事实记忆，形成双轨记忆框架。该方法在长程智能体任务上缓解了两类错配问题，提升了记忆的检索与应用效果。这项工作为长期智能体记忆设计提供了新的结构化思路。",
-      "llm_tldr": "长期交互中，时间近邻与主题事件不一定对齐，写入时显著的信息可能对未来查询无用，这是现有记忆系统的两个痼疾。MemSIF将原始交互组织为主题分段，形成结构化交互记忆，并从中提炼事实进入事实记忆，形成双轨记忆框架。该方法在长程智能体任务上缓解了两类错配问题，提升了记忆的检索与应用效果。这项工作为长期智能体记忆设计提供了新的结构化思路。",
+      "llm_score": 10.0,
+      "llm_evidence_en": "proposes MemSIF, a structured interaction-to-fact memory framework for LLM agents",
+      "llm_evidence_cn": "提出MemSIF，面向LLM智能体的结构化交互到事实记忆框架",
+      "llm_evidence": "提出MemSIF，面向LLM智能体的结构化交互到事实记忆框架",
+      "canonical_evidence": "提出MemSIF，面向LLM智能体的结构化交互到事实记忆框架",
+      "llm_tldr_en": "MemSIF introduces a dual-track fact memory framework that mitigates temporal-structural misalignment and delayed utility manifestation for long-term LLM agent memory.",
+      "llm_tldr_cn": "长期记忆对LLM智能体至关重要，但现有记忆系统存在时间-结构错位与效用延迟显现两大问题。为此提出MemSIF框架，将原始交互组织为专题片段并构建双轨事实记忆，以缓解这些错位模式。实验表明该方法能更准确地组织与检索长期交互信息，为长时程智能体记忆提供新的结构化方案。",
+      "llm_tldr": "长期记忆对LLM智能体至关重要，但现有记忆系统存在时间-结构错位与效用延迟显现两大问题。为此提出MemSIF框架，将原始交互组织为专题片段并构建双轨事实记忆，以缓解这些错位模式。实验表明该方法能更准确地组织与检索长期交互信息，为长时程智能体记忆提供新的结构化方案。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
@@ -109,13 +109,13 @@
         "query:llm-agent-memory"
       ],
       "llm_score": 9.0,
-      "llm_evidence_en": "biologically-inspired episodic memory principles applied to LLM agent memory stores",
-      "llm_evidence_cn": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
-      "llm_evidence": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
-      "canonical_evidence": "借鉴生物情景记忆原理构建LLM智能体外部记忆系统",
-      "llm_tldr_en": "ScrubJay-MEM applies scrub jay episodic memory principles to agent memory, encoding memories as What-Where-When tuples with per-memory perishability and utility horizons to reduce outdated context contamination.",
-      "llm_tldr_cn": "现有记忆架构将不同内容的记忆视为同样持久，往往会用过期事实污染检索上下文。ScrubJay-MEM借鉴丛鸦情景记忆的特点，为每条记忆编码What-Where-When三元组，并估计其易腐系数与效用时限，再以查询自适应评分检索、事后以常数次LLM调用更新。在时间敏感任务上，该方法显著减少过时信息污染。这为智能体记忆的时效性管理提供了仿生新思路。",
-      "llm_tldr": "现有记忆架构将不同内容的记忆视为同样持久，往往会用过期事实污染检索上下文。ScrubJay-MEM借鉴丛鸦情景记忆的特点，为每条记忆编码What-Where-When三元组，并估计其易腐系数与效用时限，再以查询自适应评分检索、事后以常数次LLM调用更新。在时间敏感任务上，该方法显著减少过时信息污染。这为智能体记忆的时效性管理提供了仿生新思路。",
+      "llm_evidence_en": "Episodic-memory-inspired agent memory system with type-conditioned temporal decay and perishability coefficients.",
+      "llm_evidence_cn": "借鉴情景记忆的智能体记忆系统，引入类型条件时间衰减与易逝性系数。",
+      "llm_evidence": "借鉴情景记忆的智能体记忆系统，引入类型条件时间衰减与易逝性系数。",
+      "canonical_evidence": "借鉴情景记忆的智能体记忆系统，引入类型条件时间衰减与易逝性系数。",
+      "llm_tldr_en": "Introduces ScrubJay-MEM, an agent memory system inspired by scrub jay episodic memory, encoding each memory as a What-Where-When tuple with auto-classified perishability and utility horizon, retrieved by query-adaptive scoring and revised at O(1) LLM calls.",
+      "llm_tldr_cn": "跨会话LLM智能体存储的记忆有效性因内容类型而异，但现有结构同样对待所有记忆，导致过时事实污染上下文。ScrubJay-MEM借鉴丛鸦情景记忆，将每条记忆编码为What-Where-When元组并估计易逝系数与效用期限，按查询自适应打分检索，并以O(1)次LLM调用实现回溯修订。该方法降低了过时信息干扰，提升长期记忆可靠性。",
+      "llm_tldr": "跨会话LLM智能体存储的记忆有效性因内容类型而异，但现有结构同样对待所有记忆，导致过时事实污染上下文。ScrubJay-MEM借鉴丛鸦情景记忆，将每条记忆编码为What-Where-When元组并估计易逝系数与效用期限，按查询自适应打分检索，并以O(1)次LLM调用实现回溯修订。该方法降低了过时信息干扰，提升长期记忆可靠性。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
@@ -149,19 +149,19 @@
         "query:llm-agent-memory"
       ],
       "llm_score": 9.0,
-      "llm_evidence_en": "end-to-end agent memory framework for cost-performance trade-off",
-      "llm_evidence_cn": "面向成本性能权衡的端到端智能体记忆框架",
-      "llm_evidence": "面向成本性能权衡的端到端智能体记忆框架",
-      "canonical_evidence": "面向成本性能权衡的端到端智能体记忆框架",
-      "llm_tldr_en": "MemoryCPT is an end-to-end trainable agent memory pipeline with query-agnostic distillation and query-aware retrieval/summarization, achieving cost-performance trade-off in LLM agents.",
-      "llm_tldr_cn": "长时程LLM智能体需要从庞大交互历史中恢复有用证据，同时避免向模型传入过多上下文。现有记忆流水线依赖手工规则和重复LLM调用，导致冗余与高成本。提出MemoryCPT，一个端到端可训练的记忆流水线，分为查询无关蒸馏和查询感知检索摘要两个阶段，结合倒数排名融合与LoRA优化。实验显示MemoryCPT在降低成本的同时保持甚至提升记忆恢复质量，为智能体记忆提供了成本-性能平衡方案。",
-      "llm_tldr": "长时程LLM智能体需要从庞大交互历史中恢复有用证据，同时避免向模型传入过多上下文。现有记忆流水线依赖手工规则和重复LLM调用，导致冗余与高成本。提出MemoryCPT，一个端到端可训练的记忆流水线，分为查询无关蒸馏和查询感知检索摘要两个阶段，结合倒数排名融合与LoRA优化。实验显示MemoryCPT在降低成本的同时保持甚至提升记忆恢复质量，为智能体记忆提供了成本-性能平衡方案。",
+      "llm_evidence_en": "Proposes end-to-end trainable agent memory pipeline balancing cost and performance",
+      "llm_evidence_cn": "提出端到端可训练的Agent记忆流水线，兼顾成本与性能",
+      "llm_evidence": "提出端到端可训练的Agent记忆流水线，兼顾成本与性能",
+      "canonical_evidence": "提出端到端可训练的Agent记忆流水线，兼顾成本与性能",
+      "llm_tldr_en": "MemoryCPT is an end-to-end trainable memory pipeline for LLM agents, with Query-agnostic Distillation for compact construction and Query-aware Retrieval and Summarization using RRF and LoRA, reducing cost while recovering evidence.",
+      "llm_tldr_cn": "长程LLM Agent需要从大规模交互历史中检索有效证据，同时避免向模型传递过量上下文。现有记忆流水线依赖手工启发式和反复调用LLM，导致冗余和高推理成本。MemoryCPT提出端到端可训练的记忆流水线，包括查询无关蒸馏（QAD）将模块化构建流程压缩为紧凑模型，以及查询感知检索与摘要（QAR）结合倒数排名融合与LoRA，在查询时生成条件化上下文。实验表明其在成本与性能权衡上优于已有方法。",
+      "llm_tldr": "长程LLM Agent需要从大规模交互历史中检索有效证据，同时避免向模型传递过量上下文。现有记忆流水线依赖手工启发式和反复调用LLM，导致冗余和高推理成本。MemoryCPT提出端到端可训练的记忆流水线，包括查询无关蒸馏（QAD）将模块化构建流程压缩为紧凑模型，以及查询感知检索与摘要（QAR）结合倒数排名融合与LoRA，在查询时生成条件化上下文。实验表明其在成本与性能权衡上优于已有方法。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
       "matched_query_tag": "query:llm-agent-memory",
-      "matched_query_text": "memory methods for LLM agents",
-      "matched_requirement_id": "req-3",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
       "selection_source": "fresh_fetch"
     },
     {
@@ -187,13 +187,13 @@
         "query:llm-agent-memory"
       ],
       "llm_score": 9.0,
-      "llm_evidence_en": "Hierarchical graph memory framework with path-level localization and rewrite",
-      "llm_evidence_cn": "提出分层图记忆框架，支持路径级定位与重写",
-      "llm_evidence": "提出分层图记忆框架，支持路径级定位与重写",
-      "canonical_evidence": "提出分层图记忆框架，支持路径级定位与重写",
-      "llm_tldr_en": "HiGram introduces an evolving hierarchical graph memory for LLM agents, using path-level localization and rewriting to reduce irrelevant context and improve memory update efficiency in long-term reasoning.",
-      "llm_tldr_cn": "针对长期推理智能体记忆更新困难的问题，HiGram提出演化式分层图记忆框架。现有平面图记忆在历史累积后易引入无关上下文，且单元级重写无法覆盖关联变化。HiGram通过路径级定位与重写，只在受影响路径上更新记忆，减少了证据选择成本和重复更新。实验表明，该方法在多跳检索与长期推理中提升了更新效率和检索准确性，为智能体结构化记忆提供了新思路。",
-      "llm_tldr": "针对长期推理智能体记忆更新困难的问题，HiGram提出演化式分层图记忆框架。现有平面图记忆在历史累积后易引入无关上下文，且单元级重写无法覆盖关联变化。HiGram通过路径级定位与重写，只在受影响路径上更新记忆，减少了证据选择成本和重复更新。实验表明，该方法在多跳检索与长期推理中提升了更新效率和检索准确性，为智能体结构化记忆提供了新思路。",
+      "llm_evidence_en": "hierarchical graph memory with path-level localization and rewrite for LLM agents",
+      "llm_evidence_cn": "提出层次图记忆及路径级定位重写策略，用于LLM代理长期记忆管理",
+      "llm_evidence": "提出层次图记忆及路径级定位重写策略，用于LLM代理长期记忆管理",
+      "canonical_evidence": "提出层次图记忆及路径级定位重写策略，用于LLM代理长期记忆管理",
+      "llm_tldr_en": "HiGram presents an evolving hierarchical graph memory framework with path-level localization and rewriting, overcoming flat-graph limitations by reducing irrelevant context during retrieval and enabling more efficient coordinated updates for long-term reasoning agents.",
+      "llm_tldr_cn": "面向长期推理的LLM代理需要能被高效更新的记忆，但现有图记忆多采用扁平结构，导致检索时无关上下文积累和更新成本高。HiGram提出演化式层次图记忆框架，通过路径级定位和重写使相关记忆协调更新。实验表明该框架能减少检索噪声并降低重写开销，提升多跳推理效果。这为图记忆的结构化组织与动态更新提供了新思路。",
+      "llm_tldr": "面向长期推理的LLM代理需要能被高效更新的记忆，但现有图记忆多采用扁平结构，导致检索时无关上下文积累和更新成本高。HiGram提出演化式层次图记忆框架，通过路径级定位和重写使相关记忆协调更新。实验表明该框架能减少检索噪声并降低重写开销，提升多跳推理效果。这为图记忆的结构化组织与动态更新提供了新思路。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
@@ -202,6 +202,46 @@
       "matched_requirement_id": "req-5",
       "selection_source": "fresh_fetch"
     },
+    {
+      "id": "2608.05906v1",
+      "source": "arxiv",
+      "title": "Causal Episodic Memory for Feedback-Driven Agent Repair",
+      "abstract": "LLM agents that repair failures often discard successful corrections, forcing later episodes to rediscover similar solutions. We study whether finalized repair outcomes can improve subsequent Text-to-SQL episodes without parameter updates. We introduce MERIT, a training-free agent that maintains an online dual-polarity memory of oracle-verified corrections and observed unsuccessful directions. Under oracle-assisted benchmark feedback, only memories from earlier finalized episodes are eligible for retrieval. A deterministic classifier assigns a coarse failure type, which conditions a hybrid lexical-dense retriever before the frozen model generates each revision. Using Qwen2.5-7B-Instruct with identical initial predictions and repair budgets, MERIT improves execution accuracy over stateless iterative repair from \\(66.34\\%\\) to \\(69.79\\%\\) on Spider and from \\(47.35\\%\\) to \\(48.44\\%\\) on BIRD. Paired analyses provide clear evidence for the Spider gain but weaker evidence on BIRD. MERIT is not reliably separated from untyped dynamic retrieval on either benchmark, while Reflexion-style memory reaches \\(51.24\\%\\) on BIRD at substantially higher inference cost. Ablations show that negative memory contributes modestly, the value of type conditioning and lexical--dense ranking is dataset dependent, and schema-local experience provides the most consistent benefit. These results clarify when causal cross-query memory improves repair and when broader memory representations remain preferable.",
+      "authors": [
+        "Khang Nhat Hoang Vo",
+        "Tam Minh Chu",
+        "Anh Trac Duc Dinh",
+        "Thuyen Vinh Ha Bui",
+        "Tho Quan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-06T11:34:03+00:00",
+      "link": "https://arxiv.org/pdf/2608.05906v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes MERIT, an agent with online dual-polarity episodic memory for feedback-driven Text-to-SQL repair",
+      "llm_evidence_cn": "提出MERIT，利用在线双极性情节记忆进行反馈驱动的Text-to-SQL修复",
+      "llm_evidence": "提出MERIT，利用在线双极性情节记忆进行反馈驱动的Text-to-SQL修复",
+      "canonical_evidence": "提出MERIT，利用在线双极性情节记忆进行反馈驱动的Text-to-SQL修复",
+      "llm_tldr_en": "MERIT introduces a training-free agent with dual-polarity episodic memory, conditioning retrieval on failure types to improve Text-to-SQL repair across episodes, improving execution accuracy without parameter updates.",
+      "llm_tldr_cn": "论文针对LLM智能体在修复失败时往往丢弃成功修正、导致后续重复发现相似解决方案的问题，提出MERIT，一个无需训练的在线双极性情节记忆智能体。MERIT将已验证的修正和观察到的失败方向存入记忆，并由分类器确定失败类型后使用混合检索器进行条件检索，在冻结模型下提升了跨轮次的Text-to-SQL修复执行准确率。该工作说明记忆机制可以显著改善智能体修复效果，且无需参数更新。",
+      "llm_tldr": "论文针对LLM智能体在修复失败时往往丢弃成功修正、导致后续重复发现相似解决方案的问题，提出MERIT，一个无需训练的在线双极性情节记忆智能体。MERIT将已验证的修正和观察到的失败方向存入记忆，并由分类器确定失败类型后使用混合检索器进行条件检索，在冻结模型下提升了跨轮次的Text-to-SQL修复执行准确率。该工作说明记忆机制可以显著改善智能体修复效果，且无需参数更新。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
     {
       "id": "2608.04574v1",
       "source": "arxiv",
@@ -222,66 +262,136 @@
         "query:llm-agent-memory"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "empirical study and task design for evaluating memory staleness in agent systems",
-      "llm_evidence_cn": "针对智能体记忆陈旧性的实证研究与评测任务设计",
-      "llm_evidence": "针对智能体记忆陈旧性的实证研究与评测任务设计",
-      "canonical_evidence": "针对智能体记忆陈旧性的实证研究与评测任务设计",
-      "llm_tldr_en": "This paper empirically studies spatial memory staleness in VLM agents, showing that models often fail to detect conflicts between persistent knowledge and new observations, using a dynamic FrozenLake testbed.",
-      "llm_tldr_cn": "记忆增强型VLM智能体依赖持续的空间知识，但环境变化会使这些记忆静默过期。作者在动态FrozenLake测试台上设计过期检测与下游导航任务，联合考查多模型表现。实验表明，文本可解性不等于视觉基础，模型在冲突出现时常无法及时识别，可能造成安全风险。该研究为评估智能体记忆一致性提供了重要实证基础。",
-      "llm_tldr": "记忆增强型VLM智能体依赖持续的空间知识，但环境变化会使这些记忆静默过期。作者在动态FrozenLake测试台上设计过期检测与下游导航任务，联合考查多模型表现。实验表明，文本可解性不等于视觉基础，模型在冲突出现时常无法及时识别，可能造成安全风险。该研究为评估智能体记忆一致性提供了重要实证基础。",
+      "llm_evidence_en": "Empirical study evaluating spatial memory staleness in VLM agents",
+      "llm_evidence_cn": "对VLM Agent空间记忆陈旧性进行实证评测研究",
+      "llm_evidence": "对VLM Agent空间记忆陈旧性进行实证评测研究",
+      "canonical_evidence": "对VLM Agent空间记忆陈旧性进行实证评测研究",
+      "llm_tldr_en": "This empirical study evaluates spatial memory staleness in VLM agents using a dynamic FrozenLake testbed. It finds models often fail to catch conflicts between confident memory claims and contradicting observations, with text solvability not implying visual grounding.",
+      "llm_tldr_cn": "记忆增强的VLM Agent依赖持久化空间知识，但环境变化会导致记忆悄然失效。本文在动态FrozenLake平台上进行实证研究，结合陈旧性检测任务与下游导航任务，系统评测多个闭源和开源VLM。结果发现模型普遍难以发现自信记忆与矛盾观测之间的冲突，且文本可解性并不代表视觉接地。研究揭示了空间记忆陈旧性问题对安全关键应用的风险。",
+      "llm_tldr": "记忆增强的VLM Agent依赖持久化空间知识，但环境变化会导致记忆悄然失效。本文在动态FrozenLake平台上进行实证研究，结合陈旧性检测任务与下游导航任务，系统评测多个闭源和开源VLM。结果发现模型普遍难以发现自信记忆与矛盾观测之间的冲突，且文本可解性并不代表视觉接地。研究揭示了空间记忆陈旧性问题对安全关键应用的风险。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
       "matched_query_tag": "query:llm-agent-memory",
       "matched_query_text": "How is memory evaluated in LLM agent systems?",
       "matched_requirement_id": "req-8",
-      "selection_source": "fresh_fetch"
-    }
-  ],
-  "quick_skim": [
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
     {
-      "id": "2608.05013v1",
+      "id": "2608.01637v1",
       "source": "arxiv",
-      "title": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
-      "abstract": "LLM agents are increasingly applied to open-ended everyday requests that span work, study, and life. These tasks are long-horizon, cross-environment, and multimodal, forcing the agent to preserve goals and constraints across many steps while navigating heterogeneous tools and attachments. While prior work has addressed individual failure modes such as goals drift, states loss, and context overflow, whether a single harness can manage them jointly and remain effective across backends has received less study. We present OneDayAgent, a long-horizon harness for autonomous agents. OneDayAgent turns an open-ended request into a managed execution process that decomposes tasks into bounded subtasks, maintains execution memory under context pressure, and verifies and repairs the final deliverable. We evaluate OneDayAgent on AgentIF-OneDay across 104 tasks. With the GLM-5.2 backend, OneDayAgent sets a new state of the art with an overall score of 0.821. The same harness runs across five backend LLMs from three model families, indicating the harness generalizes across backends without tuning, even as different models induce distinct execution styles under the same workflow.",
+      "title": "Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw",
+      "abstract": "Long-term memory enables LLM agents to retain useful information across sessions, but also creates an attack surface through which adversaries may poison an agent's persistent memory to steer its behavior. Existing memory poisoning attacks mainly rely on individually malicious records, overlooking a compositional threat: multiple benign-looking memories may jointly induce unsafe behavior. In this paper, we introduce MemCollusion, an automated red-teaming framework for constructing collusive memory poisoning attacks. MemCollusion applies salami tactics---a strategy that slices an adversarial objective into small, individually innocuous pieces---to generate memory fragments that are individually benign looking but collectively harmful. It constructs memory coalitions using four design constraints, five theory-informed strategies, and a fine-tuned generator. To assess collusive memory poisoning in a realistic cross-session setting, we develop MoltLab, a controlled research reproduction of Moltbook, in which crafted platform content must first be observed and distilled into persistent memory before influencing the agent's behavior in a separate session. We evaluate MemCollusion on OpenClaw using two backbone models across 48 scenarios. Under the strongest memory-saving setting, MemCollusion achieves an average Memory Save Rate of 81.3% and an Attack Success Rate of 75.0%, and remains effective under both benign memory dilution and memory-level defenses.",
       "authors": [
-        "Jingsheng Zheng",
-        "Xinyuan Fang",
-        "Jintian Zhang",
-        "Zhengke Gui",
-        "Huajun Chen",
-        "Ningyu Zhang"
+        "Zheng Lin",
+        "Yuzhe Huang",
+        "Zhenxing Niu",
+        "Xianmin Ye",
+        "Haichang Gao"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.AI",
       "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.HC",
-        "cs.LG",
-        "cs.MA"
+        "cs.AI"
       ],
-      "published": "2026-08-04T17:55:41+00:00",
-      "link": "https://arxiv.org/pdf/2608.05013v1",
+      "published": "2026-08-03T03:17:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.01637v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "collusive memory poisoning attack framework for LLM agent memory",
+      "llm_evidence_cn": "针对LLM代理记忆的共谋投毒攻击框架",
+      "llm_evidence": "针对LLM代理记忆的共谋投毒攻击框架",
+      "canonical_evidence": "针对LLM代理记忆的共谋投毒攻击框架",
+      "llm_tldr_en": "MemCollusion creates collusive memory poisoning by slicing an adversarial objective into individually benign fragments, showing that multiple seemingly harmless memories can jointly steer an LLM agent toward unsafe behavior.",
+      "llm_tldr_cn": "长期记忆使LLM代理能跨会话保留信息，但也为对抗者提供了投毒面。现有记忆投毒攻击多依赖单个恶意记录，忽略了多个良性记忆组合可能共同诱导不安全行为的风险。论文提出MemCollusion红队框架，采用萨拉米策略将恶意目标切分为单独无害的记忆片段，组合后实现隐蔽投毒。该工作揭示并利用长期记忆系统的组合脆弱性，提示需要防御共谋式记忆攻击。",
+      "llm_tldr": "长期记忆使LLM代理能跨会话保留信息，但也为对抗者提供了投毒面。现有记忆投毒攻击多依赖单个恶意记录，忽略了多个良性记忆组合可能共同诱导不安全行为的风险。论文提出MemCollusion红队框架，采用萨拉米策略将恶意目标切分为单独无害的记忆片段，组合后实现隐蔽投毒。该工作揭示并利用长期记忆系统的组合脆弱性，提示需要防御共谋式记忆攻击。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.28942v2",
+      "source": "arxiv",
+      "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
+      "abstract": "Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of NeSyFS. The fast-thinking module performs reactive action, while slow-thinking conducts a new uncertainty-aware planning by following the high-level structure of twisted sequential Monte Carlo (TSMC) algorithm. To mitigate the misalignment of task objective, a reflection module is used to reflect fast-thinking actions, and also switches to the slow-thinking module whenever reactive actions repeatedly fail. Experiments on three representative benchmarks, i.e. ALFWorld, Webshop, and ScienceWorld, demonstrate significant advantages over previous methods.",
+      "authors": [
+        "Duo Xu",
+        "Faramarz Fekri"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-31T01:53:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.28942v2",
       "tags": [
         "keyword:llm-agent-memory",
         "query:llm-agent-memory"
       ],
       "llm_score": 6.0,
-      "llm_evidence_en": "OneDayAgent is a long-horizon harness that maintains execution memory under context pressure",
-      "llm_evidence_cn": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
-      "llm_evidence": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
-      "canonical_evidence": "OneDayAgent通过维护执行记忆来应对长程任务中的上下文压力",
-      "llm_tldr_en": "OneDayAgent is a long-horizon harness that decomposes tasks into bounded subtasks and maintains execution memory under context pressure. It jointly handles goal drift, state loss, and context overflow.",
-      "llm_tldr_cn": "面向开放式的长程日常请求，智能体需要跨环境保留目标与约束，但已有方法通常只能单独处理目标漂移、状态丢失或上下文溢出。OneDayAgent将开放式请求转化为受控执行过程，分解成有界子任务，并在上下文压力下维护执行记忆和验证执行结果。其设计验证了单一框架可以联合应对多个长程故障模式并保持跨后端有效性，为长时程自主智能体提供了系统化方案。",
-      "llm_tldr": "面向开放式的长程日常请求，智能体需要跨环境保留目标与约束，但已有方法通常只能单独处理目标漂移、状态丢失或上下文溢出。OneDayAgent将开放式请求转化为受控执行过程，分解成有界子任务，并在上下文压力下维护执行记忆和验证执行结果。其设计验证了单一框架可以联合应对多个长程故障模式并保持跨后端有效性，为长时程自主智能体提供了系统化方案。",
+      "llm_evidence_en": "Processes action-observation histories with neuro-symbolic fast-slow thinking for LLM agents",
+      "llm_evidence_cn": "用神经符号快慢思考框架处理Agent的动作-观测历史",
+      "llm_evidence": "用神经符号快慢思考框架处理Agent的动作-观测历史",
+      "canonical_evidence": "用神经符号快慢思考框架处理Agent的动作-观测历史",
+      "llm_tldr_en": "NeSyFS introduces a neuro-symbolic fast-slow thinking framework for LLM agents under partial observability, addressing belief state inference and planning by reducing reliance on redundant or misleading action-observation histories.",
+      "llm_tldr_cn": "LLM Agent在部分可观测环境中需基于有限观测行动，而冗长且含噪声的动作-观测历史可能误导决策。NeSyFS借鉴人类认知，提出神经符号的快慢思考框架，将历史信息以结构化方式用于信念推断、目标校准与不确定性规划。该方法旨在减少冗余历史对决策的干扰，并通过实验验证其在部分可观测任务中提升了Agent的推理与规划能力。",
+      "llm_tldr": "LLM Agent在部分可观测环境中需基于有限观测行动，而冗长且含噪声的动作-观测历史可能误导决策。NeSyFS借鉴人类认知，提出神经符号的快慢思考框架，将历史信息以结构化方式用于信念推断、目标校准与不确定性规划。该方法旨在减少冗余历史对决策的干扰，并通过实验验证其在部分可观测任务中提升了Agent的推理与规划能力。",
       "llm_tags": [
         "query:llm-agent-memory"
       ],
       "matched_query_tag": "query:llm-agent-memory",
-      "matched_query_text": "memory management strategies in LLM agents",
-      "matched_requirement_id": "req-5",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
       "selection_source": "fresh_fetch",
       "quick_tier": "6"
+    },
+    {
+      "id": "2608.03844v1",
+      "source": "arxiv",
+      "title": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
+      "abstract": "Memory-augmented LLM agents rely on rich context for long-horizon reasoning and acting, yet their memory modules expose a persistent attack surface for malicious records, making the study of memory poisoning threats imperative. However, existing query-only attacks often fail to remain effective in two realistic and prevalent settings: large-scale benign memory pools and active input auditing. Consequently, current approaches fall short when facing the dual challenges of high retrieval competitiveness and rigorous semantic checks. To overcome these limitations, we propose MAFIA, a query-only Memory Attack framework via probing and Factual Injection against Audit, tailored to this extended threat model. Specifically, MAFIA introduces: (1) a placement strategy that ensures retrieval-competitive injection via memory probing, budget allocation, and scheduling; and (2) a payload design that bypasses audits using compact factual cloaks, preserving malicious effects while maintaining high semantic similarity. Extensive evaluations reveal that MAFIA achieves up to a 90.7% attack success rate while suppressing audit detection from a peak of 83.3% to at most 7.4%, exposing critical vulnerabilities across agentic memory systems. Code will be made publicly available at https://github.com/JiamingChen1234/MAFIA.",
+      "authors": [
+        "Jiaming Chen",
+        "Yisen Gao",
+        "Yanping Li",
+        "Zifan Liu",
+        "Yumeng Zhang",
+        "Jun Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T15:50:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.03844v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Introduces query-only memory attack framework against audited LLM agents",
+      "llm_evidence_cn": "提出针对LLM Agent记忆模块的查询级注入攻击框架",
+      "llm_evidence": "提出针对LLM Agent记忆模块的查询级注入攻击框架",
+      "canonical_evidence": "提出针对LLM Agent记忆模块的查询级注入攻击框架",
+      "llm_tldr_en": "MAFIA is a query-only memory attack framework that uses probing and factual injection to poison memory in LLM agents even against large benign pools and active input auditing.",
+      "llm_tldr_cn": "记忆增强的LLM Agent依赖丰富上下文，但记忆模块也成为恶意记录的攻击面。现有查询级攻击在大型良性记忆池和输入审计存在时往往失效。MAFIA通过探针和事实注入构造攻击，在不直接访问记忆的情况下绕过审计和高检索竞争。该框架扩展了记忆投毒威胁模型，揭示了防御方在双重挑战下的脆弱性。",
+      "llm_tldr": "记忆增强的LLM Agent依赖丰富上下文，但记忆模块也成为恶意记录的攻击面。现有查询级攻击在大型良性记忆池和输入审计存在时往往失效。MAFIA通过探针和事实注入构造攻击，在不直接访问记忆的情况下绕过审计和高检索竞争。该框架扩展了记忆投毒威胁模型，揭示了防御方在双重挑战下的脆弱性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
     }
   ]
 }
