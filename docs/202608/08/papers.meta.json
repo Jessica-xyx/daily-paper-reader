@@ -1,0 +1,24 @@
+{
+  "label": "2026-08-08",
+  "date": "2026-08-08",
+  "generated_at": "2026-08-08T20:40:20",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202608/08/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents",
+      "section": "deep",
+      "title_en": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
+      "authors": "Jingsheng Zheng, Xinyuan Fang, Jintian Zhang, Zhengke Gui, Huajun Chen, Ningyu Zhang",
+      "date": "2026-08-04",
+      "pdf": "https://arxiv.org/pdf/2608.05013v1",
+      "score": "8.0",
+      "evidence": "在上下文压力下维护执行记忆以处理长时程任务",
+      "tldr": "长时程开放任务中，LLM代理常面临目标漂移、状态丢失和上下文溢出等复合失效问题。OneDayAgent将开放请求转为受管执行流程，通过子任务分解、执行记忆维护与交付物验证修复来联合应对这些挑战。在AgentIF-OneDay的104个任务上，搭配GLM-5.2达到0.821的SOTA分数。该harness无需调整即可跨5种后端、3个模型族泛化，展示了通用长时程代理管线的价值。",
+      "tags": "query:llm-agent-memory",
+      "abstract_en": "LLM agents are increasingly applied to open-ended everyday requests that span work, study, and life. These tasks are long-horizon, cross-environment, and multimodal, forcing the agent to preserve goals and constraints across many steps while navigating heterogeneous tools and attachments. While prior work has addressed individual failure modes such as goals drift, states loss, and context overflow, whether a single harness can manage them jointly and remain effective across backends has received less study. We present OneDayAgent, a long-horizon harness for autonomous agents. OneDayAgent turns an open-ended request into a managed execution process that decomposes tasks into bounded subtasks, maintains execution memory under context pressure, and verifies and repairs the final deliverable. We evaluate OneDayAgent on AgentIF-OneDay across 104 tasks. With the GLM-5.2 backend, OneDayAgent sets a new state of the art with an overall score of 0.821. The same harness runs across five backend LLMs from three model families, indicating the harness generalizes across backends without tuning, even as different models induce distinct execution styles under the same workflow.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

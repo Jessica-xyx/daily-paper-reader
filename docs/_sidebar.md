@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-08 <!--dpr-date:20260808-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/08/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents" data-sidebar-item="{&quot;title&quot;: &quot;OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;在上下文压力下维护执行记忆以处理长时程任务&quot;}">OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents</a>
   * 2026-08-07 <!--dpr-date:20260807-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/07/2607.27773v2-chronomem-version-control-and-semantic-rollback-for-large-language-model-agent-memory" data-sidebar-item="{&quot;title&quot;: &quot;ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.27773v2-chronomem-version-control-and-semantic-rollback-for-large-language-model-agent-memory&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;ChronoMem为LLM智能体记忆提供版本控制与语义回滚&quot;}">ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory</a>
