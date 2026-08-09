@@ -1,0 +1,323 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-09T19:45:56.538523+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2608.03699v1",
+      "source": "arxiv",
+      "title": "TARL: Transaction-Aware Reliable Ledgers for Executable Memory Management in Long-Term Agents",
+      "abstract": "Persistent memory helps long-term agents retain knowledge, yet a single update error can repeatedly distort future retrieval and reasoning. Most existing systems reduce memory updating to a binary Write/Hold decision, which cannot distinguish whether new information should be added, ignored, used to revise an outdated belief, rejected as unreliable, or deferred for verification. These choices may share the same binary label while producing fundamentally different memory states. We introduce TARL, a memory state update framework that maps each statement to one of five executable actions. TARL identifies the affected memory, resolves its temporal scope, compares source reliability, and updates accepted, pending, and rejected ledgers. It is further trained by comparing the memory states produced by alternative update operations, encouraging the model to select the operation that leads to the correct result. We also introduce TARL-Mem, a benchmark with fine-grained action labels and next-state targets. Across in-domain, cross-source, temporal, counterfactual, and sequential evaluations, TARL improves action prediction and state recovery, reduces memory pollution, preserves conflicting evidence, and limits cumulative corruption. The complete model implementation is provided in the supplementary material.",
+      "authors": [
+        "Han Xiao",
+        "Hongjun Xu",
+        "Xin Zhang",
+        "Yidong Chen",
+        "Xiaodong Shi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T14:02:55+00:00",
+      "link": "https://arxiv.org/pdf/2608.03699v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "transaction-aware reliable ledgers for executable memory management in long-term agents",
+      "llm_evidence_cn": "面向长期智能体可执行记忆管理的事务感知可靠账本",
+      "llm_evidence": "面向长期智能体可执行记忆管理的事务感知可靠账本",
+      "canonical_evidence": "面向长期智能体可执行记忆管理的事务感知可靠账本",
+      "llm_tldr_en": "TARL maps each statement to one of five executable memory actions, distinguishing add, ignore, revise, reject, and defer for long-term agent memory updates.",
+      "llm_tldr_cn": "持久记忆帮助长期智能体保留知识，但一次更新错误会反复扭曲后续检索与推理。现有系统往往把记忆更新简化成二元的写入或保持决策，无法区分增加、忽略、修订、拒绝和延迟验证等状态。作者提出TARL，将每个陈述映射到五类可执行动作之一，并通过识别受影响记忆、解析时间范围、比较来源可靠性来更新已接收、待定和已拒绝账本。该框架使长期智能体的记忆更新更加可靠且可控。",
+      "llm_tldr": "持久记忆帮助长期智能体保留知识，但一次更新错误会反复扭曲后续检索与推理。现有系统往往把记忆更新简化成二元的写入或保持决策，无法区分增加、忽略、修订、拒绝和延迟验证等状态。作者提出TARL，将每个陈述映射到五类可执行动作之一，并通过识别受影响记忆、解析时间范围、比较来源可靠性来更新已接收、待定和已拒绝账本。该框架使长期智能体的记忆更新更加可靠且可控。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04095v1",
+      "source": "arxiv",
+      "title": "FinPerMA: A Theory-Informed, Event-Grounded Personalized-Memory Benchmark for LLM Agents",
+      "abstract": "Large language model (LLM) agents are increasingly used as personalized assistants in high-stakes domains such as financial advising, yet it remains unclear whether they can maintain and update an individualized user model over long horizons. Existing personalized-memory benchmarks primarily test factual retention or rely on weakly constrained model-generated trajectories, leaving event-driven preference adaptation underexplored. We introduce FinPerMA, an event-grounded benchmark that evaluates personalized memory against frozen longitudinal investor trajectories. Its generation pipeline combines deterministic, theory-informed impact rules, controlled LLM narration, and automated quality screening; a Post-Shock checkpoint isolates whether an agent has integrated a material event into its persistent user model. On 2,994 questions from 276 personas, seven frontier LLMs and up to seven memory configurations remain far from saturated: no full-context configuration exceeds approximately 0.47 overall accuracy or approximately 39% on multiple-choice questions. Attribution analysis shows that summary-based memory often preserves factual details while losing the preference signals needed for personalization; simple retrieval can therefore outperform purpose-built memory systems, with the gap widening after shocks.",
+      "authors": [
+        "Ben Wang",
+        "Kang Zhou",
+        "Lifan Guo",
+        "Feng Chen",
+        "Chi Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-04T18:00:04+00:00",
+      "link": "https://arxiv.org/pdf/2608.04095v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Event-grounded personalized-memory benchmark for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体的事件锚定个性化记忆评测基准",
+      "llm_evidence": "面向LLM智能体的事件锚定个性化记忆评测基准",
+      "canonical_evidence": "面向LLM智能体的事件锚定个性化记忆评测基准",
+      "llm_tldr_en": "FinPerMA benchmarks personalized memory in LLM agents using frozen longitudinal investor trajectories with theory-informed impact rules and a Post-Shock checkpoint, targeting event-driven preference adaptation.",
+      "llm_tldr_cn": "LLM智能体越来越多地用于金融顾问等高风险个性化场景，但现有个性化记忆基准多只测试事实记忆或依赖弱约束的生成轨迹，缺乏对事件驱动偏好更新的评测。本文提出FinPerMA，基于冻结的纵向投资者轨迹，用理论驱动的确定性影响规则、受控LLM叙述和自动质量筛选生成事件锚定基准，并设置Post-Shock检查点单独验证冲击后的偏好适应。该基准为评估智能体长期个性化记忆能力提供了更可控、更贴近真实的测试工具。",
+      "llm_tldr": "LLM智能体越来越多地用于金融顾问等高风险个性化场景，但现有个性化记忆基准多只测试事实记忆或依赖弱约束的生成轨迹，缺乏对事件驱动偏好更新的评测。本文提出FinPerMA，基于冻结的纵向投资者轨迹，用理论驱动的确定性影响规则、受控LLM叙述和自动质量筛选生成事件锚定基准，并设置Post-Shock检查点单独验证冲击后的偏好适应。该基准为评估智能体长期个性化记忆能力提供了更可控、更贴近真实的测试工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04830v1",
+      "source": "arxiv",
+      "title": "ContextWeave: A Real-World Workflow Benchmark",
+      "abstract": "Memory is essential as language agents move from isolated tasks to long-horizon, stateful workflows, yet existing evaluations often reduce it to retrieval or question answering. We introduce ContextWeave, a longitudinal benchmark that evaluates whether recalled experience improves downstream agent performance in realistic office-work streams. ContextWeave reconstructs privacy-preserved, multi-month workflows of 14 participants into 1,005 executable tasks, including 568 core evaluation tasks, with instructions, containerized environments, trajectories, and task-specific rubrics. It measures workspace quality and alignment with participant-specific preferences, complemented by diagnostics of relevance, continuity, solvability, and robustness to misleading recall. Across six memory components under a fixed model, the strongest configuration raises Workspace Score from 68.08 to 78.20 and Preference Score from 41.50 to 70.60. With a fixed memory component, recall improves both outcomes for all five tested base models, although gains vary substantially. Our analysis shows that actionable, experience-rich memory supports workflow continuation and reduces redundant exploration more effectively than compact summaries, while it can also be more susceptible to misleading recall. These findings motivate memory systems that optimize not only retrieval relevance but also reliable use during execution.",
+      "authors": [
+        "Bo Wang",
+        "Yuqian Yao",
+        "Enxi Wang",
+        "Luozhijie Jin",
+        "Yang Liu",
+        "Yiran Suo",
+        "Yuxuan Cai",
+        "Enyu Zhou",
+        "Yufei Gao",
+        "Honglin Guo",
+        "Tianyu Huai",
+        "Li Ji",
+        "Zhikai Lei",
+        "Bufan Li",
+        "Lizhi Lin",
+        "Jinxiu Liu",
+        "Jie Yang",
+        "Jiazheng Zhou",
+        "Maosen Zhou",
+        "Pengfang Qian",
+        "Shichun Liu",
+        "Guanshan Liu",
+        "Hao Zheng",
+        "Yunhao Yu",
+        "Hang Yan",
+        "Jihua Kang",
+        "Xinchi Chen",
+        "Xipeng Qiu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-05T13:31:18+00:00",
+      "link": "https://arxiv.org/pdf/2608.04830v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Longitudinal benchmark evaluating whether recalled experience improves downstream agent performance in office workflows",
+      "llm_evidence_cn": "面向真实办公工作流的纵向记忆评测基准，衡量召回经验对下游任务的影响",
+      "llm_evidence": "面向真实办公工作流的纵向记忆评测基准，衡量召回经验对下游任务的影响",
+      "canonical_evidence": "面向真实办公工作流的纵向记忆评测基准，衡量召回经验对下游任务的影响",
+      "llm_tldr_en": "ContextWeave is a longitudinal benchmark of 1,005 executable tasks from multi-month office workflows, measuring whether memory recall improves downstream agent performance with task-specific rubrics.",
+      "llm_tldr_cn": "现有语言智能体记忆评测常将记忆简化为检索或问答，忽略了记忆对下游任务性能的直接作用。ContextWeave基于14名参与者的隐私保护多月经办工作流，重建出1,005个可执行任务（其中568个核心评测任务），并附带指令、容器化环境、轨迹和任务级评分标准。它衡量工作空间质量和对参与者个性化偏好的符合程度，并提供相关性、连续性、可解性和误导召回鲁棒性等诊断指标。该基准为评估智能体在长时真实工作流中的记忆效用提供了更全面的测试平台。",
+      "llm_tldr": "现有语言智能体记忆评测常将记忆简化为检索或问答，忽略了记忆对下游任务性能的直接作用。ContextWeave基于14名参与者的隐私保护多月经办工作流，重建出1,005个可执行任务（其中568个核心评测任务），并附带指令、容器化环境、轨迹和任务级评分标准。它衡量工作空间质量和对参与者个性化偏好的符合程度，并提供相关性、连续性、可解性和误导召回鲁棒性等诊断指标。该基准为评估智能体在长时真实工作流中的记忆效用提供了更全面的测试平台。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04530v1",
+      "source": "arxiv",
+      "title": "FocusMem: Factorizing Content, Readout, and Trust in Latent GUI Memory",
+      "abstract": "GUI agents must remember both useful experience from earlier tasks and unfinished progress in the current interaction. Latent memory offers a compact solution by compressing multimodal trajectories into a few continuous tokens. Existing methods, however, usually map each trajectory to one fixed memory block and train it mainly through next-action supervision. This creates three practical problems: important details may be lost during compression, the same memory block must serve different decision stages, and irrelevant retrieved trajectories may still mislead the agent. We introduce FocusMem, which separates these responsibilities within a compact latent-memory interface. A role-aware content basis encourages episodic memory to retain reusable experience and working memory to retain task progress. A state-conditioned readout generates a decision-specific view of the same stored evidence, while a lightweight trust gate can suppress memory blocks that appear irrelevant to the current step. All components are trained while the GUI policy remains frozen. Across five GUI-agent benchmarks, FocusMem consistently outperforms a fully matched action-only fixed-memory baseline and prior latent memory adaptations. Further analysis shows that semantic and functional supervision preserve complementary information, state-conditioned readout is more robust as surrounding trajectory context grows, and the trust gate reduces the harm caused by injected irrelevant episodic evidence. These results show that effective latent memory depends not only on compressing past interaction, but also on what is retained, what is exposed, and what is allowed.",
+      "authors": [
+        "Zhuoran Zhang",
+        "Bowen Li",
+        "Jingcheng Ju",
+        "Yang Shi",
+        "Qixun Wang",
+        "Haotian Wang",
+        "Wei Chen",
+        "Tengjiao Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-05T07:02:30+00:00",
+      "link": "https://arxiv.org/pdf/2608.04530v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Latent memory factorization for GUI agents with content, readout, and trust",
+      "llm_evidence_cn": "面向GUI智能体的潜在记忆分解，分离内容、读出与信任",
+      "llm_evidence": "面向GUI智能体的潜在记忆分解，分离内容、读出与信任",
+      "canonical_evidence": "面向GUI智能体的潜在记忆分解，分离内容、读出与信任",
+      "llm_tldr_en": "FocusMem introduces a role-aware content basis, separate readout heads, and trust-aware retrieval for latent GUI memory, addressing compression loss and misleading retrieval.",
+      "llm_tldr_cn": "GUI智能体的潜在记忆方法通常将整条轨迹映射到一个固定记忆块并仅靠下一步动作监督，导致细节丢失、阶段冲突和检索误导。FocusMem在紧凑的潜在记忆接口中分离内容编码、读出和信任评估。通过角色感知的内容基、专用读出多头和信任过滤检索，它提升了记忆的可复用性和决策可靠性。",
+      "llm_tldr": "GUI智能体的潜在记忆方法通常将整条轨迹映射到一个固定记忆块并仅靠下一步动作监督，导致细节丢失、阶段冲突和检索误导。FocusMem在紧凑的潜在记忆接口中分离内容编码、读出和信任评估。通过角色感知的内容基、专用读出多头和信任过滤检索，它提升了记忆的可复用性和决策可靠性。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.05446v1",
+      "source": "arxiv",
+      "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
+      "abstract": "Long-horizon LLM agents increasingly rely on external execution support to maintain state, track progress, invoke tools, verify outcomes, and reuse experience across interactions. However, effective harness use raises two coupled challenges: state formation from noisy interaction traces and runtime control over external-state access. Existing agents usually handle both through prompts, heuristics, or domain-specific conventions, leaving the external workspace and its usage policy manually engineered. To address this, we study the problem of harness policy learning, where agents learn harness policies offline and deploy them to construct and update external harness state online during runtime task execution. We introduce EvoHarness-RL, which exposes Belief, Progress, and Experience (BPE) as policy-facing harness state. Supervised harness fine-tuning teaches the base agent the harness action space and how to construct useful external state, while cost-aware GRPO explores coordination policies to selectively read, update, and consolidate that state during long-horizon interaction. Instantiated on ALFWorld with a Qwen3-8B LLM, EvoHarness-RL reaches 96.9% success and reveals two key dynamics: harness annealing, where training internalizes recurring harness-use patterns into the model policy and shifts the agent from frequent harness calls toward selective external-state access, and harness evolution, where progress updates and experience consolidation refine the harness into a compact, task-adaptive state substrate. These results suggest that long-horizon agents benefit from trainable policies for constructing and coordinating with external harness workspaces, beyond simply adding stronger tools or larger memories.",
+      "authors": [
+        "Xuying Ning",
+        "Dongqi Fu",
+        "Tianxin Wei",
+        "Hanqing Zeng",
+        "Yuanchen Bei",
+        "Bingxuan Li",
+        "Zihao Li",
+        "Qifan Wang",
+        "Xiang Shen",
+        "Yifan Wu",
+        "Jiayi Liu",
+        "Hong Li",
+        "Yinglong Xia",
+        "Xiangjun Fan",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-08-05T22:29:20+00:00",
+      "link": "https://arxiv.org/pdf/2608.05446v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "External harness state for maintaining and reusing agent state across interactions",
+      "llm_evidence_cn": "通过外部运行时工装状态来维护和复用智能体交互经验，属于代理记忆增强",
+      "llm_evidence": "通过外部运行时工装状态来维护和复用智能体交互经验，属于代理记忆增强",
+      "canonical_evidence": "通过外部运行时工装状态来维护和复用智能体交互经验，属于代理记忆增强",
+      "llm_tldr_en": "EvoHarness-RL learns harness policies to construct and update external state, enabling long-horizon LLM agents to maintain state, track progress, and reuse experience during runtime.",
+      "llm_tldr_cn": "长周期LLM代理依赖外部运行支持来维护状态、跟踪进度和复用经验，但手工设计的工装策略难以推广。EvoHarness-RL 提出利用强化学习离线学习工装策略，在线部署时自动构建和更新外部状态。该方法解决了状态形成和状态访问控制两大挑战，使代理能够自适应地利用外部记忆。实验表明其提升了长程任务的执行效果和状态管理能力。",
+      "llm_tldr": "长周期LLM代理依赖外部运行支持来维护状态、跟踪进度和复用经验，但手工设计的工装策略难以推广。EvoHarness-RL 提出利用强化学习离线学习工装策略，在线部署时自动构建和更新外部状态。该方法解决了状态形成和状态访问控制两大挑战，使代理能够自适应地利用外部记忆。实验表明其提升了长程任务的执行效果和状态管理能力。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory augmentation techniques for LLM agents",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.00805v1",
+      "source": "arxiv",
+      "title": "AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints",
+      "abstract": "We present AgentSLABench, a resource-aware evaluation framework for autonomous AI agents that measures correctness alongside latency, cost, compute, memory, and network usage under declared resource budgets. Unlike standard benchmarks that report only accuracy, AgentSLABench produces a multi-dimensional profile per agent per task - the same way systems profilers (perf, pprof, cProfile) measure resource consumption of code, but extended with task correctness as a first-class dimension. AgentSLABench provides 16 task environments across 6 categories (5 core: multi-hop QA, retail substitution, code generation, web shopping, travel planning; 11 extended) with isolated Docker containers, declared CPU/memory/time/network budgets, sealed test sets with SHA256 hashes, and a standardized profiling protocol. We profile 5 general-purpose baseline agents (ReAct, PlanAndSolve, Reflexion, CoT, Random) plus 4 task-specialized agents, finding that specialized agents achieve 100% success on 3/5 core tasks (fact_qa, web_shopping, travel_planning) and 66.7-83.3% on retail and code_gen, while general baselines fail entirely on 4/5 domain tasks. Crucially, we report the Efficiency-Adjusted Success Rate (EASR) - success weighted by resource consumption relative to declared budgets - revealing that high accuracy at unbounded cost is not production-viable. We release the full infrastructure, sealed test sets, and profiling results to enable reproducible, resource-aware agent evaluation.",
+      "authors": [
+        "Meher Bhaskar Madiraju",
+        "Meher Sai Preetam Madiraju"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-01T18:17:47+00:00",
+      "link": "https://arxiv.org/pdf/2608.00805v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Resource-aware benchmark measuring memory usage of agentic systems",
+      "llm_evidence_cn": "面向资源约束的智能体系统评测框架，将内存消耗纳入多维评测指标",
+      "llm_evidence": "面向资源约束的智能体系统评测框架，将内存消耗纳入多维评测指标",
+      "canonical_evidence": "面向资源约束的智能体系统评测框架，将内存消耗纳入多维评测指标",
+      "llm_tldr_en": "AgentSLABench is a resource-aware evaluation framework that profiles agent correctness alongside latency, cost, compute, memory, and network usage under declared budgets across 16 task environments.",
+      "llm_tldr_cn": "现有智能体基准大多只报告准确率，忽略了资源消耗。AgentSLABench 提出一种资源感知的评测框架，将正确率与延迟、成本、计算、内存和网络使用等多维指标一并评测。其在隔离的Docker容器中提供16个任务环境，并声明资源预算。该基准为衡量智能体系统的实际运行效率提供了系统化工具。",
+      "llm_tldr": "现有智能体基准大多只报告准确率，忽略了资源消耗。AgentSLABench 提出一种资源感知的评测框架，将正确率与延迟、成本、计算、内存和网络使用等多维指标一并评测。其在隔离的Docker容器中提供16个任务环境，并声明资源预算。该基准为衡量智能体系统的实际运行效率提供了系统化工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01637v1",
+      "source": "arxiv",
+      "title": "Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw",
+      "abstract": "Long-term memory enables LLM agents to retain useful information across sessions, but also creates an attack surface through which adversaries may poison an agent's persistent memory to steer its behavior. Existing memory poisoning attacks mainly rely on individually malicious records, overlooking a compositional threat: multiple benign-looking memories may jointly induce unsafe behavior. In this paper, we introduce MemCollusion, an automated red-teaming framework for constructing collusive memory poisoning attacks. MemCollusion applies salami tactics---a strategy that slices an adversarial objective into small, individually innocuous pieces---to generate memory fragments that are individually benign looking but collectively harmful. It constructs memory coalitions using four design constraints, five theory-informed strategies, and a fine-tuned generator. To assess collusive memory poisoning in a realistic cross-session setting, we develop MoltLab, a controlled research reproduction of Moltbook, in which crafted platform content must first be observed and distilled into persistent memory before influencing the agent's behavior in a separate session. We evaluate MemCollusion on OpenClaw using two backbone models across 48 scenarios. Under the strongest memory-saving setting, MemCollusion achieves an average Memory Save Rate of 81.3% and an Attack Success Rate of 75.0%, and remains effective under both benign memory dilution and memory-level defenses.",
+      "authors": [
+        "Zheng Lin",
+        "Yuzhe Huang",
+        "Zhenxing Niu",
+        "Xianmin Ye",
+        "Haichang Gao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-03T03:17:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.01637v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "memory poisoning red-teaming framework for long-term LLM agent memory",
+      "llm_evidence_cn": "面向LLM智能体长期记忆的投毒红队框架",
+      "llm_evidence": "面向LLM智能体长期记忆的投毒红队框架",
+      "canonical_evidence": "面向LLM智能体长期记忆的投毒红队框架",
+      "llm_tldr_en": "MemCollusion constructs collusive memory poisoning attacks by slicing adversarial goals into benign-looking memory fragments, revealing compositional threats in long-term LLM agent memory.",
+      "llm_tldr_cn": "本文提出MemCollusion自动红队框架，针对LLM智能体长期记忆的组合式投毒威胁，采用切片策略将恶意目标拆分为一个个单独无害的记忆片段，使多条看似正常的记忆共同诱发不安全行为。该框架通过生成共谋性记忆片段攻击OpenClaw等智能体，证明现有记忆投毒防御对组合威胁的不足，为长期记忆安全评测提供了新视角。",
+      "llm_tldr": "本文提出MemCollusion自动红队框架，针对LLM智能体长期记忆的组合式投毒威胁，采用切片策略将恶意目标拆分为一个个单独无害的记忆片段，使多条看似正常的记忆共同诱发不安全行为。该框架通过生成共谋性记忆片段攻击OpenClaw等智能体，证明现有记忆投毒防御对组合威胁的不足，为长期记忆安全评测提供了新视角。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
