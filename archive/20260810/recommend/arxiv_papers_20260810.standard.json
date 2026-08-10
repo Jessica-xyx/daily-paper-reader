@@ -1,0 +1,284 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-10T21:02:06.086498+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2608.02515v2",
+      "source": "arxiv",
+      "title": "LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference",
+      "abstract": "Long-running assistants and agents consume interaction streams that eventually outgrow the context. Existing context retention, summarization, and retrieval preserve access to selected history, but do not provide a persistent state over the full lifecycle when working context changes. We formulate this missing inference capability as \\emph{state continuity under context turnover}: carrying computation forward through a fixed-capacity memory state whose lifetime is independent of the active context. We introduce an intrinsic memory method, \\textbf{LiveMem}, which augments a pretrained full-attention LLM with a memory state that preserves the historical information over the whole lifecycle while the main attention path retains a bounded KV window. Context turnover and memory state maintaining, memory-oriented post-training, and state-aware serving jointly make this memory state load bearing after its originating tokens are released. Our experiments show that LiveMem achieves leading overall performance among evaluated systems and other intrinsic memory methods. Experiments on LongMemEval show that LiveMem is able to answer the question based on the memory state, even when the supporting evidence has been removed from the current context, and evidence-distance analysis shows that useful information persists beyond the active window. LiveMem thus establishes state continuity as a distinct and complementary abstraction for continual LLM inference.",
+      "authors": [
+        "Zhichen Liu",
+        "Ruihan Sun",
+        "Hengjie Yang",
+        "Zipeng Wu",
+        "Zhaohan Chen",
+        "Xiaofan Zhang",
+        "Yang Xu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-03T17:12:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.02515v2",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LiveMem provides an intrinsic memory method for state continuity in long-running LLM inference",
+      "llm_evidence_cn": "LiveMem提出一种内嵌记忆方法，保持长运行LLM推理中的状态连续性",
+      "llm_evidence": "LiveMem提出一种内嵌记忆方法，保持长运行LLM推理中的状态连续性",
+      "canonical_evidence": "LiveMem提出一种内嵌记忆方法，保持长运行LLM推理中的状态连续性",
+      "llm_tldr_en": "LiveMem augments a pretrained LLM with a fixed-capacity memory state to maintain state continuity across context turnover in long-running agents.",
+      "llm_tldr_cn": "本文指出长运行助手和代理会在上下文翻动后丢失全生命周期的持久状态。现有上下文保留、摘要和检索方法只能访问选定历史，无法提供独立于活动上下文的固定容量记忆状态。作者提出LiveMem，在不改变主注意力路径的前提下，为预训练全注意力LLM增加一个记忆状态，使历史信息跨越上下文翻动持续存在。该方法为推理阶段补充了缺失的状态连续性能力，适合长期交互场景。",
+      "llm_tldr": "本文指出长运行助手和代理会在上下文翻动后丢失全生命周期的持久状态。现有上下文保留、摘要和检索方法只能访问选定历史，无法提供独立于活动上下文的固定容量记忆状态。作者提出LiveMem，在不改变主注意力路径的前提下，为预训练全注意力LLM增加一个记忆状态，使历史信息跨越上下文翻动持续存在。该方法为推理阶段补充了缺失的状态连续性能力，适合长期交互场景。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.06663v1",
+      "source": "arxiv",
+      "title": "The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents",
+      "abstract": "Frontier language models solve reasoning problems in a single forward pass that would have been research contributions years ago, yet fail at multi-hour tasks: losing track of earlier decisions, declaring half-finished work done, or drifting from goals. We call this the horizon gap and survey 1,547 arXiv papers (2024-2026) collected via systematic seed harvest with a disclosed 26.8% bleed filter, extended by targeted supplementation. We disambiguate three routinely conflated properties: long-horizon (task property: required steps), long-context (model property: token capacity), and long-term memory (system property: persistence across steps/sessions). We organize the corpus into six categories tracking a long-horizon task's lifecycle -- planning, memory, execution, training, evaluation, and foundations/safety -- crossed with an axis capturing where horizons are carried (within-context, within-task-beyond-context, or cross-task-persistent). Across all categories, we find the same pattern: outcome-only signals grow uninformative as horizons lengthen, and the field's response -- whether process reward models, credit assignment, or trajectory-level diagnostics -- manufactures denser step-level signals. We treat critical and diagnostic literature as first-class threads throughout, arguing that segregating critique from method would routinely split single papers across chapters. We close by naming open measurement problems: decomposing model versus harness capability, managing correlated bias in process-level signals used for both training and evaluation, and whether long-horizon reliability admits general predictive theory.",
+      "authors": [
+        "Mingguang Chen",
+        "Licheng Wang",
+        "Bo Qu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-07T00:19:48+00:00",
+      "link": "https://arxiv.org/pdf/2608.06663v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Survey of 1,547 papers on long-horizon LLM agents, covering long-term memory and evaluation methods",
+      "llm_evidence_cn": "系统综述长时程LLM智能体，包含长期记忆与记忆评测相关分类",
+      "llm_evidence": "系统综述长时程LLM智能体，包含长期记忆与记忆评测相关分类",
+      "canonical_evidence": "系统综述长时程LLM智能体，包含长期记忆与记忆评测相关分类",
+      "llm_tldr_en": "Surveys 1,547 papers on long-horizon LLM agents, disambiguating long-horizon, long-context, and long-term memory, and organizing memory, planning, execution, and evaluation methods.",
+      "llm_tldr_cn": "大模型单次前向可解简单推理，却难以持续数小时的任务，常丢失先前决策或偏离目标。作者将这一现象称为地平线差距，综述了2024-2026年1547篇论文，区分长时程任务、长上下文模型与长期记忆系统三个概念，并按规划、记忆、执行、训练和评测六类组织。该综述为理解长期记忆在智能体中的作用以及相关评测方法提供了系统框架。",
+      "llm_tldr": "大模型单次前向可解简单推理，却难以持续数小时的任务，常丢失先前决策或偏离目标。作者将这一现象称为地平线差距，综述了2024-2026年1547篇论文，区分长时程任务、长上下文模型与长期记忆系统三个概念，并按规划、记忆、执行、训练和评测六类组织。该综述为理解长期记忆在智能体中的作用以及相关评测方法提供了系统框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "What are the latest memory methods for LLM agents?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.06811v1",
+      "source": "arxiv",
+      "title": "Coupling Planning with Episodic Memory in LLM Agents for Software Issue Resolution",
+      "abstract": "Resolving a real software issue with a large language model (LLM) agent is a long repair episode, often tens to hundreds of steps spanning exploration, hypothesis, implementation, and verification. Success depends on both the base model's local reasoning and the agent's ability to maintain an evolving plan and remember observations across phases. Existing repository-level agents typically strengthen planning or memory in isolation, leaving long trajectories vulnerable to stale evidence, repeated failed edits, and verification inferred from the agent's own claims instead of execution evidence. We present PMCoder, an issue-resolution agent that couples a hierarchical phase planner with episodic memory. The coupling is bidirectional: the current plan phase conditions memory retrieval, while memory-derived trajectory statistics inform stuck detection and replanning. When available, issue-reproduction verdicts ground verification progress in execution evidence rather than self-reported completion. On SWE-bench Verified, PMCoder resolves an average of $25$ more cases ($+5.0$pp) than a harness-matched baseline, with gains persisting even where the reproduction gate never fires. Further Verified-500 evaluations show the same positive direction across Claude Haiku 4.5, DeepSeek-V4-Flash, and an OpenHands port, with at least $14$ additional resolved cases ($+2.8$pp). Separately, evaluation on TerminalWorld's official sample suggests that the plan-memory substrate transfers beyond issue reports. Ablation and trajectory analyses show where the gains come from: coupling planning and memory outperforms either component alone and reduces repeated failed actions, empty-patch exits, and context-window exhaustion.",
+      "authors": [
+        "Jiahao Zhang",
+        "Yifan Zhang",
+        "Yu Huang"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-08-07T05:05:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.06811v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "PMCoder couples hierarchical planning with episodic memory for long-horizon issue resolution",
+      "llm_evidence_cn": "PMCoder将层次规划与情景记忆耦合，用于长周期问题解析",
+      "llm_evidence": "PMCoder将层次规划与情景记忆耦合，用于长周期问题解析",
+      "canonical_evidence": "PMCoder将层次规划与情景记忆耦合，用于长周期问题解析",
+      "llm_tldr_en": "PMCoder bidirectionally couples a hierarchical phase planner with episodic memory to keep long trajectories robust against stale evidence and repeated failures.",
+      "llm_tldr_cn": "本文针对软件问题解析中长轨迹因规划与记忆孤立增强而出现过期证据、重复失败和虚假验证的问题，提出PMCoder。它由层次化阶段规划器与情景记忆双向耦合，当前计划决定记忆写入或检索，记忆反馈同时修正计划。该机制使代理在探索、假设、实现和验证各阶段保持一致的证据状态。实验表明PMCoder能减少重复编辑并提升最终解决率，展示规划与记忆协同的价值。",
+      "llm_tldr": "本文针对软件问题解析中长轨迹因规划与记忆孤立增强而出现过期证据、重复失败和虚假验证的问题，提出PMCoder。它由层次化阶段规划器与情景记忆双向耦合，当前计划决定记忆写入或检索，记忆反馈同时修正计划。该机制使代理在探索、假设、实现和验证各阶段保持一致的证据状态。实验表明PMCoder能减少重复编辑并提升最终解决率，展示规划与记忆协同的价值。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07169v1",
+      "source": "arxiv",
+      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+      "abstract": "Memory systems have shown promise for improving agent performance, but their potential remains largely unexplored for small language models, which struggle to generate sufficient successful trajectories on their own. We propose Agent Memory Distillation (AMD), a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent through hierarchical memory. AMD constructs three complementary memory types from successful teacher trajectories: Workflow memory encodes task-level strategies, Subtask memory provides concrete behavioral examples at an intermediate granularity, and Function memory captures per-function calling conventions and common pitfalls. Workflow and Subtask memories are injected proactively at the start of each task, while Function memory is retrieved reactively upon tool-calling errors. We evaluate AMD on three tool-use benchmarks using four student models (4B-8B parameters) with GPT-5-mini as the teacher, achieving average accuracy gains of 27.2%p, 11.2%p, and 3.4%p on AppWorld, BFCL V3, and ToolSandbox, while consistently outperforming existing memory-based baselines. Further analysis shows that Subtask memory contributes the largest gains, teacher effectiveness depends on both teacher capability and student compatibility, and 4B-sized students benefit most from AMD.",
+      "authors": [
+        "Taeil Kim",
+        "Kangsan Kim",
+        "Sung Ju Hwang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-07T12:43:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.07169v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Training-free hierarchical memory distillation transferring teacher agent memory to small agents",
+      "llm_evidence_cn": "提出训练无关的分层记忆蒸馏框架，将教师智能体的工作流、子任务与函数记忆迁移给小型智能体",
+      "llm_evidence": "提出训练无关的分层记忆蒸馏框架，将教师智能体的工作流、子任务与函数记忆迁移给小型智能体",
+      "canonical_evidence": "提出训练无关的分层记忆蒸馏框架，将教师智能体的工作流、子任务与函数记忆迁移给小型智能体",
+      "llm_tldr_en": "Proposes Agent Memory Distillation, a training-free framework transferring hierarchical teacher memory (workflow, subtask, function) to small student LLM agents.",
+      "llm_tldr_cn": "记忆系统能提升智能体性能，但小型语言模型难以自己生成足够多的成功轨迹。Agent Memory Distillation提出训练无关的框架，从大型教师智能体的成功轨迹构建工作流记忆、子任务记忆和函数记忆三类互补记忆，并注入小型学生智能体。该方法无需额外训练即能增强小模型的记忆能力，为小型智能体的记忆利用提供了低成本途径，扩展了记忆蒸馏的适用场景。",
+      "llm_tldr": "记忆系统能提升智能体性能，但小型语言模型难以自己生成足够多的成功轨迹。Agent Memory Distillation提出训练无关的框架，从大型教师智能体的成功轨迹构建工作流记忆、子任务记忆和函数记忆三类互补记忆，并注入小型学生智能体。该方法无需额外训练即能增强小模型的记忆能力，为小型智能体的记忆利用提供了低成本途径，扩展了记忆蒸馏的适用场景。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07429v1",
+      "source": "arxiv",
+      "title": "TEPA: Revoking Stale Memories for Conflict-Robust Language Agents",
+      "abstract": "Long-term memory enables language agents to reuse past facts, preferences, and task experience. Persistence also creates a central falsifiability problem: when the world changes, stale memories can remain retrievable and pollute the prompt. We characterize this failure mode as memory pollution: degradation caused by active memories that newer conflicting evidence has superseded. We introduce TEPA, a revocable evidence-memory mechanism that makes validity an explicit state of memory. TEPA represents observations as keyed precedents and revokes active precedents when fresh evidence contradicts them under the same key, allowing retrieval to draw from current evidence while preserving revoked history for audit. Across controlled hidden-regime drift, real file-backed executable drift, and preference-update streams, revocation prevents stale active memory from remaining in the retrieval set after reversal. In controlled drift over 50 seeds, append-only and last-write-wins memory fell below no memory during full reversal (append-only and last-write-wins both 0.210, no memory 0.309, TEPA 0.950), and the same pattern reproduced under real file execution (append-only 0.203, no memory 0.298, TEPA 0.950). On clean MemoryAgentBench SH-6k, TEPA matches a strong last-write-wins cache, confirming that current-key replacement is the decisive operation for single-hop fact consolidation. Boundary tests on multi-hop and very long-context MemoryAgentBench settings expose retrieval-chain and context-selection bottlenecks beyond fact-level validity tracking. Together, these results establish lifecycle revocation as a core memory operation for agents that must falsify, audit, and later re-promote evolving knowledge.",
+      "authors": [
+        "Yan Zhou",
+        "Yue Ouyang",
+        "Kaiyang Zheng",
+        "Suncheng Xiang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T17:16:33+00:00",
+      "link": "https://arxiv.org/pdf/2608.07429v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Revocable evidence-memory mechanism revoking stale memories when fresh evidence conflicts, preventing memory pollution",
+      "llm_evidence_cn": "提出可撤销证据-记忆机制，在新证据冲突时撤销过期记忆，避免记忆污染",
+      "llm_evidence": "提出可撤销证据-记忆机制，在新证据冲突时撤销过期记忆，避免记忆污染",
+      "canonical_evidence": "提出可撤销证据-记忆机制，在新证据冲突时撤销过期记忆，避免记忆污染",
+      "llm_tldr_en": "Proposes TEPA, a revocable evidence-memory mechanism that treats validity as an explicit memory state, revoking stale precedents when fresh evidence conflicts.",
+      "llm_tldr_cn": "长期记忆使语言智能体能复用事实和经验，但当世界变化时，过期记忆仍可被检索并污染提示。作者将这一失效模式定义为记忆污染，提出TEPA可撤销证据-记忆机制，将记忆有效性设为显式状态。TEPA用带键先例表示观察，当同一键下新证据出现时撤销旧先例，同时保留撤销历史用于审计。在隐藏体制漂移和真实文件场景中，TEPA提升了冲突鲁棒性，为记忆管理提供了可审计的撤销方案。",
+      "llm_tldr": "长期记忆使语言智能体能复用事实和经验，但当世界变化时，过期记忆仍可被检索并污染提示。作者将这一失效模式定义为记忆污染，提出TEPA可撤销证据-记忆机制，将记忆有效性设为显式状态。TEPA用带键先例表示观察，当同一键下新证据出现时撤销旧先例，同时保留撤销历史用于审计。在隐藏体制漂移和真实文件场景中，TEPA提升了冲突鲁棒性，为记忆管理提供了可审计的撤销方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.01637v1",
+      "source": "arxiv",
+      "title": "Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw",
+      "abstract": "Long-term memory enables LLM agents to retain useful information across sessions, but also creates an attack surface through which adversaries may poison an agent's persistent memory to steer its behavior. Existing memory poisoning attacks mainly rely on individually malicious records, overlooking a compositional threat: multiple benign-looking memories may jointly induce unsafe behavior. In this paper, we introduce MemCollusion, an automated red-teaming framework for constructing collusive memory poisoning attacks. MemCollusion applies salami tactics---a strategy that slices an adversarial objective into small, individually innocuous pieces---to generate memory fragments that are individually benign looking but collectively harmful. It constructs memory coalitions using four design constraints, five theory-informed strategies, and a fine-tuned generator. To assess collusive memory poisoning in a realistic cross-session setting, we develop MoltLab, a controlled research reproduction of Moltbook, in which crafted platform content must first be observed and distilled into persistent memory before influencing the agent's behavior in a separate session. We evaluate MemCollusion on OpenClaw using two backbone models across 48 scenarios. Under the strongest memory-saving setting, MemCollusion achieves an average Memory Save Rate of 81.3% and an Attack Success Rate of 75.0%, and remains effective under both benign memory dilution and memory-level defenses.",
+      "authors": [
+        "Zheng Lin",
+        "Yuzhe Huang",
+        "Zhenxing Niu",
+        "Xianmin Ye",
+        "Haichang Gao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-03T03:17:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.01637v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Memory poisoning attacks on LLM agent persistent memory; relevant to memory security theme",
+      "llm_evidence_cn": "针对LLM智能体长期记忆的协同投毒攻击，属于智能体记忆安全主题",
+      "llm_evidence": "针对LLM智能体长期记忆的协同投毒攻击，属于智能体记忆安全主题",
+      "canonical_evidence": "针对LLM智能体长期记忆的协同投毒攻击，属于智能体记忆安全主题",
+      "llm_tldr_en": "MemCollusion is an automated red-teaming framework that constructs collusive memory poisoning attacks by slicing adversarial objectives into innocuous fragments, demonstrating a compositional threat to long-term memory in LLM agents.",
+      "llm_tldr_cn": "针对长期记忆使LLM智能体跨会话保留信息同时也带来攻击面的问题，提出MemCollusion自动化红队框架。该框架采用色拉米策略将恶意目标切分为多个看似无害的记忆片段，使它们在组合后共同诱发不安全行为。实验显示这种协同投毒能隐蔽地操控智能体，揭示记忆安全的新威胁类型，提示需要防御此类组合攻击。",
+      "llm_tldr": "针对长期记忆使LLM智能体跨会话保留信息同时也带来攻击面的问题，提出MemCollusion自动化红队框架。该框架采用色拉米策略将恶意目标切分为多个看似无害的记忆片段，使它们在组合后共同诱发不安全行为。实验显示这种协同投毒能隐蔽地操控智能体，揭示记忆安全的新威胁类型，提示需要防御此类组合攻击。",
+      "llm_tags": [
+        "query:llm-agent-memory:composite"
+      ],
+      "matched_query_tag": "query:llm-agent-memory:composite",
+      "matched_query_text": "Papers central to 帮我查找和LLM agent的最新进展，并重点查找LLM agent中的记忆相关的内容，包括方法和评测, especially work that connects or combines: L; a; memory methods for LLM agents; memory augmentation techniques for LLM agents; memory management strategies in LLM agents; memory-based reasoning in agents; What are the latest memory methods for LLM agents?; How is memory evaluated in LLM agent systems?.",
+      "matched_requirement_id": "req-composite-llm-agent-memory",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.06909v1",
+      "source": "arxiv",
+      "title": "Long-Horizon Agent Trajectory Attribution: A Unified Benchmark and Fine-Grained Annotation Framework",
+      "abstract": "Large language model (LLM) agents increasingly operate through long-horizon trajectories involving user instructions, tool use, external observations, and memory. Existing benchmarks primarily evaluate behavioral outcomes but provide limited support for fine-grained attribution analysis. We introduce trajectory attribution and develop a benchmark and annotation framework for this task. The benchmark organizes heterogeneous trajectories under a unified component schema and provides annotations of the primary attribution component, together with attack and execution chains where applicable. Instantiating the benchmark with trajectories from AgentDojo and the Stage and Canary settings of Agent3Sigma yields more than 1,300 annotated trajectories covering task-aligned actions, unsafe actions, and safety refusals. The benchmark defines two evaluation tasks, primary attribution localization and attribution-chain recovery, and provides reference baselines based on incremental trajectory contribution and component-level leave-one-out perturbation. It captures diverse attribution settings, including local and long-range attribution as well as structured attribution chains. Reference baseline results exhibit substantial performance differences across these settings, providing an initial characterization of the benchmark's attribution challenges. Beyond this initial instantiation, we release a reusable annotation skill that enables trajectories generated by new agent models to be standardized, annotated, and evaluated under the same framework. Project resources and future releases are available at https://github.com/chenjing-2024/agent-trajectory-attribution.",
+      "authors": [
+        "Jing Chen",
+        "Yang Sun",
+        "Li Zhang",
+        "Lin Xu",
+        "Jie Shi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T07:43:12+00:00",
+      "link": "https://arxiv.org/pdf/2608.06909v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "benchmark for long-horizon agent trajectory attribution, including memory components",
+      "llm_evidence_cn": "覆盖记忆组件的长时智能体轨迹归因基准",
+      "llm_evidence": "覆盖记忆组件的长时智能体轨迹归因基准",
+      "canonical_evidence": "覆盖记忆组件的长时智能体轨迹归因基准",
+      "llm_tldr_en": "Introduces a unified benchmark and annotation framework for trajectory attribution in long-horizon LLM agents, enabling fine-grained analysis of contributions from instructions, tools, observations, and memory.",
+      "llm_tldr_cn": "LLM智能体的长时轨迹涉及指令、工具、外部观察和记忆等多种成分，现有基准多只评估行为结果，缺乏细粒度归因支持。该工作提出轨迹归因任务，并开发统一组件模式和注释框架，构建超过1300条带标注的轨迹数据。这为理解智能体行为来源、包括记忆的影响提供了评测支撑。",
+      "llm_tldr": "LLM智能体的长时轨迹涉及指令、工具、外部观察和记忆等多种成分，现有基准多只评估行为结果，缺乏细粒度归因支持。该工作提出轨迹归因任务，并开发统一组件模式和注释框架，构建超过1300条带标注的轨迹数据。这为理解智能体行为来源、包括记忆的影响提供了评测支撑。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
