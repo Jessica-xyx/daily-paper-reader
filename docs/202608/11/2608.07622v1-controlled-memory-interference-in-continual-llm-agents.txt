@@ -1,0 +1,854 @@
+Title: Controlled Memory Interference in Continual LLM Agents
+
+URL Source: https://arxiv.org/pdf/2608.07622v1
+
+Published Time: Tue, 11 Aug 2026 00:05:20 GMT
+
+Number of Pages: 25
+
+Markdown Content:
+# Controlled Memory Interference in Continual LLM Agents 
+
+Ao Ding 1,* , Hongzong Li 2,3,* , Shiqin Tang 4, Li Zhang 5,Liang Chen 6, Xuyang Chen 7, Zi Liang 5,† 
+
+> 1
+
+China University of Geosciences (Beijing) 2Northwestern Polytechnical University 
+
+> 3
+
+The Hong Kong University of Science and Technology 4Chinese Academy of Sciences 
+
+> 5
+
+The Hong Kong Polytechnic University 6École polytechnique fédérale de Lausanne 
+
+> 7
+
+National University of Singapore 
+
+> aoding2001@gamil.com; lihongzong@nwpu.edu.cn; lihongzong@ust.hk shiqin.tang@cair.cas.org.hk; zanly@mail.ustc.edu.cn; lchen@se.cuhk.hk xuyang.chen@nus.edu.sg; zi1415926.liang@connect.polyu.hk
+
+Abstract 
+
+Long-term memory enables AI agents to main-tain continuity across sessions, personalize be-havior, and evolve through accumulated expe-rience. Yet memory evolution is not simply a process of storing more information: new experiences may reinforce, revise, or inter-fere with existing memory states. Existing systems mainly emphasize memory construc-tion and relevance-based retrieval, but several memories may remain simultaneously relevant while differing in state, temporal validity, or authority. We introduce Controlled Memory 
+
+Interference (CMI), a controlled diagnostic and data-generation framework for studying how agent memory evolves under different mem-ory relationships. Across controlled memory evolution, benign accumulation has limited effects, whereas relationship-specific interfer-ence sharply suppresses update plasticity with little stability gain, either by blocking target-memory exposure or by disrupting its down-stream use. Lexical and Dense retrieval exhibit distinct interference pathways, while poison-ing is more sensitive to update-authority cues than to recency alone. Beyond diagnosis, CMI provides targeted examples for interference-aware memory learning, improving the distinc-tion between valid updates and interference-inducing memories with no observed decrease in matched-unnoised point estimates. These findings show that memory evolution is shaped not only by memory scale, but also by interac-tions among accumulated experiences. More broadly, memory interference emerges as an important factor for reliable continual agent memory systems. 
+
+Code: 
+
+> https://github.com/Dawn-Buendia/ Controlled-Memory-Interference-in-Continual-LLM-Agents
+> *
+
+Equal contribution. 
+
+> †
+
+Corresponding author. 
+
+1 Introduction 
+
+Long-term memory is becoming a fundamental ca-pability for large language model (LLM)-based agents. Recent coding and interactive agents in-creasingly support persistent, tool-using, and long-running workflows, while memory-augmented de-signs preserve experience across interactions (Park et al., 2023; Packer et al., 2023; Johnston et al., 2026). As agents operate across sessions and tasks, memory enables them to preserve continuity, per-sonalize behavior, and evolve through accumulated experience. Memory is therefore more than an external store: it provides the experiential basis through which an agent remains consistent while continuing to adapt. Existing agent-memory systems have made sub-stantial progress in memory construction, organiza-tion, updating, and access. Generative Agents (Park et al., 2023), MemGPT (Packer et al., 2023), Mem-oryBank (Zhong et al., 2024), Mem0 (Chhikara et al., 2025), and A-MEM (Xu et al., 2025) provide representative approaches to long-term memory management. Lexical, dense, and hybrid retrieval methods further improve access to relevant histor-ical information (Robertson and Zaragoza, 2009; Karpukhin et al., 2020; Lewis et al., 2020; Cor-mack et al., 2009). However, these approaches primarily address whether relevant memories can be retained and retrieved, rather than whether a re-trieved memory remains appropriate for the agent’s current state. As memory evolves, multiple experiences may remain simultaneously relevant while differing in state, temporal validity, or authority. An earlier preference may have been superseded by a valid up-date, while repeated experiences may overempha-size a state that is no longer appropriate. This prob-lem is functionally analogous to proactive interfer-ence and cue overload in human memory, where related prior experiences obstruct newer informa-1arXiv:2608.07622v1 [cs.AI] 7 Aug 2026 tion or make shared retrieval cues less discrimi-native (Underwood, 1957; Watkins and Watkins, 1975). We refer to such failures in continual agents as memory interference , without assuming that ar-tificial and human memory share the same internal mechanisms. Figure 1 situates this challenge within the continual agent loop and summarizes how CMI converts it into diagnostic and training scenarios. Memory interference is broader than conventional retrieval failure. Interference-inducing memories may prevent the target from entering the retrieved context, or the target may be retrieved but fail to guide the downstream decision. Failures can there-fore arise across the retrieval-to-decision pathway. Aggregate task accuracy, recall, or ranking scores do not by themselves identify which memory rela-tionship caused an error or whether failure occurred before or after target exposure. To study this problem, we introduce Controlled Memory Interference (CMI) , a controlled diag-nostic and data-generation framework for agent-memory evolution. CMI varies memory scale and relationships among accumulated experiences while preserving the query, target state, and ex-pected decision. We instantiate it as CMI-Travel ,a controlled extension of the Travel Planner tasks in MemoryArena (He et al., 2026). CMI-Travel recon-structs memory trajectories with progressive load levels, relationship-controlled interventions, paired behavioral probes, and authority-sensitive poison-ing conditions. It evaluates valid update adoption (plasticity ), preservation of established states ( sta-bility ), and resistance to misleading memories ( poi-soning resistance ). Our experiments uncover selective plasticity suppression during memory evolution . Benign accumulation produces limited and non-monotonic changes, whereas repeated history and same-slot conflict substantially impair valid update adop-tion with little corresponding stability gain. The phenomenon is therefore relationship-specific and asymmetric rather than a general capacity limita-tion or a symmetric stability–plasticity trade-off. A retrieval-to-decision decomposition further shows that interference may arise either before or after tar-get exposure. Lexical Retrieval is particularly sen-sitive to repeated surface cues and direct same-slot conflict, whereas Dense retrieval is vulnerable to semantic crowding among related memories. Poi-soning is similarly role-sensitive: persistent-update and authority cues are more influential than recency alone. Beyond diagnosis, CMI generates targeted ex-amples for interference-aware memory learning .Incorporating CMI-generated data improves the distinction between valid updates and interference-inducing memories with no observed decrease in matched-unnoised point estimates. Observable retrieval-state signals also support adaptive lexical– dense access, improving target ordering and down-stream memory-state decisions. Memory interfer-ence is thus not only measurable, but also an ac-tionable target for improving continual memory reliability. Our contributions are summarized as follows: i. We identify selective plasticity suppression 
+
+during memory evolution, a relationship- and architecture-dependent phenomenon that can-not be explained by memory scale alone. ii. We introduce CMI , a portable controlled di-agnostic and data-generation framework , and validate it across multiple datasets. iii. We show that in-domain CMI augmentation improves target access, target rank, and noisy-update answer success, with no observed de-crease in matched-unnoised point estimates. 
+
+2 Related Work 
+
+Long-term memory and retrieval for agents. 
+
+Agent-memory systems support long-running in-teraction through memory storage, organization, reflection, and updating. Generative Agents (Park et al., 2023), MemGPT (Packer et al., 2023), Mem-oryBank (Zhong et al., 2024), Mem0 (Chhikara et al., 2025), and A-MEM (Xu et al., 2025) repre-sent major approaches to persistent agent memory. Lexical, dense, and hybrid retrieval further improve access to relevant history (Robertson and Zaragoza, 2009; Karpukhin et al., 2020; Lewis et al., 2020; Cormack et al., 2009). However, relevance-based access does not determine which memory is appro-priate when several retrieved experiences represent different states or temporal roles. Recent bench-marks evaluate long-horizon recall, state updates, evolving preferences, and multi-entity dynamics (Wu et al., 2025; He et al., 2026; Liu et al., 2026; Li et al., 2026; Jung et al., 2026). Memory-poisoning studies further show that untrusted stored examples can steer retrieval-augmented agents (Chen et al., 2024). 2Poisoning Resistance    
+
+> Resist misleading information
+> Stability
+> Preserve stable preferences
+> 1. Interaction 2. Memory Store 3. Retrieval 4. Decision
+
+Memory Interference in Continual Agents            
+
+> Past Now
+> t1t2t3
+> m1Historical m2Transient m3Updated
+> Date ：Mar 10 Date ：Mar 13 Date ：Mar 15
+> "I prefer quiet hotels. " " Business trip requires city center. " ”I prefer downtown hotels."
+
+Controlled Memory Interference (CMI)   
+
+> Superseded persistent state Context-specific excep3on Valid persistent update
+> Controlled Memory Evolu5on Load ×Rela5onship Lightweight Selector
+> signals → retrieval policy
+> Behavioral Effects
+
+Selector training Retrieval guidance Accumulated memories Agent Loop        
+
+> Cross-Dataset Evidence Noisy-update answer success ↑ PERMA +.443 LME +.114
+> Horizon +.414 MEME +.614
+> ✓No observed point-estimate decrease In-domain evaluation
+> Evalua3on
+> Plasticity
+> Adopt valid updates
+> Paired CMI Scenarios
+> Training + Diagnos:c Cases
+
+Performance 
+
+> INCONSISTENT
+> Source State-Update Cases Mul3ple relevant memories with different validity
+
+Figure 1: Overview of memory interference and CMI in the continual agent loop. CMI controls memory load and relationships to construct paired diagnostic and training scenarios, enabling behavioral evaluation and lightweight retrieval adaptation. In-domain augmentation improves noisy-update answer success across TravelPlanner and four external sources. 
+
+Interference in continual systems. Continual-learning research studies how new information dis-rupts previously acquired knowledge, including the stability–plasticity dilemma and methods such as EWC, GEM, and experience replay (Kirkpatrick et al., 2017; Lopez-Paz and Ranzato, 2017; Rol-nick et al., 2019; Parisi et al., 2019). These works primarily address interference during parameter learning or replay. We instead study interactions among externally stored memories during retrieval and downstream decision making. 
+
+3 Methodology 
+
+We study memory interference in continual agents that accumulate external memories over time. Sev-eral memories may be relevant to the same decision while differing in state, temporal validity, or au-thority. CMI isolates these factors through paired controlled scenarios and uses the resulting cases for behavioral diagnosis and interference-aware train-ing, as summarized in Figure 2. 
+
+3.1 Problem Formulation and Behavioral Dimensions 
+
+Let i index a source case. Each case contains a query qi, an expected decision yi, and a memory collection 
+
+Mi = {mi, 1, . . . , m i,N i },
+
+where mi,j is the j-th memory and Ni = |M i| is the number of memories. Given a retrieval depth k,a memory-access mechanism returns the ordered sequence 
+
+Rk(qi, Mi) =  mi, (1) , . . . , m i, (k)
+
+,
+
+where Rk denotes the access mechanism and mi, (r)
+
+is the memory ranked at position r.For evaluation, we partition the collection into three disjoint sets: 
+
+Mi = M+
+
+i ˙∪ M ci ˙∪ M oi ,
+
+where ˙∪ denotes disjoint union. M+
+
+i contains the 
+
+target memories that should influence the current decision, Mci contains competing memories that are relevant but inappropriate for the current state, and Moi contains other controlled or background memories, including neutral, unrelated, and task-compatible same-state additions. Competing mem-ories may encode superseded states, transient ex-ceptions, same-slot conflicts, or deliberately mis-leading updates. 3Source State-Update Cases                        
+
+> Controlled Memory Interference Memozry Volume (Load)
+> L0L1L6
+> …Low High
+> ✖
+> Memory Relationships
+> Repeated history Same-slot conflict Unrelated
+> Paired Behavioral Probes
+> L0L1L6…
+> Behavioral Effects
+> Stability Plas+city Poisoning Resistance
+> Matched Neutral …………Lightweight Selector α00.25 0.5 0.75 1
+> Evalua&on Selector training
+> ┌─────────────┐ │Travel ││PERMA ││LongMemEval ││Horizon ││MEME │└─────────────┘
+
+Figure 2: CMI controls memory load and relationship composition to construct paired behavioral probes and selector-training cases. 
+
+Memory interference occurs when relationships among these memories alter which state influences the final decision. We evaluate three behavioral dimensions. Plasticity measures whether the agent adopts a valid persistent update instead of follow-ing a superseded state. Stability measures whether it preserves an established state when newer evi-dence is transient or context-specific. Poisoning resistance measures whether it rejects an invalid or misleading update. These dimensions represent dis-tinct memory roles and do not assume a symmetric stability–plasticity trade-off. 
+
+3.2 Controlled Memory Interference 
+
+CMI applies to source cases in which an old state, a distinct current state, and supporting historical evidence can be recovered. For each eligible case 
+
+i, we construct a base memory collection Bi con-taining the target state and the context required for the original decision. A controlled scenario is then defined as 
+
+Mc,ℓ i = Bi ∪ ∆c,ℓ i , |∆c,ℓ i | = nℓ,
+
+where c ∈ C indexes a memory-relationship con-dition, ℓ ∈ L indexes a memory-load level, ∆c,ℓ i is the set of controlled additions, and nℓ is the num-ber of additions at level ℓ. C and L denote the sets of evaluated relationship conditions and load lev-els, respectively, and Mc,ℓ i is the resulting CMI scenario. All variants derived from the same source case preserve the underlying task: 
+
+qc,ℓ i = qi, yc,ℓ i = yi, M+,c,ℓ i = M+ 
+
+> i
+
+,
+
+where qc,ℓ i , yc,ℓ i , and M+,c,ℓ i denote the query, ex-pected decision, and target-memory set in the trans-formed scenario. We additionally preserve the tar-get position and the source state semantics. Thus, differences among paired variants can be attributed to the controlled memory additions rather than changes in the underlying task. CMI uses three complementary protocols. Mem-ory load varies accumulated history from L0 to L6. At fixed query and count, relationship com-position compares matched neutral additions, un-related memories, repeated history, and same-slot conflict at counts 0, 2, 4, and 8. A separate fixed-L3 authority probe frames an invalid memory as ordinary noise (P0), a recent transient mention (P1), an explicit persistent update (P2), or an au-thoritative correction (P3). Thus, P0–P3 are not additional conditions in the four-way composition sweep. These protocols separate memory quantity, scope, repetition, conflict, recency, and conveyed update authority. The resulting paired CMI sce-narios can serve as diagnostic cases or as train-ing examples. CMI does not assume that arbitrary datasets can be transformed; the source case must provide a recoverable state transition and sufficient evidence to identify the superseded and current states. 
+
+3.3 Diagnostic and Training Uses Retrieval diagnostics. Let ri(m) denote the rank assigned to memory m for case i. If m is absent from the returned top-k sequence, we set ri(m) = +∞. The best target and competing ranks are 
+
+r+ 
+
+> i
+
+= min 
+
+> m∈M +
+> i
+
+ri(m), rci = min 
+
+> m∈M ci
+
+ri(m).
+
+Let I[·] denote the indicator function. We define 
+
+Ti = I[r+ 
+
+> i
+
+≤ k],Ci = I[rci ≤ k],
+
+PO i = Ir+ 
+
+> i
+
+≤ k ∧  rci > k ∨ r+ 
+
+> i
+
+< r ci
+
+ ,
+
+MRR i =
+
+(
+
+1/r + 
+
+> i
+
+, r+ 
+
+> i
+
+< +∞,
+
+0, otherwise ,
+
+CE i = TiCi.
+
+Here, Ti indicates target exposure, Ci indicates competing-memory exposure, PO i indicates that the best target outranks every retrieved competitor, 
+
+MRR i is the reciprocal rank of the best target, and 4CE i indicates co-exposure. Dataset-level Target Recall@ k, Preference Ordering, MRR, and Co-exposure are obtained by averaging the correspond-ing per-case quantities. MRR follows the standard reciprocal-rank evaluation convention (Voorhees and Tice, 2000); Preference Ordering and Co-exposure are defined for this study. 
+
+Retrieval-to-decision decomposition. Let Ai ∈{0, 1} denote answer success, with Ai = 1 when the agent output agrees with the expected decision 
+
+yi. Under the diagnostic evaluator, target absence implies failure, so Ai = 0 whenever Ti = 0 . If A
+
+and T denote the Bernoulli variables obtained by uniformly sampling a case and taking its values Ai
+
+and Ti, then 
+
+Pr( A = 1) = Pr( T = 1) Pr( A = 1 | T = 1) .
+
+We additionally report Pr( A = 1 | T = 1 , C = 1) ,where C is the Bernoulli variable induced by Ci, to distinguish target-access failure from downstream ambiguity after both target and competing memo-ries enter the context. These conditional quantities are descriptive diagnostics rather than causal ef-fects. 
+
+CMI-guided retrieval adaptation. We instan-tiate CMI-guided adaptation as an Interference-Aware Adaptive Retrieval (IAAR) selector. We consider two complementary access families: Lex-ical Retrieval , which uses token-level matching signals, and Dense Retrieval , which uses semantic similarity in an embedding space. Their concrete implementations are specified in Section 4.2. For case i and memory m, let bsL(qi, m ) and 
+
+bsD(qi, m ) denote normalized Lexical and Dense Retrieval scores. A lightweight selector g maps an observable retrieval-state feature vector xi to a mixture weight: 
+
+αi = g(xi), αi ∈ { 0, 0.25 , 0.5, 0.75 , 1}.
+
+The combined score is 
+
+si(m) = αibsL(qi, m ) + (1 − αi)bsD(qi, m ),
+
+where si(m) is the final retrieval score, αi = 1 
+
+gives pure Lexical Retrieval, and αi = 0 gives pure Dense Retrieval. The feature vector xi con-tains only observable retrieval-state signals, such as score margin, retrieval entropy, lexical over-lap, semantic similarity, duplicate density, and cross-retriever agreement. Target and competing-memory annotations are not available to the de-ployed selector. To test whether CMI scenarios provide useful supervision, we compare clean-only training with in-domain CMI augmentation: 
+
+Daug = Dclean ∪ D CMI ,
+
+where Dclean is the original selector-training set, 
+
+DCMI contains CMI-generated noisy same-slot cases, and Daug is the augmented training set. The resulting selector is evaluated on held-out cases from the same source dataset. This protocol tests in-domain actionability and does not assume zero-shot transfer of a frozen selector across datasets. 
+
+4 Experimental Setup 
+
+4.1 Datasets and Protocols 
+
+We apply CMI to state-update cases derived from TravelPlanner in MemoryArena (He et al., 2026), PERMA (Liu et al., 2026), LongMemEval (Wu et al., 2025), HorizonBench (Li et al., 2026), and the Tracking task from MEME (Jung et al., 2026). TravelPlanner is used for fine-grained mech-anism analysis, including memory-scale growth, relationship-controlled composition, retrieval-to-decision decomposition, and poisoning. The re-maining sources test whether CMI-generated same-slot interference cases provide useful in-domain training supervision. For each transformed case, CMI preserves the query, target state, and expected decision while varying memory load or relationships among ac-cumulated memories. Target, competing-memory, and relationship annotations are used only for con-struction, training-label generation, and offline eval-uation; retrieval and answer generation observe memory text only. The TravelPlanner mechanism study contains 50 base scenarios: 1,400 noise-growth in-stances across seven load levels, two relationship-controlled composition protocols of 800 instances each, 1,000 fixed-L3 poisoning instances, and a held-out retrieval diagnostic with 10 base scenar-ios and 320 observations per method. PERMA, HorizonBench, and MEME Tracking each use 50 eligible bases; LongMemEval retains 46 of 50 can-didate updates after requiring a distinct recoverable old state, confidence of at least 0.8, and a support-ing historical evidence span. 5PERMA, HorizonBench, and MEME Tracking use 30/10/10 train, development, and test bases, yielding 630 clean and 210 CMI training cases, 280 development cases, and 280 test cases. Long-MemEval uses 27/9/10 bases, yielding 567 clean and 189 CMI training cases, 252 development cases, and 280 test cases. All splits are grouped by base_id with zero overlap. TravelPlanner fol-lows the same clean-only versus CMI-augmented comparison on its audited held-out split. 
+
+4.2 Memory Access and Selector Training 
+
+We evaluate two primary access families. Lexi-cal Retrieval is instantiated with BM25 (Robert-son and Zaragoza, 2009) using k1 = 1 .5 and b =0.75 . Dense Retrieval uses Qwen3-Embedding-8B (Zhang et al., 2025) with its native 4096-dimensional output, L2 normalization, and cosine similarity. We also evaluate fixed Lexical–Dense fusion with α = 0 .25 and RRF (Cormack et al., 2009) with rank constant κ = 60 . All methods retrieve the top three memories from the complete candidate collection. The encoder-robustness analysis repeats the same protocol with E5-Mistral-7B-Instruct (Wang et al., 2024), NV-Embed-v2 (Lee et al., 2024), and Linq-Embed-Mistral (Choi et al., 2024), using each model’s native 4096-dimensional representation and official query/document encoding convention. The lightweight selector is a class-balanced ran-dom forest (Breiman, 2001) with 300 trees, mini-mum leaf size 2, and random seed 42. It predicts 
+
+α ∈ { 0, 0.25 , 0.5, 0.75 , 1}, where α = 0 denotes pure Dense Retrieval and α = 1 denotes pure Lex-ical Retrieval. Selector labels maximize a devel-opment utility combining behavior success, target MRR, and security with weights 1, 0.2, and 0.1,respectively; ties within 0.01 prefer the smaller lexical weight. Clean-only and CMI-augmented selectors use the same model, observable retrieval-state features, development protocol, and held-out test set. They differ only in whether CMI noisy same-slot cases are included during training. Training and evalua-tion are performed separately within each source dataset; the protocol does not assume zero-shot transfer of a frozen selector. 
+
+4.3 Answer Evaluation and Statistics 
+
+TravelPlanner composition and mirrored-stability experiments use DeepSeek-v4-pro with tempera-ture 0, reasoning disabled, and a 512-token output limit. Its fixed-L3 poisoning study follows an ear-lier frozen DeepSeek-v4-flash protocol and is inter-preted only within that protocol (Xu et al., 2026). The answer-level augmentation study uses DeepSeek-v4-pro with temperature 0, reasoning disabled, and a 128-token output limit. TravelPlan-ner and the four external sources each contribute 280 held-out cases evaluated under clean-only and CMI-augmented training, yielding 5 × 280 × 2 = 2,800 generated answers. We observe no API or parsing failures. TravelPlanner outputs are scored using an au-dited structured memory-state parser, while the four external sources use a deterministic normal-ized value matcher. Answer success requires the expected state to be selected without adopting a competing state; wrong-memory adoption records the converse error. Full evaluator rules are provided in the appendix. We report paired 95% percentile confidence in-tervals using cluster bootstrap over base_id , re-sampling all variants derived from the same base together (Efron and Tibshirani, 1993; Cheng et al., 2013). The answer-level study uses 5,000 bootstrap replicates with random seed 42. Source filters, com-plete feature definitions, prompts, preprocessing details, and protocol-specific statistics are provided in the appendix. 
+
+5 Results and Analysis 
+
+We organize the analysis around four questions: whether memory scale alone explains degradation, which memory relationships determine the fail-ure regime, where interference arises along the retrieval-to-decision pathway, and whether CMI-generated cases provide useful training supervision. Behavioral and retrieval protocols are reported sep-arately because they evaluate different objectives. 
+
+5.1 Memory Scale and Relationship-Specific Interference 
+
+We first separate memory quantity from mem-ory relationships. Under TravelPlanner noise-only growth, average plasticity changes from 0.510 at L0 to 0.455 at L6, while stability changes from 0.200 to 0.290. The trajectories are non-monotonic: plas-ticity reaches its lowest aggregate value around L4 and partially recovers at later loads. Thus, increas-ing memory quantity affects access but does not produce a consistent collapse. Full L0–L6 curves are provided in the appendix. 60.0 0.2 0.4 0.6 0.8 1.0        
+
+> Plasticity
+> Lexical Dense
+> 02480.5 0.6 0.7 0.8 0.9 1.0
+> Stability
+> 0248
+> Added memories
+> Matched neutral Unrelated Repeated history Same-slot conflict
+
+Figure 3: Relationship-controlled interference on Trav-elPlanner.                                        
+
+> Access Relationship P8∆PS8∆S
+> Lexical Matched neutral .84 .00 .92 .00 Unrelated .82 −.02 .92 .00 Repeated history .50 −.34 .92 .00 Same-slot conflict .34 −.50 .88 −.04
+> Dense Matched neutral .80 −.04 .84 −.08
+> Unrelated .66 −.18 .90 −.02
+> Repeated history .38 −.46 .92 .00 Same-slot conflict .40 −.44 .54 −.38
+
+Table 1: TravelPlanner count-8 behavior relative to shared count-0 baselines ( P0 = 0 .84 , S0 = 0 .92 ). 
+
+We next hold memory count fixed while varying how added memories relate to the current deci-sion state. The TravelPlanner composition proto-col compares matched neutral, unrelated, repeated-history, and same-slot conflict conditions at addi-tion counts 0, 2, 4, and 8. All variants derived from the same base case share the query, target state, target position, expected decision, and count-0 baseline. Figure 3 reports plasticity and mirrored stability across the four conditions. Table 1 summarizes the count-8 outcomes relative to the shared count-0 baselines ( P0 = 0 .84 and S0 = 0 .92 ). Relationship, rather than count, determines the failure regime. Lexical plasticity changes by only −0.02 under unrelated additions, but by 
+
+−0.34 under repeated history and −0.50 under same-slot conflict. At count 8, the paired con-trasts against unrelated additions are −0.32 (95% CI [−0.46 , −0.20] ) and −0.48 ([−0.62 , −0.34] ). 0.2 0.4 0.6 0.8 1.0        
+
+> Qwen3 8B E5 Mistral
+> 02480.2 0.4 0.6 0.8 1.0
+> NV-Embed v2
+> 0248
+> Linq Mistral
+> Added memories Target Recall@3
+> Matched neutral Unrelated Repeated history Same-slot conflict
+
+Figure 4: Encoder robustness under CMI. Target Re-call@3 is shown as relationship-controlled memories are added. Error bars are paired base-cluster bootstrap 95% CIs. 
+
+Dense Retrieval is more sensitive to semantic crowding: unrelated additions reduce plasticity by 
+
+−0.18 , while repeated history and same-slot con-flict reduce it by −0.46 and −0.44 .The stability response is not a symmetric in-verse of plasticity. Repeated history leaves stabil-ity unchanged for both access families, whereas Dense same-slot conflict reduces stability from 0.92 to 0.54. Relationship-specific interference therefore ranges from selective update suppres-sion to joint degradation, rather than a universal stability–plasticity trade-off. Figure 4 shows that this relationship effect is robust to the Dense encoder. Repeating the fixed TravelPlanner retrieval protocol with Qwen3-Embedding-8B, E5-Mistral-7B, NV-Embed-v2, and Linq-Embed-Mistral, all using native unpro-jected 4096-dimensional representations, yields count-8 Target Recall@3 losses of 0.22–0.68 un-der repeated history and 0.42–0.58 under same-slot conflict. Thus, the qualitative interference pattern is not specific to Qwen, although its magnitude remains encoder dependent. 
+
+5.2 Retrieval-to-Decision Pathways and Update Authority 
+
+Table 2 separates target-access failure from failure after exposure in the count-8 TravelPlanner results. Lexical same-slot conflict is primarily a retrieval bottleneck: Target Recall@3 falls to 0.34 and 7Access Relationship Target R@3 Comp.-only P (A | T ) P (A)                                  
+
+> Lexical Matched neutral 1.00 .00 .840 .840 Unrelated 1.00 .00 .820 .820 Repeated history .66 .00 .758 .500 Same-slot conflict .34 .66 1.000 .340 Dense Matched neutral .92 .02 .870 .800 Unrelated .82 .18 .805 .660 Repeated history .48 .08 .792 .380 Same-slot conflict .54 .46 .741 .400
+
+Table 2: Count-8 retrieval-to-decision decomposition on TravelPlanner. 
+
+Lexical Dense Source ∆P ∆S ∆P ∆S
+
+PERMA −.720 .000 −.040 .000 
+
+LongMemEval −.826 +.022 −.043 −.022 
+
+HorizonBench −.940 .000 −.120 .000 
+
+MEME Tracking −.860 .000 −.120 .000 
+
+Table 3: L0–L6 displacement under same-slot historical growth. 
+
+competing-only exposure rises to 0.66, but P (A |
+
+T ) = 1 .00 . Repeated history combines retrieval loss (Recall@3 of 0.66) with lower conditional adoption (0.758). Dense Retrieval fails at both stages: repeated history lowers recall to 0.48, while same-slot conflict yields recall of 0.54 and condi-tional adoption of 0.741. Additional co-exposure diagnostics in the appendix show that competitor presence alone is not a monotonic failure indicator. These conditional quantities are descriptive rather than causal. 
+
+Update authority. At fixed L3, recency alone has negligible effect: poison acceptance under P0/P1 is .02 /. 02 for Lexical Retrieval and .00 /. 00 
+
+for Dense Retrieval. Framing the invalid memory as a persistent update raises acceptance to .23 /. 12 ,and authoritative correction wording further raises it to .26 /. 14 . Thus, conveyed update role, rather than recency alone, drives poisoning. Full protocol details are reported in the appendix. 
+
+5.3 Cross-Dataset Convergence 
+
+The external L0–L6 protocols progressively accu-mulate same-slot historical states. Table 3 reports paired displacement on PERMA, LongMemEval, HorizonBench, and MEME Tracking. Lexical plasticity decreases by 0.720–0.940 while stability changes by at most +0 .022 ; all four plasticity intervals exclude zero. Dense plastic-ity losses are smaller (0.040–0.120), with stability nearly unchanged. Complete confidence intervals and noisy-update results are provided in the ap-                                        
+
+> Retrieval change Answer success Source ∆R@3 ∆MRR ∆PO Clean-only CMI-aug. ∆95% CI TravelPlanner +.457 +.252 + .143 .386 .686 +.300 [.129, .486] PERMA +.443 +.168 + .014 .386 .829 +.443 [.243, .643] LongMemEval +.114 +.041 .000 .886 1.000 +.114 [.029, .214] HorizonBench +.414 +.135 + .014 .514 .929 +.414 [.243, .600] MEME Tracking +.614 +.426 + .357 .314 .929 +.614 [.429, .757]
+
+Table 4: Held-out noisy-update performance under clean-only and in-domain CMI-augmented selector training. 
+
+pendix. These sources therefore show convergent, not identical, selective update suppression under accumulated superseded history. 
+
+5.4 CMI-Guided Training Improves Retrieval and Final Answers 
+
+We compare clean-only and CMI-augmented selec-tors using identical held-out cases, retrieval bud-gets, features, and model configurations. Table 4 reports noisy-update retrieval and answer results. CMI augmentation increases Target Recall@3 by 0.114–0.614 and MRR by 0.041–0.426 across all five sources; all paired intervals for these met-rics exclude zero. Preference Ordering improves less consistently, and competing-memory recall remains high, so the selector improves target inclu-sion and rank rather than fully reconciling compet-ing states. Noisy-update answer success increases by 0.114– 0.614, with every paired interval excluding zero. Available clean, valid-update, and stable-retention point estimates do not decrease. We do not claim condition-wise non-inferiority because the Long-MemEval stable-retention paired interval is unavail-able. The result supports in-domain actionabil-ity, not complete reconciliation or zero-shot cross-domain transfer. Figure 5 further bounds IAAR’s scope through a backend-calibration audit. Relative to fixed fusion, the frozen Qwen-trained selector changes Prefer-ence Ordering by +0 .144 on Qwen but by −0.009 ,
+
+−0.003 , and −0.053 on E5, NV, and Linq, respec-tively. Retraining the same selector and feature schema per backend yields changes of +0 .150 ,
+
++0 .022 , and +0 .003 on E5, NV, and Linq. IAAR therefore exposes a calibration opportunity rather than a universally transferable retrieval policy. 
+
+6 Conclusion 
+
+We introduced Controlled Memory Interference (CMI) to study how relationships among accumu-lated memories affect continual agents. TravelPlan-8Qwen3 8B E5 Mistral NV-Embed v2 Linq Mistral 0.0 0.2 0.4 0.6 0.8 
+
+> Preference Ordering
+
+Figure 5: IAAR backend calibration. Preference Or-dering compares fixed fusion, RRF, the frozen Qwen-trained selector, and a selector retrained on each back-end. Error bars are base-cluster bootstrap 95% CIs. 
+
+ner experiments separate memory quantity from repeated history, same-slot conflict, and update au-thority, while retrieval-to-decision analysis shows that interference can arise before or after target exposure. Historical-state growth across PERMA, LongMemEval, HorizonBench, and MEME fur-ther reveals architecture-dependent plasticity sup-pression. Finally, in-domain CMI augmentation consistently improves target access, target rank, and noisy-update answer success across all five settings without an observed decrease on matched unnoised point estimates. Preference ordering and competitor exclusion remain open challenges for stronger memory-state reconciliation. The interfer-ence pattern persists across multiple native-4096 embedding backends, while adaptive retrieval re-mains calibration-dependent rather than universally transferable. 9References 
+
+Leo Breiman. 2001. Random forests. Machine Learn-ing , 45(1):5–32. Zhaorun Chen, Zhen Xiang, Chaowei Xiao, Dawn Song, and Bo Li. 2024. AgentPoison: Red-teaming LLM agents via poisoning memory or knowledge bases. In 
+
+Advances in Neural Information Processing Systems ,volume 37. Guang Cheng, Zhuqing Yu, and Jianhua Z. Huang. 2013. The cluster bootstrap consistency in generalized esti-mating equations. Journal of Multivariate Analysis ,115:33–47. Prateek Chhikara, Dev Khant, Saket Aryan, Taranjeet Singh, and Deshraj Yadav. 2025. Mem0: Building production-ready ai agents with scalable long-term memory. arXiv preprint arXiv:2504.19413 .Chanyeol Choi, Junseong Kim, Seolhwa Lee, Jihoon Kwon, Sangmo Gu, Yejin Kim, Minkyung Cho, and Jy-yong Sohn. 2024. Linq-Embed-Mistral technical report. arXiv preprint arXiv:2412.03223 .Gordon V Cormack, Charles LA Clarke, and Stefan Buettcher. 2009. Reciprocal rank fusion outperforms condorcet and individual rank learning methods. In 
+
+Proceedings of the 32nd international ACM SIGIR conference on Research and development in informa-tion retrieval , pages 758–759. Bradley Efron and Robert J. Tibshirani. 1993. An Intro-duction to the Bootstrap . Chapman and Hall/CRC. Zexue He, Yu Wang, Churan Zhi, Yuanzhe Hu, Tzu-Ping Chen, Lang Yin, Ze Chen, Tong Arthur Wu, Siru Ouyang, Zihan Wang, and 1 others. 2026. Mem-oryarena: Benchmarking agent memory in interde-pendent multi-session agentic tasks. arXiv preprint arXiv:2602.16313 .Drew Johnston, David Holtz, Alex Martin Richmond, Christopher Ong, Prasanna Tambe, and Aaron Chat-terji. 2026. The shift to agentic ai: Evidence from codex. arXiv preprint arXiv:2606.26959 .Seokwon Jung, Alexander Rubinstein, Arnas Uselis, Sangdoo Yun, and Seong Joon Oh. 2026. MEME: Multi-entity and evolving memory evaluation. arXiv preprint arXiv:2605.12477 .Vladimir Karpukhin, Barlas Oguz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, and Wen-tau Yih. 2020. Dense passage retrieval for open-domain question answering. In Proceedings of the 2020 conference on empirical methods in natural language processing (EMNLP) , pages 6769–6781. James Kirkpatrick, Razvan Pascanu, Neil Rabinowitz, Joel Veness, Guillaume Desjardins, Andrei A Rusu, Kieran Milan, John Quan, Tiago Ramalho, Ag-nieszka Grabska-Barwinska, and 1 others. 2017. Overcoming catastrophic forgetting in neural net-works. Proceedings of the national academy of sci-ences , 114(13):3521–3526. Chankyu Lee, Rajarshi Roy, Mengyao Xu, Jonathan Raiman, Mohammad Shoeybi, Bryan Catanzaro, and Wei Ping. 2024. NV-Embed: Improved techniques for training LLMs as generalist embedding models. 
+
+arXiv preprint arXiv:2405.17428 .Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Hein-rich Küttler, Mike Lewis, Wen-tau Yih, Tim Rock-täschel, and 1 others. 2020. Retrieval-augmented gen-eration for knowledge-intensive nlp tasks. Advances in neural information processing systems , 33:9459– 9474. Shuyue Stella Li, Bhargavi Paranjape, Kerem Oktar, Zhongyao Ma, Gelin Zhou, Lin Guan, Na Zhang, Sem Park, Lin Chen, Diyi Yang, Yulia Tsvetkov, and Asli Celikyilmaz. 2026. HorizonBench: Long-horizon personalization with evolving preferences. 
+
+arXiv preprint arXiv:2604.17283 .Shuochen Liu, Junyi Zhu, Long Shu, Junda Lin, Yuhao Chen, Haotian Zhang, Chao Zhang, Derong Xu, Jia Li, Bo Tang, Zhiyu Li, Feiyu Xiong, Enhong Chen, and Tong Xu. 2026. PERMA: Benchmarking per-sonalized memory agents via event-driven prefer-ence and realistic task environments. arXiv preprint arXiv:2603.23231 .David Lopez-Paz and Marc’Aurelio Ranzato. 2017. Gradient episodic memory for continual learning. Ad-vances in neural information processing systems , 30. Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, and Joseph E. Gonzalez. 2023. MemGPT: Towards LLMs as operating sys-tems. arXiv preprint arXiv:2310.08560 .German I Parisi, Ronald Kemker, Jose L Part, Christo-pher Kanan, and Stefan Wermter. 2019. Continual lifelong learning with neural networks: A review. 
+
+Neural networks , 113:54–71. Joon Sung Park, Joseph O’Brien, Carrie Jun Cai, Mered-ith Ringel Morris, Percy Liang, and Michael S Bern-stein. 2023. Generative agents: Interactive simulacra of human behavior. In Proceedings of the 36th an-nual acm symposium on user interface software and technology , pages 1–22. Stephen Robertson and Hugo Zaragoza. 2009. The probabilistic relevance framework: BM25 and be-yond. Foundations and Trends in Information Re-trieval , 3(4):333–389. David Rolnick, Arun Ahuja, Jonathan Schwarz, Timo-thy Lillicrap, and Gregory Wayne. 2019. Experience replay for continual learning. Advances in neural information processing systems , 32. Benton J Underwood. 1957. Interference and forgetting. 
+
+Psychological review , 64(1):49. Ellen M. Voorhees and Dawn M. Tice. 2000. The TREC-8 question answering track evaluation. In Text Re-trieval Conference .
+
+10 Liang Wang, Nan Yang, Xiaolong Huang, Linjun Yang, Rangan Majumder, and Furu Wei. 2024. Improving text embeddings with large language models. arXiv preprint arXiv:2401.00368 .Michael J. Watkins and Olga C. Watkins. 1975. Buildup of proactive inhibition as a cue-overload effect. Jour-nal of Experimental Psychology: Human Learning and Memory , 1(4):442–452. Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong Yu. 2025. LongMemEval: Benchmarking chat assistants on long-term interac-tive memory. In International Conference on Learn-ing Representations .Anyi Xu, Bangcai Lin, Bing Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu, Bowei Zhang, Chao-fan Lin, Chen Dong, Chenchen Ling, and 1 oth-ers. 2026. Deepseek-v4: Towards highly efficient million-token context intelligence. arXiv preprint arXiv:2606.19348 .Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, and Yongfeng Zhang. 2025. A-MEM: Agen-tic memory for LLM agents. Advances in Neural Information Processing Systems , 38:17577–17604. Yanzhao Zhang, Mingxin Li, Dingkun Long, Xin Zhang, Huan Lin, Baosong Yang, Pengjun Xie, An Yang, Dayiheng Liu, Junyang Lin, Fei Huang, and Jingren Zhou. 2025. Qwen3 Embedding: Advancing text embedding and reranking through foundation models. 
+
+arXiv preprint arXiv:2506.05176 .Wanjun Zhong, Lianghong Guo, Qiqi Gao, He Ye, and Yanlin Wang. 2024. MemoryBank: Enhancing large language models with long-term memory. Proceed-ings of the AAAI Conference on Artificial Intelligence ,38(17):19724–19731. 
+
+11 Appendix A Scope and Reproducibility Map 
+
+The retained experimental scope comprises: (i) TravelPlanner-derived L0–L6 growth, relationship-controlled composition, mirrored stability, and fixed-L3 update-authority probes; (ii) CMI trans-formations of PERMA, LongMemEval, Hori-zonBench, and the Tracking task from MEME; (iii) lexical, dense, fixed fusion, and RRF ac-cess; (iv) clean-only versus CMI-augmented IAAR training; and (v) native-4096 encoder robustness. Later resolver, versioned-memory, representation-resolution, and router-optimization branches are excluded. Table A.1 maps the computational portions of the AAAI reproducibility checklist to this appendix and the accompanying artifact package. The paper makes no formal theoretical contribution, so the conditional theory-only checklist items are inten-tionally left unanswered. 
+
+B Datasets and Memory Construction 
+
+CMI converts eligible state-update cases into paired continual-memory trajectories. These are con-trolled transformations of source data rather than evaluations under the sources’ native leaderboard protocols. The transformation keeps the base query, target state, and expected decision fixed while changing memory load or relationships among memories. Gold target and competing-memory annotations are used only for construction, selector-label generation, and offline evaluation; retrieval and generation observe memory text only. 
+
+B.1 Source Coverage and Eligibility 
+
+Table B.1 gives the audited coverage. TravelPlanner-derived cases come from Memor-yArena. The external transformations use PERMA, LongMemEval, HorizonBench, and the Tracking task from MEME. LongMemEval retained 46 of 50 candidate knowledge updates after requiring a recoverable old value distinct from the current value, confidence at least 0.8, and a verbatim supporting span in the historical session. The other external sources retained 50 eligible bases. For PERMA, HorizonBench, and MEME, the 30/10/10 base split yields 630 clean and 210 CMI training cases, 280 development cases, and 280 test cases. LongMemEval’s 27/9/10 split yields 567 clean and 189 CMI training cases, 252 development cases, and 280 test cases. All variants with the same 
+
+base_id remain in one split; the supplied audits report zero base-ID overlap. Table B.1 distinguishes construction coverage from answer-level evaluation coverage. All four external fixed-L3 datasets passed the structural pro-tocol audit and now have matched BM25/Dense answer-level poisoning summaries under the same frozen generation and corrected-scoring protocol. 
+
+B.2 Transformation Audit and Representative States 
+
+Every external source passed the same structural checks: the seven load levels contain the expected number of memories; the four stress types remain paired by base; target and forbidden states differ; memory identifiers are unique; and no query con-tains a role annotation. Table B.2 summarizes the machine-readable audit records. The L0 row con-tains the event’s minimum required memories (2– 4); L1–L6 contain 6, 12, 24, 48, 90, and 135. Table B.3 illustrates the source-dependent con-tent replacement. These examples are not evalua-tion outputs: they show how the same CMI state-transition schema is instantiated in different do-mains. 
+
+B.3 Record Structure and Retrieval View 
+
+Each JSONL row stores a query, expected struc-tured or normalized state, session list, memory text, timestamp, session identifier, insertion order, memory-role metadata, target IDs, and compet-ing or forbidden IDs. Timestamps, sessions, and role labels support construction and offline audits. Baseline retrieval indexes only the memory text ;IAAR additionally uses observable rank, score, text-overlap, embedding, count, and insertion-order statistics defined in Section F. No memory-ID suf-fix, event label, target ID, or forbidden ID is pro-vided to a deployed selector or generator. Construction audits check duplicate memory IDs, query-to-memory answer leakage, cross-load pairing, expected/forbidden identity, memory count, and role-label leakage. External synthetic histories use SHA-256-derived deterministic con-tent selection, making the realized datasets inde-pendent of Python hash ordering. 12 Item Status Evidence supplied 3.2–3.6 yes/partial Exact transformed CMI inputs, candidate mappings, source-specific protocol audits, eligibility rules, split protocol, upstream attribution, and redistribution notices. 4.1 yes Sections E–G list the development search space, selection criterion, and final settings. 4.2–4.3 yes The reviewer artifact’s unpacked code/ , data/ , result records, and SHA-256 file manifest. 4.4–4.5 partial Author-written code is MIT licensed and executable scripts are included; transformed inputs retain source attribution and upstream terms, while model weights are not redis-tributed. 4.6 partial Seeds and deterministic rules are complete, while external API serving does not expose a reproducible sampling seed. 4.7 yes seed_map.md and Section H. 4.8 yes environment.md and Section I. 4.9–4.13 yes Metric definitions, run counts, clustered confidence intervals, paired comparisons, and final hyperparameters appear in Sections D–H. 
+
+Table A.1: Reproducibility-checklist map. Paths are relative to the uploaded reviewer-artifact root unless stated otherwise. 
+
+Source Bases Growth rows Composition rows Constructed authority rows Grouped split TravelPlanner 50 1,400 800 P + 800 S 400 paired bases; held-out IAAR bases PERMA 50 1,400 – 1,000 30/10/10 LongMemEval 46 1,288 – 920 27/9/10 HorizonBench 50 1,400 – 1,000 30/10/10 MEME Tracking 50 1,400 – 1,000 30/10/10 
+
+Table B.1: Audited CMI data coverage. “Growth rows” count all four event types over L0–L6. Travel composition contains separate plasticity and mirrored stability datasets. 
+
+Source Rows Bases Failures Pair failures PERMA 1,400 50 0 0LongMemEval 1,288 46 0 0HorizonBench 1,400 50 0 0MEME Tracking 1,400 50 0 0
+
+Table B.2: External CMI protocol-audit results. Pairing failures are counted at the base–stress group level. 
+
+C Controlled Interference Protocols 
+
+C.1 L0–L6 Memory Growth 
+
+The nominal load profile is L0–L6 with 3, 6, 12, 24, 48, 90, and 135 memories for the Travel growth summary. External event rows use the minimum number of memories needed by the event at L0 (2–4), then the same L1–L6 targets of 6, 12, 24, 48, 90, and 135. Each base appears at every load. The four event types are clean, valid update, sta-ble retention, and valid update with noise. Added history is held within the transformation protocol rather than regenerated independently for each ac-cess mechanism. 
+
+C.2 Relationship-Controlled Composition 
+
+The paired composition study fixes query, target memory, gold state, target position, and base sce-nario. It appends 0, 2, 4, or 8 memories under one of the four relationships in Table C.1. Count zero is a shared baseline; it is generated once per base and reused across the four composition trajectories. 
+
+Relationship Construction Matched neutral Template- and length-matched mem-ories that do not change the queried state. Unrelated Memories from non-overlapping enti-ties or attributes, used to estimate ca-pacity pressure. Repeated history Additional memories supporting the prior value in the same state trajectory without introducing a new value. Same-slot conflict Memories concerning the same entity– attribute slot but expressing a compet-ing value. 
+
+Table C.1: Paper terminology and construction of the four controlled memory relationships. 
+
+Plasticity asks whether a persistent valid update is adopted. The mirrored stability protocol retains the same 50 bases and compositions but introduces a one-occasion transient value and asks for the per-sistent/default state. Its target is the stable value, not the transient exception. Retrieval is rerun for the stability query; plasticity retrieval IDs are not reused. 13 Source Query Historical state Current state PERMA User’s favourite author? Leo Tolstoy Astrid Lindgren LongMemEval Wells Fargo mortgage pre-approval? $350,000 $400,000 HorizonBench Preferred response format? bullet points comparative synthesis tables MEME Tracking User’s vehicle? Therwyn Compact Xylorim Scooter 
+
+Table B.3: Representative audited old/current state pairs used by the external CMI transformations. 
+
+C.3 Fixed-L3 Update Authority 
+
+The fixed-L3 protocol isolates the authority con-veyed by a misleading memory. P0 supplies ordi-nary unrelated/control context, P1 gives the mis-leading value recency without update language, P2 frames it as a persistent update, and P3 uses author-itative correction wording. Each condition contains 100 paired cases for each reported access mecha-nism. This protocol is held separate from L0–L6 growth and from relationship counts. 
+
+D Metrics and Evaluators 
+
+D.1 Retrieval Metrics 
+
+Let Gi be target memory IDs, Fi competing or forbidden IDs, and Rki the top-k ranking for sample 
+
+i, with k = 3 . We report 
+
+Ti = ⊮[Gi ∩ Rki̸ = ∅], (D.1) 
+
+Ci = ⊮[Fi ∩ Rki̸ = ∅], (D.2) 
+
+MRR i =
+
+(
+
+1/r Gi , rGi < ∞
+
+0, otherwise, (D.3) 
+
+CE i = TiCi, (D.4) where rGi is the best target rank. For selector evalu-ations, preference ordering is 
+
+PO i = ⊮[Ti = 1 ∧ (Ci = 0 ∨ rGi < r Fi )] . (D.5) Target-only and competing-only rates are Ti(1 −Ci)
+
+and Ci(1 − Ti). The score margin is the target score minus the strongest forbidden score when both exist. Encoder-only robustness records the complete ranking before truncation and uses target-versus-forbidden rank ordering; its CSV retains this protocol-specific field separately. 
+
+D.2 Behavior Metrics 
+
+Plasticity is answer success on a valid persistent update. Stability is answer success on the mir-rored persistent-state query after a transient event. Noisy plasticity is valid-update success with com-peting/noise memories present. Poison acceptance is explicit adoption of the invalid state in the P0– P3 protocol; poisoning resistance is its comple-ment only within that protocol. Clean cases are not counted as stability. For pathway diagnostics, Ai denotes answer suc-cess and is analyzed as P (A | T ) and P (A | T, C ).These conditional quantities localize failure before versus after target exposure; they are descriptive diagnostics, not causal effects. 
+
+D.3 Generation Prompts and Parsing 
+
+Travel composition uses the following invariant instruction, followed by the slot type, selected memory context, query, and a slot-specific JSON schema:                      
+
+> You are a strict memory-state resolver. Use only the stored memories below to answer the query. If memories conflict, use the latest applicable stable update for the same traveler/day/slot. Do not explain. Do not copy long memory text. Return one valid compact JSON object only.
+
+The mirrored stability prompt replaces the con-flict sentence with: “The query asks for the persistent/default state. If a memory is tempo-rary, one-time, or for a single occasion, do not treat it as the default state.” Food outputs use 
+
+cuisine and selected_option ; budget outputs use budget and selected_option ; accommoda-tion outputs use room_type , joins_traveler ,
+
+rating_preference , price_preference , and a summary of at most 12 words. JSON extraction first parses the full response, then the first enclosed JSON object. A missing or invalid object is a parse failure, never a silent success. The five-source answer-augmentation prompt is:      
+
+> Answer the query using only the supplied memory context. Resolve persistent updates and one-off exceptions carefully. Return JSON only: {"answer": "concise answer"}. Do not explain your reasoning and do not mention memory IDs.
+
+14 External values are case-folded, reduced to al-phanumeric tokens, and compared after whitespace normalization. A predicted value matches if it equals the gold, contains the gold, or is a nonempty normalized substring of the gold with length at least two. For list-valued LongMemEval states, every current item must match and any superseded item is forbidden. Answer success requires a gold match and no forbidden match. Incorrect-memory use re-quires explicit adoption of a superseded value; it is not inferred as one minus answer success. Travel uses a slot-aware structured parser and target-grounded scoring for the composition mecha-nism analysis. The five-source augmentation study evaluates the predicted state directly and does not require exposure of a particular memory ID. This distinction is preserved in all result files. 
+
+E Memory Access Mechanisms                            
+
+> Method Final setting Lexical Re-trieval BM25 with k1= 1 .5,b= 0 .75 ; case-folded tokenizer [a-z0-9]+ ; no stopword removal. Dense Re-trieval Qwen3-Embedding-8B, native 4096 dimen-sions, attention-mask mean pooling over last hidden states, post-pooling L2 normal-ization, cosine similarity. Fixed fusion si(m) = α˜si,B (m)+(1 −α)˜ si,D (m)with
+> α= 0 .25 ;α= 1 is pure lexical and α= 0
+> is pure dense. RRF One-based ranks and s(m)=P
+> r∈{ B,D }1/(60 + rank r(m)) .Shared bud-get Top-3 for lexical, dense, fixed fusion, RRF, and IAAR; no reranker.
+
+Table E.1: Final access settings used by the retained experiments. 
+
+The Qwen encoder maximum sequence length is 2048 in the external runner. Equal retrieval scores are resolved deterministically by original insertion order. Fixed fusion applies independent per-query min–max normalization over the complete candi-date collection: 
+
+˜sr(m) = sr(m) − min j sr(j)max j sr(j) − min j sr(j) . (E.1) If the denominator is at most 10 −12 , every nor-malized score for that retriever is set to zero. The development-only z-score candidate first computes 
+
+(s − μ)/σ and then min–max normalizes; a stan-dard deviation or final range at most 10 −12 also produces all zeros. The IAAR lexical implementation uses positive IDF log(1 + ( N − df + 0 .5) /(df + 0 .5)) . This dif-fers from the rank-bm25 baseline’s negative-IDF behavior and is therefore recorded as a separate implementation detail rather than assumed byte-identical. 
+
+F IAAR Selector 
+
+IAAR is an exploratory selector, not a new memory architecture. It predicts α ∈ { 0, 0.25 , 0.5, 0.75 , 1}
+
+from inference-time observable retrieval signals and applies the same normalized score fusion above. The deployed feature schema contains the 18 features in Table F.1. For retrieval entropy, let uj = .5˜ sB,j + .5˜ sD,j 
+
+across candidate IDs. The implementation shifts by the minimum, aj = uj − min ℓ uℓ, and defines 
+
+pj = aj
+
+P 
+
+> ℓ
+
+aℓ
+
+, H = − X 
+
+> j:pj>0
+
+pj ln pj . (F.1) Natural logarithms are used. If any shifted value is non-finite or P 
+
+> j
+
+aj ≤ 10 −12 , entropy is exactly zero. The slot heuristic applies regular expressions for food, budget, accommodation, transport, and activity. If no semantic slot matches, it uses the first two normalized lexical tokens. The temporal signal counts four pattern groups: current/update language, old-state language, temporary/one-off language, and negation; its value is capped at one. Inference forbids event_type , stress_type ,composition labels or counts, gold or forbidden IDs, target IDs, behavior outcomes, oracle alpha, template IDs, and role-derived memory-ID fea-tures. The generator never sees selector confidence, method names, retrieval scores, or these labels. Oracle training labels maximize 
+
+Ui(α) = Bi(α) + 0 .2 MRR i(α)+ 0 .1 Security i(α), (F.2) where Bi is strict target-selected/forbidden-excluded retrieval success. Utilities within 0.01 prefer the smaller lexical weight. The final selector is a class-balanced random forest with 300 trees, minimum leaf size 2, random state 42, and unre-stricted parallel fitting. Bases are split 60/20/20 with no cross-split variants. Clean-only and CMI-augmented selectors share architecture, feature schema, development protocol, and test set; only the addition of in-domain CMI noisy same-slot training cases changes. 15 Features Exact construction                  
+
+> bm25_top1_score ,dense_ top1_score
+> Maximum raw score from each retriever.
+> bm25_dense_top1_gap Maximum normalized lexical score minus maximum normalized dense score.
+> topk_overlap Jaccard overlap of lexical and dense top-3 ID sets.
+> retrieval_entropy Entropy of the equal-weight normalized lexical–dense candidate scores, defined below.
+> score_margin Largest minus second-largest equal-weight combined score.
+> candidate_semantic_ similarity
+> Mean raw dense score among dense top-3 candidates.
+> lexical_overlap Mean query–memory token-set Jaccard over the complete candidate collection.
+> duplicate_density Mean pairwise token-set Jaccard over the complete candidate collection.
+> memory_age ,memory_count ,
+> average_age
+> Maximum insertion order, number of memories, and mean insertion order.
+> retrieved_candidate_ count
+> Size of the lexical/dense top-3 union.
+> topk_pairwise_ disagreement
+> Mean (1 −cos( ea,eb)) /2over pairs in the union.
+> same_slot_candidate_ count
+> Number of union candidates matching an automatic query slot (food, budget, accommo-dation, transport, or activity; lexical fallback otherwise).
+> automatic_ contradiction_score
+> Maximum same-slot disagreement multiplied by 0.5 + 0 .5times the larger automatic temporal/update signal.
+> duplicate_ratio Fraction of union pairs with lexical Jaccard at least 0.80.
+> topk_similarity_range Maximum minus minimum raw dense score in the union.
+
+Table F.1: Frozen deployable IAAR feature schema. All candidate-set features use the union of lexical and dense top-3 results unless stated otherwise. 
+
+G Hyperparameter Development 
+
+Development compared normalization in {min– max, z-score}; selector families were class-balanced logistic regression (maximum 3,000 iter-ations), the final random forest, and a one-hidden-layer MLP (32 hidden units, maximum 500 iter-ations, early stopping). Development macro-F1 selected the classifier. The fixed-fusion weight and normalization were selected on development data; test data were not used for tuning. Backend-specific Qwen/E5/NV/Linq reruns reuse the frozen random-forest configuration and perform no new hyperparameter search. Encoder robustness keeps native 4096-dimensional outputs for all models. E5-Mistral-7B-Instruct and Linq-Embed-Mistral use last-token pooling and their official query instruction; NV-Embed-v2 uses its native protocol. All vectors are L2-normalized before cosine top-3 retrieval. Alternative encoders use maximum length 512 and batch size 16; the primary Qwen runner uses batch size 64 with out-of-memory backoff. Travel composition and mirrored stability use 
+
+deepseek-v4-pro , temperature zero, thinking dis-abled, and at most 512 output tokens. The five-source answer experiment uses the same model and decoding controls with a 128-token limit. The frozen P0–P3 protocol uses deepseek-v4-flash ,temperature zero, API-default reasoning behavior, and 512 output tokens. 
+
+H Statistical Protocol 
+
+The paired unit is always the base scenario, not an individual transformed row. For each comparison, all loads, compositions, access variants, or training regimes derived from one base_id are resampled together. We report paired percentile 95% cluster-bootstrap intervals. Table H.1 records the actual replicate count in the paper-facing files.                            
+
+> Result family Reps. Seed Unit Travel growth 5,000 42 base ID Travel composition point CIs 1,000 20260721 base ID Travel paired contrasts 5,000 42 base ID Pathway diagnostics 2,000 42 base ID External growth 5,000 42 base ID Selector retrieval 5,000 42 base ID Answer augmentation 5,000 42 base ID Encoder robustness 1,000 42 base ID
+
+Table H.1: Bootstrap configuration by result family. 
+
+Initial Travel base selection uses seed 7. Com-position base selection, shuffling, shared-C0 or-dering, and mirrored-stability sampling use seed 20260721. The fixed-L3 diagnostic bootstrap uses seed 20260708. IAAR splits, classifiers, and the remaining paired analyses use seed 42. DeepSeek calls use temperature zero, fixed prompts, fixed contexts, and fixed schemas, but the retained API 16 did not expose an explicit sampling seed. The re-viewer artifact therefore includes the realized per-sample generations and deterministic evaluations; byte-identical new generation remains subject to provider-side serving. The five-source answer study evaluates 280 held-out cases under two training regimes for each of five sources, giving 5 × 280 × 2 = 2 ,800 gener-ated answers. It has no API or parsing failures. Reported means are point estimates over held-out bases; bootstrap intervals are sampling uncertainty and are not described as standard deviations across independent model runs. 
+
+I Computing Environment 
+
+Experiments ran on Ubuntu 22.04 (kernel 6.5.0-41) with two Intel Xeon Platinum 8352V proces-sors (144 logical CPUs), 503 GiB RAM, and eight NVIDIA RTX 4090 GPUs with 24,564 MiB each. The NVIDIA driver was 555.58.02 and PyTorch reported CUDA 12.8. Jobs used the Conda envi-ronment reasoning and available GPU devices. The captured versions were Python 3.10.19, Py-Torch 2.10.0+cu128, Transformers 5.12.1, scikit-learn 1.7.2, NumPy 2.2.5, pandas 2.2.3, SciPy 1.15.3, Matplotlib 3.10.7, OpenAI client 2.15.0, 
+
+rank-bm25 0.2.2, tiktoken 0.12.0, accelerate 
+
+1.14.0, faiss-cpu 1.13.2, FastAPI 0.128.0, and Uvicorn 0.40.0. Model identifiers and provider-side revisions are recorded as served at experi-ment time; no weights or API credentials are redis-tributed. 
+
+J Additional Audited Results 
+
+J.1 Travel Memory Growth 
+
+Figure J.1 reports both access families at every load with base-cluster intervals. The trajectories are non-monotonic: scale changes the operating point, but the severe relationship-specific failures in the next subsection do not follow from count alone. 
+
+J.2 Relationship-Controlled Composition 
+
+Figure J.2 plots every retained P/S ablation point and its base-cluster interval. Table J.2 gives the same point estimates compactly. Table J.3 reports paired C8–C0 and C8 relationship contrasts; inter-vals are computed on within-base differences rather than inferred from separate endpoint intervals. L0 L2 L4 L6 0.0 0.2 0.4 0.6     
+
+> Score
+> (a) Plasticity
+> L0 L2 L4 L6
+> (b) Stability
+> Memory load
+> Lexical Dense
+> Figure J.1: Travel L0–L6 plasticity and mirrored stabil-ity. Error bars are 95% base-cluster bootstrap intervals.
+
+J.3 Retrieval-to-Decision Pathway 
+
+Table J.4 retains the complete C8 exposure parti-tion. The four exposure cells sum to one in every row. Conditional denominators are shown because a high conditional success rate based on few ex-posed targets should not be mistaken for high end-to-end success. 
+
+J.4 Update Authority             
+
+> Access P0 P1 P2 P3 Lexical .02 .02 .23 .26 Dense .00 .00 .12 .14
+> Table J.5: Fixed-L3 poison-acceptance rates; 100 cases per access and condition.
+
+J.5 Cross-Dataset Growth 
+
+Table J.6 reports L6–L0 answer-level displacement. The paired intervals make the architecture contrast explicit: lexical access shows large plasticity losses, while dense retrieval exhibits substantially smaller changes on the same transformed bases. IAAR is not inserted into this table because the retained selector experiment uses a held-out noisy-update cohort rather than the same L0–L6 answer protocol. Its matched retrieval and answer results are reported separately in Figures J.6 and J.8. Complete endpoint estimates and paired inter-vals are retained in paper_results/chapter5/ external_growth.csv . In particular, all four Lex-ical ∆P intervals exclude zero. These transforma-tions diagnose access under controlled historical growth; they do not replace each source’s native benchmark evaluation. 17 L0 L1 L2 L3 L4 L5 L6 Lexical P .52 (.42,.62) .49 (.39,.58) .49 (.39,.59) .49 (.39,.59) .41 (.30,.51) .52 (.41,.63) .53 (.43,.64) Lexical S .22 (.10,.34) .22 (.10,.34) .18 (.08,.28) .18 (.08,.30) .16 (.06,.26) .16 (.06,.26) .24 (.12,.36) Dense P .50 (.40,.60) .52 (.40,.63) .50 (.40,.60) .48 (.38,.58) .39 (.29,.49) .31 (.22,.41) .38 (.27,.50) Dense S .18 (.08,.30) .36 (.24,.50) .40 (.26,.54) .38 (.24,.52) .36 (.22,.50) .36 (.22,.50) .34 (.22,.48) 
+
+Table J.1: Travel growth point estimates. Parentheses give 95% base-cluster intervals. 0.0 0.2 0.4 0.6 0.8 1.0           
+
+> Plasticity
+> Lexical Dense
+> 0248
+> Added memories
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> Stability
+> 0248
+> Added memories
+> Matched neutral Unrelated Repeated history Same-slot con fl ict
+
+Figure J.2: Plasticity and mirrored stability for every relationship–count ablation. Count zero is shared within each access family. Error bars are 95% base-cluster bootstrap intervals. Color, marker shape, and line style encode the same relationship, preserving legibility under grayscale printing.                
+
+> Access Relationship P0 P2 P4 P8 S0 S2 S4 S8 Lexical Matched neutral .84 .84 .84 .84 .92 .92 .92 .92 Unrelated .84 .84 .82 .82 .92 .92 .92 .92 Repeated history .84 .50 .50 .50 .92 .92 .92 .92 Same-slot conflict .84 .08 .34 .34 .92 .82 .88 .88 Dense Matched neutral .84 .82 .80 .80 .92 .90 .84 .84 Unrelated .84 .76 .70 .66 .92 .90 .90 .90 Repeated history .84 .58 .40 .38 .92 .92 .92 .92 Same-slot conflict .84 .60 .44 .40 .92 .78 .62 .54
+
+Table J.2: Plasticity (P) and stability (S) across memory relationships and counts. The C0 point is shared within an access family. 
+
+J.6 CMI-Augmented Selector Retrieval 
+
+Table J.7 reports the held-out noisy-update retrieval diagnostic. CMI augmentation improves target ac-cess and MRR on all five sources, while preference ordering does not improve uniformly because target and competing memories can remain co-exposed. Figure J.7 shows that the retrieval gains do not arise from a single constant alpha shift. CMI aug-mentation moves noisy-update cases toward more dense or mixed access on PERMA and Horizon-Bench, while LongMemEval and MEME retain substantial source-specific mass at alpha 0.75. This distribution is descriptive; alpha itself is not as-signed a semantic event label. 
+
+J.7 IAAR Relative to Fixed Retrieval on Matched Cohorts 
+
+The aggregate paper-cutoff record contains a complete same-cohort comparison among BM25, Dense RAG, RRF, fixed fusion, frozen IAAR, re-trained IAAR, and an oracle for PERMA and Long-MemEval. Figure J.8 reports their noisy-update retrieval metrics. We do not extend this figure to HorizonBench, MEME, or Travel because the re-tained fixed-retriever summaries for those sources are not on the exact held-out cohort used by the final selector ablation. This scope restriction pre-18 Access Contrast Metric Estimate CI low CI high Lexical C8–C0 repeated history P −.34 −.48 −.22 
+
+Lexical C8–C0 same-slot conflict P −.50 −.64 −.36 
+
+Lexical C8 repeated history minus unrelated P −.32 −.46 −.20 
+
+Lexical C8 same-slot conflict minus unrelated P −.48 −.62 −.34 
+
+Dense C8–C0 repeated history P −.46 −.60 −.32 
+
+Dense C8–C0 same-slot conflict P −.44 −.58 −.30 
+
+Dense C8 repeated history minus unrelated P −.28 −.46 −.10 
+
+Dense C8 same-slot conflict minus unrelated P −.26 −.40 −.12 
+
+Dense C8–C0 same-slot conflict S −.38 −.52 −.24 
+
+Table J.3: Key paired plasticity contrasts with 95% base-cluster intervals (5,000 resamples).                                                                                   
+
+> Access Relationship P(T)T-only C-only Co-exp. Neither nTP(A|T)P(A)
+> Lexical Matched neutral 1.00 .00 .00 1.00 .00 50 .840 .840 Unrelated 1.00 .00 .00 1.00 .00 50 .820 .820 Repeated history .66 .00 .00 .66 .34 33 .758 .500 Same-slot conflict .34 .00 .66 .34 .00 17 1.000 .340 Dense Matched neutral .92 .04 .02 .88 .06 46 .870 .800 Unrelated .82 .00 .18 .82 .00 41 .805 .660 Repeated history .48 .18 .08 .30 .44 24 .792 .380 Same-slot conflict .54 .00 .46 .54 .00 27 .741 .400
+
+Table J.4: Count-8 retrieval-to-decision decomposition. T is target exposure, C is competing exposure, and A is answer success. P0 Noise P1 Recent P2 Update P3 Authority 0.00 0.05 0.10 0.15 0.20 0.25 0.30  
+
+> Poison acceptance
+> BM25 Dense RAG
+
+Figure J.3: Poison acceptance under fixed-L3 author-ity conditions. P0 is ordinary control/noise, P1 adds recency only, P2 adds update wording, and P3 adds au-thoritative correction wording. 
+
+vents an unmatched comparison. Table J.10 reports selector-label prediction sepa-rately from end-to-end retrieval. Retraining greatly improves label prediction, but macro F1 remains the relevant audit statistic because the five alpha classes are imbalanced. These scores do not im-ply that the selected alpha dominates every fixed retriever on every metric. 
+
+Source Router Acc. Macro F1 Weighted F1 PERMA Frozen .511 .137 .425 Retrained .839 .581 .835 LongMemEval Frozen .529 .138 .373 Retrained .889 .631 .882 
+
+Table J.10: Frozen and source-retrained IAAR router metrics on held-out test variants. 
+
+J.8 Answer-Level CMI Augmentation 
+
+Table J.11 reports all matched unnoised and noisy-update point estimates. The noisy-update intervals are complete for all five sources. The LongMemEval stable-retention interval and PERMA/LongMemEval absolute wrong-use rates were not retained; they are left unavailable rather than inferred. The Travel paired analysis in Table J.12 confirms that the aggregate answer improvement is concen-trated in noisy updates. The unnoised interval in-cludes zero and its point estimate is below 0.005, while the noisy-update gain is 0.300. Incorrect-memory usage falls by the same paired amount in this specific Travel evaluator; no complementar-ity assumption is used for sources whose absolute wrong-use fields were not retained. 
+
+J.9 External Fixed-L3 Poisoning Probe 
+
+Table J.13 reports all four external sources under the matched answer-level fixed-L3 protocol. The non-monotonic source and access differences rein-19 0.00 0.25 0.50 0.75 1.00 
+
+> PERMA Answer success
+
+Plasticity Stability Noisy plasticity       
+
+> L0 L1 L2 L3 L4 L5 L6
+
+Memory load       
+
+> 0.00 0.25 0.50 0.75 1.00
+> LongMemEval Answer success
+> L0 L1 L2 L3 L4 L5 L6
+
+Memory load       
+
+> L0 L1 L2 L3 L4 L5 L6
+
+Memory load  
+
+> Lexical Dense
+
+Figure J.4: Complete external L0–L6 trajectories retained for PERMA and LongMemEval. Each panel uses the same paired bases across loads. Per-load point estimates are shown without pseudo-replicate error bars; the paired L6–L0 confidence intervals appear in Figure J.5. 
+
+Source Access ∆P ∆S ∆Pn
+
+PERMA Lexical −.720 [ −.840 , −.600] .000 [ .000 , . 000] −.520 [ −.740 , −.300] 
+
+Dense −.040 [ −.100 , . 000] .000 [ .000 , . 000] −.080 [ −.160 , −.020] 
+
+LongMemEval Lexical −.826 [ −.935 , −.696] +.022 [ .000 , . 065] −.717 [ −.891 , −.522] 
+
+Dense −.043 [ −.109 , . 000] −.022 [ −.065 , . 000] −.043 [ −.109 , . 000] 
+
+HorizonBench Lexical −.940 [ −1.00 , −.860] .000 [ .000 , . 000] −.880 [ −1.00 , −.720] 
+
+Dense −.120 [ −.220 , −.040] .000 [ .000 , . 000] −.160 [ −.260 , −.060] 
+
+MEME Tracking Lexical −.860 [ −.940 , −.760] .000 [ .000 , . 000] −.860 [ −.940 , −.760] 
+
+Dense −.120 [ −.220 , −.040] .000 [ .000 , . 000] −.140 [ −.240 , −.060] 
+
+Table J.6: Answer-level L6–L0 displacement with paired 95% base-cluster intervals. Pn denotes valid-update success with noise. 
+
+Source Training R@3 MRR PO CE Mean α
+
+TravelPlanner Clean only .529 .283 .114 .529 .296 CMI augmented .986 .536 .257 .986 .411 PERMA Clean only .486 .430 .286 .486 .768 CMI augmented .929 .598 .300 .929 .293 LongMemEval Clean only .886 .486 .071 .886 .689 CMI augmented 1.000 .526 .071 1.000 .532 HorizonBench Clean only .514 .324 .000 .514 .782 CMI augmented .929 .459 .014 .929 .171 MEME Tracking Clean only .314 .330 .243 .314 .918 CMI augmented .929 .756 .600 .929 .536 
+
+Table J.7: Clean-only versus in-domain CMI-augmented IAAR retrieval on held-out noisy updates. R@3 is tar-get recall, PO is preference ordering, and CE is co-exposure. 
+
+force that update framing, repetition, and the access mechanism interact rather than inducing a univer-sal severity order. Together with the TravelPlanner P0–P3 result in Table J.5, this completes the five-source fixed-L3 evidence retained in the appendix.                      
+
+> Source ∆R@3 95% CI ∆MRR 95% CI ∆PO 95% CI TravelPlanner +.457 [.314,.586] +.252 [.140,.383] +.143 [.000,.343] PERMA +.443 [.243,.657] +.168 [.033,.287] +.014 [-.200,.229] LongMemEval +.114 [.043,.200] +.041 [.011,.076] .000 [.000,.000] HorizonBench +.414 [.243,.586] +.135 [.080,.200] +.014 [.000,.043] MEME Tracking +.614 [.443,.757] +.426 [.268,.580] +.357 [.129,.586]
+
+Table J.8: Paired CMI-augmentation deltas with 95% base-cluster intervals. 
+
+J.10 Native-4096 Encoder Robustness 
+
+Figure J.9 changes only the dense encoder while keeping native 4096-dimensional output, cosine top-3 retrieval, query set, memory set, and compo-sition counts fixed. It is a robustness check rather than an encoder leaderboard. Error bars use 1,000 base-cluster resamples. Across encoders, matched neutral and unrelated additions are generally less damaging than repeated history or same-slot conflict, although the magni-tude and non-monotonic details are backend depen-20 PERMA LongMem Horizon MEME −1.0 −0.8 −0.6 −0.4 −0.2 0.0 
+
+> L6 - L0 answer success
+
+Plasticity 
+
+> PERMA LongMem Horizon MEME
+
+Stability 
+
+> PERMA LongMem Horizon MEME
+
+Noisy plasticity  
+
+> Lexical Dense
+
+Figure J.5: L6–L0 answer-success displacement on all four external CMI transformations. Error bars are paired 95% base-cluster bootstrap intervals. Full intermediate-load outputs were retained for PERMA and LongMemEval; the HorizonBench and MEME archives retain audited endpoints and paired intervals. Travel PERMA LongMem Horizon MEME 0.0 0.2 0.4 0.6 0.8 1.0 
+
+> Score
+> Target R@3
+> Travel PERMA LongMem Horizon MEME
+> MRR
+> Travel PERMA LongMem Horizon MEME 0.0 0.2 0.4 0.6 0.8 1.0
+> Score
+> Preference ordering
+> Travel PERMA LongMem Horizon MEME
+> Noisy-update answer success
+
+Figure J.6: Matched clean-only versus CMI-augmented IAAR results on five data sources. The first three panels are retrieval-level noisy-update diagnostics; the fourth is answer-level noisy-update success. Both training regimes use the same held-out cases and selector architecture. 
+
+Clean only CMI augmented Source Accuracy Macro F1 Accuracy Macro F1 TravelPlanner .779 .584 .893 .707 PERMA .786 .432 .839 .581 LongMemEval .775 .448 .889 .631 HorizonBench .746 .519 .921 .714 MEME Tracking .789 .716 .914 .906 
+
+Table J.9: Held-out selector-label prediction under clean-only and in-domain CMI-augmented training. These are all-event test metrics, not answer accuracy. 
+
+dent. The accompanying composition summary and C8–C0 bootstrap CSV preserve the values shown in this figure; fresh per-sample rankings are reconstructed by the retained encoder script. 
+
+Encoder Relationship ∆R@3 [95% CI] Qwen3-8B Matched neutral −.08 [−.16 , −.02 ]Unrelated −.18 [−.30 , −.08 ]Repeated history −.52 [−.66 , −.38 ]Same-slot conflict −.46 [−.60 , −.32 ]E5-Mistral Matched neutral −.32 [−.44 , −.20 ]Unrelated −.32 [−.44 , −.20 ]Repeated history −.68 [−.80 , −.56 ]Same-slot conflict −.58 [−.72 , −.44 ]NV-Embed-v2 Matched neutral .00 [.00 , . 00 ]Unrelated −.06 [−.14 , . 00 ]Repeated history −.32 [−.46 , −.18 ]Same-slot conflict −.50 [−.64 , −.36 ]Linq-Mistral Matched neutral .00 [.00 , . 00 ]Unrelated −.10 [−.18 , −.02 ]Repeated history −.22 [−.34 , −.12 ]Same-slot conflict −.42 [−.56 , −.28 ]
+
+Table J.14: C8–C0 Target Recall@3 changes under native-4096 encoder replacement. Brackets contain 95% base-cluster bootstrap intervals. 
+
+21 0.0 0.2 0.4 0.6 0.8 1.0          
+
+> Fraction of noisy-update cases
+> Travel PERMA LongMem Horizon MEME
+> Clean only
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> Fraction of noisy-update cases
+> CMI augmented
+> Lexical weight alpha
+> 00.25 0.5 0.75 1
+
+Figure J.7: IAAR lexical-weight distributions on held-out noisy-update cases. Each bar contains 70 cases. Alpha 0 is pure dense retrieval and alpha 1 is pure lexical retrieval. No event label is available to the selector at inference. 0.0 0.2 0.4 0.6 0.8 1.0   
+
+> PERMA Score
+> Target R@3 MRR Preference ordering
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> LongMemEval Score
+
+Figure J.8: Noisy-update retrieval comparison on matched PERMA and LongMemEval test cohorts (70 cases per row). “Frozen” transfers the original selector; “Retrain” uses the source-specific fixed training protocol. The oracle is an upper bound and is not deployable. Neutral Unrel. Redun. Con fl ict 0.0 0.2 0.4 0.6 0.8 1.0       
+
+> Target Recall@3
+> +2 memories
+> Neutral Unrel. Redun. Con fl ict
+> +4 memories
+> Neutral Unrel. Redun. Con fl ict
+> +8 memories
+
+Figure J.9: Target Recall@3 at C2, C4, and C8 for four native-4096 embedding backends. Labels are printed inside bars; color remains distinguishable in grayscale through luminance. 
+
+The direction of the relationship effect is robust, but its magnitude is not encoder invariant. In par-ticular, Linq is comparatively robust to repeated history whereas NV exhibits a larger same-slot-conflict loss. We therefore use the encoder swap as evidence for a recurring relationship ordering, not for a universal ranking among embedding models. 22 Source Condition Clean CMI aug. Delta 95% CI TravelPlanner Clean 1.000 1.000 .000 [.000,.000] Stable retention .700 .700 .000 [.000,.000] Valid update .871 .886 +.014 [.000,.043] Noisy update .386 .686 +.300 [.129,.486] PERMA Clean .900 .900 .000 [.000,.000] Stable retention .900 .900 .000 [.000,.000] Valid update .829 .829 .000 [.000,.000] Noisy update .386 .829 +.443 [.243,.643] LongMemEval Clean 1.000 1.000 .000 [.000,.000] Stable retention .943 .957 +.014 –Valid update 1.000 1.000 .000 [.000,.000] Noisy update .886 1.000 +.114 [.029,.214] HorizonBench Clean 1.000 1.000 .000 [.000,.000] Stable retention 1.000 1.000 .000 [.000,.000] Valid update .986 .986 .000 [.000,.000] Noisy update .514 .929 +.414 [.243,.600] MEME Tracking Clean 1.000 1.000 .000 [.000,.000] Stable retention 1.000 1.000 .000 [.000,.000] Valid update .986 .986 .000 [.000,.000] Noisy update .314 .929 +.614 [.429,.757] 
+
+Table J.11: Answer success under clean-only and in-domain CMI-augmented selector training. Each row has 70 cases. “CI” is for the paired delta.                   
+
+> Cohort and metric Delta CI low CI high All: answer success +.079 +.036 +.125 All: incorrect use −.079 −.122 −.036
+> Unnoised: answer success +.005 .000 +.014 Noisy: answer success +.300 +.129 +.486 Noisy: incorrect use −.300 −.486 −.129
+
+Table J.12: Travel CMI-augmentation paired an-swer deltas (5,000 base-cluster resamples). 
+
+Source Access Recency Repeated history Latest update PERMA Lexical .360 .460 .860 Dense .060 .465 .810 LongMemEval Lexical .440 .516 .489 Dense .212 .848 .745 HorizonBench Lexical .470 .600 .590 Dense .115 .920 .775 MEME Tracking Lexical .430 .480 .930 Dense .055 .370 .765 
+
+Table J.13: Poison-acceptance rates in the external fixed-L3 answer probe. Recency adds one invalid recent state; repeated history adds three; latest update gives one invalid memory explicit update status. Each access-condition cell contains 184 LongMemEval cases or 200 cases for the other sources. 
+
+K Threats to Validity and Evidence Boundaries 
+
+Controlled transformations versus native bench-marks. CMI reuses states and queries from ex-ternal sources but imposes a common historical-growth protocol. The reported values diagnose memory interference; they are not replacements for PERMA, LongMemEval, HorizonBench, or MEME native leaderboard scores. Source-specific language can still affect lexical and dense retrieval, which is why results are reported by source rather than only as a pooled mean. 
+
+Coverage and statistical uncertainty. Each source contains 46–50 paired bases. Cluster boot-strap intervals quantify uncertainty over those bases, not variation across independently trained generators or embedding checkpoints. Horizon-Bench and MEME retain audited L0/L6 endpoints and paired intervals but not every intermediate answer-level summary in the final paper archive; no missing trajectory points are interpolated. Long-MemEval stable-retention augmentation lacks a retained paired interval, so only its point estimate is reported. 
+
+Retrieval and generation scope. The primary dense access uses one 4096-dimensional Qwen encoder, with three same-dimensional encoder re-placements as a retrieval robustness check. The an-swer studies use one hosted generator under deter-ministic decoding controls; provider-side serving may still change. Retrieval-pathway conclusions are therefore limited to the reported lexical, dense, fusion, RRF, and IAAR access mechanisms. 
+
+Selector scope. IAAR is an exploratory selector trained on oracle-derived alpha labels, not a gen-eral memory-state reasoner. Source retraining im-proves its label prediction and noisy-update access, but preference ordering remains weak on several sources because target and competitor can be co-exposed. The frozen-versus- retrained full retriever comparison is available only for matched PERMA and LongMemEval cohorts. We therefore claim 23 evidence that CMI augmentation can teach use-ful interference signals, not that IAAR universally dominates fixed retrieval. 
+
+Annotation and redistribution. Gold target, his-torical, and forbidden roles are required to con-struct and audit CMI but are hidden from deployed retrieval, selection, and generation. LongMemEval old values include an API-assisted extraction fol-lowed by strict evidence-span verification; 46 of 50 paper-cutoff candidates pass. The confidential reviewer artifact includes the exact transformed in-puts consumed by the retained experiments, while upstream URLs are retained only for attribution and provenance. A later public release may use a narrower source-only boundary where redistribu-tion terms require it. 
+
+L Artifact Inventory and Reproduction Procedure 
+
+The submitted reviewer artifact contains: • code/ : the paper-cutoff construction, re-trieval, IAAR, generation, evaluation, boot-strap, and encoder-robustness implementa-tion; • data/ : the exact transformed TravelPlanner, PERMA, LongMemEval, HorizonBench, and MEME inputs plus construction and protocol audits; • results/paper_tables/ : aggregate paper-facing CSVs and paired bootstrap intervals; • results/answer_generation/ ,
+
+results/fixed_l3_poisoning/ , and 
+
+results/encoder_robustness/ : realized per-sample outputs retained for offline scoring and figure verification; • docs/ : environment, dependencies, hyperpa-rameters, seeds, licenses, and third-party no-tices; and • README.md , DATA_MANIFEST.md , validate_ artifact.py , and FILE_MANIFEST.sha256 .No external paper code or data repository is required to inspect the submitted experiments. Model checkpoints and API services are not bun-dled because of size and provider terms; ex-act identifiers and settings are recorded in docs/ hyperparameters.md . The bundled outputs per-mit answer scoring and statistical checks without new API calls. The recommended reproduction order is: un-pack the archive; verify FILE_MANIFEST.sha256 ;run validate_artifact.py ; create the CMI envi-ronment; execute retrieval on the included data/ ;use the bundled outputs for deterministic scor-ing and base-cluster summaries; and only then repeat model-backed retrieval or generation if de-sired. Hugging Face and DeepSeek credentials are needed only for fresh model calls, not for the offline audit. The original experiments ran in the server environment reasoning ; clean reproduction was validated in a newly created environ-ment named CMI . The captured repository HEAD was 6cd9de14b71915e39ac742a20 dc33785e14b6aab , but the working tree contained experiment changes. The submitted file manifest, rather than the Git hash alone, identifies the code, data, and result snapshot. No API keys, model weights, or embedding caches are included. The archive does include the transformed paper inputs and realized per-sample outputs needed for review. Known provenance limitations are retained explicitly: the standalone PERMA and LongMemEval answer summaries were recovered from an audited consolidated ev-idence record; unsupported absolute wrong-use values and the unavailable LongMemEval stable-retention interval are not reconstructed. 24 Stage Entry point Principal output Environment setup_cmi_environment.sh Conda environment CMI and package au-dit Travel growth build_travel_plasticity_stability_ growth.py 
+
+L0–L6 paired JSONL and validation re-port Composition build_composition_mechanism_dataset.py Four relationships at counts 0/2/4/8 Mirrored stability run_mirrored_stability_experiment.py Stability retrieval, generation, and sum-maries External construction build_*_travel_isomorphic.py Source-specific CMI JSONL and proto-col audit Retrieval run_external_travel_isomorphic_ retrieval.py 
+
+Lexical and dense outputs IAAR training run_iaar_noise_training_ablation.py Clean-only/CMI selector outputs and paired deltas Answer generation run_iaar_noise_training_answer_ ablation.py 
+
+Realized JSON answers and determinis-tic scores Fixed-L3 answers run_external_fixed_l3_poison_answers. py 
+
+BM25/Dense outputs and corrected poi-soning scores Encoder check run_embedding_backend_appendix.py Native-4096 composition rankings Package validation validate_artifact.py Dataset counts, pairing, credentials, paths, result rows, and checksums 
+
+Table L.1: Command-level reproduction map. Exact arguments and defaults are recorded in the named scripts and 
+
+hyperparameters.md .
+
+25
