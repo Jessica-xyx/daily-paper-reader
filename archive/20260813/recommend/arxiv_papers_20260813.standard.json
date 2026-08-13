@@ -1,0 +1,260 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-13T21:17:38.959086+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2608.10108v1",
+      "source": "arxiv",
+      "title": "MESA:Task-Adaptive Multi-Structure Evidence Selection for Long-Horizon Agent Memory",
+      "abstract": "Long-horizon agents accumulate trajectories spanning hundreds of interleaved reasoning, action, and observation steps, where answering a query may depend on evidence buried far back in the history. External memory stores such trajectories as structured representations, yet each structure provides a distinct and incomplete view. Existing multi-memory systems either read a fixed set of structures for every query, inflating context and introducing noise, or route each query to a single structure, preventing the composition of complementary evidence. A controlled analysis on AMA-Bench shows that the optimal memory configuration is typically neither a single structure nor the full union, but a tailored composition of multiple structural memories that varies with query and task demands. Motivated by these findings, we formulate structure-level dynamic selection: selecting and fusing a query-adaptive subset from a library of specialized memory structures. We propose MESA (a Multi-structure Evidence Selection framework for long-horizon Agent), which builds five complementary structure views of each trajectory and learns from end-to-end answer-level feedback to select and fuse a query-specific subset for a frozen answer model. To learn under this weak supervision, MESA employs harness optimization with prior-guided search and UCB-guided scheduling to balance exploration and exploitation. On AMA-Bench, MESA outperforms the strongest baseline by 8.5% while using 41% fewer evidence tokens than the all-structure alternative.",
+      "authors": [
+        "Beidi Zhao",
+        "Yaoqi Chen",
+        "Yuru Feng",
+        "Menghao Li",
+        "Qianxi Zhang",
+        "Baotong Lu",
+        "Jianan Lu",
+        "Zhirui Wang",
+        "Xinjiang Wang",
+        "Shusen Xu",
+        "Zengzhong Li",
+        "Xiaoxiao Li",
+        "Qi Chen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-10T18:23:04+00:00",
+      "link": "https://arxiv.org/pdf/2608.10108v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "introduces task-adaptive multi-structure evidence selection for long-horizon agent memory",
+      "llm_evidence_cn": "提出长时程代理记忆中的任务自适应多结构证据选择方法",
+      "llm_evidence": "提出长时程代理记忆中的任务自适应多结构证据选择方法",
+      "canonical_evidence": "提出长时程代理记忆中的任务自适应多结构证据选择方法",
+      "llm_tldr_en": "Proposes MESA, a task-adaptive evidence selection method that composes complementary structural memories per query, avoiding fixed or single-structure reading in long-horizon agent memory.",
+      "llm_tldr_cn": "长时程代理会积累数百步交互轨迹，回答查询可能需要结合多种记忆结构中的互补证据。现有方法要么对所有查询读取固定结构集合，要么只路由到单一结构，无法组合互补证据。MESA根据任务自适应地为每个查询选择多个结构记忆的组合，并在AMA-Bench上验证了最优配置通常是定制化多结构组合而非单结构或全合并。该方法为长时程代理记忆的读取与组合提供了新的决策策略。",
+      "llm_tldr": "长时程代理会积累数百步交互轨迹，回答查询可能需要结合多种记忆结构中的互补证据。现有方法要么对所有查询读取固定结构集合，要么只路由到单一结构，无法组合互补证据。MESA根据任务自适应地为每个查询选择多个结构记忆的组合，并在AMA-Bench上验证了最优配置通常是定制化多结构组合而非单结构或全合并。该方法为长时程代理记忆的读取与组合提供了新的决策策略。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10502v1",
+      "source": "arxiv",
+      "title": "From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents",
+      "abstract": "Persistent memory lets language-model agents reuse information across sessions, but it also makes errors durable: a poisoned, stale, or misattributed record can alter reasoning, tool use, answers, and subsequent memory writes. Existing defenses mainly detect or delete suspicious memories, or revise the current response. Deleting the source leaves already propagated claims, actions, and derived memories active, whereas resetting the store or replaying the full trace destroys benign state and repeats unnecessary computation. We therefore formulate \\textbf{post-failure memory recovery: } \\textit{given a failed execution and diagnosed faulty memories, recover both the answer and persistent state while retaining unaffected work.} Our \\textbf{dependency-guided rollback repair} builds a typed memory-to-action graph from runtime provenance, traces explicit downstream dependencies, preserves candidates with independent trusted support, deactivates unsupported memory state, and selectively replays only answer-relevant affected computation. We evaluate this approach on a 150-case controlled benchmark spanning three tool-use domains and four memory failure types, and on a 50-case trajectory-derived stress test adapted from LongMemEval-V2. On the controlled benchmark, it achieves 85.3\\% recovery versus 77.3\\% for the best competing recovery method, removes all diagnosed faulty memories, preserves all benign memories, and requires only selective replay with modest LLM-call cost. On the adapted subset, it reaches 68.0\\% recovery versus 54.0\\% for the next best method, while also achieving the highest claim invalidation F1, 0.669 versus 0.603. Overall, the results do not imply uniformly better trace reconstruction, but show that dependency-guided rollback repair provides a strong recovery--cost trade-off while repairing faulty memory state and preserving benign memory.",
+      "authors": [
+        "Caili Yu",
+        "Yiqi Wang",
+        "Jiaqi Zhang",
+        "Yiqun Duan",
+        "Mingkai Zheng",
+        "Zhangkai Wu",
+        "Kaize Shi",
+        "Taotao Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-11T05:19:55+00:00",
+      "link": "https://arxiv.org/pdf/2608.10502v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Memory recovery and rollback repair for memory-augmented agents",
+      "llm_evidence_cn": "面向记忆增强智能体的故障记忆恢复与回滚修复",
+      "llm_evidence": "面向记忆增强智能体的故障记忆恢复与回滚修复",
+      "canonical_evidence": "面向记忆增强智能体的故障记忆恢复与回滚修复",
+      "llm_tldr_en": "Proposes dependency-guided rollback repair for memory-augmented agents, recovering both answer and persistent state after faulty memory diagnosis without destroying benign state.",
+      "llm_tldr_cn": "持久记忆会使错误跨会话传播，中毒或失效的记录会污染推理和工具调用，而现有方法或只删源记忆，或重置整个存储，代价高昂。该工作提出依赖引导的回滚修复，在给定故障记忆诊断后，沿着依赖链回滚已传播的操作并恢复未受影响的状态。实验表明其能高效恢复答案与持久状态，同时保留良性上下文。这为记忆增强智能体的容错与恢复提供了切实可行的新方向。",
+      "llm_tldr": "持久记忆会使错误跨会话传播，中毒或失效的记录会污染推理和工具调用，而现有方法或只删源记忆，或重置整个存储，代价高昂。该工作提出依赖引导的回滚修复，在给定故障记忆诊断后，沿着依赖链回滚已传播的操作并恢复未受影响的状态。实验表明其能高效恢复答案与持久状态，同时保留良性上下文。这为记忆增强智能体的容错与恢复提供了切实可行的新方向。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10509v1",
+      "source": "arxiv",
+      "title": "MAP-Graph: Provenance-Aware Shared Memory for Multi-Agent Workflows",
+      "abstract": "Shared memory helps language-model agents reuse information across long workflows, yet relevant evidence may not be admissible for a particular agent or action. Because restrictions propagate through derivations, summaries can conceal private, poisoned, untrusted, or revoked sources, enabling unauthorized reads or unsafe actions. Existing approaches provide semantic retrieval, scoped access, or lineage tracking, but do not clearly separate hard authorization from graded trust or adapt evidence requirements to action risk. We introduce MAP-Graph, a provenance-aware memory layer that represents agents, sources, memories, claims, and actions in a typed execution graph. It traces ancestry, excludes permission-ineligible records, reranks eligible memories by semantic similarity and multiplicative path trust, and applies a risk-sensitive gate before action execution while retaining affected lineage for audit. On a controlled benchmark of 2,700 synthetic tasks per method across three domains, MAP-Graph achieves 94.96\\% overall task success, 72.70\\% exact decision accuracy, and 90.22\\% in the clean setting, where success requires a correct \\textsc{Allow} rather than a safe intervention. Ablations isolate the roles of permission filtering, path trust, and action gating, while transfer tests with two additional backbones preserve the exact-decision and access-control advantages. These results support provenance as an operational control signal, rather than only post-hoc audit metadata, within the evaluated setting.",
+      "authors": [
+        "Yiqi Wang",
+        "Zihao Yan",
+        "Jiaqi Zhang",
+        "Zhangkai Wu",
+        "Mingkai Zheng",
+        "Zequn Sun",
+        "Yanming Zhu",
+        "Taotao Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-08-11T05:31:18+00:00",
+      "link": "https://arxiv.org/pdf/2608.10509v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "provenance-aware shared memory layer for multi-agent workflows with typed execution graph",
+      "llm_evidence_cn": "面向多智能体工作流的溯源感知共享记忆层，使用类型化执行图",
+      "llm_evidence": "面向多智能体工作流的溯源感知共享记忆层，使用类型化执行图",
+      "canonical_evidence": "面向多智能体工作流的溯源感知共享记忆层，使用类型化执行图",
+      "llm_tldr_en": "Proposes MAP-Graph, a provenance-aware memory layer using typed execution graphs to track ancestry, enforce authorization, and rerank eligible memories by trust and action risk.",
+      "llm_tldr_cn": "共享记忆帮助智能体在工作流中复用信息，但相关证据可能不可采用或包含私有、受污染、不可信来源。本文提出MAP-Graph，一个溯源感知的记忆层，将智能体、来源、记忆、声明与动作表示为类型化执行图。它追踪谱系、排除无权限记录，并根据信任和动作风险重排候选记忆。相比现有方法，MAP-Graph更好地分离硬授权与分级信任，为多智能体工作流提供安全可信的共享记忆。",
+      "llm_tldr": "共享记忆帮助智能体在工作流中复用信息，但相关证据可能不可采用或包含私有、受污染、不可信来源。本文提出MAP-Graph，一个溯源感知的记忆层，将智能体、来源、记忆、声明与动作表示为类型化执行图。它追踪谱系、排除无权限记录，并根据信任和动作风险重排候选记忆。相比现有方法，MAP-Graph更好地分离硬授权与分级信任，为多智能体工作流提供安全可信的共享记忆。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10676v1",
+      "source": "arxiv",
+      "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
+      "abstract": "Large language model (LLM)-based search agents answer questions through multi-step interactions with external environments. However, providing complete execution trajectories to the LLM causes unbounded context growth and introduces noise. Existing compression methods reduce context at the cost of important details and often replace erroneous facts without repairing downstream reasoning derived from them. To address this problem, we propose ReTree, a self-correcting tree-structured memory mechanism for search agents. ReTree constructs a bounded per-step reasoning context while preserving source-linked evidence. It models search as an evidence tree whose nodes store bounded summaries, evidence, and revision histories. When newly retrieved evidence contradicts an earlier claim, ReTree traces back to the node where the claim was introduced, replaces outdated evidence, regenerates summaries, prunes affected branches, and resumes search. Source-grounded evidence provenance supports reliable conflict localization and keeps final claims traceable to retrieved passages. Experiments on four public question-answering and search benchmarks show that ReTree consistently outperforms Full-Trajectory ReAct, improving answer accuracy by up to 25.6 percentage points (pp); the average maximum per-step reasoning context of Full-Trajectory ReAct is $1.27$--$1.51\\times$ that of ReTree. These results establish ReTree as an effective self-correcting memory abstraction for long-horizon search.",
+      "authors": [
+        "Aijun Yang",
+        "Qianxue Guo",
+        "Ziyi Huang",
+        "Yuxuan Chen",
+        "Shiyou Qian",
+        "Jian Cao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-11T08:56:42+00:00",
+      "link": "https://arxiv.org/pdf/2608.10676v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Tree-structured memory method for self-correction in LLM search agents",
+      "llm_evidence_cn": "面向LLM搜索代理的树结构记忆方法，支持自校正与有界上下文",
+      "llm_evidence": "面向LLM搜索代理的树结构记忆方法，支持自校正与有界上下文",
+      "canonical_evidence": "面向LLM搜索代理的树结构记忆方法，支持自校正与有界上下文",
+      "llm_tldr_en": "ReTree introduces a self-correcting tree-structured memory for LLM search agents, bounding context per step while preserving source-linked evidence and revision histories, and revises downstream reasoning when new evidence contradicts old facts; experiments show improved long-horizon search performance.",
+      "llm_tldr_cn": "长程搜索代理在与外部环境交互时，如果提供完整执行轨迹会导致上下文无限增长并引入噪声，而现有压缩方法常丢失关键细节，且无法修复因错误事实而来的下游推理。为此，ReTree提出一种自校正的树结构记忆机制：将搜索建模为证据树，每个节点存储有界摘要、证据和修订历史，并在新证据与旧证据冲突时回溯修正。实验表明ReTree能在限制上下文长度的同时保留证据细节，提高长程搜索代理的回答质量。该方法为代理记忆提供了一种兼具压缩与自我修正的结构化方案。",
+      "llm_tldr": "长程搜索代理在与外部环境交互时，如果提供完整执行轨迹会导致上下文无限增长并引入噪声，而现有压缩方法常丢失关键细节，且无法修复因错误事实而来的下游推理。为此，ReTree提出一种自校正的树结构记忆机制：将搜索建模为证据树，每个节点存储有界摘要、证据和修订历史，并在新证据与旧证据冲突时回溯修正。实验表明ReTree能在限制上下文长度的同时保留证据细节，提高长程搜索代理的回答质量。该方法为代理记忆提供了一种兼具压缩与自我修正的结构化方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11654v1",
+      "source": "arxiv",
+      "title": "Towards a Formal Definition of Agent Memory: Basis, Span, Optimality, and the Sequential Memory Problem",
+      "abstract": "Despite the wide deployment of memory in large-model agents, there is no unified formal account of what a memory is or when it is optimal. This paper takes a first step toward this account. The central idea is that memory is a basis, knowledge is its span, and answerability is a coverage problem: an agent stores events extracted from a material; a generation operator turns any event set into the knowledge it entails; and a query is answerable exactly when some single item in the span covers it. The optimal memory is then the capacity-constrained maximizer of expected coverage, and its value traces a utility--capacity frontier, the common yardstick on which memory systems can be compared. Next, we consider noise in the memory and discuss coverage versus precision under it: a memory may store false claims, so the write policy must infer the truth of what it stores. Drawing an analogy with biological memory, which is formed continuously through ongoing experience, we formalize the continual agent-memory problem in a sequential MDP that covers multiple levels, where memory is the state, writing is the action, and the utility settled at query time is the delayed reward that drives learning. To make the framework concrete, we instantiate it on Homer's \\emph{Odyssey}, turning the frontier, the compression zone, and the divergence of coverage from precision into concrete numbers. Finally, we position existing systems within the framework, making ``how good is a memory'' measurable and recasting the open problems of constructing and learning agent memory as concrete research questions.",
+      "authors": [
+        "Hongyao Tang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-12T04:54:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.11654v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "formal framework for agent memory and optimality",
+      "llm_evidence_cn": "Agent记忆的形式化定义与最优性理论",
+      "llm_evidence": "Agent记忆的形式化定义与最优性理论",
+      "canonical_evidence": "Agent记忆的形式化定义与最优性理论",
+      "llm_tldr_en": "This paper gives a unified formal account of agent memory, viewing memory as a basis and knowledge as its span, defines answerability as coverage, and characterizes optimal memory as a capacity-constrained maximizer of expected coverage on a utility-capacity frontier.",
+      "llm_tldr_cn": "现有大型模型Agent虽广泛使用记忆，但缺乏统一的记忆形式化定义，难以判断何种记忆最优。本文提出用基与张成刻画记忆与知识，将查询可答性建模为覆盖问题，并给出容量约束下最大化期望覆盖的最优记忆定义。该框架借助效用-容量前沿为不同记忆系统提供统一比较尺度，并进一步考虑噪声对记忆的影响。这项理论工作可为Agent记忆方法设计与评测提供基础性依据。",
+      "llm_tldr": "现有大型模型Agent虽广泛使用记忆，但缺乏统一的记忆形式化定义，难以判断何种记忆最优。本文提出用基与张成刻画记忆与知识，将查询可答性建模为覆盖问题，并给出容量约束下最大化期望覆盖的最优记忆定义。该框架借助效用-容量前沿为不同记忆系统提供统一比较尺度，并进一步考虑噪声对记忆的影响。这项理论工作可为Agent记忆方法设计与评测提供基础性依据。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07905v1",
+      "source": "arxiv",
+      "title": "GraphThink: Graph-Enhanced LLM Thinking for Long-Horizon Embodied Task Planning",
+      "abstract": "Embodied agents using LLM-based planners often struggle with physical hallucinations, poor generalization to long-horizon tasks, and lack of environmental awareness. We propose GraphThink, a novel framework that integrates a task graph to provide structured knowledge for robust planning and a scene graph to maintain environmental memory for event-driven replanning. Specifically, the task graph guides LLM thinking through contextual prompting and iterative refinement, effectively mitigating planning hallucinations. Furthermore, within the GRPO framework, the task graph offers delicate reward design to train the LLM planner, enhancing long-horizon planning capabilities and improving generalization. Finally, an event-driven replanning module, powered by the scene graph, enables closed-loop environment awareness and error correction. GraphThink achieves state-of-the-art performance on the ALFRED benchmark. In particular, our high-level planner surpasses leading API-based LLMs on both the validation set and held-out long-horizon tasks, underscoring its robust zero-shot and few-shot capabilities. Additional evaluations further demonstrate strong out-of-distribution generalization to novel tasks and environments.",
+      "authors": [
+        "Chen Li",
+        "Sijie Cheng",
+        "Yuelin Zhang",
+        "Junxi Li",
+        "Maozhi Huang",
+        "Yang Liu",
+        "Wenbing Huang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-08-08T04:05:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.07905v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "scene graph maintains environmental memory for event-driven replanning",
+      "llm_evidence_cn": "场景图维护环境记忆以支持事件驱动的重规划",
+      "llm_evidence": "场景图维护环境记忆以支持事件驱动的重规划",
+      "canonical_evidence": "场景图维护环境记忆以支持事件驱动的重规划",
+      "llm_tldr_en": "Introduces GraphThink, integrating task graphs and scene graphs as structured knowledge and environmental memory for event-driven replanning, improving long-horizon embodied LLM planning.",
+      "llm_tldr_cn": "基于LLM的具身智能体在长时程规划中常出现物理幻觉、泛化差和环境感知不足。本文提出GraphThink框架，用任务图提供结构化知识指导LLM思考与奖励设计，用场景图维护环境记忆以支持事件驱动的重规划。在GRPO框架内通过精细奖励训练增强长时程规划与泛化。实验表明GraphThink能有效缓解规划幻觉并提高任务成功率，为具身智能体记忆与推理结合提供新方案。",
+      "llm_tldr": "基于LLM的具身智能体在长时程规划中常出现物理幻觉、泛化差和环境感知不足。本文提出GraphThink框架，用任务图提供结构化知识指导LLM思考与奖励设计，用场景图维护环境记忆以支持事件驱动的重规划。在GRPO框架内通过精细奖励训练增强长时程规划与泛化。实验表明GraphThink能有效缓解规划幻觉并提高任务成功率，为具身智能体记忆与推理结合提供新方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory-based reasoning in agents",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
