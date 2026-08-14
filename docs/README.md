@@ -6,39 +6,52 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-13
-- 运行时间：2026-08-13 21:23:50 UTC
+- 最新运行日期：2026-08-14
+- 运行时间：2026-08-14 20:50:47 UTC
 - 运行状态：成功
-- 本次总论文数：6
+- 本次总论文数：10
 - 精读区：6
-- 速读区：0
+- 速读区：4
 
 ### 今日简报（AI）
-今日精读6篇，聚焦智能体长期记忆与错误修复，其中2篇获9.0高分。最值得关注：任务自适应的多结构证据选择（MESA）与依赖引导的回滚修复机制。建议读者后续留意记忆增强智能体在长时序任务中的容错性与可解释性。
-- 详情：[/202608/13/README](/202608/13/README)
+今日聚焦AI代理内存系统，精读两篇高分论文并速读三篇关联研究。  
+核心结论：便携自进化记忆层（MindMemOS）与记忆增强的推理提升（LLM策略不足但记忆可补）最值得深读。  
+建议普通读者优先看这两篇精读，把握AI代理持久记忆的设计思路。
+- 详情：[/202608/14/README](/202608/14/README)
 
 ### 精读区论文标签
-1. [MESA:Task-Adaptive Multi-Structure Evidence Selection for Long-Horizon Agent Memory](/202608/13/2608.10108v1-mesatask-adaptive-multi-structure-evidence-selection-for-long-horizon-agent-memory)  
+1. [MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents](/202608/14/2608.12428v1-mindmemos-a-portable-and-self-evolving-memory-operating-layer-for-ai-agents)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出长时程代理记忆中的任务自适应多结构证据选择方法
-2. [From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents](/202608/13/2608.10502v1-from-faulty-memories-to-corrected-actions-dependency-guided-rollback-repair-for-memory-augmented-agents)  
+   evidence：提出面向AI智能体的自进化记忆操作系统层，直接匹配LLM智能体记忆管理策略
+2. [LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning](/202608/14/2608.12626v1-llms-are-not-good-strategists-yet-memory-enhanced-agency-boosts-reasoning)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向记忆增强智能体的故障记忆恢复与回滚修复
-3. [MAP-Graph: Provenance-Aware Shared Memory for Multi-Agent Workflows](/202608/13/2608.10509v1-map-graph-provenance-aware-shared-memory-for-multi-agent-workflows)  
+   evidence：利用历史片段库和工作记忆增强长时程推理的智能体
+3. [ERSkill: Evolving for Skill-Guided Adaptive Memory Retrieval](/202608/14/2608.12720v1-erskill-evolving-for-skill-guided-adaptive-memory-retrieval)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向多智能体工作流的溯源感知共享记忆层，使用类型化执行图
-4. [Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory](/202608/13/2608.10676v1-self-correcting-long-horizon-search-agents-via-tree-structured-memory)  
+   evidence：面向LLM代理的自演化技能引导记忆检索框架
+4. [Beyond Retrieval: Query-Conditioned Reuse of Long-Horizon Agent Trajectories](/202608/14/2608.12847v1-beyond-retrieval-query-conditioned-reuse-of-long-horizon-agent-trajectories)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：面向LLM搜索代理的树结构记忆方法，支持自校正与有界上下文
-5. [Towards a Formal Definition of Agent Memory: Basis, Span, Optimality, and the Sequential Memory Problem](/202608/13/2608.11654v1-towards-a-formal-definition-of-agent-memory-basis-span-optimality-and-the-sequential-memory-problem)  
+   evidence：提出长时程轨迹的查询条件复用方法及评估框架
+5. [LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation](/202608/14/2608.12990v1-lycheememory-v2-efficient-long-term-memory-for-llm-agents-via-semantic-segment-level-consolidation)  
    标签：评分：9.0/10、query:llm-agent-memory
-   evidence：Agent记忆的形式化定义与最优性理论
-6. [GraphThink: Graph-Enhanced LLM Thinking for Long-Horizon Embodied Task Planning](/202608/13/2608.07905v1-graphthink-graph-enhanced-llm-thinking-for-long-horizon-embodied-task-planning)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：场景图维护环境记忆以支持事件驱动的重规划
+   evidence：面向LLM智能体的语义分段整合式高效长期记忆框架
+6. [RippleMem: From Isolated Retrieval to Associative Recollection for Long-Term Agent Memory](/202608/14/2608.13334v1-ripplemem-from-isolated-retrieval-to-associative-recollection-for-long-term-agent-memory)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：面向代理长期记忆的联想回忆方法
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Persistent Semantic Entities in Tool-Augmented LLM Systems](/202608/14/2608.07952v1-persistent-semantic-entities-in-tool-augmented-llm-systems)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：持久语义实体揭示跨会话的隐式记忆状态
+2. [$\varepsilon$-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution](/202608/14/2608.12522v1-varepsilon-memevo-adaptive-cross-task-memory-transfer-for-llm-program-evolution)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：面向LLM程序进化的跨任务记忆迁移与自适应注入
+3. [When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory](/202608/14/2608.12888v1-when-your-agent-opens-the-chat-app-agent-controlled-search-over-raw-chat-logs-rivals-structured-memory)  
+   标签：评分：8.0/10、query:llm-agent-memory
+   evidence：对原始聊天记录的智能体控制搜索，作为结构化智能体记忆的无结构替代方案
+4. [MemWM: Memory-Augmented Text-Based World Model](/202608/14/2608.07107v1-memwm-memory-augmented-text-based-world-model)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：精选世界记忆库增强面向规划智能体的文本世界模型
 
 
 <div class="dpr-home-promo-card">
