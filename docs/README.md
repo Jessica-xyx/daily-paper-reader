@@ -6,38 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-15
-- 运行时间：2026-08-15 19:44:43 UTC
+- 最新运行日期：2026-08-16
+- 运行时间：2026-08-16 20:23:55 UTC
 - 运行状态：成功
-- 本次总论文数：6
-- 精读区：2
-- 速读区：4
+- 本次总论文数：1
+- 精读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-今日精读6篇论文，聚焦智能体记忆与策略对齐，其中2篇高分精读值得重点关注。最值得看的是《MemOPD》提出的记忆状态对齐蒸馏方法（9.0分）和《Spatial Memory Agent》的空间经验记忆框架（8.0分）。建议普通读者从强化长程任务中的记忆机制入手，后续可跟进速读中关于自改进安全性与边缘部署的讨论。
-- 详情：[/202608/15/README](/202608/15/README)
+今日仅速读1篇论文《EvoMem》，聚焦记忆增强的进化策略在代码优化中的应用，整体热度一般。
+
+最值得关注的方向是将“记忆机制”引入进化算法，以提升代码优化效率，适合对自动程序修复与性能调优感兴趣的读者。
+
+若想深入，建议后续补充该方向的同类对比研究或实验复现，以验证其实际收益。
+- 详情：[/202608/16/README](/202608/16/README)
 
 ### 精读区论文标签
-1. [MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents](/202608/15/2608.07068v1-memopd-on-policy-distillation-through-memory-state-alignment-for-long-horizon-agents)  
-   标签：评分：9.0/10、query:llm-agent-memory
-   evidence：提出基于状态对齐的在线策略蒸馏方法用于记忆压缩
-2. [Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence](/202608/15/2608.12743v1-spatial-memory-agent-experience-grounded-procedure-memory-for-spatial-intelligence)  
-   标签：评分：8.0/10、query:llm-agent-memory
-   evidence：提出基于经验的过程记忆，使冻结的VLM智能体无需外部空间工具即可自我进化空间推理
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Reading is not Reasoning: Bridging the Agentic Policy Gap in Vision-Text Compression](/202608/15/2608.08960v1-reading-is-not-reasoning-bridging-the-agentic-policy-gap-in-vision-text-compression)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：通过视觉文本压缩历史以管理智能体上下文/记忆
-2. [Practice Makes Unsafe: Skill Misevolution in Self-Improving LLM Agents](/202608/15/2608.12851v1-practice-makes-unsafe-skill-misevolution-in-self-improving-llm-agents)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：面向持久技能记忆的生命周期感知基准
-3. [Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes](/202608/15/2608.13420v1-enhancing-virtual-agents-through-slms-and-edge-computing-an-exploratory-evaluation-of-think-and-memory-processes)  
-   标签：评分：7.0/10、query:llm-agent-memory
-   evidence：基于小语言模型与边缘计算对具身虚拟智能体的思考与记忆过程进行探索性评估
-4. [LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation](/202608/15/2608.11967v1-loongreflect-boosting-long-horizon-reflection-in-search-agents-via-global-perspective-distillation)  
+1. [EvoMem: Memory-Augmented Evolution for Code Optimization](/202608/16/2608.10795v1-evomem-memory-augmented-evolution-for-code-optimization)  
    标签：评分：6.0/10、query:llm-agent-memory
-   evidence：面向智能体记忆推理的反思能力
+   evidence：为基于LLM的程序搜索构建持久记忆，捕获并复用变异知识
 
 
 <div class="dpr-home-promo-card">

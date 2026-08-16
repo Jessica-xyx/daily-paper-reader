@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-16 <!--dpr-date:20260816-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/16/2608.10795v1-evomem-memory-augmented-evolution-for-code-optimization" data-sidebar-item="{&quot;title&quot;: &quot;EvoMem: Memory-Augmented Evolution for Code Optimization&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.10795v1-evomem-memory-augmented-evolution-for-code-optimization&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;为基于LLM的程序搜索构建持久记忆，捕获并复用变异知识&quot;}">EvoMem: Memory-Augmented Evolution for Code Optimization</a>
   * 2026-08-15 <!--dpr-date:20260815-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/15/2608.07068v1-memopd-on-policy-distillation-through-memory-state-alignment-for-long-horizon-agents" data-sidebar-item="{&quot;title&quot;: &quot;MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.07068v1-memopd-on-policy-distillation-through-memory-state-alignment-for-long-horizon-agents&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-agent-memory&quot;}], &quot;evidence&quot;: &quot;提出基于状态对齐的在线策略蒸馏方法用于记忆压缩&quot;}">MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents</a>
