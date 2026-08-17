@@ -6,28 +6,35 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-16
-- 运行时间：2026-08-16 20:23:55 UTC
+- 最新运行日期：2026-08-17
+- 运行时间：2026-08-17 19:46:11 UTC
 - 运行状态：成功
-- 本次总论文数：1
-- 精读区：0
+- 本次总论文数：5
+- 精读区：4
 - 速读区：1
 
 ### 今日简报（AI）
-今日仅速读1篇论文《EvoMem》，聚焦记忆增强的进化策略在代码优化中的应用，整体热度一般。
-
-最值得关注的方向是将“记忆机制”引入进化算法，以提升代码优化效率，适合对自动程序修复与性能调优感兴趣的读者。
-
-若想深入，建议后续补充该方向的同类对比研究或实验复现，以验证其实际收益。
-- 详情：[/202608/16/README](/202608/16/README)
+今日精读4篇、速读1篇，聚焦长时程智能体的记忆后端与持久化状态研究。最值得关注《MemoryLake on MemoryArena》与《Governed Persistent Memory》，分别以10.0和9.0分揭示记忆后端匹配评测与故障闭环状态语义的关键作用。普通读者可优先从这两篇入手，理解智能体记忆系统的设计权衡与可恢复执行方向。
+- 详情：[/202608/17/README](/202608/17/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [MemoryLake on MemoryArena: A Matched Study of Agent Memory Backends](/202608/17/2608.13883v1-memorylake-on-memoryarena-a-matched-study-of-agent-memory-backends)  
+   标签：评分：10.0/10、query:llm-agent-memory
+   evidence：在MemoryArena基准上对多种智能体记忆后端进行实证对比
+2. [Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents](/202608/17/2608.12476v1-governed-persistent-memory-source-bound-state-semantics-and-fail-closed-release-for-long-horizon-agents)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：提出面向长程智能体的受治理持久记忆模型，涉及记忆管理策略
+3. [Ontology-Grounded Project Memory for Coding Agents](/202608/17/2608.13662v1-ontology-grounded-project-memory-for-coding-agents)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：通过知识图谱和MCP接口为编码智能体提供结构化本体项目记忆
+4. [When Personal Memory Has No Single Answer: Evaluating LLM Agents under Irreducible Conflict](/202608/17/2608.13921v1-when-personal-memory-has-no-single-answer-evaluating-llm-agents-under-irreducible-conflict)  
+   标签：评分：9.0/10、query:llm-agent-memory
+   evidence：提出TANGLE基准，评估LLM智能体如何应对真实的、潜在的和纠缠的记忆冲突
 
 ### 速读区论文标签
-1. [EvoMem: Memory-Augmented Evolution for Code Optimization](/202608/16/2608.10795v1-evomem-memory-augmented-evolution-for-code-optimization)  
-   标签：评分：6.0/10、query:llm-agent-memory
-   evidence：为基于LLM的程序搜索构建持久记忆，捕获并复用变异知识
+1. [AgentRewind: Recoverable Execution for Long-Horizon LLM Agents](/202608/17/2608.14380v1-agentrewind-recoverable-execution-for-long-horizon-llm-agents)  
+   标签：评分：7.0/10、query:llm-agent-memory
+   evidence：记录智能体上下文与环境对齐检查点，支持回退并复用先前尝试信息
 
 
 <div class="dpr-home-promo-card">

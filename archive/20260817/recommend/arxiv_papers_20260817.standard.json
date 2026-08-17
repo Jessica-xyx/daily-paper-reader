@@ -1,0 +1,203 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-17T19:41:07.826792+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2608.13883v1",
+      "source": "arxiv",
+      "title": "MemoryLake on MemoryArena: A Matched Study of Agent Memory Backends",
+      "abstract": "Most agent-memory benchmarks test post-hoc recall, whereas MemoryArena evaluates whether memory supports interdependent, multi-session task completion. We compare MemoryLake, a structured multi-track memory backend, with Mem0, text-embedding-3-small vector RAG, and a long-context control across all five MemoryArena domains. The systems share the same agent framework, requested gpt-5-mini model alias, task samples, and scoring code; the memory integration is the intentionally changed component. Because each backend bundles write, retrieval, consolidation, budgeting, and prompt-assembly choices, the study is a matched system-level comparison, not a representation-only ablation or a cost-matched experiment. On the shared evaluation sets, MemoryLake has the highest observed success rate (SR) in mathematics (9/40), physics (12/20), and progressive retrieval (4/20). Every system has zero SR in travel planning, and web shopping yields a single bundle-level success (long context, 1/150); MemoryLake ranks third on both the travel soft process score and shopping step match. Following MemoryArena's suite-level convention, a post-hoc equal-weight average over the five SRs is 20.5% for MemoryLake versus 13.6% for the best comparator. These are point estimates: sample sizes are modest, confidence intervals overlap, and we do not report paired significance tests. A separate MemoryLake-only run over all 221 progressive queries yields a failure-counted SR of 26.7% (59/221) and is not a baseline comparison. The results support a workload-dependent view of memory backends and an observed lead among the four evaluated systems on the shared sets; they do not establish benchmark-wide state of the art or a causal advantage of representation structure.",
+      "authors": [
+        "Chaoqun Zhan",
+        "Qiang Zhou",
+        "Guannan Li",
+        "Zhenqiang Huang",
+        "Qianjin Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-14T02:19:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.13883v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Empirical comparison of agent memory backends on the MemoryArena benchmark",
+      "llm_evidence_cn": "在MemoryArena基准上对多种智能体记忆后端进行实证对比",
+      "llm_evidence": "在MemoryArena基准上对多种智能体记忆后端进行实证对比",
+      "canonical_evidence": "在MemoryArena基准上对多种智能体记忆后端进行实证对比",
+      "llm_tldr_en": "This paper presents a matched study comparing MemoryLake, Mem0, vector RAG, and long-context control across MemoryArena domains, showing that structured multi-track memory backend improves multi-session agent task completion.",
+      "llm_tldr_cn": "现有智能体记忆基准大多只测试事后回忆，而MemoryArena关注记忆是否支撑跨会话的相互依赖任务完成。本文在同一智能体框架下，对MemoryLake、Mem0、文本嵌入向量检索和长上下文基线进行匹配对比，覆盖MemoryArena全部五个领域。结果表明，MemoryLake作为结构化多轨记忆后端在多会话任务完成上表现更优，为智能体记忆评测提供了系统级对比范式。",
+      "llm_tldr": "现有智能体记忆基准大多只测试事后回忆，而MemoryArena关注记忆是否支撑跨会话的相互依赖任务完成。本文在同一智能体框架下，对MemoryLake、Mem0、文本嵌入向量检索和长上下文基线进行匹配对比，覆盖MemoryArena全部五个领域。结果表明，MemoryLake作为结构化多轨记忆后端在多会话任务完成上表现更优，为智能体记忆评测提供了系统级对比范式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.12476v1",
+      "source": "arxiv",
+      "title": "Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents",
+      "abstract": "Long-term agent memory is usually treated as select--store--retrieve, but retrieval does not decide whether contradictory, superseded, retracted, deleted, or stale records may support an outgoing claim. We introduce Governed Persistent Memory (GPM), an auditable bitemporal state-transition model with source-bound admission, derived lifecycle state, current public barriers, and fail-closed structured release. Five executable clauses cover ledger integrity, source binding, conflict isolation, non-revival after retraction or deletion, and exact claim closure over a fresh view at one verified head.   On a prespecified hash-frozen 3,600-case GPM-ReleaseBench, GPM matches all complete outcomes; the strongest of three intentionally simple complete policies matches 1,800/3,600 and makes unmatched releases on 50% of violation cases. A separate sealed end-to-end service evaluation exercises real ingestion and release across eight query families. In its publicly disclosed V3 arm, the governed lane is correct on 2,400/2,400 clusters versus 600/2,400 for ungoverned local Qwen2.5-7B; it repairs all 1,800 baseline failures with no regression (one-sided 95% lower bounds 99.875% and 99.834%). A later V5 reseal over Chinese- and English-command arms, with generation-date pinning and no post-freeze reducer amendment, again obtains 2,400/2,400 per arm. A production-code-independent finite model explores 331,776 semantic and 1,990,656 query states without a full-contract counterexample, and a 100,000-trace three-engine differential yields zero mismatches.   These are bounded contract and implementation results, not open-world model accuracy or evidence of world truth. Governed answers in the sealed service evaluation are deterministic service outputs; the 7B result is the ungoverned comparison, not a claim that a language model itself became perfectly accurate.",
+      "authors": [
+        "Guodong Xu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-12T18:00:42+00:00",
+      "link": "https://arxiv.org/pdf/2608.12476v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "presents a governed persistent memory model for long-horizon agents, addressing memory management strategies",
+      "llm_evidence_cn": "提出面向长程智能体的受治理持久记忆模型，涉及记忆管理策略",
+      "llm_evidence": "提出面向长程智能体的受治理持久记忆模型，涉及记忆管理策略",
+      "canonical_evidence": "提出面向长程智能体的受治理持久记忆模型，涉及记忆管理策略",
+      "llm_tldr_en": "Introduces GPM, an auditable bitemporal state-transition model for long-term agent memory that enforces source-bound admission, conflict isolation, non-revival, and fail-closed release; validated on GPM-ReleaseBench.",
+      "llm_tldr_cn": "针对长期智能体记忆仅关注选-存-取、缺乏对冲突与失效记录治理的问题，本文提出受治理持久记忆（GPM），一种可审计的双时态状态迁移模型，包含源绑定准入、生命周期派生、全域公共屏障及故障关闭式结构化发布。五个可执行子句覆盖账本完整性、源绑定、冲突隔离、撤销删除后不复活及精确声明闭合。在3,600例GPM-ReleaseBench上，GPM匹配所有完整结果，表明该框架能为长程智能体提供可靠、合规的记忆管理方案。",
+      "llm_tldr": "针对长期智能体记忆仅关注选-存-取、缺乏对冲突与失效记录治理的问题，本文提出受治理持久记忆（GPM），一种可审计的双时态状态迁移模型，包含源绑定准入、生命周期派生、全域公共屏障及故障关闭式结构化发布。五个可执行子句覆盖账本完整性、源绑定、冲突隔离、撤销删除后不复活及精确声明闭合。在3,600例GPM-ReleaseBench上，GPM匹配所有完整结果，表明该框架能为长程智能体提供可靠、合规的记忆管理方案。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13662v1",
+      "source": "arxiv",
+      "title": "Ontology-Grounded Project Memory for Coding Agents",
+      "abstract": "Coding agents have become the primary means of generating new code in many software projects, and the resulting velocity of changes makes keeping track of the reasons behind those changes challenging. This paper introduces MOOSEDev, a system designed to give coding agents structured, ontology-grounded project memory. The system captures architectural decisions, lessons, constraints, and rationales in a knowledge graph exposed to agents via a Model Context Protocol (MCP) interface. Records carry lifecycle status, provenance, and supersession links, queryable via MOOSE, a proprietary neurosymbolic engine that treats the symbolic layer as the primary reasoning substrate. We compared MOOSEDev against a production vector-memory tool on a neutral public corpus of 835 typed records. MOOSEDev returned the expected answer set essentially in full (0.98-1.00) on supersession, set-completeness, and negation questions, whereas the baseline's top-k retrieval surfaced between 6% and 27%. Conversely, relevance recall and token cost were largely equivalent between the two systems. We also describe a temporal commit-history bootstrap of our own codebase, a pre-registered live trial, and lessons learned.",
+      "authors": [
+        "James Adam"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-08-13T18:03:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.13662v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "provides structured ontology-grounded project memory for coding agents via knowledge graph and MCP interface",
+      "llm_evidence_cn": "通过知识图谱和MCP接口为编码智能体提供结构化本体项目记忆",
+      "llm_evidence": "通过知识图谱和MCP接口为编码智能体提供结构化本体项目记忆",
+      "canonical_evidence": "通过知识图谱和MCP接口为编码智能体提供结构化本体项目记忆",
+      "llm_tldr_en": "Introduces MOOSEDev, a system giving coding agents structured ontology-grounded project memory, capturing decisions and rationales in a knowledge graph exposed via MCP and queried by a neurosymbolic engine.",
+      "llm_tldr_cn": "编码智能体快速生成代码使得追踪变更原因变得困难。MOOSEDev为智能体提供本体基础的项目记忆，以知识图谱记录架构决策、教训和约束，并通过MCP接口和神经符号引擎实现可查询。记录带生命周期状态、来源与更替链接，支持智能体进行理性回溯。与向量记忆工具对比，MOOSEDev在相关语料上表现出更强的记忆查询能力，为编码智能体记忆管理提供新方法。",
+      "llm_tldr": "编码智能体快速生成代码使得追踪变更原因变得困难。MOOSEDev为智能体提供本体基础的项目记忆，以知识图谱记录架构决策、教训和约束，并通过MCP接口和神经符号引擎实现可查询。记录带生命周期状态、来源与更替链接，支持智能体进行理性回溯。与向量记忆工具对比，MOOSEDev在相关语料上表现出更强的记忆查询能力，为编码智能体记忆管理提供新方法。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13921v1",
+      "source": "arxiv",
+      "title": "When Personal Memory Has No Single Answer: Evaluating LLM Agents under Irreducible Conflict",
+      "abstract": "LLM agents increasingly maintain personal memory across sessions, but it can conflict. Preferences depend on context, behavior evolves, and sources can conflict. When a query lacks context, time, or source authority to interpret conflict, treating one memory as definitive converts unresolved conflict into an unjustified, overconfident action. Existing benchmarks recover one answer from conflicting evidence, overlooking whether agents recognize underdetermination, preserve alternatives, seek missing information, and choose appropriate actions. We introduce \\underline{T}esting \\underline{A}gents' \\underline{N}avigation of \\underline{G}enuine, \\underline{L}atent, and \\underline{E}ntangled Memory Conflicts (\\textsc{TANGLE}), a benchmark for genuinely unresolvable memory conflicts. It comprises 541 instances across 40 personas and three types: Context-Partitioned Conflict (CPC), Behavior-Oscillation Conflict (BOC), and Source-Contradiction Conflict (SCC). We evaluate two tracks---an oracle track with curated memory and a pipeline track that extracts memory from multi-session dialogues---on five dimensions: conflict perception, causal reasoning, confidence calibration, clarification seeking, and memory faithfulness. Experiments reveal pipeline challenges. With curated memory, models recognize conflicts more reliably than they calibrate actions or seek targeted clarification. With end-to-end pipeline memory, extraction fails to preserve conflict-bearing relations needed for downstream reasoning. Policy comparisons show fixed rules are insufficient when actions must reflect conflict. These findings motivate Conflict-Aware Action Policy (CAAP), which adapts actions to each conflict using available evidence. \\textsc{TANGLE} frames conflict handling as recognizing underdetermination, retaining conflicting evidence, and acting without forcing a definitive answer.",
+      "authors": [
+        "Lu Yang",
+        "Shusheng Xu",
+        "Zhuoran Li",
+        "Tongkai Yang",
+        "Longbo Huang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-14T03:48:08+00:00",
+      "link": "https://arxiv.org/pdf/2608.13921v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "introduces TANGLE, a benchmark for evaluating how LLM agents navigate genuine, latent, and entangled memory conflicts",
+      "llm_evidence_cn": "提出TANGLE基准，评估LLM智能体如何应对真实的、潜在的和纠缠的记忆冲突",
+      "llm_evidence": "提出TANGLE基准，评估LLM智能体如何应对真实的、潜在的和纠缠的记忆冲突",
+      "canonical_evidence": "提出TANGLE基准，评估LLM智能体如何应对真实的、潜在的和纠缠的记忆冲突",
+      "llm_tldr_en": "Introduces TANGLE, a benchmark that evaluates whether agents recognize underdetermination, preserve alternatives, seek missing information, and act appropriately when personal memory contains irreducible conflicts.",
+      "llm_tldr_cn": "针对LLM智能体跨会话维护的个人记忆可能冲突且现有基准往往只恢复单一答案的问题，本文提出TANGLE基准，评估智能体是否认识到记忆的欠定性、保留替代解释、寻求缺失信息并选择恰当行动。通过构造真实、潜在与纠缠三类冲突场景，TANGLE更全面地衡量智能体在个人记忆冲突下的导航能力，填补了记忆评测的空白。",
+      "llm_tldr": "针对LLM智能体跨会话维护的个人记忆可能冲突且现有基准往往只恢复单一答案的问题，本文提出TANGLE基准，评估智能体是否认识到记忆的欠定性、保留替代解释、寻求缺失信息并选择恰当行动。通过构造真实、潜在与纠缠三类冲突场景，TANGLE更全面地衡量智能体在个人记忆冲突下的导航能力，填补了记忆评测的空白。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.14380v1",
+      "source": "arxiv",
+      "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
+      "abstract": "Many real-world tasks require LLM agents to interact with their environments over long execution horizons. Errors that occur early in execution may propagate through both the agent context and environment state, and their effects may be difficult to reverse through subsequent actions. Existing methods mainly seek to reduce such errors through plan refinement and safety checks but provide little support after errors occur. To enable recovery during long-horizon execution, we present AgentRewind, a runtime recovery framework that records aligned checkpoints of the agent context and controlled environment, allowing agents to return to an earlier state and resume execution with information from previous attempts. We also construct MettleBench, a benchmark for evaluating task completion and partial progress on long-horizon engineering assignments containing a series of related requirements. Experiments across tasks, multiple models, execution strategies, and agent harnesses show that AgentRewind improves task success rate and average checklist progress over the compared baselines.",
+      "authors": [
+        "Yu Zhuang",
+        "Kefei Chen",
+        "Yitong Duan",
+        "Shuxin Zheng",
+        "Jian Li",
+        "Xu-Yao Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-14T15:20:35+00:00",
+      "link": "https://arxiv.org/pdf/2608.14380v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "records aligned checkpoints of agent context and environment to enable recovery and reuse of previous attempts",
+      "llm_evidence_cn": "记录智能体上下文与环境对齐检查点，支持回退并复用先前尝试信息",
+      "llm_evidence": "记录智能体上下文与环境对齐检查点，支持回退并复用先前尝试信息",
+      "canonical_evidence": "记录智能体上下文与环境对齐检查点，支持回退并复用先前尝试信息",
+      "llm_tldr_en": "Presents AgentRewind, a runtime recovery framework that records aligned checkpoints of agent context and controlled environment, allowing long-horizon LLM agents to revert and resume with information from previous attempts.",
+      "llm_tldr_cn": "长程LLM智能体早期错误会传播且难以逆转。AgentRewind通过记录智能体上下文和环境状态的对齐检查点，使智能体能够在错误发生后回到先前状态继续执行。该方法补充了计划精化与安全检查之外的事后恢复能力。伴随构造的MettleBench基准评估了恢复性能，展现了对长程任务可靠性的提升，为智能体记忆式恢复提供了新工具。",
+      "llm_tldr": "长程LLM智能体早期错误会传播且难以逆转。AgentRewind通过记录智能体上下文和环境状态的对齐检查点，使智能体能够在错误发生后回到先前状态继续执行。该方法补充了计划精化与安全检查之外的事后恢复能力。伴随构造的MettleBench基准评估了恢复性能，展现了对长程任务可靠性的提升，为智能体记忆式恢复提供了新工具。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory management strategies in LLM agents",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
