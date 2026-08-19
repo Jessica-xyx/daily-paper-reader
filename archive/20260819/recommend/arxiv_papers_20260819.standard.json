@@ -1,0 +1,185 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-19T20:41:57.234360+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2608.17534v1",
+      "source": "arxiv",
+      "title": "ArborMem: Navigating Interaction States with Memory Forests",
+      "abstract": "Large language models increasingly serve as persistent conversational assistants, requiring memory that preserves relevant experience and maintains continuity across interactions. Existing methods improve access to conversational history through long-context processing, selective retrieval, and structured memory organization. However, most systems treat memory access as retrieving relevant past information without first determining which prior interaction state the current turn resumes. This limitation becomes particularly important when conversations interleave multiple tasks, people, and plans that may be interrupted and later revisited. We introduce ArborMem, an online memory framework that represents a long-running conversation as a navigable forest of interaction states. Each branch preserves a locally coherent trajectory, while the forest maintains multiple trajectories that may later be resumed. For each new input, ArborMem localizes the relevant state, restores its branch-local context, and augments it with reusable evidence retrieved across branches, preserving interaction continuity without conflating semantically related but structurally distinct trajectories. Existing long-term memory benchmarks cover diverse memory and reasoning capabilities but do not explicitly isolate branch-structured challenges. We therefore introduce BranchMemEval, a controlled diagnostic benchmark for interleaved and resumable interaction trajectories. Experiments on LongMemEval, LoCoMo, BEAM 100K, and BranchMemEval show that ArborMem outperforms the strongest baselines by 3.36 to 10.31 percentage points on the three established benchmarks and by 5.0 points on BranchMemEval. Its advantage grows under constrained read budgets, while complete memory queries remain below half a second.",
+      "authors": [
+        "Zongwei Lv",
+        "Yuemeng Xu",
+        "Yilun Yao",
+        "Siyi Ding",
+        "Xinyu Tan",
+        "Yaoming Li",
+        "Guangxiang Zhao",
+        "Weihong Lin",
+        "Lin Sun",
+        "Xiangzheng Zhang",
+        "Tong Yang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-18T08:54:55+00:00",
+      "link": "https://arxiv.org/pdf/2608.17534v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Online memory framework using a navigable memory forest of interaction states for persistent LLM assistants",
+      "llm_evidence_cn": "提出基于可导航记忆森林的在线记忆框架，保持持久对话代理的交互连续性",
+      "llm_evidence": "提出基于可导航记忆森林的在线记忆框架，保持持久对话代理的交互连续性",
+      "canonical_evidence": "提出基于可导航记忆森林的在线记忆框架，保持持久对话代理的交互连续性",
+      "llm_tldr_en": "ArborMem models a long-running conversation as a navigable forest of interaction states, determining which prior state a current turn resumes before retrieving relevant history, improving continuity in interleaved multi-task conversations.",
+      "llm_tldr_cn": "现有对话代理记忆系统大多直接检索历史信息，没有先判断当前回合接续哪个交互状态，因此在多任务交替和中断后回访时容易混乱。ArborMem提出将长时对话建模为可导航的交互状态森林，在线记录并恢复对应的记忆分支。实验表明该框架能更好保持跨会话连续性并提升多任务交织场景下的记忆利用效果，为持久对话代理提供了新的记忆组织方式。",
+      "llm_tldr": "现有对话代理记忆系统大多直接检索历史信息，没有先判断当前回合接续哪个交互状态，因此在多任务交替和中断后回访时容易混乱。ArborMem提出将长时对话建模为可导航的交互状态森林，在线记录并恢复对应的记忆分支。实验表明该框架能更好保持跨会话连续性并提升多任务交织场景下的记忆利用效果，为持久对话代理提供了新的记忆组织方式。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17756v1",
+      "source": "arxiv",
+      "title": "D$^2$ACCI: A Dual-Loop Diagnostic Protocol for Evidence-Preserving Agent Memory",
+      "abstract": "Memory is a key capability of LLM agents. Persistent memory extends this across sessions---enabling recall, revision, and personalization. Yet its multi-stage pipeline (ingestion, retrieval, filtering, generation) makes failures difficult to localize: end-to-end evaluation reveals that an error occurred, but not which stage caused it. Existing evaluations often report aggregate performance without paired statistical comparisons, slice-level non-regression checks, or stage-level diagnostic traces. We propose D$^2$ACCI (Diagnostic-Driven Artifact-based Closed-loop Controlled Iteration), a dual-loop protocol whose outer diagnostic gate promotes, feature-flags, or rejects memory interventions based on paired evidence, protected-slice monitoring, and trace-level localizability. We further introduce DCR, a graded observability metric that measures whether failures remain localizable, and D$^2$ACCI-Eval, a reusable artifact for gate replay. We instantiate the protocol in MemStack and evaluate on three public benchmarks, achieving 93.59% on LoCoMo, 90.93% on LongMemEval, and 57.20% on PersonaMem-V2. Five paired ablations show that supplement extraction, session-memory retrieval, and Forget Guard yield statistically significant gains (+1.9 to +3.7pp, all p $\\le$ .003). In contrast, BM25/RRF is retained as a monitored feature flag---a distinction invisible to aggregate-only evaluation. A diagnostic audit shows enriched traces substantially improve root-cause agreement over result-only relabeling. Diagnostic artifacts reach 98--100% DCR@3 versus 0% for results-only logs. These results establish that robust memory-system iteration demands traceable, statistically grounded, and regression-aware evidence---exactly the gap D$^2$ACCI fills.",
+      "authors": [
+        "Xule Liu",
+        "Yijun Liu",
+        "Chao Li",
+        "Shao Kun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-18T13:18:38+00:00",
+      "link": "https://arxiv.org/pdf/2608.17756v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "diagnostic protocol for localizing failures in agent memory pipelines",
+      "llm_evidence_cn": "用于定位智能体记忆流水线故障的诊断协议",
+      "llm_evidence": "用于定位智能体记忆流水线故障的诊断协议",
+      "canonical_evidence": "用于定位智能体记忆流水线故障的诊断协议",
+      "llm_tldr_en": "Introduces D2ACCI, a dual-loop diagnostic protocol for evidence-preserving agent memory that localizes failures across ingestion, retrieval, filtering and generation via paired comparisons and slice-level checks.",
+      "llm_tldr_cn": "大型语言模型智能体的持久记忆涉及多阶段流水线，端到端评估难以判断错误源自哪个阶段。现有的评估往往依赖聚合指标，缺少配对统计检验、切片级非回归检查和阶段级诊断痕迹。本文提出D²ACCI双环诊断协议，通过外环诊断门控基于配对证据和受保护切片监控，对记忆干预进行推荐、标记或拒绝。该方法为智能体记忆的评估与迭代提供了系统化、可操作的诊断框架。",
+      "llm_tldr": "大型语言模型智能体的持久记忆涉及多阶段流水线，端到端评估难以判断错误源自哪个阶段。现有的评估往往依赖聚合指标，缺少配对统计检验、切片级非回归检查和阶段级诊断痕迹。本文提出D²ACCI双环诊断协议，通过外环诊断门控基于配对证据和受保护切片监控，对记忆干预进行推荐、标记或拒绝。该方法为智能体记忆的评估与迭代提供了系统化、可操作的诊断框架。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "How is memory evaluated in LLM agent systems?",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17911v1",
+      "source": "arxiv",
+      "title": "CABLE: Extending the Reach of Memory Retrieval via Complementary Antecedent-Based Linking and Expansion",
+      "abstract": "As LLM agents operate across structured workflows and sessions, preserving long-term history does not ensure that later contexts can recover relevant evidence through a bounded memory interface. We study this evidence-reachability problem in long-term conversational memory, where retrieval still relies heavily on semantic similarity. This works well for topical recall, but it often misses earlier experiences, plans, or motivations that are semantically distant from the later events they help explain. Existing memory graphs provide cross-memory structure, yet links driven mainly by semantic overlap can duplicate what the host retriever already recovers. We argue that link construction should instead prioritize a sparse set of retriever-complementary associations. We present CABLE (Complementary Antecedent-Based Linking and Expansion), a plug-in augmentation that constructs links designed to extend the host retriever's direct semantic reach. For each new memory, CABLE generates antecedent-oriented queries, retrieves prior memories, subtracts candidates in the direct semantic neighborhood, and verifies the remainder before adding the accepted complementary associations into a sparse directed graph. At retrieval time, CABLE expands the host system's retrieved seeds along these links to surface implicit supporting evidence. We evaluate CABLE with A-MEM on LoCoMo and MA-LongMemEval, and further integrate it into SimpleMem and Mem0g on LoCoMo, using Qwen3.5-27B, DeepSeek-chat, and GPT-4o-mini. CABLE yields higher mean LLM-judge scores in every evaluated system-level setting, with the largest gains in categories where useful evidence is distributed across memories or sessions, including open-domain, multi-session, and preference-oriented questions. These results support prioritizing sparse, reasoning-relevant associations that complement rather than duplicate the host retriever.",
+      "authors": [
+        "Zheling Tan",
+        "Jin Gao",
+        "Dequan Wang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-18T15:40:29+00:00",
+      "link": "https://arxiv.org/pdf/2608.17911v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Improves memory retrieval reachability through complementary antecedent-based linking in LLM agents",
+      "llm_evidence_cn": "通过互补前因链接扩大LLM智能体记忆检索的可达性",
+      "llm_evidence": "通过互补前因链接扩大LLM智能体记忆检索的可达性",
+      "canonical_evidence": "通过互补前因链接扩大LLM智能体记忆检索的可达性",
+      "llm_tldr_en": "Semantic retrieval misses semantically distant earlier experiences; CABLE constructs sparse complementary links to extend evidence reachability in long-term conversational memory.",
+      "llm_tldr_cn": "在长期对话记忆中，基于语义相似度的检索虽适合主题回忆，但常常遗漏与后续事件语义距离较远的早期经验、计划或动机。CABLE指出链接构建应优先使用稀疏互补的前因链接，而非单纯重复语义重叠关系，以扩展记忆接口下的证据可达性。该方法在不改变宿主检索器的情况下补充记忆图的结构信号，使智能体能回溯到更早但关键的信息，提升长期记忆利用效率。",
+      "llm_tldr": "在长期对话记忆中，基于语义相似度的检索虽适合主题回忆，但常常遗漏与后续事件语义距离较远的早期经验、计划或动机。CABLE指出链接构建应优先使用稀疏互补的前因链接，而非单纯重复语义重叠关系，以扩展记忆接口下的证据可达性。该方法在不改变宿主检索器的情况下补充记忆图的结构信号，使智能体能回溯到更早但关键的信息，提升长期记忆利用效率。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.15071v1",
+      "source": "arxiv",
+      "title": "Evo-Harness: Context-to-Harness Skill Compilation for Self-Evolving Agents",
+      "abstract": "Learning from experience is critical for developing capable, self-improving large language model (LLM) agents. Existing methods typically extract knowledge from accumulated trajectories via reflection, memory, rules, or skills. However, agents in realistic environments continuously encounter novel tasks, often offering only a one-shot opportunity to improve. These executions yield rich but highly noisy contexts, entangling broadly useful lessons with task-specific artifacts. Critically, prior works rarely validate their effectiveness on complex real-world tasks or isolate the underlying drivers of improvement. To address these gaps, we formulate online harness learning, where a frozen agent improves by continually updating a structured harness across sequential tasks. This formulation enables a systematic study of key self-improvement factors through our proposed Evo-Harness. At its core, context-to-harness skill compilation distills noisy, single-shot executions into reusable skill harnesses for cross-domain and topic-level adaptation. To demonstrate the efficacy of one-shot skill compilation, we evaluate across five realistic benchmarks (TerminalBench2, SWE-bench, CL-Bench, -bench, WebArena-Infinity). Our extensive analysis demonstrates the effectiveness of Evo-Harness and provides a principled understanding of how LLM agents can effectively learn on the fly. Our code is available at https://github.com/A-EVO-Lab/a-evolve/tree/release/evo-harness.",
+      "authors": [
+        "Tianxin Wei",
+        "Zhan Shi",
+        "Minhua Lin",
+        "Bing He",
+        "Zewen Liu",
+        "Yisi Sang",
+        "Yuanchen Bei",
+        "Xuying Ning",
+        "Jiaru Zou",
+        "Ting-Wei Li",
+        "Xiao Lin",
+        "Yanjun Zhao",
+        "Chi Wang",
+        "Benoit Dumoulin",
+        "Dakuo Wang",
+        "Jingrui He",
+        "Hanqing Lu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-15T06:43:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.15071v1",
+      "tags": [
+        "keyword:llm-agent-memory",
+        "query:llm-agent-memory"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Trajectory memory and skill compilation for self-evolving agents",
+      "llm_evidence_cn": "面向自进化智能体的轨迹记忆与技能编译",
+      "llm_evidence": "面向自进化智能体的轨迹记忆与技能编译",
+      "canonical_evidence": "面向自进化智能体的轨迹记忆与技能编译",
+      "llm_tldr_en": "Evo-Harness proposes online harness learning for self-evolving LLM agents, compiling noisy trajectory contexts into structured reusable skills; validated on complex real-world tasks and isolating improvement drivers.",
+      "llm_tldr_cn": "自进化智能体需要从轨迹经验中学习，但现有方法依赖反思、记忆或技能提取，难以处理噪声大、一次性任务多的真实场景。为此，论文提出在线harness学习，通过持续更新结构化harness将上下文编译为可复用技能，同时不改变主模型，并在复杂真实任务上进行验证。实验证明该方法能有效提升智能体的持续改进能力，并有助于隔离真正带来提升的因素。这项工作为LLM智能体利用经验进行自我改进提供了新思路。",
+      "llm_tldr": "自进化智能体需要从轨迹经验中学习，但现有方法依赖反思、记忆或技能提取，难以处理噪声大、一次性任务多的真实场景。为此，论文提出在线harness学习，通过持续更新结构化harness将上下文编译为可复用技能，同时不改变主模型，并在复杂真实任务上进行验证。实验证明该方法能有效提升智能体的持续改进能力，并有助于隔离真正带来提升的因素。这项工作为LLM智能体利用经验进行自我改进提供了新思路。",
+      "llm_tags": [
+        "query:llm-agent-memory"
+      ],
+      "matched_query_tag": "query:llm-agent-memory",
+      "matched_query_text": "memory methods for LLM agents",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
